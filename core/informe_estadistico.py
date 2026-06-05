@@ -270,6 +270,13 @@ def generar_informe_estadistico_pdf(df, out_path,
     styles = getSampleStyleSheet()
     cell = ParagraphStyle("c", parent=styles["Normal"], fontSize=8, leading=10)
     h_sub = ParagraphStyle("s", parent=styles["Normal"], textColor=grey, fontSize=9, leading=11)
+    # V6.9.28 FIX: estilos con leading suficiente para fuentes grandes. Evita que el
+    # numero/titulo (18pt) se monte sobre la etiqueta de abajo en header y tarjetas KPI.
+    cell_num = ParagraphStyle("cnum", parent=cell, fontSize=18, leading=21)
+    cell_lbl = ParagraphStyle("clbl", parent=cell, fontSize=6.7, leading=8.5)
+    h_title = ParagraphStyle("ht", parent=cell, fontSize=18, leading=22)
+    h_sub1 = ParagraphStyle("hs1", parent=cell, fontSize=11, leading=14)
+    h_sub2 = ParagraphStyle("hs2", parent=cell, fontSize=8.5, leading=11)
 
     def band(text):
         t = Table([[Paragraph(f'<font color="white" size=12><b>{text}</b></font>', cell)]], colWidths=[CW])
@@ -284,10 +291,10 @@ def generar_informe_estadistico_pdf(df, out_path,
     # ---------- ENCABEZADO (banda navy con logo) ----------
     fav = _logo("favicon.png")
     titulo_par = [
-        Paragraph('<font color="white" size=18><b>Estadísticas de Inmunohistoquímica</b></font>', cell),
-        Paragraph('<font color="#cfd8e6" size=11>Informe de un vistazo · ONCONOVA Gestor Oncológico</font>', cell),
+        Paragraph('<font color="white"><b>Estadísticas de Inmunohistoquímica</b></font>', h_title),
+        Paragraph('<font color="#cfd8e6">Informe de un vistazo · ONCONOVA Gestor Oncológico</font>', h_sub1),
         Spacer(1, 3),
-        Paragraph(f'<font color="#cfd8e6" size=8.5>{institucion} · {area}</font>', cell),
+        Paragraph(f'<font color="#cfd8e6">{institucion} · {area}</font>', h_sub2),
     ]
     if fav:
         try:
@@ -322,8 +329,8 @@ def generar_informe_estadistico_pdf(df, out_path,
     ]
     kcell = []
     for k, v in kpis:
-        kcell.append([Paragraph(f'<font color="white" size=18><b>{v}</b></font>', cell),
-                      Paragraph(f'<font color="#eef2f8" size=6.7><b>{k}</b></font>', cell)])
+        kcell.append([Paragraph(f'<font color="white"><b>{v}</b></font>', cell_num),
+                      Paragraph(f'<font color="#eef2f8"><b>{k}</b></font>', cell_lbl)])
     kpi_tbl = Table([kcell], colWidths=[CW / 5.0] * 5)
     ksty = [("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
             ("TOPPADDING", (0, 0), (-1, -1), 10), ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
