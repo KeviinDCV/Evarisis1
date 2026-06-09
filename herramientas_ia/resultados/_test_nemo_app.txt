@@ -1,0 +1,1 @@
+{'exito': True, 'respuesta': {'organo': 'higado', 'malignidad': 'no maligno'}, 'tokens_usados': {'prompt': 61, 'completion': 19, 'total': 80}, 'modelo': 'mistralai/mistral-nemo-instruct-2407', 'proveedor': 'LM Studio (Local)', 'finish_reason': 'stop', 'timestamp': '2026-06-09T08:47:26.088640'}

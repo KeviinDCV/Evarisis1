@@ -887,6 +887,7 @@ REGLAS CRÍTICAS:
 - SOLO corrige campos donde el PDF tiene un valor DIFERENTE al de la BD
 - "NO MENCIONADO" o "N/A" = correcto si el biomarcador NO aparece en el PDF. NO cambiar a NEGATIVO
 - NEGATIVO = el PDF dice explícitamente "negativo" o "no se observa expresión"
+- Los biomarcadores se evalúan por el inmunofenotipo del TUMOR/lesión, NO por células reactivas/no neoplásicas (linfocitos T reactivos, centros germinales reactivos, plasmáticas normales, etc.)
 - NO incluyas campos donde BD y PDF coinciden
 - NO inventes valores. Si no está en el PDF, NO lo corrijas
 - Se MUY CONCISO. Máximo 5 correcciones reales

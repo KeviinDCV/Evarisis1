@@ -1,0 +1,5 @@
+total_casos=2073
+NUEVO (1 consulta, 2073 casos) = 0.273s
+VIEJO (1 consulta/caso, 200 casos) = 0.133s  ->  extrapolado a 2073: ~1.4s
+coincidencias=200/200  mismatches=[]
+OK

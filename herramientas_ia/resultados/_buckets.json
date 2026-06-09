@@ -1,0 +1,561 @@
+{
+ "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)": {
+  "n": 76,
+  "organos": {
+   "MAMA": 13,
+   "COLON": 11,
+   "GANGLIO LINFATICO": 10,
+   "ESTOMAGO": 8,
+   "RIÑON": 7,
+   "MEDULA OSEA": 5,
+   "HUESO": 3,
+   "HIGADO": 2,
+   "REJA COSTAL ANTERIOR": 1,
+   "OVARIO": 1,
+   "PULMON": 1,
+   "ESTACION IV": 1,
+   "TERCIO MEDIO DEL LOBULO + APEX DEL LOBULO": 1,
+   "MEDIASTINO": 1,
+   "ANGULARIS": 1,
+   "SIN DATO": 1,
+   "LARINGE": 1,
+   "RODILLA": 1,
+   "PERITONEO / EPIPLON": 1,
+   "TEJIDO BLANDO": 1,
+   "CARDIAS": 1,
+   "PIEL": 1,
+   "HIPOFISIS": 1,
+   "INTESTINO DELGADO": 1,
+   "MASA PERIAREOLAR SUPERIOR Y PROFUNDA": 1
+  },
+  "casos": [
+   {
+    "dx": "INMUNOFENOTIPO: TRIPLE NEGATIVO (ESTRÓGENO: 0%, PROGESTERONA: 0%, HER2: 0)",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "Ganglio linfático cervical izquierdo. Biopsia",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "Bloque B3",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO",
+    "organo": "REJA COSTAL ANTERIOR"
+   },
+   {
+    "dx": "Útero y anexos. Lesión. Histerectomía total y salpingo-ooforectomía bilateral",
+    "organo": "OVARIO"
+   },
+   {
+    "dx": "VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+    "organo": "PULMON"
+   },
+   {
+    "dx": "MUESTRA CON ESCASA REPRESENTACIÓN CELULAR CELULAS PLASMÁTICAS DE INMUNOFENOTIPO USUAL DEL 5% DE LA MUESTRA VER COMENTARIOS",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO",
+    "organo": "HIGADO"
+   },
+   {
+    "dx": "ESTACION IV izquierda (Conglomerado ganglionar). Lesión. Vaciamiento cervical selectivo",
+    "organo": "ESTACION IV"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: NEGATIVO 0.\n-RECEPTOR DE PROGRESTERONA: NEGATIVO 0.\n-HER 2: POSITIVO (Score 3+).\n-Ki-67: 20%",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "de \"Los hallazgos morfológicos favorecen displasia fibrosa\" Previa revisión de la histología se hacen niveles al bloque único para inmunomarcación con CDK4 y MD",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: POSITIVO MODERADO 2+ (41-50%).\n-RECEPTOR DE PROGRESTERONA: POSITIVO MODERADO 2+ (51-60%).\n-HER 2: POSITIVO (Score 3+).\n-Ki-67: 15%",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+ (100%).\n-RECEPTOR DE PROGRESTERONA: POSITIVO FUERTE 3+ (80%-90%).\n-HER 2: NEGATIVO (Score 0).\n-Ki-67:30%",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: POSITIVO FUERTE 3+ (100%).\n-RECEPTOR DE PROGRESTERONA: POSITIVO FUERTE 3+ (80%-90%).\n-HER 2: NEGATIVO (Score 0).\n-Ki-67:10%",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "PRESENCIA DE CÉLULAS CD38+ A NIVEL PERIPORTAL",
+    "organo": "HIGADO"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO",
+    "organo": "TERCIO MEDIO DEL LOBULO + APEX DEL LOBULO"
+   },
+   {
+    "dx": "por lo que se revisa marcación para CKAE1AE3, CD3, CD15, CD20, CD30",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "RECEPTORES DE ESTRÓGENOS: POSITIVO.\nRECEPTORES DE PROGESTERONA: POSITIVO.\nHER2: NEGATIVO (SCORE 1+)\nKI67: 21-30%",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "HER2: Negativo (Score 1+)\nMLH 1 Resultado: Expresión nuclear intacta\nPMS2 Resultado: Expresión nuclear intacta.\nMSH2 Resultado: Expresión nuclear intacta.\nMSH6 ",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "VER COMENTARIO",
+    "organo": "MEDIASTINO"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN Y COMENTARIO",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "SIN PERDIDA DE ESTABILIDAD MICROSOMAL DE LAS PROTEINAS MMR\nBAJA PROBABILIDAD DE MSI-H\nHER2 NEGATIVO (SCORE 0)",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Ganglio linfático inguinal izquierdo",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "-VER DESCRIPCION Y COMENTARIO",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "BIOPSIA DEL INJERTO RENAL",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "Médula ósea. Biopsia",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "Mucosa de colón. Lesión. Endoscopia",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Mucosa gástrica antral. Biopsia",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "Escaso parénquima mamario con tejido adiposo y fragmentos de piel, con algunas células de apariencia ductal sueltas y en grupos pequeños, sin relación con el te",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "HER2/neu: NEGATIVO (SCORE 0)",
+    "organo": "ANGULARIS"
+   },
+   {
+    "dx": "Las células tumorales son positivas con marcación membranosa para E-CADHERINA de manera fuerte y difusa",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "Unión pieloureteral izquierda. Lesión. Resección",
+    "organo": "SIN DATO"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN Y COMENTARIOS",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "Cuerda vocal izquierda. Lesión. Resección",
+    "organo": "LARINGE"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: NEGATIVO.\n- RECEPTOR DE PROGESTERONA: NEGATIVO.\n- HER-2: NEGATIVO (SCORE 1+)",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "HER2/neu: NEGATIVO (SCORE 0)",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "Riñón. Biopsia: 6 glomérulos en total. Uno con glomeruloescleoris global, sin reconocerse esclerosis segmentaria",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "BIOPSIA DE INJERTO RENAL",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "EN CURSO",
+    "organo": "RODILLA"
+   },
+   {
+    "dx": "PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2 MLH1 MSH6.\n- HER-2: EQUIVOCO (SCORE 2+)",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Lesión en tibia derecha con células plasmáticas (CD38+, MUM1+), CD56+ y CD20+ (aproximadamente en el 30% de las células). Expresión de marcadores de células B (",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "Ganglio linfáticos axilares izquierdos. Lesión. Resección",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "PATRÓN MICROSATELITAL ESTABLE: SIN PERDIDA DE LA EXPRESIÓN NUCLEAR. MSH2 PSM2 MLH1 MSH6.\n- HER-2: Negativo (SCORE 0+)",
+    "organo": "COLON"
+   },
+   {
+    "dx": "endoscópica",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Peritoneo parietal. Historia de masa anexial. Biopsia",
+    "organo": "PERITONEO / EPIPLON"
+   },
+   {
+    "dx": "CELULAS PLASMATICAS DE INMUNOFENOTIPO ABERRANTE (ALREDEDOR DEL 5%)",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "Rectosigmoide",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Ganglio linfático: Linfoide con marcación positiva para CD30, CD15, CD20, CD79a, CD10, BCL6, KAPPA, LAMBDA, CD5 y BCL2. Sin marcación para LMP1",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "LA POBLACIÓN DE CÉLULAS PLASMÁTICAS CORRESPONDEN ALREDEDOR DEL 3% DE LA CELULARIDAD EVALUADA",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "Ganglio linfático inguinal izquierdo. Lesión. Biopsia",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "Lesión en mama izquierda",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: 21-30% POSITIVO\n-RECEPTOR DE PROGRESTERONA: NEGATIVO.\n-HER 2: POSITIVO (SCORE 3+)",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO",
+    "organo": "TEJIDO BLANDO"
+   },
+   {
+    "dx": "MUCOSA GASTRICA Y MINIMO FRAGMENTO CON NECROSIS",
+    "organo": "CARDIAS"
+   },
+   {
+    "dx": "HER-2: NEGATIVO (Score 0)",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "REPRESENTACION DE LAS LINEAS CELULARES CON PREDOMINIO MIELOIDE\nSIN AUMENTO DE BLASTOS",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "Mucosa gastrica",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "Mucosa de colon ascendente. Masa . Biopsia endoscópica",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Mucosa gástrica del cardias",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "por sacabocado",
+    "organo": "PIEL"
+   },
+   {
+    "dx": "BIOPSIA DEL INJERTO RENAL",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "VER DESCRIPCIÓN MICROSCOPICA Y COMENTARIO",
+    "organo": "COLON"
+   },
+   {
+    "dx": "LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "Leisón en mama izquierda",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "VER DESCRIPCION MICROSCOPICA Y COMENTARIO",
+    "organo": "HIPOFISIS"
+   },
+   {
+    "dx": "Mucosa duodenal, primera porción. Tumor. (Historia de tumor periampular). Endoscopia. Biopsia",
+    "organo": "INTESTINO DELGADO"
+   },
+   {
+    "dx": "endoscópica",
+    "organo": "COLON"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: POSITIVO DÉBIL (1-10%).\n-RECEPTOR DE PROGRESTERONA: NEGATIVO\n-HER 2: NEGATIVO (Score 0)",
+    "organo": "MASA PERIAREOLAR SUPERIOR Y PROFUNDA"
+   },
+   {
+    "dx": "BIOPSIA DEL INJERTO RENAL . LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHSITOQUÍMICA",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "BIOPSIA DEL INJERTO RENAL",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "Mucosa gástrica antral. Lesión. Biopsia",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "Las células tumorales tienen expresión HER 2 negativo (score 0)",
+    "organo": "COLON"
+   },
+   {
+    "dx": "por colonoscopia",
+    "organo": "COLON"
+   },
+   {
+    "dx": "Ganglios linfáticos mediastinales",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "MUCOSA DE ESTOMAGO. LESIÓN. BIOPSIA ENDOSCOPICA",
+    "organo": "ESTOMAGO"
+   }
+  ]
+ },
+ "NEOPLASIA MALIGNA A CLASIFICAR (OTRO)": {
+  "n": 48,
+  "organos": {
+   "PROSTATA": 6,
+   "GANGLIO LINFATICO": 5,
+   "MAMA": 5,
+   "HUESO": 4,
+   "TEJIDO BLANDO": 3,
+   "UTERO": 3,
+   "HIGADO": 2,
+   "PIEL": 2,
+   "COLON": 2,
+   "ESTOMAGO": 2,
+   "CERVIX": 1,
+   "HOMBRO": 1,
+   "VULVA": 1,
+   "MEDULA OSEA": 1,
+   "OVARIO": 1,
+   "DORSO DE CUELLO": 1,
+   "SISTEMA NERVIOSO CENTRAL": 1,
+   "TUMOR HIPOFARINGE": 1,
+   "PULMON": 1,
+   "DORSO NASAL": 1,
+   "RIÑON": 1,
+   "COLUMNA": 1,
+   "TIMO": 1,
+   "INGUINAL": 1
+  },
+  "casos": [
+   {
+    "dx": "FAVORECE COMPROMISO POR SARCOMA HISTIOCÍTICO",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "SARCOMA DE ALTO GRADO CON COMPONENTE FUSOCELULAR Y CONDROIDE",
+    "organo": "TEJIDO BLANDO"
+   },
+   {
+    "dx": "PROLIFERACIÓN PAPILAR CON ATIPIA LEVE",
+    "organo": "CERVIX"
+   },
+   {
+    "dx": "Sarcoma estromal de alto grado",
+    "organo": "UTERO"
+   },
+   {
+    "dx": "PROLIFERACIÓN ACINAR ATÍPICA",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "Sarcoma primitivo con diferenciación miogénica",
+    "organo": "HIGADO"
+   },
+   {
+    "dx": "Sarcoma fusiforme y pleomórfico",
+    "organo": "HIGADO"
+   },
+   {
+    "dx": "LESIÓN TIROIDEA BIEN DIFERENCIADA",
+    "organo": "HOMBRO"
+   },
+   {
+    "dx": "TUMOR FIBOSO SOLITARIO",
+    "organo": "VULVA"
+   },
+   {
+    "dx": "NEOPLASIA LINFOIDE DE CÉLULAS B MADURAS CD20 +, CON RESTRICCION DE CADENAS LIVIANAS KAPPPA",
+    "organo": "MEDULA OSEA"
+   },
+   {
+    "dx": "QUERATOSIS ACTINICA (Piel de antebrazo izquierdo proximal, Piel región antebrazo izquierdo distal, Piel pierna derecha)",
+    "organo": "PIEL"
+   },
+   {
+    "dx": "NEOPLASIA MALIGNA MAL DIFERENCIADA",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "NEOPLASIA PAPILAR CON ATIPIA",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "Mucosa de unión rectosigmoide. Tumor",
+    "organo": "COLON"
+   },
+   {
+    "dx": "NEOPLASIA INVASIVA EN PATRON SOLIDO Y ACINAR CON CAMBIOS DE CELULAS CLARAS A CLASIFICAR",
+    "organo": "OVARIO"
+   },
+   {
+    "dx": "NEOPLASIA MIXOIDE A CLASIFICAR",
+    "organo": "DORSO DE CUELLO"
+   },
+   {
+    "dx": "Lóbulo frontal derecho. Tumor. Resección",
+    "organo": "SISTEMA NERVIOSO CENTRAL"
+   },
+   {
+    "dx": "Hipofaringe. Lesión. Biopsia: FRAGMENTO DE TEJIDO CON CAMBIOS DISPLÁSICOS DE ALTO GRADO (MINIMAMENTE REPRESENTADO)",
+    "organo": "TUMOR HIPOFARINGE"
+   },
+   {
+    "dx": "Colon descendente. Tumor. Hemicolectomía izquierda",
+    "organo": "COLON"
+   },
+   {
+    "dx": "TUMOR MALIGNO INDIFERENCIADO DE ALTO GRADO CON ELEMENTOS DE CÉLULA PLEOMÓRFICA",
+    "organo": "PULMON"
+   },
+   {
+    "dx": "PROLIFERACIÓN MELANOCITOMA CON ATIPIA ARQUITECTURAL SEVERA",
+    "organo": "DORSO NASAL"
+   },
+   {
+    "dx": "FAVORECEN UNA PROLIFERACIÓN MELANOCITICA INTRAEPITELIAL",
+    "organo": "PIEL"
+   },
+   {
+    "dx": "LOS HALLAZGOS MORFOLÓGICOS EVIDENCIAN UNA LESIÓN NEOPLÁSICA ACINAR ATIPICA. - VER COMENTARIO Y DESCRIPCIÓN MICROSCÓPICA",
+    "organo": "RIÑON"
+   },
+   {
+    "dx": "SARCOMA INDEFERENCIADO, PATRÓN DE CÉLULAS REDONDAS. TAMAÑO TUMORAL: 11 CENTÍMETROS",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "NEOPLASIA MALIGNA EN PATRÓN SÓLIDO",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "TUMOR DEL ESTROMA ESTÓMAGO",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "TUMOR MALIGNO INDIFERENCIADO DE ALTO GRADO A CLASIFICAR MEDIASTINO ESTUDIOS DE INMUNOHISTOQUIICA",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "- LOS HALLAZGOS SON COMPATIBLES CON UN NEOPLASIA DE ORIGEN EPITELIAL",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "SARCOMA FUSOCELULAR",
+    "organo": "COLUMNA"
+   },
+   {
+    "dx": "Timo. Tumor. Resección",
+    "organo": "TIMO"
+   },
+   {
+    "dx": "NEOPLASIA FUSOCELULAR DE ALTO GRADO",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "PROLIFERACIÓN ACINAR ATIPICA (ASAP)",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "TUMOR MALIGNO INDIFERENCIADO DE ALTO GRADO CON COMPONENTE DE CÉLULA PLEOMÓRFICA",
+    "organo": "TEJIDO BLANDO"
+   },
+   {
+    "dx": "SARCOMA DEL ESTROMA ENDOMETRIAL DE ALTO GRADO CON EXTENSIÓN AL CANAL ENDOCERVICAL",
+    "organo": "UTERO"
+   },
+   {
+    "dx": "presuntivo de \"LESIÓN NEOPLÁSICA MALIGNA CONSISTENTE CON SARCOMA A CLASIFICAR POR MARCACIÓN INMUNOFENOTÍPICA\"",
+    "organo": "TEJIDO BLANDO"
+   },
+   {
+    "dx": "HALLAZGOS INMUNOHISTOQUÍMICOS CONSISTENTES CON RADOMIOSARCOMA ALVEOLAR EN PATRÓN SÓLIDO",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "RECEPTOR DE ESTROGENOS: POSITIVOS (tinción fuerte en el 81-90% de las células tumorales)",
+    "organo": "MAMA"
+   },
+   {
+    "dx": "SARCOMA DE CÉLULA PEQUEÑA, REDONDA Y AZUL Y AZUL DE ALTO GRADO A CARACTERIZAR MEDIASTINO ESTUDIOS ADICIONALES",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "PROLIFERACIÓN ACINAR ATÍPICA (ASAP)",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "TUMOR DEL ESTROMA GASTRICO",
+    "organo": "ESTOMAGO"
+   },
+   {
+    "dx": "Malignas de origen epitelial (CKAE1/AE3) con perfil escamoso por la expresión nuclear fuerte para p40",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "SARCOMA MIOFIBROBLÁSTICO DE BAJO GRADO",
+    "organo": "INGUINAL"
+   },
+   {
+    "dx": "SCHAWANNOMA MALIGNO",
+    "organo": "HUESO"
+   },
+   {
+    "dx": "SARCOMA UTERINO INDIFERENCIADO, DE ALTO GRADO",
+    "organo": "UTERO"
+   },
+   {
+    "dx": "PROLIFERACIÓN ACINAR ATIPICA",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "TUMOR MALIGNO MAL DIFERENCIADO",
+    "organo": "GANGLIO LINFATICO"
+   },
+   {
+    "dx": "\"FOCOS\nMICROACINARES ATÍPICOS\"",
+    "organo": "PROSTATA"
+   },
+   {
+    "dx": "NEOPLASIA DE CELULAS REDONDAS Y AZULES",
+    "organo": "HUESO"
+   }
+  ]
+ }
+}

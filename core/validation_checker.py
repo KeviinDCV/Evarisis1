@@ -923,7 +923,7 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
     return resultado
 
 
-def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
+def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     Verifica la completitud de un registro específico
 
@@ -945,28 +945,32 @@ def verificar_completitud_registro(numero_peticion: str) -> Dict[str, Any]:
         }
     """
     try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
+        # V6.9.28 PERF: si 'registro' ya viene dado (p.ej. desde el visualizador,
+        # que ya cargo los datos), se evita abrir una conexion + SELECT * por cada
+        # caso. Antes esto generaba 1 consulta por registro (2073 al cargar la tabla).
+        if registro is None:
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
 
-        # Obtener registro completo
-        cursor.execute("""
-            SELECT * FROM informes_ihq
-            WHERE "Numero de caso" = ?
-        """, (numero_peticion,))
+            # Obtener registro completo
+            cursor.execute("""
+                SELECT * FROM informes_ihq
+                WHERE "Numero de caso" = ?
+            """, (numero_peticion,))
 
-        row = cursor.fetchone()
-        if not row:
+            row = cursor.fetchone()
+            if not row:
+                conn.close()
+                return {
+                    'numero_peticion': numero_peticion,
+                    'completo': False,
+                    'error': 'Registro no encontrado'
+                }
+
+            # Convertir row a diccionario
+            columns = [description[0] for description in cursor.description]
+            registro = dict(zip(columns, row))
             conn.close()
-            return {
-                'numero_peticion': numero_peticion,
-                'completo': False,
-                'error': 'Registro no encontrado'
-            }
-
-        # Convertir row a diccionario
-        columns = [description[0] for description in cursor.description]
-        registro = dict(zip(columns, row))
-        conn.close()
 
         # Analizar completitud
         campos_faltantes = []

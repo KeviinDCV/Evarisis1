@@ -73,6 +73,21 @@ PREAMBULOS_PATOLOGO: list[str] = [
 ]
 
 
+# V6.9.29 FIX: palabras que identifican la ENTIDAD clínica como tal. Si el
+# "header ÓRGANO:" capturado por el regex de stripping contiene una de
+# estas, NO se debe strippear — porque ese "header" ES el diagnóstico
+# (ej. "TUMOR NEUROENDOCRINO GRADO HISTOLOGICO:" o "TUMOR DEL ESTROMA DE
+# LOS CORDONES SEXUALES :"). Antes, el regex se comía el dx real y lo
+# mandaba a OTRO / NO CATEGORIZADO. Los órganos legítimos (VEJIGA, MAMA,
+# RIÑON, etc.) nunca contienen estas palabras, así que el caso de uso
+# original ("VEJIGA: LOS HALLAZGOS...") sigue funcionando.
+_KEYWORDS_ENTIDAD_DX: tuple[str, ...] = (
+    "TUMOR", "CARCINOMA", "ADENOCARCINOMA", "NEOPLASIA", "LINFOMA",
+    "LEUCEMIA", "SARCOMA", "MELANOMA", "MIELOMA", "BLASTOMA", "GLIOMA",
+    "MENINGIOMA", "CARCINOSARCOMA", "MESOTELIOMA", "SCHWANNOMA", "TIMOMA",
+)
+
+
 def stripear_preambulos(texto: str) -> str:
     """Elimina preámbulos del patólogo del INICIO del texto, solo para
     propósitos de categorización. NO modifica el dato original.
@@ -111,8 +126,12 @@ def stripear_preambulos(texto: str) -> str:
     # al menos 3 palabras de contenido residual.
     header_match = re.match(r'^([A-Z]{4,}(?:\s+[A-Z]+)*)\s*:\s*', t)
     if header_match:
+        cabecera = header_match.group(1)
+        # V6.9.29 FIX: si la "cabecera" ya contiene la entidad clínica
+        # (TUMOR, CARCINOMA, etc.), NO strippear — el dx real está ahí.
+        tiene_entidad = any(kw in cabecera for kw in _KEYWORDS_ENTIDAD_DX)
         residual = t[header_match.end():].strip()
-        if len(residual.split()) >= 3:
+        if not tiene_entidad and len(residual.split()) >= 3:
             t = residual
 
     # 3. Stripear preámbulo OTRA vez (caso "VEJIGA: LOS HALLAZGOS...")
@@ -358,6 +377,8 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "TUMOR ESTROMAL GASTROINTESTINAL",
         "TUMOR DEL ESTROMA GASTROINTESTINAL",
         "ESTROMA GASTROINTESTINAL",
+        # V6.9.30: variantes que nombran el órgano (estómago) sin "GASTROINTESTINAL"
+        "ESTROMA GASTRICO", "ESTROMA ESTOMAGO", "ESTROMA DEL ESTOMAGO",
     ],
 
     # === Tórax / Mediastino ===
@@ -429,6 +450,7 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "TUMOR DE CELULAS GRANULARES": ["TUMOR DE CELULAS GRANULARES"],
     "TUMOR FIBROSO SOLITARIO / HEMANGIOPERICITOMA": [
         "TUMOR FIBROSO SOLITARIO", "HEMANGIOPERICITOMA",
+        "TUMOR FIBOSO SOLITARIO", "TUMOR FIBOSO",  # typo frecuente del patólogo
     ],
     "FIBROMATOSIS / TUMOR DESMOIDE": [
         "FIBROMATOSIS DE TIPO DESMOIDE",
@@ -682,7 +704,7 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "CELULARIDAD INCREMENTADA", "CELULARIDAD AUMENTADA", "CELULARIDAD NORMAL PARA LA EDAD",
         "CELULARIDAD VARIABLE", "MEDULA OSEA HIPOCELULAR", "RELACION CD15",
     ],
-    "NEOPLASIA BENIGNA / TUMOR NO MALIGNO (OTRO)": [
+    "NEOPLASIA BENIGNA / TUMOR NO MALIGNO": [
         "DERMATOFIBROMA", "DERMATOMIOFIBROMA", "LEIOMIOMA", "NEVUS",
         "HEMANGIOMA", "LINFANGIOMA", "HEMANGIOBLASTOMA", "HEMANGIOENDOTELIOMA",
         "HEMANGIONENDOTELIOMA", "HIBERNOMA", "LIPOMA", "CONDROBLASTOMA", "MIXOMA",
@@ -725,14 +747,28 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "DEFECTOS DE LA FASE PREANALITICA", "SUBOPTIMA", "MUESTRA INDEFINIDA",
         "INDEFINIDA PARA DISPLASIA", "MUESTRA EXAMINADA ES NEGATIVA",
     ],
-    "NEOPLASIA MALIGNA A CLASIFICAR (OTRO)": [
-        "SARCOMA", "TUMOR DEL ESTROMA", "RADOMIOSARCOMA",
+    # V6.9.30: SARCOMA genérico (sin subtipo nombrado). Va DESPUÉS de los
+    # sarcomas específicos (lipo/leiomio/osteo/rabdomio/sinovial) y de
+    # CARCINOSARCOMA, así que "SARCOMA" a secas solo captura lo no
+    # especificado. Antes caían en el cajón "...A CLASIFICAR (OTRO)".
+    "SARCOMA (SUBTIPO NO ESPECIFICADO)": [
+        "SARCOMA", "RADOMIOSARCOMA", "NEOPLASIA FUSOCELULAR DE ALTO GRADO",
+    ],
+    # V6.9.30: Lesión acinar atípica de próstata (ASAP) — sospechosa de
+    # carcinoma, sin diagnóstico definitivo. Entidad prostática reconocible.
+    "LESION ACINAR ATIPICA DE PROSTATA (ASAP)": [
+        "PROLIFERACION ACINAR ATIPICA", "ACINAR ATIPICA", "ASAP",
+        "MICROACINARES ATIPICOS", "LESION NEOPLASICA ACINAR",
+    ],
+    # V6.9.30: renombrada (antes "...A CLASIFICAR (OTRO)") para no mostrar
+    # "OTRO" al gerente. Quedan los malignos genuinamente sin tipo nombrado.
+    "NEOPLASIA MALIGNA SIN TIPO ESPECIFICO": [
+        "TUMOR DEL ESTROMA",
         "TUMOR MALIGNO", "NEOPLASIA MALIGNA", "LESION NEOPLASICA MALIGNA",
         "NEOPLASIA DE CELULAS REDONDAS", "CELULA PEQUENA REDONDA Y AZUL",
         "CELULAS REDONDAS Y AZULES", "TUMOR INDIFERENCIADO", "FUSOCELULAR",
-        "PROLIFERACION CELULAR ATIPICA", "ACINAR ATIPICA", "ASAP",
-        "MICROACINARES ATIPICOS", "NEOPLASIA DE ORIGEN EPITELIAL",
-        "NEOPLASIA EN PATRON SOLIDO", "TUMOR DE ALTO GRADO", "LESION NEOPLASICA ACINAR",
+        "PROLIFERACION CELULAR ATIPICA", "NEOPLASIA DE ORIGEN EPITELIAL",
+        "NEOPLASIA EN PATRON SOLIDO", "TUMOR DE ALTO GRADO",
         "TUMOR DE CELULAS DE LA GRANULOSA",
     ],
     "LESION INTRAEPITELIAL / DISPLASIA (NIC)": [
@@ -752,6 +788,48 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "ENDOSCOPIA", "COLONOSCOPIA", "SACABOCADO", "E-CADHERINA", "FOCUS SCORE",
         "LESION EN MAMA", "LEISON EN MAMA", "EXPRESION POSITIVA",
     ],
+
+    # ===================================================================
+    # V6.9.29: Entidades clínicas REALES recuperadas tras corregir el
+    # over-stripping (Fix A). Añadidas AL FINAL (primer-match-gana) => SOLO
+    # capturan casos que hoy caen en OTRO/NO CATEGORIZADO; CERO regresión
+    # sobre las categorías ya existentes. Todas son neoplasias (van al
+    # bucket "Diagnósticos oncológicos" de cobertura).
+    # IMPORTANTE: patrones diseñados para NO capturar negativos (ej. la
+    # categoría de Langerhans EXIGE "HISTIOCITOSIS" para no robar el
+    # "NEGATIVO PARA INFILTRACION DE CELULAS DE LANGERHANS").
+    # ===================================================================
+    "TUMOR DE WILMS / NEFROBLASTOMA": [
+        "TUMOR DE WILMS", "NEFROBLASTOMA", "WILMS",
+    ],
+    "TUMOR PINEAL": [
+        "PINEOBLASTOMA", "PINEOCITOMA", "TUMOR DE LA GLANDULA PINEAL",
+        "TUMOR PINEAL", "GLANDULA PINEAL", "REGION PINEAL", "PARENQUIMA PINEAL",
+    ],
+    "NEUROBLASTOMA / TUMOR NEUROBLASTICO": [
+        "NEUROBLASTOMA", "ESTESIONEUROBLASTOMA", "ESTHESIONEUROBLASTOMA",
+        "GANGLIONEUROBLASTOMA",
+    ],
+    "HISTIOCITOSIS DE CELULAS DE LANGERHANS": [
+        "HISTIOCITOSIS DE CELULAS DE LANGERHANS", "HISTIOCITOSIS DE LANGERHANS",
+        "HISTIOCITOSIS X",
+    ],
+    "ENFERMEDAD DE PAGET (MAMA/PIEL)": [
+        "ENFERMEDAD DE PAGET", "PAGET DEL PEZON", "PAGET MAMARIO",
+    ],
+    "TUMOR DE CELULAS DE LEYDIG / SERTOLI": [
+        "CELULAS DE LEYDIG", "TUMOR DE LEYDIG", "HILIO OVARICO",
+        "CELULAS DE SERTOLI", "SERTOLI-LEYDIG", "FIBROTECOMA", "TECOMA OVARICO",
+    ],
+    "TUMOR DE MUSCULO LISO (POTENCIAL INCIERTO)": [
+        "MUSCULO LISO DE POTENCIAL", "POTENCIAL MALIGNO INCIERTO",
+        "POTENCIAL DE MALIGNIDAD INCIERTO", "STUMP",
+    ],
+    "NEOPLASIA SUPRARRENAL / CORTICOSUPRARRENAL": [
+        "CORTEZA SUPRARRENAL", "CORTICOSUPRARRENAL", "ORIGEN SUPRARRENAL",
+        "FEOCROMOCITOMA", "ADENOMA SUPRARRENAL", "CARCINOMA SUPRARRENAL",
+        "NEOPLASIA SUPRARRENAL",
+    ],
 }
 
 
@@ -759,6 +837,65 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
 # que se evalúan en el orden definido arriba (de más específico a más
 # genérico).
 ORDEN_EVALUACION: list[str] = list(CATEGORIAS_DIAGNOSTICO.keys())
+
+
+# ===================================================================
+# V6.9.29 — FALLBACK FINAL: garantiza CERO "OTRO / NO CATEGORIZADO".
+# Cuando ningún patrón explícito matchea, todo texto NO vacío se enruta a
+# un bucket clínico con sentido según palabras clave amplias. Esto SOLO se
+# ejecuta para casos que hoy caían en "OTRO / NO CATEGORIZADO" (los que
+# matchean un patrón retornan antes) => cero regresión por construcción.
+#
+# Orden de prioridad (importa):
+#   1) MUESTRA inadecuada / no concluyente  -> "Estudios sin dx específico"
+#   2) BENIGNO / negativo / inflamatorio     -> "Hallazgos no-neoplásicos"
+#   3) ENTIDAD neoplásica (tumor, atipia...)  -> "Diagnósticos oncológicos"
+#   4) Fragmento sin entidad reconocible      -> "Texto a revisar (extracción)"
+# El benigno se evalúa ANTES que neoplasia para que un "NEGATIVO PARA
+# NEOPLASIA" o "LESION PAPILAR SIN ATIPIA" no se marque como tumor.
+# ===================================================================
+_FB_MUESTRA: tuple[str, ...] = (
+    "INADECUADA PARA EVALUACION", "NO ADECUADA PARA EVALUACION",
+    "MENOS DE 10 ESPACIOS PORTA", "ESPACIOS PORTA EVALUABLES",
+    "NO CONCLUYENTE", "NO ES CONCLUYENTE", "MUESTRA NO CONCLUYENTE",
+    "INDEFINID", "NO REPRESENTAT", "MATERIAL INSUFICIENTE", "MUESTRA LIMITADA",
+)
+_FB_BENIGNO: tuple[str, ...] = (
+    "NEGATIV",  # negativo / negativa / negativos para...
+    "SIN EVIDENCIA", "SIN COMPROMISO", "SIN ATIPIA", "SIN INCREMENTO",
+    "SIN PERDIDA", "SIN ALTERACIONES", "SIN INMUNOFENOTIPO",
+    "AUSENCIA", "REACTIV", "BENIGN", "HIPERPLASIA",
+    "INFLAMATORI", "INFLAMACION", "ITIS",  # hepatitis, miositis, sialoadenitis, colitis...
+    "MIOPATIA", "NEUMONIA", "FIBROSIS", "FIBROREPARATIV", "REPARATIV",
+    "NORMOCELULAR", "MEGACARIOCITO", "APLASIA", "ULCERACION",
+    "MALACOPLAQUIA", "NODULAR TIROIDEA", "ECTOPIC", "DEGRANULACION",
+    "FIBRINOPURULENTA", "PURULENTA", "COLESTASIS", "INJURIA TUBULAR",
+    "CASTLEMAN", "ROSSAI", "ROSAI", "DERMATOPATICA", "IGG4",
+    "GRANULACION", "ENFERMEDAD INFLAMATORIA INTESTINAL", "COLITIS",
+    "XANTOMA",
+)
+_FB_NEOPLASIA: tuple[str, ...] = (
+    "TUMOR", "NEOPLASIA", "CARCINOMA", "ADENOCARCINOMA", "SARCOMA",
+    "LINFOMA", "LEUCEMIA", "MELANOMA", "MIELOMA", "BLASTOMA", "GLIOMA",
+    "PAGET", "WILMS", "LANGERHANS", "LEYDIG", "MELANOCITOMA", "MELANOCITICA",
+    "SCHWANNOMA", "SCHAWANNOMA",  # incl. typo del patólogo (MPNST)
+    "ORIGEN EPITELIAL", "PERFIL ESCAMOSO", "MALIGNAS DE ORIGEN",
+    "QUERATOSIS", "DISPLASICOS DE ALTO GRADO", "DISPLASIA DE ALTO GRADO",
+    "ATIPIA SEVERA", "ATIPIA ARQUITECTURAL", "ATIPIA LEVE",
+    "LESION PAPILAR", "PROLIFERACION PAPILAR", "NEOPLASIA PAPILAR",
+    "LESION TIROIDEA", "INVASIV", "INFILTRANTE", "POTENCIAL MALIGNO",
+)
+
+
+def _fallback_categoria(t: str) -> str:
+    """Enruta texto no reconocido a un bucket clínico (nunca 'OTRO')."""
+    if any(k in t for k in _FB_MUESTRA):
+        return "MUESTRA INSUFICIENTE / LIMITADA (OTRO)"
+    if any(k in t for k in _FB_BENIGNO):
+        return "HALLAZGO NO NEOPLASICO / NEGATIVO (OTRO)"
+    if any(k in t for k in _FB_NEOPLASIA):
+        return "NEOPLASIA MALIGNA SIN TIPO ESPECIFICO"
+    return "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)"
 
 
 def categorizar_diagnostico(valor: str) -> str:
@@ -786,7 +923,9 @@ def categorizar_diagnostico(valor: str) -> str:
             if patron in t:
                 return categoria
 
-    return "OTRO / NO CATEGORIZADO"
+    # V6.9.29: ya no devolvemos "OTRO / NO CATEGORIZADO" — el fallback
+    # enruta TODO texto no vacío a un bucket clínico con sentido.
+    return _fallback_categoria(t)
 
 
 # Mapeo de inferencia órgano → categoría refinada cuando el dx es genérico

@@ -1,0 +1,108 @@
+{
+  "_estado": "completo",
+  "_modelo": "mistralai/mistral-nemo-instruct-2407",
+  "IHQ251409": {
+    "ocr_chars": 6363,
+    "nemo": {
+      "seg": 54.8,
+      "usage": {
+        "prompt_tokens": 2472,
+        "completion_tokens": 378,
+        "total_tokens": 2850,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "parsed": {
+        "numero_caso": "IHQ251409",
+        "organo": "amígdala derecha",
+        "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+        "malignidad": "PRESENTE",
+        "diagnostico_principal": "Linfoma de células B maduras",
+        "diagnostico_coloracion": "HALLAZGOS QUE FAVORECEN LINFOMA DIFUSO DE CÉLULAS B GRANDES CON INMUNOPERFIL CENTROGERMINAL.",
+        "biomarcadores_solicitados": [
+          "CD3",
+          "CD5",
+          "CD20",
+          "PAX-5",
+          "CD38",
+          "CD10",
+          "BCL-2",
+          "BCL-6",
+          "CD30",
+          "CD43",
+          "CD45",
+          "CKAE1/AE3",
+          "Ki67"
+        ],
+        "biomarcadores": {
+          "CD3": "POSITIVO",
+          "CD5": "POSITIVO",
+          "CD20": "POSITIVO",
+          "PAX-5": "POSITIVO",
+          "CD38": "NEGATIVO",
+          "CD10": "POSITIVO",
+          "BCL-2": "NEGATIVO",
+          "BCL-6": "POSITIVO",
+          "CD30": "NEGATIVO",
+          "CD43": "POSITIVO",
+          "CD45": "POSITIVO",
+          "CKAE1/AE3": "NEGATIVO",
+          "Ki67": "90%"
+        }
+      },
+      "raw_si_fallo": null
+    }
+  },
+  "IHQ251424": {
+    "ocr_chars": 4288,
+    "nemo": {
+      "seg": 38.0,
+      "usage": {
+        "prompt_tokens": 1690,
+        "completion_tokens": 339,
+        "total_tokens": 2029,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "parsed": {
+        "numero_caso": "IHQ251424",
+        "organo": "CARA LATERAL IZQUIERDA DE CUELLO",
+        "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+        "malignidad": "AUSENTE",
+        "diagnostico_principal": "HIPERPLASIA",
+        "diagnostico_coloracion": "",
+        "biomarcadores_solicitados": [
+          "CD3",
+          "CD5",
+          "CD10",
+          "CD20",
+          "CD23",
+          "CD30",
+          "CD38",
+          "BCL2",
+          "BCL6",
+          "PAX-5",
+          "Sinaptofisina",
+          "Ki-67"
+        ],
+        "biomarcadores": {
+          "CD3": "POSITIVO",
+          "CD5": "POSITIVO",
+          "CD10": "POSITIVO",
+          "CD20": "POSITIVO",
+          "CD23": "POSITIVO",
+          "CD30": "NEGATIVO",
+          "CD38": "POSITIVO",
+          "BCL2": "NEGATIVO",
+          "BCL6": "POSITIVO",
+          "PAX-5": "POSITIVO",
+          "Sinaptofisina": "",
+          "Ki-67": "ALTO EN CENTROS GERMINALES (60-70%) Y BAJO EN PARACORTEZA"
+        }
+      },
+      "raw_si_fallo": null
+    }
+  }
+}

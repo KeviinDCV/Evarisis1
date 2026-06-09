@@ -46,6 +46,10 @@ GRUPO_NO_NEOPLASICO = {
 GRUPO_SIN_DX = {
     "RESULTADO IHQ (SIN DIAGNOSTICO ESPECIFICO)", "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)",
     "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA", "MUESTRA INSUFICIENTE / LIMITADA (OTRO)",
+    # V6.9.30: el campo Dx traía marcadores IHQ / "ver comentario" / descripción
+    # de espécimen en vez de un diagnóstico (problema de extracción). Se agrupan
+    # aquí como "estudios sin diagnóstico específico" en vez de una fila aparte.
+    "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)",
 }
 _VACIO = ("", "N/A", "NO MENCIONADO", "NO APLICA", "NAN", "NONE", "NULL", "SIN DATO", "NO ENCONTRADO")
 _MESES = {"01": "Ene", "02": "Feb", "03": "Mar", "04": "Abr", "05": "May", "06": "Jun",
@@ -54,11 +58,15 @@ _MESES = {"01": "Ene", "02": "Feb", "03": "Mar", "04": "Abr", "05": "May", "06":
 
 def _sexo(v):
     s = str(v or "").strip().upper()
+    if not s or s in ("N/A", "NAN", "NO ENCONTRADO", "NONE", "-"):
+        return "Sin dato"  # genuinamente vacio (sin dato real)
     if "MASC" in s or "HOMBRE" in s or s == "M":
         return "Hombres"
     if "FEM" in s or "MUJER" in s or s == "F":
         return "Mujeres"
-    return "Sin dato"
+    # V6.9.28 FIX: valores presentes pero NO binarios (INDETERMINADO, AMBOS,
+    # TRANSGENERO, etc.) -> "Otro". El dato SI existe; no es "Sin dato".
+    return "Otro"
 
 
 def _es_maligno(v):
@@ -83,7 +91,7 @@ def _fig():
     return Figure
 
 
-def _donut(data, titulo, path, top=6, center=None):
+def _donut(data, titulo, path, top=6, center=None, numerar=False):
     import matplotlib
     matplotlib.use("Agg")
     Figure = _fig()
@@ -103,8 +111,19 @@ def _donut(data, titulo, path, top=6, center=None):
         ax.axis("off")
     else:
         colores = [PALETA[i % len(PALETA)] for i in range(len(labels))]
-        ax.pie(vals, colors=colores, startangle=90, counterclock=False,
-               wedgeprops={"width": 0.42, "edgecolor": "white", "linewidth": 1.2})
+        wedges, _t = ax.pie(vals, colors=colores, startangle=90, counterclock=False,
+                            wedgeprops={"width": 0.42, "edgecolor": "white", "linewidth": 1.2})
+        if numerar:
+            # V6.9.28 - numero de ranking (#) sobre cada porcion, para mapearla
+            # con su fila en la tabla de abajo (mismo orden que 'labels').
+            import math
+            import matplotlib.patheffects as _pe
+            r_lbl = 1.0 - 0.42 / 2.0  # centro del anillo del donut
+            for i, w in enumerate(wedges):
+                ang = math.radians((w.theta1 + w.theta2) / 2.0)
+                ax.text(r_lbl * math.cos(ang), r_lbl * math.sin(ang), str(i + 1),
+                        ha="center", va="center", fontsize=8, fontweight="bold", color="white",
+                        path_effects=[_pe.withStroke(linewidth=1.8, foreground="#222222")])
         if center:
             ax.text(0, 0, center, ha="center", va="center", fontsize=13, fontweight="bold", color=NAVY)
         ax.set_title(titulo, fontsize=10, fontweight="bold", color=NAVY, pad=8)
@@ -118,18 +137,24 @@ def _barh(data, titulo, path, top=10):
     matplotlib.use("Agg")
     Figure = _fig()
     items = list(data.items())[:top][::-1]
-    fig = Figure(figsize=(7.2, 4.0), dpi=150)
+    fig = Figure(figsize=(7.2, 4.3), dpi=150)
     fig.patch.set_facecolor("#ffffff")
     ax = fig.add_subplot(111)
     if not items:
         ax.text(0.5, 0.5, "Sin datos", ha="center", va="center"); ax.axis("off")
     else:
-        et = [str(k)[:42] for k, _ in items]
+        # V6.9.29: las etiquetas pueden venir en 2 líneas "DIAGNOSTICO\nÓrgano".
+        # Truncamos solo la 1ª línea (diagnóstico) para no cortar el órgano.
+        def _fmt(k):
+            ps = str(k).split("\n")
+            ps[0] = ps[0][:40]
+            return "\n".join(ps)
+        et = [_fmt(k) for k, _ in items]
         va = [v for _, v in items]
         colores = [PALETA[i % len(PALETA)] for i in range(len(items))]
         ax.barh(et, va, color=colores)
         ax.set_title(titulo, fontsize=11, fontweight="bold", color=NAVY, pad=8)
-        ax.tick_params(axis="y", labelsize=8)
+        ax.tick_params(axis="y", labelsize=7)
         ax.tick_params(axis="x", labelsize=8)
         for sp in ("top", "right"):
             ax.spines[sp].set_visible(False)
@@ -177,7 +202,7 @@ def generar_informe_estadistico_pdf(df, out_path,
     from reportlab.lib.units import cm
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.platypus import (
-        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak,
+        SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak, KeepTogether,
     )
     from core.normalizador_diagnosticos import categorizar_diagnostico_con_organo
     from core.normalizador_organos import normalizar_organo, elegir_columna_organo
@@ -222,10 +247,38 @@ def generar_informe_estadistico_pdf(df, out_path,
         vc = serie_cat.value_counts()
         return vc[~vc.index.isin(NO_ONCOLOGICAS)]
 
+    # V6.9.28: en "Diagnosticos por sexo" clasificamos por DIAGNOSTICO + ORGANO.
+    SEP_DX_ORG = " ||| "
+    def onco_counts_org(mask):
+        if cat is None or mask is None:
+            return None
+        c = cat[mask].astype(str)
+        onco = ~c.isin(NO_ONCOLOGICAS)
+        c = c[onco]
+        if org_norm is not None:
+            o = org_norm[mask].astype(str)[onco]
+            return c.str.cat(o, sep=SEP_DX_ORG).value_counts()
+        return c.value_counts()
+
     onco_total = onco_counts(cat) if cat is not None else None
     n_onco = int(onco_total.sum()) if onco_total is not None else 0
+    # V6.9.29: órgano DOMINANTE (más frecuente) por categoría diagnóstica, para
+    # especificar el órgano de cada diagnóstico en la tabla maestra y el Top-10.
+    org_dom = {}
+    if cat is not None and org_norm is not None:
+        import pandas as _pd
+        _dfx = _pd.DataFrame({"c": list(cat.values), "o": list(org_norm.values)})
+        _dfx = _dfx[(~_dfx["c"].isin(NO_ONCOLOGICAS)) & (~_dfx["o"].isin(_VACIO))]
+        for _c, _grp in _dfx.groupby("c"):
+            _vc = _grp["o"].value_counts()
+            if len(_vc):
+                org_dom[_c] = str(_vc.index[0]).title()
+    # por categoria de diagnostico (para la tabla maestra: columnas Hombres/Mujeres)
     onco_h = onco_counts(cat[sexo == "Hombres"]) if (cat is not None and sexo is not None) else None
     onco_m = onco_counts(cat[sexo == "Mujeres"]) if (cat is not None and sexo is not None) else None
+    # por diagnostico + organo (para las donas/tablas "por sexo")
+    onco_h_org = onco_counts_org(sexo == "Hombres") if (cat is not None and sexo is not None) else None
+    onco_m_org = onco_counts_org(sexo == "Mujeres") if (cat is not None and sexo is not None) else None
 
     # Reconciliación de cobertura: TODOS los casos se reparten en estos grupos (suma = total)
     allcat = cat.value_counts() if cat is not None else None
@@ -234,10 +287,9 @@ def generar_informe_estadistico_pdf(df, out_path,
         return int(sum(int(allcat.get(k, 0)) for k in s)) if allcat is not None else 0
 
     n_noneo = _gsum(GRUPO_NO_NEOPLASICO)
-    n_sindx = _gsum(GRUPO_SIN_DX)
-    n_revisar = int(allcat.get("SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)", 0)) if allcat is not None else 0
+    n_sindx = _gsum(GRUPO_SIN_DX)  # V6.9.30: ahora incluye los ex-"revisar extracción"
     n_otrocat = int(allcat.get("OTRO / NO CATEGORIZADO", 0)) if allcat is not None else 0
-    n_sindato = total - n_onco - n_noneo - n_sindx - n_revisar - n_otrocat
+    n_sindato = total - n_onco - n_noneo - n_sindx - n_otrocat
 
     org_top = org_norm[org_norm != "SIN DATO"].value_counts().head(12) if org_norm is not None else None
     n_organos = int(org_norm[org_norm != "SIN DATO"].nunique()) if org_norm is not None else 0
@@ -256,14 +308,16 @@ def generar_informe_estadistico_pdf(df, out_path,
     p_dh, p_dm = os.path.join(tmp, "dh.png"), os.path.join(tmp, "dm.png")
     p_mal, p_bar, p_trend = os.path.join(tmp, "mal.png"), os.path.join(tmp, "bar.png"), os.path.join(tmp, "trend.png")
     lab_h = vals_h = lab_m = vals_m = None
-    if onco_h is not None and onco_h.sum() > 0:
-        lab_h, vals_h = _donut(onco_h.to_dict(), "Hombres", p_dh)
-    if onco_m is not None and onco_m.sum() > 0:
-        lab_m, vals_m = _donut(onco_m.to_dict(), "Mujeres", p_dm)
+    if onco_h_org is not None and onco_h_org.sum() > 0:
+        lab_h, vals_h = _donut(onco_h_org.to_dict(), "Hombres", p_dh, numerar=True)
+    if onco_m_org is not None and onco_m_org.sum() > 0:
+        lab_m, vals_m = _donut(onco_m_org.to_dict(), "Mujeres", p_dm, numerar=True)
     _donut({"Maligno": malignos, "Benigno": benignos, "Otros/N.D.": max(otros_mal, 0)},
            "Malignidad", p_mal, top=3, center=_pct(malignos, total))
     if onco_total is not None:
-        _barh(onco_total.to_dict(), "Top 10 diagnósticos oncológicos", p_bar, top=10)
+        # V6.9.29: etiqueta en 2 líneas -> "DIAGNÓSTICO\nÓrgano principal"
+        bar_data = {f"{k}\n{org_dom.get(k, '—')}": v for k, v in onco_total.items()}
+        _barh(bar_data, "Top 10 diagnósticos oncológicos (con órgano principal)", p_bar, top=10)
     _trend(monthly, p_trend)
 
     # ---------- estilos ----------
@@ -362,8 +416,9 @@ def generar_informe_estadistico_pdf(df, out_path,
     if sexo is not None:
         sex_rows.append(fila_sexo("Hombres", sexo == "Hombres"))
         sex_rows.append(fila_sexo("Mujeres", sexo == "Mujeres"))
-        if (sexo == "Sin dato").sum() > 0:
-            sex_rows.append(fila_sexo("Sin dato", sexo == "Sin dato"))
+        for _et in ("Otro", "Sin dato"):
+            if (sexo == _et).sum() > 0:
+                sex_rows.append(fila_sexo(_et, sexo == _et))
     sex_rows.append(fila_sexo("Total", None))
     sex_tbl = Table(sex_rows, colWidths=[2.2 * cm, 1.7 * cm, 2.2 * cm, 2.2 * cm, 9.5 * cm])
     sex_tbl.setStyle(TableStyle([
@@ -377,20 +432,33 @@ def generar_informe_estadistico_pdf(df, out_path,
         ("LEFTPADDING", (0, 0), (-1, -1), 6),
     ]))
     story.append(sex_tbl)
+    # V6.9.28: aclara que "Otro" = genero NO binario PRESENTE (no faltante).
+    if sexo is not None and (sexo == "Otro").sum() > 0:
+        _det = df.loc[sexo == "Otro", "Genero"].astype(str).str.strip().str.upper().value_counts()
+        _desg = ", ".join(f"{str(k).capitalize()} ({int(v)})" for k, v in _det.items())
+        story.append(Spacer(1, 3))
+        story.append(Paragraph(
+            f'<font size=7 color="#5a6472"><b>Otro</b> = género no binario registrado en el informe '
+            f'(el dato SÍ existe, no es faltante): {_desg}.</font>', cell))
     story.append(Spacer(1, 10))
 
-    # ---------- Donas por sexo ----------
-    story.append(band("Diagnósticos oncológicos más frecuentes por sexo"))
-    story.append(Spacer(1, 5))
+    # ---------- Donas por sexo (banda + contenido juntos, sin huerfanas) ----------
 
     def ranked(labels, vals):
         if not labels:
             return Paragraph('<font size=8 color="#5a6472">Sin datos</font>', cell)
         tot = sum(vals) or 1
-        rows = [["#", "Categoría", "N", "%"]]
+        rows = [["#", "Diagnóstico", "Órgano", "N", "%"]]
         for i, (lb, v) in enumerate(zip(labels, vals), 1):
-            rows.append([str(i), Paragraph(f'<font size=7>{lb}</font>', cell), str(v), _pct(v, tot)])
-        t = Table(rows, colWidths=[0.7 * cm, 5.0 * cm, 1.1 * cm, 1.2 * cm])
+            if SEP_DX_ORG in str(lb):
+                diag, org = str(lb).split(SEP_DX_ORG, 1)
+            else:
+                diag, org = str(lb), "—"  # p.ej. "OTROS"
+            rows.append([str(i),
+                         Paragraph(f'<font size=6.8>{diag}</font>', cell),
+                         Paragraph(f'<font size=6.8>{org}</font>', cell),
+                         str(v), _pct(v, tot)])
+        t = Table(rows, colWidths=[0.55 * cm, 3.5 * cm, 2.25 * cm, 0.85 * cm, 0.95 * cm])
         t.setStyle(TableStyle([
             ("BACKGROUND", (0, 0), (-1, 0), hfill), ("TEXTCOLOR", (0, 0), (-1, 0), navy),
             ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"), ("FONTSIZE", (0, 0), (-1, -1), 7.5),
@@ -400,38 +468,39 @@ def generar_informe_estadistico_pdf(df, out_path,
         ]))
         return t
 
-    ch = [Image(p_dh, 6.4 * cm, 6.4 * cm), Spacer(1, 4), ranked(lab_h, vals_h)] if lab_h else \
+    ch = [Image(p_dh, 4.9 * cm, 4.9 * cm), Spacer(1, 4), ranked(lab_h, vals_h)] if lab_h else \
         [Paragraph('<font size=8 color="#5a6472">Hombres: sin datos oncológicos</font>', cell)]
-    cm_ = [Image(p_dm, 6.4 * cm, 6.4 * cm), Spacer(1, 4), ranked(lab_m, vals_m)] if lab_m else \
+    cm_ = [Image(p_dm, 4.9 * cm, 4.9 * cm), Spacer(1, 4), ranked(lab_m, vals_m)] if lab_m else \
         [Paragraph('<font size=8 color="#5a6472">Mujeres: sin datos oncológicos</font>', cell)]
     drow = Table([[ch, cm_]], colWidths=[CW / 2.0, CW / 2.0])
     drow.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"),
                               ("LEFTPADDING", (0, 0), (-1, -1), 2), ("RIGHTPADDING", (0, 0), (-1, -1), 6)]))
-    story.append(drow)
-    story.append(PageBreak())
+    story.append(KeepTogether([
+        band("Diagnósticos oncológicos más frecuentes por sexo"), Spacer(1, 5), drow]))
+    story.append(Spacer(1, 12))
 
     # ---------- Panorama general (malignidad + barras + tendencia) ----------
-    story.append(band("Panorama general"))
-    story.append(Spacer(1, 6))
-    pano = Table([[Image(p_mal, 6.0 * cm, 6.0 * cm), Image(p_bar, 11.2 * cm, 6.2 * cm)]],
-                 colWidths=[6.4 * cm, CW - 6.4 * cm])
+    pano = Table([[Image(p_mal, 5.0 * cm, 5.0 * cm), Image(p_bar, 10.2 * cm, 5.4 * cm)]],
+                 colWidths=[5.4 * cm, CW - 5.4 * cm])
     pano.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
-    story.append(pano)
-    story.append(Spacer(1, 8))
-    story.append(Image(p_trend, width=CW, height=CW * 0.40))
-    story.append(PageBreak())
+    story.append(KeepTogether([
+        band("Panorama general"), Spacer(1, 6), pano, Spacer(1, 8),
+        Image(p_trend, width=CW, height=CW * 0.34)]))
+    story.append(Spacer(1, 12))
 
-    # ---------- Cobertura: reconciliación al total ----------
-    story.append(band(f"Cobertura: cómo se distribuyen los {total} casos"))
-    story.append(Spacer(1, 5))
+    # ---------- Cobertura: reconciliación al total (banda + tabla juntas) ----------
     rec_data = [
         ("Diagnósticos oncológicos (neoplasias benignas o malignas)", n_onco),
         ("Hallazgos no-neoplásicos (negativos, inflamatorios, médula ósea, etc.)", n_noneo),
         ("Estudios sin diagnóstico específico / muestra no diagnóstica", n_sindx),
-        ("Texto no diagnóstico en el campo (revisar extracción)", n_revisar),
-        ("Sin categorizar", n_otrocat),
-        ("Sin dato", n_sindato),
     ]
+    # V6.9.29: 'Sin categorizar' y 'Sin dato' SOLO se muestran si > 0. Con el
+    # fallback del normalizador, 'Sin categorizar' siempre es 0, así que la
+    # fila desaparece (todo queda en un bucket clínico con sentido).
+    if n_otrocat > 0:
+        rec_data.append(("Sin categorizar", n_otrocat))
+    if n_sindato > 0:
+        rec_data.append(("Sin dato", n_sindato))
     rec_rows = [["Grupo", "Casos", "%"]]
     for nombre, n in rec_data:
         rec_rows.append([Paragraph(f'<font size=8>{nombre}</font>', cell), str(n), _pct(n, total)])
@@ -448,7 +517,8 @@ def generar_informe_estadistico_pdf(df, out_path,
         ("TOPPADDING", (0, 0), (-1, -1), 3.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
         ("LEFTPADDING", (0, 0), (-1, -1), 6),
     ]))
-    story.append(rec_tbl)
+    story.append(KeepTogether([
+        band(f"Cobertura: cómo se distribuyen los {total} casos"), Spacer(1, 5), rec_tbl]))
     story.append(Spacer(1, 12))
 
     # ---------- Tabla maestra (solo oncológicos) ----------
@@ -457,28 +527,28 @@ def generar_informe_estadistico_pdf(df, out_path,
     if onco_total is not None and not onco_total.empty:
         hc = onco_h.to_dict() if onco_h is not None else {}
         mc = onco_m.to_dict() if onco_m is not None else {}
-        rows = [["#", "Categoría neoplásica", "Casos", "%", "Hombres", "Mujeres"]]
+        rows = [["#", "Categoría neoplásica", "Órgano principal", "Casos", "%", "Hombres", "Mujeres"]]
         for i, (k, v) in enumerate(onco_total.items(), 1):
-            rows.append([str(i), Paragraph(f'<font size=7.5>{k}</font>', cell), str(int(v)),
-                         _pct(int(v), n_onco), str(int(hc.get(k, 0))), str(int(mc.get(k, 0)))])
-        rows.append(["", Paragraph('<b>TOTAL ONCOLÓGICOS</b>', cell), str(n_onco), "100%",
+            rows.append([str(i), Paragraph(f'<font size=7>{k}</font>', cell),
+                         Paragraph(f'<font size=7>{org_dom.get(k, "—")}</font>', cell),
+                         str(int(v)), _pct(int(v), n_onco),
+                         str(int(hc.get(k, 0))), str(int(mc.get(k, 0)))])
+        rows.append(["", Paragraph('<b>TOTAL ONCOLÓGICOS</b>', cell), "", str(n_onco), "100%",
                      str(int(sum(hc.values()))), str(int(sum(mc.values())))])
-        master = Table(rows, colWidths=[0.8 * cm, 8.6 * cm, 1.8 * cm, 1.6 * cm, 2.0 * cm, 2.0 * cm], repeatRows=1)
+        master = Table(rows, colWidths=[0.7 * cm, 6.6 * cm, 3.6 * cm, 1.5 * cm, 1.3 * cm, 1.55 * cm, 1.55 * cm], repeatRows=1)
         master.setStyle(TableStyle([
             ("BACKGROUND", (0, 0), (-1, 0), navy), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"), ("FONTSIZE", (0, 0), (-1, -1), 7.5),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"), ("FONTSIZE", (0, 0), (-1, -1), 7),
             ("GRID", (0, 0), (-1, -1), 0.3, line), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-            ("ALIGN", (2, 0), (-1, -1), "CENTER"),
+            ("ALIGN", (3, 0), (-1, -1), "CENTER"),
             ("ROWBACKGROUNDS", (0, 1), (-1, -2), [colors.white, colors.HexColor("#f4f6fa")]),
             ("FONTNAME", (0, -1), (-1, -1), "Helvetica-Bold"), ("BACKGROUND", (0, -1), (-1, -1), hfill),
-            ("TOPPADDING", (0, 0), (-1, -1), 2.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 2.5),
+            ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
         ]))
         story.append(master)
     story.append(Spacer(1, 12))
 
-    # ---------- Órganos + biomarcadores ----------
-    story.append(band("Órganos y biomarcadores"))
-    story.append(Spacer(1, 6))
+    # ---------- Órganos + biomarcadores (banda + tablas juntas) ----------
 
     def kv_tbl(items, c1, total_ref):
         rows = [[c1, "Casos", "%"]]
@@ -503,7 +573,7 @@ def generar_informe_estadistico_pdf(df, out_path,
     dual = Table([[col_org, col_bio]], colWidths=[CW / 2.0, CW / 2.0])
     dual.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"),
                               ("LEFTPADDING", (0, 0), (-1, -1), 2), ("RIGHTPADDING", (0, 0), (-1, -1), 6)]))
-    story.append(dual)
+    story.append(KeepTogether([band("Órganos y biomarcadores"), Spacer(1, 6), dual]))
     story.append(Spacer(1, 10))
 
     nota = ParagraphStyle("n", parent=styles["Normal"], fontSize=7.5, textColor=grey, leading=10)
@@ -527,12 +597,7 @@ def generar_informe_estadistico_pdf(df, out_path,
         canvas.drawString(1.6 * cm, 1.02 * cm,
                           "Documento confidencial — Ley 1581 (Habeas Data). ONCONOVA Gestor Oncológico HUV.")
         canvas.drawRightString(w - 1.6 * cm, 1.02 * cm, f"Página {doc_.page}")
-        if logo_color:
-            try:
-                canvas.drawImage(logo_color, w / 2 - 0.55 * cm, 0.55 * cm, width=1.1 * cm, height=1.1 * cm,
-                                 preserveAspectRatio=True, mask="auto")
-            except Exception:
-                pass
+        # V6.9.28 FIX: se elimino el logo centrado del footer (se montaba sobre el texto).
         canvas.restoreState()
 
     doc = SimpleDocTemplate(out_path, pagesize=A4,

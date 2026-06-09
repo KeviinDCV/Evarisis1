@@ -21,11 +21,13 @@ try:
     log("PDF_OK=" + out_pdf)
     import fitz
     doc = fitz.open(out_pdf)
-    pix = doc[0].get_pixmap(dpi=120)
-    png = ROOT + r"\herramientas_ia\resultados\_test_informe_p1.png"
-    pix.save(png)
+    log(f"PAGINAS={doc.page_count}")
+    for i in range(doc.page_count):
+        pix = doc[i].get_pixmap(dpi=120)
+        png = ROOT + rf"\herramientas_ia\resultados\_test_informe_p{i+1}.png"
+        pix.save(png)
+        log(f"PNG_OK_p{i+1}=" + png)
     doc.close()
-    log("PNG_OK=" + png)
     log("OK")
 except Exception as e:
     log("ERROR=" + str(e))

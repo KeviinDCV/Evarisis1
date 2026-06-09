@@ -1,0 +1,412 @@
+{
+  "_estado": "completo",
+  "IHQ251391.pdf": {
+    "ocr_chars": 3866,
+    "ocr_seg": 0.0,
+    "ocr_preview": "\n--- PÁGINA 1 ---\nIHQ251391\nCopia Pag. 1 de 3\nNombre : LUIS ALFONSO LASSO\nN. peticion : IHQ251391\nN.Identificación : CC. 12105894\nGenero : MASCULINO\nEdad : 71 años 9 meses 3 dias\nEPS : NUEVA EPS\nMédico tratante : CARLOS FERNANDO MUNAR\nServicio : HEMATO ONCOLOGIA HOSP ADULTO\nFecha Ingreso : 28/11/2025\nFecha Informe : 30/12/2025\n \nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ251391\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nADENOPATIA CERVICAL\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n \nSe recibe orden para realizar estudio de inmunohistoquímica en material institucional M2514609\nPrevia revisión de la histología se solicitan coloraciones con los anticuerpos para CD3, CD10,\nCD20, CD23, PAX5, BCL6, BCL2, c-Myc, Ki-67 en los bloques A, B y C.\nDESCRIPCIÓN MICROSCÓPICA\n \nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®.\nGanglio linfático con reemplazo de la arquitectura folicular por expansión difusa de células con\nnúcleo grande, cromatina vesicular, actividad mitótica de 5 mitosis por campo de alto poder, con\ncuerpos tingibles que presentan inmunofenotipo CD20+/PAX5+, con expresión aberrante de BCL6\ny CD10 en más del 30% de las células neoplásicas y tienen un índice de proliferación celular\nestimado por Ki-67 del 95%.\nLas células BCL2+ y CD3+ presentan una distribución dispersa.\nc-Myc con expresión nuclear tenue en más del 40% de las células tumorales.\nDIAGNÓSTICO\n \nAdenopatía cervical, 3 muestras de nivel no especificado. Biopsia escisional. Inmunohistoquím",
+    "models": {
+      "mistral-7b-instruct-v0.3": {
+        "seg": 24.5,
+        "usage": {
+          "prompt_tokens": 1899,
+          "completion_tokens": 398,
+          "total_tokens": 2297,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251391",
+          "organo": "ADENOPATIA CERVICAL",
+          "tipo_estudio": "INMUNOHISTOQUIMICA",
+          "malignidad": "PRESENTE",
+          "diagnostico_principal": "LINFOMA DIFUSO DE CÉLULAS B GRANDES, NOS, FENOTIPO CENTRO GERMINAL",
+          "diagnostico_coloracion": "No se especifica un diagnostico de coloracion base (H&E) en este informe",
+          "biomarcadores_solicitados": [
+            "CD3",
+            "CD10",
+            "CD20",
+            "CD23",
+            "PAX5",
+            "BCL6",
+            "BCL2",
+            "c-Myc",
+            "Ki-67"
+          ],
+          "biomarcadores": {
+            "CD3": "",
+            "CD10": "",
+            "CD20": "CD20+",
+            "CD23": "",
+            "PAX5": "PAX5+",
+            "BCL6": "BCL6+ (más del 30% de las células neoplásicas)",
+            "BCL2": "BCL2+ (distribución dispersa)",
+            "c-Myc": "c-Myc+ (nuclear tenue en más del 40% de las células tumorales)",
+            "Ki-67": "Ki-67+ (índice de proliferación celular estimado por Ki-67 del 95%)"
+          }
+        },
+        "raw_si_fallo": null
+      },
+      "mistral-nemo-instruct-2407": {
+        "seg": 67.6,
+        "usage": {
+          "prompt_tokens": 1606,
+          "completion_tokens": 406,
+          "total_tokens": 2012,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251391",
+          "organo": "ADENOPATIA CERVICAL",
+          "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+          "malignidad": "PRESENTE",
+          "diagnostico_principal": "LINFOMA DIFUSO DE CÉLULAS B GRANDES, NOS, FENOTIPO CENTRO GERMINAL.",
+          "diagnostico_coloracion": "Ganglio linfático con reemplazo de la arquitectura folicular por expansión difusa de células con núcleo grande, cromatina vesicular, actividad mitótica de 5 mitosis por campo de alto poder, con cuerpos tingibles que presentan inmunofenotipo CD20+/PAX5+, con expresión aberrante de BCL6 y CD10 en más del 30% de las células neoplásicas y tienen un índice de proliferación celular estimado por Ki-67 del 95%. Las células BCL2+ y CD3+ presentan una distribución dispersa. c-Myc con expresión nuclear tenue en más del 40% de las células tumorales.",
+          "biomarcadores_solicitados": [
+            "CD3",
+            "CD10",
+            "CD20",
+            "CD23",
+            "PAX5",
+            "BCL6",
+            "BCL2",
+            "c-Myc",
+            "Ki-67"
+          ],
+          "biomarcadores": {
+            "CD20": "+",
+            "PAX5": "+",
+            "BCL6": "aberrante (>30%)",
+            "CD10": "aberrante (>30%)",
+            "Ki-67": "95%",
+            "BCL2": "dispersa",
+            "CD3": "dispersa",
+            "c-Myc": ">40%"
+          }
+        },
+        "raw_si_fallo": null
+      }
+    }
+  },
+  "IHQ251411.pdf": {
+    "ocr_chars": 4515,
+    "ocr_seg": 0.0,
+    "ocr_preview": "\n--- PÁGINA 1 ---\nIHQ251411\nCopia Pag. 1 de 3\nNombre : LUIS DE JESUS OSPINA OSORIO\nN. peticion : IHQ251411\nN.Identificación : CC. 16362095\nGenero : MASCULINO\nEdad : 60 años\nEPS : NUEVA EPS\nMédico tratante : JORGE HERNAN VALDERRUTEN\nServicio : CONSULTA EXTERNA\nFecha Ingreso : 04/12/2025\nFecha Informe : 15/01/2026\n \nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ251411\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nTUMOR PARIETAL Y\nOCCIPITAL DERECHO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n Se recibe orden para realización de inmunhistoquímica en material extrainstitucional proveniente de\n\"HOSPITAL DEPARTAMENTAL TOMAS URIBE URIBE\" rotulado como \"Q25 3479-B\" el cual consiste en dos\nbloques de parafina y dos láminas de H&E correspondientes a \"TUMOR PARIETAL (muestra A) Y\nOCCIPITAL DERECHO (muestra B)\" con diagnóstico de \"TUMOR ASTROGLIAL\". Se revisan placas para\nmarcación de ATRX, IDH1, P53, GFAP, NeuN, KI67, CD34, CD4, CD8, CD20 y CD68.\n \nDESCRIPCIÓN MICROSCÓPICA\n Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos\nse realizan estudios de inmunohistoquímica en la plataforma automatizada Roche VENTANA®.\nMuestra A. Se reconoce fragmentos de tejido encefalico sin cambios histologicos\nMuestra B. El tejido presenta ligero aumento en la densidad de células gliales lsin atipia nuclear o\nmitosis, las cuales resaltan con la marcación positiva para GFAP, La expresion para IDH1 es negativa (no\nmutado), La expresion es nuclear usual para ATRX (no mutado), La expresion para p53 no es contributiva\n(Fondo). NeuN muestra expresión positiva usual en los cuerpos neur",
+    "models": {
+      "mistral-7b-instruct-v0.3": {
+        "seg": 15.6,
+        "usage": {
+          "prompt_tokens": 2105,
+          "completion_tokens": 424,
+          "total_tokens": 2529,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251411",
+          "organo": "TUMOR PARIETAL Y OCCIPITAL DERECHO",
+          "tipo_estudio": "INMUNOHISTOQUIMICA",
+          "malignidad": "AUSENTE",
+          "diagnostico_principal": "REACCIÓN HISTIOCITARIA FOCAL CON ESCASOS LINFOCITOS Y GLIOSIS REACTIVA (No especifico)",
+          "diagnostico_coloracion": "TUMOR ASTROGLIAL",
+          "biomarcadores_solicitados": [
+            "ATRX",
+            "IDH1",
+            "P53",
+            "GFAP",
+            "NeuN",
+            "KI67",
+            "CD34",
+            "CD4",
+            "CD8",
+            "CD20",
+            "CD68"
+          ],
+          "biomarcadores": {
+            "ATRX": "positivo (no mutado)",
+            "IDH1": "negativo (no mutado)",
+            "P53": "no es contributivo (Fondo)",
+            "GFAP": "positivo",
+            "NeuN": "positivo usual en los cuerpos neuronales",
+            "KI67": "<1% de los nucleos",
+            "CD34": "expresión en vasos maduros",
+            "CD4": "positivo en algunos linfocitos dispersos",
+            "CD8": "positivo en algunos linfocitos dispersos",
+            "CD20": "no se observa marcación",
+            "CD68": "positividad para CD68 en un foco de histiocitos"
+          }
+        },
+        "raw_si_fallo": null
+      },
+      "mistral-nemo-instruct-2407": {
+        "seg": 55.9,
+        "usage": {
+          "prompt_tokens": 1797,
+          "completion_tokens": 385,
+          "total_tokens": 2182,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251411",
+          "organo": "TUMOR PARIETAL Y OCCIPITAL DERECHO",
+          "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+          "malignidad": "AUSENTE",
+          "diagnostico_principal": "REACCIÓN HISTIOCITARIA FOCAL CON ESCASOS LINFOCITOS Y GLIOSIS REACTIVA (No especifico)",
+          "diagnostico_coloracion": "",
+          "biomarcadores_solicitados": [
+            "ATRX",
+            "IDH1",
+            "P53",
+            "GFAP",
+            "NeuN",
+            "Ki-67",
+            "CD34",
+            "CD4",
+            "CD8",
+            "CD20",
+            "CD68"
+          ],
+          "biomarcadores": {
+            "ATRX": "",
+            "IDH1": "NEGATIVO",
+            "P53": "NO CONTRIBUTIVA (Fondo)",
+            "GFAP": "POSITIVO",
+            "NeuN": "POSITIVO",
+            "Ki-67": "<1%",
+            "CD34": "POSITIVO EN VASOS MADUROS",
+            "CD4": "POSITIVO EN ALGUNOS LINFOCITOS DISPERSOS",
+            "CD8": "POSITIVO EN ALGUNOS LINFOCITOS DISPERSOS",
+            "CD20": "NEGATIVO",
+            "CD68": "POSITIVO EN UN FOCO DE HISTIOCITOS"
+          }
+        },
+        "raw_si_fallo": null
+      }
+    }
+  },
+  "IHQ251420.pdf": {
+    "ocr_chars": 6034,
+    "ocr_seg": 0.0,
+    "ocr_preview": "\n--- PÁGINA 1 ---\nIHQ251420\nCopia Pag. 1 de 4\nNombre : CAROLINA MEDINA\nN. peticion : IHQ251420\nN.Identificación : CC. 29108976\nGenero : FEMENINO\nEdad : 47 años 16 dias\nEPS : S.O.S. SERV.OCCID.DE SALUD EPS\nMédico tratante : ALEJANDRA HIJUELOS REYES\nServicio : CIRUGIA MUJERES\nFecha Ingreso : 10/12/2025\nFecha Informe : 15/01/2026\n \nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ251420\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nINTESTINO DELGADO+\nSACO HERNIARIO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n \nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2514725 bloque A2.” que corresponde a “intestino delgado. ” y con diagnóstico de\n“NEOPLASIA MALIGNA MAL DIFERENCIADA A CLASIFICAR MEDIANTE ESTUDIOS DE\nINMUNOHISTOQUÍMICA.\" Previa revisión de la histología se realizan niveles histológicos para\ntinción con: ESTROGENOS, PROGESTERONA, PAX 8, CK7, CK20, CKAE1AE3, CD99, CD3, CD5,\nCD20, CD45, DESMINA, CD31, CD34, CD10, PRAME, S100, CD45, CICLINA D1, SMA, DOG1, CD117,\nVIMENTINA, Ki67.\nDESCRIPCIÓN MICROSCÓPICA\n \nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nEstudios de inmunohistoquímica en bloque M2514725 bloque A2.\nlas células tumorales presentan marcación para: VIMENTINA, CD99 heterogenea y focalmente\nPAX8. Son negativas para CD45, CK7, CKAE1AE3, ESTROGENOS y PROGESTERONA. CD5, CD3,\nCD20, CD45, CD31, Dog1, CD117, Desmina, Ciclina D1, CD10, S100, Prame, BCL2, CD34, SMA, E\níndice de proliferación Ki67 del 90%.\nDIAGN",
+    "models": {
+      "mistral-7b-instruct-v0.3": {
+        "seg": 20.7,
+        "usage": {
+          "prompt_tokens": 2988,
+          "completion_tokens": 594,
+          "total_tokens": 3582,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251420",
+          "organo": "INTESTINO DELGADO+ SACO HERNIARIO",
+          "tipo_estudio": "INMUNOHISTOQUIMICA",
+          "malignidad": "PRESENTE",
+          "diagnostico_principal": "COMPROMISO POR CARCINOMA ENDOMETRIAL INDIFERENCIADO.",
+          "diagnostico_coloracion": "NEOPLASIA MALIGNA MAL DIFERENCIADA A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA.",
+          "biomarcadores_solicitados": [
+            "ESTROGENOS",
+            "PROGESTERONA",
+            "PAX 8",
+            "CK7",
+            "CK20",
+            "CKAE1AE3",
+            "CD99",
+            "CD3",
+            "CD5",
+            "CD20",
+            "CD45",
+            "DESMINA",
+            "CD31",
+            "CD34",
+            "CD10",
+            "PRAME",
+            "S100",
+            "CD45",
+            "CICLINA D1",
+            "SMA",
+            "DOG1",
+            "CD117",
+            "VIMENTINA",
+            "Ki67"
+          ],
+          "biomarcadores": {
+            "VIMENTINA": "POSITIVO",
+            "CD99": "HETEROGÉNEA Y FOCALMENTE POSITIVO",
+            "PAX8": "POSITIVO",
+            "CD45": "",
+            "CK7": "NEGATIVO",
+            "CKAE1AE3": "NEGATIVO",
+            "ESTROGENOS": "NEGATIVO",
+            "PROGESTERONA": "NEGATIVO",
+            "CD5": "",
+            "CD3": "",
+            "CD20": "",
+            "CD31": "",
+            "Dog1": "",
+            "CD117": "",
+            "Desmina": "",
+            "Ciclina D1": "",
+            "CD10": "",
+            "S100": "",
+            "PRAME": "",
+            "BCL2": "",
+            "CD34": "",
+            "SMA": "",
+            "Ki67": "90%"
+          }
+        },
+        "raw_si_fallo": null
+      },
+      "mistral-nemo-instruct-2407": {
+        "seg": 100.8,
+        "usage": {
+          "prompt_tokens": 2580,
+          "completion_tokens": 597,
+          "total_tokens": 3177,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251420",
+          "organo": "intestino delgado",
+          "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+          "malignidad": "PRESENTE",
+          "diagnostico_principal": "COMPROMISO POR CARCINOMA ENDOMETRIAL INDIFERENCIADO.",
+          "diagnostico_coloracion": "Lesión (historia de primario endometrial). Resección de 16 cm. Estudios de inmunohistoquímica.",
+          "biomarcadores_solicitados": [
+            "ESTROGENOS",
+            "PROGESTERONA",
+            "PAX8",
+            "CK7",
+            "CK20",
+            "CKAE1AE3",
+            "CD99",
+            "CD3",
+            "CD5",
+            "CD20",
+            "CD45",
+            "DESMINA",
+            "CD31",
+            "CD34",
+            "CD10",
+            "PRAME",
+            "S100",
+            "CD45",
+            "CICLINA D1",
+            "SMA",
+            "DOG1",
+            "CD117",
+            "VIMENTINA",
+            "Ki67"
+          ],
+          "biomarcadores": {
+            "VIMENTINA": "POSITIVO",
+            "CD99": "HETEROGENEA Y FOCALMENTE PAX8",
+            "PAX8": "FOCALMENTE POSITIVO",
+            "CK7": "NEGATIVO",
+            "CKAE1AE3": "NEGATIVO",
+            "ESTROGENOS": "NEGATIVO",
+            "PROGESTERONA": "NEGATIVO",
+            "CD5": "NEGATIVO",
+            "CD3": "NEGATIVO",
+            "CD20": "NEGATIVO",
+            "CD45": "NEGATIVO",
+            "DESMINA": "NEGATIVO",
+            "CD31": "NEGATIVO",
+            "DOG1": "NEGATIVO",
+            "CD117": "NEGATIVO",
+            "SMA": "NEGATIVO",
+            "BCL2": "NEGATIVO",
+            "CD34": "NEGATIVO",
+            "CICLINA D1": "NEGATIVO",
+            "CD10": "NEGATIVO",
+            "S100": "NEGATIVO",
+            "PRAME": "NEGATIVO",
+            "Ki67": "90%"
+          }
+        },
+        "raw_si_fallo": null
+      }
+    }
+  },
+  "IHQ251436.pdf": {
+    "ocr_chars": 3594,
+    "ocr_seg": 0.0,
+    "ocr_preview": "\n--- PÁGINA 1 ---\nIHQ251436\nCopia Pag. 1 de 3\nNombre : DANIELA BARONA COLLAZOS\nN. peticion : IHQ251436\nN.Identificación : CC. 1118305101\nGenero : FEMENINO\nEdad : 30 años 2 meses 15 dias\nEPS : COMFENALCO VALLE\nMédico tratante : JUAN SEBASTIAN PRADO\nServicio : RADIOLOGIA\nFecha Ingreso : 11/12/2025\nFecha Informe : 05/01/2026\n \nEstudios solicitados\nN. Estudio\nEstudio\nTipo estudio\nAlmacenamiento\nOrgano\nFecha toma\nIHQ251436\nESTUDIO DE\nINMUNOHISTOQUIMICA\n898807 Estudio anatomopatologico de marcacion\ninmunohistoquimica basica (especifico)\nBloques y laminas\nBX HIGADO\nINFORME DE ANATOMÍA PATOLÓGICA\nESTUDIO DE INMUNOHISTOQUIMICA\nDESCRIPCIÓN MACROSCÓPICA\n \nSe recibe orden para realización de inmunohistoquímica en material institucional rotulado como\n“M2515084” que corresponde a “biopsia de parénquima hepático\". con diagnóstico de \"VER\nDESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.” Previa revisión de la histología se realizan niveles\nhistológicos para tinción con: Hepatocito, Gypican3, Beta catenina, CD34.\nDESCRIPCIÓN MICROSCÓPICA\n \nPrevia valoración de la técnica y verificación de la adecuada tinción de los controles externos e\ninternos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche\nVENTANA®. \nLas células en el corte histológico de la lesión en hígado muestran inmunoreactividad para:\nHepatocito con disminución focal de la marcación, hay marcación para CD34 en algunos vasos,\nBeta catenina presenta marcación habitual de membrana en toda la muestra. Es negativa para\nGlypican 3. \nDIAGNÓSTICO\n \nHígado. Lesión. Biopsia. Estudio de inmunohistoquímica:\nCOMPATIBLE CON ADENOMA.\nCOMENTARIOS\nLa muestra es una biopsia con aguja se require correlación clínica.\nCARLOS CAICEDO ESTRADA\nResponsable del análisis:\nMD Patólogo\n \n_________________________________________________",
+    "models": {
+      "mistral-7b-instruct-v0.3": {
+        "seg": 12.1,
+        "usage": {
+          "prompt_tokens": 1779,
+          "completion_tokens": 275,
+          "total_tokens": 2054,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251436",
+          "organo": "HIGADO",
+          "tipo_estudio": "INMUNOHISTOQUIMICA",
+          "malignidad": "PRESENTE",
+          "diagnostico_principal": "COMPATIBLE CON ADENOMA",
+          "diagnostico_coloracion": "DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO.",
+          "biomarcadores_solicitados": [
+            "Hepatocito",
+            "Gypican3",
+            "Beta catenina",
+            "CD34"
+          ],
+          "biomarcadores": {
+            "Hepatocito": "DISMINUCIÓN FOCAL DE LA MARCACIÓN",
+            "CD34": "MARCACIÓN PARA EN ALGUNOS VASOS",
+            "Beta catenina": "PRESENTA MARCACIÓN HABITUAL DE MEMBRANA EN TODA LA MOSTRA",
+            "Glypican 3": ""
+          }
+        },
+        "raw_si_fallo": null
+      },
+      "mistral-nemo-instruct-2407": {
+        "seg": 35.3,
+        "usage": {
+          "prompt_tokens": 1498,
+          "completion_tokens": 222,
+          "total_tokens": 1720,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "parsed": {
+          "numero_caso": "IHQ251436",
+          "organo": "HÍGADO",
+          "tipo_estudio": "ESTUDIO DE INMUNOHISTOQUIMICA",
+          "malignidad": "AUSENTE",
+          "diagnostico_principal": "COMPATIBLE CON ADENOMA.",
+          "diagnostico_coloracion": "Lesión. Biopsia. Estudio de inmunohistoquímica: COMPATIBLE CON ADENOMA.",
+          "biomarcadores_solicitados": [
+            "Hepatocito",
+            "Gypican3",
+            "Beta catenina",
+            "CD34"
+          ],
+          "biomarcadores": {
+            "Hepatocito": "disminución focal de la marcación",
+            "Gypican3": "negativa",
+            "Beta catenina": "marcación habitual de membrana en toda la muestra",
+            "CD34": "hay marcación para CD34 en algunos vasos"
+          }
+        },
+        "raw_si_fallo": null
+      }
+    }
+  }
+}

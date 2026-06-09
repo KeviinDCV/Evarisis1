@@ -4860,15 +4860,35 @@ Disco {i}:
             if "Numero de caso" in df_display.columns:
                 peticion_col_idx = list(df_display.columns).index("Numero de caso")
 
-            # Calcular completitud en batch
+            # V6.9.28 PERF: completitud en UNA sola consulta. Antes se abria una
+            # conexion + SELECT * por CADA caso (2073 consultas al cargar -> UI
+            # pesada/lenta al hacer scroll). Ahora se traen todos los registros de
+            # una vez y se analizan en memoria. El coloreo resultante es identico.
             completitud_cache = {}
             if peticion_col_idx is not None:
                 try:
+                    import sqlite3 as _sqlite3
                     from core.validation_checker import verificar_completitud_registro
-                    numeros_peticion = df_display["Numero de caso"].dropna().unique()
+                    from core.database_manager import DB_FILE as _DB_FILE
+                    numeros_peticion = set(df_display["Numero de caso"].dropna().unique())
+                    registros_por_caso = {}
+                    try:
+                        _conn = _sqlite3.connect(_DB_FILE)
+                        _cur = _conn.cursor()
+                        _cur.execute('SELECT * FROM informes_ihq')
+                        _cols = [d[0] for d in _cur.description]
+                        _idx_caso = _cols.index("Numero de caso") if "Numero de caso" in _cols else None
+                        if _idx_caso is not None:
+                            for _row in _cur.fetchall():
+                                _num = _row[_idx_caso]
+                                if _num in numeros_peticion:
+                                    registros_por_caso[_num] = dict(zip(_cols, _row))
+                        _conn.close()
+                    except Exception as _e_db:
+                        logging.warning(f"No se pudo precargar registros para completitud: {_e_db}")
                     for numero in numeros_peticion:
                         try:
-                            analisis = verificar_completitud_registro(numero)
+                            analisis = verificar_completitud_registro(numero, registro=registros_por_caso.get(numero))
                             completitud_cache[numero] = analisis.get('completo', False)
                         except Exception:
                             completitud_cache[numero] = False
