@@ -1907,6 +1907,28 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
 
     db_record["Diagnostico Principal"] = diagnostico_principal if diagnostico_principal else 'N/A'
 
+    # V6.9.30: FALLBACK IA (LOCAL) — si el diagnóstico del regex NO es un
+    # diagnóstico real (resultado de marcadores IHQ, "ver comentario", línea de
+    # espécimen sola, fragmento), se extrae con el LLM local leyendo el informe
+    # completo (sección DIAGNÓSTICO + viñetas + COMENTARIOS). SOLO se activa
+    # cuando el regex falló => CERO regresión sobre extracciones correctas.
+    # Best-effort: si el LLM no está disponible o falla, se conserva el regex.
+    try:
+        from core.extractor_diagnostico_ia import (
+            es_diagnostico_no_valido as _dx_no_valido,
+            extraer_diagnostico_con_ia as _dx_ia_extraer,
+        )
+        if full_text and _dx_no_valido(db_record["Diagnostico Principal"]):
+            _dx_ia = _dx_ia_extraer(full_text, organo=extracted_data.get('organo', ''))
+            if _dx_ia:
+                logging.info(
+                    f"[dx-ia] {db_record.get('Numero de caso', '?')}: "
+                    f"'{str(db_record['Diagnostico Principal'])[:40]}' -> '{_dx_ia[:55]}'"
+                )
+                db_record["Diagnostico Principal"] = _dx_ia
+    except Exception as _e_ia:
+        logging.warning(f"[dx-ia] fallback no aplicado: {_e_ia}")
+
     # v5.3.5: CORREGIDO - Usar nombres de columnas simplificados
     db_record["Descripcion microscopica"] = extracted_data.get('Descripcion microscopica', 'N/A')
     db_record["Descripcion macroscopica"] = extracted_data.get('Descripcion macroscopica', 'N/A')

@@ -1,0 +1,20 @@
+[
+ {
+  "caso": "IHQ251313",
+  "segundos": 30.9,
+  "diagnostico_final": "LESIÓN ENDOTELIAL ATÍPICA",
+  "organo": "PIEL MAMA IZQ+PIEL FLANCO IZQ+PIEL ESPAL"
+ },
+ {
+  "caso": "IHQ251229",
+  "segundos": 36.3,
+  "diagnostico_final": "CARCINOMA INVASIVO CON COMPONENTE MICROPAPILAR",
+  "organo": "BX MAMA IZQUIERDA"
+ },
+ {
+  "caso": "IHQ251384",
+  "segundos": 0.7,
+  "diagnostico_final": "ADENOCARCINOMA NOS",
+  "organo": "MUCOSA DE COLON"
+ }
+]
