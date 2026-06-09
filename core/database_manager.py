@@ -1477,26 +1477,35 @@ def verificar_duplicado_por_peticion(numero_peticion: str) -> Dict[str, Any]:
     Retorna información del registro existente si se encuentra
     """
     try:
+        # V6.9.30 FIX: usar el adapter (MySQL/SQLite según config) en vez de
+        # SQLite directo. Antes consultaba SIEMPRE la SQLite legacy (DB_FILE)
+        # y reportaba "duplicados" que no existían en el flujo MySQL real,
+        # bloqueando el reprocesamiento (botón "Procesar seleccionados").
+        if _ADAPTER_AVAILABLE:
+            with _adapter_cursor() as (conn, cursor):
+                cursor.execute(
+                    f'SELECT * FROM {_adapter_q(TABLE_NAME)} '
+                    f'WHERE {_adapter_q("Numero de caso")} = {_adapter_ph()}',
+                    (numero_peticion,),
+                )
+                result = cursor.fetchone()
+                if result:
+                    column_names = [d[0] for d in cursor.description]
+                    return {"existe": True, "registro": dict(zip(column_names, result))}
+                return {"existe": False, "registro": None}
+        # Fallback SQLite legacy (solo si el adapter no está disponible)
         with sqlite3.connect(DB_FILE) as conn:
             cursor = conn.cursor()
-            cursor.execute(f"""
-                SELECT * FROM {TABLE_NAME} 
-                WHERE "Numero de caso" = ?
-            """, (numero_peticion,))
-            
+            cursor.execute(
+                f'SELECT * FROM {TABLE_NAME} WHERE "Numero de caso" = ?',
+                (numero_peticion,),
+            )
             result = cursor.fetchone()
             if result:
-                # Obtener nombres de columnas
                 column_names = [description[0] for description in cursor.description]
-                # Crear diccionario con los datos
-                registro = dict(zip(column_names, result))
-                return {
-                    "existe": True,
-                    "registro": registro
-                }
-            else:
-                return {"existe": False, "registro": None}
-                
+                return {"existe": True, "registro": dict(zip(column_names, result))}
+            return {"existe": False, "registro": None}
+
     except Exception as e:
         logger.error(f"Error verificando duplicado: {e}")
         return {"existe": False, "error": str(e)}
