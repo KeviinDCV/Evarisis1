@@ -1,0 +1,82 @@
+{
+ "n_casos_cd31": 11,
+ "detalle": [
+  {
+   "caso": "IHQ250277",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": ", CD68, Caldesmon, p63, Sinaptofisina, SMA, CD34, CD31, Myo D1, LCA, CKAE1E3, CD10, EMA, S100, Melan A, CD1a, CD99, P16",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "CALRETININA, WT1, Ki-67, VIMENTINA, CD68, CALDESMON, P63, SINAPTOFISINA, SMA, CD34, CD31, "
+  },
+  {
+   "caso": "IHQ250299",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "rafina para los siguientes marcadores: CKAE1/AE3, CD31, CD34, PODOPLANINA, HHV8, Ki 67. DESCRIPCIÓN MICROSCÓPICA Pre",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "CKAE1AE3, CD31, CD34, PODOPLANINA, HHV8, Ki-67"
+  },
+  {
+   "caso": "IHQ250309",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "nan los siguientes marcadores: CKAE1E3, Inhibina, CD31, GFAP y Ki-67. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "CKAE1AE3, INHIBINA, CD31, GFAP, Ki-67"
+  },
+  {
+   "caso": "IHQ250311",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "Se ordenan los siguientes marcadores: ALK-1, EMA, CD31, S100, Desmina, CD34, SMA, Caldesmón, CD68, Ki-67, MDM2, DOG1. DE",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "ALK 1, EMA, CD31, S100, DESMINA, CD34, SMA, CALDESMÓN, CD68, Ki-67, MDM2, DOG1, ALK, DESMI"
+  },
+  {
+   "caso": "IHQ250343",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "lógicos al bloque 2 para tinción con HHV-8, CD34, CD31, S100, desmina, CKAE1E3. DESCRIPCIÓN MICROSCÓPICA Previa valo",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "HHV 8, CD34, CD31, S100, DESMINA, CKAE1AE3, DESMIN"
+  },
+  {
+   "caso": "IHQ250346",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "bloque A3 para tinción con los marcadores: HHV8, CD31,CD34, KI 67, EMA, CKAE1/E3. DESCRIPCIÓN MICROSCÓPICA Previa vali",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "HHV8, CD31, CD34, Ki-67, EMA, CKAE1AE3"
+  },
+  {
+   "caso": "IHQ250380",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "zan niveles histológicos para tinción con HHV-8 , CD31 Y CD34. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la técn",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "HHV 8, CD31, CD34"
+  },
+  {
+   "caso": "IHQ250435",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "Liso (SMA), Desmina, Vimentina, Caldesmón, S100, CD31, CD34 y Ki-67. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "SMA, DESMINA, VIMENTINA, CALDESMÓN, S100, CD31, CD34, Ki-67, DESMIN"
+  },
+  {
+   "caso": "IHQ250446",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "s niveles histológicos para marcar con CKAE1/AE3, CD31, CD34, HHV8. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "CKAE1AE3, CD31, CD34, HHV8"
+  },
+  {
+   "caso": "IHQ250448",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "s niveles histológicos para marcar con CKAE1/AE3, CD31, CD34, HHV8. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "CKAE1AE3, CD31, CD34, HHV8"
+  },
+  {
+   "caso": "IHQ250452",
+   "pdf_menciona_CD31": true,
+   "contexto_pdf": "ogía, se realizan niveles para tinción con: Ki67, CD31, PAX 8, p53. DESCRIPCIÓN MICROSCÓPICA Previa valoración de la",
+   "BD_IHQ_CD31": "None",
+   "solicitados_BD": "Ki-67, CD31, PAX 8, P53, CK19"
+  }
+ ]
+}

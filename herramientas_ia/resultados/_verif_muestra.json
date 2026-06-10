@@ -1,0 +1,173 @@
+{
+ "total_bd": 50,
+ "casos": [
+  {
+   "caso": "IHQ250048",
+   "BD_dx": "CÉLULAS GANGLIONARES PRESENTES",
+   "BD_edad": "5",
+   "BD_organo": "BX DE RECTO",
+   "BD_malig": "BENIGNO",
+   "BD_genero": "FEMENINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Mucosa rectal. Biopsia. Estudio de inmunohistoquímica.",
+    "CÉLULAS GANGLIONARES PRESENTES.",
+    "FILETES NERVIOSOS NORMALES (ESPERADO HASTA 40 MICRAS).",
+    "CALRRETININA POSITIVA EN LAS DENDRITAS DE LAS CÉLULAS GANGLILARES EN LA MUCOSA.",
+    "NANCY MEJIA VARGAS",
+    "Médica Patóloga",
+    "RM: 76-0405/15",
+    "Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de"
+   ],
+   "PDF_edad": "5 dias",
+   "PDF_genero": "FEMENINO"
+  },
+  {
+   "caso": "IHQ250026",
+   "BD_dx": "LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA",
+   "BD_edad": "54",
+   "BD_organo": "BX PULMON IZQUIERDO",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "MASCULINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Pulmón izquierdo. Lesión. Biopsia percutánea. Estudio de inmunohistoquimica:",
+    "LOS HALLAZGOS HISTOLOGIOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON MELANOMA .",
+    "COMENTARIOS",
+    "Correlacionar hallazgos con estudios imagenológicos e historia clínica",
+    "NANCY MEJIA VARGAS",
+    "Médica Patóloga",
+    "RM: 76-0405/15",
+    "_________________________________________________________________________________________________"
+   ],
+   "PDF_edad": "54 años 16 dias",
+   "PDF_genero": "MASCULINO"
+  },
+  {
+   "caso": "IHQ250024",
+   "BD_dx": "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)",
+   "BD_edad": "52",
+   "BD_organo": "CUADRANTECTOMIA MAMA DERECHA",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "FEMENINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Mama derecha. Lesión. Cuadrantectomía.  Estudio de inmunohistoquímica.",
+    "CARCINOMA INVASIVO SIN TIPO ESPECIAL (DUCTAL)",
+    "GRADO HISTOLOGICO  2 (NOTTINGHAM 7/9 PUNTOS).",
+    "TAMAÑO TUMORAL:  50 x 40 x 32  MILÍMETROS",
+    "INVASIÓN LINFÁTICA Y /O VASCULAR: PRESENTE",
+    "COMPROMISO DÉRMICO: NO IDENTIFICADA.",
+    "INVASIÓN LIFATICA Y/O VASCULAR DÉRMICA: NO IDENTIFICADA.",
+    "BORDES: NEGATIVOS."
+   ],
+   "PDF_edad": "52 años 23 dias",
+   "PDF_genero": "FEMENINO"
+  },
+  {
+   "caso": "IHQ250018",
+   "BD_dx": "TUMOR DEL ESTROMA GASTROINTESTINAL FUSOCELULAR DE BAJO GRADO BORDE DE RESECCIÓN COMPROMETIDO",
+   "BD_edad": "78",
+   "BD_organo": "LESION MUCOSA DE RECTO",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "MASCULINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Mucosa de recto superior. Lesión. Resección. Estudio de inmunohistoquímica.",
+    "TUMOR DEL ESTROMA GASTROINTESTINALFUSOCELULAR  DE BAJO GRADO",
+    "BORDE DE RESECCIÓN COMPROMETIDO.",
+    "NANCY MEJIA VARGAS",
+    "Médica Patóloga",
+    "RM: 76-0405/15",
+    "_________________________________________________________________________________________________",
+    "Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe"
+   ],
+   "PDF_edad": "78 años 8 dias",
+   "PDF_genero": "MASCULINO"
+  },
+  {
+   "caso": "IHQ250003",
+   "BD_dx": "ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR",
+   "BD_edad": "76",
+   "BD_organo": "BX DE PLEURA + BX DE PULMON",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "MASCULINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Pleura. Lesión. Biopsia percutanea. Estudio de inmunohistoquímica:",
+    "- ADENOCARCINOMA METASTÁSICO CON PRIMARIO PULMONAR.",
+    "ARMANDO CORTES BUELVAS",
+    "Responsable del análisis:",
+    "MD Patólogo",
+    "RM 12135",
+    "_________________________________________________________________________________________________",
+    "Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe"
+   ],
+   "PDF_edad": "76 años 6 dias",
+   "PDF_genero": "MASCULINO"
+  },
+  {
+   "caso": "IHQ250021",
+   "BD_dx": "TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+   "BD_edad": "61",
+   "BD_organo": "RIÑÓN (BIOPSIA POR PUNCIÓN): TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL",
+   "BD_malig": "BENIGNO",
+   "BD_genero": "MASCULINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "RIÑÓN (BIOPSIA POR PUNCIÓN):",
+    "TÉJIDO SIN REPRESENTACIÓN DE PARENQUIMA RENAL.",
+    "TÉJIDO FIBROADIPOSO DE ARQUTIECTURA USUAL.",
+    "VER COMENTARIO.",
+    "COMENTARIOS",
+    "COMENTARIO: la muestra no evidencia parénquima renal para la adecuada clasificación, se",
+    "sugiere nuevo muestreo a criterio del médico tratante.",
+    "NANCY MEJIA VARGAS"
+   ],
+   "PDF_edad": "61 años 11 meses 7 dias",
+   "PDF_genero": "MASCULINO"
+  },
+  {
+   "caso": "IHQ250002",
+   "BD_dx": "TUMOR NEUROENDOCRINO HIPOFISIARIO",
+   "BD_edad": "26",
+   "BD_organo": "LESION HIPOFISIS",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "FEMENINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "Hipófisis. Lesión. Resección. Estudio de inmunohistoquimica:",
+    "TUMOR NUEROENDOCRINO HIPOFISIARIO.",
+    "COMENTARIOS",
+    "CARLOS CAICEDO ESTRADA",
+    "Responsable del análisis:",
+    "MD Patólogo",
+    "_________________________________________________________________________________________________",
+    "Nota: Este informe se ciñe a las mejores prácticas actuales en patología a nuestro alcance. El informe"
+   ],
+   "PDF_edad": "26 años 10 dias",
+   "PDF_genero": "FEMENINO"
+  },
+  {
+   "caso": "IHQ250034",
+   "BD_dx": "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL) CON: EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS: NEGATIVOS",
+   "BD_edad": "32",
+   "BD_organo": "BX LESION MAMA DERECHA",
+   "BD_malig": "MALIGNO",
+   "BD_genero": "FEMENINO",
+   "PDF_dx_seccion": [
+    "DIAGNÓSTICO",
+    "A. Mama derecha. Lesión. Biopsia. Estudio de inmunohistoquimica:",
+    "LOS HALLAZGOS MORFOLÓGICOS E INMUNOHISTOQUIMICOS FAVORECEN CARCINOMA INVASIVO DE TIPO",
+    "NO ESPECIAL (DUCTAL) CON:",
+    "EXPRESIÓN DE RECEPTORES DE ESTROGENOS: NEGATIVOS",
+    "EXPRESIÓN DE RECEPTORES DE PROGRESTÁGENOS:  NEGATIVOS",
+    "SOBREEXPRESIÓN DE HER2/NEU: Negativo (SCORE 0)",
+    "B. Ganglio linfático axilar derecho. Biopsia. Estudio de inmunohistoquimica:",
+    "CARCINOMA METASTASICO DE MAMA"
+   ],
+   "PDF_edad": "32 años 26 dias",
+   "PDF_genero": "FEMENINO"
+  }
+ ]
+}

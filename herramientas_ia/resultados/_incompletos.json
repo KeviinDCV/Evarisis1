@@ -1,0 +1,80 @@
+{
+ "resumen": {
+  "total": 498,
+  "completos": 461,
+  "incompletos": 37,
+  "porcentaje_exito": 92.6
+ },
+ "campos_faltantes_top": [
+  [
+   "Organo",
+   1
+  ]
+ ],
+ "bio_faltantes_top": [
+  [
+   "IHQ_CD31",
+   11
+  ],
+  [
+   "IHQ_RECEPTOR_ESTROGENOS",
+   4
+  ],
+  [
+   "IHQ_RECEPTOR_PROGESTERONA",
+   4
+  ],
+  [
+   "IHQ_HER2",
+   4
+  ],
+  [
+   "IHQ_KI-67",
+   4
+  ],
+  [
+   "IHQ_P53",
+   4
+  ],
+  [
+   "IHQ_PDL-1",
+   4
+  ],
+  [
+   "IHQ_CD5",
+   4
+  ]
+ ],
+ "ej": [
+  {
+   "caso": "IHQ250136",
+   "pct": 95.0,
+   "campos": []
+  },
+  {
+   "caso": "IHQ250174",
+   "pct": 96.7,
+   "campos": []
+  },
+  {
+   "caso": "IHQ250223",
+   "pct": 97.3,
+   "campos": []
+  },
+  {
+   "caso": "IHQ250277",
+   "pct": 99.0,
+   "campos": []
+  },
+  {
+   "caso": "IHQ250299",
+   "pct": 95.0,
+   "campos": []
+  },
+  {
+   "caso": "IHQ250301",
+   "pct": 70.0,
+   "campos": []
+  }
+ ]
+}

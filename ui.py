@@ -7693,6 +7693,21 @@ Informes con malignidad: {malignant_count}"""
                     pass
         self._build_import_tree(root)
 
+    def _peticiones_existentes_bd(self) -> set:
+        """V6.9.30: set de 'Numero de caso' de la BD ACTIVA (MySQL via adapter,
+        o SQLite si config=sqlite). Reemplaza las lecturas directas a la SQLite
+        legacy que daban conteos erróneos ('Total Procesados' = 0 con MySQL)."""
+        try:
+            from core.db_adapter import cursor_ctx, quote_ident
+            with cursor_ctx() as (conn, cur):
+                cur.execute(
+                    f'SELECT {quote_ident("Numero de caso")} FROM {quote_ident("informes_ihq")}'
+                )
+                return set(r[0] for r in cur.fetchall() if r[0])
+        except Exception as e:
+            logging.warning(f"⚠️ _peticiones_existentes_bd: {e}")
+            return set()
+
     def _process_selected_files(self):
         """Procesar los archivos seleccionados de la lista (con barra de progreso)"""
         # V6.9.25: verificar que existe el árbol navegable
@@ -7709,21 +7724,35 @@ Informes con malignidad: {malignant_count}"""
 
         # Pre-validar archivos y verificar duplicados (rápido, main thread)
         files_to_process = []
+        # V6.9.31: permitir REIMPORTAR archivos ya importados (re-extracción).
+        # reimportar_todos: None = preguntar por cada uno; True = reimportar todos.
+        reimportar_todos = None
         for file_path in rutas_pdf:
             filename = os.path.basename(file_path)
             duplicado_info = self._verificar_archivo_duplicado(file_path, filename)
             if duplicado_info["es_duplicado"]:
-                respuesta = messagebox.askyesno(
-                    "Archivo ya importado",
-                    f"El archivo '{filename}' ya ha sido importado.\n\n"
-                    f"Número de petición: {duplicado_info['numero_peticion']}\n"
-                    f"Fecha del informe (PDF): {duplicado_info['fecha_informe']}\n"
-                    f"Fecha de importación al sistema: {duplicado_info['fecha_importacion']}\n\n"
-                    f"¿Desea ir al visualizador para ver el registro existente?"
-                )
-                if respuesta:
-                    self._redirigir_a_visualizador_con_filtro(duplicado_info['numero_peticion'])
-                continue
+                decision = True if reimportar_todos else None
+                if reimportar_todos is None:
+                    resp = messagebox.askyesnocancel(
+                        "Archivo ya importado",
+                        f"El archivo '{filename}' ya fue importado "
+                        f"(caso {duplicado_info['numero_peticion']}, "
+                        f"informe {duplicado_info['fecha_informe']}).\n\n"
+                        f"¿Desea REIMPORTARLO? Se vuelve a extraer y se REEMPLAZA "
+                        f"el registro existente.\n\n"
+                        f"   •  Sí  = Reimportar este archivo\n"
+                        f"   •  No  = Omitir este archivo\n"
+                        f"   •  Cancelar = Reimportar TODOS los ya importados de la selección"
+                    )
+                    if resp is None:          # Cancelar -> reimportar todos
+                        reimportar_todos = True
+                        decision = True
+                    else:
+                        decision = resp        # Sí = reimportar este; No = omitir
+                if not decision:
+                    continue  # omitir este archivo (no se reprocesa)
+                # decision True -> reimportar: cae al append; save_records hace
+                # UPSERT por "Numero de caso" (reemplaza el registro existente).
 
             files_to_process.append((file_path, filename))
 
@@ -7732,17 +7761,10 @@ Informes con malignidad: {malignant_count}"""
             return
 
         # Obtener peticiones existentes antes del procesamiento
-        peticiones_antes = set()
-        try:
-            import sqlite3
-            from core.database_manager import DB_FILE
-            conn = sqlite3.connect(DB_FILE)
-            cursor = conn.cursor()
-            cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
-            peticiones_antes = set(row[0] for row in cursor.fetchall() if row[0])
-            conn.close()
-        except Exception as e:
-            logging.warning(f"⚠️ Error obteniendo peticiones existentes: {e}")
+        # V6.9.30 FIX: leer de la BD ACTIVA (MySQL via adapter), NO de la SQLite
+        # legacy. Antes leía SQLite (no se actualiza con el guardado a MySQL),
+        # por eso "Total Procesados" salía en 0 aunque sí se guardaran casos.
+        peticiones_antes = self._peticiones_existentes_bd()
 
         # Mostrar overlay de progreso
         self._show_processing_overlay(len(files_to_process))
@@ -9856,14 +9878,8 @@ Informes con malignidad: {malignant_count}"""
         if processed_count > 0:
             # Obtener nuevos registros
             try:
-                import sqlite3
-                from core.database_manager import DB_FILE
-                conn = sqlite3.connect(DB_FILE)
-                cursor = conn.cursor()
-                cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
-                peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
-                conn.close()
-
+                # V6.9.30 FIX: leer de la BD ACTIVA (MySQL via adapter), NO SQLite legacy.
+                peticiones_despues = self._peticiones_existentes_bd()
                 nuevas_peticiones = list(peticiones_despues - peticiones_antes)
                 self._ultimos_registros_procesados = nuevas_peticiones
                 logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")

@@ -457,6 +457,15 @@ def limpiar_diagnostico(diagnostico: str) -> str:
     # Normalizar espacios y saltos de línea
     diagnostico = ' '.join(diagnostico.split()).upper()
 
+    # V6.9.30: quitar caracteres invisibles (ZWSP, word-joiner, BOM, marcas de
+    # dirección) que el patólogo a veces pega (ej. "⁠ADENOCARCINOMA" en IHQ250006).
+    diagnostico = re.sub('[​-‏‪-‮⁠-⁯﻿]', '', diagnostico).strip()
+
+    # V6.9.30: corregir typos comunes en el campo Dx (ej. nemo escribió "MELIOMA"
+    # por "MIELOMA" en IHQ250030; el patólogo a veces "CARICNOMA" por "CARCINOMA").
+    diagnostico = re.sub(r'\bMELIOMA\b', 'MIELOMA', diagnostico)
+    diagnostico = re.sub(r'\bCARICNOMA\b', 'CARCINOMA', diagnostico)
+
     # V6.4.29 FIX IHQ250163: Limpiar fechas al inicio (ej: ": 12/02/2025")
     # Formato: ": DD/MM/AAAA" o similar al inicio del diagnóstico
     diagnostico = re.sub(r'^:\s*\d{1,2}/\d{1,2}/\d{4}\s+', '', diagnostico)
@@ -479,6 +488,12 @@ def limpiar_diagnostico(diagnostico: str) -> str:
 
     # Eliminar frases introductorias comunes
     frases_introductorias = [
+        # V6.9.30: patrón GENERAL — cubre TODAS las variantes de preámbulo del
+        # patólogo (con/sin acentos, typos como "HISTOLOGIOS", "Y DE
+        # INMUNOHISTOQUIMICA", con o sin dos puntos). Captura "LOS HALLAZGOS ...
+        # <verbo> [:|un|una]" hasta el verbo (COMPATIBLES CON / FAVORECEN / etc.).
+        r'^(?:LOS\s+)?HALLAZGOS\s+[\wÁÉÍÓÚÑáéíóúñ\s]{0,70}?\b(?:COMPATIBLES?\s+CON|FAVORECEN|SUGIEREN|EVIDENCIAN(?:\s+UN[AO]?)?)\s*:?\s*(?:UN[AO]?\s+)?',
+        r'^PERFIL\s+(?:DE\s+(?:EXPRESI[ÓO]N\s+DE\s+)?)?INMUNOHISTOQU[ÍI]MICA\s+(?:COMPATIBLE\s+CON|QUE\s+FAVORECE)\s*:?\s*',
         r'^LOS\s+HALLAZGOS\s+MORFOL[ÓO]GICOS\s+E\s+INMUNOHISTOQU[ÍI]MICOS\s+FAVORECEN\s*:\s*',  # V6.5.75 FIX IHQ250263
         r'^LOS\s+HALLAZGOS\s+HISTOL[ÓO]GICOS\s+SON\s+COMPATIBLES\s+CON\s+',
         r'^LOS\s+HALLAZGOS\s+SON\s+COMPATIBLES\s+CON\s+',
@@ -495,6 +510,10 @@ def limpiar_diagnostico(diagnostico: str) -> str:
         r'^HALLAZGOS\s+SUGIEREN\s+(?:UN[AO]?\s+)?',  # V6.6.2 FIX IHQ250049
         r'^COMPATIBLE\s+CON\s+',
         r'^COMPATIBLES\s+CON\s+',
+        # V6.9.30 FIX IHQ250007/008: variantes "DE INMUNOHISTOQUIMICA FAVORECEN/COMPATIBLES"
+        r'^LOS\s+HALLAZGOS\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s+FAVORECEN\s+(?:UN[AO]?\s+)?',
+        r'^LOS\s+HALLAZGOS\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
+        r'^HALLAZGOS\s+DE\s+INMUNOHISTOQU[ÍI]MICA\s+(?:SON\s+)?COMPATIBLES\s+CON\s+',
     ]
 
     for patron in frases_introductorias:
@@ -507,6 +526,12 @@ def limpiar_diagnostico(diagnostico: str) -> str:
         r'\s+GRADO\s+HISTOL[ÓO]GICO\s+\d+.*$',
         r'\s+\(NOTTINGHAM\s+\d+/\d+\s+PUNTOS\).*$',
         r'\s+NOTTINGHAM\s+\d+/\d+\s+PUNTOS.*$',
+        # V6.9.30 FIX IHQ250034: receptores/SOBREEXPRESIÓN pegados tras "CON:"
+        r'\s+CON:?\s+EXPRESI[ÓO]N\s+DE\s+RECEPTORES.*$',
+        r'\s+EXPRESI[ÓO]N\s+DE\s+RECEPTORES\s+DE.*$',
+        r'\s+SOBREEXPRESI[ÓO]N\s+DE\s+HER.*$',
+        # V6.9.30 FIX IHQ250018: margen quirúrgico pegado al dx
+        r'\s+BORDE\s+DE\s+RESECCI[ÓO]N\s+COMPROMETID[OA].*$',
     ]
 
     for patron in metadatos_estudio_m:
@@ -526,6 +551,12 @@ def limpiar_diagnostico(diagnostico: str) -> str:
         r'\s+KI-?67[:\s]*\d+%(?:\s*\(.*)?$',
         r'\s+RE[:\s]*(NEGATIVO|POSITIVO)(?:\s*\(.*)?$',
         r'\s+RP[:\s]*(NEGATIVO|POSITIVO)(?:\s*\(.*)?$',
+        # V6.9.30 FIX IHQ250028: "SOBREEXPRESIÓN DE ONCOGEN/HER-2..." pegada al final
+        r'\s+SOBREEXPRESI[ÓO]N\s+DE\s+(?:ONCOGEN|HER).*$',
+        # V6.9.30 FIX IHQ250001: marcadores P40/P16/P63/P53 pegados al FINAL del
+        # diagnóstico (ej. "...METASTÁSICO P40 POSITIVO / P16 POSITIVO"). Quita
+        # la cola de uno o más marcadores; NO usa .*$ para no cortar texto válido.
+        r'\s+P(?:40|16|63|53)\b[:\s]*(?:POSITIVO|NEGATIVO|MUTAD[OA])(?:\s+(?:EN\s+BLOQUE|FOCAL|DIFUS[OA]))?(?:\s*[/,]?\s*P(?:40|16|63|53)\b[:\s]*(?:POSITIVO|NEGATIVO|MUTAD[OA])(?:\s+(?:EN\s+BLOQUE|FOCAL|DIFUS[OA]))?)*\s*$',
     ]
 
     for patron in factores_pronosticos:
@@ -1921,6 +1952,9 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         if full_text and _dx_no_valido(db_record["Diagnostico Principal"]):
             _dx_ia = _dx_ia_extraer(full_text, organo=extracted_data.get('organo', ''))
             if _dx_ia:
+                # V6.9.30: normalizar el output del LLM (corrige typos como
+                # "MELIOMA"->"MIELOMA", quita ruido) igual que el dx del regex.
+                _dx_ia = limpiar_diagnostico(_dx_ia) or _dx_ia
                 logging.info(
                     f"[dx-ia] {db_record.get('Numero de caso', '?')}: "
                     f"'{str(db_record['Diagnostico Principal'])[:40]}' -> '{_dx_ia[:55]}'"
@@ -2540,6 +2574,25 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         if False:
                     db_record[col_alias] = valor_principal
                     logger.debug(f"🔄 Sync alias: {col_alias} = {valor_principal} (desde {col_principal})")
+
+    # V6.9.31: CAPA IA DE BIOMARCADORES — rescata marcadores VACÍOS pero
+    # MENCIONADOS en el informe (redacción narrativa que el regex no capta, ej.
+    # "el CD31 resalta el endotelio"). SOLO rellena vacíos => cero regresión.
+    try:
+        from core.biomarcadores_ia import (
+            biomarcadores_faltantes_mencionados as _bio_faltantes,
+            completar_biomarcadores_con_ia as _bio_ia,
+        )
+        if full_text:
+            _faltantes = _bio_faltantes(db_record, full_text)
+            if _faltantes:
+                _rescatados = _bio_ia(full_text, _faltantes)
+                for _col, _val in _rescatados.items():
+                    db_record[_col] = _val
+                if _rescatados:
+                    logging.info(f"[bio-ia] {db_record.get('Numero de caso','?')}: rescatados {list(_rescatados.keys())}")
+    except Exception as _e_bio:
+        logging.warning(f"[bio-ia] capa no aplicada: {_e_bio}")
 
     # FIX IHQ251018: Eliminar campos internos (que empiezan con _) antes de retornar
     db_record = {k: v for k, v in db_record.items() if not k.startswith('_')}

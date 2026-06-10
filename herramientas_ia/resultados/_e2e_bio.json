@@ -1,0 +1,26 @@
+[
+ {
+  "caso": "IHQ250380",
+  "seg": 24.2,
+  "IHQ_CD31": "POSITIVO",
+  "IHQ_CD34": "POSITIVO",
+  "IHQ_HHV8": "NEGATIVO",
+  "dx": "NEGATIVO PARA NEOPLASIA"
+ },
+ {
+  "caso": "IHQ250452",
+  "seg": 29.6,
+  "IHQ_CD31": "POSITIVO",
+  "IHQ_CD34": "",
+  "IHQ_HHV8": "",
+  "dx": "-ADENOMA FOLICULAR CON MULTIPLES FOCOS MICROS"
+ },
+ {
+  "caso": "IHQ250299",
+  "seg": 28.1,
+  "IHQ_CD31": "POSITIVO",
+  "IHQ_CD34": "POSITIVO",
+  "IHQ_HHV8": "NEGATIVO",
+  "dx": "HEMANGIOLINFANGIOMATOSIS DIFUSA"
+ }
+]

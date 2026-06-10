@@ -1191,8 +1191,23 @@ def analizar_batch_registros(numeros_peticion: List[str]) -> Dict[str, List[Dict
     # V5.3.9: Usar logging en lugar de print (stdout puede estar cerrado)
     logger.info(f"Analizando completitud de {len(numeros_peticion)} registros...")
 
+    # V6.9.30 FIX: cargar los registros de la BD ACTIVA (MySQL via adapter) UNA
+    # sola vez y pasarlos. Antes verificar_completitud_registro leía la SQLite
+    # legacy por caso (vacía con MySQL) => 'Registro no encontrado' => TODOS
+    # salían incompletos (0%). Ahora calcula la completitud real.
+    registros_por_numero = {}
+    try:
+        from core.database_manager import get_all_records_as_dataframe
+        _df = get_all_records_as_dataframe()
+        if _df is not None and not _df.empty and 'Numero de caso' in _df.columns:
+            _df = _df.fillna('')
+            for _, _row in _df.iterrows():
+                registros_por_numero[str(_row.get('Numero de caso', ''))] = {k: str(v) for k, v in _row.items()}
+    except Exception as _e:
+        logger.warning(f"analizar_batch_registros: no se pudieron cargar registros de BD activa: {_e}")
+
     for numero in numeros_peticion:
-        resultado = verificar_completitud_registro(numero)
+        resultado = verificar_completitud_registro(numero, registro=registros_por_numero.get(numero))
 
         if 'error' in resultado:
             logger.error(f"   ERROR en {numero}: {resultado['error']}")

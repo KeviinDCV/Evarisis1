@@ -64,13 +64,20 @@ class VentanaResultadosImportacion(tk.Toplevel):
         self._guardar_reporte_automatico()
 
     def _configurar_ventana(self):
-        """Configurar ventana maximizada (V5.3.9)"""
-        self.title("ONCONOVA CIRUGÍA ONCOLÓGICA - Resultados de Importación")
+        """V6.9.30: modal COMPACTO y CENTRADO (antes 'zoomed'/fullscreen)."""
+        self.title("ONCONOVA - Resultados de Importación")
 
-        # V5.3.9: Maximizar ventana como la UI principal
-        self.state('zoomed')  # Windows
-        # Para Linux/Mac: self.attributes('-zoomed', True)
-
+        ancho, alto = 860, 720
+        self.update_idletasks()
+        try:
+            sw = self.winfo_screenwidth()
+            sh = self.winfo_screenheight()
+            x = max(0, (sw - ancho) // 2)
+            y = max(0, (sh - alto) // 3)  # un poco más arriba del centro
+            self.geometry(f"{ancho}x{alto}+{x}+{y}")
+        except Exception:
+            self.geometry(f"{ancho}x{alto}")
+        self.minsize(760, 560)
         self.resizable(True, True)
 
         # Modal - mantener enfoque en esta ventana
@@ -113,21 +120,25 @@ class VentanaResultadosImportacion(tk.Toplevel):
             badge_frame = ttkb.Frame(stats_frame, bootstyle=style)
             badge_frame.pack(side=LEFT, padx=10, pady=5, fill=X, expand=YES)
 
+            # V6.9.30: 'inverse-<style>' = fondo de color + texto claro, para que
+            # el badge quede UNIFORME (antes el Label tenía fondo blanco => "parte
+            # blanca" dentro del badge de color).
+            inv = f"inverse-{style}"
             # Etiqueta
             ttkb.Label(
                 badge_frame,
                 text=label_text,
                 font=("Segoe UI", 9),
-                bootstyle=style
-            ).pack(pady=(5, 0))
+                bootstyle=inv
+            ).pack(pady=(5, 0), padx=10)
 
             # Valor
             ttkb.Label(
                 badge_frame,
                 text=value_text,
                 font=("Segoe UI", 16, "bold"),
-                bootstyle=style
-            ).pack(pady=(0, 5))
+                bootstyle=inv
+            ).pack(pady=(0, 5), padx=10)
 
     def _cargar_correcciones_desde_debug_maps(self) -> List[Dict]:
         """
@@ -188,7 +199,12 @@ class VentanaResultadosImportacion(tk.Toplevel):
         # Resumen fijo (no hace scroll)
         self._crear_seccion_resumen(main_frame)
 
-        # V6.0.6: SISTEMA DE PESTAÑAS (Notebook)
+        # V6.9.30 FIX: botones ANCLADOS AL FONDO (side=BOTTOM) ANTES del notebook,
+        # para que SIEMPRE estén visibles aunque la ventana sea pequeña. Antes el
+        # notebook (expand=YES) los empujaba fuera hasta agrandar la ventana.
+        self._crear_botones_accion(main_frame)
+
+        # V6.0.6: SISTEMA DE PESTAÑAS (Notebook) — llena el espacio restante
         self.notebook = ttkb.Notebook(main_frame)
         self.notebook.pack(fill=BOTH, expand=YES, pady=(10, 20))
 
@@ -198,9 +214,6 @@ class VentanaResultadosImportacion(tk.Toplevel):
         self._crear_tab_incompletos()
         self._crear_tab_correcciones()
         self._crear_tab_estadisticas()
-
-        # Botones fijos al final (no hacen scroll)
-        self._crear_botones_accion(main_frame)
 
     def _crear_tab_resumen(self):
         """V6.0.6: Pestaña de resumen general"""
@@ -1095,9 +1108,9 @@ class VentanaResultadosImportacion(tk.Toplevel):
             logging.error(f"❌ Error guardando reporte automático: {e}")
 
     def _crear_botones_accion(self, parent):
-        """Botones de acción mejorados para pantalla completa (V5.3.9)"""
+        """Botones de acción (V6.9.30: anclados al fondo, siempre visibles)."""
         frame = ttkb.Frame(parent)
-        frame.pack(fill=X, pady=(20, 0))
+        frame.pack(side=BOTTOM, fill=X, pady=(10, 0))
 
         # Pregunta más grande
         ttkb.Label(
