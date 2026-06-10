@@ -1,0 +1,131 @@
+{
+ "total": 995,
+ "resumen": {
+  "total": 995,
+  "completos": 912,
+  "incompletos": 83,
+  "porcentaje_exito": 91.7
+ },
+ "campos_faltantes": [
+  [
+   "Organo",
+   2
+  ],
+  [
+   "Diagnostico Coloracion",
+   1
+  ]
+ ],
+ "bio_faltantes": [
+  [
+   "IHQ_RECEPTOR_ESTROGENOS",
+   11
+  ],
+  [
+   "IHQ_RECEPTOR_PROGESTERONA",
+   11
+  ],
+  [
+   "IHQ_HER2",
+   11
+  ],
+  [
+   "IHQ_KI-67",
+   11
+  ],
+  [
+   "IHQ_PDL-1",
+   11
+  ],
+  [
+   "IHQ_CD5",
+   11
+  ],
+  [
+   "IHQ_CD23",
+   11
+  ],
+  [
+   "IHQ_CICLINA_D1",
+   11
+  ],
+  [
+   "IHQ_SOX11",
+   11
+  ],
+  [
+   "IHQ_P53",
+   10
+  ],
+  [
+   "IHQ_MAMOGLOBINA",
+   5
+  ],
+  [
+   "WT 1 (NO MAPEADO)",
+   4
+  ]
+ ],
+ "verif_en_pdf": [
+  {
+   "bio": "IHQ_RECEPTOR_ESTROGENOS",
+   "caso": "IHQ250301",
+   "token": "RECEPTOR_ESTROGENOS",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_RECEPTOR_ESTROGENOS",
+   "caso": "IHQ250317",
+   "token": "RECEPTOR_ESTROGENOS",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_RECEPTOR_PROGESTERONA",
+   "caso": "IHQ250301",
+   "token": "RECEPTOR_PROGESTERONA",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_RECEPTOR_PROGESTERONA",
+   "caso": "IHQ250317",
+   "token": "RECEPTOR_PROGESTERONA",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_HER2",
+   "caso": "IHQ250301",
+   "token": "HER2",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_HER2",
+   "caso": "IHQ250317",
+   "token": "HER2",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_KI-67",
+   "caso": "IHQ250301",
+   "token": "KI-67",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_KI-67",
+   "caso": "IHQ250317",
+   "token": "KI-67",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_PDL-1",
+   "caso": "IHQ250301",
+   "token": "PDL-1",
+   "menciona_pdf": false
+  },
+  {
+   "bio": "IHQ_PDL-1",
+   "caso": "IHQ250317",
+   "token": "PDL-1",
+   "menciona_pdf": false
+  }
+ ]
+}

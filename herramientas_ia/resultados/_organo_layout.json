@@ -1,0 +1,44 @@
+{
+ "IHQ250368": {
+  "organo_extraido_actual": "BX MASA EN CERVIX",
+  "idx_tabla": 28,
+  "contexto_tabla": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "IHQ250368",
+   "ESTUDIO DE",
+   "INMUNOHISTOQUIMICA",
+   "898807 Estudio anatomopatologico de marcacion",
+   "inmunohistoquimica basica (especifico)",
+   "Bloques y laminas"
+  ],
+  "contexto_macroscopica": [],
+  "candidato_fallback": {
+   "fallback_organo_colon": null
+  }
+ },
+ "IHQ250723": {
+  "organo_extraido_actual": "CUADRANTECTOMIA MAMA DEERCHA",
+  "idx_tabla": 28,
+  "contexto_tabla": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "IHQ250723",
+   "ESTUDIO DE",
+   "INMUNOHISTOQUIMICA",
+   "898807 Estudio anatomopatologico de marcacion",
+   "inmunohistoquimica basica (especifico)",
+   "Bloques y laminas"
+  ],
+  "contexto_macroscopica": [
+   "Órgano: Mama derecha, cuadrantectomía",
+   "Diagnóstico Inicial: ADENOMA TUBULAR. ",
+   "Fecha de diagnóstico: 27-06-2025"
+  ],
+  "candidato_fallback": {
+   "fallback_organo_colon": "Mama derecha, cuadrantectomía"
+  }
+ }
+}

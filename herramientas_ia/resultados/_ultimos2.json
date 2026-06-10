@@ -1,0 +1,32 @@
+[
+ {
+  "caso": "IHQ250368",
+  "nivel": "incompleto",
+  "porcentaje": 93.6,
+  "campos_faltantes": [
+   "Organo"
+  ],
+  "biomarcadores_faltantes": [],
+  "ESTUDIOS_SOLIC": "MSH2, MSH6, MLH1, PMS2",
+  "DX_PRINCIPAL": "B) PATRÓN MICROSATELITAL ESTABLE",
+  "valores_faltantes": {
+   "Organo": "'N/A'"
+  }
+ },
+ {
+  "caso": "IHQ250723",
+  "nivel": "incompleto",
+  "porcentaje": 87.3,
+  "campos_faltantes": [
+   "Diagnostico Coloracion",
+   "Organo"
+  ],
+  "biomarcadores_faltantes": [],
+  "ESTUDIOS_SOLIC": "N/A",
+  "DX_PRINCIPAL": "CÁNCER DE CUELLO DE ÚTERO",
+  "valores_faltantes": {
+   "Diagnostico Coloracion": "'N/A'",
+   "Organo": "'N/A'"
+  }
+ }
+]

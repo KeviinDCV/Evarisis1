@@ -795,6 +795,121 @@ MAPEO_BIOMARCADORES = {
     'IHQ_INHIBINA': 'IHQ_INHIBINA',
 }
 
+# ============================================================================
+# V6.9.31: RESOLUCIÓN ROBUSTA DE BIOMARCADORES SOLICITADOS
+# ----------------------------------------------------------------------------
+# El campo IHQ_ESTUDIOS_SOLICITADOS llega con variantes de nombre (tildes,
+# espacios, typos) y a veces contaminado con texto narrativo. El lookup directo
+# por .upper() fallaba con "WT 1", "CALDESMÓN", "CK 5 6", "SINAPTOFISNA", etc.
+# Esta capa añade: (1) alias de typos -> columna canónica, (2) lookup normalizado
+# como fallback (sin tildes/espacios/separadores), (3) detección de columnas
+# duplicadas en el esquema (MAMOGLOBINA/MAMAGLOBINA...), (4) filtro de basura.
+# NO toca extractores; es lógica de auditoría -> sin riesgo de regresión.
+# ============================================================================
+import re
+import unicodedata as _unicodedata
+
+# Alias de typos/variantes -> columna CANÓNICA correcta (el dato ya está ahí)
+MAPEO_BIOMARCADORES.update({
+    'AE1AE3': 'IHQ_CKAE1AE3',          # FIX IHQ250366: sin prefijo CK
+    'AE1/AE3': 'IHQ_CKAE1AE3',
+    'CK AE1AE3': 'IHQ_CKAE1AE3',
+    'SINAPTOFISNA': 'IHQ_SINAPTOFISINA',   # FIX IHQ250404: typo (falta I)
+    'SYNAPTOFISINA': 'IHQ_SINAPTOFISINA',  # variante inglesa/OCR
+    'CROMOGRAMINA': 'IHQ_CROMOGRANINA',    # FIX IHQ250352: typo (M->N) -> col correcta
+    'CROMOGRAMINA A': 'IHQ_CROMOGRANINA',
+    'CROMOGRANINA A': 'IHQ_CROMOGRANINA',
+    'LAMDA': 'IHQ_LAMBDA',                  # typo (falta B)
+    'CYCLINA D1': 'IHQ_CICLINA_D1',        # variante inglesa
+    'CYCLINAD1': 'IHQ_CICLINA_D1',
+    'CYCLIN D1': 'IHQ_CICLINA_D1',
+    'KI76': 'IHQ_KI-67',                    # typo (76 en vez de 67)
+    'GFAP1': 'IHQ_GFAP',                    # OCR añade 1
+})
+
+
+def _norm_bio(s) -> str:
+    """Normaliza un nombre de biomarcador para lookup robusto: mayúsculas, sin
+    tildes, sin espacios/guiones/barras/puntos. 'CALDESMÓN'->'CALDESMON',
+    'WT 1'->'WT1', 'CK 5 6'->'CK56', 'CKAE 1E3'->'CKAE1E3'."""
+    if not s:
+        return ""
+    nf = _unicodedata.normalize("NFKD", str(s))
+    t = "".join(c for c in nf if not _unicodedata.combining(c)).upper()
+    return re.sub(r"[\s\-_/.]+", "", t)
+
+
+# Índice normalizado del mapa (fallback). "Primero gana" para no alterar el
+# comportamiento del lookup directo en caso de colisiones.
+_MAPEO_BIO_NORM = {}
+for _k, _v in MAPEO_BIOMARCADORES.items():
+    _nk = _norm_bio(_k)
+    if _nk and _nk not in _MAPEO_BIO_NORM:
+        _MAPEO_BIO_NORM[_nk] = _v
+
+# Columnas DUPLICADAS en el esquema: al verificar detección, mirar todas. El
+# extractor a veces llena una variante y la completitud buscaba la otra.
+_COLUMNAS_EQUIVALENTES = {
+    'IHQ_MAMOGLOBINA': ('IHQ_MAMOGLOBINA', 'IHQ_MAMAGLOBINA'),
+    'IHQ_MAMAGLOBINA': ('IHQ_MAMOGLOBINA', 'IHQ_MAMAGLOBINA'),
+    'IHQ_CROMOGRANINA': ('IHQ_CROMOGRANINA', 'IHQ_CROMOGRAMINA'),
+    'IHQ_CK5_6': ('IHQ_CK5_6', 'IHQ_CK56'),
+}
+
+# Stopwords narrativas: si un "biomarcador" no mapea y contiene alguna, es
+# basura de parsing del campo (frases del informe capturadas por error).
+_STOPWORDS_NO_BIO = {
+    'DE', 'DEL', 'LA', 'EL', 'LOS', 'LAS', 'UN', 'UNA', 'VER', 'PREVIA',
+    'VALIDACION', 'TECNICA', 'VERIFICACION', 'ADECUADO', 'RENDIMIENTO',
+    'PLATAFORMA', 'AUTOMATIZADA', 'VENTANA', 'DESCRIPCION', 'MICROSCOPICA',
+    'MACROSCOPICA', 'COMENTARIO', 'PROTOCOLO', 'COLEGIO', 'AMERICANO',
+    'PATOLOGOS', 'VERSION', 'SON', 'ES', 'OBSERVAN', 'OBSERVA', 'FRAGMENTOS',
+    'MUCOSA', 'NEOPLASIA', 'ORIGEN', 'EPITELIAL', 'DISPUESTA', 'PATRON',
+    'SOLIDO', 'SOLIDA', 'CELULAS', 'CITOPLASMA', 'ANILLO', 'SELLO', 'ESTROMA',
+    'PROLIFERACION', 'MUSCULO', 'LISO', 'INFILTRADO', 'INFLAMATORIO', 'MIXTO',
+    'NECROSIS', 'ZONAS', 'CLARO', 'DENSO', 'PRESENTA', 'ALGUNOS', 'TINCION',
+    'TINCIONES', 'INMUNOHISTOQUIMICA', 'INMUNOHISTOQUIMICO', 'REALIZA',
+    'REALIZAN', 'PANEL', 'NEGATIVOS', 'POSITIVOS', 'AMPLIO', 'DISCOHESIVAS',
+    'COMPUESTA', 'COMPUESTO',
+}
+
+
+def _parece_biomarcador(nombre: str) -> bool:
+    """True si 'nombre' tiene forma plausible de biomarcador (no frase narrativa
+    capturada por error). Filtra 'PREVIA VALIDACION DE', 'COMENTARIO', etc."""
+    palabras = str(nombre).upper().split()
+    if not palabras or len(palabras) > 3:
+        return False
+    if any(p in _STOPWORDS_NO_BIO for p in palabras):
+        return False
+    compacto = _norm_bio(nombre)
+    if len(compacto) < 2 or len(compacto) > 16:
+        return False
+    return bool(re.search(r'[A-Z]', compacto))
+
+
+def _resolver_columna(estudio: str):
+    """Resuelve un estudio solicitado a su columna BD. Directo -> normalizado.
+    Devuelve None si no mapea a ninguna columna del esquema."""
+    if not estudio:
+        return None
+    col = MAPEO_BIOMARCADORES.get(estudio.upper())
+    if col:
+        return col
+    return _MAPEO_BIO_NORM.get(_norm_bio(estudio))
+
+
+def _columna_detectada(registro: Dict, columna: str) -> bool:
+    """True si la columna (o alguna equivalente del esquema) tiene valor válido.
+    'NO MENCIONADO'/'N/A'/'NO VALORABLE' cuentan como detectados (el sistema lo
+    intentó); solo vacío/NO ENCONTRADO/NO APLICA cuentan como faltante."""
+    invalidos = ('', 'NO ENCONTRADO', 'NAN', 'NONE', 'NO APLICA')
+    for c in _COLUMNAS_EQUIVALENTES.get(columna, (columna,)):
+        v = registro.get(c, '')
+        if v is not None and str(v).strip().upper() not in invalidos:
+            return True
+    return False
+
 
 def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any]:
     """
@@ -872,8 +987,8 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
         estudio_upper = estudio.upper()
         resultado['biomarcadores_normalizados'].append(estudio_upper)
 
-        # Buscar columna correspondiente en MAPEO_BIOMARCADORES
-        columna_bd = MAPEO_BIOMARCADORES.get(estudio_upper)
+        # V6.9.31: lookup ROBUSTO (directo -> normalizado sin tildes/espacios)
+        columna_bd = _resolver_columna(estudio)
 
         if columna_bd:
             # Mapeado exitosamente
@@ -906,7 +1021,7 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
             columnas_encontradas = []
 
             for token in tokens:
-                columna_token = MAPEO_BIOMARCADORES.get(token)
+                columna_token = _resolver_columna(token)  # V6.9.31: robusto
                 if columna_token and columna_token not in columnas_encontradas:
                     columnas_encontradas.append(columna_token)
 
@@ -917,8 +1032,16 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
                         resultado['columnas_bd_mapeadas'].append(col)
                 resultado['total_mapeados'] += 1
             else:
-                # No mapeado (ni directo ni como compuesto)
-                resultado['no_mapeados'].append(estudio)
+                # V6.9.31: No mapeó. CLASIFICAR en vez de penalizar todo:
+                #   - Si PARECE un biomarcador real (nombre corto plausible) pero no
+                #     tiene columna en el esquema (ej. CD13, NSE) -> 'no_mapeados'
+                #     (informativo; NO penaliza completitud: el sistema no tiene
+                #     dónde guardarlo, no es fallo de extracción del caso).
+                #   - Si es BASURA de parsing (frase narrativa del informe capturada
+                #     por error: "PREVIA VALIDACION DE", "COMENTARIO"...) -> IGNORAR.
+                if _parece_biomarcador(estudio):
+                    resultado['no_mapeados'].append(estudio)
+                # else: basura -> se descarta (no entra a no_mapeados ni penaliza)
 
     return resultado
 
@@ -1031,38 +1154,39 @@ def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any
         tiene_estudios_solicitados = estudios_info['tiene_estudios']
 
         if tiene_estudios_solicitados:
-            # Usar solo columnas mapeadas de los estudios solicitados
-            for columna_bd in estudios_info['columnas_bd_mapeadas']:
-                # Verificar si tiene valor en la BD
-                valor = registro.get(columna_bd, '')
-                # V6.3.5 FIX IHQ250007: 'NO MENCIONADO', 'N/A' y 'NO VALORABLE' son resultados válidos
-                # Significa que el PDF no reportó el resultado o hubo problema técnico
-                # No debe considerarse como faltante, ya que el sistema intentó extraerlo
-                valores_validos_especiales = ['NO MENCIONADO', 'N/A', 'NO VALORABLE']
-                valores_invalidos = ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA']
+            # V6.9.31: deduplicar columnas mapeadas (un mismo biomarcador puede
+            # aparecer repetido en el campo, p.ej. "CKAE1AE3, ..., CKAE1AE3").
+            columnas_unicas = []
+            for c in estudios_info['columnas_bd_mapeadas']:
+                if c not in columnas_unicas:
+                    columnas_unicas.append(c)
 
-                if valor and valor not in valores_invalidos:
-                    # Tiene un valor (incluyendo 'NO MENCIONADO', 'N/A' o 'NO VALORABLE')
+            # Verificar cada columna solicitada (con columnas equivalentes del
+            # esquema: MAMOGLOBINA/MAMAGLOBINA, CROMOGRANINA/CROMOGRAMINA, etc.)
+            for columna_bd in columnas_unicas:
+                if _columna_detectada(registro, columna_bd):
                     biomarcadores_detectados += 1
                 else:
-                    # Agregar a faltantes (solo si está vacío o es inválido)
                     biomarcadores_faltantes.append(columna_bd)
 
-            # Agregar biomarcadores no mapeados a faltantes
-            for no_mapeado in estudios_info['no_mapeados']:
-                biomarcadores_faltantes.append(f"{no_mapeado} (NO MAPEADO)")
+            # V6.9.31: los 'no_mapeados' restantes son biomarcadores REALES sin
+            # columna en el esquema (ej. CD13, NSE). NO penalizan la completitud
+            # —el sistema no tiene dónde guardarlos, no es un fallo de extracción
+            # del caso— pero se exponen aparte por si se amplía el esquema (FUNC-03).
+            # La basura de parsing (frases del informe) ya fue filtrada al parsear.
+            biomarcadores_sin_columna = list(estudios_info.get('no_mapeados', []))
 
-            # Para cálculo de completitud
-            biomarcadores_solicitados = estudios_info['biomarcadores_normalizados']
+            # Para cálculo de completitud: el denominador son las COLUMNAS reales
+            # solicitadas (no los nombres crudos, que incluían duplicados/basura).
+            biomarcadores_solicitados = columnas_unicas
 
-        # Si no hay estudios solicitados, usar la lista básica de biomarcadores
+        # V6.9.31 FIX: si el caso NO declaró estudios solicitados (N/A), NO se
+        # exige NINGÚN biomarcador. Antes se aplicaba una lista fija oncológica
+        # (ER/PR/HER2/CD5/CICLINA_D1/...) a TODOS, marcando "incompletos" casos
+        # benignos/inflamatorios (dacriocistitis, IgG4, etc.) que nunca pidieron
+        # esos marcadores. Su completitud se basa solo en campos de paciente/dx.
         if not tiene_estudios_solicitados:
-            for campo in CAMPOS_REQUERIDOS['biomarcadores']:
-                valor = registro.get(campo, '')
-                if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'NO APLICA', 'N/A']:
-                    biomarcadores_detectados += 1
-                else:
-                    biomarcadores_faltantes.append(campo)
+            pass  # no exigir biomarcadores que el caso no solicitó
 
         # Calcular porcentaje (campos + biomarcadores ponderados)
         # Campos requeridos = 70% del peso
@@ -1070,8 +1194,12 @@ def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any
         porcentaje_campos = (campos_completos / campos_totales) * 70 if campos_totales > 0 else 0
 
         # Calcular porcentaje de biomarcadores basado en estudios solicitados
-        total_biomarcadores_esperados = len(biomarcadores_solicitados) if biomarcadores_solicitados else len(CAMPOS_REQUERIDOS['biomarcadores'])
-        porcentaje_biomarcadores = (biomarcadores_detectados / total_biomarcadores_esperados) * 30 if total_biomarcadores_esperados > 0 else 0
+        if biomarcadores_solicitados:
+            total_biomarcadores_esperados = len(biomarcadores_solicitados)
+            porcentaje_biomarcadores = (biomarcadores_detectados / total_biomarcadores_esperados) * 30
+        else:
+            # V6.9.31: sin estudios solicitados -> no penalizar biomarcadores (peso completo)
+            porcentaje_biomarcadores = 30
         porcentaje_total = porcentaje_campos + porcentaje_biomarcadores
 
         # V3.2.4.2: FIX 14.1 - Criterio CORRECTO de completitud
@@ -1098,14 +1226,22 @@ def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any
                     nivel = 'incompleto'
                     completo = False
             else:
-                # TODOS los biomarcadores solicitados NO están mapeados
-                # Marcar como INCOMPLETO porque no podemos verificar
-                nivel = 'incompleto'
-                completo = False
+                # V6.9.31: hay campo de estudios pero NO mapeó a NINGUNA columna
+                # del esquema (era basura de parsing filtrada y/o biomarcadores sin
+                # columna como CD13/NSE). No hay nada verificable en biomarcadores
+                # -> completo si los campos de paciente/dx están completos.
+                if porcentaje_total >= 100.0:
+                    nivel = 'completo'
+                    completo = True
+                else:
+                    nivel = 'incompleto'
+                    completo = False
         else:
-            # No hay estudios solicitados: al menos 1 biomarcador de la lista genérica
-            # V6.4.3: Usar >= para consistencia
-            if porcentaje_total >= 100.0 and biomarcadores_detectados >= 1:
+            # V6.9.31: sin estudios solicitados -> completo si los campos de
+            # paciente/dx están completos (no se exigen biomarcadores que el caso
+            # nunca pidió). Antes exigía >=1 de la lista fija oncológica, lo que
+            # marcaba incompletos a casos benignos/inflamatorios correctos.
+            if porcentaje_total >= 100.0:
                 nivel = 'completo'
                 completo = True
             else:
