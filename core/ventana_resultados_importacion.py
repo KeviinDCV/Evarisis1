@@ -182,8 +182,64 @@ class VentanaResultadosImportacion(tk.Toplevel):
 
         return todas_correcciones
 
+    def _get_correcciones(self) -> List[Dict]:
+        """V6.9.32: cache de correcciones. Antes cada pestaña releía TODOS los
+        debug_maps (lento y repetido); ahora se cargan una sola vez."""
+        if getattr(self, '_correcciones_cache', None) is None:
+            self._correcciones_cache = self._cargar_correcciones_desde_debug_maps()
+        return self._correcciones_cache
+
+    def _crear_canvas_scrollable(self, tab):
+        """V6.9.32: Crea un canvas scrollable ROBUSTO y devuelve el frame interno.
+
+        FIX del 'tab en blanco': los tabs NO visibles se construían con el canvas
+        en tamaño 0 y no se redibujaban al mostrarse. Ahora se ajusta el ancho del
+        frame interno al canvas y se refresca el scrollregion en cada <Configure>,
+        de modo que el contenido aparece correctamente al seleccionar la pestaña.
+        """
+        canvas_frame = ttkb.Frame(tab)
+        canvas_frame.pack(fill=BOTH, expand=YES)
+
+        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
+        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
+        scrollable_frame = ttkb.Frame(canvas)
+
+        win_id = canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        def _sync(event=None):
+            try:
+                if canvas.winfo_exists():
+                    canvas.configure(scrollregion=canvas.bbox("all"))
+                    # Ajustar ancho del frame interno al canvas (evita contenido colapsado)
+                    canvas.itemconfigure(win_id, width=canvas.winfo_width())
+            except tk.TclError:
+                pass
+
+        scrollable_frame.bind("<Configure>", _sync)
+        canvas.bind("<Configure>", _sync)
+
+        def _on_mousewheel(event):
+            try:
+                if canvas.winfo_exists():
+                    canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+            except tk.TclError:
+                pass
+
+        canvas.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+
+        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
+        scrollbar.pack(side=RIGHT, fill=Y)
+        return scrollable_frame
+
     def _crear_ui(self):
-        """V6.0.6: Crear interfaz con sistema de pestañas"""
+        """V6.9.32: Interfaz con pestañas de CARGA DIFERIDA (lazy).
+
+        Antes se construían las 5 pestañas de golpe al abrir, incluida 'Completos'
+        con 1460+ casos colapsables (miles de widgets) -> la UI se congelaba y los
+        tabs quedaban en blanco. Ahora cada pestaña se construye SOLO al abrirla.
+        """
         # Frame principal
         main_frame = ttkb.Frame(self, padding=40)
         main_frame.pack(fill=BOTH, expand=YES)
@@ -208,44 +264,52 @@ class VentanaResultadosImportacion(tk.Toplevel):
         self.notebook = ttkb.Notebook(main_frame)
         self.notebook.pack(fill=BOTH, expand=YES, pady=(10, 20))
 
-        # Crear pestañas
-        self._crear_tab_resumen()
-        self._crear_tab_completos()
-        self._crear_tab_incompletos()
-        self._crear_tab_correcciones()
-        self._crear_tab_estadisticas()
+        # V6.9.32: crear las pestañas VACÍAS y registrar su constructor. El
+        # contenido se genera al seleccionarlas (lazy) en _on_tab_changed.
+        specs = [
+            ("📊 Resumen General", self._crear_tab_resumen),
+            (f"✅ Completos ({len(self.completos)})", self._crear_tab_completos),
+            (f"⚠️ Incompletos ({len(self.incompletos)})", self._crear_tab_incompletos),
+            ("🔧 Correcciones", self._crear_tab_correcciones),
+            ("📈 Estadísticas", self._crear_tab_estadisticas),
+        ]
+        self._tab_specs = []
+        for texto, builder in specs:
+            frame = ttkb.Frame(self.notebook)
+            self.notebook.add(frame, text=texto)
+            self._tab_specs.append({"frame": frame, "builder": builder, "construido": False})
 
-    def _crear_tab_resumen(self):
+        self.notebook.bind("<<NotebookTabChanged>>", self._on_tab_changed)
+        # Construir el primer tab (visible) tras el render inicial de la ventana
+        self.after(60, self._on_tab_changed)
+
+    def _on_tab_changed(self, event=None):
+        """V6.9.32: construye el contenido de la pestaña seleccionada (una sola vez)."""
+        try:
+            idx = self.notebook.index(self.notebook.select())
+        except Exception:
+            return
+        if idx < 0 or idx >= len(getattr(self, '_tab_specs', [])):
+            return
+        spec = self._tab_specs[idx]
+        if spec["construido"]:
+            return
+        spec["construido"] = True
+        try:
+            spec["builder"](spec["frame"])
+        except Exception as e:
+            logging.error(f"❌ Error construyendo pestaña {idx}: {e}", exc_info=True)
+            ttkb.Label(
+                spec["frame"],
+                text=f"⚠️ No se pudo cargar esta sección:\n{e}",
+                font=("Segoe UI", 11),
+                bootstyle="danger",
+                justify="center"
+            ).pack(pady=40, padx=20)
+
+    def _crear_tab_resumen(self, tab):
         """V6.0.6: Pestaña de resumen general"""
-        tab = ttkb.Frame(self.notebook)
-        self.notebook.add(tab, text="📊 Resumen General")
-
-        # Crear canvas scrollable
-        canvas_frame = ttkb.Frame(tab)
-        canvas_frame.pack(fill=BOTH, expand=YES)
-
-        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
-        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttkb.Frame(canvas)
-
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        # Scroll con mousewheel
-        def _on_mousewheel(event):
-            try:
-                if canvas.winfo_exists():
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            except tk.TclError:
-                pass
-
-        canvas.bind("<MouseWheel>", _on_mousewheel)
-        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Contenido del resumen
         ttkb.Label(
@@ -344,14 +408,8 @@ class VentanaResultadosImportacion(tk.Toplevel):
                 foreground="#28a745"
             ).pack(anchor=W)
 
-        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
-        scrollbar.pack(side=RIGHT, fill=Y)
-
-    def _crear_tab_completos(self):
+    def _crear_tab_completos(self, tab):
         """V6.0.6: Pestaña de casos completos con colapsables"""
-        tab = ttkb.Frame(self.notebook)
-        self.notebook.add(tab, text=f"✅ Completos ({len(self.completos)})")
-
         if not self.completos:
             ttkb.Label(
                 tab,
@@ -361,32 +419,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
             ).pack(pady=50)
             return
 
-        # Crear canvas scrollable
-        canvas_frame = ttkb.Frame(tab)
-        canvas_frame.pack(fill=BOTH, expand=YES)
-
-        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
-        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttkb.Frame(canvas)
-
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        # Scroll con mousewheel
-        def _on_mousewheel(event):
-            try:
-                if canvas.winfo_exists():
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            except tk.TclError:
-                pass
-
-        canvas.bind("<MouseWheel>", _on_mousewheel)
-        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Título
         ttkb.Label(
@@ -396,22 +429,34 @@ class VentanaResultadosImportacion(tk.Toplevel):
             bootstyle="success"
         ).pack(anchor=W, pady=(10, 15), padx=20)
 
-        # Crear cada caso como colapsable
+        # V6.9.32: cap de render. Con 1460+ casos, crear un colapsable por cada
+        # uno congelaba la UI. Renderizamos hasta MAX y avisamos del resto (los
+        # completos no requieren acción; el detalle queda en el reporte JSON).
         correcciones_por_caso = self._agrupar_correcciones_por_caso(
-            self._cargar_correcciones_desde_debug_maps()
+            self._get_correcciones()
         )
 
-        for reg in self.completos:
+        MAX_RENDER = 150
+        total = len(self.completos)
+        for reg in self.completos[:MAX_RENDER]:
             numero = reg.get('numero_peticion', 'N/A')
-            tiene_correcciones = numero in correcciones_por_caso
             self._crear_caso_completo_colapsable(
                 scrollable_frame,
                 reg,
                 correcciones_por_caso.get(numero, [])
             )
 
-        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
-        scrollbar.pack(side=RIGHT, fill=Y)
+        if total > MAX_RENDER:
+            ttkb.Label(
+                scrollable_frame,
+                text=(f"… y {total - MAX_RENDER} caso(s) completo(s) más "
+                      f"(mostrando {MAX_RENDER} de {total}). El detalle completo "
+                      f"está en el reporte guardado y en la tabla principal."),
+                font=("Segoe UI", 9, "italic"),
+                foreground="#6c757d",
+                wraplength=760,
+                justify="left"
+            ).pack(anchor=W, pady=(10, 15), padx=20)
 
     def _crear_caso_completo_colapsable(self, parent, caso: Dict, correcciones: List[Dict]):
         """V6.0.6: Crear caso completo colapsable"""
@@ -504,11 +549,8 @@ class VentanaResultadosImportacion(tk.Toplevel):
         icon_label.bind("<Button-1>", toggle_expand)
         titulo_label.bind("<Button-1>", toggle_expand)
 
-    def _crear_tab_incompletos(self):
+    def _crear_tab_incompletos(self, tab):
         """V6.0.6: Pestaña de casos incompletos con colapsables"""
-        tab = ttkb.Frame(self.notebook)
-        self.notebook.add(tab, text=f"⚠️ Incompletos ({len(self.incompletos)})")
-
         if not self.incompletos:
             ttkb.Label(
                 tab,
@@ -518,32 +560,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
             ).pack(pady=50)
             return
 
-        # Crear canvas scrollable
-        canvas_frame = ttkb.Frame(tab)
-        canvas_frame.pack(fill=BOTH, expand=YES)
-
-        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
-        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttkb.Frame(canvas)
-
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        # Scroll con mousewheel
-        def _on_mousewheel(event):
-            try:
-                if canvas.winfo_exists():
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            except tk.TclError:
-                pass
-
-        canvas.bind("<MouseWheel>", _on_mousewheel)
-        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Título
         ttkb.Label(
@@ -555,7 +572,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
 
         # Crear cada caso como colapsable
         correcciones_por_caso = self._agrupar_correcciones_por_caso(
-            self._cargar_correcciones_desde_debug_maps()
+            self._get_correcciones()
         )
 
         for reg in self.incompletos:
@@ -565,9 +582,6 @@ class VentanaResultadosImportacion(tk.Toplevel):
                 reg,
                 correcciones_por_caso.get(numero, [])
             )
-
-        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
-        scrollbar.pack(side=RIGHT, fill=Y)
 
     def _crear_caso_incompleto_colapsable(self, parent, caso: Dict, correcciones: List[Dict]):
         """V6.0.6: Crear caso incompleto colapsable"""
@@ -672,15 +686,17 @@ class VentanaResultadosImportacion(tk.Toplevel):
         icon_label.bind("<Button-1>", toggle_expand)
         titulo_label.bind("<Button-1>", toggle_expand)
 
-    def _crear_tab_correcciones(self):
+    def _crear_tab_correcciones(self, tab):
         """V6.0.6: Pestaña de correcciones con colapsables por caso"""
-        tab = ttkb.Frame(self.notebook)
-
-        # Cargar correcciones
-        correcciones = self._cargar_correcciones_desde_debug_maps()
+        # Cargar correcciones (cacheado)
+        correcciones = self._get_correcciones()
         correcciones_por_caso = self._agrupar_correcciones_por_caso(correcciones)
 
-        self.notebook.add(tab, text=f"🔧 Correcciones ({len(correcciones_por_caso)})")
+        # V6.9.32: actualizar el texto de la pestaña con el conteo real
+        try:
+            self.notebook.tab(tab, text=f"🔧 Correcciones ({len(correcciones_por_caso)})")
+        except Exception:
+            pass
 
         if not correcciones_por_caso:
             ttkb.Label(
@@ -691,32 +707,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
             ).pack(pady=50)
             return
 
-        # Crear canvas scrollable
-        canvas_frame = ttkb.Frame(tab)
-        canvas_frame.pack(fill=BOTH, expand=YES)
-
-        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
-        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttkb.Frame(canvas)
-
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        # Scroll con mousewheel
-        def _on_mousewheel(event):
-            try:
-                if canvas.winfo_exists():
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            except tk.TclError:
-                pass
-
-        canvas.bind("<MouseWheel>", _on_mousewheel)
-        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Título
         ttkb.Label(
@@ -734,12 +725,19 @@ class VentanaResultadosImportacion(tk.Toplevel):
             foreground="#155724"
         ).pack(anchor=W, pady=(0, 15), padx=20)
 
-        # Crear cada caso como colapsable
-        for numero_caso, correcciones_caso in correcciones_por_caso.items():
+        # V6.9.32: cap de render para no congelar con miles de casos corregidos
+        MAX_RENDER = 200
+        items = list(correcciones_por_caso.items())
+        for numero_caso, correcciones_caso in items[:MAX_RENDER]:
             self._crear_caso_correcciones_colapsable(scrollable_frame, numero_caso, correcciones_caso)
-
-        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
-        scrollbar.pack(side=RIGHT, fill=Y)
+        if len(items) > MAX_RENDER:
+            ttkb.Label(
+                scrollable_frame,
+                text=f"… y {len(items) - MAX_RENDER} caso(s) con correcciones más (ver reporte guardado).",
+                font=("Segoe UI", 9, "italic"),
+                foreground="#6c757d",
+                wraplength=760, justify="left"
+            ).pack(anchor=W, pady=(10, 15), padx=20)
 
     def _crear_caso_correcciones_colapsable(self, parent, numero_caso: str, correcciones: List[Dict]):
         """V6.0.6: Crear caso con correcciones colapsable"""
@@ -883,37 +881,9 @@ class VentanaResultadosImportacion(tk.Toplevel):
                 foreground="#6c757d"
             ).pack(anchor=W, padx=10, pady=(2, 0))
 
-    def _crear_tab_estadisticas(self):
+    def _crear_tab_estadisticas(self, tab):
         """V6.0.6: Pestaña de estadísticas con gráficos"""
-        tab = ttkb.Frame(self.notebook)
-        self.notebook.add(tab, text="📈 Estadísticas")
-
-        # Crear canvas scrollable
-        canvas_frame = ttkb.Frame(tab)
-        canvas_frame.pack(fill=BOTH, expand=YES)
-
-        canvas = tk.Canvas(canvas_frame, bg='#f8f9fa', highlightthickness=0)
-        scrollbar = ttkb.Scrollbar(canvas_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = ttkb.Frame(canvas)
-
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
-
-        # Scroll con mousewheel
-        def _on_mousewheel(event):
-            try:
-                if canvas.winfo_exists():
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            except tk.TclError:
-                pass
-
-        canvas.bind("<MouseWheel>", _on_mousewheel)
-        scrollable_frame.bind("<MouseWheel>", _on_mousewheel)
+        scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Título
         ttkb.Label(
@@ -936,7 +906,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
         completos = len(self.completos)
         incompletos = len(self.incompletos)
 
-        correcciones = self._cargar_correcciones_desde_debug_maps()
+        correcciones = self._get_correcciones()
         total_correcciones = len(correcciones)
 
         metricas = [
@@ -1047,9 +1017,6 @@ class VentanaResultadosImportacion(tk.Toplevel):
                     font=("Segoe UI", 10)
                 ).pack(side=LEFT, padx=10)
 
-        canvas.pack(side=LEFT, fill=BOTH, expand=YES)
-        scrollbar.pack(side=RIGHT, fill=Y)
-
     def _agrupar_correcciones_por_caso(self, correcciones: List[Dict]) -> Dict[str, List[Dict]]:
         """V6.0.6: Agrupar correcciones por número de caso"""
         por_caso = {}
@@ -1073,7 +1040,7 @@ class VentanaResultadosImportacion(tk.Toplevel):
             ruta_reporte = reportes_dir / nombre_archivo
 
             # Cargar correcciones
-            correcciones = self._cargar_correcciones_desde_debug_maps()
+            correcciones = self._get_correcciones()
 
             # Estructura del reporte
             reporte = {

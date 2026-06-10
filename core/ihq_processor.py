@@ -11,7 +11,8 @@ import os
 from typing import Callable, Optional
 
 
-def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) -> int:
+def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
+                     out_numeros: Optional[list] = None) -> int:
     """
     Procesar archivo IHQ con detección de múltiples informes SIN auditoría automática
 
@@ -206,6 +207,16 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None) ->
 
         # NOTA: La auditoría IA ahora se ejecuta DESPUÉS, cuando el usuario
         # ve la ventana de resultados y decide si quiere auditar o no
+
+        # V6.9.31: exponer los números de caso REALES procesados. El modal antes
+        # contaba "despues - antes" (solo casos NUEVOS) y daba 0 al REIMPORTAR
+        # casos ya existentes (el UPSERT no cambia el set de IDs). Con esto el
+        # modal cuenta correctamente nuevos + reimportados.
+        if out_numeros is not None:
+            for _reg in todos_los_registros:
+                _num = _reg.get('Numero de caso') or _reg.get('numero_de_caso')
+                if _num:
+                    out_numeros.append(str(_num).strip())
 
         return saved_count
 

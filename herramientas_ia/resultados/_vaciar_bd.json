@@ -1,0 +1,31 @@
+{
+ "dialect": "mysql",
+ "antes": {
+  "diagnosticos_ia": 0,
+  "informes_ihq": 995
+ },
+ "backup": {
+  "diagnosticos_ia": {
+   "filas": 0,
+   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260610_120703\\diagnosticos_ia.csv"
+  },
+  "informes_ihq": {
+   "filas": 995,
+   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260610_120703\\informes_ihq.csv"
+  }
+ },
+ "despues": {
+  "diagnosticos_ia": 0,
+  "informes_ihq": 0
+ },
+ "errores": [],
+ "backup_dir": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260610_120703",
+ "tablas_encontradas": [
+  "diagnosticos_ia",
+  "informes_ihq"
+ ],
+ "tablas_objetivo": [
+  "diagnosticos_ia",
+  "informes_ihq"
+ ]
+}

@@ -7377,25 +7377,19 @@ Informes con malignidad: {malignant_count}"""
                 # V5.3.9: _process_file ahora retorna (records_count, correcciones)
                 records, correcciones = self._process_file(file_path)
 
-                # NUEVO: Obtener los números de petición de los registros recién procesados
+                # V6.9.31: usar los números de caso REALES capturados durante el
+                # procesamiento (incluye reimportaciones). Antes se calculaba
+                # "despues - antes" leyendo SQLite (vacío con MySQL) -> daba 0.
                 try:
-                    import sqlite3
-                    from core.database_manager import DB_FILE
-                    conn = sqlite3.connect(DB_FILE)
-                    cursor = conn.cursor()
-                    cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
-                    peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
-                    conn.close()
-
-                    # Calcular la diferencia: nuevos registros = después - antes
-                    nuevas_peticiones = list(peticiones_despues - peticiones_antes)
-                    self._ultimos_registros_procesados = nuevas_peticiones
-                    # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
-                    logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
-                    if nuevas_peticiones:
-                        logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                    capturados = list(dict.fromkeys(
+                        getattr(self, '_ultimos_registros_procesados', []) or []
+                    ))
+                    self._ultimos_registros_procesados = capturados
+                    logging.info(f"📋 Registros procesados: {len(capturados)}")
+                    if capturados:
+                        logging.info(f"   IDs: {', '.join(capturados[:5])}" + (" ..." if len(capturados) > 5 else ""))
                 except Exception as e:
-                    logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
+                    logging.warning(f"⚠️ Error capturando registros procesados: {e}")
                     self._ultimos_registros_procesados = []
 
                 # NUEVO: Analizar completitud de registros
@@ -7525,26 +7519,20 @@ Informes con malignidad: {malignant_count}"""
                         pdf_name = os.path.basename(pdf_path)
                         errors.append(f"{pdf_name}: {str(e)}")
 
-                # NUEVO: Obtener los números de petición de los registros recién procesados
+                # V6.9.31: usar los números de caso REALES capturados durante el
+                # procesamiento (incluye reimportaciones). Antes "despues - antes"
+                # leía SQLite (vacío con MySQL) y daba 0.
                 if processed_count > 0:
                     try:
-                        import sqlite3
-                        from core.database_manager import DB_FILE
-                        conn = sqlite3.connect(DB_FILE)
-                        cursor = conn.cursor()
-                        cursor.execute('SELECT "Numero de caso" FROM informes_ihq')
-                        peticiones_despues = set(row[0] for row in cursor.fetchall() if row[0])
-                        conn.close()
-
-                        # Calcular la diferencia: nuevos registros = después - antes
-                        nuevas_peticiones = list(peticiones_despues - peticiones_antes)
-                        self._ultimos_registros_procesados = nuevas_peticiones
-                        # V5.3.9.3: Usar logging en lugar de print (stdout puede estar cerrado)
-                        logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
-                        if nuevas_peticiones:
-                            logging.info(f"   IDs: {', '.join(nuevas_peticiones[:5])}" + (" ..." if len(nuevas_peticiones) > 5 else ""))
+                        capturados = list(dict.fromkeys(
+                            getattr(self, '_ultimos_registros_procesados', []) or []
+                        ))
+                        self._ultimos_registros_procesados = capturados
+                        logging.info(f"📋 Registros procesados: {len(capturados)}")
+                        if capturados:
+                            logging.info(f"   IDs: {', '.join(capturados[:5])}" + (" ..." if len(capturados) > 5 else ""))
                     except Exception as e:
-                        logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
+                        logging.warning(f"⚠️ Error capturando registros procesados: {e}")
                         self._ultimos_registros_procesados = []
 
                     # NUEVO: Analizar completitud de registros
@@ -9876,18 +9864,34 @@ Informes con malignidad: {malignant_count}"""
         peticiones_antes = result["peticiones_antes"]
 
         if processed_count > 0:
-            # Obtener nuevos registros
+            # V6.9.31 FIX: usar los números de caso REALES capturados durante el
+            # procesamiento (incluye reimportaciones). El método anterior
+            # ("despues - antes") solo detectaba casos NUEVOS y daba 0 al
+            # reimportar casos ya existentes (UPSERT no cambia el set de IDs).
+            capturados = []
             try:
-                # V6.9.30 FIX: leer de la BD ACTIVA (MySQL via adapter), NO SQLite legacy.
-                peticiones_despues = self._peticiones_existentes_bd()
-                nuevas_peticiones = list(peticiones_despues - peticiones_antes)
-                self._ultimos_registros_procesados = nuevas_peticiones
-                logging.info(f"📋 Registros nuevos detectados: {len(nuevas_peticiones)}")
-            except Exception as e:
-                logging.warning(f"⚠️ Error capturando nuevos registros: {e}")
-                self._ultimos_registros_procesados = []
+                capturados = list(dict.fromkeys(
+                    getattr(self, '_ultimos_registros_procesados', []) or []
+                ))
+            except Exception:
+                capturados = []
 
-            numeros_peticion_procesados = self._ultimos_registros_procesados
+            if capturados:
+                numeros_peticion_procesados = capturados
+                self._ultimos_registros_procesados = capturados
+                logging.info(f"📋 Registros procesados (reales): {len(capturados)}")
+            else:
+                # Fallback: diferencia de conjuntos en la BD activa (MySQL)
+                try:
+                    peticiones_despues = self._peticiones_existentes_bd()
+                    nuevas_peticiones = list(peticiones_despues - peticiones_antes)
+                    self._ultimos_registros_procesados = nuevas_peticiones
+                    numeros_peticion_procesados = nuevas_peticiones
+                    logging.info(f"📋 Registros nuevos (fallback): {len(nuevas_peticiones)}")
+                except Exception as e:
+                    logging.warning(f"⚠️ Error capturando registros: {e}")
+                    self._ultimos_registros_procesados = []
+                    numeros_peticion_procesados = []
 
             # Analizar completitud
             try:
@@ -10008,8 +10012,18 @@ Informes con malignidad: {malignant_count}"""
             if hasattr(self, 'log_to_widget'):
                 self.log_to_widget(msg)
 
-        # Delegar procesamiento a módulo core
-        return process_ihq_file(file_path, log_callback)
+        # V6.9.31: capturar los números de caso REALES procesados (incluye
+        # reimportaciones). Antes el modal usaba "despues - antes" y daba 0 al
+        # reimportar casos ya existentes. Acumulamos en _ultimos_registros_procesados.
+        numeros = []
+        count = process_ihq_file(file_path, log_callback, out_numeros=numeros)
+        try:
+            if getattr(self, '_ultimos_registros_procesados', None) is None:
+                self._ultimos_registros_procesados = []
+            self._ultimos_registros_procesados.extend(numeros)
+        except Exception as e:
+            logging.warning(f"⚠️ No se pudieron acumular números procesados: {e}")
+        return count
 
     def _process_general_file(self, file_path):
         """Procesar archivo general usando el procesador estándar
