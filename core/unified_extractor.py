@@ -221,6 +221,103 @@ except ImportError as e:
             return text if text else ''
         raise
 
+
+# ---------------------------------------------------------------------------
+# V6.9.41: Corte de FIRMA DEL PATÓLOGO pegada al Diagnóstico Principal.
+# El extractor a veces captura el dx REAL seguido del nombre del patólogo y su
+# firma ("ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA RESPONSABLE DEL ANÁLISIS:
+# MÉDICO PATÓLOGO RM 761520 ____"). Eso ensucia el dato y, peor, hace que el
+# categorizador (stripear_preambulos) borre el dx y deje la firma -> el caso
+# cae como "SIN DIAGNOSTICO". Este corte deja SOLO el diagnóstico clínico.
+# Riesgo de regresión ~nulo: un dx válido NUNCA contiene estos marcadores.
+_PATOLOGOS_FIRMA = (
+    "MARIA XIMENA VARELA QUEVEDO", "MARIA XIMENA VARELA", "JORGE MORENO ACUNA",
+    "JORGE MORENO ACUÑA", "ARMANDO CORTES BUELVAS", "CARLOS CAICEDO ESTRADA",
+    "DIEGO VARGAS GALVAN", "ISABELLA CAICEDO ORTIZ", "JOSE BRAVO BONILLA",
+    "LAURA DIAZ VILLARREAL", "NANCY MEJIA VARGAS", "NATALIA AGUIRRE VASQUEZ",
+    "RICARDO RUEDA PLATA",
+)
+_RE_FIRMA_PATOLOGO = re.compile(
+    r'(?i)\s*(?:'
+    r'RESPONSABLE\s+DEL\s+AN[AÁ]LISIS'
+    r'|M[EÉ]DIC[OA]\s+PAT[OÓ]LOG[OA]'
+    r'|MD\s+PAT[OÓ]LOG'
+    r'|PAT[OÓ]LOG[OA]\s+CL[IÍ]NIC[OA]'
+    r'|\bRM\s*\d{4,}'
+    r'|\bREG(?:ISTRO)?\s+M[EÉ]DICO'
+    r'|_{3,}'
+    r').*$'
+)
+
+
+def _cortar_firma_patologo(dx: str) -> str:
+    """Elimina la firma del patólogo (nombre + rol + registro) del final del dx."""
+    if not dx or not str(dx).strip():
+        return dx
+    s = _RE_FIRMA_PATOLOGO.sub('', str(dx)).strip(' .:,-\t\n')
+    # Quitar el nombre del patólogo que pudiera quedar pegado al final del dx
+    # (se prueba el más largo primero para no dejar apellidos sueltos).
+    up = s.upper()
+    for nom in sorted(_PATOLOGOS_FIRMA, key=len, reverse=True):
+        if up.endswith(nom):
+            s = s[: len(s) - len(nom)].strip(' .:,-\t\n')
+            break
+    return s if s else dx
+
+
+# V6.9.41: extracción del dx REAL saltando el rótulo del espécimen. El campo
+# "Descripcion Diagnostico" trae "Órgano. Lesión. Biopsia. Estudio de IHQ. DX EN
+# MAYÚSCULAS"; el extractor de la 1ª línea capturaba el rótulo y dejaba el dx fuera
+# (CARCINOMA, PAPILOMA, LEUCEMIA...). Esto recupera el dx real que viene DESPUÉS.
+_RE_TERM_DX_FUERTE = re.compile(
+    r'(CARCINOMA|ADENOCARCINOMA|PAPILOMA\s+INTRADUCTAL|PAPILOMA|LEUCEMIA\s+MIELOIDE|'
+    r'LEUCEMIA|LINFOMA|SARCOMA|MELANOMA|MIELOMA|NEOPLASIA\s+MALIGNA|ASTROCITOMA|'
+    r'OLIGODENDROGLIOMA|GLIOMA|MENINGIOMA|BLASTOMA|HIPERPLASIA\s+FLORIDA|ADENOMA|'
+    r'TUMOR\s+MALIGNO|PROLIFERACION\s+VASCULAR)'
+    r'[A-ZÁÉÍÓÚÑ0-9 ,()/%\.\-]{2,75}', re.IGNORECASE)
+# Razones VÁLIDAS, documentadas en el informe, por las que un caso NO trae un dx
+# tumoral. Patrones inequívocos (frases completas, no palabras sueltas) para no
+# generar falsas explicaciones.
+_RE_NO_CONCLUYENTE = re.compile(
+    r'NO\s+SER[ÁA]\s+POSIBLE\s+\w*\s*(?:DETERMINAR|ESTABLECER)\s+\w*\s*(?:UNA?\s+)?CONCLUSI|'
+    r'(?:ESTUDIO|INMUNOHISTOQU\w+)\s+NO\s+(?:ES|FUE|RESULTA)\s+CONCLUYENTE|'
+    r'ESCASA\s+REPRESENTACI[ÓO]N\s+TUMORAL|'
+    r'AGOTAMIENTO\s+DEL\s+TEJIDO|'
+    r'(?:TEJIDO|MUESTRA|MATERIAL)\s+(?:ERA\s+|ES\s+)?(?:ESCAS[OA]|INSUFICIENTE)|'
+    r'NO\s+PERMITE\s+CONCLUIR', re.IGNORECASE)
+_RE_EN_CURSO = re.compile(
+    r'(?:SE\s+ENCUENTRA\s+)?EN\s+CURSO\s+(?:EL\s+)?ESTUDIO|'
+    r'PENDIENTE\s+(?:LA\s+)?(?:REALIZACI[ÓO]N|DE)\b|'
+    r'REPORTAD[OA]S?\s+EN\s+UN\s+INFORME\s+POSTERIOR|'
+    r'SER[ÁA]N?\s+REPORTAD', re.IGNORECASE)
+
+
+def _dx_saltando_rotulo(texto_diag: str) -> str:
+    """Del bloque DIAGNÓSTICO (rótulo del espécimen + dx) extrae el diagnóstico
+    clínico real (en mayúsculas, tras el rótulo). Cadena vacía si no hay dx claro."""
+    if not texto_diag or not str(texto_diag).strip():
+        return ''
+    m = _RE_TERM_DX_FUERTE.search(str(texto_diag))
+    if m:
+        return _cortar_firma_patologo(re.sub(r'\s+', ' ', m.group(0)).strip(' .,-'))
+    return ''
+
+
+def _razon_valida_sin_dx(texto: str) -> str:
+    """Si el informe declara una razón VÁLIDA para no tener dx tumoral (muestra
+    insuficiente / no concluyente, o estudio pendiente), la devuelve como etiqueta
+    que ACLARA el estado real. Si NO hay razón válida documentada, devuelve ''
+    -> el caso queda para revisión real (NO se inventa una explicación)."""
+    if not texto:
+        return ''
+    t = str(texto)
+    if _RE_NO_CONCLUYENTE.search(t):
+        return 'ESTUDIO NO CONCLUYENTE POR MUESTRA INSUFICIENTE'
+    if _RE_EN_CURSO.search(t):
+        return 'ESTUDIO COMPLEMENTARIO EN CURSO (RESULTADO EN INFORME POSTERIOR)'
+    return ''
+
+
 def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = '') -> str:
     """
     Extrae el diagnóstico principal del texto completo de diagnóstico.
@@ -2607,11 +2704,41 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     try:
         from core.normalizador_diagnosticos import categorizar_diagnostico as _cat_dx
         _dxp = str(db_record.get('Diagnostico Principal', '') or '')
+        # V6.9.41: cortar la firma del patólogo pegada al dx ANTES de evaluar si es
+        # fragmento. Recupera dx reales (ADENOMA PLEOMÓRFICO, NÓDULO FIBROMUSCULAR,
+        # MALFORMACIÓN VASCULAR...) que quedaban como "SIN DIAGNOSTICO".
+        _dxp_limpio = _cortar_firma_patologo(_dxp)
+        if _dxp_limpio and _dxp_limpio != _dxp:
+            db_record['Diagnostico Principal'] = _dxp_limpio
+            _dxp = _dxp_limpio
+        # V6.9.41: si el dx quedó como rótulo/fragmento (categoriza SIN), buscar el
+        # dx REAL tras el rótulo en "Descripcion Diagnostico" (bloque DIAGNÓSTICO
+        # completo). Recupera CARCINOMA/PAPILOMA/LEUCEMIA que iban después del rótulo.
+        _SINCAT = 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)'
+        if _cat_dx(_dxp) == _SINCAT:
+            _td = str(db_record.get('Descripcion Diagnostico', '') or '')
+            _dx_real = _dx_saltando_rotulo(_td)
+            if _dx_real and _cat_dx(_dx_real) != _SINCAT:
+                db_record['Diagnostico Principal'] = _dx_real
+                _dxp = _dx_real
+            else:
+                # No hay dx tumoral. ¿El informe declara una razón VÁLIDA (muestra
+                # insuficiente/no concluyente, estudio pendiente)? Si sí -> se aclara
+                # el estado; si no -> queda en REVISAR real (no se inventa el motivo).
+                _razon = _razon_valida_sin_dx(
+                    _td + ' ' + str(db_record.get('Descripcion microscopica', '') or ''))
+                if _razon and _cat_dx(_razon) != _SINCAT:
+                    db_record['Diagnostico Principal'] = _razon
+                    _dxp = _razon
         _dxc = str(db_record.get('Diagnostico Coloracion', '') or '')
         _TERM_DX = ('CARCINOMA', 'ADENOCARCINOMA', 'NEOPLASIA', 'TUMOR', 'LINFOMA',
                     'SARCOMA', 'MELANOMA', 'INFILTRAC', 'HIPERPLASIA', 'DISPLASIA',
                     'METASTAS', 'PROLIFERAC', 'LESION', 'LESIÓN', 'MALIGN', 'ADENOMA',
-                    'PAPILAR', 'BLASTOMA', 'GLIOMA', 'MIELOMA', 'LEUCEMIA', 'ATIPIC')
+                    'PAPILAR', 'BLASTOMA', 'GLIOMA', 'MIELOMA', 'LEUCEMIA', 'ATIPIC',
+                    # V6.9.41: dx clínicos NO neoplásicos (entidades reales, no
+                    # descripciones morfológicas) -> también válidos desde Coloración.
+                    'HEPATITIS', 'GASTRITIS', 'DERMATITIS', 'COLITIS', 'NEFRITIS',
+                    'CIRROSIS', 'ESTEATOSIS', 'SIALOADENITIS', 'TIROIDITIS', 'PANCREATITIS')
         # Solo reemplazar si el principal es un FRAGMENTO claro (no un dx válido que
         # el categorizador no reconozca, p.ej. "NEUROMA ENCAPSULADO").
         _FRAG = ('ESTUDIO', 'INMUNOHISTOQU', 'PATRON MICROSATELITAL', 'PATRÓN MICROSATELITAL',
@@ -2628,6 +2755,10 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         _es_fragmento = (not _dxp.strip()) or len(_dxp.strip()) < 4 or any(m in _dxp.upper() for m in _FRAG)
         if _es_fragmento and _cat_dx(_dxp) == 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)':
             if _dxc.upper() not in ('', 'N/A', 'NO APLICA', 'NO ENCONTRADO', 'NAN'):
+                # V6.9.41: usar Coloración SOLO si trae un término diagnóstico claro
+                # (incluye no-neoplásicos: HEPATITIS, GASTRITIS...). NO se usa una
+                # descripción morfológica (p.ej. "CELULARIDAD GLOBAL 80%" de un
+                # aspirado de médula) para evitar afirmar un dx falso.
                 if any(t in _dxc.upper() for t in _TERM_DX):
                     db_record['Diagnostico Principal'] = _dxc
     except Exception as _e_dx:

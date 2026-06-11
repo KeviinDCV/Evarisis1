@@ -214,7 +214,18 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
                 _vac = ("", "N/A", "NO APLICA", "NO ENCONTRADO", "NAN")
                 _dx = str(datos_mapeados.get("Diagnostico Principal", "")).strip().upper()
                 _org = str(datos_mapeados.get("IHQ_ORGANO", "")).strip().upper()
-                if _dx in _vac or _org in _vac:
+                # V6.9.41: activar el fallback también cuando el dx es INVÁLIDO
+                # (categoriza "SIN DIAGNOSTICO": fragmentos ":", "PÁGINA XX",
+                # encabezados, rótulos...), no solo cuando está vacío. Así el dx-basura
+                # se reemplaza por el dx real de la página propia al (re)procesar.
+                _SINCAT = "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)"
+                try:
+                    from core.normalizador_diagnosticos import categorizar_diagnostico as _catx
+                    _dx_invalido = (_dx in _vac) or (_catx(datos_mapeados.get("Diagnostico Principal", "")) == _SINCAT)
+                except Exception:
+                    _catx = None
+                    _dx_invalido = _dx in _vac
+                if _dx_invalido or _org in _vac:
                     recuperado = _recuperar_de_pagina_propia(file_path, numero_ihq, safe_log)
                     if recuperado:
                         _rellenados = []
@@ -228,7 +239,18 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
                             _invalidos = ("", "N/A", "NO ENCONTRADO", "NAN", "NONE")
                             if _campo not in ("Diagnostico Coloracion", "Malignidad"):
                                 _invalidos = _invalidos + ("NO APLICA",)
-                            if _actual in _invalidos and _nuevo.upper() not in _invalidos:
+                            _reemplazar = _actual in _invalidos
+                            # V6.9.41: para el dx principal, reemplazar también si el
+                            # actual es un FRAGMENTO inválido (categoriza SIN) y el
+                            # recuperado SÍ es un dx válido -> nunca pisa un dx bueno.
+                            if (not _reemplazar) and _campo == "Diagnostico Principal" and _nuevo and _catx:
+                                try:
+                                    if (_catx(datos_mapeados.get(_campo, "")) == _SINCAT
+                                            and _catx(_nuevo) != _SINCAT):
+                                        _reemplazar = True
+                                except Exception:
+                                    pass
+                            if _reemplazar and _nuevo.upper() not in _invalidos:
                                 datos_mapeados[_campo] = _nuevo
                                 _rellenados.append(_campo)
                         if _rellenados:
