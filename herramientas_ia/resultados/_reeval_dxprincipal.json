@@ -1,0 +1,30 @@
+{
+ "mantenidos_reemplazo": 18,
+ "restaurados_original": 39,
+ "ejemplos_restaurados": [
+  {
+   "caso": "IHQ250047",
+   "restaurado": "CAMBIOS CITOLOGICOS INESPECIFICOS PARA D"
+  },
+  {
+   "caso": "IHQ250323",
+   "restaurado": "NEUROMA ENCAPSULADO EN EMPALIZADA"
+  },
+  {
+   "caso": "IHQ250368",
+   "restaurado": "TUMOR MALIGNO POBREMENTE DIFERENCIADO EN"
+  },
+  {
+   "caso": "IHQ250470",
+   "restaurado": "CUT"
+  },
+  {
+   "caso": "IHQ250478",
+   "restaurado": "GERMINOMA DEL SISTEMA NERVIOSO CENTRAL"
+  },
+  {
+   "caso": "IHQ250484",
+   "restaurado": "ADENOMA PLEOMÓRFICO JORGE MORENO ACUÑA R"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "sin_dx_principal_total": 96,
+ "de_esos_con_dx_en_coloracion": 56,
+ "sin_dx_en_ningun_campo": 40,
+ "ejemplos": [
+  {
+   "caso": "IHQ250047",
+   "dxPrincipal": "CAMBIOS CITOLOGICOS INESP",
+   "dxColoracion": "CAMBIOS CITOLOGICOS INESPECIFICOS PARA DISPLA"
+  },
+  {
+   "caso": "IHQ250185",
+   "dxPrincipal": "ESTUDIOS DE INMUNOHISTOQÍ",
+   "dxColoracion": "CARCINOMA INFILTRANTE CON DIFERENCIACIÓN ESCA"
+  },
+  {
+   "caso": "IHQ250224",
+   "dxPrincipal": "ESTUDIO DE INMUNOHISTOQUI",
+   "dxColoracion": "PROLIFERACIÓN ACINAR ATIPICA"
+  },
+  {
+   "caso": "IHQ250279",
+   "dxPrincipal": "PATRÓN MICROSATELITAL EST",
+   "dxColoracion": "CARCINOMA POCO COHESIVO CON COMPONENTE DE CEL"
+  }
+ ]
+}

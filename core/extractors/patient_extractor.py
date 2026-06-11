@@ -240,7 +240,11 @@ PATIENT_PATTERNS = {
             # Problema 2: Sin negative lookahead, capturaba también "INFORME DE ANATOMÍA PATOLÓGICA"
             # Solución: Negative lookahead (?!INFORME|ESTUDIO|IHQ\d+) dentro del cuantificador
             # Formato: [primera línea](\n[línea que NO empiece con palabras clave])*
-            r'(?:Bloques y laminas|Tejido en fresco|Organo:)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\n(?!INFORME|ESTUDIO|IHQ\d+)[A-ZÁÉÍÓÚÑ][^\n]*)*)',
+            # V6.9.36 FIX IHQ260795: + "Formol al N%" como ancla de almacenamiento.
+            # En algunos PDFs el órgano viene tras el fijador ("Formol al 10%\nCUADRANTECTOMIA
+            # MAMA DERECHA") en vez de tras "Bloques y laminas". Solo añade un ancla
+            # (no quita las existentes) -> casos normales siguen matcheando igual.
+            r'(?:Bloques y laminas|Tejido en fresco|Formol\s+al\s+\d+\s*%|Organo:)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\n(?!INFORME|ESTUDIO|IHQ\d+)[A-ZÁÉÍÓÚÑ][^\n]*)*)',
             # Patrón 2: Órgano multilínea que termina con "+" o "BX DE" o "DE" (ej: "BX DE PLEURA + BX DE\nPULMON")
             r'(?:Bloques y laminas|Tejido en fresco)\s+([A-ZÁÉÍÓÚÑ][^\n]*(?:\+|BX\s+DE|DE)\s*)\n\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\s0-9]+?)(?=\s*(?:\n|INFORME|DESCRIPCI))',
             # Patrón 3: TUMOR REGION/REGIÓON seguido de INTRADURAL en siguiente línea

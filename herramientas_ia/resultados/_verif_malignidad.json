@@ -1,0 +1,13 @@
+{
+ "total": 2076,
+ "mal_col": "Malignidad",
+ "valores_malignidad": {
+  "MALIGNO": 1503,
+  "BENIGNO": 573
+ },
+ "contains_MALIGNO": 1503,
+ "contains_BENIGNO": 573,
+ "indeterminados_resto": 0,
+ "pct_malignidad": 72.4,
+ "VALORES_QUE_CONTIENEN_MALIGNO_pero_no_son_MALIGNO": {}
+}

@@ -1,0 +1,190 @@
+{
+ "tumor_raro": {
+  "n": 12,
+  "ej": [
+   {
+    "caso": "IHQ250047",
+    "dxp": "CAMBIOS CITOLOGICOS INESPECIFICOS P",
+    "dxc": "CAMBIOS CITOLOGICOS INESPECIFICOS P"
+   },
+   {
+    "caso": "IHQ250323",
+    "dxp": "NEUROMA ENCAPSULADO EN EMPALIZADA",
+    "dxc": "PROLIFERACION FUSOCELULAR A CLASIFI"
+   },
+   {
+    "caso": "IHQ250478",
+    "dxp": "GERMINOMA DEL SISTEMA NERVIOSO CENT",
+    "dxc": "TUMOR MALIGNO EN PATRÓN SÓLIDO A CL"
+   },
+   {
+    "caso": "IHQ250484",
+    "dxp": "ADENOMA PLEOMÓRFICO JORGE MORENO AC",
+    "dxc": "ADENOMA PLEOMÓRFICO"
+   },
+   {
+    "caso": "IHQ250499",
+    "dxp": "NEUROTEQUEOMA",
+    "dxc": "NEOPLASIA FUSIFORME SIN ATIPIA A CL"
+   },
+   {
+    "caso": "IHQ250632",
+    "dxp": "MUCOSA GASTRICA Y MINIMO FRAGMENTO ",
+    "dxc": "GASTRITIS CRÓNICA NO ATRÓFICA. INFL"
+   },
+   {
+    "caso": "IHQ250982",
+    "dxp": "LESIÓN BIFÁSICA CON COMPONENTE COND",
+    "dxc": "APARENTE COMPROMISO POR NEOPLASIA M"
+   },
+   {
+    "caso": "IHQ251203",
+    "dxp": "NODULO FIBROMUSCULAR ESTROMAL JORGE",
+    "dxc": "HIPERPLASIA PROSTÁTICA ESTROMAL"
+   }
+  ]
+ },
+ "fragmento_con_coloracion": {
+  "n": 28,
+  "ej": [
+   {
+    "caso": "IHQ250470",
+    "dxp": "CUT",
+    "dxc": "CARCINOMA INVASIVO DE ALTO GRADO NO"
+   },
+   {
+    "caso": "IHQ250508",
+    "dxp": "REPRESENTACION DE LAS LINEAS CELULA",
+    "dxc": "HIPERPLASIA, CELULARIDAD AUMENTADA "
+   },
+   {
+    "caso": "IHQ250515",
+    "dxp": "MADURACIÓN DE LAS TRES LINEAS CELUL",
+    "dxc": "MUESTRA LIMITADA PARA DIAGNOSTICO; "
+   },
+   {
+    "caso": "IHQ250578",
+    "dxp": "HER-2: NEGATIVO",
+    "dxc": "INFILTRACIÓN POR ADENOCARCINOMA, TI"
+   },
+   {
+    "caso": "IHQ250585",
+    "dxp": "REVISIÓN",
+    "dxc": "A Y B. CARCINOMA ESCAMOCELULAR. GRA"
+   },
+   {
+    "caso": "IHQ250655",
+    "dxp": "RECEPTOR DE ESTROGENOS: 81-90% (POS",
+    "dxc": "CARCINOMA INVASIVO DE TIPO DE ESPEC"
+   },
+   {
+    "caso": "IHQ250683",
+    "dxp": "HER2):",
+    "dxc": "LA PRESENCIA DE UN ADENOCARCINOMA P"
+   },
+   {
+    "caso": "IHQ250843",
+    "dxp": "FOCUS",
+    "dxc": "SIALODENITIS CRÓNICA ESCLEROSANTE. "
+   }
+  ]
+ },
+ "fragmento_sin_coloracion": {
+  "n": 19,
+  "ej": [
+   {
+    "caso": "IHQ250100",
+    "dxp": "BIOPSIA DEL INJERTO RENAL",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250313",
+    "dxp": "BIOPSIA DEL INJERTO RENAL",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250339",
+    "dxp": "REVISIÓN:",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250616",
+    "dxp": "VER DESCRIPCION Y COMENTARIO",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250788",
+    "dxp": "LA POBLACIÓN DE CÉLULAS PLASMÁTICAS",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250985",
+    "dxp": "ESTUDIO DE INMUNOHISTOQUÍMICA PARA ",
+    "dxc": "NO APLICA"
+   },
+   {
+    "caso": "IHQ250989",
+    "dxp": "SIN AUMENTO DE CÉLULAS PLASMÁTICAS",
+    "dxc": "BIOPSIA DE HUESO"
+   },
+   {
+    "caso": "IHQ251015",
+    "dxp": "ROTULADO MASA RETROAREOLAR IZQUIERD",
+    "dxc": "NO APLICA"
+   }
+  ]
+ },
+ "otro": {
+  "n": 18,
+  "ej": [
+   {
+    "caso": "IHQ250530",
+    "dxp": "INTERSTICIAL ACTIVA CON LESIÓN TUBU",
+    "dxc": "NO APLICA",
+    "cat_col": "SIN DIAGNOSTICO EN TEXTO / REV"
+   },
+   {
+    "caso": "IHQ250900",
+    "dxp": "CELULARIDAD LINFOIDE ABERRANTE",
+    "dxc": "GASTRITIS CRÓNICA NO ATRÓFICA, CAMB",
+    "cat_col": "INFLAMACION / PROCESO INFECCIO"
+   },
+   {
+    "caso": "IHQ251041",
+    "dxp": "Riñón",
+    "dxc": "NO APLICA",
+    "cat_col": "SIN DIAGNOSTICO EN TEXTO / REV"
+   },
+   {
+    "caso": "IHQ251049",
+    "dxp": "Mama derecha. Nódulo H2 a 3 cm de l",
+    "dxc": "NO APLICA",
+    "cat_col": "SIN DIAGNOSTICO EN TEXTO / REV"
+   },
+   {
+    "caso": "IHQ251086",
+    "dxp": "LECHO ULCEROSO",
+    "dxc": "LECHO ULCEROSO. CELULARIDAD ATÍPICA",
+    "cat_col": "ESTUDIO IHQ (SIN DIAGNOSTICO E"
+   },
+   {
+    "caso": "IHQ251099",
+    "dxp": "PROLIFERACIÓN GLANDULAR FOCAL DE PO",
+    "dxc": "ESTRUCTURAS GLNADULARES ESTROMALES ",
+    "cat_col": "SIN DIAGNOSTICO EN TEXTO / REV"
+   },
+   {
+    "caso": "IHQ251249",
+    "dxp": "EL ESTUDIO MUESTRA UN INMUNOPERFIL ",
+    "dxc": "TEJIDO LINFOIDE A CARACTERIZAR POR ",
+    "cat_col": "ESTUDIO IHQ (SIN DIAGNOSTICO E"
+   },
+   {
+    "caso": "IHQ251313",
+    "dxp": "A. PIEL. LESION. BIOPSIA. MAMA LADO",
+    "dxc": "A. PIEL. LESION. BIOPSIA. MAMA LADO",
+    "cat_col": "SIN DIAGNOSTICO EN TEXTO / REV"
+   }
+  ]
+ }
+}

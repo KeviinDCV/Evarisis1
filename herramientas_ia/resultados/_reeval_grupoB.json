@@ -1,0 +1,46 @@
+{
+ "corregidos_grupoB": 22,
+ "sin_dx_restantes": 55,
+ "ejemplos": [
+  {
+   "caso": "IHQ250470",
+   "de": "CUT",
+   "a": "CARCINOMA INVASIVO DE ALTO GRADO NOTTI"
+  },
+  {
+   "caso": "IHQ250508",
+   "de": "REPRESENTACION DE LAS ",
+   "a": "HIPERPLASIA, CELULARIDAD AUMENTADA PAR"
+  },
+  {
+   "caso": "IHQ250578",
+   "de": "HER-2: NEGATIVO",
+   "a": "INFILTRACIÓN POR ADENOCARCINOMA, TIPO "
+  },
+  {
+   "caso": "IHQ250585",
+   "de": "REVISIÓN",
+   "a": "A Y B. CARCINOMA ESCAMOCELULAR. GRADO "
+  },
+  {
+   "caso": "IHQ250632",
+   "de": "MUCOSA GASTRICA Y MINI",
+   "a": "GASTRITIS CRÓNICA NO ATRÓFICA. INFLAMA"
+  },
+  {
+   "caso": "IHQ250655",
+   "de": "RECEPTOR DE ESTROGENOS",
+   "a": "CARCINOMA INVASIVO DE TIPO DE ESPECIAL"
+  },
+  {
+   "caso": "IHQ250683",
+   "de": "HER2):",
+   "a": "LA PRESENCIA DE UN ADENOCARCINOMA POBR"
+  },
+  {
+   "caso": "IHQ250843",
+   "de": "FOCUS",
+   "a": "SIALODENITIS CRÓNICA ESCLEROSANTE. FOC"
+  }
+ ]
+}

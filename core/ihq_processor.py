@@ -221,8 +221,14 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
                         for _campo in ("Diagnostico Principal", "IHQ_ORGANO", "Organo",
                                        "Diagnostico Coloracion", "Malignidad"):
                             _actual = str(datos_mapeados.get(_campo, "")).strip().upper()
-                            _nuevo = recuperado.get(_campo, "")
-                            if _actual in _vac and str(_nuevo).strip().upper() not in _vac:
+                            _nuevo = str(recuperado.get(_campo, "")).strip()
+                            # "NO APLICA" es un resultado VÁLIDO para Coloración/Malignidad
+                            # (no para dx/órgano). FIX IHQ250723: su Coloración es "NO APLICA"
+                            # y quedaba sin rellenar -> caso incompleto.
+                            _invalidos = ("", "N/A", "NO ENCONTRADO", "NAN", "NONE")
+                            if _campo not in ("Diagnostico Coloracion", "Malignidad"):
+                                _invalidos = _invalidos + ("NO APLICA",)
+                            if _actual in _invalidos and _nuevo.upper() not in _invalidos:
                                 datos_mapeados[_campo] = _nuevo
                                 _rellenados.append(_campo)
                         if _rellenados:

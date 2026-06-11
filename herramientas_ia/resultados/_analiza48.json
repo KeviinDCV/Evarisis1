@@ -1,0 +1,204 @@
+{
+ "n_recuperables": 8,
+ "n_sin_recuperar": 40,
+ "recuperables": [
+  {
+   "caso": "IHQ250313",
+   "dxp_actual": "BIOPSIA DEL INJERTO RENAL",
+   "cand_extract": "IFTA 2), con extensión al intersticio re",
+   "cat_cand": "HALLAZGO NO NEOPLASICO / NEGAT",
+   "ocr_dx": "DIAGNÓSTICO BIOPSIA DEL INJERTO RENAL . Todos los análisis son avalados frente a los programas de control de calidad ext"
+  },
+  {
+   "caso": "IHQ250616",
+   "dxp_actual": "VER DESCRIPCION Y COMENTARIO",
+   "cand_extract": "Estudio de inmunohistoquimica",
+   "cat_cand": "ESTUDIO IHQ (SIN DIAGNOSTICO E",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251041",
+   "dxp_actual": "Riñón",
+   "cand_extract": "neoplasias de células plasmáticas, como ",
+   "cat_cand": "NEOPLASIA MALIGNA SIN TIPO ESP",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251433",
+   "dxp_actual": "APENDICE CECAL CON CONSERVACIO",
+   "cand_extract": "SIGMOIDECTOMIA\"\nel cual consiste en trec",
+   "cat_cand": "ADENOCARCINOMA (SIN ORIGEN ESP",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ260006",
+   "dxp_actual": "ESTUDIOS DE INMINOHISTOQUÍMICA",
+   "cand_extract": "SIALOADENITIS CRÓNICA CON RESPUESTA LINF",
+   "cat_cand": "HALLAZGO NO NEOPLASICO / NEGAT",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. --- PÁGINA 10 ---"
+  },
+  {
+   "caso": "IHQ260040",
+   "dxp_actual": ":",
+   "cand_extract": "CARCINOMA UROTELIAL INVASIVO CON COMPONE",
+   "cat_cand": "CARCINOMA UROTELIAL",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. --- PÁGINA 69 ---"
+  },
+  {
+   "caso": "IHQ260323",
+   "dxp_actual": "--- PÁGINA 38 --- IHQ260323 CO",
+   "cand_extract": "ADENOSIS ESCLEROSANTE",
+   "cat_cand": "LESION BENIGNA / HIPERPLASIA",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. --- PÁGINA 39 ---"
+  },
+  {
+   "caso": "IHQ260454",
+   "dxp_actual": "INFLAMACIÓN CRÓNICA CON PREDOM",
+   "cand_extract": "Estudio de inmunohistoquímica",
+   "cat_cand": "ESTUDIO IHQ (SIN DIAGNOSTICO E",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. --- PÁGINA 9 ---"
+  }
+ ],
+ "sin_recuperar": [
+  {
+   "caso": "IHQ250047",
+   "dxp_actual": "CAMBIOS CITOLOGICOS INESPECIFI",
+   "cand_extract": "PÁGINA 80",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250100",
+   "dxp_actual": "BIOPSIA DEL INJERTO RENAL",
+   "cand_extract": "PÁGINA 83",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250339",
+   "dxp_actual": "REVISIÓN:",
+   "cand_extract": "Caso valorado en conjunto con neuropatól",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250484",
+   "dxp_actual": "ADENOMA PLEOMÓRFICO JORGE MORE",
+   "cand_extract": "PÁGINA 38",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250515",
+   "dxp_actual": "MADURACIÓN DE LAS TRES LINEAS ",
+   "cand_extract": "PÁGINA 97",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250530",
+   "dxp_actual": "INTERSTICIAL ACTIVA CON LESIÓN",
+   "cand_extract": "INTERSTICIAL ACTIVA CON LESIÓN TUBULAR A",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250788",
+   "dxp_actual": "LA POBLACIÓN DE CÉLULAS PLASMÁ",
+   "cand_extract": "EVALUADA",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250859",
+   "dxp_actual": "CELULAS PLASMATICAS DE INMUNOF",
+   "cand_extract": "CELULAS PLASMATICAS DE INMUNOFENOTIPO AB",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250900",
+   "dxp_actual": "CELULARIDAD LINFOIDE ABERRANTE",
+   "cand_extract": "LINFOIDE ABERRANTE",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250982",
+   "dxp_actual": "LESIÓN BIFÁSICA CON COMPONENTE",
+   "cand_extract": "COMPONENTE CONDROMIXOIDE Y EPITELIAL SIN",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250985",
+   "dxp_actual": "ESTUDIO DE INMUNOHISTOQUÍMICA ",
+   "cand_extract": "biomarcadores mamarios",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ250989",
+   "dxp_actual": "SIN AUMENTO DE CÉLULAS PLASMÁT",
+   "cand_extract": "SIN AUMENTO DE CÉLULAS PLASMÁTICAS",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251015",
+   "dxp_actual": "ROTULADO MASA RETROAREOLAR IZQ",
+   "cand_extract": "Rotulado masa retroareolar izquierda",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251018",
+   "dxp_actual": "BIOPSIA DE INJERTO RENAL:",
+   "cand_extract": "PÁGINA 79",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251049",
+   "dxp_actual": "Mama derecha. Nódulo H2 a 3 cm",
+   "cand_extract": "Lateralidad: derecha",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251086",
+   "dxp_actual": "LECHO ULCEROSO",
+   "cand_extract": "LECHO ULCEROSO",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251099",
+   "dxp_actual": "PROLIFERACIÓN GLANDULAR FOCAL ",
+   "cand_extract": "GLANDULAR FOCAL DE POSIBLE ORIGEN GASTRO",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251203",
+   "dxp_actual": "NODULO FIBROMUSCULAR ESTROMAL ",
+   "cand_extract": "PÁGINA 28",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251249",
+   "dxp_actual": "EL ESTUDIO MUESTRA UN INMUNOPE",
+   "cand_extract": "El estudio muestra un inmunoperfil esper",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  },
+  {
+   "caso": "IHQ251312",
+   "dxp_actual": "INMUNOHISTOQUÍMCIA",
+   "cand_extract": "Inmunohistoquímcia",
+   "cat_cand": "SIN DIAGNOSTICO EN TEXTO / REV",
+   "ocr_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. Todos los análisis son avalados frente a los programas de c"
+  }
+ ]
+}

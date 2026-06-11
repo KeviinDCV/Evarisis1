@@ -1,0 +1,36 @@
+{
+ "corregidos": 57,
+ "sin_dx_despues": 44,
+ "ejemplos": [
+  {
+   "caso": "IHQ250047",
+   "viejo": "CAMBIOS CITOLOGICOS INESPECIFICOS PARA D",
+   "nuevo": "CAMBIOS CITOLOGICOS INESPECIFICOS PARA D"
+  },
+  {
+   "caso": "IHQ250185",
+   "viejo": "ESTUDIOS DE INMUNOHISTOQÍMICA",
+   "nuevo": "CARCINOMA INFILTRANTE CON DIFERENCIACIÓN"
+  },
+  {
+   "caso": "IHQ250224",
+   "viejo": "ESTUDIO DE INMUNOHISTOQUIMICA (LÁMINA A)",
+   "nuevo": "PROLIFERACIÓN ACINAR ATIPICA"
+  },
+  {
+   "caso": "IHQ250279",
+   "viejo": "PATRÓN MICROSATELITAL ESTABLE",
+   "nuevo": "CARCINOMA POCO COHESIVO CON COMPONENTE D"
+  },
+  {
+   "caso": "IHQ250323",
+   "viejo": "NEUROMA ENCAPSULADO EN EMPALIZADA",
+   "nuevo": "PROLIFERACION FUSOCELULAR A CLASIFICAR P"
+  },
+  {
+   "caso": "IHQ250364",
+   "viejo": "INFORME EXTERNO P251026",
+   "nuevo": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL ("
+  }
+ ]
+}

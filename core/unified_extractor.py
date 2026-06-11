@@ -2598,6 +2598,41 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     except Exception as _e_bio:
         logging.warning(f"[bio-ia] capa no aplicada: {_e_bio}")
 
+    # V6.9.37: si el "Diagnostico Principal" quedó como FRAGMENTO inválido
+    # ("ESTUDIOS DE INMUNOHISTOQUIMICA", "PATRÓN MICROSATELITAL ESTABLE"...) pero
+    # el "Diagnostico Coloracion" SÍ trae un diagnóstico real, usar el de
+    # Coloración como principal. Evita que casos con dx real (carcinoma, etc.)
+    # aparezcan como "SIN DIAGNOSTICO" en los tabs/reportes. Solo se activa cuando
+    # el principal es inválido -> cero regresión en casos con dx correcto.
+    try:
+        from core.normalizador_diagnosticos import categorizar_diagnostico as _cat_dx
+        _dxp = str(db_record.get('Diagnostico Principal', '') or '')
+        _dxc = str(db_record.get('Diagnostico Coloracion', '') or '')
+        _TERM_DX = ('CARCINOMA', 'ADENOCARCINOMA', 'NEOPLASIA', 'TUMOR', 'LINFOMA',
+                    'SARCOMA', 'MELANOMA', 'INFILTRAC', 'HIPERPLASIA', 'DISPLASIA',
+                    'METASTAS', 'PROLIFERAC', 'LESION', 'LESIÓN', 'MALIGN', 'ADENOMA',
+                    'PAPILAR', 'BLASTOMA', 'GLIOMA', 'MIELOMA', 'LEUCEMIA', 'ATIPIC')
+        # Solo reemplazar si el principal es un FRAGMENTO claro (no un dx válido que
+        # el categorizador no reconozca, p.ej. "NEUROMA ENCAPSULADO").
+        _FRAG = ('ESTUDIO', 'INMUNOHISTOQU', 'PATRON MICROSATELITAL', 'PATRÓN MICROSATELITAL',
+                 'INFORME EXTERNO', 'VER COMENTARIO', 'VER DESCRIPCI', 'LAMINA', 'LÁMINA',
+                 'BLOQUE', 'NIVELES HISTOL',
+                 # V6.9.38: más fragmentos que NO son diagnóstico (resultados de
+                 # biomarcadores, encabezados, referencias, descripciones de muestra)
+                 'HER2', 'HER-2', 'RECEPTOR DE ESTROG', 'RECEPTOR DE PROGEST', 'RECEPTORES DE',
+                 'REVISIÓN', 'REVISION', 'FOCUS', 'ROTULAD', 'CORRELACIÓN CON', 'CORRELACION CON',
+                 'GRADO HISTOLOGICO', 'NOTTINGHAM', 'NOTINGHAM', 'MLH1', 'MSH2', 'MSH6', 'PMS2',
+                 'EXPRESIÓN NUCLEAR', 'EXPRESION NUCLEAR', 'REPRESENTACION DE LAS', 'MADURACIÓN DE LAS',
+                 'MADURACION DE LAS', 'BIOPSIA DE', 'BIOPSIA DEL', 'SIN AUMENTO DE', 'SIN EVIDENCIA DE',
+                 'POBLACIÓN DE', 'POBLACION DE', 'LINFOCITOS INTRA', 'MUESTRA CON', 'MUESTRA LIMITADA')
+        _es_fragmento = (not _dxp.strip()) or len(_dxp.strip()) < 4 or any(m in _dxp.upper() for m in _FRAG)
+        if _es_fragmento and _cat_dx(_dxp) == 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)':
+            if _dxc.upper() not in ('', 'N/A', 'NO APLICA', 'NO ENCONTRADO', 'NAN'):
+                if any(t in _dxc.upper() for t in _TERM_DX):
+                    db_record['Diagnostico Principal'] = _dxc
+    except Exception as _e_dx:
+        logging.warning(f"[dx-coloracion] no aplicado: {_e_dx}")
+
     # FIX IHQ251018: Eliminar campos internos (que empiezan con _) antes de retornar
     db_record = {k: v for k, v in db_record.items() if not k.startswith('_')}
 
