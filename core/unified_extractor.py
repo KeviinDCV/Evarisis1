@@ -292,14 +292,40 @@ _RE_EN_CURSO = re.compile(
     r'SER[ÁA]N?\s+REPORTAD', re.IGNORECASE)
 
 
+# V6.9.42: pie de página legal (contiene "patholoGISTs of Australasia"...) que
+# DEBE quitarse antes de buscar el dx para no generar falsos positivos.
+_RE_PIE_LEGAL = re.compile(
+    r'(?i)Todos los an[áa]lisis son avalados|Royal College|Pathologists of|'
+    r'Quality Assurance|--- P[ÁA]GINA|Responsable del an[áa]lisis|Nota:\s*Este informe')
+# Dx que viene DESPUÉS de un conector ("LOS HALLAZGOS ... COMPATIBLE CON CARCINOMA...").
+_RE_DX_CONECTOR = re.compile(
+    r'(?:COMPATIBLES?\s+CON|FAVORECEN?|CORRESPONDEN?\s+A|CONSISTENTES?\s+CON|'
+    r'DIAGN[ÓO]STIC[OA]S?\s+(?:DE|M[ÁA]S\s+PROBABLE\s+ES)|SUGIEREN?)\s+'
+    r'(?:UN[A]?\s+|EL\s+|LA\s+|DE\s+)?'
+    r'((?:CARCINOMA|ADENOCARCINOMA|PAPILOMA|LEUCEMIA|LINFOMA|SARCOMA|MELANOMA|MIELOMA|'
+    r'NEOPLASIA|ASTROCITOMA|GLIOMA|MENINGIOMA|MESOTELIOMA|SEMINOMA|GERMINOMA|SCHWANNOMA|'
+    r'NEUROBLASTOMA|TUMOR\s+NEUROENDOCRINO|HIPERPLASIA\s+\w+|CARCINOIDE)'
+    r'[A-ZÁÉÍÓÚÑ0-9 ,()/%\.\-]{0,55})', re.IGNORECASE)
+
+
 def _dx_saltando_rotulo(texto_diag: str) -> str:
     """Del bloque DIAGNÓSTICO (rótulo del espécimen + dx) extrae el diagnóstico
-    clínico real (en mayúsculas, tras el rótulo). Cadena vacía si no hay dx claro."""
+    clínico real: término fuerte tras el rótulo, o dx tras un conector ("compatible
+    con X"). Limpia el pie de página legal antes. '' si no hay dx claro."""
     if not texto_diag or not str(texto_diag).strip():
         return ''
-    m = _RE_TERM_DX_FUERTE.search(str(texto_diag))
+    t = _RE_PIE_LEGAL.split(str(texto_diag))[0]  # quitar pie legal (evita 'gists'->GIST)
+    # cola tras el dx que NO forma parte de él (recomendaciones, correlaciones...)
+    _cola = (r'(?i),?\s+(?:REQUIERE|REQUIRIENDO|CON\s+ESTUDIOS|SE\s+SUGIERE|SE\s+RECOMIENDA|'
+             r'A\s+PESAR|EN\s+CORRELACI[ÓO]N|PARA\s+LO\s+QUE|VER\s+COMENTARIO)')
+    m = _RE_TERM_DX_FUERTE.search(t)
     if m:
-        return _cortar_firma_patologo(re.sub(r'\s+', ' ', m.group(0)).strip(' .,-'))
+        d = re.split(_cola, m.group(0))[0]
+        return _cortar_firma_patologo(re.sub(r'\s+', ' ', d).strip(' .,-:'))
+    m = _RE_DX_CONECTOR.search(t)
+    if m:
+        d = re.split(_cola, m.group(1))[0]
+        return _cortar_firma_patologo(re.sub(r'\s+', ' ', d).strip(' .,-:'))
     return ''
 
 
@@ -2715,19 +2741,23 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         # dx REAL tras el rótulo en "Descripcion Diagnostico" (bloque DIAGNÓSTICO
         # completo). Recupera CARCINOMA/PAPILOMA/LEUCEMIA que iban después del rótulo.
         _SINCAT = 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)'
-        if _cat_dx(_dxp) == _SINCAT:
+        _IHQCAT = 'ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)'
+        _NODX = (_SINCAT, _IHQCAT, 'SIN DATO')
+        # V6.9.42: actuar tanto si el dx cayó en REVISAR como en "ESTUDIO IHQ" (rótulo
+        # del espécimen capturado en vez del dx que viene después).
+        if _cat_dx(_dxp) in (_SINCAT, _IHQCAT):
             _td = str(db_record.get('Descripcion Diagnostico', '') or '')
-            _dx_real = _dx_saltando_rotulo(_td)
-            if _dx_real and _cat_dx(_dx_real) != _SINCAT:
+            _tm = str(db_record.get('Descripcion microscopica', '') or '')
+            _dx_real = _dx_saltando_rotulo(_td) or _dx_saltando_rotulo(_tm)
+            if _dx_real and _cat_dx(_dx_real) not in _NODX:
                 db_record['Diagnostico Principal'] = _dx_real
                 _dxp = _dx_real
             else:
                 # No hay dx tumoral. ¿El informe declara una razón VÁLIDA (muestra
                 # insuficiente/no concluyente, estudio pendiente)? Si sí -> se aclara
-                # el estado; si no -> queda en REVISAR real (no se inventa el motivo).
-                _razon = _razon_valida_sin_dx(
-                    _td + ' ' + str(db_record.get('Descripcion microscopica', '') or ''))
-                if _razon and _cat_dx(_razon) != _SINCAT:
+                # el estado; si no -> queda como está (ESTUDIO IHQ / REVISAR real).
+                _razon = _razon_valida_sin_dx(_td + ' ' + _tm)
+                if _razon and _cat_dx(_razon) not in _NODX:
                     db_record['Diagnostico Principal'] = _razon
                     _dxp = _razon
         _dxc = str(db_record.get('Diagnostico Coloracion', '') or '')

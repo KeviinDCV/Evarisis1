@@ -204,17 +204,19 @@ class EnhancedDatabaseDashboard:
 
         self.top_diagnosis_tree = ttk.Treeview(
             top_wrap,
-            columns=("Diagnóstico Principal", "Frecuencia", "Porcentaje"),
+            columns=("Diagnóstico Principal", "Órgano", "Frecuencia", "Porcentaje"),
             show="headings",
             height=10,
             style="Custom.Treeview"
         )
         self.top_diagnosis_tree.heading("Diagnóstico Principal", text="Diagnóstico Principal")
+        self.top_diagnosis_tree.heading("Órgano", text="Órgano")
         self.top_diagnosis_tree.heading("Frecuencia", text="Frecuencia")
         self.top_diagnosis_tree.heading("Porcentaje", text="% del Total")
-        self.top_diagnosis_tree.column("Diagnóstico Principal", width=400)
-        self.top_diagnosis_tree.column("Frecuencia", width=100, anchor="center")
-        self.top_diagnosis_tree.column("Porcentaje", width=100, anchor="center")
+        self.top_diagnosis_tree.column("Diagnóstico Principal", width=330)
+        self.top_diagnosis_tree.column("Órgano", width=130, anchor="w")
+        self.top_diagnosis_tree.column("Frecuencia", width=90, anchor="center")
+        self.top_diagnosis_tree.column("Porcentaje", width=90, anchor="center")
 
         diagnosis_scrollbar = ttk.Scrollbar(top_wrap, orient="vertical", command=self.top_diagnosis_tree.yview)
         diagnosis_scrollbar.pack(side="right", fill="y")
@@ -889,6 +891,7 @@ class EnhancedDatabaseDashboard:
 
             # V6.9.21: Categorización clínica GRANULAR (la misma del Resumen IA),
             # en vez de 5 buckets gruesos que metían casi todo en 'Otros' (964).
+            org_dom = {}  # órgano dominante por categoría (para mostrar SIEMPRE el órgano)
             try:
                 from core.normalizador_diagnosticos import (
                     categorizar_diagnostico, categorizar_diagnostico_con_organo,
@@ -902,6 +905,16 @@ class EnhancedDatabaseDashboard:
                             row[diag_col],
                             org_norm.loc[row.name] if row.name in org_norm.index else None),
                         axis=1)
+                    # V6.9.42: órgano DOMINANTE por categoría (mismo criterio que el
+                    # informe PDF) para etiquetar cada diagnóstico con su órgano.
+                    import pandas as _pd
+                    _VAC_ORG = ("", "SIN DATO", "N/A", "NAN", "NO APLICA", "NO ENCONTRADO")
+                    _dfo = _pd.DataFrame({"c": list(cat_serie.values), "o": list(org_norm.values)})
+                    _dfo = _dfo[~_dfo["o"].astype(str).str.upper().isin(_VAC_ORG)]
+                    for _c, _grp in _dfo.groupby("c"):
+                        _vc = _grp["o"].value_counts()
+                        if len(_vc):
+                            org_dom[_c] = str(_vc.index[0]).title()
                 else:
                     cat_serie = self.df[diag_col].apply(categorizar_diagnostico)
             except Exception as e_cat:
@@ -916,12 +929,16 @@ class EnhancedDatabaseDashboard:
 
             # Barras horizontales: caben nombres largos y muchas categorías (con scroll)
             n = len(top)
-            fig = Figure(figsize=(11, max(4.5, 0.42 * n + 1.2)), dpi=100)
+            fig = Figure(figsize=(11, max(4.5, 0.52 * n + 1.2)), dpi=100)
             ax = fig.add_subplot(111)
-            etiquetas = [str(k)[:48] for k in top.index][::-1]
+            # V6.9.42: cada barra muestra el diagnóstico + su órgano principal.
+            def _lbl(k):
+                _o = org_dom.get(k, "")
+                return f"{str(k)[:44]}\n({_o})" if _o else str(k)[:48]
+            etiquetas = [_lbl(k) for k in top.index][::-1]
             valores = list(top.values)[::-1]
             barras = ax.barh(etiquetas, valores, color="#2d3e5e")
-            ax.set_title(f'Distribución por diagnóstico (top {n})', fontsize=14, fontweight='bold')
+            ax.set_title(f'Distribución por diagnóstico y órgano (top {n})', fontsize=14, fontweight='bold')
             ax.set_xlabel('Número de casos')
             ax.tick_params(axis='y', labelsize=9)
             ax.margins(x=0.12)
@@ -957,7 +974,7 @@ class EnhancedDatabaseDashboard:
                 # Mostrar mensaje en la tabla
                 self.top_diagnosis_tree.insert(
                     '', 'end',
-                    values=("No se encontró la columna 'Diagnostico Principal'", "-", "-")
+                    values=("No se encontró la columna 'Diagnostico Principal'", "-", "-", "-")
                 )
                 return
 
@@ -967,9 +984,29 @@ class EnhancedDatabaseDashboard:
             if df_filtered.empty:
                 self.top_diagnosis_tree.insert(
                     '', 'end',
-                    values=("No hay diagnósticos principales registrados", "-", "-")
+                    values=("No hay diagnósticos principales registrados", "-", "-", "-")
                 )
                 return
+
+            # V6.9.42: órgano dominante por diagnóstico (para mostrar SIEMPRE el órgano)
+            org_por_diag = {}
+            try:
+                from core.normalizador_organos import normalizar_organo, elegir_columna_organo
+                _co = elegir_columna_organo(self.df.columns)
+                if _co is not None:
+                    import pandas as _pd
+                    _VAC = ("", "SIN DATO", "N/A", "NAN", "NO APLICA", "NO ENCONTRADO")
+                    _dd = _pd.DataFrame({
+                        "d": df_filtered[diag_col].astype(str).values,
+                        "o": df_filtered[_co].apply(normalizar_organo).values,
+                    })
+                    _dd = _dd[~_dd["o"].astype(str).str.upper().isin(_VAC)]
+                    for _d, _g in _dd.groupby("d"):
+                        _vc = _g["o"].value_counts()
+                        if len(_vc):
+                            org_por_diag[_d] = str(_vc.index[0]).title()
+            except Exception as _eo:
+                logging.warning(f"Órgano por diagnóstico no disponible: {_eo}")
 
             # Contar diagnósticos principales
             diag_counts = df_filtered[diag_col].value_counts().head(10)
@@ -981,10 +1018,11 @@ class EnhancedDatabaseDashboard:
 
                 # Truncar diagnóstico si es muy largo (mostrar más caracteres)
                 diag_truncated = (diag[:80] + '...') if len(str(diag)) > 80 else str(diag)
+                organo = org_por_diag.get(str(diag), "—")
 
                 self.top_diagnosis_tree.insert(
                     '', 'end',
-                    values=(diag_truncated, count, f"{percentage:.1f}%")
+                    values=(diag_truncated, organo, count, f"{percentage:.1f}%")
                 )
 
         except Exception as e:
