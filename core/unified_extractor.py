@@ -344,6 +344,50 @@ def _razon_valida_sin_dx(texto: str) -> str:
     return ''
 
 
+# V6.9.42: malignidad COHERENTE derivada del diagnóstico (negación > término
+# inequívoco > categoría). Reemplaza el cálculo por keywords sueltos que marcaba
+# "NEGATIVO PARA NEOPLASIA" como maligno o "MESOTELIOMA" como benigno.
+_MALIG_NEG = ('NEGATIVO PARA NEOPLASIA', 'NEGATIVO PARA MALIGNIDAD', 'NEGATIVO PARA CARCINOMA',
+              'NEGATIVO PARA CELULAS NEOPLASICAS', 'NEGATIVO PARA CELULAS TUMORALES',
+              'NEGATIVO PARA LESION', 'AUSENCIA DE MALIGNIDAD', 'AUSENCIA DE NEOPLASIA',
+              'SIN EVIDENCIA DE MALIGNIDAD', 'SIN EVIDENCIA DE NEOPLASIA', 'NO HAY EVIDENCIA DE MALIGNIDAD')
+_MALIG_MAL = ('CARCINOMA', 'ADENOCARCINOMA', 'SARCOMA', 'LINFOMA', 'MELANOMA', 'MIELOMA', 'LEUCEMIA',
+              'METASTASIC', 'METASTASIS', 'GLIOBLASTOMA', 'MESOTELIOMA', 'PLASMOCITOMA', 'SEMINOMA',
+              'DISGERMINOMA', 'NEUROBLASTOMA', 'RETINOBLASTOMA', 'NEFROBLASTOMA', 'HEPATOBLASTOMA',
+              'MEDULOBLASTOMA', 'NEOPLASIA MALIGNA', 'TUMOR MALIGNO', 'CARCINOSARCOMA', 'PLASMABLASTIC',
+              'MIELODISPLASIC', 'MIELOPROLIFERATIV', 'NIC III', 'CARCINOMA IN SITU')
+_MALIG_BEN = ('NEUROTEQUEOMA', 'NEUROFIBROMA', 'SCHWANNOMA', 'LIPOMA', 'HEMANGIOMA', 'LINFANGIOMA',
+              'HIPERPLASIA', 'QUISTE', 'NEVUS', 'FIBROADENOMA', 'PARAGANGLIOMA', 'PAPILOMA', 'LEIOMIOMA',
+              'OSTEOMA', 'CONDROMA', 'ADENOMA', 'FIBROMA', 'GANGLIONEUROMA', 'HAMARTOMA', 'TEJIDO NORMAL',
+              'GLIOSIS', 'TEJIDO LINFOIDE REACTIV', 'BENIGN', 'NORMAL', 'HEPATITIS', 'INFLAMACION',
+              'INFLAMATORI', 'REACTIV', 'FIBROSIS', 'CIRROSIS', 'NEFRITIS', 'CONDILOMA', 'FASCITIS NODULAR')
+
+
+def _malignidad_coherente(dx: str) -> str:
+    """Devuelve 'MALIGNO'/'BENIGNO' derivado del dx, o '' si es ambiguo (glioma/TNE
+    sin pista de grado) -> en ese caso NO se sobreescribe el valor existente."""
+    try:
+        from core.normalizador_diagnosticos import normalizar_texto, categorizar_diagnostico
+    except Exception:
+        return ''
+    du = normalizar_texto(str(dx)).upper()
+    if not du.strip():
+        return ''
+    if any(n in du for n in _MALIG_NEG): return 'BENIGNO'
+    if any(m in du for m in _MALIG_MAL): return 'MALIGNO'
+    if any(b in du for b in _MALIG_BEN): return 'BENIGNO'
+    cu = categorizar_diagnostico(dx).upper()
+    if any(k in cu for k in ('CARCINOMA', 'SARCOMA', 'LINFOMA', 'MELANOMA', 'MIELOMA', 'LEUCEMIA',
+                             'METASTASIC', 'MESOTELIOMA', 'NEFROBLASTOMA', 'WILMS', 'NEOPLASIA MALIGNA',
+                             'TUMOR GERMINAL', 'GERMINOMA', 'NEOPLASIA HEMATOLINFOIDE')):
+        return 'MALIGNO'
+    if any(k in cu for k in ('NEOPLASIA BENIGNA', 'TUMOR BENIGNO', 'TUMOR NO MAL', 'LESION BENIGNA',
+                             'NEGATIVO PARA MALIGNIDAD', 'TEJIDO NORMAL', 'HALLAZGO NO NEOPLASICO',
+                             'NERVIO PERIFERICO', 'PARAGANGLIOMA')):
+        return 'BENIGNO'
+    return ''
+
+
 def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = '') -> str:
     """
     Extrae el diagnóstico principal del texto completo de diagnóstico.
@@ -2793,6 +2837,15 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
                     db_record['Diagnostico Principal'] = _dxc
     except Exception as _e_dx:
         logging.warning(f"[dx-coloracion] no aplicado: {_e_dx}")
+
+    # V6.9.42: alinear Malignidad con el diagnóstico final para que coincidan SIEMPRE
+    # (evita "NEGATIVO PARA NEOPLASIA" marcado MALIGNO o "MESOTELIOMA" marcado BENIGNO).
+    try:
+        _mreal = _malignidad_coherente(str(db_record.get('Diagnostico Principal', '') or ''))
+        if _mreal and _mreal != str(db_record.get('Malignidad', '')).strip().upper():
+            db_record['Malignidad'] = _mreal
+    except Exception:
+        pass
 
     # FIX IHQ251018: Eliminar campos internos (que empiezan con _) antes de retornar
     db_record = {k: v for k, v in db_record.items() if not k.startswith('_')}
