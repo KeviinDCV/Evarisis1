@@ -1,0 +1,50 @@
+{
+ "IHQ260034": {
+  "extractor_actual": {
+   "Organo": "GANGLIO CERVICAL",
+   "IHQ_ORGANO": "GANGLIO LINFATICO CERVICAL",
+   "Malignidad": "MALIGNO",
+   "Diagnostico Principal": "LINFOMA DE HODGKIN"
+  },
+  "frag_bloques": "'Bloques y laminas\\nGANGLIO CERVICAL\\n2026-01-09\\nINFORME DE ANATOMÍA PATOLÓGICA\\nESTUDIO DE INMUNOHISTOQUIMICA\\nDESCRIPCIÓN M'",
+  "seccion_dx": "diagnóstico de \"LOS | HALLAZGOS FAVORECEN A UNA PROLIFERACIÓN HEMATOLINFOIDE A CLASIFICAR\". Para la | realización de los siguientes inmunomarcadores: CD3, CD15, CD20, CD30, PAX5, BCL2, BCL6, | MUM1, LMP1, KI67.  | DESCRIPCIÓN MICROSCÓPICA | Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e | internos se realizan estudios de inmunohistoquímica en la plataforma au"
+ },
+ "IHQ260704": {
+  "extractor_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "",
+   "Malignidad": "MALIGNO",
+   "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)"
+  },
+  "seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | --- PÁGINA 9 ---"
+ },
+ "IHQ260711": {
+  "extractor_actual": {
+   "Organo": "PULMON IZQUIERDO + GANGLIO AXILAR IZQUIERDO",
+   "IHQ_ORGANO": "PULMON IZQUIERDO",
+   "Malignidad": "MALIGNO",
+   "Diagnostico Principal": "FAVORECE COMPROMISO POR SARCOMA HISTIOCÍTICO"
+  },
+  "frag_bloques": "'Bloques y laminas\\nPULMON IZQUIERDO +\\nGANGLIO AXILAR\\nIZQUIERDO\\nINFORME DE ANATOMÍA PATOLÓGICA\\nESTUDIO DE INMUNOHISTOQUIMI'",
+  "seccion_dx": "diagnóstico de | \" A.TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR MEDIANTE | INMUNOHISTOQUIMICA. B.TUMOR MALIGNO POBREMENTE DIFERENCIADO A CLASIFICAR | MEDIANTE INMUNOHISTOQUIMICA. \" para realización de los siguientes marcadores de | inmunohistoquimica: CD163, CD68, CD4.  | DESCRIPCIÓN MICROSCÓPICA | Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e | intern"
+ },
+ "IHQ260725": {
+  "extractor_actual": {
+   "Organo": "MASTECTOMIA TOTAL IZQUIERDA",
+   "IHQ_ORGANO": "MAMA IZQUIERDA",
+   "Malignidad": "MALIGNO",
+   "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)"
+  },
+  "frag_bloques": "'Bloques y laminas\\nMASTECTOMIA TOTAL\\nIZQUIERDA\\nINFORME DE ANATOMÍA PATOLÓGICA\\nESTUDIO DE INMUNOHISTOQUIMICA\\nDESCRIPCIÓN M'",
+  "seccion_dx": "diagnóstico | de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Previa revisión de la histología, se realizan | niveles histológicos al bloque 29 para: Receptores de estrógeno, Receptores de Progesterona, HER2 y | Ki-67. | DESCRIPCIÓN MICROSCÓPICA |  Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e internos | se realizan estudios de inmunohistoquímica en la"
+ },
+ "IHQ260795": {
+  "extractor_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "",
+   "Malignidad": "MALIGNO",
+   "Diagnostico Principal": "ADENOCARCINOMA INVASIVO,NOS"
+  },
+  "seccion_dx": "diagnostico de \" | ADENOCARCINOMA INVASIVO,NOS. GRADO GLOBAL: ( NOTTINGHAM SCORE 9/9)\". Para | realizacion de los marcadores inmunohistoquimica: RE, RP, HER2, KI67.  | DESCRIPCIÓN MICROSCÓPICA |  Previa valoración de la técnica y verificación de la adecuada tinción de los controles externos e | internos se realizan estudios de inmunohistoquímica en la plataforma automatizada Roche | VENTANA®. | PROTOCOLO COLEGI"
+ }
+}

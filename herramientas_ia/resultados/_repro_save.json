@@ -1,0 +1,30 @@
+{
+ "IHQ260725": {
+  "1_map": {
+   "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+   "Organo": "MASTECTOMIA TOTAL IZQUIERDA",
+   "Malig": "MALIGNO",
+   "Numero": "IHQ260725"
+  },
+  "2_save_retorno": 1,
+  "3_bd_tras_save": {
+   "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+   "Organo": "MASTECTOMIA TOTAL IZQUIERDA",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260034": {
+  "1_map": {
+   "Dx": "LINFOMA DE HODGKIN",
+   "Organo": "GANGLIO CERVICAL",
+   "Malig": "MALIGNO",
+   "Numero": "IHQ260034"
+  },
+  "2_save_retorno": 1,
+  "3_bd_tras_save": {
+   "Dx": "LINFOMA DE HODGKIN",
+   "Organo": "GANGLIO CERVICAL",
+   "Malig": "MALIGNO"
+  }
+ }
+}

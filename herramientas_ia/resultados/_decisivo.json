@@ -1,0 +1,22 @@
+{
+ "IHQ260034": {
+  "debug_map_file": "debug_map_IHQ260034_20260610_172017.json",
+  "extractor_Dx": "LINFOMA DE HODGKIN",
+  "extractor_Organo": "GANGLIO LINFATICO CERVICA"
+ },
+ "IHQ260725": {
+  "debug_map_file": "debug_map_IHQ260725_20260610_172340.json",
+  "extractor_Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTA",
+  "extractor_Organo": "MAMA IZQUIERDA"
+ },
+ "IHQ260085": {
+  "debug_map_file": "debug_map_IHQ260085_20260610_172035.json",
+  "extractor_Dx": "N/A",
+  "extractor_Organo": "MAMA DERECHA"
+ },
+ "IHQ260190": {
+  "debug_map_file": "debug_map_IHQ260190_20260610_172111.json",
+  "extractor_Dx": "N/A",
+  "extractor_Organo": "MEDIASTINO"
+ }
+}

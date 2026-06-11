@@ -13,7 +13,7 @@ MEJORAS V6.0.6:
 """
 
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import ttkbootstrap as ttkb
 from ttkbootstrap.constants import *
 from typing import Dict, List, Any, Callable, Optional
@@ -233,6 +233,76 @@ class VentanaResultadosImportacion(tk.Toplevel):
         scrollbar.pack(side=RIGHT, fill=Y)
         return scrollable_frame
 
+    # ====================================================================
+    # V6.9.33: COPIAR datos de cada pestaña al portapapeles (texto plano)
+    # Permite enviar los registros como texto en vez de capturas de pantalla.
+    # ====================================================================
+    def _copiar_texto(self, texto: str):
+        """Copia 'texto' al portapapeles del sistema y confirma."""
+        try:
+            self.clipboard_clear()
+            self.clipboard_append(texto)
+            self.update_idletasks()  # asegura que el portapapeles persista
+            n = texto.count("\n") + 1 if texto else 0
+            messagebox.showinfo(
+                "Copiado",
+                f"✅ {n} línea(s) copiada(s) al portapapeles.\n\n"
+                f"Pégalas con Ctrl+V donde necesites.",
+                parent=self,
+            )
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo copiar: {e}", parent=self)
+
+    def _casos_a_texto(self, casos: List[Dict], titulo: str) -> str:
+        """Construye texto plano de una lista de casos (numero, nombre, %,
+        campos/biomarcadores faltantes)."""
+        out = [titulo, "=" * 60]
+        for c in casos:
+            num = c.get("numero_peticion", "N/A")
+            nom = c.get("paciente_nombre") or c.get("nombre_display") or "N/A"
+            pct = c.get("porcentaje_completitud", "")
+            out.append(f"{num} | {nom} | {pct}%")
+            det = c.get("campos_faltantes_detalle", "")
+            if det and str(det) != "Ninguno":
+                for ln in str(det).split("\n"):
+                    if ln.strip():
+                        out.append(f"    {ln.strip()}")
+        out.append("")
+        out.append(f"TOTAL: {len(casos)} caso(s)")
+        return "\n".join(out)
+
+    def _correcciones_a_texto(self, correcciones_por_caso: Dict[str, List[Dict]]) -> str:
+        """Construye texto plano de las correcciones aplicadas por caso."""
+        out = ["CORRECCIONES APLICADAS", "=" * 60]
+        for num, corrs in correcciones_por_caso.items():
+            out.append(f"{num} ({len(corrs)} corrección(es)):")
+            for corr in corrs:
+                campo = corr.get("campo", "N/A")
+                antes = str(corr.get("valor_original", ""))[:50]
+                despues = str(corr.get("valor_corregido", ""))[:50]
+                out.append(f"    {campo}: '{antes}' -> '{despues}'")
+        out.append("")
+        out.append(f"TOTAL: {len(correcciones_por_caso)} caso(s) con correcciones")
+        return "\n".join(out)
+
+    def _crear_barra_copiar(self, tab, texto_func, etiqueta="📋 Copiar todo (texto)"):
+        """Barra superior FIJA con un botón que copia el contenido de la pestaña.
+        Se ancla arriba (side=TOP) antes del canvas, así no hace scroll."""
+        barra = ttkb.Frame(tab)
+        barra.pack(fill=X, side=TOP, padx=10, pady=(8, 0))
+        ttkb.Button(
+            barra,
+            text=etiqueta,
+            bootstyle="info-outline",
+            command=lambda: self._copiar_texto(texto_func()),
+        ).pack(side=LEFT)
+        ttkb.Label(
+            barra,
+            text="  (para pegar el texto y enviarlo)",
+            font=("Segoe UI", 8, "italic"),
+            bootstyle="secondary",
+        ).pack(side=LEFT, padx=(6, 0))
+
     def _crear_ui(self):
         """V6.9.32: Interfaz con pestañas de CARGA DIFERIDA (lazy).
 
@@ -419,6 +489,11 @@ class VentanaResultadosImportacion(tk.Toplevel):
             ).pack(pady=50)
             return
 
+        # V6.9.33: botón para copiar los casos completos como texto
+        self._crear_barra_copiar(
+            tab, lambda: self._casos_a_texto(self.completos, "CASOS COMPLETOS")
+        )
+
         scrollable_frame = self._crear_canvas_scrollable(tab)
 
         # Título
@@ -559,6 +634,11 @@ class VentanaResultadosImportacion(tk.Toplevel):
                 bootstyle="success"
             ).pack(pady=50)
             return
+
+        # V6.9.33: botón para copiar los casos incompletos como texto
+        self._crear_barra_copiar(
+            tab, lambda: self._casos_a_texto(self.incompletos, "CASOS INCOMPLETOS")
+        )
 
         scrollable_frame = self._crear_canvas_scrollable(tab)
 
@@ -706,6 +786,11 @@ class VentanaResultadosImportacion(tk.Toplevel):
                 bootstyle="success"
             ).pack(pady=50)
             return
+
+        # V6.9.33: botón para copiar las correcciones como texto
+        self._crear_barra_copiar(
+            tab, lambda: self._correcciones_a_texto(correcciones_por_caso)
+        )
 
         scrollable_frame = self._crear_canvas_scrollable(tab)
 

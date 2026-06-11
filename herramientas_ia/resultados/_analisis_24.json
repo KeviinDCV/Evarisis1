@@ -1,0 +1,236 @@
+{
+ "resumen": {
+  "total": 1462,
+  "completos": 1438,
+  "incompletos": 24,
+  "porcentaje_exito": 98.4
+ },
+ "combinaciones_campos_faltantes": {
+  "(ninguno)": 18,
+  "Diagnostico Principal": 4,
+  "Organo": 1,
+  "Diagnostico Coloracion, Diagnostico Principal, Organo": 1
+ },
+ "detalle": [
+  {
+   "caso": "IHQ250277",
+   "pct": 98.8,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250299",
+   "pct": 95.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250309",
+   "pct": 94.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250311",
+   "pct": 97.7,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250343",
+   "pct": 95.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250346",
+   "pct": 95.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250368",
+   "pct": 93.6,
+   "faltan": [
+    "Organo"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {
+    "Organo": "BX MASA EN CERVIX"
+   }
+  },
+  {
+   "caso": "IHQ250380",
+   "pct": 90.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250411",
+   "pct": 93.6,
+   "faltan": [
+    "Diagnostico Principal"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250424",
+   "pct": 93.6,
+   "faltan": [
+    "Diagnostico Principal"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250435",
+   "pct": 96.2,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250446",
+   "pct": 92.5,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250448",
+   "pct": 92.5,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250452",
+   "pct": 94.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250638",
+   "pct": 97.9,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250696",
+   "pct": 97.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250723",
+   "pct": 80.9,
+   "faltan": [
+    "Diagnostico Coloracion",
+    "Diagnostico Principal",
+    "Organo"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ250779",
+   "pct": 97.9,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251356",
+   "pct": 93.6,
+   "faltan": [
+    "Diagnostico Principal"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251420",
+   "pct": 98.7,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251434",
+   "pct": 95.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251444",
+   "pct": 92.5,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251487",
+   "pct": 94.0,
+   "faltan": [],
+   "biomarc_faltan": [
+    "IHQ_CD31"
+   ],
+   "debug_map_tiene": {}
+  },
+  {
+   "caso": "IHQ251488",
+   "pct": 93.6,
+   "faltan": [
+    "Diagnostico Principal"
+   ],
+   "biomarc_faltan": [],
+   "debug_map_tiene": {}
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "extractor": {
+  "Organo": "MAMA DERECHA",
+  "Dx": "ADENOMA TUBULAR",
+  "DxColoracion": "NO APLICA",
+  "Malignidad": "BENIGNO",
+  "Numero": "IHQ250723"
+ },
+ "save": 1,
+ "bd_tras_save": {
+  "Organo": "CUADRANTECTOMIA MAMA DEERCHA",
+  "Dx": "ADENOMA TUBULAR",
+  "Malig": "BENIGNO"
+ },
+ "completitud": {
+  "total": 1,
+  "completos": 1,
+  "incompletos": 0,
+  "porcentaje_exito": 100.0
+ },
+ "sigue_incompleto": []
+}

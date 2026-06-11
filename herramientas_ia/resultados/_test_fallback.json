@@ -1,0 +1,27 @@
+{
+ "pdf": "IHQ260701 al IHQ260750.pdf",
+ "total": 14,
+ "casos": {
+  "IHQ260704": {
+   "Organo": "MASTECTOMIA",
+   "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (",
+   "nivel": "completo",
+   "pct": 100.0,
+   "faltan": []
+  },
+  "IHQ260711": {
+   "Organo": "PULMON IZQUIERDO",
+   "Dx": "FAVORECE COMPROMISO POR SARCOMA HISTIOCÍ",
+   "nivel": "completo",
+   "pct": 100.0,
+   "faltan": []
+  },
+  "IHQ260725": {
+   "Organo": "MAMA IZQUIERDA",
+   "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (",
+   "nivel": "completo",
+   "pct": 100.0,
+   "faltan": []
+  }
+ }
+}

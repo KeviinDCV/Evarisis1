@@ -1,0 +1,74 @@
+{
+ "IHQ260034": {
+  "pdf": "IHQ260001 al IHQ260050.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 54,
+   "Dx": "LINFOMA DE HODGKIN",
+   "Organo": "GANGLIO LINFATICO CERVICA",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260190": {
+  "pdf": "IHQ260151 al IHQ260200.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 64,
+   "Dx": "N/A",
+   "Organo": "MEDIASTINO",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260214": {
+  "pdf": "IHQ260201 al IHQ260250.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 22,
+   "Dx": "N/A",
+   "Organo": "MAMA IZQUIERDA",
+   "Malig": "BENIGNO"
+  }
+ },
+ "IHQ260521": {
+  "pdf": "IHQ260501 al IHQ260550.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 33,
+   "Dx": "N/A",
+   "Organo": "MAMA DERECHA",
+   "Malig": "BENIGNO"
+  }
+ },
+ "IHQ260704": {
+  "pdf": "IHQ260701 al IHQ260750.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 6,
+   "Dx": "SU PRESENTACION DUCTAL INVASIVA",
+   "Organo": "MASTECTOMIA",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260711": {
+  "pdf": "IHQ260701 al IHQ260750.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 8,
+   "Dx": "FAVORECE COMPROMISO POR SARCOMA HISTIOCÍTICO",
+   "Organo": "PULMON IZQUIERDO",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260725": {
+  "pdf": "IHQ260701 al IHQ260750.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 13,
+   "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTA",
+   "Organo": "MAMA IZQUIERDA",
+   "Malig": "MALIGNO"
+  }
+ },
+ "IHQ260795": {
+  "pdf": "IHQ260782 y IHQ260795.pdf",
+  "recuperable_de_pagina": {
+   "pagina": 2,
+   "Dx": "ADENOCARCINOMA INVASIVO,NOS",
+   "Organo": "",
+   "Malig": "MALIGNO"
+  }
+ }
+}

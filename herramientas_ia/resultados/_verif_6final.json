@@ -1,0 +1,74 @@
+{
+ "IHQ250368": {
+  "extractor": {
+   "Dx": "TUMOR MALIGNO POBREMENTE DIFERENCIADO EN PATRÓN SÓLIDO",
+   "Organo": "CERVIX",
+   "DxColoracion": "NEOPLASIA INVASIVA EN PATRÓN SOLIDO A CLASIFICAR MEDIAN"
+  },
+  "debug_map_cc": {
+   "Dx": "TUMOR MALIGNO POBREMENTE DIFERENCIADO EN PATRÓN SÓLIDO",
+   "Organo": "CERVIX"
+  },
+  "ocr_seccion_dx": "DIAGNÓSTICO | Cervix. Lesión. Biopsia: | LOS HALLAZGOS MORFOLÓGICOS Y DE INMUNOHISTOQUÍMICA SUGIEREN: | TUMOR MALIGNO POBREMENTE DIFERENCIADO EN PATRÓN SÓLIDO. | VER COMENTARIO. | COMENTARIOS | Los hallazgos morfológicos sugieren una lesión probablemente originada en el t"
+ },
+ "IHQ250411": {
+  "extractor": {
+   "Dx": "N/A",
+   "Organo": "MUCOSA GÁSTRICA INCISURA",
+   "DxColoracion": "ADENOCARCINOMA DE PATRON INTESTINAL MAL DIFERENCIADO GR"
+  },
+  "debug_map_cc": {
+   "Dx": "N/A",
+   "Organo": "MUCOSA GÁSTRICA INCISURA"
+  },
+  "ocr_seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de | Patólogos (CAP), The Royal College of Pathologists of Aust"
+ },
+ "IHQ250424": {
+  "extractor": {
+   "Dx": "N/A",
+   "Organo": "PULMÓN DERECHO",
+   "DxColoracion": "CARCINOMA INVASIVO DE ALTO GRADO"
+  },
+  "debug_map_cc": {
+   "Dx": "N/A",
+   "Organo": "PULMÓN DERECHO"
+  },
+  "ocr_seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de | Patólogos (CAP), The Royal College of Pathologists of Aust"
+ },
+ "IHQ250723": {
+  "extractor": {
+   "Dx": "N/A",
+   "Organo": "",
+   "DxColoracion": "N/A"
+  },
+  "debug_map_cc": {
+   "Dx": "N/A",
+   "Organo": ""
+  },
+  "ocr_seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de | Patólogos (CAP), The Royal College of Pathologists of Aust"
+ },
+ "IHQ251356": {
+  "extractor": {
+   "Dx": "N/A",
+   "Organo": "PULMÓN DERECHO",
+   "DxColoracion": "INFILTRACIÓN POR TUMOR MALIGNO SUGESTIVO DE ADENOCARCIN"
+  },
+  "debug_map_cc": {
+   "Dx": "N/A",
+   "Organo": "PULMÓN DERECHO"
+  },
+  "ocr_seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de | Patólogos (CAP), The Royal College of Pathologists of Aust"
+ },
+ "IHQ251488": {
+  "extractor": {
+   "Dx": "N/A",
+   "Organo": "MAMA DERECHA",
+   "DxColoracion": "A. NEOPLASIA EN PATRÓN PAPILAR MULTIFOCAL A CLASIFICAR "
+  },
+  "debug_map_cc": {
+   "Dx": "N/A",
+   "Organo": "MAMA DERECHA"
+  },
+  "ocr_seccion_dx": "diagnóstico y manejo clínico dentro de su especialidadillas. | Todos los análisis son avalados frente a los programas de control de calidad externo acreditados por la ISO 17043:2010; Colegio Americano de | Patólogos (CAP), The Royal College of Pathologists of Aust"
+ }
+}

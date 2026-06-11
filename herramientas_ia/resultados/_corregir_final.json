@@ -1,0 +1,30 @@
+{
+ "reproceso_250368": {
+  "save": 1,
+  "Organo": "CERVIX",
+  "Dx": "TUMOR MALIGNO POBREMENTE DIFERENCIADO EN"
+ },
+ "resumen_6": {
+  "total": 6,
+  "completos": 5,
+  "incompletos": 1,
+  "porcentaje_exito": 83.3
+ },
+ "incompletos_restantes": [
+  {
+   "caso": "IHQ250723",
+   "pct": 80.9,
+   "faltan": [
+    "Diagnostico Coloracion",
+    "Diagnostico Principal",
+    "Organo"
+   ]
+  }
+ ],
+ "resumen_total": {
+  "total": 1462,
+  "completos": 1461,
+  "incompletos": 1,
+  "porcentaje_exito": 99.9
+ }
+}

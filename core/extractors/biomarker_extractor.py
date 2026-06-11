@@ -2848,6 +2848,19 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?(?:CD[\s-]?31|PECAM[\s-]?1)(?:\s|,|\.)',
             # V6.5.92: Patrón para "Con marcación positiva focal en membrana para ... CD31"
             r'(?i)(?:con\s+)?marcaci[óo]n\s+positiva(?:\s+focal)?\s+.*?para\s+.*?CD[\s-]?31',
+            # V6.9.33 FIX: formas narrativas endoteliales que CD34 ya soporta pero CD31 no.
+            # CD31 es marcador endotelial específico (angiosarcomas/lesiones vasculares).
+            # Símbolo +/- pegado o separado (IHQ250299/250311: "CD31+ y CD34+")
+            r'(?i)cd\s*31\s*(\+)',
+            r'(?i)cd\s*31\s*(-)(?!\d)',
+            # "expresión ... para CD31" (IHQ250309: "expresión fuerte y difusa para CD31")
+            r'(?i)(expresi[óo]n)[^.]{0,45}?para[^.]{0,20}?cd[\s-]?31',
+            # "marcación de/para CD31" (IHQ250346/250452/250696: "marcación de CD31")
+            r'(?i)(marcaci[óo]n)[^.]{0,45}?(?:de|para)[^.]{0,20}?cd[\s-]?31',
+            # "CD31 (y CD34) resaltan el endotelio/vasos" -> CD31 marca endotelio = POSITIVO
+            r'(?i)cd[\s-]?31[^.]{0,40}?(resaltan?|resaltad[oa]s?)[^.]{0,30}?(?:endotelio|vascular|vasos)',
+            # "positivos/negativos para [lista,] CD31" (IHQ250277/250343/250638, lista larga)
+            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+(?:para|con)[:\s][^.]{0,90}?cd[\s-]?31',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'POSITIVO (FOCAL)'],
         'normalizacion': {
@@ -2859,6 +2872,19 @@ BIOMARKER_DEFINITIONS = {
             'negativa': 'NEGATIVO',
             'negativos': 'NEGATIVO',
             'negativas': 'NEGATIVO',
+            # V6.9.33: símbolos y formas narrativas endoteliales = POSITIVO
+            '+': 'POSITIVO',
+            '-': 'NEGATIVO',
+            'expresión': 'POSITIVO',
+            'expresion': 'POSITIVO',
+            'marcación': 'POSITIVO',
+            'marcacion': 'POSITIVO',
+            'resalta': 'POSITIVO',
+            'resaltan': 'POSITIVO',
+            'resaltado': 'POSITIVO',
+            'resaltados': 'POSITIVO',
+            'resaltada': 'POSITIVO',
+            'resaltadas': 'POSITIVO',
         }
     },
 

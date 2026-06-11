@@ -1,0 +1,96 @@
+{
+ "objetivo_18": {
+  "IHQ250277": {
+   "CD31": "POSITIVO (focal)",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ250299": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ250309": {
+   "CD31": "POSITIVO (fuerte y difusa)",
+   "CD34": "",
+   "CD3": ""
+  },
+  "IHQ250311": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ250343": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ250346": {
+   "CD31": "NEGATIVO",
+   "CD34": "NEGATIVO",
+   "CD3": ""
+  },
+  "IHQ250380": {
+   "CD31": "POSITIVO",
+   "CD34": "NO MENCIONADO",
+   "CD3": ""
+  },
+  "IHQ250435": {
+   "CD31": "NEGATIVO",
+   "CD34": "NEGATIVO",
+   "CD3": ""
+  },
+  "IHQ250446": {
+   "CD31": "NEGATIVO",
+   "CD34": "NEGATIVO",
+   "CD3": ""
+  },
+  "IHQ250448": {
+   "CD31": "NEGATIVO",
+   "CD34": "NEGATIVO",
+   "CD3": ""
+  },
+  "IHQ250452": {
+   "CD31": "POSITIVO (fuerte)",
+   "CD34": "",
+   "CD3": ""
+  },
+  "IHQ250638": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": "POSITIVO"
+  },
+  "IHQ250696": {
+   "CD31": "POSITIVO (focal)",
+   "CD34": "POSITIVO (focal)",
+   "CD3": ""
+  },
+  "IHQ250779": {
+   "CD31": "POSITIVO",
+   "CD34": "NEGATIVO",
+   "CD3": ""
+  },
+  "IHQ251420": {
+   "CD31": "NEGATIVO",
+   "CD34": "NEGATIVO",
+   "CD3": "NO MENCIONADO"
+  },
+  "IHQ251434": {
+   "CD31": "",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ251444": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  },
+  "IHQ251487": {
+   "CD31": "POSITIVO",
+   "CD34": "POSITIVO",
+   "CD3": ""
+  }
+ },
+ "control_revisados_sin_cd31": 30,
+ "falsos_positivos": []
+}

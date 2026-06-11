@@ -1,0 +1,73 @@
+{
+ "total_2026": 614,
+ "coinciden": 609,
+ "difieren": 5,
+ "sin_debug_map": 0,
+ "ejemplos": [
+  {
+   "caso": "IHQ260034",
+   "BD": {
+    "dx": "LEUCEMIA MIELOIDE AGUDA",
+    "mal": "BENIGNO",
+    "org": "N/A"
+   },
+   "debug_map": {
+    "dx": "LINFOMA DE HODGKIN",
+    "mal": "MALIGNO",
+    "org": "GANGLIO CERVICAL"
+   }
+  },
+  {
+   "caso": "IHQ260354",
+   "BD": {
+    "dx": "CARCINOMA DE MAMA",
+    "mal": "MALIGNO",
+    "org": "CUADRANTECTOMIA MAMA IZQU"
+   },
+   "debug_map": {
+    "dx": "CARCINOMA DE CUELLO DE ÚTERO",
+    "mal": "BENIGNO",
+    "org": "N/A"
+   }
+  },
+  {
+   "caso": "IHQ260599",
+   "BD": {
+    "dx": "SARCOMA HISTIOCITICO",
+    "mal": "MALIGNO",
+    "org": "BX DE HUESO IZQUIERDO"
+   },
+   "debug_map": {
+    "dx": "LEUCEMIA MIELOIDE AGUDA",
+    "mal": "BENIGNO",
+    "org": "N/A"
+   }
+  },
+  {
+   "caso": "IHQ260711",
+   "BD": {
+    "dx": "LEUCEMIA MIELOIDE AGUDA",
+    "mal": "BENIGNO",
+    "org": "N/A"
+   },
+   "debug_map": {
+    "dx": "FAVORECE COMPROMISO POR SARCOMA HIS",
+    "mal": "MALIGNO",
+    "org": "PULMON IZQUIERDO + GANGLI"
+   }
+  },
+  {
+   "caso": "IHQ260725",
+   "BD": {
+    "dx": "CARCINOMA DE CUELLO DE ÚTERO",
+    "mal": "BENIGNO",
+    "org": "N/A"
+   },
+   "debug_map": {
+    "dx": "CARCINOMA INVASIVO DE TIPO NO ESPEC",
+    "mal": "MALIGNO",
+    "org": "MASTECTOMIA TOTAL IZQUIER"
+   }
+  }
+ ]
+}

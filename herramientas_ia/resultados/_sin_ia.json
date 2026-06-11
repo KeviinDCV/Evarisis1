@@ -1,0 +1,28 @@
+{
+ "ia_habilitada": false,
+ "IHQ260034": {
+  "Dx": "LINFOMA DE HODGKIN",
+  "Malig": "MALIGNO",
+  "IHQ_ORGANO": "GANGLIO LINFATICO CERVICA"
+ },
+ "IHQ260354": {
+  "Dx": "N/A",
+  "Malig": "BENIGNO",
+  "IHQ_ORGANO": ""
+ },
+ "IHQ260599": {
+  "Dx": "N/A",
+  "Malig": "BENIGNO",
+  "IHQ_ORGANO": ""
+ },
+ "IHQ260711": {
+  "Dx": "FAVORECE COMPROMISO POR SARCOMA HISTIOCÍTICO",
+  "Malig": "MALIGNO",
+  "IHQ_ORGANO": "PULMON IZQUIERDO"
+ },
+ "IHQ260725": {
+  "Dx": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTA",
+  "Malig": "MALIGNO",
+  "IHQ_ORGANO": "MAMA IZQUIERDA"
+ }
+}

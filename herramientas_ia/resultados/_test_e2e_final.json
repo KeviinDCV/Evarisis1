@@ -1,0 +1,33 @@
+{
+ "pdf": "IHQ260151 al IHQ260200.pdf",
+ "total_procesados": 48,
+ "IHQ260190": {
+  "Dx": "LINFOMA LINFOBLÁSTICO DE CELULAS T",
+  "Organo": "MEDIASTINO"
+ },
+ "n_incompletos_en_pdf": 5,
+ "incompletos": [
+  {
+   "caso": "IHQ260153",
+   "faltan": []
+  },
+  {
+   "caso": "IHQ260163",
+   "faltan": []
+  },
+  {
+   "caso": "IHQ260166",
+   "faltan": [
+    "Apellidos (Primer o Segundo)"
+   ]
+  },
+  {
+   "caso": "IHQ260187",
+   "faltan": []
+  },
+  {
+   "caso": "IHQ260195",
+   "faltan": []
+  }
+ ]
+}

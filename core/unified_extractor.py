@@ -398,7 +398,10 @@ def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = ''
     # V6.0.17: MEJORADO - Incluye "SON COMPATIBLES CON" (IHQ250992: "SON COMPATIBLES CON NEOPLASIA...")
     # V6.2.2: MEJORADO - "LOS" y "SON" son opcionales (IHQ251012: "HALLAZGOS ... COMPATIBLES CON TIMOMA AB")
     # Patrón: "[LOS] HALLAZGOS ... [FAVORECEN|[SON] COMPATIBLES CON] [UNA/UN] ..."
-    patron_hallazgos = r'(?:LOS\s+)?HALLAZGOS[^.]*?(?:FAVORECEN\s+(?:UNA\s+|UN\s+)?|(?:SON\s+)?COMPATIBLES CON\s+(?:UNA\s+|UN\s+)?)([^.]+?)(?:\.|VER COMENTARIO|TAMAÑO|$)'
+    # V6.9.35: + "SUGIEREN"/"EVIDENCIAN" y dx en línea siguiente con viñeta
+    # ("SUGIEREN:\n- LINFOMA LINFOBLÁSTICO" en IHQ260190/214/521). El ":" y la
+    # viñeta "-" entre el verbo y el diagnóstico son opcionales.
+    patron_hallazgos = r'(?:LOS\s+)?HALLAZGOS[^.]*?(?:FAVORECEN\s+(?:UNA\s+|UN\s+)?|(?:SON\s+)?COMPATIBLES CON\s+(?:UNA\s+|UN\s+)?|(?:SUGIEREN|EVIDENCIAN)[ \t]*:?\s*[-•]?\s*(?:UNA\s+|UN\s+)?)([^.]+?)(?:\.|VER COMENTARIO|TAMAÑO|$)'
     match_hallazgos = re.search(patron_hallazgos, texto, re.IGNORECASE)
     if match_hallazgos:
         diagnostico = match_hallazgos.group(1).strip().upper()
@@ -2093,6 +2096,7 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'CD15': 'IHQ_CD15', 'cd15': 'IHQ_CD15',
         'CD20': 'IHQ_CD20', 'cd20': 'IHQ_CD20',
         'CD30': 'IHQ_CD30', 'cd30': 'IHQ_CD30',
+        'CD31': 'IHQ_CD31', 'cd31': 'IHQ_CD31', 'IHQ_CD31': 'IHQ_CD31',  # V6.9.33 FIX: faltaba el mapeo -> CD31 se extraía pero se perdía al mapear a BD
         'CD34': 'IHQ_CD34', 'cd34': 'IHQ_CD34',
         'CD38': 'IHQ_CD38', 'cd38': 'IHQ_CD38',
         'CD45': 'IHQ_CD45', 'cd45': 'IHQ_CD45', 'LCA': 'IHQ_CD45', 'lca': 'IHQ_CD45',

@@ -1133,11 +1133,28 @@ def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any
                 campos_faltantes.append(campo)
 
         # Verificar campos médicos (CRÍTICOS - alta prioridad)
+        # V6.9.34: términos que indican un DIAGNÓSTICO real (no solo espécimen/sitio)
+        _TERMINOS_DX = ('CARCINOMA', 'ADENOCARCINOMA', 'NEOPLASIA', 'TUMOR', 'LINFOMA',
+                        'SARCOMA', 'MELANOMA', 'INFILTRAC', 'HIPERPLASIA', 'DISPLASIA',
+                        'METASTAS', 'PROLIFERAC', 'LESION', 'LESIÓN', 'MALIGN', 'ADENOMA',
+                        'PAPILAR', 'BLASTOMA', 'GLIOMA', 'MIELOMA', 'LEUCEMIA')
         for campo in CAMPOS_REQUERIDOS['medicos']:
             campos_totales += 1
             valor = registro.get(campo, '')
             if valor and valor not in ['', 'NO ENCONTRADO', 'nan', None, 'N/A']:
                 campos_completos += 1
+            elif campo == 'Diagnostico Principal':
+                # V6.9.34: el diagnóstico puede estar registrado en "Diagnostico
+                # Coloracion" (dx de la coloración básica/previa) aunque "Diagnostico
+                # Principal" (conclusión IHQ) quede N/A. Si Coloracion contiene un
+                # término diagnóstico REAL, el caso SÍ tiene diagnóstico y NO debe
+                # marcarse incompleto (IHQ250411/250424/251356/251488). Si Coloracion
+                # solo trae espécimen/sitio (sin término dx), sigue contando faltante.
+                dx_col = str(registro.get('Diagnostico Coloracion', '') or '').upper()
+                if any(t in dx_col for t in _TERMINOS_DX):
+                    campos_completos += 1
+                else:
+                    campos_faltantes.append(campo)
             else:
                 campos_faltantes.append(campo)
 

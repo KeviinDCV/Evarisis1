@@ -1,0 +1,71 @@
+{
+ "IHQ260034": {
+  "archivo": "debug_map_IHQ260034_20260610_142141.json",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\2026\\IHQ260001 al IHQ260050.pdf",
+  "metadata": {
+   "correcciones_totales": 3,
+   "correcciones_por_tipo": {
+    "ortografica": 3
+   }
+  },
+  "bd_guardados_clave": {
+   "Diagnostico Principal": "(no key)",
+   "Organo": "(no key)",
+   "IHQ_ORGANO": "(no key)",
+   "Malignidad": "(no key)",
+   "Numero de caso": "(no key)"
+  },
+  "extraccion_subkeys": [
+   "unified_extractor"
+  ],
+  "extraccion_valores": {
+   "malignidad": "MALIGNO"
+  }
+ },
+ "IHQ260725": {
+  "archivo": "debug_map_IHQ260725_20260610_151219.json",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\2026\\IHQ260701 al IHQ260750.pdf",
+  "metadata": {
+   "correcciones_totales": 3,
+   "correcciones_por_tipo": {
+    "ortografica": 3
+   }
+  },
+  "bd_guardados_clave": {
+   "Diagnostico Principal": "(no key)",
+   "Organo": "(no key)",
+   "IHQ_ORGANO": "(no key)",
+   "Malignidad": "(no key)",
+   "Numero de caso": "(no key)"
+  },
+  "extraccion_subkeys": [
+   "unified_extractor"
+  ],
+  "extraccion_valores": {
+   "malignidad": "MALIGNO"
+  }
+ },
+ "IHQ260795": {
+  "archivo": "debug_map_IHQ260795_20260610_151307.json",
+  "pdf_path": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\pdfs_patologia\\2026\\IHQ260782 y IHQ260795.pdf",
+  "metadata": {
+   "correcciones_totales": 2,
+   "correcciones_por_tipo": {
+    "ortografica": 2
+   }
+  },
+  "bd_guardados_clave": {
+   "Diagnostico Principal": "(no key)",
+   "Organo": "(no key)",
+   "IHQ_ORGANO": "(no key)",
+   "Malignidad": "(no key)",
+   "Numero de caso": "(no key)"
+  },
+  "extraccion_subkeys": [
+   "unified_extractor"
+  ],
+  "extraccion_valores": {
+   "malignidad": "MALIGNO"
+  }
+ }
+}

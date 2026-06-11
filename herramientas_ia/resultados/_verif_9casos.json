@@ -1,0 +1,170 @@
+{
+ "total_2026": 614,
+ "resumen": {
+  "total": 614,
+  "completos": 605,
+  "incompletos": 9,
+  "porcentaje_exito": 98.5
+ },
+ "casos": [
+  {
+   "caso": "IHQ260034",
+   "porcentaje": 80.9,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Diagnostico Principal",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "N/A",
+    "IHQ_ORGANO": "N/A",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "N/A",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "GANGLIO CERVICAL",
+   "ocr_dx": "de \"LOS"
+  },
+  {
+   "caso": "IHQ260085",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Diagnostico Principal"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "BX DE MAMA DERECHA",
+    "IHQ_ORGANO": "MAMA DERECHA",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "PROLIFERACIÓN INTRADUCTAL A CLASIFICAR MEDIANTE ESTUDIOS DE INMUNOHISTOQUÍMICA",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "BX DE MAMA DERECHA",
+   "ocr_dx": "de \"PROLIFERACIÓN"
+  },
+  {
+   "caso": "IHQ260190",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Diagnostico Principal"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "BX MEDIASTINO",
+    "IHQ_ORGANO": "MEDIASTINO",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "BIOPSIA MEDIASTINO",
+    "Malignidad": "MALIGNO"
+   },
+   "ocr_organo_tabla": "BX MEDIASTINO",
+   "ocr_dx": "Mediastino. Lesión. Biopsia. Estudio de inmunohistoquímica."
+  },
+  {
+   "caso": "IHQ260214",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Diagnostico Principal"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "BX MAMA IZQUIERDA",
+    "IHQ_ORGANO": "MAMA IZQUIERDA",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "CUADRANTE SUPERIOR MAMA IZQUIERDA",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "BX MAMA IZQUIERDA",
+   "ocr_dx": "Mama Izquierda. Cuadrantectomía. Estudio de inmunohistoquímica."
+  },
+  {
+   "caso": "IHQ260521",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Diagnostico Principal"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "BX MAMA DERECHA",
+    "IHQ_ORGANO": "MAMA DERECHA",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "NO APLICA",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "BX MAMA DERECHA",
+   "ocr_dx": "previo de"
+  },
+  {
+   "caso": "IHQ260704",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Organo"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "N/A",
+    "IHQ_ORGANO": "N/A",
+    "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+    "Diagnostico Coloracion": "NO APLICA",
+    "Malignidad": "MALIGNO"
+   },
+   "ocr_organo_tabla": null,
+   "ocr_dx": "y manejo clínico dentro de su especialidadillas."
+  },
+  {
+   "caso": "IHQ260711",
+   "porcentaje": 80.9,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Diagnostico Principal",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "N/A",
+    "IHQ_ORGANO": "N/A",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "N/A",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "PULMON IZQUIERDO +",
+   "ocr_dx": "de"
+  },
+  {
+   "caso": "IHQ260725",
+   "porcentaje": 80.9,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Diagnostico Principal",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "N/A",
+    "IHQ_ORGANO": "N/A",
+    "Diagnostico Principal": "N/A",
+    "Diagnostico Coloracion": "N/A",
+    "Malignidad": "BENIGNO"
+   },
+   "ocr_organo_tabla": "MASTECTOMIA TOTAL",
+   "ocr_dx": "de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Previa revisión de la histología, se realizan"
+  },
+  {
+   "caso": "IHQ260795",
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Organo"
+   ],
+   "biomarcadores_faltantes": [],
+   "bd": {
+    "Organo": "N/A",
+    "IHQ_ORGANO": "N/A",
+    "Diagnostico Principal": "ADENOCARCINOMA INVASIVO,NOS",
+    "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO,NOS. GRADO GLOBAL: ( NOTTINGHAM SCORE 9/9)",
+    "Malignidad": "MALIGNO"
+   },
+   "ocr_organo_tabla": null,
+   "ocr_dx": "de \""
+  }
+ ]
+}

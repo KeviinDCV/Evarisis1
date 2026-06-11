@@ -1,0 +1,170 @@
+{
+ "IHQ260034": {
+  "debug_map": "debug_map_IHQ260034_20260610_142141.json",
+  "claves_top": [
+   "session_id",
+   "numero_peticion",
+   "timestamp",
+   "pdf_path",
+   "ocr",
+   "extraccion",
+   "base_datos",
+   "validacion",
+   "correcciones_aplicadas",
+   "metadata",
+   "metricas"
+  ],
+  "ctx_tabla_organo": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "ESTUDIO DE",
+   "898807 Estudio anatomopatologico de marcacion",
+   "Bloques y laminas",
+   "GANGLIO CERVICAL",
+   "2026-01-09",
+   "INFORME DE ANATOMÍA PATOLÓGICA",
+   "ESTUDIO DE INMUNOHISTOQUIMICA"
+  ],
+  "organo_colon": null,
+  "menciona_carcinoma": false,
+  "lineas_dx": [
+   "GANGLIO CERVICAL",
+   "Se realizan niveles histológicos al bloque institucional con Nro M2515597 y diagnóstico de \"LOS",
+   "DIAGNÓSTICO",
+   "Ganglio linfatico cervical. Escision:"
+  ]
+ },
+ "IHQ260704": {
+  "debug_map": "debug_map_IHQ260704_20260610_151202.json",
+  "claves_top": [
+   "session_id",
+   "numero_peticion",
+   "timestamp",
+   "pdf_path",
+   "ocr",
+   "extraccion",
+   "base_datos",
+   "validacion",
+   "correcciones_aplicadas",
+   "metadata",
+   "metricas"
+  ],
+  "ctx_tabla_organo": "no etiqueta 'Organo'",
+  "organo_colon": null,
+  "menciona_carcinoma": true,
+  "lineas_dx": [
+   "Mama",
+   "- CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).",
+   "el diagnóstico y manejo clínico dentro de su especialidadillas."
+  ]
+ },
+ "IHQ260711": {
+  "debug_map": "debug_map_IHQ260711_20260610_151202.json",
+  "claves_top": [
+   "session_id",
+   "numero_peticion",
+   "timestamp",
+   "pdf_path",
+   "ocr",
+   "extraccion",
+   "base_datos",
+   "validacion",
+   "correcciones_aplicadas",
+   "metadata",
+   "metricas"
+  ],
+  "ctx_tabla_organo": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "ESTUDIO DE",
+   "898807 Estudio anatomopatologico de marcacion",
+   "Bloques y laminas",
+   "PULMON IZQUIERDO +",
+   "GANGLIO AXILAR",
+   "IZQUIERDO",
+   "INFORME DE ANATOMÍA PATOLÓGICA"
+  ],
+  "organo_colon": null,
+  "menciona_carcinoma": true,
+  "lineas_dx": [
+   "Se realizan niveles histológicos al caso institucional con Nro M2605019-A1-B2 con diagnóstico de",
+   "DIAGNÓSTICO"
+  ]
+ },
+ "IHQ260725": {
+  "debug_map": "debug_map_IHQ260725_20260610_151219.json",
+  "claves_top": [
+   "session_id",
+   "numero_peticion",
+   "timestamp",
+   "pdf_path",
+   "ocr",
+   "extraccion",
+   "base_datos",
+   "validacion",
+   "correcciones_aplicadas",
+   "metadata",
+   "metricas"
+  ],
+  "ctx_tabla_organo": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "ESTUDIO DE",
+   "898807 Estudio anatomopatologico de marcacion",
+   "Bloques y laminas",
+   "MASTECTOMIA TOTAL",
+   "IZQUIERDA",
+   "INFORME DE ANATOMÍA PATOLÓGICA",
+   "ESTUDIO DE INMUNOHISTOQUIMICA"
+  ],
+  "organo_colon": null,
+  "menciona_carcinoma": true,
+  "lineas_dx": [
+   "rotulado como “M2604251” que corresponde a “mastectomía total de mama izquierda\" y con diagnóstico",
+   "de \"CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)\". Previa revisión de la histología, se realizan",
+   "DIAGNÓSTICO",
+   "Mama izquierda. Lesión. Mastectomía total:",
+   "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)"
+  ]
+ },
+ "IHQ260795": {
+  "debug_map": "debug_map_IHQ260795_20260610_151307.json",
+  "claves_top": [
+   "session_id",
+   "numero_peticion",
+   "timestamp",
+   "pdf_path",
+   "ocr",
+   "extraccion",
+   "base_datos",
+   "validacion",
+   "correcciones_aplicadas",
+   "metadata",
+   "metricas"
+  ],
+  "ctx_tabla_organo": [
+   "Almacenamiento",
+   "Organo",
+   "Fecha toma",
+   "ESTUDIO DE",
+   "898807 Estudio anatomopatologico de marcacion",
+   "INFORME DE ANATOMÍA PATOLÓGICA",
+   "ESTUDIO DE INMUNOHISTOQUIMICA",
+   "DESCRIPCIÓN MACROSCÓPICA",
+   "Se realizan niveles histológicos al caso institucional con Nro M2605720-A2, con diagnostico de \"",
+   "ADENOCARCINOMA INVASIVO,NOS. GRADO GLOBAL: ( NOTTINGHAM SCORE 9/9)\". Para"
+  ],
+  "organo_colon": null,
+  "menciona_carcinoma": true,
+  "lineas_dx": [
+   "Se realizan niveles histológicos al caso institucional con Nro M2605720-A2, con diagnostico de \"",
+   "ADENOCARCINOMA INVASIVO,NOS. GRADO GLOBAL: ( NOTTINGHAM SCORE 9/9)\". Para",
+   "DIAGNÓSTICO",
+   "A. Mama derecha. Horario 8-9.Historia de carcinoma. Tumor. Cudrantectomia:",
+   "el diagnóstico y manejo clínico dentro de su especialidadillas."
+  ]
+ }
+}

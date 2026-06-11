@@ -8,7 +8,56 @@ Lógica de negocio para procesamiento de archivos IHQ extraída de ui.py
 import logging
 import re
 import os
-from typing import Callable, Optional
+from typing import Callable, Optional, Dict
+
+
+def _recuperar_de_pagina_propia(file_path: str, numero_ihq: str, safe_log) -> Optional[Dict]:
+    """V6.9.35 FALLBACK anti-segmentación.
+
+    Cuando la segmentación deja un caso SIN diagnóstico NI órgano (su contenido
+    quedó en una página del PDF que no se asignó a su segmento — típico de
+    "estudios ligados" a otro reporte, p.ej. IHQ250723/IHQ260034/711/725), este
+    fallback busca en el PDF la página que contiene ESE número de caso + una
+    sección diagnóstica (DIAGNÓSTICO / DESCRIPCIÓN MICROSCÓPICA) y re-extrae de
+    ella. Devuelve el registro mapeado de esa página, o None si no recupera nada.
+
+    SEGURO: solo se invoca para casos que ya quedaron vacíos -> NO afecta los
+    casos correctos. No toca la segmentación general (cero regresión).
+    """
+    try:
+        import fitz
+        from core.unified_extractor import (
+            extract_ihq_data, map_to_database_format, extract_diagnostico_principal,
+        )
+        if not file_path or not os.path.exists(file_path):
+            return None
+        _vac = ("", "N/A", "NO APLICA", "NO ENCONTRADO", "NAN")
+        doc = fitz.open(file_path)
+        try:
+            for pg in doc:
+                t = pg.get_text("text")
+                if numero_ihq not in t:
+                    continue
+                if not re.search(r"(?i)DIAGN[ÓO]STICO|DESCRIPCI[ÓO]N\s+MICROSC", t):
+                    continue
+                db = map_to_database_format(extract_ihq_data(t))
+                dx = str(db.get("Diagnostico Principal", "")).strip().upper()
+                org = str(db.get("IHQ_ORGANO", "")).strip().upper()
+                # Si el dx quedó N/A pero la página tiene el diagnóstico en formato
+                # "HALLAZGOS...SUGIEREN:\n- DX" (IHQ260190/214/521), recuperarlo con el
+                # extractor de dx directo y limpiar la viñeta/guión inicial.
+                if dx in _vac:
+                    dx2 = re.sub(r"^[\s\-•·•]+", "", str(extract_diagnostico_principal(t) or "")).strip()
+                    if dx2 and dx2.upper() not in _vac:
+                        db["Diagnostico Principal"] = dx2
+                        dx = dx2.upper()
+                if dx not in _vac or org not in _vac:
+                    return db
+        finally:
+            doc.close()
+    except Exception as e:
+        safe_log(f"      ⚠️ Fallback página propia falló para {numero_ihq}: {e}")
+    return None
 
 
 def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
@@ -156,6 +205,29 @@ def process_ihq_file(file_path: str, log_callback: Optional[Callable] = None,
                     safe_log(f"      ⚠️ El mapeo retornó vacío para {numero_ihq}")
                     logging.warning(f"map_to_database_format retornó vacío para {numero_ihq}")
                     continue
+
+                # V6.9.35 FALLBACK anti-segmentación: si al caso le falta el
+                # diagnóstico O el órgano (la segmentación no le asignó su página de
+                # contenido, típico de "estudios ligados"), recuperar desde la página
+                # propia del PDF y RELLENAR SOLO los campos vacíos (no sobrescribe lo
+                # ya extraído). Solo se activa cuando falta algo -> no afecta los demás.
+                _vac = ("", "N/A", "NO APLICA", "NO ENCONTRADO", "NAN")
+                _dx = str(datos_mapeados.get("Diagnostico Principal", "")).strip().upper()
+                _org = str(datos_mapeados.get("IHQ_ORGANO", "")).strip().upper()
+                if _dx in _vac or _org in _vac:
+                    recuperado = _recuperar_de_pagina_propia(file_path, numero_ihq, safe_log)
+                    if recuperado:
+                        _rellenados = []
+                        for _campo in ("Diagnostico Principal", "IHQ_ORGANO", "Organo",
+                                       "Diagnostico Coloracion", "Malignidad"):
+                            _actual = str(datos_mapeados.get(_campo, "")).strip().upper()
+                            _nuevo = recuperado.get(_campo, "")
+                            if _actual in _vac and str(_nuevo).strip().upper() not in _vac:
+                                datos_mapeados[_campo] = _nuevo
+                                _rellenados.append(_campo)
+                        if _rellenados:
+                            safe_log(f"      🔄 {numero_ihq}: recuperado de su página propia "
+                                     f"-> {', '.join(_rellenados)}")
 
                 # V2.0: Registrar datos completos de BD (incluyendo IHQ_ESTUDIOS_SOLICITADOS)
                 mapper.registrar_base_datos(datos_mapeados)

@@ -1,0 +1,95 @@
+{
+ "IHQ260034": {
+  "pdf": null,
+  "completitud": {
+   "porcentaje": 87.3,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": []
+  },
+  "bd_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "N/A",
+   "Diagnostico Principal": "LEUCEMIA MIELOIDE AGUDA",
+   "Diagnostico Coloracion": "N/A",
+   "Malignidad": "BENIGNO",
+   "IHQ_ESTUDIOS_SOLICITADOS": "N/A"
+  }
+ },
+ "IHQ260704": {
+  "pdf": null,
+  "completitud": {
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Organo"
+   ],
+   "biomarcadores_faltantes": []
+  },
+  "bd_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "N/A",
+   "Diagnostico Principal": "CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)",
+   "Diagnostico Coloracion": "NO APLICA",
+   "Malignidad": "MALIGNO",
+   "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Receptor de Estrógeno, Receptor de Progesterona"
+  }
+ },
+ "IHQ260711": {
+  "pdf": null,
+  "completitud": {
+   "porcentaje": 87.3,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": []
+  },
+  "bd_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "N/A",
+   "Diagnostico Principal": "LEUCEMIA MIELOIDE AGUDA",
+   "Diagnostico Coloracion": "N/A",
+   "Malignidad": "BENIGNO",
+   "IHQ_ESTUDIOS_SOLICITADOS": "N/A"
+  }
+ },
+ "IHQ260725": {
+  "pdf": null,
+  "completitud": {
+   "porcentaje": 87.3,
+   "campos_faltantes": [
+    "Diagnostico Coloracion",
+    "Organo"
+   ],
+   "biomarcadores_faltantes": []
+  },
+  "bd_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "N/A",
+   "Diagnostico Principal": "CARCINOMA DE CUELLO DE ÚTERO",
+   "Diagnostico Coloracion": "N/A",
+   "Malignidad": "BENIGNO",
+   "IHQ_ESTUDIOS_SOLICITADOS": "N/A"
+  }
+ },
+ "IHQ260795": {
+  "pdf": null,
+  "completitud": {
+   "porcentaje": 93.6,
+   "campos_faltantes": [
+    "Organo"
+   ],
+   "biomarcadores_faltantes": []
+  },
+  "bd_actual": {
+   "Organo": "N/A",
+   "IHQ_ORGANO": "N/A",
+   "Diagnostico Principal": "ADENOCARCINOMA INVASIVO,NOS",
+   "Diagnostico Coloracion": "ADENOCARCINOMA INVASIVO,NOS. GRADO GLOBAL: ( NOTTINGHAM SCORE 9/9)",
+   "Malignidad": "MALIGNO",
+   "IHQ_ESTUDIOS_SOLICITADOS": "HER2, Ki-67, Receptor de Estrógeno, Receptor de Progesterona"
+  }
+ }
+}
