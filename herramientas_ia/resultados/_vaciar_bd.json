@@ -7,11 +7,11 @@
  "backup": {
   "diagnosticos_ia": {
    "filas": 0,
-   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_090113\\diagnosticos_ia.csv"
+   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_132802\\diagnosticos_ia.csv"
   },
   "informes_ihq": {
    "filas": 2076,
-   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_090113\\informes_ihq.csv"
+   "archivo": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_132802\\informes_ihq.csv"
   }
  },
  "despues": {
@@ -19,7 +19,7 @@
   "informes_ihq": 0
  },
  "errores": [],
- "backup_dir": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_090113",
+ "backup_dir": "C:\\Users\\Kechavarro\\Desktop\\ProyectoHUV9GESTOR_ONCOLOGIA\\backups\\V6.9.31_PRE_REPROCESO_20260611_132802",
  "tablas_encontradas": [
   "diagnosticos_ia",
   "informes_ihq"
