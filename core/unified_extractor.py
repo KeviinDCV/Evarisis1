@@ -388,6 +388,45 @@ def _malignidad_coherente(dx: str) -> str:
     return ''
 
 
+# V6.9.42: inferencia de SEXO cuando el registro viene INVÁLIDO (indeterminado/
+# ambos/vacío -> fallo de captura del HUV). Usa órgano/dx sexo-específico y nombre.
+# NO toca valores válidos (MASCULINO/FEMENINO) ni deliberados (TRANSGENERO).
+_SEXO_INVALIDO = ('', 'INDETERMINADO', 'AMBOS', 'N/A', 'NAN', 'NO ENCONTRADO',
+                  'NO MENCIONADO', 'SIN DATO', 'NONE')
+_ORG_FEM = ('UTERO', 'OVARIO', 'CERVIX', 'CUELLO UTERINO', 'VAGINA', 'VULVA', 'ENDOMETRIO',
+            'TROMPA', 'MIOMETRIO', 'SALPINGE', 'PLACENTA')
+_ORG_MASC = ('PROSTATA', 'TESTICULO', 'PENE', 'EPIDIDIMO', 'ESCROTO', 'GLANDE', 'CORDON ESPERMATICO')
+_DX_FEM = ('LEIOMIOMA', 'ENDOMETRI', 'OVARIO', 'OVARIC', 'CERVIX', 'UTERIN', 'VAGINAL', 'VULVAR',
+           'SALPINGE', 'TROMPA', 'PLACENTA', 'CUELLO UTERINO')
+_DX_MASC = ('PROSTAT', 'TESTICUL', 'PENE', 'SEMINOMA', 'ESCROT')
+_NOM_FEM = {'MARIA', 'ANA', 'LUZ', 'DORIS', 'ROSA', 'MARTHA', 'GLORIA', 'PATRICIA', 'CLAUDIA',
+            'SANDRA', 'DIANA', 'MYRIAM', 'MERCEDES', 'CARMEN', 'BEATRIZ', 'TERESA', 'ISABEL',
+            'LUCIA', 'ELENA', 'MONICA', 'ANGELA', 'NANCY', 'OLGA', 'YOLANDA', 'CONSUELO',
+            'AMPARO', 'BLANCA', 'LILIANA', 'LEIDY', 'PAOLA', 'ADRIANA', 'VIVIANA', 'CAROLINA',
+            'NATALIA', 'SONIA', 'RUTH', 'STELLA', 'FLOR', 'JANETH', 'CLARA', 'ALBA'}
+_NOM_MASC = {'JOSE', 'JUAN', 'CARLOS', 'LUIS', 'JORGE', 'ROBERTO', 'PEDRO', 'MANUEL', 'FRANCISCO',
+             'ANTONIO', 'MIGUEL', 'RICARDO', 'FERNANDO', 'ANDRES', 'DIEGO', 'JAVIER', 'OSCAR',
+             'HERNAN', 'GERMAN', 'ALVARO', 'GUSTAVO', 'RAUL', 'HUGO', 'MARIO', 'RAMON', 'EDUARDO',
+             'SERGIO', 'ALBERTO', 'WILSON', 'GERARDO', 'JESUS', 'VICTOR', 'JAIME', 'HENRY',
+             'EDWIN', 'FABIO', 'NELSON', 'OMAR', 'RUBEN', 'CESAR', 'IVAN', 'WILLIAM'}
+
+
+def _inferir_sexo(genero, organo='', dx='', nombre=''):
+    """Si el género es inválido (indeterminado/ambos/vacío), lo infiere de órgano/
+    dx sexo-específico o del primer nombre. Devuelve el valor válido o el original."""
+    g = str(genero or '').strip().upper()
+    if g not in _SEXO_INVALIDO:
+        return genero  # MASCULINO/FEMENINO/TRANSGENERO -> respetar
+    o = str(organo or '').upper(); d = str(dx or '').upper()
+    if any(x in o for x in _ORG_FEM) or any(x in d for x in _DX_FEM): return 'FEMENINO'
+    if any(x in o for x in _ORG_MASC) or any(x in d for x in _DX_MASC): return 'MASCULINO'
+    _p = str(nombre or '').strip().upper().split()
+    _p = _p[0] if _p else ''
+    if _p in _NOM_FEM: return 'FEMENINO'
+    if _p in _NOM_MASC: return 'MASCULINO'
+    return genero  # no se pudo inferir con seguridad -> mantener original
+
+
 def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = '') -> str:
     """
     Extrae el diagnóstico principal del texto completo de diagnóstico.
@@ -2844,6 +2883,19 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         _mreal = _malignidad_coherente(str(db_record.get('Diagnostico Principal', '') or ''))
         if _mreal and _mreal != str(db_record.get('Malignidad', '')).strip().upper():
             db_record['Malignidad'] = _mreal
+    except Exception:
+        pass
+
+    # V6.9.42: inferir SEXO si el registro vino inválido (indeterminado/ambos/vacío)
+    # -> evita falsos "Otro" por fallo de captura del HUV (no toca TRANSGENERO).
+    try:
+        _gen = db_record.get('Genero', '')
+        _gen_inf = _inferir_sexo(_gen,
+                                 db_record.get('IHQ_ORGANO', '') or db_record.get('Organo', ''),
+                                 db_record.get('Diagnostico Principal', ''),
+                                 db_record.get('Primer nombre', '') or db_record.get('Nombre Completo', ''))
+        if _gen_inf and _gen_inf != _gen:
+            db_record['Genero'] = _gen_inf
     except Exception:
         pass
 
