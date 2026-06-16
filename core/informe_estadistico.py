@@ -379,7 +379,7 @@ def generar_informe_estadistico_pdf(df, out_path,
         ("% MALIGNOS", _pct(malignos, total)),
         ("CATEGORÍAS ANATÓMICAS", str(n_organos)),
         ("BIOMARCADORES DISTINTOS", str(n_biomarcadores)),
-        ("DIAGNÓSTICOS ONCOLÓGICOS", str(n_onco)),
+        ("TUMORES ANALIZADOS", str(n_onco)),
     ]
     kcell = []
     for k, v in kpis:
@@ -489,21 +489,20 @@ def generar_informe_estadistico_pdf(df, out_path,
     story.append(Spacer(1, 12))
 
     # ---------- Cobertura: reconciliación al total (banda + tabla juntas) ----------
-    rec_data = [
-        ("Diagnósticos oncológicos (neoplasias benignas o malignas)", n_onco),
-        ("Hallazgos no-neoplásicos (negativos, inflamatorios, médula ósea, etc.)", n_noneo),
-        ("Estudios sin diagnóstico específico / muestra no diagnóstica", n_sindx),
-    ]
-    # V6.9.29: 'Sin categorizar' y 'Sin dato' SOLO se muestran si > 0. Con el
-    # fallback del normalizador, 'Sin categorizar' siempre es 0, así que la
-    # fila desaparece (todo queda en un bucket clínico con sentido).
-    if n_otrocat > 0:
-        rec_data.append(("Sin categorizar", n_otrocat))
-    if n_sindato > 0:
-        rec_data.append(("Sin dato", n_sindato))
+    # V6.9.43: agrupado en "Casos CON diagnóstico" (tumores + no-neoplásicos: ambos
+    # SON un diagnóstico, solo que uno tiene tumor y el otro no) vs "Sin diagnóstico".
+    # Las 2 sub-filas indentadas suman el subtotal -> evita verlas como grupos
+    # separados al mismo nivel (que confundía).
+    n_con_dx = n_onco + n_noneo
+    n_sin_dx_total = n_sindx + (n_otrocat if n_otrocat > 0 else 0) + (n_sindato if n_sindato > 0 else 0)
     rec_rows = [["Grupo", "Casos", "%"]]
-    for nombre, n in rec_data:
-        rec_rows.append([Paragraph(f'<font size=8>{nombre}</font>', cell), str(n), _pct(n, total)])
+    rec_rows.append([Paragraph('<b>Casos CON diagnóstico</b>', cell), str(n_con_dx), _pct(n_con_dx, total)])
+    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Tumores (neoplasias benignas o malignas)</font>', cell),
+                     str(n_onco), _pct(n_onco, total)])
+    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Hallazgos no-neoplásicos (negativos, inflamatorios, médula ósea, etc.)</font>', cell),
+                     str(n_noneo), _pct(n_noneo, total)])
+    rec_rows.append([Paragraph('<b>Casos SIN diagnóstico específico / muestra no diagnóstica</b>', cell),
+                     str(n_sin_dx_total), _pct(n_sin_dx_total, total)])
     rec_rows.append([Paragraph('<b>TOTAL</b>', cell), str(total), "100%"])
     rec_tbl = Table(rec_rows, colWidths=[CW - 5.0 * cm, 2.5 * cm, 2.5 * cm])
     rec_tbl.setStyle(TableStyle([
@@ -511,8 +510,9 @@ def generar_informe_estadistico_pdf(df, out_path,
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"), ("FONTSIZE", (0, 0), (-1, -1), 8),
         ("GRID", (0, 0), (-1, -1), 0.4, line), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("ALIGN", (1, 0), (-1, -1), "CENTER"),
-        ("BACKGROUND", (0, 1), (-1, 1), colors.HexColor("#eaf3ee")),  # resaltar oncológicos
-        ("ROWBACKGROUNDS", (0, 2), (-1, -2), [colors.white, colors.HexColor("#fafbfd")]),
+        ("BACKGROUND", (0, 1), (-1, 1), colors.HexColor("#eaf3ee")),  # subtotal CON diagnóstico
+        ("BACKGROUND", (0, 2), (-1, 3), colors.white),                # sub-filas (tumores / no-neoplásicos)
+        ("BACKGROUND", (0, 4), (-1, 4), colors.HexColor("#f7f0e8")),  # fila SIN diagnóstico
         ("FONTNAME", (0, -1), (-1, -1), "Helvetica-Bold"), ("BACKGROUND", (0, -1), (-1, -1), colors.HexColor("#f4f6fa")),
         ("TOPPADDING", (0, 0), (-1, -1), 3.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
         ("LEFTPADDING", (0, 0), (-1, -1), 6),

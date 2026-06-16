@@ -323,26 +323,32 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "CARCINOMA INVASIVO DE TIPO NO ESPECIAL", "CARCINOMA DUCTAL INVASIVO",
         "CARCINOMA DUCTAL INFILTRANTE", "CARCINOMA INVASOR DE TIPO NO ESPECIAL",
         "CARCINOMA NST",
+        # V6.9.43: variantes que caían en "OTRO CARCINOMA DE MAMA" siendo ductales/
+        # NST. "TIPO NO ESPECIAL" (NST) es terminología WHO exclusiva del carcinoma
+        # de mama. Los demás llevan "MAMA" explícito. NO se usan "NOS"/"(DUCTAL)"/
+        # "SIN SUBTIPO" sueltos: capturaban escamocelular de cérvix y ductal pancreático.
+        "TIPO NO ESPECIAL",
+        "CARCINOMA INVASIVO DE MAMA", "CARCINOMA INFILTRANTE DE MAMA",
+        "CARCINOMA DE MAMA INVASIVO", "CARCINOMA DE MAMA INFILTRANTE",
         # Variantes con preposición "SIN" (CARCINOMA INVASIVO SIN TIPO ESPECIAL)
         "CARCINOMA INVASIVO SIN TIPO ESPECIAL",
         "CARCINOMA INVASOR SIN TIPO ESPECIAL",
         "SIN TIPO ESPECIAL",
-        # CARCINOMA DUCTAL solo (sin INVASIVO/INFILTRANTE explícito) —
-        # va al final del array; IN SITU se evalúa antes (categoría
-        # superior) por lo que no hay riesgo de falso positivo en DCIS.
-        "CARCINOMA DUCTAL",
+        # V6.9.44: se RETIRÓ "CARCINOMA DUCTAL" suelto -> capturaba "adenocarcinoma
+        # DUCTAL pancreático" (y otros ductales no-mama) como mama. Los ductales de
+        # mama reales se cubren con los patrones explícitos de arriba; si el dx solo
+        # dice "carcinoma ductal" y el órgano es mama, lo recupera la inferencia
+        # órgano=mama (categorizar_diagnostico_con_organo, regla "DUCTAL").
     ],
     "CARCINOMA LOBULILLAR DE MAMA": [
         "CARCINOMA LOBULILLAR", "CARCINOMA LOBULAR",
     ],
-    "OTRO CARCINOMA DE MAMA": [
-        # NOTA V6.5.95: Removido "CARCINOMA MUCINOSO" del set porque era
-        # demasiado genérico — causaba falsos positivos en mucinosos
-        # pulmonares (IHQ250046). Si se necesita capturar el mucinoso de
-        # mama, requiere contexto explícito (no inferible solo del dx).
-        "CARCINOMA MEDULAR DE MAMA",
-        "CARCINOMA MEDULAR", "CARCINOMA TUBULAR",
-        "CARCINOMA METAPLASICO", "CARCINOMA APOCRINO",
+    "CARCINOMA DE MAMA (SIN SUBTIPO ESPECIFICADO)": [
+        # V6.9.43/44: los subtipos (ductal/NST, medular, tubular, papilar...) se
+        # resuelven en categorías propias vía _SUBTIPOS_MAMA y la inferencia NST
+        # (solo con órgano=mama). Aquí solo caen los carcinomas de mama cuyo dx
+        # NO trae subtipo extraíble (p.ej. "carcinoma invasivo con neoadyuvancia",
+        # dx truncado). Nombre honesto: es de mama pero el PDF no dio el subtipo.
     ],
     # V6.6.13 FIX IHQ250116: Carcinoma papilar de mama es entidad
     # distinta de la OMS. El patólogo lo describe a veces como "LESION
@@ -366,10 +372,14 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Tumores neuroendocrinos ===
-    "CARCINOMA NEUROENDOCRINO": [
+    "TUMOR / CARCINOMA NEUROENDOCRINO": [
         "CARCINOMA NEUROENDOCRINO", "TUMOR NEUROENDOCRINO", "CARCINOIDE",
         "TUMOR DE CELULAS PEQUENAS", "CARCINOMA DE CELULAS PEQUENAS",
         "NEURO ENDOCRINO",
+        # V6.9.44: variantes que caían en la categoría mezclada de abajo.
+        # "TUMOR NEUROENDOCRINA" (typo con A) y "DIFERENCIACION NEUROENDOCRINA".
+        # NO capturan "...HIPOFISARIO" (usa NEUROENDOCRINO con O).
+        "TUMOR NEUROENDOCRINA", "DIFERENCIACION NEUROENDOCRINA",
     ],
 
     # === Sistema digestivo / GIST ===
@@ -451,10 +461,14 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "OSTEOSARCOMA / SARCOMA OSEO": [
         "OSTEOSARCOMA", "SARCOMA OSEO", "CONDROSARCOMA", "EWING",
     ],
-    "SARCOMA SINOVIAL / OTROS SARCOMAS": [
-        "SARCOMA SINOVIAL", "DERMATOFIBROSARCOMA", "FIBROSARCOMA",
-        "ANGIOSARCOMA", "SARCOMA INDIFERENCIADO", "SARCOMA PLEOMORFICO",
-    ],
+    # V6.9.43: subtipos de sarcoma que NO tenían categoría propia (DFSP,
+    # angiosarcoma, condrosarcoma, sinovial). LIPOSARCOMA/LEIOMIOSARCOMA/
+    # RABDOMIOSARCOMA/OSTEOSARCOMA ya existen arriba -> NO se redefinen (evita
+    # duplicar clave). Los sarcomas sin subtipo caen en "SARCOMA (OTRO SUBTIPO)".
+    "DERMATOFIBROSARCOMA PROTUBERANS": ["DERMATOFIBROSARCOMA"],
+    "ANGIOSARCOMA": ["ANGIOSARCOMA"],
+    "CONDROSARCOMA": ["CONDROSARCOMA"],
+    "SARCOMA SINOVIAL": ["SARCOMA SINOVIAL"],
     "TUMOR DE CELULAS GRANULARES": ["TUMOR DE CELULAS GRANULARES"],
     "TUMOR FIBROSO SOLITARIO / HEMANGIOPERICITOMA": [
         "TUMOR FIBROSO SOLITARIO", "HEMANGIOPERICITOMA",
@@ -616,6 +630,9 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "ADENOCARCINOMA DE PANCREAS / VIA BILIAR": [
         "ADENOCARCINOMA DE PANCREAS", "ADENOCARCINOMA PANCREATICO",
         "COLANGIOCARCINOMA", "ADENOCARCINOMA DE VIAS BILIARES",
+        # V6.9.44: el adenocarcinoma DUCTAL de páncreas (tipo más común) se nombra
+        # "ductal pancreático / ductal de páncreas"; antes caía en ductal de mama.
+        "DUCTAL PANCREATICO", "DUCTAL DE PANCREAS",
     ],
     "HEPATOCARCINOMA": [
         "HEPATOCARCINOMA", "CARCINOMA HEPATOCELULAR",
@@ -691,9 +708,18 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "LESION GLIAL", "ORIGEN GLIAL", "TUMOR GLIAL", "GLIONEURONAL",
         "NEUROGLIAL", "GLIAL DE BAJO GRADO",
     ],
-    "TUMOR NEUROENDOCRINO / ONCOCITICO (OTRO)": [
-        "NEUROENDOCRIN",
-        "ONCOCITOMA", "TUMOR ONCOCITICO", "NEOPLASIA FOLICULAR",
+    # V6.9.44: la antigua "TUMOR NEUROENDOCRINO / ONCOCITICO (OTRO)" mezclaba 3
+    # entidades clínicamente distintas. Separadas:
+    #  - neuroendocrinos -> "TUMOR / CARCINOMA NEUROENDOCRINO" (más arriba)
+    #  - neoplasia folicular de tiroides (Bethesda IV: adenoma vs ca. folicular)
+    #  - oncocitoma / tumor oncocítico (renal sobre todo; benigno/bajo grado)
+    "NEOPLASIA FOLICULAR DE TIROIDES": [
+        "NEOPLASIA FOLICULAR", "CARCINOMA FOLICULAR",
+    ],
+    "ONCOCITOMA / TUMOR ONCOCITICO": [
+        # Términos específicos -> NO captura "cambios oncocíticos" descriptivos
+        # de otros dx (p.ej. patrón acinar renal -> CARCINOMA RENAL).
+        "ONCOCITOMA", "TUMOR ONCOCITICO",
     ],
     "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES": [
         "HIRSCHSPRUNG", "AGANGLIONOSIS", "CELULAS GANGLIONARES", "CELULAS GANGLI",
@@ -1033,7 +1059,7 @@ INFERENCIA_POR_ORGANO_ADENO = {
     "VIA BILIAR": "ADENOCARCINOMA DE PANCREAS / VIA BILIAR",
     "VESICULA BILIAR": "ADENOCARCINOMA DE PANCREAS / VIA BILIAR",
     "HIGADO": "HEPATOCARCINOMA",
-    "MAMA": "OTRO CARCINOMA DE MAMA",
+    "MAMA": "CARCINOMA DE MAMA (SIN SUBTIPO ESPECIFICADO)",
     "OVARIO": "CARCINOMA DE OVARIO",
 }
 
@@ -1061,6 +1087,23 @@ INFERENCIA_POR_ORGANO_ESCAMO = {
     "ANO": "CARCINOMA ESCAMOCELULAR (OTRAS LOCALIZACIONES)",
     "VULVA": "CARCINOMA ESCAMOCELULAR (OTRAS LOCALIZACIONES)",
     "VAGINA": "CARCINOMA ESCAMOCELULAR (OTRAS LOCALIZACIONES)",
+}
+
+# V6.9.43: subtipos histológicos de carcinoma de mama (entidades OMS distintas).
+# Solo se aplican cuando el ÓRGANO es MAMA -> NO capturan papilar de tiroides,
+# mucinoso de colon/ovario, medular de tiroides, etc. (esos tienen otro órgano).
+# El orden importa: MICROPAPILAR antes que PAPILAR (substring).
+_SUBTIPOS_MAMA = {
+    "MICROPAPILAR": "CARCINOMA MICROPAPILAR DE MAMA",
+    "PAPILAR": "CARCINOMA PAPILAR DE MAMA",
+    "MUCINOSO": "CARCINOMA MUCINOSO DE MAMA",
+    "COLOIDE": "CARCINOMA MUCINOSO DE MAMA",
+    "MEDULAR": "CARCINOMA MEDULAR DE MAMA",
+    "APOCRINO": "CARCINOMA APOCRINO DE MAMA",
+    "TUBULAR": "CARCINOMA TUBULAR DE MAMA",
+    "METAPLASIC": "CARCINOMA METAPLASICO DE MAMA",
+    "CRIBIFORME": "CARCINOMA CRIBIFORME DE MAMA",
+    "SECRETOR": "CARCINOMA SECRETOR DE MAMA",
 }
 
 
@@ -1108,6 +1151,24 @@ def categorizar_diagnostico_con_organo(valor_dx, valor_organo):
     organo_norm = normalizar_texto(str(valor_organo))
     if not organo_norm or organo_norm == "SIN DATO":
         return base
+
+    # V6.9.43: subtipos histológicos de MAMA (papilar, mucinoso, medular, apocrino...)
+    # -> su categoría específica. Solo con órgano MAMA -> no afecta papilar de
+    # tiroides, mucinoso de colon, etc. (esos tienen otro órgano).
+    if "MAMA" in organo_norm:
+        # V6.9.44: en mama, "tipo no especial" (NST) = "NOS" = "ductal" = "sin
+        # subtipo especial" son SINÓNIMOS del carcinoma ductal infiltrante (OMS,
+        # ~80% de los carcinomas de mama). Solo con órgano=mama -> seguro: NO
+        # afecta "adenocarcinoma ductal pancreático" ni "escamocelular NOS de
+        # cérvix" (tienen otro órgano y aquí solo entran dx genéricos de mama).
+        if (any(k in dx_norm for k in (
+                "TIPO NO ESPECIAL", "SIN TIPO ESPECIAL", "SIN SUBTIPO",
+                "DUCTAL", " NST"))
+                or re.search(r"\bNOS\b", dx_norm)):
+            return "CARCINOMA DUCTAL DE MAMA"
+        for _kw, _cat_mama in _SUBTIPOS_MAMA.items():
+            if _kw in dx_norm:
+                return _cat_mama
 
     # Adenocarcinoma genérico → buscar inferencia
     if base in ("ADENOCARCINOMA (OTRAS LOCALIZACIONES)", "CARCINOMA (OTRAS LOCALIZACIONES)"):
