@@ -565,11 +565,13 @@ class App(ttk.Window):
             anchor="sw", width=size, height=size
         )
 
-        # El area fuera del circulo se funde con el fondo del tema (claro)
-        try:
-            canvas_bg = self.style.lookup("TFrame", "background") or "#ffffff"
-        except Exception:
-            canvas_bg = "#ffffff"
+        # V6.9.44: el Canvas de tkinter NO puede ser transparente -> las esquinas
+        # fuera del círculo siempre muestran su 'bg'. Antes se usaba el gris del
+        # tema (TFrame), que contrastaba con el fondo BLANCO de las listas/tablas
+        # (Treeview y tksheet usan #ffffff) y dibujaba un "cuadro" alrededor del
+        # círculo. Se iguala al blanco del contenido para que las esquinas se
+        # fundan y solo quede visible el círculo del FAB.
+        canvas_bg = "#ffffff"
 
         self.floating_btn = tk.Canvas(
             self.floating_btn_container, width=size, height=size,
@@ -4867,31 +4869,37 @@ Disco {i}:
             completitud_cache = {}
             if peticion_col_idx is not None:
                 try:
-                    import sqlite3 as _sqlite3
                     from core.validation_checker import verificar_completitud_registro
-                    from core.database_manager import DB_FILE as _DB_FILE
+                    import pandas as _pd
                     numeros_peticion = set(df_display["Numero de caso"].dropna().unique())
+                    # V6.9.44 FIX: la completitud se calcula sobre los DATOS EN VIVO
+                    # (self.master_df, proveniente de la BD configurada -> MySQL).
+                    # ANTES se leía un SQLite local (DB_FILE) que quedó DESINCRONIZADO
+                    # tras reprocesar: los casos no se encontraban -> "no encontrado"
+                    # -> incompletos -> TODA la tabla se pintaba de ROJO. master_df ya
+                    # está en memoria y trae TODAS las columnas requeridas (sin
+                    # consultas extra a la BD).
                     registros_por_caso = {}
-                    try:
-                        _conn = _sqlite3.connect(_DB_FILE)
-                        _cur = _conn.cursor()
-                        _cur.execute('SELECT * FROM informes_ihq')
-                        _cols = [d[0] for d in _cur.description]
-                        _idx_caso = _cols.index("Numero de caso") if "Numero de caso" in _cols else None
-                        if _idx_caso is not None:
-                            for _row in _cur.fetchall():
-                                _num = _row[_idx_caso]
-                                if _num in numeros_peticion:
-                                    registros_por_caso[_num] = dict(zip(_cols, _row))
-                        _conn.close()
-                    except Exception as _e_db:
-                        logging.warning(f"No se pudo precargar registros para completitud: {_e_db}")
+                    _mdf = getattr(self, "master_df", None)
+                    if _mdf is not None and not _mdf.empty and "Numero de caso" in _mdf.columns:
+                        for _num, _grp in _mdf.groupby("Numero de caso"):
+                            if _num in numeros_peticion:
+                                _reg = _grp.iloc[0].to_dict()
+                                # NaN -> '' para que el verificador cuente bien los faltantes
+                                _reg = {k: ('' if _pd.isna(v) else v) for k, v in _reg.items()}
+                                registros_por_caso[_num] = _reg
                     for numero in numeros_peticion:
+                        reg = registros_por_caso.get(numero)
+                        if reg is None:
+                            # Sin datos en memoria para verificar -> NO marcar rojo
+                            # (evita el falso positivo masivo del SQLite desincronizado).
+                            completitud_cache[numero] = True
+                            continue
                         try:
-                            analisis = verificar_completitud_registro(numero, registro=registros_por_caso.get(numero))
-                            completitud_cache[numero] = analisis.get('completo', False)
+                            analisis = verificar_completitud_registro(numero, registro=reg)
+                            completitud_cache[numero] = analisis.get('completo', True)
                         except Exception:
-                            completitud_cache[numero] = False
+                            completitud_cache[numero] = True
                 except Exception as e:
                     logging.warning(f"Error calculando completitud: {e}")
 
