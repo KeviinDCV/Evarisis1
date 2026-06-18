@@ -488,7 +488,11 @@ class App(ttk.Window):
             ("Inicio", "home", self._nav_to_welcome),
             ("Base de Datos", "database", self._nav_to_database),
             ("Dashboard", "dashboard", self._nav_to_dashboard),
-            ("Análisis IA", "analisis", self._nav_to_analisis_ia),
+            # V6.9.44: "Análisis IA" OCULTO del menú (auditoría por LLM paralela al
+            # flujo real con el agente data-auditor). La sección, _nav_to_analisis_ia
+            # y los botones de Auditoría siguen intactos; solo se quitó esta entrada.
+            # Reversible: descomentar la línea de abajo para volver a mostrarla.
+            # ("Análisis IA", "analisis", self._nav_to_analisis_ia),
             ("Interoperabilidad QHORTE", "web", self._nav_to_web_auto),
         ]
         for text, view_id, callback in nav_items:
@@ -1391,17 +1395,21 @@ class App(ttk.Window):
             # Configurar fondo gris claro
             version_window.configure(bg='#f0f0f0')
 
-            # IMPORTANTE: Maximizar ANTES de transient y grab_set
-            try:
-                version_window.state('zoomed')  # Windows
-            except:
-                try:
-                    version_window.attributes('-zoomed', True)  # Linux
-                except:
-                    # Fallback: tamaño muy grande
-                    screen_width = version_window.winfo_screenwidth()
-                    screen_height = version_window.winfo_screenheight()
-                    version_window.geometry(f"{screen_width-100}x{screen_height-100}+50+50")
+            # V6.9.44: ventana ADAPTABLE. Antes se abría maximizada ('zoomed') y no
+            # encajaba bien. Ahora abre en un tamaño moderado, CENTRADA sobre la app y
+            # redimensionable; el contenido está en pestañas (General + Sistema con
+            # scroll), así que se ve completo aunque la ventana sea pequeña.
+            win_w, win_h = 860, 640
+            self.update_idletasks()
+            sw = version_window.winfo_screenwidth()
+            sh = version_window.winfo_screenheight()
+            px = self.winfo_rootx() + max((self.winfo_width() - win_w) // 2, 0)
+            py = self.winfo_rooty() + max((self.winfo_height() - win_h) // 2, 0)
+            # No dejar que se salga de la pantalla
+            px = max(0, min(px, sw - win_w))
+            py = max(0, min(py, sh - win_h))
+            version_window.geometry(f"{win_w}x{win_h}+{px}+{py}")
+            version_window.minsize(560, 440)
 
             # Después de maximizar, configurar modal
             version_window.transient(self)
@@ -2146,14 +2154,10 @@ Disco {i}:
 
         # Botones de accion unificados (V6.9.16): paleta sobria navy/gris.
         # Accion principal en navy solido; el resto en outline. Sin colores dispares.
-        # Boton de filtros avanzados
-        self.filter_btn_dashboard = ttk.Button(
-            actions_frame,
-            text="🔍 Filtros",
-            command=self._toggle_advanced_filters,
-            bootstyle="secondary-outline"
-        )
-        self.filter_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botón "🔍 Filtros" ELIMINADO. Era un placeholder (mostraba "se
+        # implementará en una versión futura"). El buscador superior cubre "encontrar
+        # un caso" y lo agregado lo da el PDF de Estadísticas. El método
+        # _toggle_advanced_filters queda en el código, sin exponerse en la UI.
 
         # Boton de detalles flotante
         self.details_btn_dashboard = ttk.Button(
@@ -2182,13 +2186,10 @@ Disco {i}:
             bootstyle="primary-outline"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # Boton Resumen IA
-        ttk.Button(
-            actions_frame,
-            text="📊 Resumen IA",
-            command=self._generar_resumen_ia,
-            bootstyle="primary-outline"
-        ).pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botón "📊 Resumen IA" ELIMINADO. Generaba un resumen NARRATIVO
+        # con el LLM (lento y con riesgo de inventar cifras). El reporte fiable es
+        # "Estadísticas Generales → Generar PDF" (determinista, sin IA). El método
+        # _generar_resumen_ia queda en el código pero ya no se expone en la UI.
 
         # Accion principal: Actualizar datos (navy solido)
         ttk.Button(
@@ -2198,24 +2199,10 @@ Disco {i}:
             bootstyle="primary"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # V3.2.4: Botones de auditoria IA
-        self.audit_parcial_btn_dashboard = ttk.Button(
-            actions_frame,
-            text="🔍 Auditoría PARCIAL",
-            command=self._auditar_seleccion_parcial,
-            bootstyle="secondary-outline",
-            state="disabled"
-        )
-        self.audit_parcial_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
-
-        self.audit_completa_btn_dashboard = ttk.Button(
-            actions_frame,
-            text="✅ Auditoría COMPLETA",
-            command=self._auditar_seleccion_completa,
-            bootstyle="primary-outline",
-            state="disabled"
-        )
-        self.audit_completa_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botones "Auditoría PARCIAL/COMPLETA" (barra del dashboard)
+        # ELIMINADOS. Misma razón que en la otra barra: auditoría por LLM que
+        # alimentaba "Análisis IA" (ya oculta). Métodos _auditar_* intactos; el
+        # manejo de estado usa hasattr -> inocuo.
 
         # Frame para tabla - FULL SCREEN
         table_frame = ttk.Frame(frame)
@@ -2351,14 +2338,8 @@ Disco {i}:
         actions_frame = ttk.Frame(title_frame)
         actions_frame.pack(side=RIGHT)
 
-        # Botón de filtros avanzados
-        self.filter_btn = ttk.Button(
-            actions_frame,
-            text="🔍 Filtros",
-            command=self._toggle_advanced_filters,
-            bootstyle="info"
-        )
-        self.filter_btn.pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botón "🔍 Filtros" ELIMINADO (placeholder sin función real). Ver
+        # nota en la barra del dashboard. _toggle_advanced_filters queda inactivo.
 
         # Botón de detalles flotante
         self.details_btn = ttk.Button(
@@ -2387,13 +2368,7 @@ Disco {i}:
             bootstyle="warning"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # Botón Resumen IA
-        ttk.Button(
-            actions_frame,
-            text="📊 Resumen IA",
-            command=self._generar_resumen_ia,
-            bootstyle="dark"
-        ).pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botón "📊 Resumen IA" ELIMINADO (ver nota en el otro toolbar).
 
         ttk.Button(
             actions_frame,
@@ -2402,24 +2377,11 @@ Disco {i}:
             bootstyle="primary"
         ).pack(side=RIGHT, padx=(0, 5))
 
-        # V3.2.4: Botones de auditoría IA
-        self.audit_parcial_btn = ttk.Button(
-            actions_frame,
-            text="🔍 Auditoría PARCIAL",
-            command=self._auditar_seleccion_parcial,
-            bootstyle="info-outline",
-            state="disabled"
-        )
-        self.audit_parcial_btn.pack(side=RIGHT, padx=(0, 5))
-
-        self.audit_completa_btn = ttk.Button(
-            actions_frame,
-            text="✅ Auditoría COMPLETA",
-            command=self._auditar_seleccion_completa,
-            bootstyle="success-outline",
-            state="disabled"
-        )
-        self.audit_completa_btn.pack(side=RIGHT, padx=(0, 5))
+        # V6.9.44: botones "Auditoría PARCIAL/COMPLETA" ELIMINADOS. Eran la
+        # auditoría por LLM que alimentaba la sección "Análisis IA" (ya oculta del
+        # menú). El flujo real de auditoría es el agente data-auditor sobre los
+        # debug_maps. Los métodos _auditar_* quedan en el código y el manejo de
+        # estado (más abajo) usa hasattr -> queda inocuo sin estos botones.
 
         # Frame para tabla - FULL SCREEN
         table_frame = ttk.Frame(frame)

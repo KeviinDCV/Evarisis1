@@ -1604,18 +1604,13 @@ class EnhancedDatabaseDashboard:
             text="⚡  Procesar seleccionados",
             command=lambda: self.process_selected_files(),
             bootstyle="success"
-        ).pack(side=LEFT, padx=(0, 10))
-
-        # V6.7.0: Procesar con IA — diagnóstico de cobertura del OCR.
-        # Toma cada PDF, hace OCR completo (sin segmentación) y le pasa el
-        # texto entero al LLM para que identifique TODOS los IHQ presentes.
-        # Sirve para verificar si el extractor tradicional pierde casos.
-        ttk.Button(
-            control_frame,
-            text="🤖  Procesar con IA",
-            command=lambda: self.process_selected_files_ia(),
-            bootstyle="info-outline"
         ).pack(side=LEFT)
+
+        # V6.9.44: botón "🤖 Procesar con IA" ELIMINADO. Era un pipeline alterno
+        # (OCR completo -> LLM) para diagnosticar la cobertura del extractor; ya no
+        # se usa (el flujo oficial es "Procesar seleccionados"). El método
+        # process_selected_files_ia / _process_selected_files_ia queda en el código
+        # por si se quisiera reactivar, pero ya no está expuesto en la UI.
 
         # Nota: No llamamos a refresh_files_list() aquí porque se llamará
         # después de que la UI principal conecte los métodos en _connect_import_functionality()

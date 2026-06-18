@@ -516,26 +516,21 @@ class EnhancedExportSystem:
                 # DEBUG: Mostrar primeras columnas para verificar estructura
                 logging.info(f"toggle_floating_details_panel: Primeras 5 columnas del registro: {list(row_data.index[:5])}")
 
-                # Crear panel lateral flotante
-                self.details_panel = tk.Frame(
-                    self.parent_app,
-                    bg="#ffffff",
-                    relief="raised",
-                    borderwidth=2
-                )
+                # V6.9.44: MODAL CENTRADO. Antes era un panel lateral que se deslizaba
+                # desde la derecha y quedaba "olvidado". Ahora abre centrado sobre la
+                # ventana, redimensionable y con scroll para mostrar TODOS los campos.
+                self.details_panel = tk.Toplevel(self.parent_app)
+                self.details_panel.title(f"Detalles del Registro — {numero_caso}")
+                self.details_panel.transient(self.parent_app)
+                self.details_panel.configure(bg="#ffffff")
+                self.details_panel.minsize(440, 380)
 
-                # Obtener dimensiones de la ventana principal
-                screen_width = self.parent_app.winfo_width()
-                screen_height = self.parent_app.winfo_height()
-                panel_width = 500
-
-                # Posicionar el panel fuera de la pantalla (derecha)
-                self.details_panel.place(
-                    x=screen_width,
-                    y=0,
-                    width=panel_width,
-                    height=screen_height
-                )
+                # Tamaño moderado y centrado sobre la ventana principal
+                win_w, win_h = 720, 640
+                self.parent_app.update_idletasks()
+                px = self.parent_app.winfo_rootx() + max((self.parent_app.winfo_width() - win_w) // 2, 0)
+                py = self.parent_app.winfo_rooty() + max((self.parent_app.winfo_height() - win_h) // 2, 0)
+                self.details_panel.geometry(f"{win_w}x{win_h}+{px}+{py}")
 
                 # Header del panel
                 header_frame = ttk.Frame(self.details_panel, padding=15)
@@ -567,34 +562,36 @@ class EnhancedExportSystem:
                     lambda e: self.details_canvas.configure(scrollregion=self.details_canvas.bbox("all"))
                 )
 
-                self.details_canvas.create_window((0, 0), window=self.details_scrollable_frame, anchor="nw")
+                self._details_canvas_window = self.details_canvas.create_window(
+                    (0, 0), window=self.details_scrollable_frame, anchor="nw"
+                )
                 self.details_canvas.configure(yscrollcommand=scrollbar.set)
+                # El contenido sigue el ancho del canvas (aprovecha todo el modal)
+                self.details_canvas.bind(
+                    "<Configure>",
+                    lambda e: self.details_canvas.itemconfigure(self._details_canvas_window, width=e.width)
+                )
 
                 # Mostrar todos los campos
                 self._populate_details_content(row_data)
 
-                self.details_canvas.pack(side="left", fill="both", expand=True)
-                scrollbar.pack(side="right", fill="y")
+                self.details_canvas.pack(side="left", fill="both", expand=True, padx=(10, 0), pady=(0, 12))
+                scrollbar.pack(side="right", fill="y", pady=(0, 12))
 
-                # Habilitar scroll con rueda del ratón solo cuando el cursor está sobre el panel
+                # Scroll con la rueda del ratón. El Toplevel está en los bindtags de
+                # todos sus hijos, así que captura el evento sobre cualquier campo.
                 def _on_mousewheel(event):
                     self.details_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
                     return "break"
+                self.details_panel.bind("<MouseWheel>", _on_mousewheel)
 
-                def _bind_mousewheel(event):
-                    self.details_canvas.bind("<MouseWheel>", _on_mousewheel)
+                # Cerrar con la X de la ventana o con Esc
+                self.details_panel.protocol("WM_DELETE_WINDOW", self.close_details_panel)
+                self.details_panel.bind("<Escape>", lambda e: self.close_details_panel())
 
-                def _unbind_mousewheel(event):
-                    self.details_canvas.unbind("<MouseWheel>")
-
-                # Activar/desactivar scroll según posición del cursor
-                self.details_panel.bind("<Enter>", _bind_mousewheel)
-                self.details_panel.bind("<Leave>", _unbind_mousewheel)
-                self.details_canvas.bind("<Enter>", _bind_mousewheel)
-                self.details_canvas.bind("<Leave>", _unbind_mousewheel)
-
-                # Animar entrada del panel (deslizar desde la derecha)
-                self.animate_panel_in(screen_width, screen_width - panel_width, panel_width)
+                # Modal: capturar foco una vez construido
+                self.details_panel.grab_set()
+                self.details_panel.focus_set()
 
             except Exception as e:
                 messagebox.showerror("Error", f"Error al obtener detalles del registro:\n{str(e)}")
@@ -618,14 +615,15 @@ class EnhancedExportSystem:
             self.parent_app.after(10, lambda: self.animate_panel_in(start_x, end_x, panel_width, step + 1))
 
     def close_details_panel(self):
-        """Cerrar el panel con animación de deslizamiento hacia la derecha"""
+        """V6.9.44: cerrar el MODAL de detalles (antes deslizaba un panel lateral).
+        Libera el grab modal y destruye la ventana."""
         if not hasattr(self, 'details_panel') or not self.details_panel.winfo_exists():
             return
-
-        screen_width = self.parent_app.winfo_width()
-        current_x = self.details_panel.winfo_x()
-
-        self.animate_panel_out(current_x, screen_width)
+        try:
+            self.details_panel.grab_release()
+        except Exception:
+            pass
+        self.details_panel.destroy()
 
     def animate_panel_out(self, start_x, end_x, step=0):
         """Animar el panel deslizándose hacia la derecha"""
