@@ -148,13 +148,9 @@ class EnhancedExportSystem:
             width=25
         ).pack(pady=5, fill='x')
 
-        ttk.Button(
-            buttons_frame,
-            text="🗄️ Exportar Base de Datos",
-            command=lambda: self.execute_export(df, export_type, "database", dialog),
-            bootstyle="info",
-            width=25
-        ).pack(pady=5, fill='x')
+        # V6.9.44: opción ".db / Base de Datos" OCULTADA. export_to_database copiaba un
+        # SQLite legacy DESINCRONIZADO y filtraba por una columna inexistente -> entregaba
+        # un export obsoleto/roto. Solo Excel (que usa el DataFrame EN VIVO de MySQL).
 
         # Botón Cancelar quitado - puede cerrar con X de la ventana
 
@@ -199,19 +195,12 @@ class EnhancedExportSystem:
 
         ttk.Button(
             buttons_frame,
-            text="📊 Excel",
+            text="📊 Exportar a Excel",
             command=lambda: self.execute_export(df, export_type, "excel", dialog),
             bootstyle="success",
-            width=15
-        ).pack(side='left', padx=(0, 5), fill='x', expand=True)
-
-        ttk.Button(
-            buttons_frame,
-            text="🗄️ Base de Datos",
-            command=lambda: self.execute_export(df, export_type, "database", dialog),
-            bootstyle="info",
-            width=15
-        ).pack(side='right', padx=(5, 0), fill='x', expand=True)
+            width=25
+        ).pack(fill='x', expand=True)
+        # V6.9.44: opción ".db / Base de Datos" OCULTADA (export SQLite legacy roto/obsoleto).
 
     def show_selection_export_dialog(self, selected_df):
         """Mostrar diálogo completo para exportar selección con opción de ubicación"""
@@ -278,15 +267,8 @@ class EnhancedExportSystem:
             command=lambda: self.execute_selection_export(selected_df, "excel", dialog),
             bootstyle="success",
             width=20
-        ).pack(side='left', padx=(0, 5), fill='x', expand=True)
-
-        ttk.Button(
-            buttons_frame,
-            text="🗄️ Exportar Base de Datos",
-            command=lambda: self.execute_selection_export(selected_df, "database", dialog),
-            bootstyle="info",
-            width=20
-        ).pack(side='right', padx=(5, 0), fill='x', expand=True)
+        ).pack(fill='x', expand=True)
+        # V6.9.44: opción ".db / Base de Datos" OCULTADA (export SQLite legacy roto/obsoleto).
 
     def execute_export(self, df, export_type, format_type, dialog):
         """Ejecutar la exportación en el formato seleccionado"""

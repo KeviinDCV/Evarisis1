@@ -399,32 +399,23 @@ _ORG_MASC = ('PROSTATA', 'TESTICULO', 'PENE', 'EPIDIDIMO', 'ESCROTO', 'GLANDE', 
 _DX_FEM = ('LEIOMIOMA', 'ENDOMETRI', 'OVARIO', 'OVARIC', 'CERVIX', 'UTERIN', 'VAGINAL', 'VULVAR',
            'SALPINGE', 'TROMPA', 'PLACENTA', 'CUELLO UTERINO')
 _DX_MASC = ('PROSTAT', 'TESTICUL', 'PENE', 'SEMINOMA', 'ESCROT')
-_NOM_FEM = {'MARIA', 'ANA', 'LUZ', 'DORIS', 'ROSA', 'MARTHA', 'GLORIA', 'PATRICIA', 'CLAUDIA',
-            'SANDRA', 'DIANA', 'MYRIAM', 'MERCEDES', 'CARMEN', 'BEATRIZ', 'TERESA', 'ISABEL',
-            'LUCIA', 'ELENA', 'MONICA', 'ANGELA', 'NANCY', 'OLGA', 'YOLANDA', 'CONSUELO',
-            'AMPARO', 'BLANCA', 'LILIANA', 'LEIDY', 'PAOLA', 'ADRIANA', 'VIVIANA', 'CAROLINA',
-            'NATALIA', 'SONIA', 'RUTH', 'STELLA', 'FLOR', 'JANETH', 'CLARA', 'ALBA'}
-_NOM_MASC = {'JOSE', 'JUAN', 'CARLOS', 'LUIS', 'JORGE', 'ROBERTO', 'PEDRO', 'MANUEL', 'FRANCISCO',
-             'ANTONIO', 'MIGUEL', 'RICARDO', 'FERNANDO', 'ANDRES', 'DIEGO', 'JAVIER', 'OSCAR',
-             'HERNAN', 'GERMAN', 'ALVARO', 'GUSTAVO', 'RAUL', 'HUGO', 'MARIO', 'RAMON', 'EDUARDO',
-             'SERGIO', 'ALBERTO', 'WILSON', 'GERARDO', 'JESUS', 'VICTOR', 'JAIME', 'HENRY',
-             'EDWIN', 'FABIO', 'NELSON', 'OMAR', 'RUBEN', 'CESAR', 'IVAN', 'WILLIAM'}
+# V6.9.44: listas _NOM_FEM/_NOM_MASC ELIMINADAS. Adivinar el sexo por el nombre de
+# pila (lista cerrada de ~45 nombres) producía un dato NO verificable y fallaba con
+# nombres unisex/extranjeros/no listados. Solo se infiere por órgano/dx (verificable).
 
 
 def _inferir_sexo(genero, organo='', dx='', nombre=''):
-    """Si el género es inválido (indeterminado/ambos/vacío), lo infiere de órgano/
-    dx sexo-específico o del primer nombre. Devuelve el valor válido o el original."""
+    """Si el género es inválido (indeterminado/ambos/vacío), lo infiere SOLO de
+    órgano/dx sexo-específico (verificable). Devuelve el valor inferido o el original.
+    V6.9.44: ya NO adivina por el nombre de pila (param 'nombre' se conserva por
+    compatibilidad de firma pero no se usa)."""
     g = str(genero or '').strip().upper()
     if g not in _SEXO_INVALIDO:
         return genero  # MASCULINO/FEMENINO/TRANSGENERO -> respetar
     o = str(organo or '').upper(); d = str(dx or '').upper()
     if any(x in o for x in _ORG_FEM) or any(x in d for x in _DX_FEM): return 'FEMENINO'
     if any(x in o for x in _ORG_MASC) or any(x in d for x in _DX_MASC): return 'MASCULINO'
-    _p = str(nombre or '').strip().upper().split()
-    _p = _p[0] if _p else ''
-    if _p in _NOM_FEM: return 'FEMENINO'
-    if _p in _NOM_MASC: return 'MASCULINO'
-    return genero  # no se pudo inferir con seguridad -> mantener original
+    return genero  # no se pudo inferir con seguridad -> mantener original (p.ej. SIN DATO)
 
 
 def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = '') -> str:

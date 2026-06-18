@@ -190,8 +190,8 @@ MAPEO_BIOMARCADORES = {
     'CK7': 'IHQ_CK7',
     'IHQ_CK7': 'IHQ_CK7',
 
-    'DESMINA': 'IHQ_DESMINA',
-    'IHQ_DESMINA': 'IHQ_DESMINA',
+    'DESMINA': 'IHQ_DESMIN',  # V6.9.44: canónico = IHQ_DESMIN (donde escribe el extractor); IHQ_DESMINA es columna gemela muerta
+    'IHQ_DESMINA': 'IHQ_DESMIN',
 
     'CD11': 'IHQ_CD11',
     'IHQ_CD11': 'IHQ_CD11',
@@ -303,7 +303,9 @@ MAPEO_BIOMARCADORES = {
     'CROMOGRAMINA': 'IHQ_CROMOGRANINA',  # V6.5.94 FIX IHQ250277: Typo OCR común (G→M)
     'IHQ_CROMOGRANINA': 'IHQ_CROMOGRANINA',
 
-    'CK56': 'IHQ_CK56',
+    # V6.9.44: 'CK56' (sin barra) NO se mapea aquí a IHQ_CK56: se unifica con el
+    # bloque CK5/6 (-> IHQ_CK5_6), y la equivalencia IHQ_CK5_6<->IHQ_CK56 verifica
+    # ambas columnas físicas. Se conserva solo el self-map de la columna.
     'IHQ_CK56': 'IHQ_CK56',
 
     'CAM5': 'IHQ_CAM5',
@@ -597,8 +599,9 @@ MAPEO_BIOMARCADORES = {
     'HER  2': 'IHQ_HER2',
     'CD56 Y': 'IHQ_CD56',  # "Y" al final
 
-    # Error de tipeo común: CK56 cuando debe ser CD56
-    'CK56': 'IHQ_CD56',
+    # V6.9.44: ELIMINADO el mapeo 'CK56' -> 'IHQ_CD56'. CK56 es citoqueratina 5/6,
+    # NO el marcador CD56 (NCAM); mapearlo a CD56 corrompería el dato. CK56 va a
+    # IHQ_CK5_6 (con equivalencia a IHQ_CK56).
 
     # V5.1.1: Marcadores adicionales que pueden aparecer
     'NEUN': 'IHQ_NEUN',
