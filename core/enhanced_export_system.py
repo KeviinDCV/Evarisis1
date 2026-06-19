@@ -524,13 +524,9 @@ class EnhancedExportSystem:
                     font=("Segoe UI", 14, "bold")
                 ).pack(side="left")
 
-                ttk.Button(
-                    header_frame,
-                    text="✕",
-                    command=self.close_details_panel,
-                    bootstyle="danger",
-                    width=3
-                ).pack(side="right")
+                # V6.9.44: se quitó la "✕" roja del header: la ventana ya trae su propia
+                # X en la barra de título (cableada a close_details_panel vía
+                # WM_DELETE_WINDOW) y además cierra con Esc. El botón era redundante.
 
                 ttk.Separator(self.details_panel, orient="horizontal").pack(fill="x")
 

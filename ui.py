@@ -2160,11 +2160,13 @@ Disco {i}:
         # _toggle_advanced_filters queda en el código, sin exponerse en la UI.
 
         # Boton de detalles flotante
+        # V6.9.44: arranca DESHABILITADO y se habilita al seleccionar una fila.
         self.details_btn_dashboard = ttk.Button(
             actions_frame,
             text="📋 Detalles",
             command=self._toggle_details_panel,
-            bootstyle="secondary-outline"
+            bootstyle="primary-outline",
+            state="disabled"
         )
         self.details_btn_dashboard.pack(side=RIGHT, padx=(0, 5))
 
@@ -2342,11 +2344,14 @@ Disco {i}:
         # nota en la barra del dashboard. _toggle_advanced_filters queda inactivo.
 
         # Botón de detalles flotante
+        # V6.9.44: "Detalles" requiere una fila seleccionada -> arranca DESHABILITADO
+        # y se "enciende" (info) al seleccionar, igual que "Exportar Selección".
         self.details_btn = ttk.Button(
             actions_frame,
             text="📋 Detalles",
             command=self._toggle_details_panel,
-            bootstyle="secondary"
+            bootstyle="primary",
+            state="disabled"
         )
         self.details_btn.pack(side=RIGHT, padx=(0, 5))
 
@@ -6646,6 +6651,17 @@ Disco {i}:
                     self.export_selection_btn_dashboard.configure(state="normal")
                 else:
                     self.export_selection_btn_dashboard.configure(state="disabled")
+
+            # V6.9.44: "Detalles" también requiere selección -> mismo estado que
+            # "Exportar Selección" (se "enciende" al seleccionar una fila).
+            _estado_det = "normal" if has_selection else "disabled"
+            for _attr in ("details_btn", "details_btn_dashboard"):
+                _btn = getattr(self, _attr, None)
+                if _btn is not None:
+                    try:
+                        _btn.configure(state=_estado_det)
+                    except Exception:
+                        pass
 
         except Exception as e:
             logging.error(f"Error actualizando estado del boton: {e}", exc_info=True)
