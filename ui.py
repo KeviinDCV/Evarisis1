@@ -2213,7 +2213,7 @@ Disco {i}:
         table_frame.grid_columnconfigure(0, weight=1)
 
         # Campo de búsqueda
-        self._search_placeholder = "Buscar por N° Petición, Nombre o Apellido..."
+        self._search_placeholder = "Buscar por N° Petición, Cédula, Nombre o Apellido..."
         self.search_var_dashboard = tk.StringVar()
         self.search_var_dashboard.trace_add("write", self.filter_tabla)
         self._search_entry_dashboard = ttk.Entry(
@@ -4572,8 +4572,10 @@ Disco {i}:
         # V6.0.12: ELIMINADAS columnas sensibles (N. de identificación, Nombre Completo) por privacidad
         cols_to_show = [
             "Numero de caso",
-            # "N. de identificación",  # ELIMINADA - Datos sensibles (privacidad)
-            # "Nombre Completo",  # ELIMINADA - Datos sensibles (privacidad)
+            # V6.9.44: re-añadidas a pedido (identificar/buscar paciente por cédula o
+            # nombre). OJO: datos sensibles (Habeas Data) -> visibles en tabla/capturas.
+            "N. de identificación",
+            "Nombre Completo",
             # "EPS",  # ELIMINADA - No relevante para investigación
             "Procedimiento",
             "Organo",
@@ -4974,21 +4976,29 @@ Disco {i}:
             self._populate_treeview(df)
             return
             
-        search_cols = ["Numero de caso", "Primer nombre", "Primer apellido"]
-        for col in search_cols:
-            if col in df.columns:
-                df[col] = df[col].astype(str)
-        
-        # Inicializar máscara con todos False
-        mask = pd.Series([False] * len(df), index=df.index)
-        
-        if search_cols[0] in df.columns:
-            mask |= df[search_cols[0]].str.lower().str.contains(query, na=False)
-        if search_cols[1] in df.columns:
-            mask |= df[search_cols[1]].str.lower().str.contains(query, na=False)
-        if search_cols[2] in df.columns:
-            mask |= df[search_cols[2]].str.lower().str.contains(query, na=False)
-        
+        # V6.9.44: búsqueda ampliada -> también por CÉDULA/identificación y por nombre
+        # y apellido completos (antes solo N° caso + primer nombre/apellido).
+        search_cols = ["Numero de caso", "N. de identificación", "Nombre Completo",
+                       "Primer nombre", "Segundo nombre",
+                       "Primer apellido", "Segundo apellido"]
+        # V6.9.44: búsqueda por TOKENS sobre un "haystack" combinado (todas las cols
+        # de búsqueda unidas en un solo texto por fila). Permite buscar el NOMBRE
+        # COMPLETO o varias palabras en cualquier orden ("diego garcia"), insensible
+        # a mayúsculas y acentos. Antes hacía contains columna-por-columna, por eso un
+        # nombre completo nunca coincidía con una sola columna y no devolvía nada.
+        import unicodedata as _ud
+        def _strip(_s):
+            _s = str(_s).lower()
+            return ''.join(_c for _c in _ud.normalize('NFKD', _s) if not _ud.combining(_c))
+
+        _present = [c for c in search_cols if c in df.columns]
+        _haystack = df[_present].fillna('').astype(str).agg(' '.join, axis=1).map(_strip)
+
+        _tokens = [_strip(t) for t in query.split() if t.strip()]
+        mask = pd.Series([True] * len(df), index=df.index)
+        for _tok in _tokens:
+            mask &= _haystack.str.contains(_tok, na=False, regex=False)
+
         self._populate_treeview(df[mask])
 
     def _on_search_focus_in(self, entry_widget, string_var):
