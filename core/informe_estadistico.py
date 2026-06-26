@@ -208,6 +208,11 @@ def generar_informe_estadistico_pdf(df, out_path,
     from core.normalizador_organos import normalizar_organo, elegir_columna_organo
     import pandas as pd
 
+    # V6.9.45: el informe estadístico es SOLO de IHQ -> excluye las filas de coloración
+    # (clave M…), que no tienen Dx Principal/Malignidad. Siguen visibles en el visualizador.
+    if "Numero de caso" in df.columns:
+        df = df[~df["Numero de caso"].astype(str).str.match(r"^[Mm]\d", na=False)].copy()
+
     navy = colors.HexColor(NAVY)
     grey = colors.HexColor(GREY)
     hfill = colors.HexColor(HEADER_FILL)

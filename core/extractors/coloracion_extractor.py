@@ -52,14 +52,23 @@ _RE_PIE_LEGAL = re.compile(
 # Terminadores de la sección de diagnóstico (firma del patólogo, nota, comentarios…).
 # El primero captura "NOMBRE DEL PATÓLOGO\nResponsable del análisis" para cortar ANTES del nombre.
 _TERMINADORES = [
-    re.compile(r"\n[ \t]*[A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ.\s]{4,}\n[ \t]*Responsable\s+del\s+an", re.IGNORECASE),
-    re.compile(r"\n[ \t]*Responsable\s+del\s+an", re.IGNORECASE),
-    re.compile(r"\n[ \t]*MD\s+Pat[" + _ACC_O + r"]log", re.IGNORECASE),
-    re.compile(r"\n[ \t]*RM\s*\d{3,}", re.IGNORECASE),
+    # FIRMA: NOMBRE del patólogo (2-4 palabras en MAYÚSCULAS, misma línea) seguido del
+    # ROL ("[Médica ]Patólog…" o "Responsable del análisis"). Corta ANTES del nombre.
+    # El nombre puede ir en su propia línea o pegado al final del dx. El NOMBRE es
+    # MAYÚS-only (sin IGNORECASE) y limitado a 2-4 palabras -> NO se come el diagnóstico
+    # (que termina a menudo en mayúsculas pero NO va seguido del rol).
+    re.compile(
+        r"[ \t\n]+[A-ZÁÉÍÓÚÑÜ]{2,}(?:[ \t]+[A-ZÁÉÍÓÚÑÜ]{2,}){1,3}[ \t\n]+"
+        r"(?i:(?:m[eé]dic[oa]\s+)?pat[oó�]log|responsable\s+del\s+an)"
+    ),
+    # Fallbacks (cortan en el marcador; podrían dejar el nombre en casos raros):
+    re.compile(r"[ \t\n]*[Rr]esponsable\s+del\s+an"),
+    re.compile(r"[ \t\n]+(?i:(?:m[eé]dic[oa]\s+)?pat[oó�]log)"),
+    re.compile(r"[ \t\n]+RM[:\.]?\s*\d{2,}", re.IGNORECASE),
     re.compile(r"\n_{3,}"),
     re.compile(r"\n[ \t]*Nota:\s*Este\s+informe", re.IGNORECASE),
     re.compile(r"\n[ \t]*COMENTARIOS?\b", re.IGNORECASE),
-    re.compile(r"Todos\s+los\s+an[" + _ACC_A + r"]?lisis", re.IGNORECASE),
+    re.compile(r"Todos\s+los\s+an[aáAÁ�]?lisis", re.IGNORECASE),
 ]
 
 _RE_M = re.compile(r"N\.?\s*petici[" + _ACC_O + r"]n\s*\n?\s*:\s*(M\d{5,})", re.IGNORECASE)

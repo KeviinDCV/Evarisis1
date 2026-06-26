@@ -3745,6 +3745,9 @@ Disco {i}:
     # =========================
     def _render_kpis(self, df):
         """Actualizar los valores de los KPIs con datos del DataFrame"""
+        # V6.9.45: los KPIs son SOLO de IHQ -> excluir filas de coloración (clave M…).
+        if df is not None and not df.empty and "Numero de caso" in df.columns:
+            df = df[~df["Numero de caso"].astype(str).str.match(r"^[Mm]\d", na=False)]
         if df is None or df.empty:
             # Resetear valores cuando no hay datos
             try:
@@ -3845,6 +3848,10 @@ Disco {i}:
 
     def _get_filtered_df(self, df):
         dff = df.copy()
+        # V6.9.45: el Dashboard analítico excluye las filas de coloración (clave M…),
+        # que no son casos IHQ (sin Dx Principal/Malignidad). Se ven en el visualizador.
+        if "Numero de caso" in dff.columns:
+            dff = dff[~dff["Numero de caso"].astype(str).str.match(r"^[Mm]\d", na=False)]
         fd = self.db_filters["fecha_desde"].get().strip()
         fh = self.db_filters["fecha_hasta"].get().strip()
         if fd:
@@ -9958,7 +9965,13 @@ Informes con malignidad: {malignant_count}"""
             logging.info(f"Procesando {filename}...")
 
             # Determinar el tipo de archivo y procesarlo adecuadamente
-            if self._is_ihq_file(filename, file_path):
+            # V6.9.45: detectar PRIMERO los PDFs de Coloraciones ("M … AL …") y
+            # enrutarlos a su procesador aislado (NO toca el flujo IHQ).
+            if self._is_coloracion_file(filename, file_path):
+                records_processed = self._process_coloracion_file(file_path)
+                correcciones = []
+                logging.info(f"✅ {filename}: {records_processed} registros de Coloración procesados")
+            elif self._is_ihq_file(filename, file_path):
                 # Procesar como archivo IHQ (biomarcadores)
                 records_processed = self._process_ihq_file(file_path)
                 correcciones = []  # IHQ no tiene validación aún
@@ -10021,6 +10034,50 @@ Informes con malignidad: {malignant_count}"""
         except Exception as e:
             logging.warning(f"⚠️ No se pudieron acumular números procesados: {e}")
         return count
+
+    def _is_coloracion_file(self, filename, file_path):
+        """V6.9.45: True si el PDF es de Coloraciones básicas (estudio M autónomo).
+        Detecta por nombre ("M … AL …") o por contenido (N. peticion = M###### con
+        indicios de coloración y SIN indicadores IHQ). NO clasifica IHQ como coloración."""
+        import re
+        # Criterio 1: nombre del lote ("M 2503754 AL 2503803" / "M2515951 AL M2516000")
+        if re.match(r'^\s*M\s?\d{5,}\s+AL\s+M?\d{5,}', filename, re.IGNORECASE):
+            return True
+        if 'ihq' in filename.lower():
+            return False
+        # Criterio 2: contenido de la primera página
+        try:
+            import fitz
+            doc = fitz.open(file_path)
+            txt = doc[0].get_text() if len(doc) else ''
+            doc.close()
+            low = txt.lower()
+            tiene_m = bool(re.search(r'petici[oó�]n\s*\n?\s*:\s*M\d{5,}', txt, re.IGNORECASE))
+            ihq_ind = any(k in low for k in ('inmunohistoquimica', 'inmunohistoquímica', 'her2', 'ki-67', 'ki67'))
+            color_ind = any(k in low for k in ('coloracion basica', 'coloración básica',
+                                               'estudio de histologia', 'estudio de histología'))
+            return tiene_m and color_ind and not ihq_ind
+        except Exception:
+            return False
+
+    def _process_coloracion_file(self, file_path):
+        """V6.9.45: procesa un PDF de Coloraciones - lógica en core/coloracion_processor.py."""
+        from core.coloracion_processor import process_coloracion_file
+
+        def log_callback(msg):
+            if hasattr(self, 'log_to_widget'):
+                self.log_to_widget(msg)
+
+        numeros = []
+        stats = process_coloracion_file(file_path, dry_run=False,
+                                        log_callback=log_callback, out_numeros=numeros)
+        try:
+            if getattr(self, '_ultimos_registros_procesados', None) is None:
+                self._ultimos_registros_procesados = []
+            self._ultimos_registros_procesados.extend(numeros)
+        except Exception as e:
+            logging.warning(f"⚠️ No se pudieron acumular números de coloración: {e}")
+        return stats.get('guardados', 0)
 
     def _process_general_file(self, file_path):
         """Procesar archivo general usando el procesador estándar
