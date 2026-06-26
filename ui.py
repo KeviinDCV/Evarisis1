@@ -4581,6 +4581,7 @@ Disco {i}:
             "Organo",
             "Malignidad",
             "Diagnostico Coloracion",  # v6.1.0: Diagnóstico del Estudio M (Coloración)
+            "Diagnostico Coloracion 2",  # V6.9.45: Dx del PDF de Coloración (estudio M autónomo)
             "Diagnostico Principal",
             "Factor pronostico",
             # "Descripcion macroscopica",  # V5.3.8: ELIMINADA - Texto muy largo, poco útil en tabla

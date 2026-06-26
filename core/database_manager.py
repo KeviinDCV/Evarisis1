@@ -173,6 +173,7 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "Descripcion microscopica",  # v5.3.5: Simplificado
     "Descripcion Diagnostico",   # v5.3.5: Simplificado
     "Diagnostico Coloracion",    # v6.1.0: NUEVO - Diagnóstico del Estudio M (Coloración) con Nottingham
+    "Diagnostico Coloracion 2",  # V6.9.45: Dx del PDF de Coloración (estudio M autónomo); lo escribe SOLO el procesador de coloraciones, NO el flujo IHQ
     "Diagnostico Principal",     # v5.3.6: Diagnóstico principal extraído
     "Factor pronostico",
     # v5.3.5: Reorganización - IHQ_ESTUDIOS_SOLICITADOS e IHQ_ORGANO antes de Congelaciones
@@ -245,6 +246,7 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "Descripcion microscopica" TEXT,
             "Descripcion Diagnostico" TEXT,
             "Diagnostico Coloracion" TEXT,  -- v6.1.0: Diagnóstico del Estudio M (Coloración) con Nottingham
+            "Diagnostico Coloracion 2" TEXT,  -- V6.9.45: Dx del PDF de Coloración (estudio M autónomo)
             "Diagnostico Principal" TEXT,
             "Factor pronostico" TEXT,
             "IHQ_ESTUDIOS_SOLICITADOS" TEXT, "IHQ_ORGANO" TEXT,
@@ -576,12 +578,12 @@ def _migrate_columns_mysql():
     except Exception:
         return
     existing = _adapter_existing_cols(TABLE_NAME)
-    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos"}
+    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos", "Diagnostico Coloracion 2"}
     missing = expected - existing
     for col in missing:
         col_type = "VARCHAR(500)"
         if col in ("Descripcion macroscopica", "Descripcion microscopica",
-                   "Descripcion Diagnostico", "Datos Clinicos"):
+                   "Descripcion Diagnostico", "Datos Clinicos", "Diagnostico Coloracion 2"):
             col_type = "TEXT"
         elif col == "Fecha Ingreso Base de Datos":
             col_type = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
@@ -891,6 +893,7 @@ def _normalize_column_name(column_name: str) -> str:
         'Descripcion Diagnostico (5,6,7 Tipo histológico, subtipo histológico, margenes tumorales)': 'diagnostico_final',
         'Descripcion Diagnostico': 'diagnostico',  # V6.2.1: Mapeo simplificado para diagnóstico completo
         'Diagnostico Coloracion': 'diagnostico_coloracion',  # NUEVO - v6.1.0: Diagnóstico del Estudio M
+        'Diagnostico Coloracion 2': 'diagnostico_coloracion_2',  # V6.9.45: Dx del PDF de Coloración (estudio M autónomo)
         'Diagnostico Principal': 'diagnostico_principal',  # V6.2.1: FIX CRÍTICO - Faltaba mapeo
         'N. de identificación': 'numero_identificacion',
         'N. peticion (0. Numero de biopsia)': 'numero_peticion',  # FIX: Mapeo crítico faltante
