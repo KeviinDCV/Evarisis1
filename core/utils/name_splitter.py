@@ -148,8 +148,14 @@ def split_full_name(full_name: str) -> Dict[str, str]:
             if primer_apellido_idx <= 2:
                 primer_apellido_idx = max(2, primer_apellido_idx)
     
+    # v6.9.48 FIX duplicación: si el heurístico marca el PRIMER token como apellido
+    # (primer_apellido_idx == 0), igual debe contarse como NOMBRE — todo paciente tiene
+    # al menos un nombre. Antes el fallback dejaba tokens[0] en nombres Y en apellidos,
+    # duplicándolo ("HECTOR ERNESTO MORA" -> nombres="HECTOR", apellidos="HECTOR ERNESTO MORA").
+    if primer_apellido_idx <= 0:
+        primer_apellido_idx = 1
     # Dividir en nombres y apellidos
-    nombres = tokens[:primer_apellido_idx] if primer_apellido_idx > 0 else [tokens[0]]
+    nombres = tokens[:primer_apellido_idx]
     apellidos = tokens[primer_apellido_idx:] if primer_apellido_idx < len(tokens) else []
     
     return {

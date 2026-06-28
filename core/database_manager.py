@@ -1240,6 +1240,41 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
             conn.close()
 
 
+def get_db_fingerprint():
+    """V6.9.47 — Huella BARATA de la tabla para detectar cambios sin cargar todo:
+    (numero_de_filas, max_fecha_ingreso). ~5 ms. Permite que el auto-refresh de la UI
+    se salte recargas completas cuando la BD no cambió. Devuelve None si falla."""
+    conn = None
+    try:
+        if _use_mysql():
+            conn = _adapter_get_connection()
+            cur = conn.cursor()
+            cur.execute(
+                f"SELECT COUNT(*), MAX(`Fecha Ingreso Base de Datos`) "
+                f"FROM {_adapter_q(TABLE_NAME)}"
+            )
+            row = cur.fetchone()
+        else:
+            conn = sqlite3.connect(DB_FILE)
+            cur = conn.cursor()
+            cur.execute(
+                f'SELECT COUNT(*), MAX("Fecha Ingreso Base de Datos") FROM {TABLE_NAME}'
+            )
+            row = cur.fetchone()
+        n = int(row[0]) if row and row[0] is not None else 0
+        ts = str(row[1]) if row and row[1] is not None else ""
+        return (n, ts)
+    except Exception as e:
+        logger.warning(f"No se pudo obtener huella de BD: {e}")
+        return None
+    finally:
+        if conn:
+            try:
+                conn.close()
+            except Exception:
+                pass
+
+
 def get_statistics() -> Dict[str, Any]:
     """Obtiene estadísticas básicas de la base de datos.
     

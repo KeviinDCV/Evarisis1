@@ -32,8 +32,9 @@ _ACC_O = "OÓ�"
 _ACC_A = "AÁ�"
 _ACC_I = "IÍ�"
 
-# Inicio de la sección de diagnóstico (línea que es solo "DIAGNÓSTICO").
-_RE_DIAG = re.compile(r"(?:^|\n)[ \t]*DIAGN[" + _ACC_O + r"]ST[" + _ACC_I + r"]CO[ \t]*\n")
+# Inicio de la sección de diagnóstico. Tolera SIN tilde ("DIAGNOSTICO"), con tilde
+# ("DIAGNÓSTICO") o mojibake, y un posible "." o ":" final ("DIAGNOSTICO.").
+_RE_DIAG = re.compile(r"(?:^|\n)[ \t]*DIAGN[" + _ACC_O + r"]ST[" + _ACC_I + r"]CO[ \t]*[.:]?[ \t]*\n")
 
 # Encabezado de continuación de página (multipágina): "Mxxxx / Copia|Final Pag. n de m / ...
 # Fecha Informe : dd/mm/aaaa". Es RUIDO embebido — se borra ANTES de cortar la sección.
@@ -45,7 +46,7 @@ _RE_CONT_HEADER = re.compile(
 
 # Pie legal estándar del informe (RUIDO).
 _RE_PIE_LEGAL = re.compile(
-    r"Todos\s+los\s+an[" + _ACC_A + r"]?lisis.*?(?:1WA|Oneworld\s+Accuracy)",
+    r"Todos\s+los\s+an[" + _ACC_A + r"]?lisis.*?(?:Oneworld\s+Accuracy|1WA)(?:\s*\(1WA\))?",
     re.DOTALL | re.IGNORECASE,
 )
 
@@ -74,7 +75,10 @@ _TERMINADORES = [
 _RE_M = re.compile(r"N\.?\s*petici[" + _ACC_O + r"]n\s*\n?\s*:\s*(M\d{5,})", re.IGNORECASE)
 _RE_M_FALLBACK = re.compile(r"^\s*(M\d{5,})\s*$", re.MULTILINE)
 _RE_CEDULA = re.compile(r"Identificaci[oó�]n\s*\n?\s*:\s*([A-Za-z]{2,3})?\.?\s*([\d\.]{4,})", re.IGNORECASE)
-_RE_NOMBRE = re.compile(r"Nombre\s*\n?\s*:\s*(.+?)\s*\n\s*N\.?\s*petici", re.IGNORECASE | re.DOTALL)
+# V6.9.48 FIX M2506212: el salto de línea antes de "N. peticion" es OPCIONAL. En algunos
+# PDFs el nombre queda PEGADO a la etiqueta en la misma línea ("…ORTIZ N. peticion"); con
+# "\n" obligatorio el nombre no se capturaba (quedaba N/A). Recupera ~490 filas, 0 regresión.
+_RE_NOMBRE = re.compile(r"Nombre\s*\n?\s*:\s*(.+?)\s*\n?\s*N\.?\s*petici", re.IGNORECASE | re.DOTALL)
 _RE_GENERO = re.compile(r"Genero\s*\n?\s*:\s*([A-Za-z]+)", re.IGNORECASE)
 _RE_EDAD = re.compile(r"Edad\s*\n?\s*:\s*(\d{1,3})", re.IGNORECASE)
 _RE_FECHA_INF = re.compile(r"Fecha\s+Informe\s*\n?\s*:\s*(\d{2}/\d{2}/\d{4})", re.IGNORECASE)

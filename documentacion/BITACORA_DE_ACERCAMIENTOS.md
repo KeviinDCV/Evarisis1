@@ -6,6 +6,65 @@ Proposito
 Plantilla por entrada
 ---
 
+## Iteración 3 — Coloraciones Básicas (estudios M) + Reconciliación por Cédula + Performance Visualizador V6.9.45 → V6.9.48 (26/06/2026)
+
+### Contexto de la iteración
+Sprint de cuatro versiones consecutivas (V6.9.45 → V6.9.48) que incorpora al sistema un segundo tipo de estudio de patología: las **Coloraciones básicas** (tinciones tipo H&E, identificadas con clave `M######`). El requerimiento clínico era integrar estos estudios sin contaminar el flujo IHQ existente ni sus métricas oncológicas, enlazándolos al paciente por cédula independientemente del orden en que lleguen los PDFs. El sprint se ejecutó y verificó directamente en producción contra la BD MySQL `huv_oncologia` (tabla `informes_ihq`), que pasó de **2.076 a 8.816 filas** tras la carga inicial. Se aprovechó la iteración para resolver dos fixes de extracción/división de nombres (que beneficiaron también a registros IHQ preexistentes) y dos optimizaciones de rendimiento del Visualizador que eliminaban congelamientos perceptibles.
+
+### Cambios implementados
+1. **V6.9.45 — Pipeline AISLADO de coloraciones:** nuevos `core/extractors/coloracion_extractor.py` y `core/coloracion_processor.py`, que extraen SOLO el diagnóstico del PDF a la nueva columna `Diagnostico Coloracion 2` (TEXT). Router en `ui.py` (`_is_coloracion_file`/`_process_coloracion_file`) detecta PDFs "M … AL …" en "Procesar seleccionados" y los enruta sin tocar el flujo IHQ. Las filas M se EXCLUYEN de estadísticas, dashboard y KPIs (filtro `^[Mm]\d`) pero siguen visibles y buscables en el Visualizador.
+2. **V6.9.45 — Migración de columna:** `Diagnostico Coloracion 2` de `VARCHAR(500)` a `TEXT` para evitar truncado de diagnósticos largos (se recuperaron diagnósticos de hasta 2.176 caracteres).
+3. **V6.9.46 — Reconciliación independiente del orden:** nueva `reconciliar_coloraciones()` (idempotente) que tras CADA importación (IHQ o coloración) deriva por cédula el `Diagnostico Coloracion 2` en la fila IHQ del paciente: 1 coloración → el diagnóstico; varias → los N diagnósticos CONCATENADOS y numerados en la propia columna (texto completo en la fila IHQ). Cada coloración permanece como su propia fila M (fuente de verdad). El Visualizador oculta del DISPLAY las filas M redundantes (single-merged) sin borrarlas de la BD.
+4. **V6.9.47 — Rendimiento del Visualizador:** `_apply_row_colors` reescrito de forma vectorizada (`drop_duplicates`/`to_dict('records')` en vez de `groupby` + `iloc[0].to_dict()`; clasificación sobre arrays en vez de `iterrows`; solo evalúa filas IHQ): de ~13.300 ms a ~280 ms. Auto-refresh de 60 s ahora usa la huella barata `get_db_fingerprint()` (COUNT+MAX) y se salta la recarga completa si la BD no cambió.
+5. **V6.9.48 — Fix extracción de nombres (caso M2506212):** `_RE_NOMBRE` en `coloracion_extractor.py` ahora trata como OPCIONAL el salto de línea antes de "N. peticion" → recupera ~490 nombres que salían en N/A, con 0 regresiones (10.460/10.460).
+6. **Fix divisor de nombres compartido con IHQ:** corregido bug en `core/utils/name_splitter.py` que duplicaba el primer token cuando `primer_apellido_idx == 0` ("HECTOR ERNESTO MORA" → "HECTOR HECTOR ERNESTO MORA").
+
+### Archivos modificados
+- `core/extractors/coloracion_extractor.py` (NUEVO).
+- `core/coloracion_processor.py` (NUEVO).
+- `core/database_manager.py`: columna `Diagnostico Coloracion 2` (TEXT) en schema/mapeo + nueva `get_db_fingerprint()`.
+- `ui.py`: router de coloraciones, `reconciliar_coloraciones()`, ocultamiento de filas M redundantes, `_apply_row_colors` vectorizado, auto-refresh con fingerprint, exclusión de filas M en KPIs/Dashboard.
+- `core/informe_estadistico.py`: el informe estadístico excluye filas de coloración (SOLO IHQ).
+- `core/utils/name_splitter.py`: fix duplicación del primer token.
+- `config/version_info.py`: bump `6.9.5` → `6.9.48` ("Coloraciones Basicas (estudios M) + Reconciliacion por Cedula + Performance Visualizador").
+
+### Validación técnica
+- ✅ Verificado en producción contra MySQL `huv_oncologia` / `informes_ihq`: 2.076 → 8.816 filas.
+- ✅ Carga inicial de coloraciones: 139 PDFs → 6.806 coloraciones.
+- ✅ Reconciliación coloración↔IHQ: 553 pacientes coloración∩IHQ enlazados, 0 enlaces espurios, 0 marcadores incorrectos, reconciliación confirmada en punto fijo (idempotente).
+- ✅ Fix `_RE_NOMBRE`: ~490 nombres recuperados, 0 regresiones (10.460/10.460).
+- ✅ Fix `name_splitter`: 358 coloraciones + 69 IHQ corregidas, 0 artefactos (las 173 restantes son apellidos repetidos REALES). Backup en `backups/backup_nombres_ihq_dup69.json`.
+- ✅ Rendimiento: `_apply_row_colors` ~13.300 ms → ~280 ms (elimina freeze ~13 s al abrir Visualizador); auto-refresh sin freeze periódico de ~1 s/min.
+
+### Resultados cuantitativos
+| Métrica | Antes (V6.9.5) | Después (V6.9.48) | Delta |
+|---|---|---|---|
+| Filas en `informes_ihq` | 2.076 | 8.816 | **+6.740** |
+| Coloraciones cargadas | 0 | 6.806 (139 PDFs) | **+6.806** |
+| Pacientes coloración∩IHQ enlazados | 0 | 553 | **+553** |
+| Nombres recuperados (`_RE_NOMBRE`) | — | ~490 | — |
+| Nombres corregidos (`name_splitter`) | — | 358 col + 69 IHQ | — |
+| `_apply_row_colors` | ~13.300 ms | ~280 ms | **~−97.9%** |
+| Regresiones | — | 0 | limpio |
+
+### Validación médica/funcional
+⏳ Pendiente firma del Dr. Juan Camilo Bayona sobre la integración de Coloraciones básicas en el Visualizador y sobre el criterio de concatenar los N diagnósticos en la fila IHQ cuando un paciente tiene múltiples coloraciones. Se recomienda revisar con el área clínica la decisión de excluir las filas M de estadísticas/dashboard/KPIs (las métricas oncológicas siguen siendo SOLO de IHQ).
+
+### Decisiones técnicas clave
+- **Aislamiento total del flujo IHQ.** El extractor y el procesador de coloraciones viven en archivos propios y nunca tocan el pipeline IHQ; cada coloración es su propia fila M (fuente de verdad, nunca se pierde ni se pisa).
+- **Reconciliación idempotente e independiente del orden.** `reconciliar_coloraciones()` converge al mismo punto fijo empiece el PDF de coloración o el de IHQ, evitando dependencias de secuencia de importación.
+- **Separación dato persistido vs dato mostrado.** Las filas M siempre persisten (auditabilidad); el Visualizador decide en DISPLAY cuáles ocultar y las métricas filtran `^[Mm]\d` sin borrar nada.
+- **`TEXT` sobre `VARCHAR(500)`.** Necesario para no truncar diagnósticos de coloración (observados hasta 2.176 chars).
+- **Rendimiento por vectorización, no por cambio de semántica.** Las mejoras de `_apply_row_colors` y del auto-refresh no alteran la lógica de coloreado ni de negocio; backup explícito (`backup_nombres_ihq_dup69.json`) antes de tocar nombres IHQ preexistentes.
+
+### Próximos pasos identificados
+- [ ] Validación clínica formal con el Dr. Bayona sobre la integración de Coloraciones y el criterio de marcado multi-coloración.
+- [ ] Auditar las 173 coloraciones con apellidos repetidos reales para confirmar que ningún caso quedó mal dividido.
+- [ ] Evaluar exponer un indicador en el dashboard que muestre cobertura de coloraciones por paciente (sin contaminar las métricas oncológicas).
+- [ ] Considerar tarea programada de reconciliación periódica para mantener `Diagnostico Coloracion 2` al día ante importaciones desordenadas.
+
+---
+
 ## Iteración 2 — Diagnosis Categorization Sprint V6.6.12 → V6.6.16 (04/05/2026)
 
 ### Contexto de la iteración

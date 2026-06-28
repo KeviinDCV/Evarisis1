@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.5",
-    "version_name": "Fix Race Condition: Save Before Refresh",
-    "build_date": "13/05/2026",
-    "build_number": "202605130700",
+    "version": "6.9.48",
+    "version_name": "Coloraciones Basicas (estudios M) + Reconciliacion por Cedula + Performance Visualizador",
+    "build_date": "26/06/2026",
+    "build_number": "202606261356",
     "release_type": "Stable",
     "codename": "Save First, Then Notify",
 }
@@ -201,7 +201,12 @@ FEATURES = [
     "🚀 Colores por completitud - Verde/Amarillo/Rojo (v5.3.8)",
     "🩺 Validación inteligente médico-servicio (v5.3.9)",
     "🩺 Corrección automática de inconsistencias (v5.3.9)",
-    "📊 Tabla exportaciones virtualizada + integración Excel (v5.3.9)"
+    "📊 Tabla exportaciones virtualizada + integración Excel (v5.3.9)",
+    "🗄️ Backend MySQL/MariaDB multi-usuario en LAN (v6.9.0)",
+    "🤖 Pipeline IA de extracción de 184 columnas (v6.8.0)",
+    "🔬 Coloraciones básicas (estudios M / H&E) con pipeline aislado del IHQ (v6.9.48)",
+    "🔗 Reconciliación coloración↔IHQ por cédula, independiente del orden (v6.9.48)",
+    "🚀 Visualizador sin congelamientos: coloreado vectorizado ~280 ms (v6.9.48)"
 ]
 
 # Métricas de rendimiento

@@ -1,5 +1,72 @@
 # Changelog
 
+## [6.9.48] - 2026-06-26 — Coloraciones Básicas (estudios M) + Reconciliación por Cédula + Performance Visualizador
+
+**Sprint:** Incorporación de un pipeline AUTÓNOMO para los PDFs de "Coloraciones básicas" (estudios `M…`, tinciones tipo H&E) que conviven con el flujo IHQ sin contaminarlo, más reconciliación coloración↔IHQ por cédula independiente del orden de importación, optimizaciones de rendimiento del Visualizador y dos fixes de extracción/división de nombres. El sprint cubre cuatro versiones consecutivas (V6.9.45 → V6.9.48). **Verificado en producción contra la BD MySQL `huv_oncologia` (tabla `informes_ihq`): la tabla pasó de 2.076 a 8.816 filas** tras la carga inicial de coloraciones.
+
+### Impact
+| Aspecto | Antes (V6.9.5) | Ahora (V6.9.48) |
+|---|---|---|
+| Tipos de PDF soportados | Solo IHQ | **IHQ + Coloraciones básicas (M…)** |
+| Filas en `informes_ihq` | 2.076 | **8.816** (139 PDFs de coloración → 6.806 coloraciones) |
+| Diagnóstico de coloración | No capturado | **Columna `Diagnostico Coloracion 2` (TEXT)** |
+| Reconciliación coloración↔IHQ | — | **`reconciliar_coloraciones()` idempotente, independiente del orden** |
+| Filas M en estadísticas/dashboard/KPIs | — | **Excluidas (filtro `^[Mm]\d`)** |
+| Filas M en Visualizador | — | **Visibles y buscables por cédula/nombre** |
+| `_apply_row_colors` (coloreado tabla) | ~13.300 ms (freeze ~13 s al abrir) | **~280 ms** |
+| Auto-refresh 60 s | Recarga completa siempre (freeze ~1 s/min) | **Huella barata `get_db_fingerprint()`, se salta si no cambió** |
+
+### Files modified
+- `core/extractors/coloracion_extractor.py` (NUEVO) — Extractor dedicado para PDFs de coloraciones (estudios M autónomos). Extrae SOLO el diagnóstico. V6.9.48 FIX M2506212: `_RE_NOMBRE` con salto de línea OPCIONAL antes de "N. peticion".
+- `core/coloracion_processor.py` (NUEVO) — Procesador AISLADO del IHQ. Cada coloración se guarda como su propia fila `M######` (fuente de verdad, nunca se pisa ni se pierde).
+- `core/database_manager.py` — Nueva columna `Diagnostico Coloracion 2` (TEXT) en schema y mapeo (líneas ~176, ~249, ~896). Nueva función `get_db_fingerprint()` (COUNT+MAX) para detección barata de cambios (V6.9.47).
+- `ui.py` — Router `_is_coloracion_file()`/`_process_coloracion_file()` en "Procesar seleccionados" detecta PDFs "M … AL …" y los enruta sin tocar el flujo IHQ (V6.9.45). `reconciliar_coloraciones()` invocada tras cada importación (V6.9.46). Ocultamiento en DISPLAY de filas M redundantes (single-merged) sin borrarlas de BD (V6.9.46). `_apply_row_colors` vectorizado (V6.9.47). Auto-refresh con `get_db_fingerprint()` (V6.9.47). Exclusión de filas M en KPIs y Dashboard analítico (V6.9.45).
+- `core/informe_estadistico.py` — El informe estadístico es SOLO de IHQ → excluye filas de coloración (V6.9.45).
+- `core/utils/name_splitter.py` — Divisor de nombres COMPARTIDO con IHQ: corregido bug que duplicaba el primer token cuando `primer_apellido_idx == 0` (líneas ~152-156).
+
+### Added
+- **Pipeline de Coloraciones básicas (V6.9.45 / V6.9.46)** — PDFs de tinciones tipo H&E ("M … AL …") detectados automáticamente en "Procesar seleccionados" y enrutados a un flujo dedicado que extrae SOLO el diagnóstico a la columna `Diagnostico Coloracion 2` (TEXT). Carga inicial: 139 PDFs → 6.806 coloraciones. Las filas usan clave `M######`.
+- **`reconciliar_coloraciones()` (V6.9.46)** — Función idempotente que, tras CADA importación (IHQ o coloración), deriva por cédula la columna `Diagnostico Coloracion 2` de la fila IHQ del paciente: 1 coloración → el diagnóstico; varias → los N diagnósticos CONCATENADOS y numerados en la columna. Funciona igual empiece el PDF de coloración o el de IHQ.
+- **`get_db_fingerprint()` (V6.9.47)** — Huella barata (COUNT+MAX) usada por el auto-refresh de 60 s para evitar recargas completas innecesarias.
+
+### Changed
+- Columna `Diagnostico Coloracion 2` migrada de `VARCHAR(500)` a `TEXT` para evitar truncado de diagnósticos largos (recuperó diagnósticos de hasta 2.176 caracteres).
+- Las filas de coloración (clave `M######`) se EXCLUYEN de estadísticas, dashboard y KPIs (filtro `^[Mm]\d`) pero permanecen visibles y buscables en el Visualizador por cédula/nombre.
+- El Visualizador oculta del DISPLAY las filas M redundantes (single-merged, cuyo diagnóstico ya está reflejado en la fila IHQ) sin borrarlas de la BD.
+- `_apply_row_colors`: coloreado de la tabla vectorizado con `drop_duplicates`/`to_dict('records')` (en vez de `groupby` + `iloc[0].to_dict()`); clasificación sobre arrays (en vez de `iterrows`); solo evalúa filas IHQ. De ~13.300 ms a ~280 ms (elimina el congelamiento de ~13 s al abrir el Visualizador).
+- Auto-refresh de 60 s usa la huella `get_db_fingerprint()` y se salta la recarga completa si la BD no cambió (elimina el freeze periódico de ~1 s/min).
+
+### Fixed
+- **V6.9.48 — Extracción de nombres en coloraciones (caso M2506212):** `_RE_NOMBRE` en `coloracion_extractor.py` ahora trata como OPCIONAL el salto de línea antes de "N. peticion" → recupera ~490 nombres que salían en N/A. 0 regresiones (10.460/10.460).
+- **División de nombres (compartida con IHQ):** corregido bug en `core/utils/name_splitter.py` que duplicaba el primer token cuando `primer_apellido_idx == 0` ("HECTOR ERNESTO MORA" → "HECTOR HECTOR ERNESTO MORA"). Corrigió 358 coloraciones (0 artefactos; las 173 restantes son apellidos repetidos REALES) y 69 nombres IHQ preexistentes (backup en `backups/backup_nombres_ihq_dup69.json`).
+
+### Decisiones técnicas
+
+#### 1. Pipeline de coloraciones AISLADO del IHQ
+El extractor y el procesador de coloraciones viven en archivos propios (`coloracion_extractor.py`, `coloracion_processor.py`) y nunca tocan el flujo IHQ. Cada coloración es su propia fila `M######` y constituye la fuente de verdad: nunca se pierde ni se pisa, independientemente de cuándo llegue su IHQ correspondiente.
+
+#### 2. Reconciliación independiente del orden e idempotente
+`reconciliar_coloraciones()` corre tras CADA importación (IHQ o coloración) y deriva por cédula la columna `Diagnostico Coloracion 2` en la fila IHQ. Por ser idempotente, converge al mismo punto fijo sin importar si el PDF de coloración o el de IHQ se procesó primero. Verificado: 553 pacientes coloración∩IHQ enlazados, 0 enlaces espurios, 0 marcadores incorrectos, reconciliación en punto fijo.
+
+#### 3. Separación entre dato persistido y dato mostrado
+Las filas M siempre persisten en BD (auditabilidad). El Visualizador decide en tiempo de DISPLAY cuáles ocultar (M redundantes single-merged) sin borrar nada. Las estadísticas/dashboard/KPIs filtran las claves `^[Mm]\d` para no contaminar las métricas oncológicas, que son SOLO de IHQ.
+
+#### 4. `TEXT` en lugar de `VARCHAR(500)` para diagnósticos de coloración
+Los diagnósticos de coloración pueden superar largamente los 500 caracteres (se observaron hasta 2.176). La columna se migró a `TEXT` para evitar truncado silencioso.
+
+#### 5. Rendimiento por vectorización, no por reescritura de la lógica
+Las mejoras de `_apply_row_colors` y del auto-refresh se lograron vectorizando con pandas/NumPy y agregando una huella barata de cambio, sin alterar la semántica del coloreado ni la lógica de negocio.
+
+### Validation
+- ✅ Verificado en producción contra MySQL `huv_oncologia` / `informes_ihq`: 2.076 → 8.816 filas.
+- ✅ Carga inicial de coloraciones: 139 PDFs → 6.806 coloraciones.
+- ✅ Reconciliación: 553 pacientes coloración∩IHQ enlazados, 0 enlaces espurios, 0 marcadores incorrectos, punto fijo confirmado.
+- ✅ Fix `_RE_NOMBRE`: ~490 nombres recuperados, 0 regresiones (10.460/10.460).
+- ✅ Fix `name_splitter`: 358 coloraciones + 69 IHQ corregidas, 0 artefactos (173 apellidos repetidos restantes son reales), backup `backups/backup_nombres_ihq_dup69.json`.
+- ✅ `_apply_row_colors`: ~13.300 ms → ~280 ms. Auto-refresh sin freeze periódico.
+
+---
+
 ## [6.9.0] - 2026-05-11 — MySQL/MariaDB Multi-User LAN Support
 
 **Sprint:** Migración del backend de BD de SQLite (single-user, file-based) a MySQL/MariaDB (multi-user, cliente-servidor) usando XAMPP. Permite que **múltiples usuarios en la red LAN del HUV** vean y modifiquen los MISMOS datos en tiempo real, sin conflictos de file-locking ni corrupción.

@@ -2658,6 +2658,15 @@ Disco {i}:
                 and not self._processing_result_ia.get('done', True)
             )
             if not ia_activo:
+                # V6.9.47: saltar la recarga completa si la BD no cambió desde la última
+                # carga (evita el freeze periódico de ~1 s cada 60 s sin datos nuevos).
+                try:
+                    from core.database_manager import get_db_fingerprint
+                    fp = get_db_fingerprint()
+                    if fp is not None and fp == getattr(self, '_last_db_fingerprint', None):
+                        return  # nada cambió -> no recargar (finally re-programa el tick)
+                except Exception:
+                    pass
                 if hasattr(self, 'refresh_data_and_table'):
                     logging.info("[auto-refresh] Refrescando Visualizador (tick 60s)")
                     self.refresh_data_and_table()
@@ -4504,6 +4513,14 @@ Disco {i}:
                     na_position='last'
                 ).reset_index(drop=True)
 
+            # V6.9.47: registrar la huella de la BD recién cargada para que el
+            # auto-refresh de 60 s pueda saltarse recargas cuando nada cambió.
+            try:
+                from core.database_manager import get_db_fingerprint
+                self._last_db_fingerprint = get_db_fingerprint()
+            except Exception:
+                self._last_db_fingerprint = None
+
             if self.master_df is not None and not self.master_df.empty:
                 logging.info(f"📊 Datos cargados: {len(self.master_df)} registros")
 
@@ -4540,6 +4557,42 @@ Disco {i}:
             except:
                 logging.error("❌ Error mostrando mensaje de error")
 
+    def _ocultar_m_redundantes(self, df):
+        """V6.9.48: quita del DISPLAY las filas M de coloración cuyo PACIENTE ya tiene una
+        fila IHQ que lleva la coloración en su columna 'Diagnostico Coloracion 2' (sea 1 dx,
+        o los N concatenados si tiene varias). NO se borran de la BD (son la fuente de
+        verdad); solo se ocultan para no duplicar. Las coloraciones de pacientes SIN IHQ se
+        muestran como sus propias filas."""
+        if df is None or df.empty or "Numero de caso" not in df.columns:
+            return df
+        col = "Diagnostico Coloracion 2"
+        base = getattr(self, "master_df", None)
+        if base is None or base.empty:
+            base = df
+        if col not in base.columns or "N. de identificación" not in base.columns:
+            return df
+        if col not in df.columns or "N. de identificación" not in df.columns:
+            return df
+
+        def _ced(serie):
+            return serie.astype(str).str.replace(r"\D", "", regex=True)
+
+        # Cédulas que tienen una fila IHQ con la coloración ya reflejada en su columna.
+        b_nc = base["Numero de caso"].astype(str)
+        b_esM = b_nc.str.match(r"^[Mm]\d", na=False)
+        b_dx = base[col].astype(str).str.strip()
+        b_real = ~b_dx.str.lower().isin(["", "nan", "none", "n/a"])
+        b_ihq = (~b_esM) & b_real
+        ceds_cubiertas = set(_ced(base.loc[b_ihq, "N. de identificación"]))
+        if not ceds_cubiertas:
+            return df
+
+        d_nc = df["Numero de caso"].astype(str)
+        d_esM = d_nc.str.match(r"^[Mm]\d", na=False)
+        d_ced = _ced(df["N. de identificación"])
+        redundante = d_esM.values & d_ced.isin(ceds_cubiertas).values
+        return df[~redundante]
+
     def _populate_treeview(self, df_to_display):
         """
         V5.3.8: Población de Sheet virtualizado (antes era Treeview)
@@ -4551,6 +4604,18 @@ Disco {i}:
 
         if df_to_display.empty:
             self.sheet.set_sheet_data([[]])  # Limpiar sheet
+            self.sheet.headers([])
+            return
+
+        # V6.9.46: ocultar filas M de coloración REDUNDANTES (su dx ya está reflejado en
+        # la fila IHQ del paciente -> single-merged). Las multi (la fila IHQ marca
+        # "varias (N)") y las coloraciones de pacientes SIN IHQ sí se muestran.
+        try:
+            df_to_display = self._ocultar_m_redundantes(df_to_display)
+        except Exception as e:
+            logging.warning(f"⚠️ No se pudo filtrar filas M redundantes: {e}")
+        if df_to_display.empty:
+            self.sheet.set_sheet_data([[]])
             self.sheet.headers([])
             return
 
@@ -4856,16 +4921,28 @@ Disco {i}:
                     # -> incompletos -> TODA la tabla se pintaba de ROJO. master_df ya
                     # está en memoria y trae TODAS las columnas requeridas (sin
                     # consultas extra a la BD).
+                    # V6.9.47 PERF: construir los registros de forma VECTORIZADA.
+                    # Antes: groupby("Numero de caso") + iloc[0].to_dict() por grupo
+                    # tardaba ~12.6 s con 8.816 filas y CONGELABA la UI al abrir el
+                    # visualizador (y de nuevo en cada auto-refresh de 60 s). Ahora se usa
+                    # drop_duplicates + to_dict('index') (~0.4 s). Además SOLO se evalúa la
+                    # completitud de filas IHQ: las filas M de coloración no son informes
+                    # IHQ y no deben pintarse "incompletas".
                     registros_por_caso = {}
+                    numeros_ihq = {n for n in numeros_peticion
+                                   if not re.match(r'^[Mm]\d', str(n))}
                     _mdf = getattr(self, "master_df", None)
-                    if _mdf is not None and not _mdf.empty and "Numero de caso" in _mdf.columns:
-                        for _num, _grp in _mdf.groupby("Numero de caso"):
-                            if _num in numeros_peticion:
-                                _reg = _grp.iloc[0].to_dict()
-                                # NaN -> '' para que el verificador cuente bien los faltantes
-                                _reg = {k: ('' if _pd.isna(v) else v) for k, v in _reg.items()}
-                                registros_por_caso[_num] = _reg
-                    for numero in numeros_peticion:
+                    if (_mdf is not None and not _mdf.empty
+                            and "Numero de caso" in _mdf.columns and numeros_ihq):
+                        _sub = (_mdf[_mdf["Numero de caso"].isin(numeros_ihq)]
+                                .drop_duplicates("Numero de caso")
+                                .fillna(""))
+                        # to_dict('records') CONSERVA todas las columnas (incl. 'Numero
+                        # de caso'); set_index la quitaría y el verificador la contaría
+                        # como faltante -> todos los IHQ saldrían "incompletos" (rojos).
+                        registros_por_caso = {r["Numero de caso"]: r
+                                              for r in _sub.to_dict("records")}
+                    for numero in numeros_ihq:
                         reg = registros_por_caso.get(numero)
                         if reg is None:
                             # Sin datos en memoria para verificar -> NO marcar rojo
@@ -4885,21 +4962,24 @@ Disco {i}:
             rows_auditoria_completa = []
             rows_incompletos = []
 
-            for row_idx, row_data in df_display.iterrows():
-                sheet_row_idx = df_display.index.get_loc(row_idx)
-                if estado_col_idx is not None:
-                    estado = row_data.iloc[estado_col_idx]
+            # V6.9.47 PERF: clasificar sobre arrays (.values), no con iterrows
+            # (~700 ms -> ~15 ms con 8.369 filas). El índice posicional i coincide con
+            # la fila del Sheet (set_sheet_data usó el mismo orden del DataFrame).
+            estado_vals = (df_display.iloc[:, estado_col_idx].values
+                           if estado_col_idx is not None else None)
+            num_vals = (df_display.iloc[:, peticion_col_idx].values
+                        if peticion_col_idx is not None else None)
+            for i in range(len(df_display)):
+                if estado_vals is not None:
+                    estado = estado_vals[i]
                     if estado == "PARCIAL":
-                        rows_auditoria_parcial.append(sheet_row_idx)
+                        rows_auditoria_parcial.append(i)
                         continue
                     elif estado == "COMPLETA":
-                        rows_auditoria_completa.append(sheet_row_idx)
+                        rows_auditoria_completa.append(i)
                         continue
-                if peticion_col_idx is not None:
-                    numero_peticion = row_data.iloc[peticion_col_idx]
-                    if numero_peticion in completitud_cache:
-                        if not completitud_cache[numero_peticion]:
-                            rows_incompletos.append(sheet_row_idx)
+                if num_vals is not None and completitud_cache.get(num_vals[i]) is False:
+                    rows_incompletos.append(i)
 
             # Aplicar highlighting
             if rows_auditoria_parcial:
@@ -9825,6 +9905,21 @@ Informes con malignidad: {malignant_count}"""
                 result["errors"].append(f"{filename}: {str(e)}")
                 logging.error(f"❌ Error procesando {filename}: {e}")
 
+        # V6.9.46: reconciliar coloración<->IHQ por cédula tras importar (independiente
+        # del orden de llegada: da igual si llegó antes el PDF de coloración o el IHQ).
+        # Es idempotente y solo recalcula la columna derivada 'Diagnostico Coloracion 2'.
+        if result["processed_count"] > 0:
+            try:
+                from core.coloracion_processor import reconciliar_coloraciones
+                rec = reconciliar_coloraciones()
+                result["reconciliacion"] = rec
+                logging.info(
+                    f"🔗 Reconciliación coloraciones: {rec.get('ihq_actualizados', 0)} "
+                    f"filas IHQ actualizadas, {rec.get('con_varias', 0)} con varias"
+                )
+            except Exception as e:
+                logging.error(f"⚠️ Error en reconciliación de coloraciones: {e}")
+
         result["done"] = True
 
     def _poll_processing_progress(self):
@@ -10077,7 +10172,8 @@ Informes con malignidad: {malignant_count}"""
             self._ultimos_registros_procesados.extend(numeros)
         except Exception as e:
             logging.warning(f"⚠️ No se pudieron acumular números de coloración: {e}")
-        return stats.get('guardados', 0)
+        # V6.9.46: el procesador ahora reporta 'filas' (antes 'guardados').
+        return stats.get('filas', stats.get('guardados', 0))
 
     def _process_general_file(self, file_path):
         """Procesar archivo general usando el procesador estándar
