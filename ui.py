@@ -2215,7 +2215,7 @@ Disco {i}:
         # Campo de búsqueda
         self._search_placeholder = "Buscar por N° Petición, Cédula, Nombre o Apellido..."
         self.search_var_dashboard = tk.StringVar()
-        self.search_var_dashboard.trace_add("write", self.filter_tabla)
+        self.search_var_dashboard.trace_add("write", self._filter_tabla_debounced)
         self._search_entry_dashboard = ttk.Entry(
             table_frame,
             textvariable=self.search_var_dashboard,
@@ -2396,7 +2396,7 @@ Disco {i}:
 
         # Campo de búsqueda
         self.search_var = tk.StringVar()
-        self.search_var.trace_add("write", self.filter_tabla)
+        self.search_var.trace_add("write", self._filter_tabla_debounced)
         self._search_entry = ttk.Entry(
             table_frame,
             textvariable=self.search_var,
@@ -4497,6 +4497,10 @@ Disco {i}:
 
             # Cargar datos
             self.master_df = get_all_records_as_dataframe()
+            # V6.9.49: invalidar caché de completitud. Los datos recién recargados
+            # pueden haber cambiado (procesamiento/reprocesamiento); _apply_row_colors
+            # la repoblará bajo demanda solo para los casos mostrados.
+            self._completitud_por_caso = {}
 
             # Ordenar por número de caso automáticamente
             if self.master_df is not None and not self.master_df.empty and "Numero de caso" in self.master_df.columns:
@@ -4897,37 +4901,37 @@ Disco {i}:
             if "Numero de caso" in df_display.columns:
                 peticion_col_idx = list(df_display.columns).index("Numero de caso")
 
-            # V6.9.28 PERF: completitud en UNA sola consulta. Antes se abria una
-            # conexion + SELECT * por CADA caso (2073 consultas al cargar -> UI
-            # pesada/lenta al hacer scroll). Ahora se traen todos los registros de
-            # una vez y se analizan en memoria. El coloreo resultante es identico.
-            completitud_cache = {}
+            # V6.9.28 PERF: completitud en UNA sola consulta (en memoria, sin SELECT
+            # por caso). V6.9.49 PERF: además se CACHEA a nivel de instancia. La
+            # completitud de un caso NO cambia al filtrar/ordenar (mismos datos), así
+            # que se calcula UNA vez por caso y se reutiliza. refresh_data_and_table
+            # limpia self._completitud_por_caso al recargar la BD (datos nuevos).
+            # Antes se recalculaban ~8.000 casos en CADA repoblado (cada tecla del
+            # buscador, cada orden, cada auto-refresh) -> repoblado lento.
+            completitud_cache = getattr(self, "_completitud_por_caso", None)
+            if completitud_cache is None:
+                completitud_cache = {}
+                self._completitud_por_caso = completitud_cache
             if peticion_col_idx is not None:
                 try:
                     from core.validation_checker import verificar_completitud_registro
-                    import pandas as _pd
                     numeros_peticion = set(df_display["Numero de caso"].dropna().unique())
                     # V6.9.44 FIX: la completitud se calcula sobre los DATOS EN VIVO
-                    # (self.master_df, proveniente de la BD configurada -> MySQL).
-                    # ANTES se leía un SQLite local (DB_FILE) que quedó DESINCRONIZADO
-                    # tras reprocesar: los casos no se encontraban -> "no encontrado"
-                    # -> incompletos -> TODA la tabla se pintaba de ROJO. master_df ya
-                    # está en memoria y trae TODAS las columnas requeridas (sin
-                    # consultas extra a la BD).
-                    # V6.9.47 PERF: construir los registros de forma VECTORIZADA.
-                    # Antes: groupby("Numero de caso") + iloc[0].to_dict() por grupo
-                    # tardaba ~12.6 s con 8.816 filas y CONGELABA la UI al abrir el
-                    # visualizador (y de nuevo en cada auto-refresh de 60 s). Ahora se usa
-                    # drop_duplicates + to_dict('index') (~0.4 s). Además SOLO se evalúa la
-                    # completitud de filas IHQ: las filas M de coloración no son informes
-                    # IHQ y no deben pintarse "incompletas".
+                    # (self.master_df -> BD configurada/MySQL), ya en memoria y con
+                    # TODAS las columnas requeridas (sin consultas extra a la BD).
+                    # V6.9.47 PERF: registros construidos de forma VECTORIZADA
+                    # (drop_duplicates + to_dict). SOLO se evalúan filas IHQ: las filas
+                    # M de coloración no son informes IHQ y no deben pintarse incompletas.
                     registros_por_caso = {}
                     numeros_ihq = {n for n in numeros_peticion
                                    if not re.match(r'^[Mm]\d', str(n))}
+                    # V6.9.49: calcular SOLO los casos que aún no están cacheados.
+                    numeros_faltantes = {n for n in numeros_ihq
+                                         if n not in completitud_cache}
                     _mdf = getattr(self, "master_df", None)
                     if (_mdf is not None and not _mdf.empty
-                            and "Numero de caso" in _mdf.columns and numeros_ihq):
-                        _sub = (_mdf[_mdf["Numero de caso"].isin(numeros_ihq)]
+                            and "Numero de caso" in _mdf.columns and numeros_faltantes):
+                        _sub = (_mdf[_mdf["Numero de caso"].isin(numeros_faltantes)]
                                 .drop_duplicates("Numero de caso")
                                 .fillna(""))
                         # to_dict('records') CONSERVA todas las columnas (incl. 'Numero
@@ -4935,7 +4939,7 @@ Disco {i}:
                         # como faltante -> todos los IHQ saldrían "incompletos" (rojos).
                         registros_por_caso = {r["Numero de caso"]: r
                                               for r in _sub.to_dict("records")}
-                    for numero in numeros_ihq:
+                    for numero in numeros_faltantes:
                         reg = registros_por_caso.get(numero)
                         if reg is None:
                             # Sin datos en memoria para verificar -> NO marcar rojo
@@ -5032,6 +5036,20 @@ Disco {i}:
             self._populate_treeview(df_sorted)
         except Exception as e:
             logging.warning(f"Error ordenando por {col}: {e}")
+
+    def _filter_tabla_debounced(self, *args):
+        """V6.9.49 PERF: debounce del buscador. trace_add("write") dispara en CADA
+        tecla; sin debounce, escribir "garcia" reconstruía la tabla entera
+        (~8.000x163 + coloreo) 6 veces seguidas. Ahora se espera ~300 ms tras la
+        última tecla y se filtra UNA sola vez. Aplica a ambos buscadores
+        (Visualizador y Dashboard), que comparten esta lógica."""
+        try:
+            job = getattr(self, '_filter_job', None)
+            if job:
+                self.after_cancel(job)
+        except Exception:
+            pass
+        self._filter_job = self.after(300, self.filter_tabla)
 
     def filter_tabla(self, *args):
         # Guardia: no filtrar si aún no hay datos cargados
