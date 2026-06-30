@@ -2021,6 +2021,17 @@ Disco {i}:
 
         # También vincular a todos los widgets hijos del scrollable_frame
         def _bind_to_mousewheel(widget):
+            # V6.9.49 PERF FIX: NO tocar el tksheet Sheet ni sus canvas internos.
+            # tksheet maneja su propio scroll de rueda NATIVO (suave y optimizado).
+            # Bindear aquí _on_mousewheel (que hace tree-walk + yview_scroll + "break")
+            # SECUESTRABA el wheel del Sheet y rompía su scroll suave -> "al bajar se
+            # siente lento". Saltar el Sheet (sin recursar en sus hijos) deja intacto
+            # su manejo nativo de la rueda.
+            try:
+                if isinstance(widget, Sheet):
+                    return
+            except Exception:
+                pass
             # No vincular scroll a widgets que ya manejan su propio scroll
             widget_type = widget.winfo_class()
             if widget_type not in ['Listbox', 'Treeview', 'Text']:
@@ -2199,6 +2210,14 @@ Disco {i}:
             text="🔄 Actualizar Datos",
             command=self.refresh_data_and_table,
             bootstyle="primary"
+        ).pack(side=RIGHT, padx=(0, 5))
+
+        # V6.9.50: abrir el Visualizador en ventana Qt (QTableView) de alto rendimiento
+        ttk.Button(
+            actions_frame,
+            text="⚡ Tabla Rápida (Qt)",
+            command=self._abrir_visor_qt,
+            bootstyle="info"
         ).pack(side=RIGHT, padx=(0, 5))
 
         # V6.9.44: botones "Auditoría PARCIAL/COMPLETA" (barra del dashboard)
@@ -2380,6 +2399,14 @@ Disco {i}:
             text="🔄 Actualizar Datos",
             command=self.refresh_data_and_table,
             bootstyle="primary"
+        ).pack(side=RIGHT, padx=(0, 5))
+
+        # V6.9.50: abrir el Visualizador en ventana Qt (QTableView) de alto rendimiento
+        ttk.Button(
+            actions_frame,
+            text="⚡ Tabla Rápida (Qt)",
+            command=self._abrir_visor_qt,
+            bootstyle="info"
         ).pack(side=RIGHT, padx=(0, 5))
 
         # V6.9.44: botones "Auditoría PARCIAL/COMPLETA" ELIMINADOS. Eran la
@@ -4554,6 +4581,43 @@ Disco {i}:
             except:
                 logging.error("❌ Error mostrando mensaje de error")
 
+    def _abrir_visor_qt(self):
+        """V6.9.50: abre el Visualizador en una ventana Qt (QTableView) de alto
+        rendimiento, como PROCESO APARTE. Tkinter y Qt no comparten bucle de eventos,
+        por eso es un subproceso. Hereda el entorno actual -> lee la MISMA BD (respeta
+        ONCONOVA_DB_OVERRIDE: prod o DEV). Usa el intérprete de env_qt (con PySide6)."""
+        import os
+        import subprocess
+        try:
+            proj = os.path.dirname(os.path.abspath(__file__))
+            script = os.path.join(proj, "visor_datos_qt.py")
+            # Preferir pythonw.exe (sin ventana de consola) del entorno Qt
+            py_w = os.path.join(proj, "env_qt", "Scripts", "pythonw.exe")
+            py_c = os.path.join(proj, "env_qt", "Scripts", "python.exe")
+            py = py_w if os.path.exists(py_w) else py_c
+            if not os.path.exists(py) or not os.path.exists(script):
+                messagebox.showwarning(
+                    "Visor Qt no disponible",
+                    "No se encontró el entorno Qt (env_qt) o visor_datos_qt.py.\n\n"
+                    f"Intérprete: {py}\nScript: {script}"
+                )
+                return
+            creationflags = getattr(subprocess, "CREATE_NO_WINDOW", 0) if os.name == "nt" else 0
+            subprocess.Popen(
+                [py, script], cwd=proj, env=os.environ.copy(), creationflags=creationflags
+            )
+            try:
+                self.set_status("🪟 Abriendo Visualizador Qt en ventana aparte…")
+            except Exception:
+                pass
+            logging.info("Visor Qt lanzado como proceso aparte")
+        except Exception as e:
+            logging.error(f"Error abriendo visor Qt: {e}", exc_info=True)
+            try:
+                messagebox.showerror("Error", f"No se pudo abrir el visor Qt:\n{e}")
+            except Exception:
+                pass
+
     def _ocultar_m_redundantes(self, df):
         """V6.9.48: quita del DISPLAY las filas M de coloración cuyo PACIENTE ya tiene una
         fila IHQ que lleva la coloración en su columna 'Diagnostico Coloracion 2' (sea 1 dx,
@@ -4799,6 +4863,18 @@ Disco {i}:
             "Estado Auditoria IA",  # V3.2.4
             "Fecha Ingreso Base de Datos",
         ]
+
+        # V6.9.50: usar la fuente ÚNICA de columnas compartida con el visor Qt
+        # (core/columnas_visor.py) para garantizar paridad EXACTA entre la tabla
+        # Tkinter y el visor Qt. Esto además corrige un typo histórico: faltaba una
+        # coma tras "IHQ_MUC2" -> se concatenaba con "IHQ_CD15" ("IHQ_MUC2IHQ_CD15")
+        # y NINGUNA de las dos columnas se mostraba. La lista literal de arriba queda
+        # solo como fallback por si fallara el import.
+        try:
+            from core.columnas_visor import COLS_TO_SHOW as _COLS_VISOR
+            cols_to_show = list(_COLS_VISOR)
+        except Exception as _e_cols:
+            logging.warning(f"No se pudo cargar core.columnas_visor; uso lista local: {_e_cols}")
 
         # Filtrar solo las columnas que existen en el DataFrame
         available_cols = [c for c in cols_to_show if c in df_to_display.columns]
