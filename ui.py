@@ -2564,10 +2564,10 @@ Disco {i}:
 
                 if rows:
                     result = sorted(rows)
-                    logging.info(f"_sheet_selection: ✅ RETORNANDO {len(result)} fila(s): {result}")
+                    logging.debug(f"_sheet_selection: RETORNANDO {len(result)} fila(s): {result}")
                     return result
                 else:
-                    logging.info("_sheet_selection: ⚠️ Sin selección, retornando []")
+                    logging.debug("_sheet_selection: Sin selección, retornando []")
                     return []
 
             except Exception as e:
@@ -2605,21 +2605,14 @@ Disco {i}:
         # NUEVO: Agregar tooltips al pasar mouse sobre celdas
         self._setup_cell_tooltips()
 
-        # Habilitar/deshabilitar botones según selección (V3.2.4: incluye botones de auditoría)
-        # v6.0.12: SIMPLIFICADO - Delegar a métodos de clase
-        def _update_selection_buttons(event=None):
-            logging.debug(f"_update_selection_buttons: Llamado con evento={event}")
-            # Llamar a métodos de clase que contienen toda la lógica
-            self._update_export_button_state()
-            self._update_audit_buttons_state()
-
-        # v6.0.12: CORREGIDO - Sheet NO emite <<TreeviewSelect>>, usar eventos nativos de Sheet
-        # IMPORTANTE: Usar add="+" para NO reemplazar el bind existente de mostrar_detalle_registro
-        self.sheet.bind("<<SheetSelect>>", _update_selection_buttons, add="+")  # Evento nativo de tksheet
-        self.sheet.bind("<ButtonRelease-1>", _update_selection_buttons, add="+")  # Click del mouse
-        self.sheet.bind("<KeyRelease-Up>", _update_selection_buttons, add="+")  # Navegación con flechas
-        self.sheet.bind("<KeyRelease-Down>", _update_selection_buttons, add="+")  # Navegación con flechas
-
+        # V6.9.49 PERF: bindings de "_update_selection_buttons" ELIMINADOS por
+        # estar DUPLICADOS. mostrar_detalle_registro ya está bindeado a
+        # <<SheetSelect>>, <ButtonRelease-1> y <KeyRelease-*>, y dentro YA llama a
+        # _update_export_button_state() + _update_audit_buttons_state() en cada
+        # selección. Tener además estos 4 bindings hacía que el estado de botones
+        # (incl. la consulta de auditoría) se recalculara 3-4x POR CLIC -> clic
+        # "sumamente lento". Como mostrar_detalle_registro cubre exactamente los
+        # mismos eventos, el comportamiento es idéntico pero sin el trabajo repetido.
         logging.info("Eventos de selección bindeados correctamente a Sheet")
 
         # Cargar datos automáticamente al inicializar el visualizador
@@ -5101,8 +5094,10 @@ Disco {i}:
 
     def mostrar_detalle_registro(self, event):
         # v6.0.15: Extraer TODAS las filas seleccionadas del evento y del Sheet
-        logging.info("=" * 60)
-        logging.info("mostrar_detalle_registro: EVENTO DISPARADO")
+        # V6.9.49 PERF: logs degradados a DEBUG. Esta función corre en CADA selección
+        # (clic y teclado); con nivel INFO escribía decenas de líneas a consola por
+        # interacción (I/O sincrónica) y sumaba a la lentitud percibida del clic.
+        logging.debug("mostrar_detalle_registro: EVENTO DISPARADO")
 
         # Extraer filas de selection_boxes del evento (captura multi-selección)
         event_rows = set()
@@ -5148,13 +5143,8 @@ Disco {i}:
             logging.error(f"ERROR al llamar self.tree.selection(): {e}", exc_info=True)
 
         # v6.0.12: Actualizar estado de TODOS los botones cuando hay selección
-        logging.info("Llamando a _update_export_button_state()...")
         self._update_export_button_state()
-
-        logging.info("Llamando a _update_audit_buttons_state()...")
         self._update_audit_buttons_state()
-
-        logging.info("=" * 60)
 
         # NUEVO: Si el panel de detalles está abierto, actualizarlo con el nuevo registro
         try:
@@ -6713,7 +6703,7 @@ Disco {i}:
     def _update_export_button_state(self):
         """Actualizar estado del botón de exportar selección según la selección"""
         try:
-            logging.info("_update_export_button_state: INICIANDO")
+            logging.debug("_update_export_button_state: INICIANDO")
 
             # Obtener selección del sheet apropiado
             selected_items = []
@@ -6730,7 +6720,7 @@ Disco {i}:
             elif hasattr(self, 'tree') and self.tree is not None:
                 selected_items = self.tree.selection()
 
-            logging.info(f"_update_export_button_state: selection() = {selected_items}")
+            logging.debug(f"_update_export_button_state: selection() = {selected_items}")
             has_selection = bool(selected_items)
 
             # Actualizar botón original
@@ -6767,7 +6757,7 @@ Disco {i}:
     def _update_audit_buttons_state(self):
         """v6.0.14: Actualizar estado de botones de auditoría según la selección"""
         try:
-            logging.info("_update_audit_buttons_state: INICIANDO")
+            logging.debug("_update_audit_buttons_state: INICIANDO")
 
             # Obtener selección del sheet apropiado
             selection = []
@@ -6784,10 +6774,9 @@ Disco {i}:
             elif hasattr(self, 'tree') and self.tree is not None:
                 selection = self.tree.selection()
 
-            logging.info(f"_update_audit_buttons_state: selection() = {selection}")
+            logging.debug(f"_update_audit_buttons_state: selection() = {selection}")
             has_selection = bool(selection)
-            logging.info(f"_update_audit_buttons_state: has_selection = {has_selection}")
-            logging.info(f"_update_audit_buttons_state: CHECKPOINT 1 - Antes del if")
+            logging.debug(f"_update_audit_buttons_state: has_selection = {has_selection}")
 
             if not has_selection:
                 logging.info(f"_update_audit_buttons_state: CHECKPOINT 2 - Dentro del if not has_selection")
@@ -6829,34 +6818,44 @@ Disco {i}:
                         logging.error("No hay sheet activo disponible")
                         return
 
-                    # Obtener índice de columna "Numero de caso"
+                    # Obtener índices de columnas necesarias
                     try:
                         headers = active_sheet.headers() if hasattr(active_sheet, 'headers') else []
-                        logging.info(f"_update_audit_buttons_state: headers = {headers}")
                         col_idx = headers.index("Numero de caso") if "Numero de caso" in headers else 0
-                        logging.info(f"_update_audit_buttons_state: col_idx = {col_idx}")
+                        # V6.9.49 PERF: índice de la columna de estado YA visible en la
+                        # tabla. Permite leer el estado de la fila en memoria en vez de
+                        # consultar get_estado_auditoria() a la BD (MySQL, a veces central)
+                        # en CADA caso seleccionado y en CADA clic -> era la causa #1 del
+                        # clic "sumamente lento". El valor es el mismo que ve el usuario.
+                        estado_idx = headers.index("Estado Auditoria IA") if "Estado Auditoria IA" in headers else None
+                        logging.debug(f"_update_audit_buttons_state: col_idx={col_idx}, estado_idx={estado_idx}")
                     except Exception as e:
                         logging.error(f"_update_audit_buttons_state: ERROR obteniendo col_idx: {e}")
                         col_idx = 0
+                        estado_idx = None
 
-                    # Obtener estados de todos los items seleccionados
+                    # Obtener estados de todos los items seleccionados (sin tocar la BD)
                     estados = []
-                    logging.info(f"_update_audit_buttons_state: Obteniendo estados para {len(selection)} items...")
                     for item_id in selection:
                         # tksheet: Usar get_row_data() en lugar de .item()
                         values = active_sheet.get_row_data(item_id)
-                        logging.info(f"_update_audit_buttons_state: item_id={item_id}, values={values}")
                         if values and len(values) > col_idx:
                             numero_peticion = values[col_idx]
-                            logging.info(f"_update_audit_buttons_state: numero_peticion={numero_peticion}")
-                            estado = get_estado_auditoria(numero_peticion)
-                            logging.info(f"_update_audit_buttons_state: estado={estado}")
+                            if estado_idx is not None and len(values) > estado_idx:
+                                # Leer estado directamente de la fila (en memoria)
+                                estado = values[estado_idx]
+                                estado = "" if estado is None else str(estado).strip()
+                                if estado.upper() in ("N/A", "NONE", "NAN", "NULL"):
+                                    estado = ""
+                            else:
+                                # Fallback: la columna de estado no está en el Sheet -> BD
+                                estado = get_estado_auditoria(numero_peticion)
                             estados.append(estado)
                         else:
                             logging.warning(f"_update_audit_buttons_state: No se pudieron obtener valores para item_id={item_id}")
 
                     # Lógica de habilitación basada en estados
-                    logging.info(f"_update_audit_buttons_state: estados recolectados = {estados}")
+                    logging.debug(f"_update_audit_buttons_state: estados recolectados = {estados}")
 
                     if all(e == "COMPLETA" for e in estados):
                         # TODOS tienen auditoría COMPLETA → Bloquear ambos
@@ -7079,7 +7078,9 @@ Disco {i}:
                             self.tooltip.destroy()
                             self.tooltip = None
 
-                self.tooltip_job = self.after(400, create_tooltip)  # 400ms delay (más rápido)
+                # V6.9.49: 150ms (antes 400). El throttle de <Motion> ya difiere el
+                # cómputo de celda; este delay restante solo retarda crear el Toplevel.
+                self.tooltip_job = self.after(150, create_tooltip)
 
             except Exception as e:
                 # Silenciar errores de tooltips para no interrumpir la UI
@@ -7090,6 +7091,11 @@ Disco {i}:
             if self.tooltip_job:
                 self.after_cancel(self.tooltip_job)
                 self.tooltip_job = None
+            # V6.9.49: cancelar también el cómputo diferido pendiente por <Motion>
+            _mj = getattr(self, '_tooltip_motion_job', None)
+            if _mj:
+                self.after_cancel(_mj)
+                self._tooltip_motion_job = None
 
             if self.tooltip:
                 self.tooltip.destroy()
@@ -7097,8 +7103,21 @@ Disco {i}:
 
             self._last_tooltip_cell = None
 
+        # V6.9.49 PERF: throttle de <Motion>. El cómputo de la celda bajo el cursor
+        # dentro de show_tooltip (canvasx/canvasy + identify_row/identify_col +
+        # get_cell_data) es CARO y antes corría en CADA evento <Motion> -> mover el
+        # mouse o scrollear se sentía pesado. Ahora <Motion> solo guarda el evento y
+        # reprograma show_tooltip para cuando el cursor se detiene (~250ms sin
+        # moverse): mientras el mouse se mueve no se hace prácticamente nada.
+        self._tooltip_motion_job = None
+
+        def _on_motion_throttled(event):
+            if getattr(self, '_tooltip_motion_job', None):
+                self.after_cancel(self._tooltip_motion_job)
+            self._tooltip_motion_job = self.after(250, lambda e=event: show_tooltip(e))
+
         # Vincular eventos al Sheet
-        self.sheet.bind("<Motion>", show_tooltip, add="+")
+        self.sheet.bind("<Motion>", _on_motion_throttled, add="+")
         self.sheet.bind("<Leave>", hide_tooltip, add="+")
         self.sheet.bind("<Button-1>", hide_tooltip, add="+")  # Ocultar al hacer clic
 
