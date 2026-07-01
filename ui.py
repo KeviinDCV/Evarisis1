@@ -4887,7 +4887,15 @@ Disco {i}:
         # =========================================================================
 
         # Preparar encabezados (simplificados para mejor visualización)
-        headers = [col.split("(")[0].strip() for col in df_display.columns]
+        # V6.9.50: usar simplificar_header (fuente única) para que el renombrado de
+        # display aplique aquí también: "Diagnostico Coloracion" (extraído del IHQ) ->
+        # "Diagnostico Coloracion IHQ"; "Diagnostico Coloracion 2" (extraído de los PDFs
+        # de Coloración) -> "Diagnostico Coloracion". NO cambia el nombre real de la BD.
+        try:
+            from core.columnas_visor import simplificar_header as _simpl_header
+            headers = [_simpl_header(col) for col in df_display.columns]
+        except Exception:
+            headers = [col.split("(")[0].strip() for col in df_display.columns]
 
         # Convertir DataFrame a lista de listas (formato Sheet)
         sheet_data = df_display.fillna("").astype(str).values.tolist()
@@ -4918,7 +4926,9 @@ Disco {i}:
             elif "Malignidad" in col:
                 width = 100
             elif "Diagnostico Coloracion" in col:
-                width = 300
+                # V6.9.50: 360 (antes 300). El encabezado renombrado "Diagnostico
+                # Coloracion IHQ" (negrita) mide ~338px y a 300 se cortaba el "IHQ".
+                width = 360
             elif "Diagnostico Principal" in col:
                 width = 300
             elif "Factor pronostico" in col:

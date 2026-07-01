@@ -21,6 +21,7 @@ incompleto), ocultar filas M redundantes, búsqueda (caso/cédula/nombre) y orde
 import os
 import re
 import sys
+import logging
 import unicodedata
 
 # Permitir importar el backend (core/...) ejecutando desde cualquier cwd
@@ -28,9 +29,20 @@ _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 if _THIS_DIR not in sys.path:
     sys.path.insert(0, _THIS_DIR)
 
+# Log a ARCHIVO: se lanza con pythonw.exe (sin consola), así que sin esto cualquier
+# error sería invisible -> imposible diagnosticar una "tabla en blanco".
+try:
+    _root_logger = logging.getLogger()
+    _root_logger.setLevel(logging.INFO)
+    _fh = logging.FileHandler(os.path.join(_THIS_DIR, "visor_qt.log"), encoding="utf-8")
+    _fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    _root_logger.addHandler(_fh)
+except Exception:
+    pass
+
 import pandas as pd
 from PySide6.QtCore import Qt, QAbstractTableModel, QModelIndex, QSortFilterProxyModel
-from PySide6.QtGui import QColor, QBrush, QFont
+from PySide6.QtGui import QColor, QBrush, QFont, QFontMetrics, QPalette
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QLabel, QTableView, QHeaderView, QPushButton,
@@ -198,6 +210,9 @@ class TablaModel(QAbstractTableModel):
             if orientation == Qt.Horizontal:
                 return self._headers[section] if section < self._ncols else ""
             return str(section + 1)
+        # Tooltip con el nombre completo al pasar el mouse por el encabezado
+        if role == Qt.ToolTipRole and orientation == Qt.Horizontal:
+            return self._headers[section] if section < self._ncols else ""
         return None
 
     def haystack(self, source_row: int) -> str:
@@ -226,7 +241,7 @@ class BuscadorProxy(QSortFilterProxyModel):
 
 
 class VisorDatos(QMainWindow):
-    def __init__(self, datos: dict):
+    def __init__(self, datos, mensaje=None):
         super().__init__()
         self.setWindowTitle("EVARISIS · Visualizador de Datos (Qt)")
         self.resize(1500, 820)
@@ -252,6 +267,13 @@ class VisorDatos(QMainWindow):
         top.addWidget(self.btn_refresh)
         layout.addLayout(top)
 
+        # Aviso (vacío/error): visible SOLO cuando no hay datos, para no dejar un
+        # blanco mudo si la BD no devuelve registros o hay un error de carga.
+        self.info_label = QLabel()
+        self.info_label.setStyleSheet("color: #b91c1c; font: bold 12pt 'Segoe UI'; padding: 10px;")
+        self.info_label.setVisible(False)
+        layout.addWidget(self.info_label)
+
         # Tabla
         self.table = QTableView()
         self.table.setSortingEnabled(True)
@@ -262,7 +284,7 @@ class VisorDatos(QMainWindow):
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
         self.table.horizontalHeader().setStretchLastSection(False)
         self.table.setStyleSheet(
-            "QTableView { background: #ffffff; gridline-color: #dcdcdc; "
+            "QTableView { background: #ffffff; color: #1b1b1b; gridline-color: #dcdcdc; "
             "selection-background-color: #BBDEFB; selection-color: black; }"
             "QHeaderView::section { background-color: #E8F5E9; color: #1B5E20; "
             "font: bold 10pt 'Segoe UI'; padding: 4px; border: 1px solid #cfcfcf; }"
@@ -272,21 +294,47 @@ class VisorDatos(QMainWindow):
         # Estado inferior
         self.status = self.statusBar()
 
-        # Datos
-        self._cargar_modelo(datos)
+        # Datos (o aviso visible si vacío/error)
+        if datos and datos.get("total", 0) > 0:
+            self._cargar_modelo(datos)
+        else:
+            self._mostrar_aviso(mensaje or "La base de datos no devolvió registros.")
 
         # Conexiones
         self.search.textChanged.connect(self._on_search)
         self.btn_refresh.clicked.connect(self.recargar)
 
+    def _mostrar_aviso(self, texto):
+        """Muestra un aviso visible (en vez de una tabla en blanco silenciosa)."""
+        self.info_label.setText("⚠️  " + texto)
+        self.info_label.setVisible(True)
+        self._total = 0
+        try:
+            self.lbl_count.setText("Registros: 0 / 0")
+            self.status.showMessage(texto)
+        except Exception:
+            pass
+        logging.warning("Visor sin datos para mostrar: %s", texto)
+
     def _cargar_modelo(self, datos: dict):
+        self.info_label.setVisible(False)
         self._anchos = datos["anchos"]
         self.model = TablaModel(datos)
         self.proxy = BuscadorProxy()
         self.proxy.setSourceModel(self.model)
         self.table.setModel(self.proxy)
+        # V6.9.50: ancho = max(ancho asignado, ancho del ENCABEZADO) para que NINGÚN
+        # header quede truncado. "Diagnostico Coloracion IHQ" en negrita ocupa ~338px
+        # y no cabía en 300 -> se cortaba el "IHQ". El margen cubre el padding del
+        # header y la flecha de ordenamiento.
+        headers = datos["headers"]
+        hf = QFont("Segoe UI", 10)
+        hf.setBold(True)
+        fm = QFontMetrics(hf)
+        MARGEN = 46  # padding del header + flecha de ordenamiento + colchón
         for i, w in enumerate(self._anchos):
-            self.table.setColumnWidth(i, w)
+            hw = (fm.horizontalAdvance(headers[i]) + MARGEN) if i < len(headers) else 0
+            self.table.setColumnWidth(i, max(int(w), int(hw)))
         self._total = datos["total"]
         self._actualizar_contador()
 
@@ -305,14 +353,15 @@ class VisorDatos(QMainWindow):
         QApplication.processEvents()
         try:
             datos = preparar_datos()
-            if datos:
+            if datos and datos.get("total", 0) > 0:
                 self.search.clear()
                 self._cargar_modelo(datos)
                 self.status.showMessage("Datos actualizados", 4000)
             else:
-                self.status.showMessage("La base de datos no devolvió registros", 6000)
+                self._mostrar_aviso("La base de datos no devolvió registros.")
         except Exception as e:
-            self.status.showMessage(f"Error al actualizar: {e}", 8000)
+            logging.exception("Error al actualizar el visor")
+            self._mostrar_aviso(f"Error al actualizar: {e}")
         finally:
             self.btn_refresh.setEnabled(True)
 
@@ -333,18 +382,54 @@ def _datos_sinteticos() -> pd.DataFrame:
     })
 
 
+def _aplicar_tema_claro(app):
+    """Fuerza tema CLARO (Fusion). Sin esto, en un Windows en modo OSCURO el texto de
+    las celdas sale claro sobre el fondo blanco forzado -> la tabla se ve 'vacía / en
+    blanco' aunque los datos SÍ estén cargados. Esta era la causa del reporte."""
+    app.setStyle("Fusion")
+    pal = QPalette()
+    pal.setColor(QPalette.Window, QColor("#f0f0f0"))
+    pal.setColor(QPalette.WindowText, QColor("#1b1b1b"))
+    pal.setColor(QPalette.Base, QColor("#ffffff"))
+    pal.setColor(QPalette.AlternateBase, QColor("#f6f6f6"))
+    pal.setColor(QPalette.ToolTipBase, QColor("#ffffff"))
+    pal.setColor(QPalette.ToolTipText, QColor("#1b1b1b"))
+    pal.setColor(QPalette.Text, QColor("#1b1b1b"))
+    pal.setColor(QPalette.Button, QColor("#f0f0f0"))
+    pal.setColor(QPalette.ButtonText, QColor("#1b1b1b"))
+    pal.setColor(QPalette.Highlight, QColor("#BBDEFB"))
+    pal.setColor(QPalette.HighlightedText, QColor("#000000"))
+    app.setPalette(pal)
+
+
 def main():
     self_test = "--self-test" in sys.argv
     app = QApplication(sys.argv)
-    datos = preparar_datos(_datos_sinteticos() if self_test else None)
-    if datos is None:
-        print("Sin datos para mostrar.")
-        return 0
-    win = VisorDatos(datos)
+    _aplicar_tema_claro(app)
+    logging.info("=== Visor Qt iniciando (self_test=%s, cwd=%s) ===", self_test, os.getcwd())
+
+    mensaje_error = None
+    try:
+        datos = preparar_datos(_datos_sinteticos() if self_test else None)
+    except Exception as e:
+        logging.exception("Error preparando datos")
+        datos = None
+        mensaje_error = f"Error cargando datos: {e}"
+
     if self_test:
-        print(f"SELFTEST OK filas={datos['total']} columnas={len(datos['headers'])} "
-              f"headers0={datos['headers'][:3]}")
+        if datos:
+            print(f"SELFTEST OK filas={datos['total']} columnas={len(datos['headers'])} "
+                  f"headers0={datos['headers'][:3]}")
+        else:
+            print("SELFTEST sin datos:", mensaje_error)
         return 0
+
+    if datos and datos.get("total", 0) > 0:
+        logging.info("Datos cargados: %d filas x %d columnas", datos["total"], len(datos["headers"]))
+        win = VisorDatos(datos)
+    else:
+        # Abrir la ventana IGUAL, pero con el MOTIVO visible (no un blanco mudo)
+        win = VisorDatos(None, mensaje=mensaje_error or "La base de datos no devolvió registros.")
     win.show()
     return app.exec()
 

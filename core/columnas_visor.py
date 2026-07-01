@@ -159,8 +159,22 @@ COLS_TO_SHOW = [
 ]
 
 
+# Renombrado SOLO de ENCABEZADOS (display). Las columnas de la BD conservan su
+# nombre real (todo el pipeline de extracción/guardado depende de él); aquí solo
+# cambiamos la ETIQUETA visible en la tabla para evitar confusión:
+#   "Diagnostico Coloracion"    -> se EXTRAE del PDF de IHQ            -> "... IHQ"
+#   "Diagnostico Coloracion 2"  -> se EXTRAE de los PDFs de Coloración -> "Diagnostico Coloracion"
+HEADER_ALIAS = {
+    "Diagnostico Coloracion": "Diagnostico Coloracion IHQ",
+    "Diagnostico Coloracion 2": "Diagnostico Coloracion",
+}
+
+
 def simplificar_header(col: str) -> str:
-    """Etiqueta del encabezado: quita lo que vaya después de '(' (igual que ui.py)."""
+    """Etiqueta del encabezado. Aplica primero el alias de display (HEADER_ALIAS);
+    si no hay alias, quita lo que vaya después de '(' (igual que ui.py)."""
+    if col in HEADER_ALIAS:
+        return HEADER_ALIAS[col]
     return str(col).split("(")[0].strip()
 
 
