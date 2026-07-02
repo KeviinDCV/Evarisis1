@@ -82,8 +82,42 @@ _RE_NOMBRE = re.compile(r"Nombre\s*\n?\s*:\s*(.+?)\s*\n?\s*N\.?\s*petici", re.IG
 _RE_GENERO = re.compile(r"Genero\s*\n?\s*:\s*([A-Za-z]+)", re.IGNORECASE)
 _RE_EDAD = re.compile(r"Edad\s*\n?\s*:\s*(\d{1,3})", re.IGNORECASE)
 _RE_FECHA_INF = re.compile(r"Fecha\s+Informe\s*\n?\s*:\s*(\d{2}/\d{2}/\d{4})", re.IGNORECASE)
-# Órgano: aparece entre el medio de fijación ("Formol…") y la fecha de toma (aaaa-mm-dd).
-_RE_ORGANO = re.compile(r"Formol[^\n]*\n\s*([^\n]+?)\s*\n\s*\d{4}-\d{2}-\d{2}", re.IGNORECASE)
+# ── Órgano (columna "Organo" de la tabla "Estudios solicitados") ────────────
+# V6.9.49 FIX órgano coloración: el ÓRGANO está en la columna "Organo" de la
+# tabla "Estudios solicitados" (la misma sección que usa el flujo IHQ). El
+# patrón anterior ("Formol…\n órgano \n fecha") solo acertaba ~69% porque fallaba con:
+#   • órgano en varias líneas ("PIEL DE CUELLO"/"POSTERIOR")
+#   • fecha pegada o en la misma línea ("BX DE PROSTATA DERECHA2025-04-01")
+#   • Almacenamiento ≠ "Formol" ("Tejido en fresco", "Lamina", "Bloques y laminas", "Tubo Transfix")
+#   • un mismo Nº M con VARIOS sub-estudios (-A/-B/…), cada uno con su órgano
+# Enfoque estructural (independiente del vocabulario de Almacenamiento; validado
+# en 6.806 casos de los 139 PDFs de coloración: 100% detección, 0 regresión):
+# dentro de la tabla, cada sub-estudio empieza por el código de estudio ("898xxx …")
+# y el ÓRGANO es la corrida de líneas EN MAYÚSCULAS que le sigue (Almacenamiento y
+# el tipo de estudio SIEMPRE llevan minúsculas). Varios sub-estudios -> se
+# concatenan los órganos distintos con " | ".
+_RE_TABLA_ESTUDIOS = re.compile(
+    r"Estudios solicitados(.*?)(?:INFORME DE ANATOM|DESCRIPCI[" + _ACC_O + r"]N\s+MACRO|\Z)",
+    re.DOTALL | re.IGNORECASE,
+)
+_RE_FILA_ESTUDIO = re.compile(r"(?m)^\s*M\d{6,}(?:-[A-Za-z0-9]+)?\s*$")  # Nº de estudio (inicio de fila)
+_RE_TIPO_ESTUDIO = re.compile(r"^\d{5,}\b")                              # línea "898101 Estudio de…"
+_RE_FECHA_SOLA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+_RE_ORG_Y_FECHA = re.compile(r"^(.+?)\s*\d{4}-\d{2}-\d{2}$")             # órgano + fecha en la misma línea
+
+# ── Descripciones macro/micro (sección "INFORME DE ANATOMÍA PATOLÓGICA /
+# ESTUDIO DE HISTOLOGIA") ────────────────────────────────────────────────────
+# V6.9.49: encabezados de las descripciones. Toleran mojibake en la 'Ó' (igual que _RE_DIAG).
+_RE_MACRO = re.compile(r"DESCRIPCI[" + _ACC_O + r"]N[ \t]+MACROSC[" + _ACC_O + r"]PICA")
+_RE_MICRO = re.compile(r"DESCRIPCI[" + _ACC_O + r"]N[ \t]+MICROSC[" + _ACC_O + r"]PICA")
+# Terminadores SEGUROS de una descripción: el siguiente encabezado real (MICRO/DIAG) + firma/nota.
+# IMPORTANTE: NO se usa el terminador de firma "NOMBRE … Patólogo" (_TERMINADORES) porque el texto
+# microscópico de los informes sinápticos menciona "COLEGIO AMERICANO DE PATÓLOGOS" y lo cortaría.
+_RE_NOTA_INFORME = re.compile(r"\n[ \t]*Nota:\s*Este\s+informe", re.IGNORECASE)
+_RE_COMENTARIOS = re.compile(r"\n[ \t]*COMENTARIOS?\b", re.IGNORECASE)
+_RE_RESPONSABLE = re.compile(r"[ \t\n]*Responsable\s+del\s+an", re.IGNORECASE)
+_RE_LINEA_FIRMA = re.compile(r"\n_{3,}")
+_TERM_DESCRIPCION = (_RE_NOTA_INFORME, _RE_COMENTARIOS, _RE_RESPONSABLE, _RE_LINEA_FIRMA)
 
 
 def es_pagina_manifiesto(texto: str) -> bool:
@@ -141,6 +175,61 @@ def extraer_diagnostico(texto_caso: str) -> str:
     return _limpiar_dx(cuerpo)
 
 
+def _limpiar_descripcion(bloque: str) -> str:
+    """Colapsa saltos/espacios a un párrafo de una sola línea (para celda de tabla)."""
+    return re.sub(r"\s+", " ", bloque).strip()
+
+
+def _extraer_seccion(texto_caso: str, ini_rgx, fin_rgxs) -> str:
+    """Aísla el bloque entre 'ini_rgx' y el primer terminador de 'fin_rgxs'. Borra antes
+    el ruido embebido (headers de continuación + pie legal). Devuelve '' si no está."""
+    if not texto_caso:
+        return ""
+    t = _RE_CONT_HEADER.sub("\n", texto_caso)
+    t = _RE_PIE_LEGAL.sub("\n", t)
+    m = ini_rgx.search(t)
+    if not m:
+        return ""
+    cuerpo = t[m.end():]
+    fin = len(cuerpo)
+    for rgx in fin_rgxs:
+        mm = rgx.search(cuerpo)
+        if mm and mm.start() < fin:
+            fin = mm.start()
+    return _limpiar_descripcion(cuerpo[:fin])
+
+
+def extraer_descripcion_macro(texto_caso: str) -> str:
+    """DESCRIPCIÓN MACROSCÓPICA del informe de histología. '' si no está (no inventa)."""
+    return _extraer_seccion(texto_caso, _RE_MACRO, (_RE_MICRO, _RE_DIAG) + _TERM_DESCRIPCION)
+
+
+def extraer_descripcion_micro(texto_caso: str) -> str:
+    """DESCRIPCIÓN MICROSCÓPICA del informe de histología. '' si no está (no inventa)."""
+    return _extraer_seccion(texto_caso, _RE_MICRO, (_RE_DIAG,) + _TERM_DESCRIPCION)
+
+
+def clasificar_malignidad(diagnostico: str, microscopica: str = "") -> str:
+    """Malignidad ('BENIGNO'/'MALIGNO') REUTILIZANDO la MISMA lógica auditada de IHQ
+    (core.extractors.medical_extractor.determine_malignancy) — una sola fuente de verdad.
+
+    Se clasifica desde el DIAGNÓSTICO (conclusión del patólogo). Si no hay diagnóstico,
+    se usa la microscópica como respaldo. IMPORTANTE: NO se pasan macro/micro como fuente
+    primaria — su texto descriptivo dispara falsos positivos en el scoring afinado para IHQ
+    (validado en 6.806 casos: dx-only da 82.7% BENIGNO / 17.3% MALIGNO, sin los FP de macro+micro).
+    Sin información -> 'BENIGNO' (criterio conservador, idéntico al de IHQ)."""
+    texto = (diagnostico or "").strip()
+    if not texto or texto == "REVISAR":
+        texto = (microscopica or "").strip()
+    if not texto:
+        return "BENIGNO"
+    try:
+        from core.extractors.medical_extractor import determine_malignancy
+        return determine_malignancy(texto, "", "", "")
+    except Exception:
+        return "BENIGNO"
+
+
 def _split_nombre(nombre_crudo: str) -> Dict[str, str]:
     """Parte el nombre en 4 campos REUTILIZANDO el divisor del flujo IHQ
     (core.utils.name_splitter.split_full_name) para mantener consistencia con el
@@ -168,6 +257,76 @@ def _split_nombre(nombre_crudo: str) -> Dict[str, str]:
     return d
 
 
+def _es_texto_organo(s: str) -> bool:
+    """True si la línea parece un valor de ÓRGANO: SIN minúsculas (Almacenamiento y
+    tipo de estudio siempre las tienen) y con al menos una mayúscula."""
+    s = s.strip()
+    if not s:
+        return False
+    if re.search(r"[a-záéíóúñü]", s):
+        return False
+    return bool(re.search(r"[A-ZÁÉÍÓÚÑ]", s))
+
+
+def _organo_de_fila(row: str) -> str:
+    """Órgano de UN sub-estudio (bloque de texto entre dos Nº de estudio de la tabla).
+    Salta el tipo de estudio ("898xxx …") y la línea de Almacenamiento, y devuelve la
+    corrida de líneas en MAYÚSCULAS (uniendo órganos multilínea y quitando la fecha)."""
+    lineas = row.split("\n")
+    ini = 0
+    for i, ln in enumerate(lineas):
+        if _RE_TIPO_ESTUDIO.match(ln.strip()):
+            ini = i + 1
+            break
+    else:
+        ini = 1 if lineas and lineas[0].strip().upper().startswith("ESTUDIO") else 0
+    org: List[str] = []
+    visto = False
+    for ln in lineas[ini:]:
+        s = ln.strip()
+        if not s:
+            if visto:
+                break
+            continue
+        if _RE_FECHA_SOLA.match(s):          # fecha en su propia línea -> fin del órgano
+            break
+        mf = _RE_ORG_Y_FECHA.match(s)        # órgano con la fecha pegada/al final
+        if mf:
+            cand = mf.group(1).strip()
+            if _es_texto_organo(cand):
+                org.append(cand)
+                visto = True
+            break
+        if _es_texto_organo(s):
+            org.append(s)
+            visto = True
+        elif visto:                          # se acabó la corrida de mayúsculas del órgano
+            break
+        # si no: Almacenamiento/continuación previa al órgano -> seguir saltando
+    return re.sub(r"\s+", " ", " ".join(org)).strip()
+
+
+def extraer_organo(texto_caso: str) -> str:
+    """ÓRGANO desde la columna "Organo" de la tabla "Estudios solicitados".
+    Si el Nº M tiene varios sub-estudios (-A/-B/…), concatena los órganos DISTINTOS
+    con " | " (conserva el orden). Devuelve "" si no hay tabla/órgano (no inventa)."""
+    if not texto_caso:
+        return ""
+    mt = _RE_TABLA_ESTUDIOS.search(texto_caso)
+    region = mt.group(1) if mt else ""
+    if not region:
+        return ""
+    marcas = list(_RE_FILA_ESTUDIO.finditer(region))
+    organos: List[str] = []
+    for i, mk in enumerate(marcas):
+        desde = mk.end()
+        hasta = marcas[i + 1].start() if i + 1 < len(marcas) else len(region)
+        org = _organo_de_fila(region[desde:hasta])
+        if org and org not in organos and org not in ("ORGANO", "FECHA TOMA"):
+            organos.append(org)
+    return " | ".join(organos)
+
+
 def extraer_demografia(texto_caso: str) -> Dict[str, str]:
     """Demografía mínima del PDF M (solo datos REALES presentes; lo ausente queda '')."""
     d: Dict[str, str] = {}
@@ -188,11 +347,9 @@ def extraer_demografia(texto_caso: str) -> Dict[str, str]:
     mf = _RE_FECHA_INF.search(texto_caso)
     if mf:
         d["Fecha Informe"] = mf.group(1)
-    mo = _RE_ORGANO.search(texto_caso)
-    if mo:
-        org = mo.group(1).strip()
-        if org and len(org) <= 60:
-            d["Organo"] = org.upper()
+    org = extraer_organo(texto_caso)
+    if org:
+        d["Organo"] = org
     return d
 
 
@@ -228,6 +385,13 @@ def agrupar_y_extraer(paginas: List[str]) -> List[Dict[str, str]]:
             "numero_caso": m,
             "diagnostico_coloracion_2": dx if dx else "REVISAR",
         }
+        macro = extraer_descripcion_macro(texto)
+        if macro:
+            reg["Descripcion macroscopica"] = macro
+        micro = extraer_descripcion_micro(texto)
+        if micro:
+            reg["Descripcion microscopica"] = micro
+        reg["Malignidad"] = clasificar_malignidad(dx, micro)
         reg.update(extraer_demografia(texto))
         casos.append(reg)
     return casos

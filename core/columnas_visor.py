@@ -25,6 +25,8 @@ COLS_TO_SHOW = [
     "Diagnostico Coloracion 2",
     "Diagnostico Principal",
     "Factor pronostico",
+    "Descripcion macroscopica",   # V6.9.49: descripción macro (IHQ + coloración)
+    "Descripcion microscopica",   # V6.9.49: descripción micro (IHQ + coloración)
     "IHQ_ORGANO",
     "IHQ_ESTUDIOS_SOLICITADOS",
     "IHQ_HER2",

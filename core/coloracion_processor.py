@@ -33,6 +33,11 @@ _COLS_DEMOGRAFIA = (
     "Genero", "Edad", "Organo", "Fecha Informe",
 )
 
+# V6.9.49: descripciones macro/micro del informe de histología (mismas columnas que IHQ).
+_COLS_DESCRIPCION = ("Descripcion macroscopica", "Descripcion microscopica")
+# V6.9.49: Malignidad derivada del diagnóstico (reutiliza determine_malignancy de IHQ).
+_COLS_DERIVADAS = ("Malignidad",)
+
 # Texto que se escribe en la columna IHQ cuando el paciente tiene >1 coloración distinta:
 # se concatenan TODAS, numeradas y cada una en una línea (se colapsan saltos internos),
 # para mostrar el texto COMPLETO en la propia fila IHQ.
@@ -95,7 +100,7 @@ def process_coloracion_file(
             stats["revisar"] += 1
         rec: Dict[str, Any] = {"Numero de caso": c["numero_caso"],
                                "Diagnostico Coloracion 2": dx}
-        for k in _COLS_DEMOGRAFIA:
+        for k in _COLS_DEMOGRAFIA + _COLS_DESCRIPCION + _COLS_DERIVADAS:
             if c.get(k):
                 rec[k] = c[k]
         registros.append(rec)
@@ -157,7 +162,7 @@ def process_coloracion_batch(
             stats["revisar"] += 1
         rec: Dict[str, Any] = {"Numero de caso": c["numero_caso"],
                                "Diagnostico Coloracion 2": dx}
-        for k in _COLS_DEMOGRAFIA:
+        for k in _COLS_DEMOGRAFIA + _COLS_DESCRIPCION + _COLS_DERIVADAS:
             if c.get(k):
                 rec[k] = c[k]
         registros.append(rec)
