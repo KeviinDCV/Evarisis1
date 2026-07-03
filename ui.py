@@ -2303,6 +2303,16 @@ Disco {i}:
         # Evento de selección
         self.sheet_dashboard.bind("<<SheetSelect>>", self.mostrar_detalle_registro)
 
+        # V6.9.51: hover -> popup con valor completo + doble clic -> ventana de detalle.
+        # (Esta tabla del dashboard también necesita ambos, no solo self.sheet.)
+        self._instalar_hover_tooltip(self.sheet_dashboard)
+        try:
+            self.sheet_dashboard.MT.bind(
+                "<Double-Button-1>",
+                lambda e: self._abrir_detalle_fila(e, self.sheet_dashboard), add="+")
+        except Exception:
+            pass
+
         # Agregar métodos de compatibilidad Treeview → Sheet
         def _sheet_selection_dashboard():
             try:
@@ -2492,6 +2502,20 @@ Disco {i}:
         self.sheet.bind("<KeyRelease-Down>", self.mostrar_detalle_registro, add="+")
         self.sheet.bind("<KeyRelease-Left>", self.mostrar_detalle_registro, add="+")
         self.sheet.bind("<KeyRelease-Right>", self.mostrar_detalle_registro, add="+")
+        # V6.9.51: doble clic en una fila -> ventana de detalle con TODO el texto completo
+        # (las celdas truncan campos largos como 'Descripcion macroscopica').
+        # IMPORTANTE: distintas versiones de tksheet enrutan sheet.bind("<Double-Button-1>")
+        # de forma distinta (extra_double_b1_func vs bind raw); para que funcione SIEMPRE,
+        # se enlaza directo al widget interno (MainTable) con tkinter puro. double_b1 NO
+        # retorna "break", así que con add="+" nuestro handler corre después de él.
+        try:
+            self.sheet.MT.bind("<Double-Button-1>", self._abrir_detalle_fila, add="+")
+            logging.info("Doble clic (detalle) enlazado a sheet.MT")
+        except Exception as _e:
+            logging.warning(f"No se pudo enlazar a sheet.MT ({_e}); usando sheet.bind")
+            self.sheet.bind("<Double-Button-1>", self._abrir_detalle_fila, add="+")
+        # V6.9.51: hover -> popup con el valor completo de la celda (campos largos).
+        self._instalar_hover_tooltip(self.sheet)
 
         # Binding permanente para ordenamiento por click en encabezado
         # IMPORTANTE: Se bindea UNA SOLA VEZ aquí (no en _populate_treeview)
@@ -5262,6 +5286,266 @@ Disco {i}:
 
         # El panel de detalles ahora es flotante y se maneja en el export_system
         # Aquí solo manejamos la selección
+
+    # ================================================================
+    #  V6.9.51 — Detalle de fila (doble clic): ver TODO el texto completo
+    # ================================================================
+    def _abrir_detalle_fila(self, event=None, sheet=None):
+        """Doble clic en una fila -> ventana con TODOS los campos y su TEXTO COMPLETO.
+        Las celdas de la tabla truncan los campos largos (p. ej. 'Descripcion
+        macroscopica'); esta ventana los muestra completos y permite copiarlos.
+        'sheet' permite usarlo tanto en self.sheet como en self.sheet_dashboard.
+
+        Nota: tksheet invoca este callback vía try_binding(), que TRAGA excepciones;
+        por eso envolvemos todo y mostramos el error al usuario en vez de fallar mudo."""
+        sheet = sheet or self.sheet
+        try:
+            logging.info("_abrir_detalle_fila: doble clic recibido")
+            # Anti-rebote: evita abrir dos ventanas si el evento se dispara duplicado.
+            if getattr(self, "_detalle_abriendo", False):
+                return
+            self._detalle_abriendo = True
+            self.after(450, lambda: setattr(self, "_detalle_abriendo", False))
+            # No abrir si el doble clic fue sobre el encabezado/índice (ordenar/redimensionar).
+            try:
+                if sheet.identify_region(event) in ("header", "index", "top left"):
+                    return
+            except Exception:
+                pass
+
+            row_idx = self._fila_desde_evento(event, sheet)
+            if row_idx is None:
+                logging.info("_abrir_detalle_fila: no se pudo determinar la fila")
+                return
+
+            headers = list(sheet.headers())
+            valores = list(sheet.get_row_data(row_idx))
+            registro = list(zip(headers, valores))
+            self._mostrar_ventana_detalle(registro)
+        except Exception as e:
+            logging.exception("_abrir_detalle_fila falló")
+            try:
+                messagebox.showerror("Detalle del registro",
+                                     f"No se pudo abrir el detalle:\n{e}")
+            except Exception:
+                pass
+
+    def _fila_desde_evento(self, event, sheet=None):
+        """Índice de fila del doble clic, robusto entre versiones de tksheet."""
+        sheet = sheet or self.sheet
+        # 1) identify_row desde el evento (lo más preciso).
+        try:
+            r = sheet.identify_row(event, allow_end=False)
+            if r is not None:
+                return int(r)
+        except Exception:
+            pass
+        # 2) Celda actualmente seleccionada (double_b1 la selecciona antes del hook).
+        try:
+            cur = sheet.get_currently_selected()
+            if cur:
+                if getattr(cur, "row", None) is not None:
+                    return int(cur.row)
+                if isinstance(cur, (tuple, list)) and cur and cur[0] is not None:
+                    return int(cur[0])
+        except Exception:
+            pass
+        # 3) Filas seleccionadas.
+        try:
+            rows = sheet.get_selected_rows()
+            if rows:
+                return sorted(rows)[0]
+        except Exception:
+            pass
+        # 4) Celdas seleccionadas.
+        try:
+            cells = sheet.get_selected_cells()
+            if cells:
+                return sorted(cells)[0][0]
+        except Exception:
+            pass
+        return None
+
+    def _mostrar_ventana_detalle(self, registro):
+        """Ventana modal con cada campo (etiqueta + valor completo). Oculta los vacíos,
+        resalta los campos narrativos largos y permite seleccionar/copiar el texto."""
+        campos_largos = {
+            "Descripcion macroscopica", "Descripcion microscopica",
+            "Diagnostico Coloracion", "Diagnostico Coloracion IHQ",
+            "Diagnostico Principal", "Factor pronostico", "Datos Clinicos",
+        }
+        num = next((str(v) for h, v in registro
+                    if h == "Numero de caso" and str(v).strip()), "")
+
+        win = tk.Toplevel(self)
+        win.title(f"Detalle del registro — {num}" if num else "Detalle del registro")
+        win.geometry("840x660")
+        win.transient(self)
+
+        cont = ttk.Frame(win, padding=10)
+        cont.pack(fill="both", expand=True)
+
+        # Texto con scroll nativo (maneja rueda del mouse y campos muy largos).
+        txt = tk.Text(cont, wrap="word", font=("Segoe UI", 10),
+                      padx=12, pady=10, relief="flat", background="#ffffff",
+                      foreground="#1b1b1b", cursor="arrow")
+        scroll = ttk.Scrollbar(cont, orient="vertical", command=txt.yview)
+        txt.configure(yscrollcommand=scroll.set)
+        txt.pack(side="left", fill="both", expand=True)
+        scroll.pack(side="right", fill="y")
+
+        txt.tag_configure("campo", font=("Segoe UI", 9, "bold"),
+                          foreground="#1B5E20", spacing1=10, spacing3=2)
+        txt.tag_configure("valor", font=("Segoe UI", 10), foreground="#1b1b1b",
+                          lmargin1=6, lmargin2=6, spacing3=4)
+        txt.tag_configure("valor_largo", font=("Segoe UI", 10), foreground="#1b1b1b",
+                          lmargin1=8, lmargin2=8, spacing1=2, spacing3=6,
+                          background="#F1F8E9")
+
+        lineas_copia = []
+        mostrados = 0
+        for h, val in registro:
+            val = str(val or "").strip()
+            if not val:
+                continue  # ocultar vacíos -> tarjeta compacta (no ~140 columnas IHQ vacías)
+            mostrados += 1
+            lineas_copia.append(f"{h}: {val}")
+            txt.insert("end", f"{h}\n", "campo")
+            txt.insert("end", f"{val}\n", "valor_largo" if h in campos_largos else "valor")
+        if mostrados == 0:
+            txt.insert("end", "(Sin datos en este registro)")
+
+        # Solo lectura pero SELECCIONABLE/COPIABLE (bloquea edición, permite Ctrl+C/Ctrl+A).
+        def _solo_lectura(e):
+            if (e.state & 0x4) and e.keysym.lower() in ("c", "a"):
+                return
+            if e.keysym in ("Left", "Right", "Up", "Down", "Home", "End",
+                            "Prior", "Next"):
+                return
+            return "break"
+        txt.bind("<Key>", _solo_lectura)
+
+        # Barra inferior: copiar todo + cerrar.
+        barra = ttk.Frame(win, padding=(10, 6))
+        barra.pack(fill="x")
+
+        def _copiar_todo():
+            try:
+                self.clipboard_clear()
+                self.clipboard_append("\n".join(lineas_copia))
+            except Exception:
+                pass
+
+        ttk.Button(barra, text="📋 Copiar todo", command=_copiar_todo,
+                   bootstyle="secondary").pack(side="left")
+        ttk.Button(barra, text="Cerrar", command=win.destroy,
+                   bootstyle="primary").pack(side="right")
+
+        win.bind("<Escape>", lambda e: win.destroy())
+        # Centrar sobre la ventana principal y FORZAR al frente (si no, puede abrirse
+        # detrás de la app maximizada y parecer que "no pasa nada").
+        try:
+            win.update_idletasks()
+            x = self.winfo_x() + (self.winfo_width() - win.winfo_width()) // 2
+            y = self.winfo_y() + (self.winfo_height() - win.winfo_height()) // 2
+            win.geometry(f"+{max(x, 0)}+{max(y, 0)}")
+        except Exception:
+            pass
+        try:
+            win.lift()
+            win.focus_force()
+            win.attributes("-topmost", True)
+            win.after(300, lambda: win.attributes("-topmost", False))
+        except Exception:
+            pass
+
+    # ================================================================
+    #  V6.9.51 — Hover: popup con el VALOR COMPLETO de la celda
+    # ================================================================
+    def _instalar_hover_tooltip(self, sheet):
+        """Instala en un Sheet el popup que muestra el TEXTO COMPLETO de la celda al
+        pasar el mouse (las celdas truncan campos largos como 'Descripcion macroscopica').
+        Se enlaza al widget interno (MainTable) con tkinter puro -> funciona en cualquier
+        versión de tksheet."""
+        if sheet is None:
+            return
+        try:
+            sheet.MT.bind("<Motion>", lambda e, s=sheet: self._hover_tip_motion(e, s), add="+")
+            sheet.MT.bind("<Leave>", lambda e: self._hover_tip_hide(), add="+")
+            logging.info("Hover-tooltip de celda instalado en un Sheet")
+        except Exception as e:
+            logging.warning(f"No se pudo instalar hover-tooltip: {e}")
+
+    def _hover_tip_motion(self, event, sheet):
+        """Detecta la celda bajo el cursor y programa el popup (con breve retardo)."""
+        try:
+            r = sheet.MT.identify_row(y=event.y, allow_end=False)
+            c = sheet.MT.identify_col(x=event.x, allow_end=False)
+        except Exception:
+            r = c = None
+        if r is None or c is None:
+            self._hover_tip_hide()
+            self._tip_cell = None
+            return
+        celda = (id(sheet), r, c)
+        if getattr(self, "_tip_cell", None) == celda:
+            return  # misma celda: no recrear
+        self._tip_cell = celda
+        self._hover_tip_hide()
+        if getattr(self, "_tip_after", None):
+            try:
+                self.after_cancel(self._tip_after)
+            except Exception:
+                pass
+        xr, yr = event.x_root, event.y_root
+        self._tip_after = self.after(
+            450, lambda: self._hover_tip_show(sheet, r, c, xr, yr))
+
+    def _hover_tip_show(self, sheet, r, c, x_root, y_root):
+        """Crea el popup con el valor completo de la celda (r, c)."""
+        try:
+            val = sheet.get_cell_data(r, c)
+        except Exception:
+            val = None
+        val = "" if val is None else str(val).strip()
+        if not val:
+            return
+        self._hover_tip_hide()
+        try:
+            tip = tk.Toplevel(self)
+            tip.wm_overrideredirect(True)  # sin barra de título
+            try:
+                tip.attributes("-topmost", True)
+            except Exception:
+                pass
+            tk.Label(
+                tip, text=val, justify="left", wraplength=560,
+                background="#FFFFE0", foreground="#1b1b1b",
+                relief="solid", borderwidth=1, font=("Segoe UI", 10),
+                padx=8, pady=6,
+            ).pack()
+            tip.update_idletasks()
+            # Ajustar posición para no salir de la pantalla.
+            sw, sh = self.winfo_screenwidth(), self.winfo_screenheight()
+            w, h = tip.winfo_reqwidth(), tip.winfo_reqheight()
+            x, y = x_root + 16, y_root + 18
+            if x + w > sw:
+                x = max(0, sw - w - 8)
+            if y + h > sh:
+                y = max(0, y_root - h - 12)
+            tip.geometry(f"+{x}+{y}")
+            self._tip = tip
+        except Exception as e:
+            logging.debug(f"_hover_tip_show error: {e}")
+
+    def _hover_tip_hide(self):
+        tip = getattr(self, "_tip", None)
+        if tip is not None:
+            try:
+                tip.destroy()
+            except Exception:
+                pass
+        self._tip = None
 
     def _export_full_database(self):
         """Exportar toda la base de datos usando el sistema mejorado"""

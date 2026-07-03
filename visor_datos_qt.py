@@ -46,6 +46,7 @@ from PySide6.QtGui import QColor, QBrush, QFont, QFontMetrics, QPalette
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QLabel, QTableView, QHeaderView, QPushButton,
+    QDialog, QScrollArea, QFrame, QDialogButtonBox,
 )
 
 from core.columnas_visor import (
@@ -220,6 +221,14 @@ class TablaModel(QAbstractTableModel):
             return self._haystacks[source_row]
         return ""
 
+    def registro(self, source_row: int):
+        """Lista de (encabezado, valor) de una fila, para el diálogo de detalle."""
+        if 0 <= source_row < len(self._rows):
+            fila = self._rows[source_row]
+            return [(self._headers[c], fila[c] if c < len(fila) else "")
+                    for c in range(self._ncols)]
+        return []
+
 
 class BuscadorProxy(QSortFilterProxyModel):
     """Búsqueda por tokens, insensible a mayúsculas/acentos, sobre el haystack
@@ -238,6 +247,82 @@ class BuscadorProxy(QSortFilterProxyModel):
         src = self.sourceModel()
         hay = src.haystack(source_row) if hasattr(src, "haystack") else ""
         return all(tok in hay for tok in self._tokens)
+
+
+class DetalleRegistroDialog(QDialog):
+    """Ventana de DETALLE de una fila. Se abre con doble clic en el visor y muestra
+    TODOS los campos con valor y su TEXTO COMPLETO (las celdas de la tabla truncan los
+    campos largos como 'Descripcion macroscopica'). Cada campo va como bloque
+    'etiqueta en negrita + valor con salto de línea', seleccionable para copiar."""
+
+    # Campos largos (narrativos): se muestran con fondo suave para destacarlos.
+    _CAMPOS_LARGOS = {
+        "Descripcion macroscopica", "Descripcion microscopica",
+        "Diagnostico Coloracion", "Diagnostico Coloracion IHQ",
+        "Diagnostico Principal", "Factor pronostico", "Datos Clinicos",
+    }
+
+    def __init__(self, registro, parent=None):
+        super().__init__(parent)
+        # Título: usar el Nº de caso si está presente
+        num = next((v for h, v in registro if h == "Numero de caso" and str(v).strip()), "")
+        self.setWindowTitle(f"Detalle del registro — {num}" if num else "Detalle del registro")
+        self.resize(780, 640)
+
+        self._texto_plano = "\n".join(f"{h}: {v}" for h, v in registro if str(v).strip())
+
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(12, 12, 12, 12)
+        layout.setSpacing(8)
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.NoFrame)
+        cont = QWidget()
+        v = QVBoxLayout(cont)
+        v.setContentsMargins(4, 4, 12, 4)
+        v.setSpacing(6)
+
+        mostrados = 0
+        for h, val in registro:
+            val = str(val or "").strip()
+            if not val:
+                continue  # ocultar campos vacíos: la tarjeta queda compacta y legible
+            mostrados += 1
+            campo = QLabel(h)
+            campo.setStyleSheet("font: bold 9pt 'Segoe UI'; color: #1B5E20;")
+            valor = QLabel(val)
+            valor.setWordWrap(True)
+            valor.setTextInteractionFlags(Qt.TextSelectableByMouse)
+            if h in self._CAMPOS_LARGOS:
+                valor.setStyleSheet("font: 10pt 'Segoe UI'; color: #1b1b1b; "
+                                    "background: #F1F8E9; border: 1px solid #DCEDC8; "
+                                    "border-radius: 4px; padding: 6px;")
+            else:
+                valor.setStyleSheet("font: 10pt 'Segoe UI'; color: #1b1b1b; padding: 1px 2px;")
+            v.addWidget(campo)
+            v.addWidget(valor)
+            sep = QFrame()
+            sep.setFrameShape(QFrame.HLine)
+            sep.setStyleSheet("color: #ececec;")
+            v.addWidget(sep)
+
+        if mostrados == 0:
+            v.addWidget(QLabel("(Sin datos en este registro)"))
+        v.addStretch()
+        scroll.setWidget(cont)
+        layout.addWidget(scroll)
+
+        # Botones: Copiar todo + Cerrar
+        botones = QDialogButtonBox()
+        btn_copiar = botones.addButton("📋 Copiar todo", QDialogButtonBox.ActionRole)
+        botones.addButton("Cerrar", QDialogButtonBox.RejectRole)
+        btn_copiar.clicked.connect(self._copiar)
+        botones.rejected.connect(self.reject)
+        layout.addWidget(botones)
+
+    def _copiar(self):
+        QApplication.clipboard().setText(self._texto_plano)
 
 
 class VisorDatos(QMainWindow):
@@ -281,6 +366,9 @@ class VisorDatos(QMainWindow):
         self.table.setSelectionBehavior(QTableView.SelectRows)
         self.table.setSelectionMode(QTableView.ExtendedSelection)
         self.table.setWordWrap(False)
+        # Doble clic abre el detalle (no editar la celda).
+        self.table.setEditTriggers(QTableView.NoEditTriggers)
+        self.table.doubleClicked.connect(self._abrir_detalle)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
         self.table.horizontalHeader().setStretchLastSection(False)
         self.table.setStyleSheet(
@@ -341,6 +429,16 @@ class VisorDatos(QMainWindow):
     def _on_search(self, text: str):
         self.proxy.set_query(text)
         self._actualizar_contador()
+
+    def _abrir_detalle(self, index):
+        """Doble clic en una fila -> ventana con TODOS los campos y su texto completo."""
+        if not index.isValid() or not hasattr(self, "model"):
+            return
+        src = self.proxy.mapToSource(index)
+        registro = self.model.registro(src.row())
+        if not registro:
+            return
+        DetalleRegistroDialog(registro, self).exec()
 
     def _actualizar_contador(self):
         visibles = self.proxy.rowCount()
