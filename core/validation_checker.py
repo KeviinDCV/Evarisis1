@@ -1084,14 +1084,20 @@ def _completitud_coloracion(numero_peticion: str, registro: Dict[str, Any]) -> D
     tiene_apellido = bool(str(registro.get('Primer apellido', '') or '').strip()
                           or str(registro.get('Segundo apellido', '') or '').strip())
 
+    # Un estudio de coloración está COMPLETO si se extrajo su contenido clínico
+    # (diagnóstico + órgano + malignidad) y el paciente queda identificado (género +
+    # algún nombre). Edad y N. de identificación se GUARDAN cuando el PDF los trae,
+    # pero NO condicionan la completitud: algunos informes los omiten (edad en blanco)
+    # o el paciente es extranjero sin cédula local ("AS. VEN…"), y basta que un nombre
+    # exista aunque el divisor lo deje todo en 'nombres' (p.ej. "YORANZA URREA").
+    # Marcar esos casos como fallo de extracción sería falso: el estudio SÍ se extrajo.
+    tiene_nombre_paciente = tiene_nombre or tiene_apellido
     checks = [
         ('Diagnostico Coloracion', _ok('Diagnostico Coloracion 2')),  # dx propio de la coloración
         ('Organo', _ok('Organo')),
         ('Malignidad', _ok('Malignidad')),
-        ('N. de identificación', _ok('N. de identificación')),
-        ('Edad', _ok('Edad')),
         ('Genero', _ok('Genero')),
-        ('Nombres (Primer o Segundo)', tiene_nombre and tiene_apellido),
+        ('Nombre del paciente', tiene_nombre_paciente),
     ]
     campos_totales = len(checks)
     campos_completos = sum(1 for _, ok in checks if ok)
