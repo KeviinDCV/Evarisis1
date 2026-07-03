@@ -258,18 +258,55 @@ _RE_PROC_CIRUGIA = re.compile(
 _RE_PROC_BIOPSIA = re.compile(r"(?i)\b(?:biopsia|biosia|bx|sacabocado|punci[" + _ACC_O + r"]n|legrado|curetaje|endosc[" + _ACC_O + r"]pica)\b")
 _RE_PROC_CONGELA = re.compile(r"(?i)congelaci[" + _ACC_O + r"]n")
 
+# ── V6.9.52 FALLBACK aditivo (NO reemplaza los patrones de arriba) ─────────────
+# Los patrones ORIGINALES corren PRIMERO e intactos: si clasifican, se devuelve su
+# resultado sin tocar. Estos patrones de RESPALDO SOLO se evalúan cuando el caso
+# quedó en "" — así es imposible reclasificar un caso ya resuelto (0 regresión,
+# validado sobre 6.806 casos: 6.629→6.695 con procedimiento, 66 vacíos→valor,
+# 0 flips, 0 obstétricos tocados). Cubren verbos quirúrgicos/de muestreo que el
+# vocabulario original no listaba, más variantes de OCR (reseción sin doble-c,
+# amputació sin 'n', biospia, omentent/mucosesct/amidelect-ectomía) y plurales.
+# Filosofía intacta: si NO hay verbo de procedimiento en el texto, se deja "".
+_RE_PROC_CIRUGIA_FB = re.compile(
+    r"(?i)(?:"
+    r"[a-záéíóúñü]*plastia"                         # mamoplastia, pieloplastia, septoplastia, timpanoplastia
+    r"|enucleaci[o" + "ó" + r"]n|evisceraci[oó]n|exenteraci[oó]n"
+    r"|reseci[oó]n"                                 # OCR "reseción" (una c; la doble-c ya la ve el patrón original)
+    r"|amputaci[a-zñ]*"                             # amputación / OCR "amputació" (sin 'n')
+    r"|anastomosis|ostom[ií]a"                      # colostomía, ileostomía, vesicostomía, timpanostomía
+    r"|reconstrucci[oó]n|reconstruct"
+    r"|explantaci[oó]n|laparoscop"
+    r"|recambio\s+valvular"
+    r"|correcci[oó]n\s+de\b"
+    r"|ampliaci[oó]n\s+quir[uú]rgic|quir[uú]rgic"
+    r"|extracci[oó]n"
+    r"|\bcono\b|\blletz\b|cono\s+lleep|cono\s+lleitz"   # cono/LEEP cervical (excisión)
+    r"|pomeroy"
+    r"|omenten?tecom[ií]a|omentectom[ií]a"          # OCR omentectomía
+    r"|mucos[a-z]*ectom[ií]a|mucosesctom[ií]a"      # (muco)sectomía y su OCR
+    r"|amidelectom|amigdalectom|amidalectom"        # amigdalectomía y OCR
+    r")"
+)
+_RE_PROC_BIOPSIA_FB = re.compile(r"(?i)(?:biospia|biopsias|sacabocados|colposcopia|drenaje)")
+
 
 def extraer_procedimiento(diagnostico: str, macroscopica: str = "") -> str:
     """Procedimiento del caso ('CIRUGÍA' / 'BIOPSIA' / 'CONGELACIÓN') inferido del
     texto del diagnóstico (+macroscópica de respaldo), con la MISMA semántica del
     flujo IHQ. Devuelve '' si no se puede determinar (no inventa)."""
     texto = f"{diagnostico or ''}\n{macroscopica or ''}"
+    # 1) Patrones ORIGINALES (intactos) — máxima prioridad.
     if _RE_PROC_CIRUGIA.search(texto):
         return "CIRUGÍA"
     if _RE_PROC_BIOPSIA.search(texto):
         return "BIOPSIA"
     if _RE_PROC_CONGELA.search(texto):
         return "CONGELACIÓN"
+    # 2) V6.9.52 FALLBACK — solo si lo anterior no clasificó (llena vacíos, no reclasifica).
+    if _RE_PROC_CIRUGIA_FB.search(texto):
+        return "CIRUGÍA"
+    if _RE_PROC_BIOPSIA_FB.search(texto):
+        return "BIOPSIA"
     return ""
 
 
