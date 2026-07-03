@@ -164,10 +164,10 @@ COLS_TO_SHOW = [
 # Renombrado SOLO de ENCABEZADOS (display). Las columnas de la BD conservan su
 # nombre real (todo el pipeline de extracción/guardado depende de él); aquí solo
 # cambiamos la ETIQUETA visible en la tabla para evitar confusión:
-#   "Diagnostico Coloracion"    -> se EXTRAE del PDF de IHQ            -> "... IHQ"
+#   "Diagnostico Coloracion"    -> se EXTRAE del PDF de IHQ            -> "Diagnostico IHQ"
 #   "Diagnostico Coloracion 2"  -> se EXTRAE de los PDFs de Coloración -> "Diagnostico Coloracion"
 HEADER_ALIAS = {
-    "Diagnostico Coloracion": "Diagnostico Coloracion IHQ",
+    "Diagnostico Coloracion": "Diagnostico IHQ",
     "Diagnostico Coloracion 2": "Diagnostico Coloracion",
 }
 

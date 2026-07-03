@@ -35,8 +35,9 @@ _COLS_DEMOGRAFIA = (
 
 # V6.9.49: descripciones macro/micro del informe de histología (mismas columnas que IHQ).
 _COLS_DESCRIPCION = ("Descripcion macroscopica", "Descripcion microscopica")
-# V6.9.49: Malignidad derivada del diagnóstico (reutiliza determine_malignancy de IHQ).
-_COLS_DERIVADAS = ("Malignidad",)
+# V6.9.49/51: campos DERIVADOS del texto (misma semántica del flujo IHQ):
+#   Malignidad -> determine_malignancy;  Procedimiento -> CIRUGÍA/BIOPSIA/CONGELACIÓN.
+_COLS_DERIVADAS = ("Malignidad", "Procedimiento")
 
 # Texto que se escribe en la columna IHQ cuando el paciente tiene >1 coloración distinta:
 # se concatenan TODAS, numeradas y cada una en una línea (se colapsan saltos internos),

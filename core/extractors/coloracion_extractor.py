@@ -230,6 +230,49 @@ def clasificar_malignidad(diagnostico: str, microscopica: str = "") -> str:
         return "BENIGNO"
 
 
+# ── Procedimiento (BIOPSIA / CIRUGÍA / CONGELACIÓN) ───────────────────────────
+# V6.9.51: el "Procedimiento" del caso (MISMO campo que llena el flujo IHQ) se
+# infiere del DIAGNÓSTICO (y, de respaldo, la macroscópica), que nombran el
+# procedimiento REAL del espécimen: "Próstata. Resección transuretral.",
+# "Vesícula biliar. Colecistectomía.", "Mucosa gástrica antral. Biopsia
+# endoscópica". Se reutiliza la MISMA semántica del flujo IHQ (verbo quirúrgico ->
+# CIRUGÍA; biopsia/BX -> BIOPSIA), extendida con los verbos vistos en coloración.
+# NO se usa la columna "Tipo estudio" ("...en biopsia/en especimen") porque es la
+# categoría de laboratorio, no el procedimiento clínico (y "especimen" es genérico).
+# Las clases de acento toleran el mojibake ('�') igual que el resto del módulo.
+# '' si no se puede determinar (no inventa).
+_RE_PROC_CIRUGIA = re.compile(
+    r"(?i)\b(?:"
+    # Cualquier "-ectomía" es extirpación quirúrgica de un órgano/lesión: cubre
+    # colecistectomía, histerectomía, prostatectomía, tiroidectomía, hemitiroidectomía,
+    # hemorroidectomía, mastectomía, nefrectomía, lobectomía, etc. La 'p?' tolera la
+    # errata de OCR "salpingectompía". NO se usa "-tomía" genérico: chocaría con
+    # "anaTOMÍA" del encabezado "INFORME DE ANATOMÍA PATOLÓGICA".
+    r"[a-záéíóúñü�]*ectomp?[" + _ACC_I + r"]a|"
+    r"apendic[a-z�]*tom[" + _ACC_I + r"]a|"   # apendicectomía y la errata "apendicetomía" (sin 'c')
+    r"resecci[" + _ACC_O + r"]n|extirpaci[" + _ACC_O + r"]n|ex[eé�]resis|amputaci[" + _ACC_O + r"]n|"
+    r"escisi[" + _ACC_O + r"]n|decorticaci[" + _ACC_O + r"]n|conizaci[" + _ACC_O + r"]n|vaciamiento"
+    r")\b"
+)
+# 'sacabocado' = biopsia por punch (dermatopatología); 'biosia' = errata OCR de 'biopsia'.
+_RE_PROC_BIOPSIA = re.compile(r"(?i)\b(?:biopsia|biosia|bx|sacabocado|punci[" + _ACC_O + r"]n|legrado|curetaje|endosc[" + _ACC_O + r"]pica)\b")
+_RE_PROC_CONGELA = re.compile(r"(?i)congelaci[" + _ACC_O + r"]n")
+
+
+def extraer_procedimiento(diagnostico: str, macroscopica: str = "") -> str:
+    """Procedimiento del caso ('CIRUGÍA' / 'BIOPSIA' / 'CONGELACIÓN') inferido del
+    texto del diagnóstico (+macroscópica de respaldo), con la MISMA semántica del
+    flujo IHQ. Devuelve '' si no se puede determinar (no inventa)."""
+    texto = f"{diagnostico or ''}\n{macroscopica or ''}"
+    if _RE_PROC_CIRUGIA.search(texto):
+        return "CIRUGÍA"
+    if _RE_PROC_BIOPSIA.search(texto):
+        return "BIOPSIA"
+    if _RE_PROC_CONGELA.search(texto):
+        return "CONGELACIÓN"
+    return ""
+
+
 def _split_nombre(nombre_crudo: str) -> Dict[str, str]:
     """Parte el nombre en 4 campos REUTILIZANDO el divisor del flujo IHQ
     (core.utils.name_splitter.split_full_name) para mantener consistencia con el
@@ -392,6 +435,9 @@ def agrupar_y_extraer(paginas: List[str]) -> List[Dict[str, str]]:
         if micro:
             reg["Descripcion microscopica"] = micro
         reg["Malignidad"] = clasificar_malignidad(dx, micro)
+        proc = extraer_procedimiento(dx, macro)
+        if proc:
+            reg["Procedimiento"] = proc
         reg.update(extraer_demografia(texto))
         casos.append(reg)
     return casos
