@@ -1049,6 +1049,88 @@ def parsear_estudios_solicitados(estudios_solicitados_raw: str) -> Dict[str, Any
     return resultado
 
 
+# ============================================================================
+# V6.9.51: COMPLETITUD DE ESTUDIOS DE COLORACIÓN (filas M) — flujo AUTÓNOMO
+# ----------------------------------------------------------------------------
+# Los informes de coloración básica (Nº M) NO tienen Diagnóstico Principal,
+# Factor pronóstico ni biomarcadores IHQ: son otro tipo de estudio. Medirlos con
+# la vara de IHQ los marcaba SIEMPRE incompletos -> el modal de importación de un
+# lote 100% coloración mostraba "0 completos / 0.0% de éxito", que es FALSO: la
+# extracción de coloración sí produjo sus datos. Aquí se evalúan con SUS campos
+# reales (dx propio + órgano + malignidad + datos del paciente). Procedimiento y
+# descripciones macro/micro NO penalizan (p.ej. las placentas no tienen
+# procedimiento quirúrgico); son informativos.
+# ============================================================================
+_COLORACION_INVALIDOS = ('', 'NO ENCONTRADO', 'NAN', 'NONE', 'N/A', 'NO APLICA',
+                         'REVISAR', 'NO MENCIONADO')
+
+
+def _es_fila_coloracion(numero_caso: str) -> bool:
+    """True si 'Numero de caso' es un estudio de coloración (clave M#####)."""
+    s = str(numero_caso or '').strip()
+    return len(s) >= 2 and s[0] in 'Mm' and s[1].isdigit()
+
+
+def _completitud_coloracion(numero_peticion: str, registro: Dict[str, Any]) -> Dict[str, Any]:
+    """Completitud de un estudio de COLORACIÓN (fila M) con SUS campos reales.
+    Devuelve la MISMA estructura que verificar_completitud_registro para que el
+    modal de importación y el análisis de lote la consuman sin cambios."""
+    def _ok(campo: str) -> bool:
+        v = registro.get(campo, '')
+        return v is not None and str(v).strip().upper() not in _COLORACION_INVALIDOS
+
+    tiene_nombre = bool(str(registro.get('Primer nombre', '') or '').strip()
+                        or str(registro.get('Segundo nombre', '') or '').strip())
+    tiene_apellido = bool(str(registro.get('Primer apellido', '') or '').strip()
+                          or str(registro.get('Segundo apellido', '') or '').strip())
+
+    checks = [
+        ('Diagnostico Coloracion', _ok('Diagnostico Coloracion 2')),  # dx propio de la coloración
+        ('Organo', _ok('Organo')),
+        ('Malignidad', _ok('Malignidad')),
+        ('N. de identificación', _ok('N. de identificación')),
+        ('Edad', _ok('Edad')),
+        ('Genero', _ok('Genero')),
+        ('Nombres (Primer o Segundo)', tiene_nombre and tiene_apellido),
+    ]
+    campos_totales = len(checks)
+    campos_completos = sum(1 for _, ok in checks if ok)
+    campos_faltantes = [nombre for nombre, ok in checks if not ok]
+    porcentaje = round(campos_completos / campos_totales * 100, 1) if campos_totales else 0.0
+    completo = campos_completos == campos_totales
+
+    try:
+        from core.unified_extractor import build_clean_full_name
+        nombre_display = build_clean_full_name(
+            str(registro.get('Primer nombre', '') or ''), str(registro.get('Segundo nombre', '') or ''),
+            str(registro.get('Primer apellido', '') or ''), str(registro.get('Segundo apellido', '') or ''))
+    except Exception:
+        nombre_display = ''
+    if not nombre_display or nombre_display == 'N/A':
+        nombre_display = 'Sin nombre completo'
+
+    return {
+        'numero_peticion': numero_peticion,
+        'completo': completo,
+        'nivel': 'completo' if completo else 'incompleto',
+        'porcentaje_completitud': porcentaje,
+        'campos_totales': campos_totales,
+        'campos_completos': campos_completos,
+        'campos_faltantes': campos_faltantes,
+        'campos_faltantes_detalle': (f"Campos: {', '.join(campos_faltantes)}" if campos_faltantes else "Ninguno"),
+        'biomarcadores_detectados': 0,
+        'biomarcadores_faltantes': [],
+        'paciente_nombre': nombre_display,
+        'estudios_solicitados': {
+            'tiene_estudios': False, 'biomarcadores_raw': [], 'biomarcadores_normalizados': [],
+            'columnas_bd_mapeadas': [], 'columnas_bd_estado': [], 'columnas_bd_porcentaje': [],
+            'no_mapeados': [], 'total_solicitados': 0, 'total_mapeados': 0,
+        },
+        'tiene_estudios_solicitados': False,
+        'es_coloracion': True,
+    }
+
+
 def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any] = None) -> Dict[str, Any]:
     """
     Verifica la completitud de un registro específico
@@ -1097,6 +1179,11 @@ def verificar_completitud_registro(numero_peticion: str, registro: Dict[str, Any
             columns = [description[0] for description in cursor.description]
             registro = dict(zip(columns, row))
             conn.close()
+
+        # V6.9.51: desviar los estudios de COLORACIÓN (Nº M) a su propia evaluación
+        # (flujo autónomo, sin campos IHQ). El flujo IHQ de abajo queda INTACTO.
+        if _es_fila_coloracion(registro.get('Numero de caso', numero_peticion)):
+            return _completitud_coloracion(numero_peticion, registro)
 
         # Analizar completitud
         campos_faltantes = []
