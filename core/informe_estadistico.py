@@ -517,7 +517,10 @@ def generar_informe_estadistico_pdf(df, out_path,
     story.append(Spacer(1, 12))
 
     # ---------- Tabla maestra (solo oncológicos) ----------
-    story.append(band(f"Diagnósticos oncológicos en detalle — {n_onco} casos neoplásicos"))
+    # V6.9.50: el encabezado deja EXPLÍCITO que es un subconjunto ("X de TOTAL"), para que
+    # el lector no espere que la suma de esta tabla dé el total general (los no-oncológicos
+    # van en la tabla siguiente y el banner TOTAL GENERAL cierra la reconciliación).
+    story.append(band(f"Diagnósticos oncológicos en detalle — {n_onco} de {total} casos (neoplásicos)"))
     story.append(Spacer(1, 5))
     if onco_total is not None and not onco_total.empty:
         hc = onco_h.to_dict() if onco_h is not None else {}
@@ -552,7 +555,7 @@ def generar_informe_estadistico_pdf(df, out_path,
                           key=lambda x: -x[1])
         no_n = sum(v for _, v in no_items)
         if no_items:
-            story.append(band(f"Otros diagnósticos (no oncológicos) en detalle — {no_n} casos"))
+            story.append(band(f"Otros diagnósticos (no oncológicos) en detalle — {no_n} de {total} casos"))
             story.append(Spacer(1, 5))
             rows2 = [["#", "Categoría (no oncológica)", "Casos", "%"]]
             for i, (k, v) in enumerate(no_items, 1):
@@ -569,11 +572,19 @@ def generar_informe_estadistico_pdf(df, out_path,
                 ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
             ]))
             story.append(t2)
-            story.append(Spacer(1, 5))
-            story.append(Paragraph(
-                f'<font size=9 color="#2d3e5e"><b>Reconciliación del detalle:</b> '
-                f'oncológicos <b>{n_onco}</b> + no oncológicos <b>{no_n}</b> = '
-                f'<b>{total}</b> casos.</font>', cell))
+            story.append(Spacer(1, 6))
+            # V6.9.50: banner PROMINENTE de reconciliación (antes era una línea pequeña que
+            # se perdía en la página). Deja obvio que las DOS tablas de detalle cierran al total.
+            recon = Table([[Paragraph(
+                f'<font size=11 color="#ffffff"><b>TOTAL GENERAL:&nbsp;&nbsp;{n_onco} oncológicos'
+                f'&nbsp;&nbsp;+&nbsp;&nbsp;{no_n} no oncológicos&nbsp;&nbsp;=&nbsp;&nbsp;{total} casos</b></font>',
+                cell)]], colWidths=[CW])
+            recon.setStyle(TableStyle([
+                ("BACKGROUND", (0, 0), (-1, -1), navy),
+                ("TOPPADDING", (0, 0), (-1, -1), 8), ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+                ("LEFTPADDING", (0, 0), (-1, -1), 12), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ]))
+            story.append(recon)
     story.append(Spacer(1, 12))
 
     # ---------- Órganos + biomarcadores (banda + tablas juntas) ----------
