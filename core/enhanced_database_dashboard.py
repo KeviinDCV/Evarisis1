@@ -563,6 +563,15 @@ class EnhancedDatabaseDashboard:
             from core.database_manager import get_all_records_as_dataframe
             self.df = get_all_records_as_dataframe()
 
+            # V6.9.50: el dashboard es ANALÍTICA ONCOLÓGICA IHQ -> excluir las filas de
+            # coloración (clave M…). No tienen 'Diagnostico Principal', así que contaminaban
+            # las gráficas (las ~6.740 caían todas en "SIN DIAGNOSTICO / REVISAR") e
+            # inflaban los conteos de malignidad/total. Mismo criterio que el informe.
+            if (self.df is not None and not self.df.empty
+                    and "Numero de caso" in self.df.columns):
+                self.df = self.df[~self.df["Numero de caso"].astype(str)
+                                  .str.match(r"^[Mm]\d", na=False)].copy()
+
             if self.df is None or self.df.empty:
                 self.show_no_data_message()
                 return
