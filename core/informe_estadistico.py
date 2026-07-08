@@ -24,33 +24,23 @@ KPI_COLORS = ["#2d3e5e", "#c0392b", "#1f8a5b", "#d98e2b", "#2980b9"]
 PALETA = ["#2d3e5e", "#c0392b", "#1f8a5b", "#e0a23a", "#2980b9",
           "#8a909c", "#7d5ba6", "#16a085", "#cd6155", "#34495e", "#5b7aa8", "#d35400"]
 
-NO_ONCOLOGICAS = {
-    "NEGATIVO PARA MALIGNIDAD", "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA",
-    "HALLAZGO HISTOLOGICO NORMAL / NO PATOLOGICO", "RESULTADO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
-    "ESTUDIO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)", "GLIOSIS / LESION REACTIVA SNC",
-    "RECHAZO DE TRASPLANTE", "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
-    "PROCESO INFLAMATORIO / INFECCIOSO (NO NEOPLASICO)", "HALLAZGO NO NEOPLASICO / NEGATIVO (OTRO)",
-    "ESTUDIO DE MEDULA OSEA (MORFOLOGIA)", "MUESTRA INSUFICIENTE / NO CONCLUYENTE",
-    "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)", "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES",
-    "OTRO / NO CATEGORIZADO", "SIN DATO",
-}
-# Subgrupos NO oncológicos (para la tabla de cobertura que reconcilia al total)
-GRUPO_NO_NEOPLASICO = {
-    "NEGATIVO PARA MALIGNIDAD", "HALLAZGO HISTOLOGICO NORMAL / NO PATOLOGICO",
-    "GLIOSIS / LESION REACTIVA SNC", "RECHAZO DE TRASPLANTE",
-    "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
-    "PROCESO INFLAMATORIO / INFECCIOSO (NO NEOPLASICO)",
-    "HALLAZGO NO NEOPLASICO / NEGATIVO (OTRO)", "ESTUDIO DE MEDULA OSEA (MORFOLOGIA)",
-    "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES",
-}
+# V6.9.49: las categorías NO oncológicas se DERIVAN del normalizador (FUENTE ÚNICA de
+# verdad) para no desincronizarse. Antes esta lista estaba hardcodeada y quedó corta ->
+# hallazgos no-neoplásicos (inflamación, tejido reactivo/normal, evaluaciones médicas,
+# médula ósea…) se contaban como TUMORES e inflaban el total neoplásico.
+from core.normalizador_diagnosticos import CATEGORIAS_NO_ONCOLOGICAS
+NO_ONCOLOGICAS = set(CATEGORIAS_NO_ONCOLOGICAS) | {"OTRO / NO CATEGORIZADO", "SIN DATO"}
+
+# Subgrupos NO oncológicos para la tabla de cobertura (reconcilia al total):
+# "estudios sin diagnóstico específico" vs "hallazgos no-neoplásicos" (todo lo demás).
 GRUPO_SIN_DX = {
     "RESULTADO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)", "ESTUDIO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
     "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA", "MUESTRA INSUFICIENTE / NO CONCLUYENTE",
-    # V6.9.30: el campo Dx traía marcadores IHQ / "ver comentario" / descripción
-    # de espécimen en vez de un diagnóstico (problema de extracción). Se agrupan
-    # aquí como "estudios sin diagnóstico específico" en vez de una fila aparte.
-    "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)",
+    # El campo Dx traía marcadores IHQ / "ver comentario" / "en curso" en vez de un
+    # diagnóstico -> se agrupan como "estudios sin diagnóstico específico".
+    "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)", "ESTUDIO EN CURSO / PENDIENTE (INFORME POSTERIOR)",
 }
+GRUPO_NO_NEOPLASICO = set(CATEGORIAS_NO_ONCOLOGICAS) - GRUPO_SIN_DX
 _VACIO = ("", "N/A", "NO MENCIONADO", "NO APLICA", "NAN", "NONE", "NULL", "SIN DATO", "NO ENCONTRADO")
 _MESES = {"01": "Ene", "02": "Feb", "03": "Mar", "04": "Abr", "05": "May", "06": "Jun",
           "07": "Jul", "08": "Ago", "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dic"}
@@ -551,6 +541,39 @@ def generar_informe_estadistico_pdf(df, out_path,
             ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
         ]))
         story.append(master)
+    story.append(Spacer(1, 12))
+
+    # ---------- Tabla: NO oncológicos en detalle (reconcilia el detalle al TOTAL) ----------
+    # V6.9.49: el detalle debe CERRAR al total. Antes solo se detallaban los oncológicos
+    # (n_onco) y el lector no podía reconciliar la suma con los {total} casos. Ahora se
+    # detallan también los no-oncológicos, de modo que oncológicos + no-oncológicos = total.
+    if allcat is not None:
+        no_items = sorted([(k, int(v)) for k, v in allcat.items() if k in NO_ONCOLOGICAS],
+                          key=lambda x: -x[1])
+        no_n = sum(v for _, v in no_items)
+        if no_items:
+            story.append(band(f"Otros diagnósticos (no oncológicos) en detalle — {no_n} casos"))
+            story.append(Spacer(1, 5))
+            rows2 = [["#", "Categoría (no oncológica)", "Casos", "%"]]
+            for i, (k, v) in enumerate(no_items, 1):
+                rows2.append([str(i), Paragraph(f'<font size=7>{k}</font>', cell), str(v), _pct(v, total)])
+            rows2.append(["", Paragraph('<b>TOTAL NO ONCOLÓGICOS</b>', cell), str(no_n), _pct(no_n, total)])
+            t2 = Table(rows2, colWidths=[0.7 * cm, 12.0 * cm, 1.5 * cm, 1.3 * cm], repeatRows=1)
+            t2.setStyle(TableStyle([
+                ("BACKGROUND", (0, 0), (-1, 0), navy), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"), ("FONTSIZE", (0, 0), (-1, -1), 7),
+                ("GRID", (0, 0), (-1, -1), 0.3, line), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("ALIGN", (2, 0), (-1, -1), "CENTER"),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -2), [colors.white, colors.HexColor("#f4f6fa")]),
+                ("FONTNAME", (0, -1), (-1, -1), "Helvetica-Bold"), ("BACKGROUND", (0, -1), (-1, -1), hfill),
+                ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
+            ]))
+            story.append(t2)
+            story.append(Spacer(1, 5))
+            story.append(Paragraph(
+                f'<font size=9 color="#2d3e5e"><b>Reconciliación del detalle:</b> '
+                f'oncológicos <b>{n_onco}</b> + no oncológicos <b>{no_n}</b> = '
+                f'<b>{total}</b> casos.</font>', cell))
     story.append(Spacer(1, 12))
 
     # ---------- Órganos + biomarcadores (banda + tablas juntas) ----------

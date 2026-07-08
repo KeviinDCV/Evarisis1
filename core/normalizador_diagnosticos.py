@@ -941,6 +941,49 @@ ORDEN_EVALUACION: list[str] = list(CATEGORIAS_DIAGNOSTICO.keys())
 
 
 # ===================================================================
+# V6.9.49 — CATÁLOGO CANÓNICO de categorías NO oncológicas (no neoplásicas / sin tumor
+# clasificado). FUENTE ÚNICA DE VERDAD: los consumidores (p.ej. el informe estadístico)
+# deben IMPORTAR esto en vez de mantener su propia lista, para no desincronizarse y
+# terminar contando hallazgos no-neoplásicos (inflamación, tejido reactivo/normal,
+# evaluaciones médicas, médula ósea, muestras no concluyentes…) como TUMORES.
+# Si se agrega una categoría NO-neoplásica a CATEGORIAS_DIAGNOSTICO, agrégala AQUÍ también.
+# (Las categorías dudosas —lesión benigna/hiperplasia, displasias/NIC, etc.— quedan FUERA
+#  de este set, es decir cuentan como neoplásicas, hasta decisión clínica.)
+# ===================================================================
+CATEGORIAS_NO_ONCOLOGICAS: frozenset = frozenset({
+    # Negativos / normales / reactivos / inflamatorios / infecciosos
+    "NEGATIVO PARA MALIGNIDAD",
+    "HALLAZGO HISTOLOGICO NORMAL / NO PATOLOGICO",
+    "HALLAZGO NO NEOPLASICO / NEGATIVO (OTRO)",
+    "TEJIDO NORMAL / SIN ALTERACIONES SIGNIFICATIVAS",
+    "TEJIDO LINFOIDE REACTIVO / NORMAL",
+    "PROCESO INFLAMATORIO / INFECCIOSO (NO NEOPLASICO)",
+    "INFLAMACION / PROCESO INFECCIOSO",
+    "GLIOSIS / LESION REACTIVA SNC",
+    "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
+    "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES",
+    # Médula ósea (morfología / evaluación / reactiva)
+    "ESTUDIO DE MEDULA OSEA (MORFOLOGIA)",
+    "MEDULA OSEA / EVALUACION HEMATOLOGICA",
+    "MEDULA OSEA REACTIVA / NORMAL",
+    # Evaluaciones médicas NO oncológicas
+    "RECHAZO DE TRASPLANTE",
+    "BIOPSIA RENAL / EVALUACION DE INJERTO",
+    "PATOLOGIA RENAL MEDICA (NO ONCOLOGICA)",
+    "MUCOSA DUODENAL / LINFOCITOS INTRAEPITELIALES",
+    "PATOLOGIA TIROIDEA BENIGNA (BOCIO)",
+    # Estudios IHQ de marcadores sin tumor clasificado
+    "RESULTADO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
+    "ESTUDIO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
+    # Muestra insuficiente / sin diagnóstico / pendiente
+    "MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA",
+    "MUESTRA INSUFICIENTE / NO CONCLUYENTE",
+    "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)",
+    "ESTUDIO EN CURSO / PENDIENTE (INFORME POSTERIOR)",
+})
+
+
+# ===================================================================
 # V6.9.29 — FALLBACK FINAL: garantiza CERO "OTRO / NO CATEGORIZADO".
 # Cuando ningún patrón explícito matchea, todo texto NO vacío se enruta a
 # un bucket clínico con sentido según palabras clave amplias. Esto SOLO se
