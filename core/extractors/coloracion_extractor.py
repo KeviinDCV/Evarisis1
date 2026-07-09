@@ -397,13 +397,19 @@ def extraer_organo(texto_caso: str) -> str:
     if not region:
         return ""
     marcas = list(_RE_FILA_ESTUDIO.finditer(region))
+    try:  # V6.9.54: normalizar procedimiento->órgano (TIROIDECTOMIA TOTAL -> TIROIDES)
+        from core.extractors.medical_extractor import normalizar_organo as _norm_org
+    except Exception:
+        _norm_org = lambda x: x
     organos: List[str] = []
     for i, mk in enumerate(marcas):
         desde = mk.end()
         hasta = marcas[i + 1].start() if i + 1 < len(marcas) else len(region)
         org = _organo_de_fila(region[desde:hasta])
-        if org and org not in organos and org not in ("ORGANO", "FECHA TOMA"):
-            organos.append(org)
+        if org and org not in ("ORGANO", "FECHA TOMA"):
+            org = _norm_org(org) or org
+            if org not in organos:
+                organos.append(org)
     return " | ".join(organos)
 
 

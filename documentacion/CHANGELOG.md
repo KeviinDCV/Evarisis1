@@ -1,5 +1,36 @@
 # Changelog
 
+## [6.9.53] - 2026-07-09 — Extractor de Diagnóstico Determinista (fix causa raíz + validación anti-regresión 2076 casos)
+
+**Sprint:** Revalidación exhaustiva de la calidad del diagnóstico principal de los 2.076 casos IHQ (auditoría caso-por-caso contra el PDF real) y corrección de raíz del extractor de diagnóstico. Se identificaron **132 diagnósticos erróneos (6,4%)** y se corrigieron las 6 causas raíz mediante un **extractor determinista** (sin IA, que alucinaba) que lee la sección DIAGNÓSTICO real del informe. **Verificado con banco anti-regresión sobre los 2.076 casos (reproceso fiel sin re-OCR) + doble verificación adversarial de veracidad (31 agentes contrastando cada dx cambiado contra el PDF).**
+
+### Impact
+| Aspecto | Antes | Ahora (V6.9.53) |
+|---|---|---|
+| Diagnósticos "malos" (encabezado/basura/truncado/preámbulo) | 246 | **88** (−158) |
+| Diagnósticos inventados (texto no presente en el PDF) | 6 | **0** (verificación adversarial) |
+| Inversiones de negación (negativo→positivo, peligroso) | varias | **0** |
+| Fidelidad de los cambios (verificada contra PDF) | — | **220/226 (97,3%)** fieles o aceptables |
+| Regresiones sobre casos correctos | — | **0** |
+| Diagnósticos corregidos en BD MySQL producción | — | **191 + 6 auditados + 1 malignidad** |
+
+### Root causes fixed (extract_diagnostico_principal + fallback determinista)
+- **Encabezado como dx** ("ESTUDIO DE INMUNOHISTOQUÍMICA") → fallback determinista lee la sección DIAGNÓSTICO real (recupera NEUROFIBROMA, CARCINOSARCOMA, HEMANGIOBLASTOMA, SIALOADENITIS…).
+- **Truncado** — se eliminó 'IN SITU' de `keywords_estudio_m` (recupera CARCINOMA DUCTAL **IN SITU**); captura a través del salto de línea (OCR envuelve el dx).
+- **Prefijo perdido** — `[A-ZÁÉÍÓÚÑ]*SARCOMA`/`*CARCINOMA` (OSTEO/LIPO/ANGIOSARCOMA ya no caen a "SARCOMA").
+- **Inversión de negación** (crítico) — extracción negación-aware: "NEGATIVO PARA SARCOMA DE KAPOSI" ya no se reporta como "SARCOMA DE KAPOSI".
+- **Sección equivocada** — selección por posición + campo sinóptico "Tipo histológico:" (espécimen A) + guardas contra referencias a otros bloques/preliminares.
+- **Dx diferido** — devuelve "VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO" honesto (no inventa).
+
+### Files modified
+- `core/unified_extractor.py` — NUEVO extractor determinista `_dx_determinista()` (+ helpers `_det_buscar_sinoptico`, `_det_buscar_en_zona`, `_det_seccion_diagnostico`, `_dp_sospechoso`, `_det_trim`, `_det_cand_valido`). Corre ANTES de la capa IA (desactivada por alucinar) => 100% determinista y verídico. Parte A: fix 'IN SITU' + prefijo en ESTRATEGIA 4/5. Guardas V6.9.53: respetar el diferido honesto contra el override de la capa Coloración y de la descripción microscópica (que inventaban dx).
+
+### Fixed
+- **Capa Coloración / descripción microscópica pisaban "VER COMENTARIO":** el post-proceso V6.9.37/41 sustituía el diferido honesto del extractor por el dx de un estudio de coloración distinto o por una descripción microscópica → afirmaba diagnósticos NO presentes en el informe IHQ. Ahora se respeta el diferido.
+
+### Data
+- BD MySQL `huv_oncologia` (tabla `informes_ihq`): **191 diagnósticos + 6 correcciones auditadas** actualizados (backup `backups/backup_dx_extractor_*.json`). Actualización quirúrgica de SOLO `Diagnostico Principal` + `Malignidad` (no toca nombres/biomarcadores).
+
 ## [6.9.48] - 2026-06-26 — Coloraciones Básicas (estudios M) + Reconciliación por Cédula + Performance Visualizador
 
 **Sprint:** Incorporación de un pipeline AUTÓNOMO para los PDFs de "Coloraciones básicas" (estudios `M…`, tinciones tipo H&E) que conviven con el flujo IHQ sin contaminarlo, más reconciliación coloración↔IHQ por cédula independiente del orden de importación, optimizaciones de rendimiento del Visualizador y dos fixes de extracción/división de nombres. El sprint cubre cuatro versiones consecutivas (V6.9.45 → V6.9.48). **Verificado en producción contra la BD MySQL `huv_oncologia` (tabla `informes_ihq`): la tabla pasó de 2.076 a 8.816 filas** tras la carga inicial de coloraciones.

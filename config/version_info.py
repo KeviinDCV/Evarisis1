@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.48",
-    "version_name": "Coloraciones Basicas (estudios M) + Reconciliacion por Cedula + Performance Visualizador",
-    "build_date": "26/06/2026",
-    "build_number": "202606261356",
+    "version": "6.9.53",
+    "version_name": "Extractor de Diagnostico Determinista (fix causa raiz + validacion anti-regresion 2076 casos)",
+    "build_date": "09/07/2026",
+    "build_number": "202607090850",
     "release_type": "Stable",
-    "codename": "Save First, Then Notify",
+    "codename": "Truthful Diagnosis",
 }
 
 # Información del equipo de desarrollo

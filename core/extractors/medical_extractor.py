@@ -3570,6 +3570,12 @@ def normalize_organ_name(organ_text: str) -> str:
     if not organ_text:
         return 'ORGANO_NO_ESPECIFICADO'
 
+    # V6.9.54: normalizar procedimiento->órgano + quitar prefijo/lateralidad ANTES de
+    # todo (TIROIDECTOMIA TOTAL -> TIROIDES, BIOPSIA DE MAMA DERECHA -> MAMA). Verídico.
+    _no = normalizar_organo(organ_text)
+    if _no and len(_no) >= 3:
+        organ_text = _no
+
     # NUEVO v6.2.3: Detectar órgano duplicado con texto administrativo en medio
     # Patrón: "BIOPSIA DE MEDULA OSEA [texto administrativo] BIOPSIA DE MEDULA OSEA"
     # Si detectamos duplicación, quedarnos solo con la primera ocurrencia
@@ -3625,6 +3631,119 @@ def normalize_organ_name(organ_text: str) -> str:
         return 'ORGANO_NO_ESPECIFICADO'
 
     return cleaned
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.54: NORMALIZACIÓN ROBUSTA DE ÓRGANO — el campo "Organo" (tabla "Estudios
+# solicitados") a veces trae el PROCEDIMIENTO ("Tiroidectomía total") en vez del
+# órgano. Esta función deriva el órgano de forma verídica:
+#   1) ÓRGANO-PRIMERO: si el texto NOMBRA un órgano (tiroidea, mamaria, hueso…),
+#      ese es el órgano — aunque haya un procedimiento (evita ISTMOLOBECTOMIA
+#      TIROIDEA -> PULMON, COLECISTECTOMIA -> VEJIGA).
+#   2) PROCEDIMIENTO que implica órgano (TIROIDECTOMIA -> TIROIDES).
+#   3) lo que quede tras quitar procedimiento/lateralidad.
+# ═══════════════════════════════════════════════════════════════════════════
+_ORGN_PROC = [
+    (r'PARATIROIDECT', 'PARATIROIDES'), (r'TIROIDECT', 'TIROIDES'),
+    (r'MASTECT|CUADRANTECT|TUMORECT', 'MAMA'), (r'PROSTATECT', 'PROSTATA'),
+    (r'HISTERECT', 'UTERO'), (r'OOFORECT|ANEXECT|SALPINGOOFOR', 'OVARIO'),
+    (r'NEFRECT|NEFROURETERECT', 'RIÑON'), (r'ADRENALECT|SUPRARRENALECT', 'GLANDULA SUPRARRENAL'),
+    (r'PROTOSIGMOIDECT|HEMICOLECT|SIGMOIDECT|COLECT', 'COLON'), (r'PROCTECT|PROTECT', 'RECTO'),
+    (r'APENDICECT', 'APENDICE'), (r'GASTRECT', 'ESTOMAGO'), (r'ESOFAGUECT|ESOFAGECT', 'ESOFAGO'),
+    (r'HEPATECT', 'HIGADO'), (r'PANCREATECT|DUODENOPANCREATECT|PANCREATODUOD\w*ECT|WHIPPLE', 'PANCREAS'),
+    (r'ESPLENECT', 'BAZO'), (r'CISTECT|CISTOPROSTATECT', 'VEJIGA'),
+    (r'LOBECT|NEUMONECT|SEGMENTECT|BILOBECT', 'PULMON'), (r'ORQUIECT', 'TESTICULO'),
+    (r'LARINGECT', 'LARINGE'), (r'GLOSECT', 'LENGUA'), (r'CONIZACI', 'CERVIX'),
+    (r'PAR[OÓ]?TIDECT|SUBMAXILECT|SUBMANDIBULECT', 'GLANDULA SALIVAL'),
+    (r'PROSTECT', 'PROSTATA'), (r'PENECT', 'PENE'), (r'VULVECT|HEMIVULVECT', 'VULVA'),
+    (r'HEMICOPLECT|HEMICOLPECT', 'COLON'), (r'COLOSTOM|SIGMOIDOSTOM', 'COLON'),
+    (r'ILEOSTOM|ILEECT', 'INTESTINO DELGADO'), (r'VESICOSTOM', 'VEJIGA'),
+    (r'CRANEOT|CRANEECT', 'CRANEO'), (r'ENUCLEACI', 'OJO'),
+]
+_ORGN_PROC_STRIP = re.compile(
+    r'(?i)\b(?:BIOPSIA(?:\s+(?:POR|CON|DE|ENDOSC\w+|INCISIONAL|ESCISIONAL|PERCUT\w+|'
+    r'TRUCUT|CORE|AGUJA(?:\s+GRUESA|\s+FINA)?|TRU-?CUT))?|RESECCI[OÓ]N(?:\s+(?:DE|LOCAL|AMPLIA|'
+    r'TRANSURETRAL|ENDOSC\w+))?|PUNCI[OÓ]N|CITOLOG[IÍ]A|EX[EÉ]RESIS|LEGRADO|CURETAJE|'
+    r'POLIPECTOM[IÍ]A|MUESTRA(?:\s+DE)?|ESPECIMEN(?:\s+DE)?|FRAGMENTO(?:\s+DE)?|'
+    r'ESTUDIO(?:\s+DE)?|MATERIAL(?:\s+DE)?|PLACA[S]?|L[AÁ]MINA[S]?|'
+    r'PRODUCTO[S]?(?:\s+DE)?|PIEZA(?:\s+DE)?|BORDE[S]?(?:\s+(?:DE|SUPERIOR|INFERIOR|PROFUNDO))?|'
+    r'DONA[S]?(?:\s+(?:DE|DISTAL|PROXIMAL))?|EXCEDENTE(?:\s+DE)?|DISECCI[OÓ]N(?:\s+DE)?|'
+    r'AMPUTACI[OÓ]N(?:\s+DE)?|EXTIRPACI[OÓ]N(?:\s+DE)?|ESTACI[OÓ]N\s*\d*)\b')
+_ORGN_LATER = re.compile(
+    r'(?i)\b(?:DERECH[OA]|IZQUIERD[OA]|BILATERAL|TOTAL|PARCIAL|RADICAL|SUBTOTAL|SIMPLE|MODIFICAD[OA]|'
+    r'SUPERIOR|INFERIOR|PROXIMAL|DISTAL|ANTERIOR|POSTERIOR|MEDIAL|LATERAL|CENTRAL|AMPLIAD[OA]|'
+    r'HORA[S]?\s*\d+|NIVEL(?:ES)?\s*\w*|SEGMENTO\s*\w*|LOBUL\w+|CARA\s+\w+|POLO\s+\w+)\b')
+_ORGN_CANON_RE = re.compile(
+    r'(?i)\b(MAMA|MAMARIO|CERVIX|C[EÉ]RVIX|EXOC[EÉ]RVIX|ENDOC[EÉ]RVIX|COLON|RECTO|SIGMOIDES|CIEGO|'
+    r'AP[EÉ]NDICE|PULM[OÓ]N|EST[OÓ]MAGO|PR[OÓ]STATA|OVARIO|ENDOMETRIO|[UÚ]TERO|H[IÍ]GADO|P[AÁ]NCREAS|'
+    r'RI[ÑN][OÓ]N|TIROIDES|PIEL|VEJIGA|HIP[OÓ]FISIS|GANGLIO|F[EÉ]MUR|MUSLO|HUESO|M[EÉ]DULA\s+[OÓ]SEA|'
+    r'GL[AÁ]NDULA\s+SALIVAL|TESTICULO|PENE|ESOFAGO|ES[OÓ]FAGO|LARINGE|LENGUA|BAZO|VES[IÍ]CULA\s+BILIAR|'
+    r'PLEURA|PERITONEO|EPIPL[OÓ]N|RETROPERITONEO|MEDIASTINO|GL[AÁ]NDULA\s+SUPRARRENAL|PARATIROIDES|'
+    r'ENC[EÉ]FALO|CEREBRO|NASOFARINGE|OROFARINGE|AM[IÍ]GDALA|VULVA|VERTEBRA|ESTERNON)\b')
+_ORGN_CANON = [
+    (r'RENAL|RI[ÑN][OÓ]N', 'RIÑON'), (r'HEP[AÁ]TIC|H[IÍ]GADO', 'HIGADO'),
+    (r'G[AÁ]STRIC|EST[OÓ]MAGO', 'ESTOMAGO'), (r'MAMARI|MAMA', 'MAMA'),
+    (r'TIROIDE', 'TIROIDES'), (r'[OÓ]SE[OA]|HUESO', 'HUESO'), (r'CUT[AÁ]NE|PIEL', 'PIEL'),
+    (r'VESICAL|VEJIGA', 'VEJIGA'), (r'UTERIN|[UÚ]TERO', 'UTERO'),
+    (r'PROST[AÁ]TIC|PR[OÓ]STATA', 'PROSTATA'), (r'PULMON|PULM[OÓ]N', 'PULMON'),
+    (r'C[EÉ]RVIX|CUELLO\s+UTERIN|EXOC[EÉ]RVIX|ENDOC[EÉ]RVIX', 'CERVIX'),
+    (r'COL[OÓ]N|SIGMOIDES|CIEGO', 'COLON'), (r'VES[IÍ]CULA\s+BILIAR', 'VESICULA BILIAR'),
+    (r'GANGLI|ADENOPAT', 'GANGLIO'), (r'GL[AÁ]NDULA\s+SALIVAL|PAR[OÓ]TID|SUBMANDIBUL|SUBMAXIL', 'GLANDULA SALIVAL'),
+]
+
+
+# Detecta si el valor trae un PROCEDIMIENTO/muestra (el único caso a normalizar).
+# Si NO hay procedimiento, el valor ya es un órgano/sitio -> NO se toca (no se le
+# quita lateralidad ni multi-espécimen a un órgano que ya estaba bien).
+_ORGN_HAS_PROC = re.compile(
+    r'(?i)ECTOM[IÍ]A|OTOM[IÍ]A|OSTOM[IÍ]A|BIOPSIA|\bBX\b|RESECCI[OÓ]N|CIRUG[IÍ]A|PUNCI[OÓ]N|'
+    r'CITOLOG[IÍ]A|LEGRADO|CURETAJE|EX[EÉ]RESIS|CONIZACI[OÓ]N|POLIPECTOM|AMPUTACI[OÓ]N|'
+    r'\bPRODUCTO\b|\bPIEZA\b|EXTIRPACI[OÓ]N|MASTECT|CUADRANTECT|LOBECT|WHIPPLE')
+
+
+def _orgn_canon(s):
+    for pat, org in _ORGN_CANON:
+        if re.search(pat, s, re.IGNORECASE):
+            return org
+    return None
+
+
+def normalizar_organo(v):
+    """Deriva el órgano verídico de un valor que trae un PROCEDIMIENTO. Si el valor
+    NO trae procedimiento (ya es un órgano/sitio), lo devuelve TAL CUAL (no le quita
+    lateralidad ni multi-espécimen). Verídico y conservador."""
+    if not v:
+        return v
+    u = re.sub(r'\s+', ' ', str(v)).strip().upper()
+    if not _ORGN_HAS_PROC.search(u):
+        return v  # sin procedimiento -> no tocar
+    prim = re.split(r'\s*\|\s*', u)[0]  # primer espécimen si "A | B | ..."
+    # 1) ÓRGANO-PRIMERO (el sustantivo gana al procedimiento)
+    s = _ORGN_PROC_STRIP.sub(' ', prim)
+    s = _ORGN_LATER.sub(' ', s)
+    s = re.sub(r'(?i)\b(?:DE|DEL|LA|EL|LOS|LAS|CON|Y|POR|EN)\b', ' ', s)
+    s = re.sub(r'[^\wÁÉÍÓÚÑ ]', ' ', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    c = _orgn_canon(s)
+    if c:
+        return c
+    m = _ORGN_CANON_RE.search(s)
+    if m:
+        return m.group(1).strip()
+    # CBC/escamocelular + zonas faciales = PIEL
+    if re.search(r'(?i)\bCBC\b|CARCINOMA\s+BASOCEL|BASOCELULAR|\bCEC\b|ESCAMOCELULAR\s+(?:EN|DE)|'
+                 r'ALA\s+NASAL|DORSO\s+NASAL|SURCO\s+NASO|REGION\s+(?:FRONTAL|SUPRACILIAR|MALAR|'
+                 r'TEMPORAL|GENIANA|CIGOM)|MENT[OÓ]N|MEJILLA|P[AÁ]RPADO|PABELL[OÓ]N\s+AURIC|H[EÉ]LIX|'
+                 r'CUERO\s+CABELLUDO|LABIO\b', prim):
+        return 'PIEL'
+    # 2) PROCEDIMIENTO que implica órgano (COLECISTECTOMIA -> VESICULA BILIAR antes que CISTECT)
+    if re.search(r'COLECISTECT', prim):
+        return 'VESICULA BILIAR'
+    for pat, org in _ORGN_PROC:
+        if re.search(pat, prim):
+            return org
+    # 3) lo que quede
+    return s if len(s) >= 3 else u
 
 
 def determine_malignancy(diagnostico: str, macroscopica: str, microscopica: str, full_text: str) -> str:
