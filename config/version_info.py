@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.53",
-    "version_name": "Extractor de Diagnostico Determinista (fix causa raiz + validacion anti-regresion 2076 casos)",
+    "version": "6.9.54",
+    "version_name": "Extractor Diagnostico Determinista + Normalizacion de Organo (procedimiento->organo)",
     "build_date": "09/07/2026",
-    "build_number": "202607090850",
+    "build_number": "202607091145",
     "release_type": "Stable",
     "codename": "Truthful Diagnosis",
 }

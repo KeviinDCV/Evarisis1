@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.9.54] - 2026-07-09 — Normalización de Órgano (procedimiento→órgano)
+
+**Sprint:** El campo `Organo` (columna "Organo" de la tabla "Estudios solicitados") a veces traía el **procedimiento/cirugía** ("Tiroidectomía total", "Biopsia de mama derecha", "Hemicolectomía") en vez del órgano. Nueva función `normalizar_organo()` que deriva el órgano de forma **verídica** (sin re-OCR — el órgano es derivable del propio valor).
+
+### Impact
+| Aspecto | Antes | Ahora (V6.9.54) |
+|---|---|---|
+| Casos con procedimiento en `Organo` | 2.094 | corregidos **2.075** (backup) |
+| Falsos-mapeos (verificación programática) | — | **0** (los 4 "sospechosos" eran correctos: typos/abreviaturas) |
+| Residuales sin resolver (typos OCR de procedimiento) | — | **27** (MASECTOMIA, GASTECTOMIA… — OCR corrupto) |
+
+### Root cause / fix
+- **`normalizar_organo()`** (`core/extractors/medical_extractor.py`): (1) ÓRGANO-PRIMERO — si el texto nombra un órgano (tiroidea/mamaria/hueso…) ese gana al procedimiento (evita `ISTMOLOBECTOMIA TIROIDEA → PULMON` y `COLECISTECTOMIA → VEJIGA`); (2) mapa procedimiento→órgano (`TIROIDECTOMIA → TIROIDES`, `MASTECTOMIA → MAMA`, `HEMICOLECTOMIA → COLON`…); (3) limpia prefijo (BIOPSIA/BX/PRODUCTO/PIEZA) y lateralidad; CBC/CEC + zonas faciales → PIEL.
+- Conectado en `normalize_organ_name` (IHQ) y `coloracion_extractor.extraer_organo` (estudios M) → PDFs futuros salen correctos.
+
+### Data
+- BD MySQL `informes_ihq`: **2.075 valores de `Organo`** normalizados (backup `backups/backup_organo_*.json`). Solo se tocó el campo `Organo`.
+
 ## [6.9.53] - 2026-07-09 — Extractor de Diagnóstico Determinista (fix causa raíz + validación anti-regresión 2076 casos)
 
 **Sprint:** Revalidación exhaustiva de la calidad del diagnóstico principal de los 2.076 casos IHQ (auditoría caso-por-caso contra el PDF real) y corrección de raíz del extractor de diagnóstico. Se identificaron **132 diagnósticos erróneos (6,4%)** y se corrigieron las 6 causas raíz mediante un **extractor determinista** (sin IA, que alucinaba) que lee la sección DIAGNÓSTICO real del informe. **Verificado con banco anti-regresión sobre los 2.076 casos (reproceso fiel sin re-OCR) + doble verificación adversarial de veracidad (31 agentes contrastando cada dx cambiado contra el PDF).**
