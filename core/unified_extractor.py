@@ -2398,15 +2398,30 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     # Corre ANTES de la IA (que está desactivada) => 100% determinista y verídico.
     try:
         from core.extractor_diagnostico_ia import es_diagnostico_no_valido as _dx_no_valido
-        if full_text and (_dx_no_valido(db_record["Diagnostico Principal"])
-                          or _dp_sospechoso(db_record["Diagnostico Principal"])):
+        if full_text:
+            _cur = str(db_record["Diagnostico Principal"] or '')
             _dx_det = _dx_determinista(full_text)
-            if _dx_det and (not _dx_no_valido(_dx_det) or _dx_det.startswith('VER DESCRIP')):
+            _det_dif = bool(_dx_det) and _dx_det.upper().startswith(('VER DESCRIP', 'VER COMENT'))
+            _cur_malo = _dx_no_valido(_cur) or _dp_sospechoso(_cur)
+            _aplicar = False
+            if _dx_det:
+                if _cur_malo and (_det_dif or not _dx_no_valido(_dx_det)):
+                    # el dx actual es inválido/sospechoso -> usar el determinista
+                    _aplicar = True
+                elif _det_dif and not _cur_malo:
+                    # el actual PARECE válido pero el determinista dice DIFERIDO:
+                    # solo pisar si el actual NO aparece en la sección DIAGNÓSTICO final
+                    # (=> se tomó de la micro/preliminar => NO es el dx real => diferir).
+                    _sec = (' '.join(_det_seccion_diagnostico(full_text))).upper()
+                    _clave = re.sub(r'\s+', ' ', _cur).strip().upper()[:22]
+                    if _clave and _clave not in _sec:
+                        _aplicar = True
+            if _aplicar:
                 _dx_det = limpiar_diagnostico(_dx_det) or _dx_det
                 if _dx_det:
                     logging.info(
                         f"[dx-det] {db_record.get('Numero de caso', '?')}: "
-                        f"'{str(db_record['Diagnostico Principal'])[:40]}' -> '{_dx_det[:55]}'")
+                        f"'{_cur[:40]}' -> '{_dx_det[:55]}'")
                     db_record["Diagnostico Principal"] = _dx_det
     except Exception as _e_det:
         logging.warning(f"[dx-det] fallback no aplicado: {_e_det}")
@@ -3092,10 +3107,18 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         _NODX = (_SINCAT, _IHQCAT, 'SIN DATO')
         # V6.9.42: actuar tanto si el dx cayó en REVISAR como en "ESTUDIO IHQ" (rótulo
         # del espécimen capturado en vez del dx que viene después).
-        if _cat_dx(_dxp) in (_SINCAT, _IHQCAT):
+        # V6.9.53: respetar el diferido HONESTO del extractor determinista
+        # ("VER DESCRIPCIÓN...") -> NO rescatar desde micro (evita AFIRMAR una
+        # descripción microscópica como diagnóstico -> cero invención).
+        if _dxp.strip().upper().startswith(('VER DESCRIP', 'VER COMENT')):
+            _tm = ''  # marcador: no aplicar rescate
+        elif _cat_dx(_dxp) in (_SINCAT, _IHQCAT):
             _td = str(db_record.get('Descripcion Diagnostico', '') or '')
+            # V6.9.53: SOLO el bloque DIAGNÓSTICO (_td). Se elimina el fallback a la
+            # descripción microscópica (_tm): capturaba hallazgos descriptivos que NO
+            # son el diagnóstico final (invención en casos diferidos).
+            _dx_real = _dx_saltando_rotulo(_td)
             _tm = str(db_record.get('Descripcion microscopica', '') or '')
-            _dx_real = _dx_saltando_rotulo(_td) or _dx_saltando_rotulo(_tm)
             if _dx_real and _cat_dx(_dx_real) not in _NODX:
                 db_record['Diagnostico Principal'] = _dx_real
                 _dxp = _dx_real
@@ -3130,7 +3153,11 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
                  'MADURACION DE LAS', 'BIOPSIA DE', 'BIOPSIA DEL', 'SIN AUMENTO DE', 'SIN EVIDENCIA DE',
                  'POBLACIÓN DE', 'POBLACION DE', 'LINFOCITOS INTRA', 'MUESTRA CON', 'MUESTRA LIMITADA')
         _es_fragmento = (not _dxp.strip()) or len(_dxp.strip()) < 4 or any(m in _dxp.upper() for m in _FRAG)
-        if _es_fragmento and _cat_dx(_dxp) == 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)':
+        # V6.9.53: NO sustituir por el dx de COLORACIÓN cuando el determinista decidió
+        # DIFERIR ("VER DESCRIPCIÓN..."). La coloración es OTRO estudio; usar su dx como
+        # principal del IHQ afirmaría un diagnóstico que NO está en el informe IHQ.
+        _es_diferido = _dxp.strip().upper().startswith(('VER DESCRIP', 'VER COMENT'))
+        if _es_fragmento and not _es_diferido and _cat_dx(_dxp) == 'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)':
             if _dxc.upper() not in ('', 'N/A', 'NO APLICA', 'NO ENCONTRADO', 'NAN'):
                 # V6.9.41: usar Coloración SOLO si trae un término diagnóstico claro
                 # (incluye no-neoplásicos: HEPATITIS, GASTRITIS...). NO se usa una
