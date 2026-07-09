@@ -2245,6 +2245,11 @@ Disco {i}:
         self._search_entry_dashboard.bind("<FocusIn>", lambda e: self._on_search_focus_in(self._search_entry_dashboard, self.search_var_dashboard))
         self._search_entry_dashboard.bind("<FocusOut>", lambda e: self._on_search_focus_out(self._search_entry_dashboard, self.search_var_dashboard))
 
+        # V6.9.55: filtro segmentado Todos / IHQ / Coloración (a la derecha del buscador)
+        self._crear_filtro_tipo_registro(table_frame).grid(
+            row=0, column=1, sticky="e", padx=(0, 10), pady=10
+        )
+
         # Crear Sheet en el dashboard (compartiremos la misma instancia para sincronización)
         # IMPORTANTE: Usamos self.sheet para que sea la MISMA instancia que el visualizador original
         from tksheet import Sheet
@@ -2443,6 +2448,11 @@ Disco {i}:
         self._search_entry.insert(0, self._search_placeholder)
         self._search_entry.bind("<FocusIn>", lambda e: self._on_search_focus_in(self._search_entry, self.search_var))
         self._search_entry.bind("<FocusOut>", lambda e: self._on_search_focus_out(self._search_entry, self.search_var))
+
+        # V6.9.55: filtro segmentado Todos / IHQ / Coloración (a la derecha del buscador)
+        self._crear_filtro_tipo_registro(table_frame).grid(
+            row=0, column=1, sticky="e", padx=(0, 10), pady=10
+        )
 
         # V5.3.8: Sheet virtualizado tipo Excel (reemplaza Treeview)
         # VENTAJAS: Virtualización nativa, rendimiento profesional, comportamiento Excel
@@ -4692,17 +4702,48 @@ Disco {i}:
             self.sheet.headers([])
             return
 
+        # V6.9.55: filtro por TIPO DE REGISTRO (Todos / IHQ / Coloración) del control
+        # segmentado del Visualizador. Coloración = filas de clave 'M…' (^[Mm]\d);
+        # IHQ = el resto. Se aplica AQUÍ porque TODOS los caminos de poblado (refresh,
+        # buscador, cambio de filtro) pasan por _populate_treeview -> ambas tablas
+        # (self.sheet y self.sheet_dashboard) quedan filtradas de forma consistente.
+        # Por defecto ('todos') no hace nada -> comportamiento idéntico al anterior.
+        _mostrar_todas_las_m = False
+        _tipo_reg = "todos"
+        try:
+            _tv = getattr(self, "_tipo_registro_var", None)
+            if _tv is not None:
+                _tipo_reg = (_tv.get() or "todos").strip().lower()
+        except Exception:
+            _tipo_reg = "todos"
+        if _tipo_reg in ("ihq", "coloracion") and "Numero de caso" in df_to_display.columns:
+            _es_m = df_to_display["Numero de caso"].astype(str).str.match(r"^[Mm]\d", na=False)
+            if _tipo_reg == "coloracion":
+                df_to_display = df_to_display[_es_m]
+                # En modo Coloración se muestran TODAS las coloraciones como filas
+                # propias (no se ocultan las "redundantes" ya reflejadas en un IHQ).
+                _mostrar_todas_las_m = True
+            else:  # ihq
+                df_to_display = df_to_display[~_es_m]
+            if df_to_display.empty:
+                self.sheet.set_sheet_data([[]])
+                self.sheet.headers([])
+                return
+
         # V6.9.46: ocultar filas M de coloración REDUNDANTES (su dx ya está reflejado en
         # la fila IHQ del paciente -> single-merged). Las multi (la fila IHQ marca
         # "varias (N)") y las coloraciones de pacientes SIN IHQ sí se muestran.
-        try:
-            df_to_display = self._ocultar_m_redundantes(df_to_display)
-        except Exception as e:
-            logging.warning(f"⚠️ No se pudo filtrar filas M redundantes: {e}")
-        if df_to_display.empty:
-            self.sheet.set_sheet_data([[]])
-            self.sheet.headers([])
-            return
+        # V6.9.55: en modo "Coloración" se OMITE este ocultamiento (se quieren ver
+        # todas las coloraciones como filas propias).
+        if not _mostrar_todas_las_m:
+            try:
+                df_to_display = self._ocultar_m_redundantes(df_to_display)
+            except Exception as e:
+                logging.warning(f"⚠️ No se pudo filtrar filas M redundantes: {e}")
+            if df_to_display.empty:
+                self.sheet.set_sheet_data([[]])
+                self.sheet.headers([])
+                return
 
         # V5.3.9.3: NO sobrescribir "Nombre Completo" si ya existe (creada en database_manager.py sin N/A)
         # Crear columna de Nombre Completo solo si NO existe
@@ -5209,6 +5250,31 @@ Disco {i}:
             mask &= _haystack.str.contains(_tok, na=False, regex=False)
 
         self._populate_treeview(df[mask])
+
+    def _crear_filtro_tipo_registro(self, parent):
+        """V6.9.55: control segmentado para filtrar la tabla del Visualizador por
+        TIPO DE REGISTRO: Todos / IHQ / Coloración.
+
+        Las filas de coloración son las de clave 'M…' (^[Mm]\\d) en 'Numero de caso';
+        las IHQ son el resto (mismo criterio que _get_filtered_df y _ocultar_m_redundantes).
+        El estado (self._tipo_registro_var) se COMPARTE entre el Visualizador y el
+        Dashboard, así ambas tablas y buscadores quedan sincronizados. Al cambiar,
+        re-dispara filter_tabla (respeta la búsqueda activa); el filtrado real se
+        aplica en _populate_treeview, por donde pasan TODOS los caminos de poblado."""
+        if not hasattr(self, '_tipo_registro_var'):
+            self._tipo_registro_var = tk.StringVar(value="todos")
+        cont = ttk.Frame(parent)
+        ttk.Label(cont, text="Ver:", font=("Segoe UI", 10)).pack(side=LEFT, padx=(0, 6))
+        for _val, _txt in (("todos", "Todos"), ("ihq", "IHQ"), ("coloracion", "Coloración")):
+            ttk.Radiobutton(
+                cont,
+                text=_txt,
+                value=_val,
+                variable=self._tipo_registro_var,
+                command=self.filter_tabla,
+                bootstyle="primary-outline-toolbutton",
+            ).pack(side=LEFT)
+        return cont
 
     def _on_search_focus_in(self, entry_widget, string_var):
         """Limpiar placeholder al enfocar el campo de búsqueda"""
