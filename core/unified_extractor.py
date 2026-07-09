@@ -344,6 +344,255 @@ def _razon_valida_sin_dx(texto: str) -> str:
     return ''
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.53: EXTRACTOR DE DIAGNÓSTICO DETERMINISTA (fallback SIN IA)
+# Reemplaza la capa IA (desactivada por alucinar) cuando el regex primario deja
+# un dx inválido/encabezado/preámbulo/truncado. Lee la sección DIAGNÓSTICO del
+# texto completo y extrae el enunciado diagnóstico REAL, con tres garantías:
+#   1) NEGACIÓN preservada (nunca invierte "NO EVIDENCIA DE X" -> "X").
+#   2) PREFIJO preservado (OSTEO/LIPO/ANGIO/FIBRO-sarcoma, no cae a "SARCOMA").
+#   3) NO inventa: si la sección solo trae rótulo/marcadores, devuelve el
+#      diferido honesto "VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO".
+# Todo verídico: solo extrae texto presente en el informe.
+# ═══════════════════════════════════════════════════════════════════════════
+_DET_PIE = re.compile(
+    r'(?i)Todos los an[aá]lisis son avalados|Royal College|Pathologists of|'
+    r'Quality Assurance|Oneworld|RCPAQAP|ISO\s*17043|---\s*P[AÁ]GINA|'
+    r'Responsable del an[aá]lisis|Nota:\s*Este informe|Copia\s+Pag|_{6,}|\bRM[:\s]*\d')
+_DET_BND = re.compile(
+    r'(?i)\b(?:GRADO\s+(?:HISTOL|NUCLEAR)|SCORE|NOTTINGHAM|KI[\s\-]?67|'
+    r'RECEPTOR(?:ES)?\s+DE|HER[\s\-]?2|POSITIVO\s+PARA|NEGATIVO\s+PARA\s+(?:CD|P\d|CK|'
+    r'GATA|TTF|RECEPT|BCL|ACTIN|VIMENT|S[\s\-]?100|SOX|MELAN|HMB|KI)|'
+    r'EXTENSI[OÓ]N\s+TUMORAL|TAMA[NÑ]O\s+TUMORAL|INVASI[OÓ]N\s+(?:LINFOVASC|PERINEURAL|ANGIOLINF)|'
+    r'M[AÁ]RGENES|COMENTARIOS?|PATR[OÓ]N\s+(?:HISTOL|ARQUITECT)|EXPRESI[OÓ]N\s+(?:DE\s+)?(?:P\d|CD|KI))')
+_DET_CONN = re.compile(
+    r'(?i)(?:FAVORECEN?|SUGIEREN?|SUGESTIV[OA]S?\s+DE|COMPATIBLES?\s+CON|CONSISTENTES?\s+CON|'
+    r'CORRESPONDEN?\s+A|SE\s+TRATA\s+DE|DIAGN[OÓ]STIC[OA]S?\s+DE|SON\s+DE|APOYAN?|'
+    r'INDICATIV[OA]S?\s+DE|A\s+FAVOR\s+DE)\s*:?\s*'
+    r'(?:UN[OA]?S?\s+|EL\s+|LA\s+|LOS\s+|LAS\s+|DE\s+)?'
+    r'([A-ZÁÉÍÓÚÑ][^.]{3,120})')  # [^.] (no [^\n.]): el dx envuelve por salto de línea (OCR)
+_DET_NEG = re.compile(
+    r'(?i)(?:NO\s+(?:SE\s+)?(?:MUESTRAN?|EVIDENCIAN?|OBSERVAN?|IDENTIFICAN?|DEMUESTRAN?|HAY)\s+'
+    r'(?:EVIDENCIA[S]?\s+(?:MORFOL[OÓ]GICA[S]?\s+(?:NI|E|Y)\s+INMUNOH\w*\s+)?DE\s+|SIGNOS\s+DE\s+|'
+    r'C[EÉ]LULAS\s+(?:NEOPL[AÁ]SICAS\s+)?DE\s+)?'
+    r'|NEGATIV[OA]S?\s+PARA\s+|SIN\s+EVIDENCIA\s+(?:\w+\s+){0,4}?DE\s+|AUSENCIA\s+DE\s+)'
+    r'([A-ZÁÉÍÓÚÑ][^.]{3,90})')
+_DET_PUNTERO = re.compile(r'(?i)VER\s+(?:LA\s+)?(?:DESCRIPCI[OÓ]N|COMENTARIO)')
+_DET_FOOTER_PARR = re.compile(
+    r'(?is)(?:Nota:\s*Este informe|Todos los an[aá]lisis son avalados|'
+    r'Caso\s+valorado\s+en\s+conjunto|Responsable\s+del\s+an[aá]lisis|'
+    r'Se\s+(?:sugiere|recomienda)\b|Hacer\s+correlaci|Correlacionar\s+con|'
+    r'Se\s+realizaron\s+(?:los\s+)?(?:estudios|controles)|Previa\s+valoraci)'
+    r'.*?(?=\bDIAGN[ÓO]STICO\b|\bCOMENTARIOS?\b|\bN\.?\s*petici|\bIHQ\d{6}\b|\n\s*[A-ZÁÉÍÓÚÑ]{4,}[.:]|\Z)')
+_DET_RUIDO = re.compile(
+    r'(?i)CASO\s+VALORAD|CORRELACION|MANEJO\s+CL[IÍ]NICO|ESPECIALIDAD|IM[AÁ]GENES\s+DIAGN|'
+    r'HISTORIA\s+CL[IÍ]NICA|LABORATORIO|RESPONSABLE|M[EÉ]DICO\s+TRATANTE|L[AÁ]MINA|'
+    r'\bBLOQUE\b|\bRM\b|CONTROL\s+DE\s+CALIDAD|PLATAFORMA|VENTANA|ROCHE|AVALADOS|'
+    r'\bISO\b|COPIA|PROGRAMA|SE\s+SUGIERE|SE\s+RECOMIENDA|PREVIA\s+VALORAC|'
+    r'REALIZAR[OA]N?\s+(?:LOS\s+)?ESTUDIOS|DENTRO\s+DE\s+SU')
+_DET_FUERTE = re.compile(
+    r'(?i)(CARCINOMA|SARCOMA|LINFOMA|MELANOMA|MIELOMA|LEUCEMIA|BLASTOMA|GLIOMA|'
+    r'ADENOMA|NEOPLASIA|\bTUMOR\b|HIPERPLASIA|DISPLASIA|INFLAMAC|GRANULOMA|'
+    r'DERMATITIS|GASTRITIS|COLITIS|NEFRITIS|HEPATITIS|ADENITIS|TIROIDITIS|'
+    r'PROLIFERAC|HEMANGIOMA|ATROFIA|METAPLASIA|RECHAZO|MICROANGIOPAT|'
+    r'PAPILOMA|CARCINOIDE|MESOTELIOMA|SCHWANNOMA|MENINGIOMA|CONDROMA|LIPOMA|'
+    r'FIBROSIS|NECROSIS|CAMBIOS\s+FIBRO|CAMBIOS\s+REACT|LESI[OÓ]N|N[OÓ]DULO|QUISTE)')
+_DET_FIRMA = re.compile(
+    r'(?i)\b(?:NANCY|ARMANDO|CARLOS|MAR[IÍ]A|JORGE|ISABELLA|LUZ|DIANA|ANDR[EÉ]S|JUAN|LINA|'
+    r'PAOLA|LILIANA|SANDRA|CLAUDIA|MAURICIO|RICARDO|FERNANDO)\s+[A-ZÁÉÍÓÚÑ]+'
+    r'(?:\s+[A-ZÁÉÍÓÚÑ]+)?\s+(?:M[EÉ]DIC|PAT[OÓ]LOG|RESPONSABLE|RM\b)')
+_DET_NEG_OK = re.compile(
+    r'(?i)(NEOPLAS|MALIGNIDAD|MALIGN|LESI[OÓ]N|COMPROMISO|C[EÉ]LULAS?\s+(?:NEOPL|TUMORAL|MALIGN|ATIP)|'
+    r'METASTAS|CARCINOMA|LINFOMA|SARCOMA|MELANOMA|DISPLASIA|CAMBIOS\s+DISPL|INFILTRAC|'
+    r'ENFERMEDAD|GRANULOMA|AMILOIDE|CELULARIDAD\s+ABERRANTE|H\.\s*PYLORI|HELICOBACTER)')
+_DET_GENERICO = re.compile(r'(?i)^(?:TUMOR|LESI[OÓ]N|NEOPLASIA|N[OÓ]DULO|PROCESO)\b[A-ZÁÉÍÓÚÑ ]{0,14}$')
+_DET_PROC_SKIP = re.compile(
+    r'(?i)(?:estudios?\s+de\s+inmunohistoqu[ií]mica|inmunohistoqu[ií]mica|'
+    r'biopsia(?:\s+(?:por|con|end\w+|escisional|incisional))?|resecci[oó]n|'
+    r'citolog[ií]a|punci[oó]n|mastectom[ií]a|colposcopia|protosigmoidectom[ií]a)'
+    r'(?:\s+para[^.:]{0,40})?\s*[.:]\s*')  # tolera "inmunohistoquímica para proteínas MMR y HER2:"
+_DET_NOMBRES_PAT = (
+    'ARMANDO CORTES BUELVAS', 'NANCY MEJIA VARGAS', 'CARLOS CAICEDO ESTRADA',
+    'ARMANDO CORTES', 'NANCY MEJIA', 'CARLOS CAICEDO', 'ISABELLA CAICEDO')
+
+
+def _det_trim(frase):
+    frase = _DET_PIE.split(frase)[0]
+    frase = re.sub(r'(?i)^\s*(?:BIOPSIA|RESECCI[OÓ]N|CITOLOG[IÍ]A|PUNCI[OÓ]N|MUESTRA|'
+                   r'COMPROMISO\s+(?:POR|DE|SECUNDARIO\s+POR)|INFILTRACI[OÓ]N\s+POR|'
+                   r'PRESENCIA\s+DE\s+UN[OA]?|A\s+UN[OA]?|DEL?|EN)\b[\s.:,-]*',
+                   '', frase)
+    m = _DET_BND.search(frase)
+    if m:
+        frase = frase[:m.start()]
+    frase = re.split(r'(?i)\.?\s*[-•]\s*VER\b|\bVER\s+(?:DESCRIPCI|COMENTARIO)|'
+                     r'\s*[•]\s*|\.\s*-\s+[A-ZÁÉÍÓÚÑ]', frase)[0]
+    # cortar hallazgo secundario (negación/positividad de rule-out) tras el dx primario
+    frase = re.split(r'(?i)\s+(?:NEGATIVO|POSITIVO)\s+PARA\b', frase)[0]
+    frase = re.sub(r'\s+', ' ', frase).strip(' .,:;-⁠\t\n')
+    frase = re.split(r'(?i),?\s+(?:REQUIERE|REQUIRIENDO|SE\s+SUGIERE|SE\s+RECOMIENDA|'
+                     r'A\s+PESAR|EN\s+CORRELACI[OÓ]N|PARA\s+LO\s+QUE|POR\s+LO\s+QUE)', frase)[0]
+    return frase.strip(' .,:;-')
+
+
+def _det_quitar_historia(t):
+    return re.sub(r'(?i)\((?:con\s+)?historia[^)]*\)', ' ', t)
+
+
+def _det_seccion_diagnostico(full_text):
+    ft = _DET_FOOTER_PARR.sub('  . ', full_text)
+    ft = re.sub(r'(?m)^\s*---\s*P[ÁA]GINA.*$', ' ', ft)
+    ft = re.sub(r'\bIHQ\d{6}\b', ' ', ft)
+    heads = [m.start() for m in re.finditer(r'DIAGN[ÓO]STICO', ft)]
+    blk = ft
+    if heads:
+        cand = [h for h in heads if re.search(r'(?i)inmunohistoqu|biopsia|resecci|citolog', ft[h:h + 340])]
+        blk = ft[(cand[-1] if cand else heads[-1]):]
+    partes = re.split(r'(?i)\bCOMENTARIOS?\b', blk, maxsplit=1)
+    cuerpo, coment = partes[0], (partes[1] if len(partes) > 1 else '')
+    up = cuerpo.upper()
+    pos_firma = min([up.find(n) for n in _DET_NOMBRES_PAT if up.find(n) >= 0] or [len(cuerpo)])
+    cuerpo = cuerpo[:pos_firma]
+    fm = _DET_FIRMA.search(cuerpo)
+    if fm:
+        cuerpo = cuerpo[:fm.start()]
+    cuerpo = _det_quitar_historia(cuerpo)
+    ims = list(_DET_PROC_SKIP.finditer(cuerpo))
+    zona = cuerpo[ims[-1].end():] if ims else cuerpo
+    return _DET_PIE.split(zona)[0].strip(), _DET_PIE.split(coment)[0].strip()
+
+
+def _det_cand_valido(x):
+    x = x.strip(' .,:;-⁠\t\n')
+    if len(x) < 5 or not re.search(r'[A-Za-zÁÉÍÓÚÑ]', x):
+        return ''
+    if _DET_RUIDO.search(x):
+        return ''
+    # V6.9.53: NUNCA aceptar referencias a otros bloques/estudios, diagnósticos
+    # preliminares, ni etiquetas de biomarcador (evita AFIRMAR texto que no es el
+    # dx final de ESTE caso -> cero invención).
+    if re.search(r'(?i)[ÍI]NDICE\s+DE\s+PROLIFERAC|CON\s+DIAGN[OÓ]STICO\s+DE|AL\s+BLOQUE\b|'
+                 r'\bBLOQUE\s+M\d|DIAGN[OÓ]STICO\s+(?:INICIAL|PREVIO)|A\s+CLASIFICAR|'
+                 r'REQUIERE\s+(?:DE\s+)?ESTUDIOS|SOBREEXPRESI[OÓ]N\s+DE\s*$', x):
+        return ''
+    if x.upper() in ('DIAGNÓSTICO', 'DIAGNOSTICO', 'REVISIÓN', 'REVISION', 'FINITIVO'):
+        return ''
+    return x
+
+
+def _det_frase_desde(zona, pos):
+    dl = [zona.rfind('\n', 0, pos), zona.rfind('. ', 0, pos), zona.rfind('- ', 0, pos),
+          zona.rfind('•', 0, pos), zona.rfind(': ', 0, pos), zona.rfind('.-', 0, pos)]
+    left = max(dl)
+    if left < 0:
+        left = 0
+    return zona[left:].lstrip(' .:-•⁠\t\n')
+
+
+def _det_buscar_en_zona(zona):
+    """Devuelve el PRIMER enunciado diagnóstico de la zona (la conclusión suele ir
+    primero). Prefiere no-genéricos; negación y conector compiten por posición."""
+    cands = []  # (start, texto, generico)
+    for m in _DET_NEG.finditer(zona):
+        if not _DET_NEG_OK.search(m.group(1)):
+            continue
+        x = _det_cand_valido(_det_trim(m.group(1)))
+        if x:
+            cands.append((m.start(), 'NEGATIVO PARA ' + x.upper(), False))
+    for m in _DET_CONN.finditer(zona):
+        pre = zona[max(0, m.start(1) - 22):m.start(1)].upper()
+        if re.search(r'\bNO\b|NEGATIV|SIN\s+EVIDENCIA|AUSENCIA\s+DE', pre):
+            continue
+        x = _det_cand_valido(_det_trim(m.group(1)))
+        if x and not _DET_PUNTERO.search(x):
+            cands.append((m.start(), x.upper(), bool(_DET_GENERICO.match(x))))
+    for m in _DET_FUERTE.finditer(zona):
+        pre = zona[max(0, m.start() - 26):m.start()].upper()
+        if re.search(r'\bNO\b|NEGATIV|SIN\s+EVIDENCIA|AUSENCIA\s+DE', pre):
+            continue
+        frag = _det_frase_desde(zona, m.start())
+        if re.search(r'(?i)HALLAZGOS|CARACTER[IÍ]STICAS|SUGIEREN|FAVORECEN|COMPATIBLES?\s+CON', frag):
+            continue
+        x = _det_cand_valido(_det_trim(frag))
+        if x and _DET_FUERTE.search(x):
+            cands.append((m.start(), x.upper(), bool(_DET_GENERICO.match(x))))
+    # solo candidatos genéricos-rótulo ("LESIÓN EN HIPÓFISIS") -> no es un dx real;
+    # devolver '' para que caiga a whole-text / "VER DESCRIPCIÓN..." (honesto).
+    no_gen = [c for c in cands if not c[2]]
+    if not no_gen:
+        return ''
+    no_gen.sort(key=lambda c: c[0])  # el PRIMERO por posición
+    return no_gen[0][1]
+
+
+# Campo SINÓPTICO estructurado ("Tipo histológico: X", "Diagnóstico histopatológico:
+# X") — es la fuente MÁS fiable del dx primario y, en casos multi-espécimen, el
+# PRIMERO corresponde al espécimen A (principal). Evita agarrar hallazgos nodales/B.
+_DET_SINOPTICO = re.compile(
+    r'(?i)(?:Tipo\s+histol[oó]gico|Diagn[oó]stico\s+histopatol[oó]gico|'
+    r'Diagn[oó]stico\s+integrado|Diagn[oó]stico\s+final)\s*:\s*([A-ZÁÉÍÓÚÑ][^\n.]{4,110})')
+
+
+def _det_buscar_sinoptico(full_text):
+    """Extrae el dx del campo sinóptico estructurado (el PRIMERO = espécimen A).
+    Solo entidades fuertes; NO referencias/preliminares/índices (filtrados en
+    _det_cand_valido). '' si no hay campo sinóptico con dx claro."""
+    ft = _DET_FOOTER_PARR.sub('  . ', full_text)
+    for m in _DET_SINOPTICO.finditer(ft):
+        x = _det_cand_valido(_det_trim(m.group(1)))
+        if not x:
+            continue
+        xu = re.sub(r'^(?:DE|DEL|EN|UN|UNA|LA|EL|LOS|LAS)\s+', '', x.upper())
+        if _DET_GENERICO.match(xu) or _DET_PUNTERO.search(xu):
+            continue
+        mf = _DET_FUERTE.search(xu)
+        if mf and mf.start() <= 22:
+            return xu
+    return ''
+
+
+def _dx_determinista(full_text):
+    """Extrae el dx real SOLO de fuentes verídicas del caso: campo sinóptico
+    estructurado -> sección DIAGNÓSTICO final -> diferido honesto. NUNCA lee
+    referencias a otros bloques, dx preliminares, ni descripciones -> cero invención."""
+    if not full_text or not str(full_text).strip():
+        return ''
+    # 1) campo sinóptico ("Tipo histológico: X") — fuente más fiable, espécimen A
+    r = _det_buscar_sinoptico(full_text)
+    if r:
+        return r
+    # 2) sección DIAGNÓSTICO final (tras inmunohistoquímica, antes de COMENTARIOS)
+    zona, coment = _det_seccion_diagnostico(full_text)
+    r = _det_buscar_en_zona(zona)
+    if r:
+        return r
+    # 3) sin dx en la sección -> diferido HONESTO (no se inventa desde comentarios)
+    zona_util = re.sub(r'(?i)(EXPRESI[OÓ]N|POSITIVO|NEGATIVO)[^.\n]*', '', zona).strip(' .,:;-')
+    if _DET_PUNTERO.search(zona) or _DET_PUNTERO.search(coment) or (len(zona_util) < 10 and coment.strip()):
+        return 'VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO'
+    return ''
+
+
+def _dp_sospechoso(dp):
+    """True si el dx del regex primario es incompleto/preámbulo/encabezado y
+    conviene intentar el fallback determinista (amplía es_diagnostico_no_valido)."""
+    if not dp:
+        return True
+    u = re.sub(r'\s+', ' ', str(dp)).strip().upper()
+    if not u or u == 'N/A':
+        return True
+    if re.search(r'\b(?:HALLAZGOS|CARACTER[IÍ]STICAS)\b.*\b(?:SUGIEREN|FAVORECEN|COMPATIBLE|SUGESTIV)', u):
+        return True
+    if re.match(r'(?:LO[SZ]|LA[S]?|EL)\s+(?:HALLAZGOS|ESTUDIOS?|CARACTER[IÍ]STICAS|CORRELACI)', u):
+        return True
+    if re.search(r'(?:\bDE\s+TIPO|\bSIN|\bCON|\bY\s+DE|\bDE\s+LA|\bDE\s+ALTO|'
+                 r'GRADO\s+HISTOL[OÓ]GICO|A\s+CLASIFICAR|A\s+DEFINIR|MEDIANTE\s+ESTUDIOS)$', u):
+        return True
+    if re.search(r'ESTUDIO[S]?\s+(?:DE|POR)\s+INMUNOHISTOQU', u):
+        return True
+    return False
+
+
 # V6.9.42: malignidad COHERENTE derivada del diagnóstico (negación > término
 # inequívoco > categoría). Reemplaza el cálculo por keywords sueltos que marcaba
 # "NEGATIVO PARA NEOPLASIA" como maligno o "MESOTELIOMA" como benigno.
@@ -538,7 +787,9 @@ def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = ''
                     'SCORE', 'NOTTINGHAM',
                     'INVASIÓN LINFOVASCULAR', 'INVASION LINFOVASCULAR',
                     'INVASIÓN PERINEURAL', 'INVASION PERINEURAL',
-                    'IN SITU', 'DUCTAL IN SITU', 'LOBULAR IN SITU'
+                    # V6.9.53: 'IN SITU' ELIMINADO — es parte del diagnóstico
+                    # (CARCINOMA DUCTAL IN SITU), no dato del estudio M. Truncar aquí
+                    # perdía la distinción in situ vs invasivo (crítico clínicamente).
                 ]
 
                 # Detener diagnóstico ANTES del primer keyword del estudio M
@@ -612,7 +863,9 @@ def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = ''
         return diagnostico
 
     # ESTRATEGIA 4: Buscar diagnósticos patológicos al inicio
-    patron_inicio = r'^\s*((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS|TUMOR|NEOPLASIA)[^.]+?)(?:\.|$)'
+    # V6.9.53: prefijo preservado ([A-ZÁÉÍÓÚÑ]*SARCOMA|...ADENOMA) para no caer
+    # OSTEO/LIPO/ANGIOSARCOMA -> "SARCOMA" ni FIBROADENOMA -> "ADENOMA".
+    patron_inicio = r'^\s*((?:ADENOCARCINOMA|[A-ZÁÉÍÓÚÑ]*CARCINOMA|LINFOMA|[A-ZÁÉÍÓÚÑ]*SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS|TUMOR|NEOPLASIA)[^.]+?)(?:\.|$)'
     match_inicio = re.search(patron_inicio, texto, re.IGNORECASE)
     if match_inicio:
         diagnostico = match_inicio.group(1).strip().upper()
@@ -621,7 +874,7 @@ def extract_diagnostico_principal(diagnostico_completo: str, full_text: str = ''
 
     # ESTRATEGIA 5: Buscar patrones comunes de diagnóstico
     patrones_diagnostico = [
-        r'((?:CARCINOMA|ADENOCARCINOMA|LINFOMA|SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS)[^.]+?)(?:\.|$)',
+        r'((?:ADENOCARCINOMA|[A-ZÁÉÍÓÚÑ]*CARCINOMA|LINFOMA|[A-ZÁÉÍÓÚÑ]*SARCOMA|MELANOMA|GLIOMA|MENINGIOMA|METASTASIS)[^.]+?)(?:\.|$)',
         r'((?:TUMOR|NEOPLASIA|LESION)[^.]+?(?:MALIGNO|BENIGNO|INVASIVO)[^.]*?)(?:\.|$)',
     ]
 
@@ -2137,6 +2390,26 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         diagnostico_principal = diagnostico_completo.strip().rstrip('.')
 
     db_record["Diagnostico Principal"] = diagnostico_principal if diagnostico_principal else 'N/A'
+
+    # V6.9.53: FALLBACK DETERMINISTA (SIN IA) — si el dx del regex primario es
+    # inválido/encabezado/preámbulo/truncado, extrae el dx REAL de la sección
+    # DIAGNÓSTICO del texto completo (negación-safe, prefijo-safe). NO inventa:
+    # si la sección solo trae rótulo/marcadores devuelve "VER DESCRIPCIÓN...".
+    # Corre ANTES de la IA (que está desactivada) => 100% determinista y verídico.
+    try:
+        from core.extractor_diagnostico_ia import es_diagnostico_no_valido as _dx_no_valido
+        if full_text and (_dx_no_valido(db_record["Diagnostico Principal"])
+                          or _dp_sospechoso(db_record["Diagnostico Principal"])):
+            _dx_det = _dx_determinista(full_text)
+            if _dx_det and (not _dx_no_valido(_dx_det) or _dx_det.startswith('VER DESCRIP')):
+                _dx_det = limpiar_diagnostico(_dx_det) or _dx_det
+                if _dx_det:
+                    logging.info(
+                        f"[dx-det] {db_record.get('Numero de caso', '?')}: "
+                        f"'{str(db_record['Diagnostico Principal'])[:40]}' -> '{_dx_det[:55]}'")
+                    db_record["Diagnostico Principal"] = _dx_det
+    except Exception as _e_det:
+        logging.warning(f"[dx-det] fallback no aplicado: {_e_det}")
 
     # V6.9.30: FALLBACK IA (LOCAL) — si el diagnóstico del regex NO es un
     # diagnóstico real (resultado de marcadores IHQ, "ver comentario", línea de
