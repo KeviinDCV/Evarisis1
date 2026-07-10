@@ -25,8 +25,10 @@ COLS_TO_SHOW = [
     "Diagnostico Coloracion 2",
     "Diagnostico Principal",
     "Factor pronostico",
-    "Descripcion macroscopica",   # V6.9.49: descripción macro (IHQ + coloración)
-    "Descripcion microscopica",   # V6.9.49: descripción micro (IHQ + coloración)
+    "Descripcion macroscopica",   # V6.9.55: descripción macro del informe IHQ (proceso/solicitud)
+    "Descripcion microscopica",   # V6.9.55: descripción micro del informe IHQ (técnica + interpretación)
+    "Descripcion macroscopica Coloracion",   # V6.9.55: macro REAL del tejido (PDF de coloración)
+    "Descripcion microscopica Coloracion",   # V6.9.55: micro REAL del tejido (PDF de coloración)
     "IHQ_ORGANO",
     "IHQ_ESTUDIOS_SOLICITADOS",
     "IHQ_HER2",
@@ -169,6 +171,13 @@ COLS_TO_SHOW = [
 HEADER_ALIAS = {
     "Diagnostico Coloracion": "Diagnostico IHQ",
     "Diagnostico Coloracion 2": "Diagnostico Coloracion",
+    # V6.9.55: desdoble de descripciones por ORIGEN. Las columnas viejas contienen el
+    # texto del informe IHQ (solicitud/proceso/técnica); las nuevas, la descripción
+    # REAL del tejido tomada del PDF de coloración (macro/micro del estudio de histología).
+    "Descripcion macroscopica": "Descripcion Macroscopica IHQ",
+    "Descripcion microscopica": "Descripcion Microscopica IHQ",
+    "Descripcion macroscopica Coloracion": "Descripcion Macroscopica Coloracion",
+    "Descripcion microscopica Coloracion": "Descripcion Microscopica Coloracion",
 }
 
 

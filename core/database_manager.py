@@ -171,6 +171,8 @@ NEW_TABLE_COLUMNS_ORDER: List[str] = [
     "Patologo",  # v5.3.6: Renombrado (antes "Usuario finalizacion")
     "Malignidad", "Descripcion macroscopica",
     "Descripcion microscopica",  # v5.3.5: Simplificado
+    "Descripcion macroscopica Coloracion",  # V6.9.55: macro REAL del tejido (PDF de coloración)
+    "Descripcion microscopica Coloracion",  # V6.9.55: micro REAL del tejido (PDF de coloración)
     "Descripcion Diagnostico",   # v5.3.5: Simplificado
     "Diagnostico Coloracion",    # v6.1.0: NUEVO - Diagnóstico del Estudio M (Coloración) con Nottingham
     "Diagnostico Coloracion 2",  # V6.9.45: Dx del PDF de Coloración (estudio M autónomo); lo escribe SOLO el procesador de coloraciones, NO el flujo IHQ
@@ -244,6 +246,8 @@ def _create_table_if_not_exists(cursor: sqlite3.Cursor):
             "Fecha Informe" TEXT, "Patologo" TEXT,
             "Malignidad" TEXT, "Descripcion macroscopica" TEXT,
             "Descripcion microscopica" TEXT,
+            "Descripcion macroscopica Coloracion" TEXT,
+            "Descripcion microscopica Coloracion" TEXT,
             "Descripcion Diagnostico" TEXT,
             "Diagnostico Coloracion" TEXT,  -- v6.1.0: Diagnóstico del Estudio M (Coloración) con Nottingham
             "Diagnostico Coloracion 2" TEXT,  -- V6.9.45: Dx del PDF de Coloración (estudio M autónomo)
@@ -578,12 +582,14 @@ def _migrate_columns_mysql():
     except Exception:
         return
     existing = _adapter_existing_cols(TABLE_NAME)
-    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos", "Diagnostico Coloracion 2"}
+    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos", "Diagnostico Coloracion 2",
+                                   "Descripcion macroscopica Coloracion", "Descripcion microscopica Coloracion"}
     missing = expected - existing
     for col in missing:
         col_type = "VARCHAR(500)"
         if col in ("Descripcion macroscopica", "Descripcion microscopica",
-                   "Descripcion Diagnostico", "Datos Clinicos", "Diagnostico Coloracion 2"):
+                   "Descripcion Diagnostico", "Datos Clinicos", "Diagnostico Coloracion 2",
+                   "Descripcion macroscopica Coloracion", "Descripcion microscopica Coloracion"):
             col_type = "TEXT"
         elif col == "Fecha Ingreso Base de Datos":
             col_type = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"

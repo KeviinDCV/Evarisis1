@@ -33,8 +33,14 @@ _COLS_DEMOGRAFIA = (
     "Genero", "Edad", "Organo", "Fecha Informe",
 )
 
-# V6.9.49: descripciones macro/micro del informe de histología (mismas columnas que IHQ).
-_COLS_DESCRIPCION = ("Descripcion macroscopica", "Descripcion microscopica")
+# V6.9.55: la descripción REAL del tejido de la coloración (macro/micro del estudio de
+# histología) va a columnas PROPIAS ('… Coloracion') para diferenciarla del texto del
+# informe IHQ (solicitud/proceso/técnica), que vive en 'Descripcion macro/microscopica'.
+# Mapa: clave que devuelve el extractor de coloración -> columna destino en la fila M.
+_MAP_DESC_COLORACION = {
+    "Descripcion macroscopica": "Descripcion macroscopica Coloracion",
+    "Descripcion microscopica": "Descripcion microscopica Coloracion",
+}
 # V6.9.49/51: campos DERIVADOS del texto (misma semántica del flujo IHQ):
 #   Malignidad -> determine_malignancy;  Procedimiento -> CIRUGÍA/BIOPSIA/CONGELACIÓN.
 _COLS_DERIVADAS = ("Malignidad", "Procedimiento")
@@ -101,9 +107,13 @@ def process_coloracion_file(
             stats["revisar"] += 1
         rec: Dict[str, Any] = {"Numero de caso": c["numero_caso"],
                                "Diagnostico Coloracion 2": dx}
-        for k in _COLS_DEMOGRAFIA + _COLS_DESCRIPCION + _COLS_DERIVADAS:
+        for k in _COLS_DEMOGRAFIA + _COLS_DERIVADAS:
             if c.get(k):
                 rec[k] = c[k]
+        # V6.9.55: descripción real del tejido -> columnas propias de coloración
+        for _src, _dst in _MAP_DESC_COLORACION.items():
+            if c.get(_src):
+                rec[_dst] = c[_src]
         registros.append(rec)
 
     if out_numeros is not None:
@@ -163,9 +173,13 @@ def process_coloracion_batch(
             stats["revisar"] += 1
         rec: Dict[str, Any] = {"Numero de caso": c["numero_caso"],
                                "Diagnostico Coloracion 2": dx}
-        for k in _COLS_DEMOGRAFIA + _COLS_DESCRIPCION + _COLS_DERIVADAS:
+        for k in _COLS_DEMOGRAFIA + _COLS_DERIVADAS:
             if c.get(k):
                 rec[k] = c[k]
+        # V6.9.55: descripción real del tejido -> columnas propias de coloración
+        for _src, _dst in _MAP_DESC_COLORACION.items():
+            if c.get(_src):
+                rec[_dst] = c[_src]
         registros.append(rec)
 
     if dry_run:
@@ -209,6 +223,12 @@ def reconciliar_coloraciones(
 
     from core.database_manager import get_all_records_as_dataframe, save_records
 
+    # V6.9.55: además del diagnóstico, la reconciliación arrastra a la fila IHQ la
+    # DESCRIPCIÓN REAL del tejido (macro/micro) tomada de las filas M, a columnas propias
+    # '… Coloracion'. Mismo criterio: filas M = fuente de verdad; solo escribe no vacíos.
+    _MACRO_COL = "Descripcion macroscopica Coloracion"
+    _MICRO_COL = "Descripcion microscopica Coloracion"
+
     df = get_all_records_as_dataframe()
     m_by_ced: Dict[str, List[tuple]] = {}
     ihq_by_ced: Dict[str, List[tuple]] = {}
@@ -221,36 +241,55 @@ def reconciliar_coloraciones(
             continue
         if _es_fila_m(caso):
             dx = _dx_real(r.get("Diagnostico Coloracion 2", ""))
-            if dx:
-                m_by_ced.setdefault(ced, []).append((caso, dx))
+            macro = _dx_real(r.get(_MACRO_COL, ""))
+            micro = _dx_real(r.get(_MICRO_COL, ""))
+            if dx or macro or micro:
+                m_by_ced.setdefault(ced, []).append((caso, dx, macro, micro))
         else:
-            ihq_by_ced.setdefault(ced, []).append(
-                (caso, _dx_real(r.get("Diagnostico Coloracion 2", "")))
-            )
+            ihq_by_ced.setdefault(ced, []).append((
+                caso,
+                _dx_real(r.get("Diagnostico Coloracion 2", "")),
+                _dx_real(r.get(_MACRO_COL, "")),
+                _dx_real(r.get(_MICRO_COL, "")),
+            ))
+
+    def _dedup_concat(valores: List[str]) -> str:
+        """Dedupe conservando el orden; concatena numerado si hay >1 distinto."""
+        vistos = set(); items: List[str] = []
+        for v in valores:
+            v = (v or "").strip()
+            if v and v not in vistos:
+                vistos.add(v)
+                items.append(v)
+        if not items:
+            return ""
+        return items[0] if len(items) == 1 else _concatenar_coloraciones(items)
 
     updates: List[Dict[str, Any]] = []
-    stats = {"ihq_actualizados": 0, "pacientes_enlazados": 0, "con_varias": 0}
+    stats = {"ihq_actualizados": 0, "pacientes_enlazados": 0, "con_varias": 0,
+             "desc_arrastradas": 0}
     for ced, pares in m_by_ced.items():
         ihqs = ihq_by_ced.get(ced, [])
         if not ihqs:
             continue  # paciente sin IHQ: la coloración vive en su fila M
-        # dedupe por texto conservando el orden por Nº M (cronológico)
-        vistos = set()
-        items = []
-        for _mc, _dx in sorted(pares, key=lambda x: str(x[0])):
-            if _dx not in vistos:
-                vistos.add(_dx)
-                items.append(_dx)
-        if len(items) == 1:
-            val = items[0]
-        else:
-            val = _concatenar_coloraciones(items)
+        pares_ord = sorted(pares, key=lambda x: str(x[0]))  # por Nº M (cronológico)
+        val_dx = _dedup_concat([p[1] for p in pares_ord])
+        val_macro = _dedup_concat([p[2] for p in pares_ord])
+        val_micro = _dedup_concat([p[3] for p in pares_ord])
+        if len({p[1] for p in pares_ord if p[1]}) > 1:
             stats["con_varias"] += 1
         enlazo = False
-        for (ihq_caso, cur) in ihqs:
-            if cur != val:
-                updates.append({"Numero de caso": ihq_caso,
-                                "Diagnostico Coloracion 2": val})
+        for (ihq_caso, cur_dx, cur_macro, cur_micro) in ihqs:
+            upd: Dict[str, Any] = {"Numero de caso": ihq_caso}
+            campos = 0
+            if val_dx and val_dx != cur_dx:
+                upd["Diagnostico Coloracion 2"] = val_dx; campos += 1
+            if val_macro and val_macro != cur_macro:
+                upd[_MACRO_COL] = val_macro; campos += 1; stats["desc_arrastradas"] += 1
+            if val_micro and val_micro != cur_micro:
+                upd[_MICRO_COL] = val_micro; campos += 1
+            if campos:
+                updates.append(upd)
                 enlazo = True
         if enlazo:
             stats["pacientes_enlazados"] += 1
@@ -266,5 +305,6 @@ def reconciliar_coloraciones(
         for i in range(0, len(updates), 200):
             save_records(updates[i:i + 200])
     _log(f"   🔗 Reconciliación: {len(updates)} filas IHQ actualizadas, "
-         f"{stats['con_varias']} con varias coloraciones.")
+         f"{stats['con_varias']} con varias coloraciones, "
+         f"{stats['desc_arrastradas']} descripciones arrastradas.")
     return stats
