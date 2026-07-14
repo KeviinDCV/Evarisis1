@@ -1069,6 +1069,7 @@ Cambios v5.0.1:
 import re
 import logging
 import sys
+import unicodedata  # V6.9.60: guarda de veracidad (comparación de alias sin tildes)
 from pathlib import Path
 from typing import Dict, Any, Optional
 
@@ -4380,6 +4381,242 @@ def buscar_en_microscopica(texto_completo, patron):
     return None
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.60 — GUARDA DE VERACIDAD DE BIOMARCADORES
+#
+# CAUSA RAÍZ (auditoría contra los 193 PDFs): el extractor deducía el nombre del
+# biomarcador del TEXTO DEL REGEX, no de lo que realmente matcheó:
+#     elif 'ckae1' in pattern.lower(): biomarker_name = 'CKAE1_AE3'
+#     elif 'cd3'   in pattern.lower(): biomarker_name = 'CD3'     # matchea en 'cd38'
+# Un patrón multi-marcador que matcheaba por CK7 guardaba CKAE1/AE3. Resultado:
+# 115 valores FALSOS en BD (34 CKAE1AE3 fabricados, 45 CD138 leídos de CD38,
+# 23 polaridades invertidas), verificados uno a uno contra el PDF.
+#
+# LA GUARDA: un biomarcador SOLO sobrevive si su nombre (o un alias real) APARECE
+# en el informe. Solo puede DESCARTAR lo que no tiene respaldo; nunca inventa.
+# Los alias salen de dos fuentes fiables:
+#   1) BIOMARKER_DEFINITIONS[...]['nombres_alternativos'] (el propio código), y
+#   2) los alias que la auditoría vio en los PDFs reales (incluidos typos de OCR:
+#      "GAFP"->GFAP, "ACTIMINA"->actina, "CICLYNA"->ciclina, "MATR-1"->MART-1).
+# ═══════════════════════════════════════════════════════════════════════════
+_ALIAS_PDF = {
+    'GPC3': ['GLYPICAN 3', 'GLYPICAN-3', 'GLIPICAN 3', 'GLIPICAN'],
+    'GLIPICAN': ['GLYPICAN 3', 'GLYPICAN-3', 'GPC3', 'GLIPICAN 3'],
+    'HEPAR': ['HEPAR 1', 'HEPAR-1', 'HEPPAR 1', 'HEPPAR-1', 'HEPATOCYTE'],
+    'HEPATOCITO': ['HEPATOCYTE', 'HEPAR 1', 'HEPAR-1', 'HEPPAR-1'],
+    'MYOD1': ['MYO D1', 'MYO-D1', 'MYOD-1'],
+    'MIOGENINA': ['MYOGENINA', 'MYOGENIN'],
+    'CICLINA_D1': ['CYCLINA D1', 'CYCLIN D1', 'CICLYNA D1', 'CICLYNA-D1', 'BCL1', 'CICLINA D'],
+    'IDH1': ['IDH', 'IDH-1', 'IDH1 R132H'], 'IDH': ['IDH1', 'IDH-1'],
+    'CK5_6': ['CK 5-6', 'CK5-6', 'CK 5/6', 'CK5/6'], 'CK56': ['CK 5-6', 'CK5-6', 'CK 5/6', 'CK5/6'],
+    'MELAN_A': ['MART-1', 'MART1', 'MATR-1', 'MELAN A', 'MELANA'],
+    'GLICOFORINA': ['GLYCOFORINA', 'GLYCOPHORIN', 'GLICOFORINA A'],
+    'CAM5': ['CAM 5.2', 'CAM-5.2', 'CAM5.2'],
+    'GFAP': ['GAFP', 'PROTEINA ACIDA GLIAL'],
+    'NEUN': ['NEU-N', 'NEU N'],
+    'CALRETININA': ['CALRRETININA', 'CALRETININ'],
+    'BER_EP4': ['BER-EP4', 'BEREP4', 'BER EP4'],
+    'ACTINA_MUSCULO_LISO': ['ACTINA DE MUSCULO LISO', 'ACTINA MUSCULO LISO', 'ACTIMINA', 'SMA', 'ACTINA'],
+    'ACTINA_MUSCULO_ESPECIFICA': ['ACTINA', 'ACTIMINA'],
+    'SMA': ['ACTINA DE MUSCULO LISO', 'ACTINA', 'ACTIMINA'],
+    'ACTIN': ['ACTINA', 'ACTIMINA'], 'AML': ['ACTINA', 'ACTIMINA'],
+    'CKAE1AE3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1', 'COCTEL DE QUERATINAS', 'PANQUERATINA'],
+    'CKAE1E3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1'],
+    'RECEPTOR_ESTROGENOS': ['RECEPTOR DE ESTROGENO', 'RECEPTORES DE ESTROGENOS', 'ESTROGENO',
+                            'ESTRÓGENO', 'R.ESTROGENO', 'R. ESTROGENO', 'RECEPTOR ESTROGENO'],
+    'RECEPTOR_PROGESTERONA': ['RECEPTOR DE PROGESTERONA', 'PROGESTERONA', 'R.PROGESTERONA',
+                              'RECEPTOR PROGESTERONA'],
+    'BETACATENINA': ['BETA CATENINA', 'BETA-CATENINA', 'B-CATENINA', 'CATENINA'],
+    'SINAPTOFISINA': ['SYNAPTOFISINA', 'SYNAPTOPHYSIN'], 'SYNAPTOFISINA': ['SINAPTOFISINA', 'SYNAPTOPHYSIN'],
+    'CROMOGRANINA': ['CHROMOGRANINA', 'CHROMOGRANIN'], 'CHROMOGRANINA': ['CROMOGRANINA'],
+    'MIELOPEROXIDASA': ['MPO'],
+    'LCA': ['CD45', 'ANTIGENO COMUN LEUCOCITARIO'], 'CD45': ['LCA', 'ANTIGENO COMUN LEUCOCITARIO'],
+    'KI-67': ['KI67', 'KI 67', 'MIB-1', 'MIB1'], 'KI67': ['KI-67', 'KI 67', 'MIB-1'],
+    'P16_ESTADO': ['P16'], 'P16_PORCENTAJE': ['P16'], 'P40_ESTADO': ['P40'],
+    'E_CADHERINA': ['E-CADHERINA', 'CADHERINA E', 'CADHERINA'],
+    'PDL-1': ['PD-L1', 'PDL1', 'PD L1'],
+    'CMYC': ['C-MYC', 'MYC'],
+    'CA19_9': ['CA 19-9', 'CA19-9', 'CA 19.9'],
+    'RACEMASA': ['AMACR', 'P504S'],
+    'PODOPLANINA': ['D2-40'],
+    'DESMIN': ['DESMINA'], 'DESMINA': ['DESMIN'],
+    'PSA': ['ANTIGENO PROSTATICO'],
+    'CITOMEGALOVIRUS': ['CMV'],
+    'MAMAGLOBINA': ['MAMOGLOBINA'], 'MAMOGLOBINA': ['MAMAGLOBINA'],
+    'CK34BETAE12': ['34BETAE12', 'CK34BE12', '34 BETA E12', 'CK34'],
+    'CK34BETA12': ['34BETAE12', 'CK34BE12', 'CK34'], 'CK34BE12': ['34BETAE12', 'CK34'],
+    'TDT': ['TDT', 'TERMINAL DEOXINUCLEOTIDIL'],
+    'EMA': ['ANTIGENO EPITELIAL DE MEMBRANA'],  # OJO: MUC1 NO es alias (marcador distinto)
+}
+_ALIAS_CACHE: Dict[str, Any] = {}
+
+
+def _sin_acentos(s: str) -> str:
+    """Quita tildes/diacríticos: el PDF escribe 'Estrógeno', 'cóctel', 'sinaptofisina'
+    y los alias van sin tilde -> hay que comparar en el mismo plano o se descartan
+    datos VÁLIDOS (esa fue la causa de 13 falsas regresiones al probar la guarda)."""
+    return unicodedata.normalize('NFKD', str(s or '')).encode('ascii', 'ignore').decode()
+
+
+def _regex_marcador(nombre: str):
+    """Regex tolerante para el nombre de un marcador (sobre texto SIN acentos):
+    separadores libres entre letras/dígitos ('CD20' <-> 'CD 20'), sufijo español
+    permitido si termina en letra ('DESMIN' <-> 'desminA'), y frontera si termina
+    en dígito ('CD3' NO debe matchear dentro de 'CD34')."""
+    partes = re.findall(r'[A-Za-z]+|\d+', _sin_acentos(nombre))
+    if not partes:
+        return None
+    cuerpo = r'[\s\-/\._]*'.join(re.escape(p) for p in partes)
+    fin = r'(?!\d)' if partes[-1].isdigit() else r''
+    return re.compile(r'(?i)\b' + cuerpo + fin)
+
+
+def _marcador_mencionado(clave: str, texto_sin_acentos: str) -> bool:
+    """True si el informe NOMBRA este marcador (por su nombre o un alias real)."""
+    base = clave[4:] if clave.upper().startswith('IHQ_') else clave
+    if base not in _ALIAS_CACHE:
+        nombres = {base}
+        d = BIOMARKER_DEFINITIONS.get(base) or {}
+        for a in (d.get('nombres_alternativos') or []):
+            nombres.add(str(a))
+        for a in _ALIAS_PDF.get(base, []):
+            nombres.add(a)
+        _ALIAS_CACHE[base] = [r for r in (_regex_marcador(n) for n in nombres) if r]
+    return any(r.search(texto_sin_acentos) for r in _ALIAS_CACHE[base])
+
+
+# Indicio de que una mención trae RESULTADO (no es solo el nombre en la lista del
+# panel solicitado). Sin esto, el extractor afirmaba resultados de marcadores que el
+# informe solo ENUMERA como solicitados (35 de los valores falsos auditados).
+_HAY_RESULTADO = re.compile(
+    r'(?i)positiv|negativ|inmunorreactiv|reactivid|expresi|marcaci|tinci|sobreexpres|'
+    r'ausen|perdida|intact|conservad|no\s+presentan?|no\s+se\s+observ|\d\s*%|score|\+|patron')
+
+
+def _mencion_con_resultado(clave: str, txt: str) -> bool:
+    """True si el marcador se menciona Y alguna de sus menciones trae un RESULTADO
+    cerca. Estar solo en la lista de estudios solicitados NO es un resultado."""
+    base = clave[4:] if clave.upper().startswith('IHQ_') else clave
+    if base not in _ALIAS_CACHE:
+        _marcador_mencionado(clave, txt)  # llena la caché
+    for r in _ALIAS_CACHE.get(base) or []:
+        for m in r.finditer(txt):
+            ven = txt[max(0, m.start() - 130): m.end() + 150]
+            if _HAY_RESULTADO.search(ven):
+                return True
+    return False
+
+
+def filtrar_biomarcadores_sin_respaldo(results: Dict[str, str], text: str) -> Dict[str, str]:
+    """Descarta los biomarcadores que el informe NO respalda: o su nombre no aparece,
+    o solo aparece enumerado en el panel solicitado (sin resultado). Ver la nota de
+    causa raíz arriba. Solo QUITA lo no respaldado; nunca agrega ni cambia valores."""
+    if not results or not text:
+        return results
+    txt = _sin_acentos(text)  # una sola vez (el matching va sin tildes)
+    # NOTA V6.9.60: se PROBÓ exigir además un "resultado cerca de la mención" (para
+    # descartar marcadores que solo figuran en la lista del panel solicitado). Medido
+    # sobre los 2.077 casos: NO eliminó ni un falso más y DESTRUYÓ 8 valores válidos
+    # (la lista del panel suele llevar palabras de resultado cerca). Descartado.
+    # Ver _mencion_con_resultado(), que queda sin usar a propósito.
+    limpio, sin_nombre = {}, []
+    for k, v in results.items():
+        if _marcador_mencionado(k, txt):
+            limpio[k] = v
+        else:
+            sin_nombre.append(f'{k}={v}')
+    if sin_nombre:
+        logging.warning(f"🛡️ [veracidad] descartados (marcador NO nombrado en el informe): "
+                        f"{', '.join(sin_nombre[:6])}{' …' if len(sin_nombre) > 6 else ''}")
+    return limpio
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.60 — GUARDA DE POLARIDAD (contradicción con el informe)
+#
+# Segunda clase de dato FALSO detectada en la auditoría (23 casos, clínicamente
+# PELIGROSA): la polaridad guardada CONTRADICE al informe. Causa típica: una lista
+# que cruza la frontera de polaridad —"positivas para A, B; negativas para C, D"—
+# y el patrón de positivos se lleva también C y D.
+#   · IHQ250120 Melan-A=POSITIVO  <- PDF: "(SOX-10, MART-1, HMB45...) son negativas"
+#   · IHQ250383 GPC3=NEGATIVO     <- PDF: "inmunorreactividad para glypican-3"
+#   · IHQ250376 IDH1=POSITIVO     <- PDF: "IDH sin sobreexpresion"
+#
+# La guarda mira la CLÁUSULA que gobierna cada mención del marcador. Si TODAS las
+# menciones están gobernadas por la polaridad OPUESTA a la guardada, se DESCARTA
+# el valor (no se invierte: no adivinamos, solo dejamos de afirmar algo falso).
+# ═══════════════════════════════════════════════════════════════════════════
+_POL_NEG = re.compile(
+    r'(?i)negativ|no\s+(?:presentan?|se\s+observ|muestran?|expresan?|hay|evidenci|inmunorreact)|'
+    r'ausen|sin\s+(?:expresi|marcaci|tinci|inmunorreact|sobreexpres|positivid|perdida)|'
+    r'perdida\s+de|no\s+reactiv|negatividad')
+_POL_POS = re.compile(
+    r'(?i)positiv|inmunorreactiv|expresi[oó]n|marcaci[oó]n|tinci[oó]n|sobreexpres|'
+    r'reactivid|inmunotinci|inmunomarcac')
+
+
+def _polaridad_valor(v: str) -> str:
+    """'POS' | 'NEG' | '' (los porcentajes/valores sin polaridad no se juzgan)."""
+    u = _sin_acentos(str(v or '')).upper()
+    if not u or '%' in u:
+        return ''
+    if u.startswith('NEGATIV') or 'NEGATIV' in u.split('(')[0]:
+        return 'NEG'
+    if u.startswith('POSITIV') or 'POSITIV' in u.split('(')[0]:
+        return 'POS'
+    return ''
+
+
+def _polaridad_gobernante(txt: str, ini: int) -> str:
+    """Polaridad de la cláusula que gobierna una mención en la posición 'ini':
+    el último marcador de polaridad ANTES de la mención, dentro de la misma
+    oración (se corta en '.' o ';')."""
+    corte = max(txt.rfind('.', 0, ini), txt.rfind(';', 0, ini), txt.rfind('\n', 0, ini))
+    ventana = txt[corte + 1:ini] if corte >= 0 else txt[max(0, ini - 200):ini]
+    mn = None
+    for m in _POL_NEG.finditer(ventana):
+        mn = ('NEG', m.start())
+    mp = None
+    for m in _POL_POS.finditer(ventana):
+        mp = ('POS', m.start())
+    if mn and mp:
+        return mn[0] if mn[1] > mp[1] else mp[0]   # el MÁS CERCANO a la mención manda
+    if mn:
+        return mn[0]
+    if mp:
+        return mp[0]
+    return ''
+
+
+def filtrar_polaridad_contradictoria(results: Dict[str, str], text: str) -> Dict[str, str]:
+    """Descarta el valor cuando el informe lo CONTRADICE en TODAS sus menciones.
+    Nunca invierte ni inventa: solo deja de afirmar lo que el informe niega."""
+    if not results or not text:
+        return results
+    txt = _sin_acentos(text)
+    limpio, descartados = {}, []
+    for k, v in results.items():
+        pol = _polaridad_valor(v)
+        if not pol:
+            limpio[k] = v
+            continue
+        base = k[4:] if k.upper().startswith('IHQ_') else k
+        regs = _ALIAS_CACHE.get(base)
+        if regs is None:
+            _marcador_mencionado(k, txt)          # llena la caché
+            regs = _ALIAS_CACHE.get(base) or []
+        gobs = [g for r in regs for m in r.finditer(txt)
+                for g in [_polaridad_gobernante(txt, m.start())] if g]
+        if gobs and all(g != pol for g in gobs):
+            descartados.append(f'{k}={v} (informe dice {gobs[0]})')
+            continue
+        limpio[k] = v
+    if descartados:
+        logging.warning(f"🛡️ [polaridad] descartados (el informe CONTRADICE el valor): "
+                        f"{', '.join(descartados[:8])}{' …' if len(descartados) > 8 else ''}")
+    return limpio
+
+
 def extract_biomarkers(text: str, existing_data: Dict[str, Any] = None, debug_mode: bool = False) -> Dict[str, str]:
     """Extrae todos los biomarcadores configurados del texto
 
@@ -4956,6 +5193,17 @@ def extract_biomarkers(text: str, existing_data: Dict[str, Any] = None, debug_mo
                    ('(' in valor_con_prefijo and '(' not in valor_sin_prefijo):
                     results[bio_base] = valor_con_prefijo
                     logging.info(f"🔄 [V6.5.50 SINCRONIZACIÓN] {bio_base}: {valor_sin_prefijo} → {valor_con_prefijo} (copiado de {key})")
+
+    # V6.9.60: GUARDA DE VERACIDAD — un biomarcador solo sobrevive si el informe
+    # NOMBRA ese marcador. Corta de raíz los valores fabricados por la inferencia
+    # del nombre a partir del texto del regex (CKAE1/AE3 desde CK7, CD138 desde CD38).
+    results = filtrar_biomarcadores_sin_respaldo(results, text)
+    # NOTA V6.9.60: la guarda de POLARIDAD (filtrar_polaridad_contradictoria) NO se
+    # aplica: al medirla contra los 2.077 casos DESTRUÍA 251 valores VÁLIDOS. Motivo:
+    # el informe escribe la polaridad tanto ANTES como DESPUÉS del marcador
+    # ("HER2: negativo (score 0)") y la heurística de cláusula gobernante solo miraba
+    # hacia atrás. Las 23 polaridades invertidas quedan pendientes de un fix medido;
+    # sus valores ya fueron neutralizados en BD. NO reactivar sin volver a medir.
 
     return results
 
@@ -7378,7 +7626,15 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             elif 'linfocitos' in pattern.lower() and 'cd' in pattern.lower() and '20' in pattern.lower():
                 biomarker_name = 'CD20'
             elif 'plasmáticas' in pattern.lower() and 'cd' in pattern.lower():
-                biomarker_name = 'CD138'
+                # V6.9.59 FIX (auditoría de veracidad): NO asumir CD138. El informe
+                # suele decir "células plasmáticas (CD38+)" y CD38 != CD138 (son
+                # marcadores DISTINTOS). Antes se guardaba CD138=POSITIVO leyendo un
+                # CD38 -> 45 valores FALSOS en BD. Ahora se lee el marcador REAL.
+                _txt = str(match if isinstance(match, str) else (match[0] if match else ""))
+                _m = re.search(r'CD\s*-?\s*(138|38)\b', _txt + " " + pattern, re.IGNORECASE)
+                if not _m:
+                    continue  # no se puede saber cuál marcador es -> no inventar
+                biomarker_name = 'CD' + _m.group(1)
             elif 'inmuno' in pattern.lower():
                 # Patrón especial para "inmunomarcación positiva para X y Y"
                 biomarkers_text = match if isinstance(match, str) else match[0] if match else ""
@@ -7400,10 +7656,12 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             elif biomarker_name == 'SOX10' and isinstance(match, str):
                 # Caso SOX10: "negativas para SOX10" o "negativas para SXO10"
                 results[biomarker_name] = 'NEGATIVO'
-            # V6.0.13: CD20+ y CD138/CD38+ son POSITIVO automáticamente (IHQ250989)
+            # V6.0.13: CD20+ es POSITIVO automáticamente (IHQ250989)
             elif biomarker_name == 'CD20' and ('linfocitos' in pattern.lower() or '+' in str(match)):
                 results[biomarker_name] = 'POSITIVO'
-            elif biomarker_name == 'CD138' and ('plasmáticas' in pattern.lower() or '+' in str(match)):
+            # V6.9.59 FIX: CD138 y CD38 se resuelven por separado (ver arriba). El "+"
+            # solo marca POSITIVO al marcador que REALMENTE aparece en el texto.
+            elif biomarker_name in ('CD138', 'CD38') and ('plasmáticas' in pattern.lower() or '+' in str(match)):
                 results[biomarker_name] = 'POSITIVO'
             elif biomarker_name == 'KI67' and isinstance(match, tuple) and len(match) == 2:
                 # V6.4.10 FIX IHQ250144: Rango "está entre el X y Y%" captura 2 grupos

@@ -1086,6 +1086,20 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 # Listas simples: "son positivas para CKAE1E3, CK7 Y CAM 5.2"
                 narrative_list = extract_narrative_biomarkers_list(descripcion_microscopica, BIOMARKER_DEFINITIONS)
 
+                # V6.9.60: GUARDA DE VERACIDAD también en la capa narrativa. Aquí nacían
+                # 45 de los 66 biomarcadores FALSOS (CKAE1/AE3 fabricado desde CK7, etc.):
+                # el nombre se deducía del texto del regex, no de lo que matcheó.
+                # Un marcador solo sobrevive si el informe LO NOMBRA.
+                try:
+                    from core.extractors.biomarker_extractor import filtrar_biomarcadores_sin_respaldo
+                    _antes = len(narrative_list or {})
+                    narrative_list = filtrar_biomarcadores_sin_respaldo(narrative_list, clean_text)
+                    if _antes != len(narrative_list or {}):
+                        logger.warning(f"🛡️ [veracidad] narrativos descartados sin respaldo: "
+                                       f"{_antes - len(narrative_list or {})}")
+                except Exception as _e_guard:
+                    logger.warning(f"[veracidad] guarda narrativa no aplicada: {_e_guard}")
+
                 if narrative_list:
                     logger.info(f"🧬 V6.0.3: Detectados {len(narrative_list)} biomarcadores narrativos adicionales")
                     # V6.1.6: DEBUG IHQ251007 - Log completo de narrative_list recibido

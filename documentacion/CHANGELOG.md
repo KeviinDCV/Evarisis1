@@ -1,5 +1,44 @@
 # Changelog
 
+## [6.9.58] - 2026-07-14 — Ficha del Paciente (agrupa IHQ + Coloraciones)
+
+**Sprint:** Un paciente puede tener varios estudios (hasta **9**: IHQ + coloraciones) y en la tabla plana quedaban dispersos. La **Ficha del Paciente** los agrupa en la VISTA — **sin tocar el DATO**: cada estudio sigue siendo su propia fila (fuente de verdad, sin duplicar).
+
+### Datos que motivaron el cambio
+| | |
+|---|--:|
+| Pacientes únicos | 7.521 |
+| Solo IHQ / Solo Coloración | 1.278 / 5.690 |
+| **IHQ + Coloración** (los que hay que agrupar) | **553** |
+| Pacientes con **más de 1 IHQ** | **210** |
+| Pacientes con el **mismo dx de coloración DUPLICADO** en varias filas IHQ | **91** ⚠️ |
+
+Los 91 duplicados son el síntoma del modelo actual: `reconciliar_coloraciones` pega el dx de la coloración en "la fila IHQ" del paciente, pero **asume 1 IHQ por paciente**. Con 5 IHQ (médula, ganglio…, fechas distintas) los 5 reciben el MISMO texto de coloración.
+
+### Added
+- **Ficha del Paciente (`_mostrar_ficha_paciente` / `_render_ficha` en `ui.py`)** — doble clic en cualquier fila del Visualizador abre la ficha del PACIENTE (por cédula) con **todos sus estudios en orden cronológico**, cada uno en su propia sección: tipo (🔬 IHQ / 🎨 Coloración), código, fecha, órgano, procedimiento, malignidad, diagnóstico, biomarcadores solicitados y resultados, y descripciones. Marca cuál era el registro que abriste. Botón "Copiar ficha".
+  - El **diagnóstico se lee del campo correcto según el tipo**: coloración → `Diagnostico Coloracion 2`; IHQ → `Diagnostico Principal`. En la sección IHQ **NO** se repite el texto concatenado de las coloraciones (ya aparecen como secciones propias) → se elimina el duplicado visual.
+  - Reutiliza el doble clic ya existente (`_abrir_detalle_fila`); si el registro no tiene cédula fiable, cae al detalle de registro de siempre.
+
+## [6.9.57] - 2026-07-09 — Visualizador: encabezados claros + adiós al mar de "N/A"
+
+**Sprint:** Correcciones de usabilidad en el Visualizador de Datos (aplican a AMBAS vistas: tabla tksheet de `ui.py` y visor Qt, vía la fuente única `core/columnas_visor.py`).
+
+### Added (V6.9.57)
+- **`filas_para_display(df)`** — las celdas SIN DATO se muestran **VACÍAS** en vez de "N/A". Ocultar la *columna* solo sirve cuando NINGÚN paciente de la vista tiene ese biomarcador; en la vista completa la columna se queda y el resto de celdas quedaba lleno de "N/A". Ahora se limpia la **celda**.
+  - Efecto: **237.419 celdas "N/A" → en blanco**. La tabla pasa a **91,2 % de celdas vacías / 8,8 % con dato real** → solo salta a la vista lo que existe.
+  - **`NO MENCIONADO` SÍ se conserva** (911 celdas): significa que el biomarcador se SOLICITÓ pero no aparece en el informe → es un dato real (señal de calidad), no un "no aplica".
+  - Solo afecta al DISPLAY: la BD, la búsqueda, el ordenamiento y la exportación conservan su valor.
+  - Rendimiento: comparación EXACTA (`isin`) en vez de normalizar 1,2 M de celdas → **0,70 s → 0,21 s** (columnas + celdas).
+
+### Fixed
+- **Encabezados de macro/micro se cortaban** → no se distinguía cuál era la del IHQ y cuál la de la Coloración. Se acortaron y el ORIGEN va primero: `Descripcion Macroscopica Coloracion` (35 chars, se cortaba a 350 px) → **`COLORACIÓN · Macroscópica`** (25 chars). Igual para las 4 columnas (`IHQ · Macroscópica`, `IHQ · Microscópica`, `COLORACIÓN · Macroscópica`, `COLORACIÓN · Microscópica`).
+
+### Added
+- **`columnas_visibles(df, cols)`** — el Visualizador ahora muestra **solo las columnas que APLICAN**. Con ~130 columnas de biomarcadores la tabla era un mar de "N/A" inútiles. Una columna se OCULTA cuando NINGUNA fila mostrada tiene un valor real; en cuanto un paciente sí tiene ese biomarcador, la columna reaparece sola. Las columnas de identidad del caso (`COLS_SIEMPRE`: Numero de caso, Nombre, Procedimiento, Organo, Malignidad, Diagnostico Principal…) nunca se ocultan.
+  - Efecto medido: **un solo caso pasa de 141 → 11 columnas** (130 N/A ocultas). BD completa (8.816 filas): 141 → 136. Costo: 0,28 s.
+  - Se recalcula automáticamente al buscar/filtrar (el filtro re-puebla la tabla).
+
 ## [6.9.54] - 2026-07-09 — Normalización de Órgano (procedimiento→órgano)
 
 **Sprint:** El campo `Organo` (columna "Organo" de la tabla "Estudios solicitados") a veces traía el **procedimiento/cirugía** ("Tiroidectomía total", "Biopsia de mama derecha", "Hemicolectomía") en vez del órgano. Nueva función `normalizar_organo()` que deriva el órgano de forma **verídica** (sin re-OCR — el órgano es derivable del propio valor).

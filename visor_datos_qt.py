@@ -51,6 +51,8 @@ from PySide6.QtWidgets import (
 
 from core.columnas_visor import (
     COLS_TO_SHOW, simplificar_header, ancho_columna, ocultar_m_redundantes,
+    columnas_visibles,    # V6.9.56: oculta columnas que no aplican (todas en N/A)
+    filas_para_display,   # V6.9.57: celdas sin dato -> vacías (no "N/A")
 )
 from core.validation_checker import verificar_completitud_registro
 
@@ -152,9 +154,11 @@ def preparar_datos(df: pd.DataFrame = None) -> dict:
         haystacks = [""] * len(dfx)
 
     # Columnas a mostrar (orden EXACTO, filtrando las que existan)
-    available = [c for c in COLS_TO_SHOW if c in dfx.columns]
+    # V6.9.56: oculta las que NO APLICAN (todas en N/A) -> sin mares de "N/A".
+    available = columnas_visibles(dfx, COLS_TO_SHOW)
     df_view = dfx[available]
-    rows = df_view.fillna("").astype(str).values.tolist()
+    # V6.9.57: celdas SIN DATO -> vacías (no "N/A"). Solo display.
+    rows = filas_para_display(df_view)
 
     return {
         "rows": rows,

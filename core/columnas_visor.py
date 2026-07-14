@@ -174,10 +174,13 @@ HEADER_ALIAS = {
     # V6.9.55: desdoble de descripciones por ORIGEN. Las columnas viejas contienen el
     # texto del informe IHQ (solicitud/proceso/técnica); las nuevas, la descripción
     # REAL del tejido tomada del PDF de coloración (macro/micro del estudio de histología).
-    "Descripcion macroscopica": "Descripcion Macroscopica IHQ",
-    "Descripcion microscopica": "Descripcion Microscopica IHQ",
-    "Descripcion macroscopica Coloracion": "Descripcion Macroscopica Coloracion",
-    "Descripcion microscopica Coloracion": "Descripcion Microscopica Coloracion",
+    # V6.9.56: encabezados CORTOS — los largos ("Descripcion Macroscopica Coloracion")
+    # se cortaban en la cabecera y no se distinguía cuál era la del IHQ y cuál la de la
+    # Coloración. El ORIGEN va primero y en mayúsculas para que sea inequívoco.
+    "Descripcion macroscopica": "IHQ · Macroscópica",
+    "Descripcion microscopica": "IHQ · Microscópica",
+    "Descripcion macroscopica Coloracion": "COLORACIÓN · Macroscópica",
+    "Descripcion microscopica Coloracion": "COLORACIÓN · Microscópica",
 }
 
 
@@ -217,6 +220,81 @@ def ancho_columna(col: str) -> int:
     elif "Fecha Ingreso" in col:
         return 180
     return 150
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.56: mostrar SOLO las columnas que APLICAN.
+# Con ~130 columnas de biomarcadores, la tabla se llena de "N/A" inútiles. Estas
+# columnas se OCULTAN cuando NINGUNA fila mostrada tiene un valor real; en cuanto
+# un paciente sí tiene el biomarcador, la columna reaparece sola. Las columnas de
+# identidad del caso NUNCA se ocultan (aunque vengan vacías).
+# ═══════════════════════════════════════════════════════════════════════════
+COLS_SIEMPRE = {
+    "Numero de caso",
+    "N. de identificación",
+    "Nombre Completo",
+    "Procedimiento",
+    "Organo",
+    "Malignidad",
+    "Diagnostico Principal",
+    "Fecha Ingreso Base de Datos",
+}
+def columna_tiene_datos(df, col) -> bool:
+    """True si la columna tiene AL MENOS un valor real (no vacío/N/A) en el df.
+    Usa comparación EXACTA (isin) por rendimiento; ver _NA_DISPLAY más abajo."""
+    if df is None or col not in getattr(df, "columns", []):
+        return False
+    s = df[col]
+    if s.isna().all():
+        return False
+    vals = s.fillna("").astype(str)
+    return bool((~vals.isin(_NA_DISPLAY)).any())
+
+
+def columnas_visibles(df, cols=None):
+    """Columnas a mostrar: las de identidad SIEMPRE + las demás solo si aplican
+    (tienen algún dato real en el df mostrado). Evita el mar de 'N/A'."""
+    if cols is None:
+        cols = COLS_TO_SHOW
+    if df is None or getattr(df, "empty", True):
+        return [c for c in cols if c in getattr(df, "columns", []) and c in COLS_SIEMPRE]
+    out = []
+    for c in cols:
+        if c not in df.columns:
+            continue
+        if c in COLS_SIEMPRE or columna_tiene_datos(df, c):
+            out.append(c)
+    return out
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.57: celdas SIN DATO se muestran VACÍAS (no "N/A").
+# Ocultar la COLUMNA solo funciona si NINGÚN paciente de la vista tiene el
+# biomarcador; en la vista completa casi todas las columnas tienen algún paciente
+# con dato, así que la columna se queda y el resto de celdas quedaban llenas de
+# "N/A". Aquí se limpia la CELDA: sin dato -> celda vacía. Solo afecta al DISPLAY
+# (la BD conserva su valor; búsqueda, orden y exportación no cambian).
+#
+# "NO MENCIONADO" SÍ se conserva: significa que el biomarcador se SOLICITÓ pero no
+# aparece en el informe -> es un dato real (señal de calidad), no un "no aplica".
+# ═══════════════════════════════════════════════════════════════════════════
+# Marcadores LITERALES de "sin dato". En la BD real solo aparecen '', 'N/A' y
+# 'NO APLICA'; el resto se incluye por defensa. Se comparan EXACTOS (isin) porque
+# es ~5x más rápido que normalizar 1,2 M de celdas (0,42 s -> 0,09 s).
+_NA_DISPLAY = {
+    "", "N/A", "n/a", "N/a", "NA", "na", "NaN", "nan", "NAN",
+    "None", "none", "NONE", "NULL", "null", "Null",
+    "NO APLICA", "No aplica", "no aplica", "NO ENCONTRADO", "No encontrado",
+    "-", "--",
+}
+
+
+def filas_para_display(df):
+    """DataFrame -> lista de filas (strings) con las celdas SIN DATO en blanco."""
+    if df is None or getattr(df, "empty", True):
+        return []
+    d = df.fillna("").astype(str)
+    return d.mask(d.isin(_NA_DISPLAY), "").values.tolist()
 
 
 def ocultar_m_redundantes(df, base=None):

@@ -4942,7 +4942,15 @@ Disco {i}:
             logging.warning(f"No se pudo cargar core.columnas_visor; uso lista local: {_e_cols}")
 
         # Filtrar solo las columnas que existen en el DataFrame
-        available_cols = [c for c in cols_to_show if c in df_to_display.columns]
+        # V6.9.56: además, OCULTAR las columnas que NO APLICAN (todas en N/A) — con
+        # ~130 biomarcadores la tabla se llenaba de "N/A" inútiles. Si algún paciente
+        # mostrado sí tiene el biomarcador, la columna reaparece automáticamente.
+        try:
+            from core.columnas_visor import columnas_visibles as _cols_vis
+            available_cols = _cols_vis(df_to_display, cols_to_show)
+        except Exception as _e_cv:
+            logging.warning(f"columnas_visibles no aplicado: {_e_cv}")
+            available_cols = [c for c in cols_to_show if c in df_to_display.columns]
         df_display = df_to_display[available_cols].copy()
 
         # Guardar DataFrame actual para ordenamiento
@@ -4963,7 +4971,16 @@ Disco {i}:
             headers = [col.split("(")[0].strip() for col in df_display.columns]
 
         # Convertir DataFrame a lista de listas (formato Sheet)
-        sheet_data = df_display.fillna("").astype(str).values.tolist()
+        # V6.9.57: las celdas SIN DATO se muestran VACÍAS (no "N/A"). Ocultar la
+        # columna solo sirve si NINGÚN paciente de la vista tiene el biomarcador; en
+        # la vista completa la columna se queda y el resto de celdas quedaba llena de
+        # "N/A". Solo display: la BD, la búsqueda, el orden y la exportación no cambian.
+        try:
+            from core.columnas_visor import filas_para_display as _filas_disp
+            sheet_data = _filas_disp(df_display)
+        except Exception as _e_fd:
+            logging.warning(f"filas_para_display no aplicado: {_e_fd}")
+            sheet_data = df_display.fillna("").astype(str).values.tolist()
 
         # PASO 1: Cargar TODOS los datos de una sola vez (ultra rápido)
         self.sheet.set_sheet_data(data=sheet_data, reset_col_positions=True, reset_row_positions=True, redraw=False)
@@ -5387,7 +5404,13 @@ Disco {i}:
             headers = list(sheet.headers())
             valores = list(sheet.get_row_data(row_idx))
             registro = list(zip(headers, valores))
-            self._mostrar_ventana_detalle(registro)
+            # V6.9.58: abrir la FICHA DEL PACIENTE — agrupa TODOS sus estudios (IHQ +
+            # Coloraciones) en una sola ventana. Si no se puede resolver el paciente
+            # (sin cédula / sin master_df), cae al detalle del registro de siempre.
+            num = next((str(v) for h, v in registro
+                        if h == "Numero de caso" and str(v).strip()), "")
+            if not self._mostrar_ficha_paciente(num):
+                self._mostrar_ventana_detalle(registro)
         except Exception as e:
             logging.exception("_abrir_detalle_fila falló")
             try:
@@ -5518,6 +5541,221 @@ Disco {i}:
         except Exception:
             pass
         try:
+            win.lift()
+            win.focus_force()
+            win.attributes("-topmost", True)
+            win.after(300, lambda: win.attributes("-topmost", False))
+        except Exception:
+            pass
+
+    # ================================================================
+    #  V6.9.58 — FICHA DEL PACIENTE (agrupa IHQ + Coloraciones)
+    # ================================================================
+    #  El DATO no se toca: cada estudio (IHQ###### o M######) sigue siendo su
+    #  propia fila. Aquí solo se AGRUPAN en la VISTA por paciente (cédula), que
+    #  es lo que faltaba: un paciente puede tener varios IHQ y varias
+    #  coloraciones (hasta 9 estudios) y en la tabla plana quedaban dispersos.
+    # ================================================================
+    _FICHA_NA = {"", "N/A", "NA", "NAN", "NONE", "NULL", "NO APLICA", "-", "--"}
+
+    def _ficha_es_coloracion(self, num) -> bool:
+        return bool(re.match(r"^[Mm]\d", str(num or "").strip()))
+
+    def _ficha_fecha(self, fila):
+        """Mejor fecha disponible del estudio (para ordenar y mostrar)."""
+        for c in ("Fecha de ingreso (2. Fecha de la muestra)", "Fecha Ingreso",
+                  "Fecha Informe", "Fecha Ingreso Base de Datos"):
+            v = str(fila.get(c, "") or "").strip()
+            if v and v.upper() not in self._FICHA_NA:
+                return v
+        return ""
+
+    def _mostrar_ficha_paciente(self, num_click) -> bool:
+        """Ventana con TODOS los estudios del paciente del registro clicado,
+        agrupados y en orden. Devuelve False si no se pudo resolver el paciente
+        (el llamador entonces abre el detalle simple del registro)."""
+        try:
+            df = getattr(self, "master_df", None)
+            if df is None or getattr(df, "empty", True):
+                return False
+            if "Numero de caso" not in df.columns or "N. de identificación" not in df.columns:
+                return False
+
+            nums = df["Numero de caso"].astype(str).str.strip()
+            fila = df[nums == str(num_click).strip()]
+            if fila.empty:
+                return False
+            ced = re.sub(r"\D", "", str(fila.iloc[0].get("N. de identificación", "")))
+            if len(ced) < 4:
+                return False  # sin cédula fiable -> no se puede agrupar
+
+            ceds = df["N. de identificación"].astype(str).str.replace(r"\D", "", regex=True)
+            estudios = df[ceds == ced].copy()
+            if estudios.empty:
+                return False
+
+            # Orden: cronológico (fecha) y, a igualdad, por número de caso.
+            estudios["_f"] = estudios.apply(self._ficha_fecha, axis=1)
+            def _clave(v):
+                m = re.match(r"(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})", str(v))
+                if m:
+                    d, mo, a = m.groups()
+                    a = ("20" + a) if len(a) == 2 else a
+                    return f"{a}{int(mo):02d}{int(d):02d}"
+                return "0"
+            estudios["_k"] = estudios["_f"].map(_clave)
+            estudios = estudios.sort_values(["_k", "Numero de caso"])
+
+            nombre = str(fila.iloc[0].get("Nombre Completo", "") or "").strip()
+            n_ihq = sum(1 for n in estudios["Numero de caso"] if not self._ficha_es_coloracion(n))
+            n_col = len(estudios) - n_ihq
+            self._render_ficha(nombre, ced, estudios, str(num_click).strip(), n_ihq, n_col)
+            return True
+        except Exception:
+            logging.exception("_mostrar_ficha_paciente falló")
+            return False
+
+    def _render_ficha(self, nombre, ced, estudios, num_click, n_ihq, n_col):
+        win = tk.Toplevel(self)
+        win.title(f"Ficha del paciente — {nombre or ced}")
+        win.geometry("900x720")
+        win.transient(self)
+
+        cont = ttk.Frame(win, padding=10)
+        cont.pack(fill="both", expand=True)
+        txt = tk.Text(cont, wrap="word", font=("Segoe UI", 10), padx=14, pady=10,
+                      relief="flat", background="#ffffff", foreground="#1b1b1b",
+                      cursor="arrow")
+        scroll = ttk.Scrollbar(cont, orient="vertical", command=txt.yview)
+        txt.configure(yscrollcommand=scroll.set)
+        txt.pack(side="left", fill="both", expand=True)
+        scroll.pack(side="right", fill="y")
+
+        txt.tag_configure("paciente", font=("Segoe UI", 13, "bold"), foreground="#0D47A1",
+                          spacing1=4, spacing3=2)
+        txt.tag_configure("sub", font=("Segoe UI", 9), foreground="#5f6368", spacing3=10)
+        txt.tag_configure("h_ihq", font=("Segoe UI", 11, "bold"), foreground="#1B5E20",
+                          background="#E8F5E9", spacing1=12, spacing3=4)
+        txt.tag_configure("h_col", font=("Segoe UI", 11, "bold"), foreground="#4A148C",
+                          background="#F3E5F5", spacing1=12, spacing3=4)
+        txt.tag_configure("actual", font=("Segoe UI", 9, "bold"), foreground="#E65100")
+        txt.tag_configure("campo", font=("Segoe UI", 9, "bold"), foreground="#37474F",
+                          spacing1=6, spacing3=1)
+        txt.tag_configure("valor", font=("Segoe UI", 10), lmargin1=8, lmargin2=8, spacing3=3)
+        txt.tag_configure("largo", font=("Segoe UI", 10), lmargin1=10, lmargin2=10,
+                          background="#F1F8E9", spacing1=2, spacing3=6)
+        txt.tag_configure("bio", font=("Consolas", 9), foreground="#263238",
+                          lmargin1=10, lmargin2=10, background="#FAFAFA", spacing3=4)
+
+        copia = []
+        txt.insert("end", f"{nombre or '(sin nombre)'}\n", "paciente")
+        resumen = f"CC {ced}   ·   {len(estudios)} estudio(s):  {n_ihq} IHQ  ·  {n_col} Coloración(es)"
+        txt.insert("end", f"{resumen}\n", "sub")
+        copia.append(f"{nombre} — CC {ced} — {resumen}")
+
+        CLAVE = ["Organo", "Procedimiento", "Malignidad", "Servicio", "Médico tratante"]
+        # El diagnóstico vive en un campo DISTINTO según el tipo de estudio:
+        #   · Coloración (fila M): su dx está en "Diagnostico Coloracion 2".
+        #   · IHQ:                 su dx está en "Diagnostico Principal".
+        # En la fila IHQ, "Diagnostico Coloracion 2" contiene el texto CONCATENADO de
+        # las coloraciones del paciente -> aquí NO se muestra: esas coloraciones ya
+        # aparecen como secciones propias (evita el duplicado que confunde).
+        DX_IHQ = [("Diagnostico Principal", "Diagnóstico"),
+                  ("Diagnostico Coloracion", "Diagnóstico citado en el informe IHQ"),
+                  ("Factor pronostico", "Factor pronóstico")]
+        DX_COL = [("Diagnostico Coloracion 2", "Diagnóstico")]
+        LARGOS = ["Descripcion macroscopica", "Descripcion microscopica",
+                  "Descripcion macroscopica Coloracion", "Descripcion microscopica Coloracion"]
+
+        def _ok(v):
+            v = str(v or "").strip()
+            return v if v.upper() not in self._FICHA_NA else ""
+
+        for _, est in estudios.iterrows():
+            num = str(est.get("Numero de caso", "")).strip()
+            es_col = self._ficha_es_coloracion(num)
+            fecha = self._ficha_fecha(est)
+            tag = "h_col" if es_col else "h_ihq"
+            icono = "🎨" if es_col else "🔬"
+            tipo = "COLORACIÓN" if es_col else "ESTUDIO IHQ"
+            cab = f"{icono}  {num}   ·   {tipo}" + (f"   ·   {fecha}" if fecha else "")
+            txt.insert("end", f"\n{cab}\n", tag)
+            if num == num_click:
+                txt.insert("end", "   ▲ el registro que abriste\n", "actual")
+            copia.append(f"\n=== {cab} ===")
+
+            # Datos clave en una línea compacta
+            partes = [f"{c}: {_ok(est.get(c))}" for c in CLAVE if _ok(est.get(c))]
+            if partes:
+                txt.insert("end", "   " + "   ·   ".join(partes) + "\n", "valor")
+                copia.append("  " + " · ".join(partes))
+
+            # Diagnósticos (el campo correcto según el tipo de estudio)
+            for c, etiqueta in (DX_COL if es_col else DX_IHQ):
+                v = _ok(est.get(c))
+                if not v:
+                    continue
+                txt.insert("end", f"{etiqueta}\n", "campo")
+                txt.insert("end", f"{v}\n", "largo")
+                copia.append(f"  {etiqueta}: {v}")
+
+            # Panel solicitado (contexto: qué marcadores pidió el patólogo)
+            solic = _ok(est.get("IHQ_ESTUDIOS_SOLICITADOS"))
+            if solic:
+                txt.insert("end", "Biomarcadores solicitados\n", "campo")
+                txt.insert("end", f"   {solic}\n", "valor")
+                copia.append(f"  Solicitados: {solic}")
+
+            # Biomarcadores: SOLO los que este estudio tiene con RESULTADO.
+            # IHQ_ORGANO / IHQ_ESTUDIOS_SOLICITADOS NO son biomarcadores (son metadatos).
+            _NO_BIO = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
+            bios = [(c.replace("IHQ_", ""), _ok(est.get(c)))
+                    for c in estudios.columns
+                    if str(c).startswith("IHQ_") and str(c) not in _NO_BIO]
+            bios = [(k, v) for k, v in bios if v]
+            if bios:
+                txt.insert("end", f"Resultados de biomarcadores ({len(bios)})\n", "campo")
+                txt.insert("end", "   " + "   ·   ".join(f"{k}: {v}" for k, v in bios) + "\n", "bio")
+                copia.append("  Biomarcadores: " + " · ".join(f"{k}: {v}" for k, v in bios))
+
+            # Descripciones largas
+            for c in LARGOS:
+                v = _ok(est.get(c))
+                if not v:
+                    continue
+                txt.insert("end", f"{c}\n", "campo")
+                txt.insert("end", f"{v}\n", "largo")
+                copia.append(f"  {c}: {v}")
+
+        # Solo lectura pero copiable
+        def _solo_lectura(e):
+            if (e.state & 0x4) and e.keysym.lower() in ("c", "a"):
+                return
+            if e.keysym in ("Left", "Right", "Up", "Down", "Home", "End", "Prior", "Next"):
+                return
+            return "break"
+        txt.bind("<Key>", _solo_lectura)
+
+        barra = ttk.Frame(win, padding=(10, 6))
+        barra.pack(fill="x")
+
+        def _copiar():
+            try:
+                self.clipboard_clear()
+                self.clipboard_append("\n".join(copia))
+            except Exception:
+                pass
+
+        ttk.Button(barra, text="📋 Copiar ficha", command=_copiar,
+                   bootstyle="secondary").pack(side="left")
+        ttk.Button(barra, text="Cerrar", command=win.destroy,
+                   bootstyle="primary").pack(side="right")
+        win.bind("<Escape>", lambda e: win.destroy())
+        try:
+            win.update_idletasks()
+            x = self.winfo_x() + (self.winfo_width() - win.winfo_width()) // 2
+            y = self.winfo_y() + (self.winfo_height() - win.winfo_height()) // 2
+            win.geometry(f"+{max(x, 0)}+{max(y, 0)}")
             win.lift()
             win.focus_force()
             win.attributes("-topmost", True)
