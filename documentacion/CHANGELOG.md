@@ -89,8 +89,22 @@ Causa: los 652 valores correctos de la BD no los produjo el extractor, sino some
 - El nº de caso se toma de `numero_peticion` (`Numero de caso` aún no existe en ese punto — sin esto la auditoría salía con caso `"?"` y no servía para rastrear).
 - Fallo de auditoría **nunca** rompe la extracción.
 
-### 🔬 Vía para automatizar de verdad
-La RTX 3050 (8 GB) obliga a Q3, que es donde el modelo pierde precisión. Con **16 GB** entraría un modelo bastante mejor y la cola de revisión se reduciría sustancialmente. Es la única vía medida para subir del 82% sin intervención humana.
+### 🔬 Modelo alternativo: PROBADO Y RECHAZADO
+Hipótesis: mistral-nemo está en **Q3_K_L (3,4 bits/parámetro)**; un modelo más nuevo a **Q4_K_M (4,8 bits)** con la misma VRAM debería ganar. **Se descargó Qwen3.5-9B Q4_K_M y se midió sobre el mismo banco de dx. FALSA:**
+
+| | mistral-nemo 12B Q3 | Qwen3.5-9B Q4 |
+|---|--:|--:|
+| opina | 27/44 | **12/44** |
+| acierta | 20 (74%) | 8 (**67%**) |
+| MEJORA / ROMPE | 6 / 5 | 4 / **2** |
+| tiempo | ~20 s/caso | **115 s/caso** |
+
+**Causa (importante para elegir modelo aquí):** Qwen3.5 es un modelo de **RAZONAMIENTO**, y eso lo hace PEOR para esta tarea. Al razonar **reformula** el texto en vez de copiarlo → su respuesta no coincide literal con el informe → **la guarda de cita la rechaza**. Se abstiene en el **73%** de los casos. Además, con `max_tokens` bajo se queda sin presupuesto pensando y devuelve `content` vacío (`finish_reason='length'`): parece roto y no lo está.
+
+⚠️ **Regla:** para este proyecto NO usar modelos de razonamiento. La tarea exige copia literal verificable; razonar es lo contrario.
+⚠️ **Trampa:** Qwen3.5 acertó en la prueba de humo el caso multi-espécimen que mistral falla, y parecía la solución. En el banco completo fue peor. **Un caso no es una medición.**
+
+Se restauró mistral-nemo. **Sigue SIN probarse** un modelo más grande (27B+ a Q4) en una GPU de 24 GB: la hipótesis "mejor cuantización con la misma VRAM" se midió y falló, así que **no se puede prometer que una GPU nueva lo arregle**.
 
 ## [6.9.62] - 2026-07-16 — El fix de Órgano NUNCA estuvo conectado al extractor
 
