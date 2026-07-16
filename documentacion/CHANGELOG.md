@@ -1,5 +1,51 @@
 # Changelog
 
+## [6.9.64] - 2026-07-16 — IA de diagnóstico: construida, medida y RECHAZADA (no se cablea)
+
+Petición: arreglar el dx multi-espécimen con IA + cita, igual que se hizo con la polaridad.
+
+### Primero: establecer la VERDAD (y menos mal)
+Antes de construir nada se adjudicaron **a ciegas** los 49 casos discordantes contra el informe (los revisores no sabían qué opción venía de la BD y cuál del extractor):
+
+| | |
+|---|--:|
+| Tiene razón la **BD** → el extractor falla | 26 |
+| **Tiene razón el EXTRACTOR → la BD está MAL** | **18** |
+| Ninguna de las dos (informes ligados, sin sección DIAGNÓSTICO) | 5 |
+
+**Dos correcciones a lo dicho antes:**
+- El extractor falla en **31/2.077 = 1,5%**, no 2,4%.
+- **"La BD es mejor que un reproceso" era FALSO para el dx: tiene 18 diagnósticos malos.** Si se hubiera construido la IA para imitar la BD, se habrían copiado esos 18 errores.
+
+**Trampa descubierta:** la regla intuitiva *"en multi-espécimen quédate con el maligno"* **es falsa**. Si el estudio es de ganglios y dice "sin evidencia de tumor", ESE es el dx — el cáncer que aparece es el antecedente del paciente (`Historia de carcinoma ductal`), no un hallazgo de la muestra.
+
+### `core/extractors/dx_principal_ia.py` — ⛔ NO CABLEADO
+Diseño correcto y **la guarda funciona**: la IA **selecciona** (no redacta) y se verifica que el dx esté **literal** en el informe. Probado: acepta `CARCINOMA INVASIVO DE TIPO NO ESPECIAL DUCTAL` (literal), rechaza `CARCINOMA DUCTAL INFILTRANTE DE MAMA` (redactado) y `ADENOCARCINOMA DE PROSTATA` (inventado). **Una alucinación no puede sobrevivir por construcción.**
+
+**Pero el resultado no da:**
+
+| Sobre 44 casos con verdad establecida | |
+|---|--:|
+| Opina | 27 |
+| **Acierta** | 20 (**74%**) |
+| Falla | 7 |
+| Se abstiene | 17 |
+| Mejora | 6 |
+| **ROMPE casos que el regex ya resolvía** | **5** |
+
+74% es insuficiente para el campo más crítico y romper 5 dx correctos es inaceptable. **No se conecta.** El módulo queda documentado con el banco de pruebas listo (`dx_verdad.json` + `test_dx_ia.py`) para re-medir si mejora el hardware.
+
+### La lección, medida TRES veces el mismo día
+Reforzar el prompt **no mejora el juicio** de este modelo:
+1. Polaridad, regla de población no tumoral → cobertura 46→26 (peor).
+2. Dx, regla del ganglio corregida → **no movió los casos clave**.
+3. Rótulo por reglas → 92 regresiones → revertido.
+
+**El techo no está en el diseño: está en mistral-nemo 12B Q3**, lo máximo que entra en una RTX 3050 de 8 GB. Q3 es donde la calidad degrada. **Vía real: GPU con más VRAM.**
+
+### Estado del dx
+Se queda el extractor determinista (V6.9.53). Falla **1,5%** (31/2.077). Los **18 dx malos de la BD** tienen su verdad establecida en `dx_verdad.json` y se pueden corregir.
+
 ## [6.9.63] - 2026-07-16 — Modo 100% verificado: consenso + auditoría con cita + cola de revisión
 
 **Objetivo pedido:** *"que extraiga de manera perfecta al 100%, a prueba de errores y con auditorías completas"*.
