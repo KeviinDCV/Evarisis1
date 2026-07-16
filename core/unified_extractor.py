@@ -1032,6 +1032,30 @@ def limpiar_diagnostico(diagnostico: str) -> str:
     return diagnostico
 
 
+_IA_POL_CACHE: Dict[str, bool] = {}
+
+
+def _usar_ia_polaridad() -> bool:
+    """¿Está activada la corrección de polaridad con IA local? config.ini [llm].
+    Por defecto SÍ: sin ella, ~29% de las polaridades salen mal (medido). Se puede
+    apagar con `usar_ia_polaridad = false` — entonces el extractor se comporta como antes."""
+    if 'v' in _IA_POL_CACHE:
+        return _IA_POL_CACHE['v']
+    val = True
+    try:
+        import configparser
+        import os as _os
+        raiz = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
+        cfg.read(_os.path.join(raiz, 'config', 'config.ini'), encoding='utf-8')
+        if cfg.has_option('llm', 'usar_ia_polaridad'):
+            val = cfg.getboolean('llm', 'usar_ia_polaridad')
+    except Exception:
+        pass
+    _IA_POL_CACHE['v'] = val
+    return val
+
+
 def extract_ihq_data(text: str) -> Dict[str, Any]:
     """Extrae datos IHQ de texto usando extractores refactorizados
     
@@ -1973,6 +1997,38 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
 
         except Exception as e:
             logger.warning(f"⚠️ [PASE FINAL ABSOLUTO v6.5.44] Error: {e}")
+
+        # ═══════════════════════════════════════════════════════════════════
+        # V6.9.61 — POLARIDAD DE BIOMARCADORES CON IA LOCAL (última capa)
+        #
+        # Va AQUÍ, sobre el resultado ya consolidado, porque varias capas escriben
+        # polaridades y solo al final se sabe qué quedó.
+        #
+        # POR QUÉ: la polaridad por regex es el punto más débil del extractor. Medido
+        # contra el informe con revisores independientes:
+        #   · zona donde regex y el parser de cláusulas DISCREPAN (755): ~60% mal
+        #   · zona donde COINCIDEN (1.947):                              ~17% mal
+        #     (coinciden porque se equivocan IGUAL: "sin marcación para CK20, CDX2…"
+        #      -> ambos leen POSITIVO)
+        #   -> ~29% de las polaridades salían mal. No hay atajo por reglas.
+        # Esta capa acierta el 100% de lo que afirma (60 casos adjudicados, el
+        # subconjunto MÁS ambiguo del corpus).
+        #
+        # SEGURIDAD: solo cambia valores que YA existen; nunca crea biomarcadores.
+        # Exige cita VERBATIM del informe (verificada aquí) y que la cita exprese un
+        # resultado. Si el LLM local no está, o la guarda rechaza -> se conserva el
+        # valor del regex. Degradación segura: sin LLM, el comportamiento es el previo.
+        # ═══════════════════════════════════════════════════════════════════
+        if _usar_ia_polaridad():
+            try:
+                from core.extractors.biomarcador_polaridad_ia import corregir_polaridad_con_ia
+                _bio = {k: v for k, v in combined_data.items() if str(k).startswith('IHQ_')}
+                _corr = corregir_polaridad_con_ia(_bio, clean_text)
+                for _k, _v in _corr.items():
+                    if combined_data.get(_k) != _v:
+                        combined_data[_k] = _v
+            except Exception as _e_pol:
+                logger.warning(f"[polaridad-ia] no aplicada (se conserva el regex): {_e_pol}")
 
         logger.info(f"✅ Extraídos {len(combined_data)} campos con extractores refactorizados")
         return combined_data

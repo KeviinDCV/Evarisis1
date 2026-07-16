@@ -1,5 +1,85 @@
 # Changelog
 
+## [6.9.61] - 2026-07-14 — Polaridad de biomarcadores con IA local + guarda de cita
+
+**Sprint:** La polaridad (POSITIVO/NEGATIVO) de los biomarcadores era el punto más débil del extractor. No era un problema de OCR — se midió: **14.633/14.633 páginas (100%) se leen de la capa de texto nativa del PDF, 0% pasa por tesseract**. El texto se lee exacto; lo que fallaba era **interpretarlo**.
+
+### El fallo, medido contra el informe por revisores independientes
+| Zona | Valores | Error del regex |
+|---|--:|--:|
+| Donde regex y un parser de cláusulas **discrepan** | 755 | **~60%** |
+| Donde **coinciden** (coinciden porque se equivocan igual) | 1.947 | **~17%** |
+| **Total polaridades** | ~2.700 | **~29% mal** |
+
+Acertar exige **comprender la frase**, no reconocer un patrón:
+- *"**sin pérdida de expresión** de CD2 y CD7"* → CD7 es **POSITIVO** (la frase contiene "pérdida")
+- *"El CD34 **resalta los vasos** … **sin marcación dentro de la lesión**"* → **NEGATIVO** (contiene "resalta")
+- *"positividad para PSA … **con negatividad para** CK7, CK20"* → cruce de polaridad en una frase
+- el mismo marcador con dos polaridades según el compartimento (tumor vs epitelio benigno)
+
+Tres intentos por reglas fracasaron: el regex original (40% de acierto), una guarda de polaridad (destruyó 251 valores válidos → revertida) y un parser de cláusulas afinado (60%).
+
+### Solución: `core/extractors/biomarcador_polaridad_ia.py`
+IA **LOCAL** (LM Studio/Ollama) que clasifica POSITIVO / NEGATIVO / NO_DICE. **100% de acierto sobre lo que afirma** (60 casos adjudicados: el subconjunto más ambiguo del corpus).
+
+Lo que la hace segura —a diferencia de la IA de diagnóstico, que se desactivó por alucinar—:
+1. **Clasificación cerrada**: no genera texto libre, elige entre tres valores.
+2. **Vocabulario cerrado**: solo opina sobre marcadores que el informe nombra.
+3. **Guarda de cita**: debe devolver el fragmento del informe que la sustenta; se verifica que esté **literal** en el texto y que **exprese un resultado** (la frase del panel solicitado no vale). Si no pasa → se descarta y **se conserva el valor del regex**.
+4. **Solo corrige**: nunca crea biomarcadores nuevos.
+5. **Endpoint obligatoriamente local** (Ley 1581 / Habeas Data): si la URL no es localhost, **se rehúsa la llamada**.
+
+Sin LLM disponible, el extractor se comporta exactamente como antes. Se apaga con `usar_ia_polaridad = false` en `config.ini [llm]`.
+
+### Corrección de la BD
+**224 polaridades corregidas** (97 cambiaron valor; el resto ya estaba bien), cada una con la cita del informe como evidencia. Ruta de cada corrección: IA la propone → la guarda verifica la cita contra el PDF → **46 revisores independientes** intentan refutarla. **226/236 sobrevivieron (95,8%)**; el desempate a dos lentes **descartó 8 propuestas erróneas de la IA** que habrían corrompido la BD.
+
+Backup: `backups/backup_polaridad_ia_20260714_111535.json` · Evidencia: `backups/evidencia_polaridad_ia_20260714_111535.json`
+
+### Segunda guarda: POSITIVO de una población que NO es el tumor
+La verificación adversarial cazó 8 errores de la IA; **6 tenían la misma causa**: el marcador tiñe algo que no es el tumor y la IA lo daba por positivo *del* tumor.
+- *"Positividad en las **paredes vasculares** para CD34"* → CD34 es NEGATIVO en el tumor
+- *"positividad **estromal** difusa para S100"* → S100 NEGATIVO en el tumor
+- *"p40 positivo en los **queratinocitos basales**"* → p40 NEGATIVO en el tumor
+
+Se intentó arreglar **reforzando el prompt** y salió mal: el modelo se volvió tan cauto que la cobertura cayó de 46 a 26 sobre 60 (y solo arregló 1 de 8) → **peor en neto**, porque lo que abandona vuelve al regex (40% de acierto). Un modelo al que le insistes en tener cuidado no se vuelve más listo, se vuelve más callado.
+
+**Se resolvió en CÓDIGO** (`_positivo_de_otra_poblacion`): se rechaza el POSITIVO cuya cita atribuye la marcación a vasos/estroma/basales sin mencionar el tumor. Determinista y verificable.
+
+⚠️ **`linfocitos` queda FUERA de la guarda a propósito**, aunque 2 de los 8 fallos eran de linfocitos: en un LINFOMA el tumor **son** los linfocitos, y rechazar *"linfocitos B positivos para CD20"* destruiría positivos legítimos. Mejor cazar 3 de 8 con seguridad que 5 de 8 rompiendo los linfomas.
+
+### Precisión: la cifra honesta
+Sobre los 60 casos adjudicados (el subconjunto **más ambiguo** del corpus, por construcción): **96–100% de acierto sobre lo que afirma**, frente al **40% del regex**. No es un 100% sostenible: el modelo tiene variabilidad entre corridas aun a temperatura 0.
+
+**Consecuencia operativa:** como un ~4% de las correcciones puede fallar, los cambios **no se escriben a ciegas** en la BD. El procedimiento es: extractor → verificación adversarial de los cambios propuestos → aplicar solo los confirmados. Fue así como se descartaron 8 propuestas erróneas de las 236.
+
+### Reproceso completo de los 2.077 casos (2026-07-16)
+Reprocesados los 2.077 IHQ con el extractor V6.9.61: **555 min, 0 errores** → **522 polaridades a cambiar** (POS→NEG 351, NEG→POS 171: el regex sobre-declaraba positivos, como predecía el diagnóstico).
+
+**Las 522 se verificaron una a una** (no una muestra) con adjudicación **ciega** contra el informe — los revisores no sabían qué proponía la máquina:
+
+| | |
+|---|--:|
+| Confirmadas en 1ª pasada (revisión ciega) | 415 |
+| Confirmadas en desempate a 2 lentes | 13 |
+| **Aplicadas en BD** | **428** |
+| **Rechazadas** (el revisor defiende el valor actual) | **94** |
+
+**Verificado en BD: 428/428 escritas correctamente.**
+Backup: `backups/backup_reproceso_20260716_065005.json` · Evidencia: `backups/evidencia_reproceso_20260716_065005.json`
+
+Las **94 rechazadas son el valor de este paso**: sin la verificación se habrían escrito 94 valores erróneos. Patrón dominante en los rechazos — LAMBDA, KAPPA, PAX5, CD20, CD10 en **linfomas**: la IA quería pasarlos a NEGATIVO y los revisores confirmaron que el POSITIVO de la BD era el correcto. Coincide con la decisión de dejar `linfocitos` fuera de la guarda de población no tumoral.
+
+⚠️ **Limitación conocida:** parte del desempate no pudo ejecutarse (límite de sesión). Eso **no compromete lo aplicado** (las 428 salen de la 1ª pasada completa, 522/522), pero deja algunas de las 94 sin dictamen definitivo — se conservó el valor actual, que es el comportamiento seguro. Revisables más adelante.
+
+**Aviso no aplicado:** 10 columnas (`IHQ_PDL-1`, `IHQ_CALRETININ`, `IHQ_EBER`, `IHQ_34BETA`, `IHQ_MSA`, `IHQ_B2`, `IHQ_CK34BETA12`, `IHQ_CK56`, `IHQ_ACTIN`, `IHQ_P16_PORCENTAJE`) difieren en los 2.076 casos — desajuste de nombre de columna entre extractor y tabla, **no polaridad**. Solo se reportó; pendiente de revisar.
+
+### Otros arreglos
+- `_cita_respaldada`: probaba solo la **primera** ocurrencia de la frase ancla y abandonaba → rechazaba citas válidas (era el 25% de los rechazos).
+- Alias de nombres: la IA responde `CKAE1E3`/`IDH` donde la columna es `CKAE1AE3`/`IDH1`.
+- JSON truncado por `max_tokens` → se rescatan los objetos completos + troceo en lotes de 8 marcadores (mejora la calidad de la respuesta).
+- `import os` faltaba en el módulo → el `except` del extractor lo silenciaba y la capa **no corría** (el resultado parecía bien porque el regex acertaba por casualidad). Detectado por el cronómetro: 1 s en vez de 20 s.
+
 ## [6.9.58] - 2026-07-14 — Ficha del Paciente (agrupa IHQ + Coloraciones)
 
 **Sprint:** Un paciente puede tener varios estudios (hasta **9**: IHQ + coloraciones) y en la tabla plana quedaban dispersos. La **Ficha del Paciente** los agrupa en la VISTA — **sin tocar el DATO**: cada estudio sigue siendo su propia fila (fuente de verdad, sin duplicar).

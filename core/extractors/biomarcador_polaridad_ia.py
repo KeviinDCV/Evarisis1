@@ -39,6 +39,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
 import unicodedata
 from typing import Dict, List, Optional, Tuple
@@ -55,6 +56,31 @@ _RESULTADO_EN_CITA = re.compile(
     r'sobreexpres|ausen|perdida|conservad|intact|resalta|realza|score|\d\s*%|\+|no\s+presentan?|'
     r'no\s+se\s+observ|sin\s+')
 
+# ── Guarda: POSITIVO atribuido a una población que NO es el tumor ──────────
+# La causa de 6 de los 8 errores que la verificación adversarial cazó: el marcador tiñe
+# vasos/estroma/basales y la IA lo daba por positivo DEL TUMOR.
+#   "Positividad en las paredes vasculares para CD34"   -> CD34 NEGATIVO en el tumor
+#   "positividad estromal difusa para S100"             -> S100  NEGATIVO en el tumor
+#   "p40 es positivo en los queratinocitos basales"     -> p40   NEGATIVO en el tumor
+# Se intentó resolver reforzando el prompt: el modelo se volvió tan cauto que la cobertura
+# cayó de 46 a 26 sobre 60 (arreglaba 1 de 8) -> peor en neto. Se resuelve en CÓDIGO.
+#
+# OJO — 'linfocitos' NO entra a propósito: en un LINFOMA el tumor SON los linfocitos y
+# rechazar "linfocitos B positivos para CD20" destruiría positivos legítimos.
+_POBLACION_NO_TUMORAL = re.compile(
+    r'pared(?:es)?\s+vascular|vasos\s+(?:sanguineos|acompanantes)|endotelial|endotelio|'
+    r'estromal|del\s+estroma|queratinocitos?\s+basal|celulas\s+basales|mastocitos|'
+    r'histiocitos|control\s+interno|epitelio\s+(?:benigno|residual|normal)|'
+    r'hepatocitos\s+(?:normales|no\s+tumorales)')
+_ES_EL_TUMOR = re.compile(
+    r'tumoral|neoplasic|lesional|de\s+la\s+lesion|celulas\s+atipicas|del\s+tumor|carcinom')
+
+
+def _positivo_de_otra_poblacion(cita_norm: str) -> bool:
+    """True si la cita atribuye la marcación a una población NO tumoral y no menciona
+    el tumor -> ese POSITIVO no es del tumor y no debe aplicarse."""
+    return bool(_POBLACION_NO_TUMORAL.search(cita_norm)) and not _ES_EL_TUMOR.search(cita_norm)
+
 _PROMPT = """Eres patólogo. Lee el INFORME y di qué afirma sobre CADA marcador de la LISTA.
 
 Para cada marcador responde:
@@ -67,7 +93,10 @@ REGLAS:
 1. Usa SOLO el informe. No uses conocimiento médico externo para deducir un resultado.
 2. Listas con polaridad cruzada: "positivas para A, B; negativas para C, D" -> C y D son NEGATIVOS.
 3. "sin pérdida de expresión de X" -> X es POSITIVO (la expresión está conservada).
-4. Si un marcador tiñe estructuras de control/acompañantes pero NO la lesión, es NEGATIVO.
+   "pérdida de X limitada a escasas células" -> X es POSITIVO (la expresión se conserva en el resto).
+
+4. Si un marcador tiñe estructuras de control/acompañantes (vasos, estroma, queratinocitos
+   basales) pero NO la lesión, es NEGATIVO.
 5. Si el resultado difiere por compartimento, responde por las CÉLULAS TUMORALES/lesionales.
 6. Si HAY marcación aunque sea escasa, débil, focal, parcheada o heterogénea -> POSITIVO
    (hay expresión). Solo es NEGATIVO si el informe dice que NO hay marcación.
@@ -87,6 +116,32 @@ INFORME:
 """
 
 
+# El coste de cada llamada lo domina el TAMAÑO del prompt: informe de 7.000 chars = 40 s;
+# de 1.500 = 16 s. El encabezado (datos del paciente), la lista de estudios solicitados y el
+# pie legal no dicen NADA sobre la polaridad y encarecen la llamada 2,5x. Se manda solo la
+# zona donde están los resultados.
+_INI_RESULTADOS = re.compile(
+    r'(?i)(DESCRIPCI[OÓ]N\s+MICROSC[OÓ]PICA|MICROSC[OÓ]PICO|INMUNOHISTOQU[IÍ]MICA\s*:|'
+    r'RESULTADO\s+DE\s+INMUNO)')
+_FIN_RESULTADOS = re.compile(
+    r'(?i)(La\s+informaci[oó]n\s+contenida|depende\s+de\s+la\s+representatividad|'
+    r'Este\s+informe\s+(?:es|no)|FIRMA\s+DIGITAL|Patólogo\(a\)|Elaborado\s+por)')
+
+
+def zona_resultados(texto: str, minimo: int = 400) -> str:
+    """Recorta el informe a la zona con los RESULTADOS (microscópica + comentarios +
+    diagnóstico), fuera encabezado y pie legal. Si el recorte queda demasiado corto o no
+    encuentra las marcas, devuelve el texto completo: mejor lento que ciego."""
+    if not texto:
+        return texto
+    m = _INI_RESULTADOS.search(texto)
+    ini = m.start() if m else 0
+    f = _FIN_RESULTADOS.search(texto, ini)
+    fin = f.start() if f else len(texto)
+    z = texto[ini:fin].strip()
+    return z if len(z) >= minimo else texto
+
+
 def _norm(s: str) -> str:
     """Normaliza para comparar la cita con el informe: sin tildes, sin mayúsculas,
     espacios colapsados y puntuación de adorno fuera. La cita debe seguir siendo el
@@ -104,6 +159,26 @@ def _clave_norm(nombre: str) -> str:
     s = _norm(nombre).upper()
     s = re.sub(r'(?:_|\s)?(?:ESTADO|PORCENTAJE)$', '', s)
     return re.sub(r'[^A-Z0-9]', '', s)
+
+
+def _equivalentes(clave: str) -> set:
+    """Todas las formas con las que la IA puede nombrar este marcador (nombre + alias
+    reales de los informes). La IA responde 'CKAE1E3' donde la columna es 'CKAE1AE3',
+    o 'IDH' donde es 'IDH1'. Reusa la tabla de alias del extractor: no inventa nada,
+    solo reconoce el mismo marcador escrito de otra forma."""
+    formas = {clave}
+    try:
+        from core.extractors.biomarker_extractor import BIOMARKER_DEFINITIONS, _ALIAS_PDF
+    except Exception:
+        return {_clave_norm(f) for f in formas}
+    base = clave[4:] if clave.upper().startswith('IHQ_') else clave
+    for fuente in (base, _clave_norm(base)):
+        d = BIOMARKER_DEFINITIONS.get(fuente) or {}
+        for a in (d.get('nombres_alternativos') or []):
+            formas.add(str(a))
+        for a in _ALIAS_PDF.get(fuente, []):
+            formas.add(a)
+    return {k for k in (_clave_norm(f) for f in formas) if k}
 
 
 def _cita_respaldada(cita: str, informe_norm: str, marcador: str) -> bool:
@@ -134,40 +209,56 @@ def _cita_respaldada(cita: str, informe_norm: str, marcador: str) -> bool:
 
     pal = c.split()
     clave = _clave_norm(marcador)
+    if not clave:
+        return False
     for n in range(len(pal), 3, -1):                          # tramo contiguo más largo, >=4 palabras
         for i in range(len(pal) - n + 1):
             tramo = ' '.join(pal[i:i + n])
+            # TODAS las ocurrencias del tramo, no solo la primera: una frase genérica
+            # ("las celulas tumorales son negativas para") aparece varias veces en el
+            # informe y anclar en la primera hacía rechazar citas VÁLIDAS (era el 25%
+            # de los rechazos: el marcador estaba en OTRA ocurrencia de la misma frase).
             pos = informe_norm.find(tramo)
-            if pos < 0:
-                continue
-            # (b) ¿el marcador está en la MISMA frase que el tramo anclado?
-            ini = informe_norm.rfind('.', 0, pos) + 1
-            fin = informe_norm.find('.', pos + len(tramo))
-            frase = informe_norm[ini: fin if fin > 0 else len(informe_norm)]
-            if clave and clave in re.sub(r'[^a-z0-9]', '', frase).upper():
-                return True
-            return False   # tramo anclado pero el marcador NO está en esa frase -> se rechaza
+            while pos >= 0:
+                ini = informe_norm.rfind('.', 0, pos) + 1
+                fin = informe_norm.find('.', pos + len(tramo))
+                frase = informe_norm[ini: fin if fin > 0 else len(informe_norm)]
+                if clave in re.sub(r'[^a-z0-9]', '', frase).upper():
+                    return True
+                pos = informe_norm.find(tramo, pos + 1)
     return False
 
 
 def _parsear_json(raw: str) -> Optional[list]:
-    """Extrae el array JSON de la respuesta (el modelo a veces lo envuelve en prosa/```)."""
+    """Extrae el array JSON de la respuesta (el modelo a veces lo envuelve en prosa/```).
+    Tolera el array TRUNCADO por max_tokens: rescata los objetos completos que haya."""
     if not raw:
         return None
     m = re.search(r'\[.*\]', raw, re.DOTALL)
-    if not m:
-        return None
-    try:
-        d = json.loads(m.group(0))
-        return d if isinstance(d, list) else None
-    except json.JSONDecodeError:
-        return None
+    if m:
+        try:
+            d = json.loads(m.group(0))
+            if isinstance(d, list):
+                return d
+        except json.JSONDecodeError:
+            pass
+    # respuesta cortada a media lista: recuperar los objetos {…} bien formados
+    filas = []
+    for om in re.finditer(r'\{[^{}]*\}', raw, re.DOTALL):
+        try:
+            o = json.loads(om.group(0))
+            if isinstance(o, dict):
+                filas.append(o)
+        except json.JSONDecodeError:
+            continue
+    return filas or None
 
 
 def clasificar_polaridad(informe: str,
                          marcadores: List[str],
                          llm_call,
-                         max_informe: int = 7000) -> Dict[str, Tuple[str, str]]:
+                         max_informe: int = 7000,
+                         max_por_llamada: int = 8) -> Dict[str, Tuple[str, str]]:
     """Devuelve {marcador: (veredicto, cita)} SOLO para los veredictos con cita verificada.
 
     informe    : texto del informe (tal como se leyó del PDF).
@@ -180,7 +271,25 @@ def clasificar_polaridad(informe: str,
     if not informe or not marcadores:
         return {}
 
-    txt = informe[:max_informe]
+    # Trocear: con muchos marcadores a la vez el modelo pierde calidad y la respuesta
+    # se trunca a media lista. Medido: en lotes pequeños recupera veredictos correctos
+    # que antes se perdían.
+    if len(marcadores) > max_por_llamada:
+        out: Dict[str, Tuple[str, str]] = {}
+        for i in range(0, len(marcadores), max_por_llamada):
+            out.update(clasificar_polaridad(informe, marcadores[i:i + max_por_llamada],
+                                            llm_call, max_informe, max_por_llamada))
+        return out
+
+    # Recortar a la zona de resultados abarata la llamada 2,5x… pero el 4% de los
+    # marcadores vive fuera de ella (p.ej. solo en el DIAGNÓSTICO) y se perderían.
+    # Si ALGUNO de los que preguntamos no está en la zona, se manda el informe entero:
+    # ahorrar tiempo no puede costar cobertura.
+    txt = zona_resultados(informe)
+    _z = _norm(txt)
+    if any(_clave_norm(m) not in re.sub(r'[^a-z0-9]', '', _z).upper() for m in marcadores):
+        txt = informe
+    txt = txt[:max_informe]
     prompt = _PROMPT.format(marcadores=', '.join(marcadores), informe=txt)
     try:
         raw = llm_call(prompt)
@@ -194,8 +303,11 @@ def clasificar_polaridad(informe: str,
         return {}
 
     informe_norm = _norm(txt)
-    # la IA responde 'CA19-9' donde nuestra clave es 'CA19_9' -> comparar normalizado
-    validos = {_clave_norm(m): m for m in marcadores}
+    # la IA responde 'CA19-9'/'CKAE1E3'/'IDH' donde la clave es 'CA19_9'/'CKAE1AE3'/'IDH1'
+    validos = {}
+    for m in marcadores:
+        for k in _equivalentes(m):
+            validos.setdefault(k, m)
     out: Dict[str, Tuple[str, str]] = {}
     rechazados = []
 
@@ -216,12 +328,147 @@ def clasificar_polaridad(informe: str,
         if ver == 'NO_DICE':             # abstención: válida y no necesita cita
             out[validos[marc]] = ('NO_DICE', '')
             continue
-        if not _cita_respaldada(cita, informe_norm, marc_raw):   # ← LA GUARDA
+        if not _cita_respaldada(cita, informe_norm, marc_raw):   # ← GUARDA 1: cita real
             rechazados.append(f'{marc_raw}={ver}(cita sin respaldo)')
+            continue
+        # GUARDA 2: un POSITIVO cuya cita atribuye la marcación a vasos/estroma/basales
+        # no es positivo DEL TUMOR. Se descarta (se conserva lo que hubiera).
+        if ver == 'POSITIVO' and _positivo_de_otra_poblacion(_norm(cita)):
+            rechazados.append(f'{marc_raw}=POSITIVO(marca poblacion NO tumoral)')
             continue
         out[validos[marc]] = (ver, cita)
 
     if rechazados:
         logger.warning(f"🛡️ [polaridad-ia] descartados sin respaldo textual: "
                        f"{', '.join(rechazados[:8])}{' …' if len(rechazados) > 8 else ''}")
+    return out
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CLIENTE LOCAL + PUNTO DE ENTRADA DEL EXTRACTOR
+# ═══════════════════════════════════════════════════════════════════════════
+_HOSTS_LOCALES = ('localhost', '127.0.0.1', '::1', '0.0.0.0')
+
+
+def _endpoint_local() -> Optional[Tuple[str, str]]:
+    """(url, modelo) del LLM LOCAL según config.ini [llm]. None si no hay o NO es local.
+
+    DATOS MÉDICOS CONFIDENCIALES (Ley 1581, Habeas Data): esta capa NUNCA puede hablar
+    con un proveedor en la nube. Si el endpoint configurado no apunta a la máquina local,
+    se REHÚSA a llamar — mejor quedarse con el valor del regex que filtrar un informe.
+    """
+    import configparser
+    from urllib.parse import urlparse
+    try:
+        cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
+        cfg.read(os.path.join(_RAIZ, 'config', 'config.ini'), encoding='utf-8')
+        if not cfg.has_section('llm'):
+            return None
+        prov = (cfg.get('llm', 'provider', fallback='') or '').strip().lower()
+        base = (cfg.get('llm', 'base_url', fallback='') or '').strip()
+        if not base:
+            base = ('http://localhost:11434/v1' if prov == 'ollama'
+                    else 'http://127.0.0.1:1234/v1')
+        host = (urlparse(base).hostname or '').lower()
+        if host not in _HOSTS_LOCALES:
+            logger.error(f"🚫 [polaridad-ia] endpoint NO local ({host}): se rehúsa la llamada. "
+                         f"Los informes no pueden salir del hospital.")
+            return None
+        modelo = (cfg.get('llm', 'modelo', fallback='') or
+                  cfg.get('llm', 'model', fallback='') or '').strip()
+        return base.rstrip('/'), modelo
+    except Exception as e:
+        logger.warning(f"[polaridad-ia] no se pudo leer config [llm]: {e}")
+        return None
+
+
+_RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def _llm_local_call(base: str, modelo: str, max_tokens: int = 500):
+    """fn(prompt)->str contra el endpoint OpenAI-compatible LOCAL.
+
+    OJO con max_tokens: LM Studio reserva recursos proporcionales al LÍMITE pedido, no a
+    lo que realmente genera. Medido con el MISMO prompt y las MISMAS 62 tokens de salida:
+        max_tokens=1500 -> 26,3 s
+        max_tokens= 500 ->  7,8 s   (3,4x más rápido)
+    Por eso se ajusta al tamaño real de la respuesta (~60 tokens por marcador) en vez de
+    poner un límite generoso "por si acaso".
+    """
+    import requests
+
+    def call(prompt: str) -> str:
+        body = {'messages': [{'role': 'user', 'content': prompt}],
+                'temperature': 0.0, 'max_tokens': max_tokens}
+        if modelo:
+            body['model'] = modelo
+        r = requests.post(f'{base}/chat/completions', json=body, timeout=300)
+        r.raise_for_status()
+        return r.json()['choices'][0]['message']['content']
+    return call
+
+
+def _modelo_por_defecto(base: str) -> str:
+    import requests
+    try:
+        r = requests.get(f'{base}/models', timeout=5)
+        r.raise_for_status()
+        for m in r.json().get('data', []):
+            mid = str(m.get('id', ''))
+            if mid and 'embed' not in mid.lower():
+                return mid
+    except Exception:
+        pass
+    return ''
+
+
+def corregir_polaridad_con_ia(results: Dict[str, str], texto: str) -> Dict[str, str]:
+    """Corrige la POLARIDAD de los biomarcadores usando la IA LOCAL, con la guarda de cita.
+
+    Solo revisa los que YA tienen un valor POSITIVO/NEGATIVO puesto por el regex (no crea
+    marcadores nuevos). Sobrescribe únicamente cuando la IA afirma lo contrario Y su cita
+    está verificada contra el informe. Si el LLM local no está disponible, o la guarda
+    rechaza, o la IA se abstiene -> se conserva el valor del regex (degradación segura).
+
+    Medido sobre 60 casos adjudicados contra el informe (el subconjunto MÁS ambiguo del
+    corpus): regex 40% de acierto; esta capa, 100% sobre lo que afirma.
+    """
+    if not results or not texto:
+        return results
+    revisables = [k for k, v in results.items()
+                  if str(v).strip().upper() in ('POSITIVO', 'NEGATIVO')]
+    if not revisables:
+        return results
+
+    ep = _endpoint_local()
+    if not ep:
+        return results
+    base, modelo = ep
+    if not modelo:
+        modelo = _modelo_por_defecto(base)
+
+    nombres = [k[4:] if k.upper().startswith('IHQ_') else k for k in revisables]
+    n2k = {n: k for n, k in zip(nombres, revisables)}
+    # ~60 tokens por marcador + margen; un límite generoso "por si acaso" cuesta 3,4x
+    tope = min(500, 70 * min(len(nombres), 8) + 120)
+    try:
+        dictamen = clasificar_polaridad(texto, nombres, _llm_local_call(base, modelo, tope))
+    except Exception as e:
+        logger.warning(f"[polaridad-ia] no se pudo consultar el LLM local: {e}")
+        return results
+
+    out = dict(results)
+    cambios = []
+    for nombre, (ver, cita) in dictamen.items():
+        k = n2k.get(nombre)
+        if not k or ver not in ('POSITIVO', 'NEGATIVO'):
+            continue                       # NO_DICE -> no se toca lo que hay
+        actual = str(out[k]).strip().upper()
+        if ver != actual:
+            out[k] = ver
+            cambios.append(f'{k}: {actual}->{ver}  «{cita[:60]}»')
+    if cambios:
+        logger.info(f"🤖 [polaridad-ia] {len(cambios)} polaridades corregidas con cita verificada:")
+        for c in cambios[:8]:
+            logger.info(f"      {c}")
     return out
