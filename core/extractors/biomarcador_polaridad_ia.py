@@ -115,6 +115,39 @@ INFORME:
 \"\"\"
 """
 
+# ── SEGUNDA LENTE (V6.9.63) ────────────────────────────────────────────────
+# MISMA tarea, encuadre distinto: en vez de dar reglas, obliga a RECORRER un procedimiento
+# (localizar frases -> elegir la que reporta -> mirar la cláusula -> mirar la población).
+# A temperatura 0 el modelo es determinista: para tener una segunda opinión REAL hay que
+# cambiar el PROMPT, no la semilla.
+# Medido sobre 80 casos difíciles: cuando ambas lentes coinciden acierta ~94%; cuando
+# discrepan, la respuesta es dudosa el 62% de las veces -> ese desacuerdo es la SEÑAL de
+# "no sé", y es lo que manda el caso a revisión en vez de adivinar.
+_PROMPT_LENTE_B = """Eres patólogo. Para CADA marcador de la LISTA, localiza en el INFORME la
+frase que habla de él y decide a qué cláusula pertenece.
+
+Procede así, marcador por marcador:
+1. Busca TODAS las frases del informe donde aparece el marcador.
+2. Quédate con la que reporta un RESULTADO (no con la que PIDE el estudio:
+   "se realizan niveles para tinción con X, Y" es una petición, no un resultado).
+3. Mira si el marcador cae en la parte POSITIVA o en la NEGATIVA de esa frase.
+   Las listas cruzan polaridad: "positivas para A, B; negativas para C, D" -> C y D NEGATIVOS.
+4. Comprueba de qué POBLACIÓN habla: si tiñe vasos, estroma o queratinocitos basales pero
+   NO la lesión -> NEGATIVO. (En un LINFOMA los linfocitos SON el tumor.)
+5. "sin pérdida de expresión de X" -> X POSITIVO (la expresión está conservada).
+6. Si no puedes copiar una cita LITERAL del informe que lo sustente -> NO_DICE.
+
+Responde SOLO un array JSON, sin nada más:
+[{{"marcador":"<de la lista>","veredicto":"POSITIVO|NEGATIVO|NO_DICE","cita":"<literal del informe>"}}]
+
+LISTA DE MARCADORES: {marcadores}
+
+INFORME:
+\"\"\"
+{informe}
+\"\"\"
+"""
+
 
 # El coste de cada llamada lo domina el TAMAÑO del prompt: informe de 7.000 chars = 40 s;
 # de 1.500 = 16 s. El encabezado (datos del paciente), la lista de estudios solicitados y el
@@ -258,7 +291,8 @@ def clasificar_polaridad(informe: str,
                          marcadores: List[str],
                          llm_call,
                          max_informe: int = 7000,
-                         max_por_llamada: int = 8) -> Dict[str, Tuple[str, str]]:
+                         max_por_llamada: int = 8,
+                         plantilla: Optional[str] = None) -> Dict[str, Tuple[str, str]]:
     """Devuelve {marcador: (veredicto, cita)} SOLO para los veredictos con cita verificada.
 
     informe    : texto del informe (tal como se leyó del PDF).
@@ -278,7 +312,7 @@ def clasificar_polaridad(informe: str,
         out: Dict[str, Tuple[str, str]] = {}
         for i in range(0, len(marcadores), max_por_llamada):
             out.update(clasificar_polaridad(informe, marcadores[i:i + max_por_llamada],
-                                            llm_call, max_informe, max_por_llamada))
+                                            llm_call, max_informe, max_por_llamada, plantilla))
         return out
 
     # Recortar a la zona de resultados abarata la llamada 2,5x… pero el 4% de los
@@ -290,7 +324,7 @@ def clasificar_polaridad(informe: str,
     if any(_clave_norm(m) not in re.sub(r'[^a-z0-9]', '', _z).upper() for m in marcadores):
         txt = informe
     txt = txt[:max_informe]
-    prompt = _PROMPT.format(marcadores=', '.join(marcadores), informe=txt)
+    prompt = (plantilla or _PROMPT).format(marcadores=', '.join(marcadores), informe=txt)
     try:
         raw = llm_call(prompt)
     except Exception as e:
@@ -348,6 +382,55 @@ def clasificar_polaridad(informe: str,
 # CLIENTE LOCAL + PUNTO DE ENTRADA DEL EXTRACTOR
 # ═══════════════════════════════════════════════════════════════════════════
 _HOSTS_LOCALES = ('localhost', '127.0.0.1', '::1', '0.0.0.0')
+_CONS_CACHE: Dict[str, bool] = {}
+
+
+def _revisar_todos() -> bool:
+    """¿Va a REVISIÓN todo cambio de polaridad, no solo los dudosos?
+    config.ini [llm] revisar_todos_los_cambios. Por defecto SÍ.
+
+    POR QUÉ (medido, no opinión): con el consenso a 2 lentes, sobre 90 casos difíciles con
+    veredicto conocido se escribieron **20 datos FALSOS (22%)**. Es decir: cuando las dos
+    lentes coinciden NO se puede confiar en que acierten -> la "confianza ALTA" del modelo
+    local NO es un aval suficiente para dato clínico.
+    Única regla que da 100% verificado con este hardware: si la IA quiere CAMBIAR una
+    polaridad, un humano lo confirma. Son ~522 de 2.077 casos (25%), con la cita al lado.
+    El valor SÍ se escribe (la IA acierta 82% vs 40% del regex): lo que no se hace es darlo
+    por bueno en silencio.
+    """
+    if 'r' in _CONS_CACHE:
+        return bool(_CONS_CACHE['r'])
+    val = True
+    try:
+        import configparser
+        cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
+        cfg.read(os.path.join(_RAIZ, 'config', 'config.ini'), encoding='utf-8')
+        if cfg.has_option('llm', 'revisar_todos_los_cambios'):
+            val = cfg.getboolean('llm', 'revisar_todos_los_cambios')
+    except Exception:
+        pass
+    _CONS_CACHE['r'] = val
+    return val
+
+
+def _usar_consenso() -> bool:
+    """¿Doble lente + cola de revisión? config.ini [llm] usar_consenso_polaridad.
+    Por defecto SÍ: una sola lente acierta ~82% en las frases difíciles y NO avisa cuando
+    falla. Con dos lentes, el desacuerdo es la señal de 'no sé' -> el caso va a revisión en
+    vez de escribirse mal. Cuesta 2 llamadas por lote (~2x tiempo)."""
+    if 'v' in _CONS_CACHE:
+        return _CONS_CACHE['v']
+    val = True
+    try:
+        import configparser
+        cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
+        cfg.read(os.path.join(_RAIZ, 'config', 'config.ini'), encoding='utf-8')
+        if cfg.has_option('llm', 'usar_consenso_polaridad'):
+            val = cfg.getboolean('llm', 'usar_consenso_polaridad')
+    except Exception:
+        pass
+    _CONS_CACHE['v'] = val
+    return val
 
 
 def _endpoint_local() -> Optional[Tuple[str, str]]:
@@ -422,6 +505,33 @@ def _modelo_por_defecto(base: str) -> str:
     return ''
 
 
+def clasificar_con_consenso(informe: str, marcadores: List[str], llm_call_a, llm_call_b):
+    """Dos lentes independientes sobre el MISMO informe. Devuelve
+        {marcador: {'veredicto', 'cita', 'confianza', 'lente_a', 'lente_b'}}
+    confianza:
+      'ALTA'  -> las dos lentes coinciden en POSITIVO/NEGATIVO y la cita está verificada
+                 -> se puede escribir el valor.
+      'BAJA'  -> discrepan, una se abstiene, o la cita no cuadra
+                 -> NO se adivina: el caso va a REVISIÓN con las dos opiniones.
+    Nunca se pierde la trazabilidad: siempre se devuelve la cita de cada lente.
+    """
+    a = clasificar_polaridad(informe, marcadores, llm_call_a)
+    b = clasificar_polaridad(informe, marcadores, llm_call_b, plantilla=_PROMPT_LENTE_B)
+    out = {}
+    for m in marcadores:
+        va, ca = a.get(m, (None, ''))
+        vb, cb = b.get(m, (None, ''))
+        firme = (va in ('POSITIVO', 'NEGATIVO')) and va == vb
+        out[m] = {
+            'veredicto': va if firme else None,
+            'cita': ca or cb,
+            'confianza': 'ALTA' if firme else 'BAJA',
+            'lente_a': va,
+            'lente_b': vb,
+        }
+    return out
+
+
 def corregir_polaridad_con_ia(results: Dict[str, str], texto: str) -> Dict[str, str]:
     """Corrige la POLARIDAD de los biomarcadores usando la IA LOCAL, con la guarda de cita.
 
@@ -451,24 +561,58 @@ def corregir_polaridad_con_ia(results: Dict[str, str], texto: str) -> Dict[str, 
     n2k = {n: k for n, k in zip(nombres, revisables)}
     # ~60 tokens por marcador + margen; un límite generoso "por si acaso" cuesta 3,4x
     tope = min(500, 70 * min(len(nombres), 8) + 120)
+    llm = _llm_local_call(base, modelo, tope)
     try:
-        dictamen = clasificar_polaridad(texto, nombres, _llm_local_call(base, modelo, tope))
+        if _usar_consenso():
+            dic = clasificar_con_consenso(texto, nombres, llm, llm)
+        else:
+            dic = {n: {'veredicto': v, 'cita': c, 'confianza': 'ALTA', 'lente_a': v, 'lente_b': v}
+                   for n, (v, c) in clasificar_polaridad(texto, nombres, llm).items()}
     except Exception as e:
         logger.warning(f"[polaridad-ia] no se pudo consultar el LLM local: {e}")
         return results
 
     out = dict(results)
-    cambios = []
-    for nombre, (ver, cita) in dictamen.items():
+    todos = _revisar_todos()
+    cambios, dudosos = [], []
+    for nombre, d in dic.items():
         k = n2k.get(nombre)
-        if not k or ver not in ('POSITIVO', 'NEGATIVO'):
-            continue                       # NO_DICE -> no se toca lo que hay
+        if not k:
+            continue
         actual = str(out[k]).strip().upper()
-        if ver != actual:
+        ver = d.get('veredicto')
+        alta = d.get('confianza') == 'ALTA' and ver in ('POSITIVO', 'NEGATIVO')
+
+        if alta and ver != actual:
+            # Se ESCRIBE el valor de la IA (acierta 82% vs 40% del regex)…
             out[k] = ver
-            cambios.append(f'{k}: {actual}->{ver}  «{cita[:60]}»')
+            cambios.append({'columna': k, 'antes': actual, 'despues': ver,
+                            'cita': d.get('cita', '')})
+            if todos:
+                # …pero NO se da por bueno en silencio: todo cambio se confirma.
+                # Medido: con "confianza ALTA" aún se colaba un 22% de datos falsos.
+                dudosos.append({'columna': k, 'valor_actual': ver, 'valor_previo': actual,
+                                'motivo': 'CAMBIO_APLICADO_PENDIENTE_DE_CONFIRMAR',
+                                'lente_a': d.get('lente_a'), 'lente_b': d.get('lente_b'),
+                                'cita': d.get('cita', '')})
+        elif not alta and (d.get('lente_a') in ('POSITIVO', 'NEGATIVO')
+                           or d.get('lente_b') in ('POSITIVO', 'NEGATIVO')):
+            # Las lentes NO coinciden -> el sistema NO SABE. No se adivina: se conserva
+            # el valor actual y va a REVISIÓN con las dos opiniones.
+            dudosos.append({'columna': k, 'valor_actual': actual,
+                            'motivo': 'LENTES_DISCREPAN_NO_SE_TOCO',
+                            'lente_a': d.get('lente_a'), 'lente_b': d.get('lente_b'),
+                            'cita': d.get('cita', '')})
+
     if cambios:
-        logger.info(f"🤖 [polaridad-ia] {len(cambios)} polaridades corregidas con cita verificada:")
+        logger.info(f"🤖 [polaridad-ia] {len(cambios)} polaridades corregidas (confianza ALTA):")
         for c in cambios[:8]:
-            logger.info(f"      {c}")
+            logger.info(f"      {c['columna']}: {c['antes']}->{c['despues']}  «{c['cita'][:55]}»")
+    if dudosos:
+        logger.warning(f"🔎 [polaridad-ia] {len(dudosos)} marcadores DUDOSOS -> a revisión "
+                       f"(se conserva el valor actual, NO se adivina):")
+        for d in dudosos[:6]:
+            logger.warning(f"      {d['columna']}: lente A={d['lente_a']} / B={d['lente_b']}")
+    # el llamador (unified_extractor) recoge esto para la cola de revisión + auditoría
+    out['__AUDIT_POLARIDAD__'] = {'cambios': cambios, 'dudosos': dudosos}
     return out

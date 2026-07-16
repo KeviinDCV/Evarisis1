@@ -457,6 +457,14 @@ def _det_seccion_diagnostico(full_text):
     if fm:
         cuerpo = cuerpo[:fm.start()]
     cuerpo = _det_quitar_historia(cuerpo)
+    # NOTA V6.9.63 (intento REVERTIDO): tomar la ÚLTIMA coincidencia hace que en informes
+    # MULTI-ESPÉCIMEN la zona arranque pasado el dx del primer espécimen -> se pierde el
+    # cáncer ("CARCINOMA INVASIVO…" -> "INMUNOHISTOQUÍMICA", ~49 casos). Se probó saltar
+    # solo los rótulos anteriores al primer término dx fuerte: MEDIDO sobre los 2.077 =
+    # 92 REGRESIONES (devolvía el rótulo como dx: "LESIÓN. BIOPSIA. ESTUDIO DE
+    # INMUNOHISTOQUÍMICA" pisando "INFLAMACIÓN CRÓNICA GRANULOMATOSA"), porque _DET_FUERTE
+    # matchea "Tumor" DENTRO del propio rótulo. Revertido. El bug de los 49 sigue ABIERTO
+    # y necesita distinguir rótulo de dx sin depender de _DET_FUERTE.
     ims = list(_DET_PROC_SKIP.finditer(cuerpo))
     zona = cuerpo[ims[-1].end():] if ims else cuerpo
     return _DET_PIE.split(zona)[0].strip(), _DET_PIE.split(coment)[0].strip()
@@ -1030,6 +1038,37 @@ def limpiar_diagnostico(diagnostico: str) -> str:
         diagnostico = match_peritonitis.group(1)
 
     return diagnostico
+
+
+def _registrar_auditoria_polaridad(num_caso, audit):
+    """Deja rastro AUDITABLE de cada polaridad decidida por la IA y encola las dudosas.
+
+    Dos ficheros JSONL en `auditoria/` (uno por línea, se puede abrir con Excel/pandas):
+      · polaridad_auditoria.jsonl -> TODO lo que la IA cambió, con la CITA del informe que
+        lo respalda. Permite comprobar cualquier dato contra el PDF sin volver a procesar.
+      · polaridad_revision.jsonl  -> lo que el sistema NO SUPO decidir (las dos lentes
+        discrepan). NO se adivinó: se conservó el valor previo. Esta es la cola que revisa
+        el patólogo. Es corta a propósito.
+    Si algo falla al escribir, NO se rompe la extracción: la auditoría no puede tumbar el
+    procesamiento de un caso.
+    """
+    try:
+        import json as _json
+        from datetime import datetime as _dt
+        raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        d = os.path.join(raiz, 'auditoria')
+        os.makedirs(d, exist_ok=True)
+        ts = _dt.now().isoformat(timespec='seconds')
+        if audit.get('cambios'):
+            with open(os.path.join(d, 'polaridad_auditoria.jsonl'), 'a', encoding='utf-8') as f:
+                for c in audit['cambios']:
+                    f.write(_json.dumps({'ts': ts, 'caso': num_caso, **c}, ensure_ascii=False) + '\n')
+        if audit.get('dudosos'):
+            with open(os.path.join(d, 'polaridad_revision.jsonl'), 'a', encoding='utf-8') as f:
+                for x in audit['dudosos']:
+                    f.write(_json.dumps({'ts': ts, 'caso': num_caso, **x}, ensure_ascii=False) + '\n')
+    except Exception as e:
+        logger.warning(f"[auditoria] no se pudo registrar (la extracción sigue): {e}")
 
 
 _IA_POL_CACHE: Dict[str, bool] = {}
@@ -2024,9 +2063,19 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 from core.extractors.biomarcador_polaridad_ia import corregir_polaridad_con_ia
                 _bio = {k: v for k, v in combined_data.items() if str(k).startswith('IHQ_')}
                 _corr = corregir_polaridad_con_ia(_bio, clean_text)
+                # V6.9.63: la auditoría (cambios + dudosos) NO es un campo de la BD.
+                # Se extrae aquí y se guarda aparte para la cola de revisión.
+                _audit = _corr.pop('__AUDIT_POLARIDAD__', None)
                 for _k, _v in _corr.items():
                     if combined_data.get(_k) != _v:
                         combined_data[_k] = _v
+                if _audit:
+                    # OJO: 'Numero de caso' aún NO existe aquí (se crea en
+                    # map_to_database_format). Sin esto la auditoría salía con caso "?"
+                    # y no servía para rastrear nada.
+                    _ncaso = (combined_data.get('numero_peticion')
+                              or combined_data.get('N. peticion (0. Numero de biopsia)') or '?')
+                    _registrar_auditoria_polaridad(_ncaso, _audit)
             except Exception as _e_pol:
                 logger.warning(f"[polaridad-ia] no aplicada (se conserva el regex): {_e_pol}")
 
@@ -2417,6 +2466,21 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
     organo_db = extracted_data.get('organo', '') or extracted_data.get('ihq_organo', '')
     if not organo_db or organo_db == 'ORGANO_NO_ESPECIFICADO':
         organo_db = 'N/A'
+
+    # V6.9.62 FIX: normalizar el ÓRGANO también aquí, que es lo que se ESCRIBE en la BD.
+    # `normalizar_organo` existía desde V6.9.54 y se usó para corregir los ~2.075 casos
+    # históricos, pero NUNCA estuvo conectada a esta ruta: la BD recibía el texto crudo
+    # ("BX LESION MAMA IZQUIERDA" en vez de "MAMA", "TIROIDECTOMIA TOTAL" en vez de
+    # "TIROIDES"). O sea: el bug original seguía vivo para cada PDF nuevo.
+    # Es conservadora: si el valor NO trae procedimiento, lo devuelve TAL CUAL.
+    if organo_db and organo_db != 'N/A':
+        try:
+            from core.extractors.medical_extractor import normalizar_organo
+            _o = normalizar_organo(organo_db)
+            if _o:
+                organo_db = _o
+        except Exception as _e_org:
+            logger.warning(f"[organo] normalización no aplicada (se deja crudo): {_e_org}")
 
     # v5.3.6: CORREGIDO - Simplificado a "Organo"
     db_record["Organo"] = organo_db

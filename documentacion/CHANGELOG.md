@@ -1,5 +1,100 @@
 # Changelog
 
+## [6.9.63] - 2026-07-16 — Modo 100% verificado: consenso + auditoría con cita + cola de revisión
+
+**Objetivo pedido:** *"que extraiga de manera perfecta al 100%, a prueba de errores y con auditorías completas"*.
+
+### La verdad medida: el 100% AUTOMÁTICO no existe con este hardware
+Cinco enfoques probados hoy sobre el mismo banco de casos difíciles (adjudicados a ciegas contra el informe):
+
+| Enfoque | Acierto |
+|---|--:|
+| Regex | 40% |
+| Parser de cláusulas | 60% |
+| IA local, una lente | 82% |
+| IA local + guardas de cita/población | 88% |
+| IA local + consenso a 2 lentes | **aún 22% de datos FALSOS** |
+
+La medición decisiva: sobre 90 casos difíciles, el consenso redujo los errores de 45 a 20 — pero **escribió 20 datos falsos (22%)** aun declarando "confianza ALTA". **La seguridad que declara el modelo local NO es un aval válido para dato clínico.**
+
+Causa: los 652 valores correctos de la BD no los produjo el extractor, sino someter cada cambio a **revisores de nivel Claude**. Dentro de la app corre mistral-nemo 12B en **cuantización Q3** (lo máximo que entra en una RTX 3050 de 8 GB), donde la calidad ya degrada.
+
+### Cómo SÍ se llega al 100%: automatizar + confirmar
+**Regla:** si la IA quiere CAMBIAR una polaridad, un humano lo confirma. Siempre — no solo cuando duda, porque su "seguridad" no es fiable.
+
+1. **Consenso a 2 lentes** (`_PROMPT` + `_PROMPT_LENTE_B`): la misma IA con dos encuadres. A temperatura 0 hay que cambiar el *prompt*, no la semilla. El **desacuerdo es la señal de "no sé"**.
+2. **El valor se escribe** (la IA acierta 82% vs 40% del regex) **pero nunca en silencio**.
+3. **Auditoría completa** — `auditoria/polaridad_auditoria.jsonl`, cada dato con la cita literal del informe:
+   `IHQ251114 IHQ_WT1: POSITIVO -> NEGATIVO «No presentan marcación para WT1»`
+   Permite verificar cualquier valor contra el PDF **sin reprocesar**.
+4. **Cola de revisión** — `auditoria/polaridad_revision.jsonl`, con dos clases:
+   - `CAMBIO_APLICADO_PENDIENTE_DE_CONFIRMAR` → la IA lo cambió; confírmalo.
+   - `LENTES_DISCREPAN_NO_SE_TOCO` → la IA no supo; el valor sigue intacto.
+5. **Herramienta:** `herramientas_ia/cola_revision.py` (`--revision`, `--auditoria`, `--caso IHQ…`, `--csv` para Excel).
+
+**Volumen:** ~522 marcadores sobre 2.077 casos (25%), con la cita al lado.
+
+### Flags nuevos — `config.ini [llm]`
+- `usar_consenso_polaridad = true` — doble lente (2 llamadas al LLM por lote, ~2x tiempo).
+- `revisar_todos_los_cambios = true` — modo 100%: encola TODO cambio. En `false` solo los dudosos (cola más corta, pero **no es 100%**).
+
+### Notas de implementación
+- La auditoría viaja en `__AUDIT_POLARIDAD__` y se **extrae antes** de mapear a BD: nunca llega a la tabla.
+- El nº de caso se toma de `numero_peticion` (`Numero de caso` aún no existe en ese punto — sin esto la auditoría salía con caso `"?"` y no servía para rastrear).
+- Fallo de auditoría **nunca** rompe la extracción.
+
+### 🔬 Vía para automatizar de verdad
+La RTX 3050 (8 GB) obliga a Q3, que es donde el modelo pierde precisión. Con **16 GB** entraría un modelo bastante mejor y la cola de revisión se reduciría sustancialmente. Es la única vía medida para subir del 82% sin intervención humana.
+
+## [6.9.62] - 2026-07-16 — El fix de Órgano NUNCA estuvo conectado al extractor
+
+**Bug grave detectado al verificar (no al programar).** Antes de responder "¿puedo reprocesar?" se comparó lo que produce el extractor contra la BD. Resultado: **el reproceso cambiaría el Órgano en 1.183 casos** — y a peor:
+
+| BD actual (normalizada) | Lo que producía el extractor |
+|---|---|
+| `PULMON` | `BX DE PLEURA + BX DE PULMON` |
+| `MAMA` | `BX LESION MAMA IZQUIERDA` |
+| `CERVIX` | `BX EXOCERVIX` |
+| `ESTOMAGO` | `BX LESION GASTRICA` |
+
+**Causa raíz:** `normalizar_organo` existe desde V6.9.54 y se usó para corregir los ~2.075 casos históricos en BD… pero **nunca se conectó a `map_to_database_format`**, que es lo que ESCRIBE en la tabla:
+```python
+organo_db = extracted_data.get('organo', '') or extracted_data.get('ihq_organo', '')
+db_record["Organo"] = organo_db      # ← crudo, sin normalizar
+```
+Se arregló el dato histórico y se dio el bug por cerrado, pero **seguía vivo para cada PDF nuevo**: era exactamente el fallo original que reportó el usuario (`Organo = "TIROIDECTOMIA TOTAL"`). La función solo se invocaba desde `enhanced_database_dashboard.py` e `informe_estadistico.py`, es decir, al MOSTRAR — no al guardar.
+
+**Fix:** llamar a `normalizar_organo` en `map_to_database_format`. Es conservadora: si el valor no trae procedimiento, lo devuelve tal cual.
+
+### 🔴 BUG ABIERTO (NO resuelto): el dx se pierde en informes MULTI-ESPÉCIMEN — ~49 casos
+Detectado en la misma verificación. **Es el bug más grave que queda y afecta también a PDFs nuevos.**
+
+**Síntoma:** el extractor devuelve basura o el espécimen equivocado donde hay un cáncer:
+| El informe dice | El extractor produce |
+|---|---|
+| `CARCINOMA INVASIVO DE TIPO NO ESPECIAL DUCTAL…` | `INMUNOHISTOQUÍMICA` |
+| `LINFOMA T/NK DE ALTO GRADO` | `INMUNOHISTOQUÍMICA` |
+| `SARCOMA HISTIOCITICO` | `N/A` |
+| A: *NEGATIVO PARA MALIGNIDAD* · **B: ADENOCARCINOMA (GLEASON 3+3)** | `NEGATIVO PARA MALIGNIDAD` (¡el espécimen benigno!) |
+
+**Causa raíz (localizada):** en `_det_seccion_diagnostico`,
+```python
+ims = list(_DET_PROC_SKIP.finditer(cuerpo))
+zona = cuerpo[ims[-1].end():] if ims else cuerpo   # ← la ÚLTIMA coincidencia
+```
+Para saltar el rótulo del espécimen se toma el texto tras la **última** mención de procedimiento. En informes multi-espécimen el rótulo del espécimen B (`"B. … Resección."`) aparece **después** del diagnóstico del A → la zona arranca pasado el cáncer y se pierde.
+
+**Intento de fix REVERTIDO.** Se probó saltar solo los rótulos anteriores al primer término dx fuerte. Medido sobre los 2.077: **92 REGRESIONES** — devolvía el rótulo como diagnóstico (`LESIÓN. BIOPSIA. ESTUDIO DE INMUNOHISTOQUÍMICA` pisando `INFLAMACIÓN CRÓNICA GRANULOMATOSA`), porque `_DET_FUERTE` matchea la palabra **"Tumor" que está dentro del propio rótulo**. Revertido según la regla anti-regresión. **Verificado tras revertir: 2.077 sin cambio, 0 regresiones.**
+
+**Qué hace falta:** distinguir rótulo de diagnóstico sin depender de `_DET_FUERTE`, y en multi-espécimen elegir el diagnóstico **maligno** (el clínicamente principal), no el primero. Requiere sesión dedicada + harness (`dx_regres.py`, 2.077 casos en ~140 s con la IA de polaridad desactivada).
+
+**Impacto mientras tanto:** ~49/2.077 = **2,4%**. La BD tiene los valores CORRECTOS (no tocar). Los PDFs nuevos con esta estructura pueden salir con dx erróneo → **revisar el dx de los casos multi-espécimen al procesarlos**.
+
+### Validación del fix de Órgano
+**2.070 de 2.071** coinciden con los valores ya validados en BD.
+- Se probó además partir los multi-espécimen por `+`: **mucho peor** (119 → 29 coincidencias). Descartado: la mayoría de multi-espécimen no traen procedimiento (`PARED ABDOMINAL + OMENTO`) y deben quedar intactos.
+- ⚠️ **Limitación conocida (1 caso):** `HISTERECTOMÍA + SALPINGECTOMÍA + GANGLIOS PARAÓRTICOS + OMENTO` → `GANGLIO`. La regla órgano-primero toma el sustantivo de un espécimen posterior. Es una cirugía de estadificación multi-órgano donde no hay un órgano único correcto. 0,05%.
+
 ## [6.9.61] - 2026-07-14 — Polaridad de biomarcadores con IA local + guarda de cita
 
 **Sprint:** La polaridad (POSITIVO/NEGATIVO) de los biomarcadores era el punto más débil del extractor. No era un problema de OCR — se midió: **14.633/14.633 páginas (100%) se leen de la capa de texto nativa del PDF, 0% pasa por tesseract**. El texto se lee exacto; lo que fallaba era **interpretarlo**.
@@ -72,7 +167,16 @@ Las **94 rechazadas son el valor de este paso**: sin la verificación se habría
 
 ⚠️ **Limitación conocida:** parte del desempate no pudo ejecutarse (límite de sesión). Eso **no compromete lo aplicado** (las 428 salen de la 1ª pasada completa, 522/522), pero deja algunas de las 94 sin dictamen definitivo — se conservó el valor actual, que es el comportamiento seguro. Revisables más adelante.
 
-**Aviso no aplicado:** 10 columnas (`IHQ_PDL-1`, `IHQ_CALRETININ`, `IHQ_EBER`, `IHQ_34BETA`, `IHQ_MSA`, `IHQ_B2`, `IHQ_CK34BETA12`, `IHQ_CK56`, `IHQ_ACTIN`, `IHQ_P16_PORCENTAJE`) difieren en los 2.076 casos — desajuste de nombre de columna entre extractor y tabla, **no polaridad**. Solo se reportó; pendiente de revisar.
+### Columnas siempre en N/A: auditado, NO es un bug
+El reproceso avisó de 10 columnas que difieren en los 2.076 casos (`IHQ_PDL-1`, `IHQ_EBER`, `IHQ_CK56`…). Se auditó por si eran datos perdidos. **No lo son:**
+
+1. **Cero columnas huérfanas** — el extractor nunca emite un valor a una columna inexistente (148 columnas `IHQ_` en la tabla, 129 que llena, 0 huérfanas). No se pierde ningún dato.
+2. Las 19 columnas muertas son **duplicados del esquema**: `IHQ_CK56`→`IHQ_CK5_6`, `IHQ_DESMINA`→`IHQ_DESMIN`, `IHQ_LCA`→`IHQ_CD45`, `IHQ_34BETA`/`IHQ_CK34BE12`/`IHQ_CK34BETA12`→`IHQ_CK34BETAE12`… El dato va a la canónica. La UI ya las oculta desde V6.9.57.
+3. **PD-L1 y EBER están vacíos porque en este corpus solo se PIDEN, nunca se reportan.** Verificadas las 31 menciones (18 PD-L1 + 13 EBER): **100% son recomendaciones** (*"Requiere estudio de inmunohistoquímica para la proteína PDL1 (22C3)"*, *"Se recomienda complementar estudios con FISH para EBER"*). **Cero traen resultado.** El extractor acierta al no capturarlos: hacerlo sería inventar un resultado que el patólogo nunca dio.
+
+La diferencia que disparó el aviso (`''` del extractor vs `'N/A'` de la BD) es **cosmética**: ambos significan "sin dato". No se tocó nada.
+
+⚠️ **Corrección a la cifra de "773 biomarcadores perdidos"** de la auditoría previa: cuenta menciones sin distinguir petición de resultado, así que está **inflada** por este mismo efecto. Antes de "recuperar" nada, hay que filtrar las menciones de panel solicitado/recomendación.
 
 ### Otros arreglos
 - `_cita_respaldada`: probaba solo la **primera** ocurrencia de la frase ancla y abandonaba → rechazaba citas válidas (era el 25% de los rechazos).
