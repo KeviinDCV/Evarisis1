@@ -583,3 +583,29 @@
 {"ts": "2026-07-17T17:35:38", "caso": "IHQ260688", "columna": "IHQ_CD3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Linfocitos T CD3+ = 0 (cero)"}
 {"ts": "2026-07-17T17:35:38", "caso": "IHQ260688", "columna": "IHQ_MUM1", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Células plasmáticas MUM1+ = 0 (cero)"}
 {"ts": "2026-07-17T17:40:58", "caso": "IHQ260782", "columna": "IHQ_CD38", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "células plasmáticas CD38 positivas"}
+{"ts": "2026-07-21T10:00:23", "caso": "IHQ260551", "columna": "IHQ_CD3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Hay escasos linfocitos T CD3+ acompañantes"}
+{"ts": "2026-07-21T10:01:40", "caso": "IHQ260556", "columna": "IHQ_CK20", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no presentan inmunomarcación para CK20"}
+{"ts": "2026-07-21T10:01:40", "caso": "IHQ260556", "columna": "IHQ_CDX2", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no presentan inmunomarcación para CDX2"}
+{"ts": "2026-07-21T10:01:40", "caso": "IHQ260556", "columna": "IHQ_ARGINASA", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no presentan inmunomarcación para Arginasa 1"}
+{"ts": "2026-07-21T10:03:51", "caso": "IHQ260561", "columna": "IHQ_CD117", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Se observan células plasmáticas del 30% que se disponen en cúmulos (CD38+, CD138, CD56-, CD117-). con restricción de cadenas kappa"}
+{"ts": "2026-07-21T10:04:24", "caso": "IHQ260562", "columna": "IHQ_LAMBDA", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "expresión citoplasmática fuerte para cadenas ligeras lambda"}
+{"ts": "2026-07-21T10:04:46", "caso": "IHQ260564", "columna": "IHQ_S100", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "el resto de marcadores S100, Desmina y CKAE1/AE3 son negativos."}
+{"ts": "2026-07-21T10:06:28", "caso": "IHQ260572", "columna": "IHQ_CALPONINA", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "se observaba marcación para células mioepiteliales con calponina"}
+{"ts": "2026-07-21T10:06:28", "caso": "IHQ260572", "columna": "IHQ_P63", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "se observaba marcación para células mioepiteliales con p63"}
+{"ts": "2026-07-21T10:09:01", "caso": "IHQ260588", "columna": "IHQ_WT1", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "Se observa expresión nuclear intensa y difusa de WT1"}
+{"ts": "2026-07-21T10:14:17", "caso": "IHQ260605", "columna": "IHQ_BCL2", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "BCL2 es negativo en los centros germinales y positivo en los linfocitos de la zona del manto y la paracorteza"}
+{"ts": "2026-07-21T10:15:46", "caso": "IHQ260611", "columna": "IHQ_RACEMASA", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Tejido prostático con presencia de marcación de células basales en todas las glándulas siendo negativas para la expresión de Racemasa"}
+{"ts": "2026-07-21T10:17:51", "caso": "IHQ260622", "columna": "IHQ_P63", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "con marcación negativa nuclear de p63"}
+{"ts": "2026-07-21T10:19:51", "caso": "IHQ260639", "columna": "IHQ_P16_ESTADO", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no hay presencia de células que presenten inmunorreactividad para P16"}
+{"ts": "2026-07-21T10:20:04", "caso": "IHQ260641", "columna": "IHQ_P16_ESTADO", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no hay presencia de células que presenten inmunorreactividad para P16"}
+{"ts": "2026-07-21T10:20:40", "caso": "IHQ260647", "columna": "IHQ_CK20", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "no presenta inmunomarcación para CK20"}
+{"ts": "2026-07-21T10:21:03", "caso": "IHQ260663", "columna": "IHQ_CKAE1AE3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No se observa inmunorreactividad para CKAE1AE3"}
+{"ts": "2026-07-21T10:22:59", "caso": "IHQ260668", "columna": "IHQ_CD5", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "En la zona paracortical se identifican linfocitos T reactivos positivos para CD5"}
+{"ts": "2026-07-21T10:24:18", "caso": "IHQ260672", "columna": "IHQ_MDM2", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No presentan inmunomarcación para MDM2"}
+{"ts": "2026-07-21T10:24:18", "caso": "IHQ260672", "columna": "IHQ_CDK4", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No presentan inmunomarcación para CDK4"}
+{"ts": "2026-07-21T10:24:18", "caso": "IHQ260672", "columna": "IHQ_CD34", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No presentan inmunomarcación para CD34"}
+{"ts": "2026-07-21T10:24:18", "caso": "IHQ260672", "columna": "IHQ_DESMIN", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No presentan inmunomarcación para Desmina"}
+{"ts": "2026-07-21T10:25:51", "caso": "IHQ260679", "columna": "IHQ_RECEPTOR_ESTROGENOS", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Las celulas acinares no presentan inmunoreactividad a RE"}
+{"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_CD20", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Linfocitos B CD20+ = 0 (cero)"}
+{"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_CD3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Linfocitos T CD3+ = 0 (cero)"}
+{"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_MUM1", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Células plasmáticas MUM1+ = 0 (cero)"}

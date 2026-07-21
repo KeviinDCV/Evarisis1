@@ -111,19 +111,103 @@ def _casos_del_rango(pref: str, desde: int, hasta: int, ancho: int) -> List[str]
     return [f'{pref}{n:0{ancho}d}' for n in range(desde, hasta + 1)]
 
 
+_RE_CASO_TXT = re.compile(r'\b(IHQ|M)\s?(\d{6,7})\b')
+_CACHE_JSON = 'casos_por_pdf.json'
+
+
+def _cache_path() -> str:
+    raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    d = os.path.join(raiz, 'auditoria')
+    try:
+        os.makedirs(d, exist_ok=True)
+    except Exception:
+        return os.path.join(raiz, _CACHE_JSON)
+    return os.path.join(d, _CACHE_JSON)
+
+
+def casos_reales_del_pdf(ruta: str, cache: Optional[dict] = None) -> Optional[List[str]]:
+    """Casos que el PDF CONTIENE de verdad, leyendo su texto.
+
+    POR QUÉ no basta el nombre: "IHQ260701 al IHQ260750.pdf" sugiere 50 casos pero solo
+    trae 14. Fiarse del nombre marcaba como "a medias" (12/50) un PDF que está COMPLETO
+    — el usuario lo reprocesaba y no pasaba nada, porque ya estaba todo.
+    El nombre es una ETIQUETA DE RANGO, no un inventario.
+
+    Cachea por (tamaño, fecha de modificación): leer los 193 PDFs cuesta ~30 s la primera
+    vez y nada las siguientes. Si el archivo cambia, se vuelve a leer solo.
+    """
+    try:
+        st = os.stat(ruta)
+        clave = f'{st.st_size}:{int(st.st_mtime)}'
+    except Exception:
+        return None
+    if cache is not None:
+        e = cache.get(ruta)
+        if isinstance(e, dict) and e.get('k') == clave:
+            return e.get('c') or []
+    try:
+        import fitz
+        doc = fitz.open(ruta)
+        txt = ''.join(doc[i].get_text() for i in range(len(doc)))
+        doc.close()
+    except Exception as ex:
+        logger.warning(f'[estado-pdfs] no se pudo leer {os.path.basename(ruta)}: {ex}')
+        return None
+    casos = sorted({f'{m.group(1).upper()}{m.group(2)}' for m in _RE_CASO_TXT.finditer(txt)})
+    if cache is not None:
+        cache[ruta] = {'k': clave, 'c': casos}
+    return casos
+
+
 def estado_pdfs(rutas: List[str], conn=None) -> Dict[str, dict]:
     """{ruta: {'estado', 'en_bd', 'total', 'rango'}} para una lista de PDFs.
     Una sola consulta a la BD para todos (rápido aunque haya cientos de archivos)."""
+    import json as _json
     info: Dict[str, dict] = {}
     pedidos: Dict[str, List[str]] = {}
+
+    # Caché de "qué casos trae cada PDF" (leer los 193 cuesta ~30 s solo la 1ª vez)
+    cpath = _cache_path()
+    cache = {}
+    try:
+        if os.path.exists(cpath):
+            with open(cpath, encoding='utf-8') as f:
+                cache = _json.load(f) or {}
+    except Exception:
+        cache = {}
+    n_antes = len(cache)
+
     for r in rutas:
-        casos = casos_de_pdf(r)
+        # 1) lo que el PDF trae DE VERDAD (leyendo su texto)
+        casos = casos_reales_del_pdf(r, cache)
+        # 2) …pero el texto también nombra casos de OTROS informes ("estudio ligado al
+        #    reporte IHQ250486 y M2507467"). Esas referencias cruzadas no las produce
+        #    este PDF y, contadas, lo hacían parecer incompleto.
+        #    Se cruzan con el rango del propio nombre: el texto dice qué hay, el nombre
+        #    dice qué le corresponde. La intersección es lo que este PDF genera.
+        if casos:
+            propios = casos_de_pdf(r)      # lo que al archivo le CORRESPONDE por su nombre
+            if propios:
+                dentro = [c for c in casos if c in set(propios)]
+                if dentro:
+                    casos = dentro
+        # 3) si no se pudo leer el PDF, se cae al rango del nombre (mejor que nada)
+        if not casos:
+            casos = casos_de_pdf(r)
         if not casos:
             info[r] = {'estado': DESCONOCIDO, 'en_bd': 0, 'total': 0, 'rango': ''}
             continue
         pedidos[r] = casos
         info[r] = {'estado': DESCONOCIDO, 'en_bd': 0, 'total': len(casos),
                    'rango': f'{casos[0]}–{casos[-1]}'}
+
+    if len(cache) != n_antes:
+        try:
+            with open(cpath, 'w', encoding='utf-8') as f:
+                _json.dump(cache, f)
+        except Exception as e:
+            logger.warning(f'[estado-pdfs] no se pudo guardar la caché: {e}')
+
     if not pedidos:
         return info
 
@@ -136,12 +220,22 @@ def estado_pdfs(rutas: List[str], conn=None) -> Dict[str, dict]:
             conn = get_connection()
             cerrar = True
         cur = conn.cursor()
-        # por lotes: evita una consulta con miles de parámetros
+        # V6.9.68: que EXISTA la fila NO significa que se extrajera.
+        # Hay filas fantasma con todo en N/A (7 en la BD): el caso se registró pero no se
+        # extrajo nada. Contarlas como "analizado" hacía que el PDF saliera en azul y el
+        # usuario se lo saltara -> se perdía el informe (M2604476.pdf tenía paciente y un
+        # dVIN, y su fila estaba vacía). Se exige contenido REAL: nombre o diagnóstico.
         for i in range(0, len(todos), 900):
             lote = todos[i:i + 900]
             marks = ','.join(['%s'] * len(lote))
-            cur.execute(f'SELECT `Numero de caso` FROM informes_ihq '
-                        f'WHERE `Numero de caso` IN ({marks})', lote)
+            cur.execute(
+                f'SELECT `Numero de caso` FROM informes_ihq '
+                f'WHERE `Numero de caso` IN ({marks}) AND ('
+                f"  COALESCE(TRIM(`Primer nombre`),'') NOT IN ('','N/A')"
+                f"  OR COALESCE(TRIM(`Primer apellido`),'') NOT IN ('','N/A')"
+                f"  OR COALESCE(TRIM(`Diagnostico Principal`),'') NOT IN ('','N/A')"
+                f"  OR COALESCE(TRIM(`Diagnostico Coloracion 2`),'') NOT IN ('','N/A')"
+                f')', lote)
             presentes.update(str(x[0]).strip() for x in cur.fetchall())
     except Exception as e:
         logger.warning(f'[estado-pdfs] no se pudo consultar la BD: {e}')
@@ -158,8 +252,10 @@ def estado_pdfs(rutas: List[str], conn=None) -> Dict[str, dict]:
         info[r]['en_bd'] = n
         if n == 0:
             info[r]['estado'] = NUEVO
-        elif n >= len(casos) * 0.9:
-            # 90%: un PDF puede traer huecos legítimos (casos anulados, rangos con saltos)
+        elif n == len(casos):
+            # Se comparan los casos que el PDF trae DE VERDAD -> deben estar TODOS.
+            # (Antes se comparaba contra el rango del nombre y hacía falta un umbral del
+            #  90% para tolerar los huecos; ahora no hay huecos que tolerar.)
             info[r]['estado'] = COMPLETO
         else:
             info[r]['estado'] = PARCIAL

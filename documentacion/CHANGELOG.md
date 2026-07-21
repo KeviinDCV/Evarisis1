@@ -1,5 +1,49 @@
 # Changelog
 
+## [6.9.68] - 2026-07-21 — Los "3 incompletos" eran falsa alarma… y destaparon un fallo grave
+
+**Reporte del usuario:** importó 77 coloraciones → 74 completas, 3 incompletas ("falta Diagnostico Coloracion"). Quería saber por qué no el 100%.
+
+### 1. Los 3 incompletos: FALSA ALARMA (el dato estaba)
+Verificado contra el PDF y la BD: **los 77 tienen su diagnóstico**. M2604451 tenía `CARCINOMA PAPILAR DE TIROIDES ENCAPSULADO` correctamente extraído. El problema era **en qué columna**:
+
+| Origen del PDF | Ruta | Columna |
+|---|---|---|
+| Lote `M 2604451 AL 2604500.pdf` | coloración | `Diagnostico Coloracion 2` |
+| Un solo caso `M2604451.pdf` | general | `Diagnostico Principal` |
+
+`_completitud_coloracion` exigía solo `Diagnostico Coloracion 2` → marcaba incompletos casos perfectamente extraídos. **El informe de importación mentía, no se perdió ningún dato.** Ahora acepta el dx en cualquiera de las columnas válidas.
+
+Causa de fondo: `_is_coloracion_file` detecta coloración por el patrón `M … AL …` o por indicios en el texto; un PDF de **un solo caso** (`M2604451.pdf`) no encaja y se procesa por la ruta general. No se cambió el enrutado (afectaría a stats y al visor); se corrigió el validador, que era quien informaba mal.
+
+### 2. 🔴 FALLO GRAVE encontrado de paso: filas fantasma marcadas como analizadas
+Al revisar aparecieron **6 casos con la fila VACÍA** (todo `N/A`: sin nombre, sin órgano, sin dx) cuyos PDFs **sí tienen contenido** — `M2604476.pdf` trae paciente y un dVIN diagnosticado.
+
+**El detector de V6.9.67 los daba por analizados** (la fila existe → cuenta), así que el PDF salía **en azul** y el usuario se lo saltaría → **informe perdido**. Es exactamente la dirección de error que el diseño quería evitar.
+
+**Corregido:** existir la fila NO basta. Se exige **contenido real** (nombre, apellido o algún diagnóstico). Los 6 pasan a NUEVO y entran en «Seleccionar pendientes». En la BD hay 7 filas fantasma de este tipo.
+
+### Estado real de la carpeta
+Con los PDFs que añadió el usuario, ahora hay **765 archivos**: **271 analizados / 494 pendientes**, correctamente detectados.
+
+## [6.9.67] - 2026-07-21 — El estado del PDF se lee del CONTENIDO, no del nombre
+
+**Síntoma reportado:** el usuario procesó los PDFs naranjas, terminó bien… y siguieron naranjas.
+
+**No era un fallo de refresco: el color mentía.** V6.9.66 daba por hecho que `IHQ260701 al IHQ260750.pdf` contenía 50 casos. Contiene **12**. Se calculaba 12/50 → "a medias" cuando estaba **completo**. El nombre es una **etiqueta de rango, no un inventario** — el patólogo agrupa lo que emitió esa semana.
+
+### Ahora se lee el PDF
+`casos_reales_del_pdf()` extrae del texto los casos que el archivo trae de verdad (PyMuPDF, capa nativa). Con dos correcciones que salieron al medir:
+
+1. **Referencias cruzadas.** El texto nombra casos de OTROS informes (*"estudio ligado al reporte IHQ250486 y M2507467"*). Contarlos hacía parecer incompleto un PDF completo (`IHQ260701` daba 15/26). Se cruzan los casos del texto con los que al archivo le **corresponden por su nombre**: el texto dice qué hay, el nombre dice qué le toca.
+2. **Umbral del 90% eliminado.** Existía para tolerar los huecos del rango inventado. Comparando contenido real, deben estar **todos**.
+
+**Caché** por (tamaño, fecha) en `auditoria/casos_por_pdf.json`: 31 s la primera vez, **0,2 s** después. Se reconstruye sola si el PDF cambia.
+
+**Resultado verificado en la app:** los 193 PDFs salen **COMPLETO**, que es la verdad — todo lo que hay está procesado. Los cuatro que el usuario reprocesó ahora muestran `(39/39)`, `(22/22)`, `(18/18)`, `(12/12)` en azul. El estado NUEVO se revalidó con casos inexistentes.
+
+**Lección:** el detector daba un número plausible y equivocado. Solo se cazó porque el usuario reprocesó y el color no cambió — la BD (8.816 filas, sin cambios) confirmó que el procesamiento no tenía nada que añadir.
+
 ## [6.9.66] - 2026-07-21 — Ver de un vistazo qué PDFs ya están analizados
 
 **Problema:** en «Archivos disponibles» se ven todos los PDFs de la carpeta, pero no cuáles ya se procesaron. Con cientos de archivos, la única forma de saberlo era seleccionarlos y lanzarlos.

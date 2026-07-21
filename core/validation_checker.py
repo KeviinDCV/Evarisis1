@@ -1092,8 +1092,19 @@ def _completitud_coloracion(numero_peticion: str, registro: Dict[str, Any]) -> D
     # exista aunque el divisor lo deje todo en 'nombres' (p.ej. "YORANZA URREA").
     # Marcar esos casos como fallo de extracción sería falso: el estudio SÍ se extrajo.
     tiene_nombre_paciente = tiene_nombre or tiene_apellido
+
+    # V6.9.68: el dx de una coloración puede quedar en DOS columnas según cómo venía
+    # empaquetado el PDF, y ambas son extracciones correctas:
+    #   · PDF de LOTE ("M 2604451 AL 2604500.pdf") -> ruta coloración -> 'Diagnostico Coloracion 2'
+    #   · PDF de UN SOLO caso ("M2604451.pdf")     -> ruta general    -> 'Diagnostico Principal'
+    # Exigir solo la primera marcaba INCOMPLETOS casos perfectamente extraídos: M2604451
+    # salía al 80% "falta Diagnostico Coloracion" cuando tenía
+    # 'CARCINOMA PAPILAR DE TIROIDES ENCAPSULADO' en Diagnostico Principal.
+    # El dato NO se perdía: el informe de importación mentía.
+    _dx_ok = (_ok('Diagnostico Coloracion 2') or _ok('Diagnostico Principal')
+              or _ok('Diagnostico Coloracion'))
     checks = [
-        ('Diagnostico Coloracion', _ok('Diagnostico Coloracion 2')),  # dx propio de la coloración
+        ('Diagnostico Coloracion', _dx_ok),   # dx propio de la coloración (en cualquier columna)
         ('Organo', _ok('Organo')),
         ('Malignidad', _ok('Malignidad')),
         ('Genero', _ok('Genero')),
