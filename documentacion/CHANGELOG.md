@@ -1,5 +1,29 @@
 # Changelog
 
+## [6.9.66] - 2026-07-21 — Ver de un vistazo qué PDFs ya están analizados
+
+**Problema:** en «Archivos disponibles» se ven todos los PDFs de la carpeta, pero no cuáles ya se procesaron. Con cientos de archivos, la única forma de saberlo era seleccionarlos y lanzarlos.
+
+### Cómo se sabe si un PDF ya está analizado
+La BD **no guarda el archivo de origen** ni hay registro de procesados. Se deduce del NOMBRE (que codifica el rango de casos) y se consulta cuántos de esos casos están en la BD. `core/estado_pdfs.py` entiende los tres formatos reales:
+- `IHQ DEL 001 AL 050.pdf` → IHQ250001…IHQ250050 (el año sale de la carpeta `2025/`)
+- `IHQ260001 al IHQ260050.pdf` → IHQ260001…IHQ260050
+- `M 2503754 AL 2503803.pdf` → M2503754…M2503803
+- también PDFs de un solo caso (`IHQ251391.pdf`) y enumeraciones (`IHQ260782 y IHQ260795.pdf`)
+
+⚠️ **`y` NO es lo mismo que `al`:** `"IHQ260782 y IHQ260795"` son DOS casos, no un rango de 14. Tratarlo como rango daba PARCIAL 2/14 en un PDF completo.
+
+**Criterio prudente:** ante la duda **nunca** se marca como analizado. Marcar de más haría que el usuario se saltara un PDF sin procesar (pérdida de datos); marcar de menos solo cuesta un reproceso, que es inofensivo.
+
+### En la UI
+- **✓ azul** = ya analizado · **◐ naranja** = a medias · **● verde** = sin analizar, con el conteo `(47/58)` al lado, que dice de un vistazo por dónde se quedó.
+- Leyenda de colores bajo la lista.
+- **Botón «🎯 Seleccionar pendientes»**: marca solo lo que falta (sin analizar + a medias) y deja fuera lo ya hecho. Con 193 PDFs seleccionó los 7 pendientes y descartó 186 de un clic.
+
+**Verificado en la app real** (no solo en tests): los 193 PDFs se clasifican en 186 COMPLETO / 7 PARCIAL / 0 sin interpretar. El estado NUEVO se validó con nombres sintéticos de casos inexistentes.
+
+**Bug encontrado al probar en pantalla:** `_seleccionar_pendientes` llamaba a `self._log_message`, que no existe en `ui.py` → diálogo de error. Sustituido por un resumen visible (cuántos pendientes, cuántos quedaron fuera). Los tests de sintaxis no lo habrían detectado.
+
 ## [6.9.65] - 2026-07-17 — Reproceso completo en modo verificado + checkpoint reanudable
 
 **Reproceso de los 2.077 casos** con la capa de polaridad IA (mistral-nemo), modo lote: 1 lente + `revisar_todos=ON`. **646 min, 0 errores.**

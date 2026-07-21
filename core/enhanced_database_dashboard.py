@@ -1597,6 +1597,16 @@ class EnhancedDatabaseDashboard:
         import_scrollbar.pack(side=RIGHT, fill=Y)
         self.import_files_tree.configure(yscrollcommand=import_scrollbar.set)
 
+        # V6.9.66: leyenda de colores. Sin esto el usuario ve archivos de colores y no
+        # sabe qué significan.
+        leyenda = ttk.Frame(main_frame)
+        leyenda.pack(fill=X, pady=(8, 0))
+        for txt, color in (("✓ ya analizado", "#1565C0"),
+                           ("◐ a medias", "#E65100"),
+                           ("● sin analizar", "#1B5E20")):
+            ttk.Label(leyenda, text=txt, foreground=color,
+                      font=("Segoe UI", 8)).pack(side=LEFT, padx=(0, 14))
+
         # Botones de control
         control_frame = ttk.Frame(main_frame)
         control_frame.pack(fill=X, pady=(14, 0))
@@ -1606,6 +1616,15 @@ class EnhancedDatabaseDashboard:
             text="🔄  Actualizar lista",
             command=lambda: self.refresh_files_list(),
             bootstyle="secondary-outline"
+        ).pack(side=LEFT, padx=(0, 10))
+
+        # V6.9.66: con cientos de PDFs, marcar a mano los pendientes es el trabajo pesado.
+        # Esto los selecciona solos (sin analizar + a medias) y deja fuera los ya hechos.
+        ttk.Button(
+            control_frame,
+            text="🎯  Seleccionar pendientes",
+            command=lambda: self.seleccionar_pendientes(),
+            bootstyle="info-outline"
         ).pack(side=LEFT, padx=(0, 10))
 
         ttk.Button(
@@ -1631,6 +1650,12 @@ class EnhancedDatabaseDashboard:
         logging.debug("DEBUG: Dashboard.select_pdf_file() llamado (PLACEHOLDER - NO DEBERÍA VERSE)")
         import tkinter.messagebox as mb
         mb.showwarning("No conectado", "El método select_pdf_file no fue reasignado correctamente")
+
+    def seleccionar_pendientes(self):
+        """Placeholder - lo reasigna la UI principal (V6.9.66)."""
+        logging.debug("DEBUG: Dashboard.seleccionar_pendientes() (PLACEHOLDER)")
+        import tkinter.messagebox as mb
+        mb.showwarning("No conectado", "seleccionar_pendientes no fue reasignado")
 
     def select_pdf_folder(self):
         """Método placeholder - será reasignado por la UI principal"""

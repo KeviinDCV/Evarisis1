@@ -2107,6 +2107,7 @@ Disco {i}:
             dashboard.select_pdf_folder = self._select_pdf_folder
             dashboard.process_selected_files = self._process_selected_files
             dashboard.process_selected_files_ia = self._process_selected_files_ia
+            dashboard.seleccionar_pendientes = self._seleccionar_pendientes   # V6.9.66
 
             # V6.9.25: referencia al ÁRBOL navegable del dashboard (carpetas/subcarpetas)
             if hasattr(dashboard, 'import_files_tree'):
@@ -8414,6 +8415,33 @@ Informes con malignidad: {malignant_count}"""
             return 0
         n_pdfs = [0]
 
+        # V6.9.66: colorear según si el PDF YA está analizado. Con cientos de archivos no
+        # había forma de saberlo salvo procesarlos. Se calcula ANTES de pintar, con UNA
+        # sola consulta a la BD para todos (rápido aunque haya cientos).
+        estados = {}
+        try:
+            from core.estado_pdfs import estado_pdfs
+            todos_pdf = []
+            for base, _dirs, files in os.walk(root_folder):
+                todos_pdf += [os.path.join(base, f) for f in files if f.lower().endswith('.pdf')]
+            if todos_pdf:
+                estados = estado_pdfs(todos_pdf)
+        except Exception as _e_est:
+            logging.warning(f"[estado-pdfs] no se pudo calcular (se muestra sin color): {_e_est}")
+
+        # Colores del árbol. Azul = ya analizado (el usuario pidió azul), naranja = a medias,
+        # verde/negrita = sin analizar (lo que hay que procesar).
+        try:
+            tree.tag_configure('pdf_completo', foreground='#1565C0')
+            tree.tag_configure('pdf_parcial', foreground='#E65100')
+            tree.tag_configure('pdf_nuevo', foreground='#1B5E20')
+            tree.tag_configure('pdf_desconocido', foreground='#616161')
+        except Exception:
+            pass
+        _TAG = {'COMPLETO': 'pdf_completo', 'PARCIAL': 'pdf_parcial',
+                'NUEVO': 'pdf_nuevo', 'DESCONOCIDO': 'pdf_desconocido'}
+        _MARCA = {'COMPLETO': '✓', 'PARCIAL': '◐', 'NUEVO': '●', 'DESCONOCIDO': '?'}
+
         def _insert(parent, path, depth):
             try:
                 entradas = sorted(os.listdir(path), key=lambda s: s.lower())
@@ -8429,7 +8457,15 @@ Informes con malignidad: {malignant_count}"""
                 _insert(iid, full, depth + 1)
             for p in pdfs:
                 full = os.path.join(path, p)
-                iid = tree.insert(parent, 'end', text=f"  📄 {p}")
+                inf = estados.get(full) or {}
+                est = inf.get('estado', 'DESCONOCIDO')
+                # el detalle "37/50" dice de un vistazo por dónde se quedó
+                det = ''
+                if inf.get('total'):
+                    det = f"   ({inf.get('en_bd', 0)}/{inf['total']})"
+                iid = tree.insert(parent, 'end',
+                                  text=f"  {_MARCA.get(est, '?')} 📄 {p}{det}",
+                                  tags=(_TAG.get(est, 'pdf_desconocido'),))
                 self._tree_paths[iid] = full
                 n_pdfs[0] += 1
 
@@ -8438,6 +8474,49 @@ Informes con malignidad: {malignant_count}"""
         self._tree_paths[root_iid] = root_folder
         _insert(root_iid, root_folder, 0)
         return n_pdfs[0]
+
+    def _seleccionar_pendientes(self):
+        """V6.9.66: selecciona solos los PDFs que faltan por analizar (sin analizar +
+        a medias) y deja fuera los ya hechos. Con cientos de archivos, marcarlos a mano
+        era el trabajo pesado — y el que se presta a saltarse alguno por error."""
+        tree = getattr(self, 'files_tree', None)
+        if tree is None:
+            return
+        try:
+            from core.estado_pdfs import estado_pdfs, COMPLETO
+            rutas = [p for p in getattr(self, '_tree_paths', {}).values()
+                     if p and p.lower().endswith('.pdf') and os.path.isfile(p)]
+            if not rutas:
+                messagebox.showinfo("Sin archivos", "No hay PDFs en la lista.")
+                return
+            info = estado_pdfs(rutas)
+            # DESCONOCIDO también entra: si no sabemos si está hecho, mejor que el
+            # usuario lo vea seleccionado que arriesgarse a dejarlo sin procesar.
+            pend = {p for p, v in info.items() if v.get('estado') != COMPLETO}
+            iids = [i for i, p in self._tree_paths.items() if p in pend]
+            tree.selection_set(iids)
+            if iids:
+                tree.see(iids[0])
+            hechos = len(rutas) - len(pend)
+            if not iids:
+                messagebox.showinfo(
+                    "Todo analizado",
+                    f"Los {len(rutas)} PDFs de la carpeta ya están analizados.\n"
+                    "No hay nada pendiente.")
+            else:
+                n_medias = sum(1 for p in pend if (info.get(p) or {}).get('estado') == 'PARCIAL')
+                n_nuevos = len(pend) - n_medias
+                logging.info(f"[pendientes] {len(iids)} seleccionados, {hechos} ya analizados")
+                messagebox.showinfo(
+                    "Pendientes seleccionados",
+                    f"Seleccionados {len(iids)} PDF(s) pendientes:\n"
+                    f"   • {n_nuevos} sin analizar\n"
+                    f"   • {n_medias} a medias\n\n"
+                    f"{hechos} ya analizados quedaron FUERA de la selección.\n\n"
+                    "Pulsá «Procesar seleccionados» para analizarlos.")
+        except Exception as e:
+            logging.error(f"[seleccionar-pendientes] {e}")
+            messagebox.showerror("Error", f"No se pudieron seleccionar los pendientes:\n{e}")
 
     def _recolectar_pdfs_seleccionados(self):
         """V6.9.25: Rutas de PDFs según la selección del árbol (PDFs seleccionados +
