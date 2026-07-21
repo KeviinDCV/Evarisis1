@@ -17,7 +17,7 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.63",
+    "version": "6.9.65",
     "version_name": "Ficha del Paciente: agrupa IHQ + Coloraciones de un mismo paciente (doble clic)",
     "build_date": "14/07/2026",
     "build_number": "202607140830",

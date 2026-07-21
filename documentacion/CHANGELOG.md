@@ -1,5 +1,20 @@
 # Changelog
 
+## [6.9.65] - 2026-07-17 — Reproceso completo en modo verificado + checkpoint reanudable
+
+**Reproceso de los 2.077 casos** con la capa de polaridad IA (mistral-nemo), modo lote: 1 lente + `revisar_todos=ON`. **646 min, 0 errores.**
+
+- **585 polaridades corregidas por la IA**, cada una con su **cita del informe**.
+- **120** cambiaron un valor en la BD; las otras 465 ya coincidían con lo corregido en sesiones previas → la BD **converge** (224+428 de antes ya estaban bien).
+- **Las 585 quedaron en la cola de revisión** (`auditoria/polaridad_revision.jsonl`), ninguna dada por buena en silencio. Exportadas a `cola_revision_polaridad.csv` (Excel) para el patólogo.
+- BD íntegra tras el reproceso: 8.816 filas / 2.076 casos IHQ. Backup previo: `backup_COMPLETO_pre_lote_20260716_151245.json`. Evidencia: `evidencia_reproceso_20260717_174100.json`.
+
+### Checkpoint reanudable (a raíz de un apagón)
+Un corte de luz mató el primer intento a las 2,6 h (600/2.077). La BD quedó **intacta** (el script escribía solo al final), pero se perdió el cómputo. **Fallo de diseño corregido:** `reproceso_final.py` ahora anexa cada caso a `reproceso_ckpt.jsonl` al terminarlo; si se corta la luz se reanuda donde iba (se pierden segundos, no horas). Verificado en el relanzamiento.
+
+### Por qué el lote usa 1 lente (no consenso)
+Con `revisar_todos=ON` **todo** cambio va a la cola, así que el humano ve los dudosos igual. El consenso a 2 lentes duplicaría el tiempo (10h→23h) sin añadir cobertura en este modo. En **producción (PDFs nuevos)** el consenso sigue activo vía `config.ini`.
+
 ## [6.9.64] - 2026-07-16 — IA de diagnóstico: construida, medida y RECHAZADA (no se cablea)
 
 Petición: arreglar el dx multi-espécimen con IA + cita, igual que se hizo con la polaridad.
