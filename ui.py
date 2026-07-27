@@ -5944,14 +5944,42 @@ Disco {i}:
                           background="#F1F8E9", spacing1=2, spacing3=6)
         txt.tag_configure("bio", font=("Consolas", 9), foreground="#263238",
                           lmargin1=10, lmargin2=10, background="#FAFAFA", spacing3=4)
+        # V6.9.74: datos de contexto — presentes pero secundarios frente al diagnóstico
+        txt.tag_configure("sub2", font=("Segoe UI", 9), foreground="#5f6368",
+                          lmargin1=10, lmargin2=10, spacing3=2)
 
         copia = []
         txt.insert("end", f"{nombre or '(sin nombre)'}\n", "paciente")
         resumen = f"CC {ced}   ·   {len(estudios)} estudio(s):  {n_ihq} IHQ  ·  {n_col} Coloración(es)"
+        # V6.9.74: la cabecera solo traía nombre y cédula. Edad, género y documento
+        # son del PACIENTE (no de cada estudio), así que van aquí una sola vez.
+        _demo = []
+        for _c, _et in (("Edad", "años"), ("Genero", ""), ("Tipo de documento", "doc.")):
+            _v = next((str(estudios.iloc[i].get(_c, "") or "").strip()
+                       for i in range(len(estudios))
+                       if str(estudios.iloc[i].get(_c, "") or "").strip().upper()
+                       not in self._FICHA_NA), "")
+            if not _v:
+                continue
+            if _c == "Edad":
+                _demo.append(f"{_v} años")
+            elif _c == "Genero":
+                _demo.append(_v.capitalize())
+            else:
+                # las siglas de documento (CC, TI, RC…) van en MAYÚSCULAS, no "Ti"
+                _demo.append(f"doc. {_v.upper()}")
+        if _demo:
+            resumen += "   ·   " + "  ·  ".join(_demo)
         txt.insert("end", f"{resumen}\n", "sub")
         copia.append(f"{nombre} — CC {ced} — {resumen}")
 
         CLAVE = ["Organo", "Procedimiento", "Malignidad", "Servicio", "Médico tratante"]
+        # V6.9.74: datos del estudio que la ficha no mostraba y sí tienen dato
+        # (patólogo, dónde y cuándo se hizo, quién lo cubre).
+        CONTEXTO = ["Patologo", "Tipo de examen", "Especialidad", "Sede", "EPS",
+                    "Hospitalizado", "Departamento", "Municipio", "CUPS",
+                    "Fecha de toma (1. Fecha de la toma)",
+                    "Fecha de ingreso (2. Fecha de la muestra)", "Fecha Informe"]
         # El diagnóstico vive en un campo DISTINTO según el tipo de estudio:
         #   · Coloración (fila M): su dx está en "Diagnostico Coloracion 2".
         #   · IHQ:                 su dx está en "Diagnostico Principal".
@@ -5988,6 +6016,12 @@ Disco {i}:
                 txt.insert("end", "   " + "   ·   ".join(partes) + "\n", "valor")
                 copia.append("  " + " · ".join(partes))
 
+            # V6.9.74: contexto del estudio (patólogo, sede, EPS, fechas…)
+            ctx = [f"{c.split(' (')[0]}: {_ok(est.get(c))}" for c in CONTEXTO if _ok(est.get(c))]
+            if ctx:
+                txt.insert("end", "   " + "   ·   ".join(ctx) + "\n", "sub2")
+                copia.append("  " + " · ".join(ctx))
+
             # Diagnósticos (el campo correcto según el tipo de estudio)
             for c, etiqueta in (DX_COL if es_col else DX_IHQ):
                 v = _ok(est.get(c))
@@ -6015,6 +6049,15 @@ Disco {i}:
                 txt.insert("end", f"Resultados de biomarcadores ({len(bios)})\n", "campo")
                 txt.insert("end", "   " + "   ·   ".join(f"{k}: {v}" for k, v in bios) + "\n", "bio")
                 copia.append("  Biomarcadores: " + " · ".join(f"{k}: {v}" for k, v in bios))
+            else:
+                # V6.9.74: antes esta sección simplemente NO aparecía, y eso se leía
+                # como "faltan datos". Ahora se dice por qué no hay: una coloración es
+                # una tinción básica, no lleva biomarcadores.
+                _razon = ("las coloraciones son tinciones básicas y no llevan biomarcadores"
+                          if es_col else "este estudio no reporta ningún biomarcador")
+                txt.insert("end", "Resultados de biomarcadores\n", "campo")
+                txt.insert("end", f"   Sin biomarcadores — {_razon}.\n", "sub2")
+                copia.append(f"  Biomarcadores: ninguno ({_razon})")
 
             # Descripciones largas
             for c in LARGOS:
@@ -6024,6 +6067,27 @@ Disco {i}:
                 txt.insert("end", f"{c}\n", "campo")
                 txt.insert("end", f"{v}\n", "largo")
                 copia.append(f"  {c}: {v}")
+
+            # V6.9.74: CAJÓN FINAL — cualquier campo con dato que no se haya mostrado
+            # arriba. Garantiza que la ficha no esconda nada: si el informe lo trae,
+            # aquí sale. Se excluyen los ya mostrados y los de identidad del paciente
+            # (ya están en la cabecera) para no repetir.
+            _ya = set(CLAVE) | set(CONTEXTO) | set(LARGOS) | {
+                "Numero de caso", "Nombre Completo", "N. de identificación", "Edad",
+                "Genero", "Tipo de documento", "Primer nombre", "Segundo nombre",
+                "Primer apellido", "Segundo apellido", "IHQ_ESTUDIOS_SOLICITADOS",
+                "Diagnostico Principal", "Diagnostico Coloracion",
+                "Diagnostico Coloracion 2", "Factor pronostico"}
+            # "_f"/"_k" son columnas auxiliares que _mostrar_ficha_paciente añade para
+            # ordenar los estudios; no son datos del informe y no deben salir aquí.
+            resto = [(c, _ok(est.get(c))) for c in estudios.columns
+                     if c not in _ya and not str(c).startswith(("IHQ_", "_"))
+                     and _ok(est.get(c))]
+            if resto:
+                txt.insert("end", f"Otros datos del informe ({len(resto)})\n", "campo")
+                for c, v in resto:
+                    txt.insert("end", f"   {c}: {v}\n", "sub2")
+                copia.append("  Otros: " + " · ".join(f"{c}: {v}" for c, v in resto))
 
         # Solo lectura pero copiable
         def _solo_lectura(e):
