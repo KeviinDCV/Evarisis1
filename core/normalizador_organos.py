@@ -58,7 +58,11 @@ CATEGORIAS_ORGANO: Dict[str, List[str]] = {
     "HUESO": [
         "HUESO", "FEMUR", "ESTERNON", "TIBIA", "PERONE", "HUMERO",
         "CLAVICULA", "ESCAPULA", "ILIACO", "VERTEBRA", "COSTILLA",
-        "CRANEO", "MANDIBULA", "MAXILAR INFERIOR", "ROTULA",
+        # V6.9.72: "MAXILAR" a secas faltaba en la tabla; al arreglar el bug de AXILA
+        # esos casos dejaron de caer (mal) en GANGLIO LINFATICO y se quedaban sin
+        # categoría. El maxilar es hueso facial. Va DESPUÉS de PIEL en el orden, así
+        # que "PIEL DE LA CARA, MAXILAR IZQUIERDA" sigue resolviéndose como PIEL.
+        "CRANEO", "MANDIBULA", "MAXILAR", "ROTULA",
     ],
     "PROSTATA": ["PROSTATA"],
     "HIGADO": ["HIGADO", "HEPATIC"],
@@ -175,16 +179,20 @@ ORDEN_EVALUACION: List[str] = [
     "VESICULA / VIA BILIAR",
     "HIGADO",
     "BAZO",
+    # V6.9.72: tres pares estaban al REVÉS de la regla "lo más específico primero"
+    # que declara esta misma lista, y como la búsqueda es por subcadena el genérico
+    # se los comía: PERITONEO capturaba RETROPERITONEO (14 casos), RENAL capturaba
+    # ADRENAL/SUPRARRENAL (7 casos) y TIROIDES capturaba PARATIROIDES (1 caso).
+    "RETROPERITONEO",        # antes que PERITONEO ("RETROPERITONEO" contiene "PERITONEO")
     "PERITONEO / EPIPLON",
-    "RETROPERITONEO",
+    "GLANDULA SUPRARRENAL",  # antes que RIÑON ("ADRENAL"/"SUPRARRENAL" contienen "RENAL")
     "RIÑON",
     "VEJIGA / VIA URINARIA",
     "PROSTATA",
     "TESTICULO",
     "PENE",
+    "PARATIROIDES",          # antes que TIROIDES ("PARATIROIDES" contiene "TIROIDES")
     "TIROIDES",
-    "PARATIROIDES",
-    "GLANDULA SUPRARRENAL",
     "TIMO",
     "GLANDULA SALIVAL",
     "CAVIDAD ORAL / OROFARINGE",
@@ -218,6 +226,42 @@ SUFIJOS_LATERALIDAD = [
 ]
 
 
+# V6.9.72 FIX: la búsqueda era `kw in limpio`, subcadena pura, así que "AXILA"
+# casaba dentro de "MAXILAR" y mandaba a GANGLIO LINFATICO cualquier maxilar
+# ("SENO MAXILAR IZQUIERDO", "PIEL DE LA CARA, MAXILAR IZQUIERDA"). Se exige
+# frontera de palabra SOLO AL INICIO del keyword: así se corta la subcadena
+# interna y a la vez se conservan los stems deliberados de la tabla, que están
+# pensados para casar por prefijo (MELANOM->MELANOMA, NASOFARING->NASOFARINGEO,
+# DERMATOLOGIC, RETROPERITONEAL, MEDIASTINAL).
+# La coincidencia por SUBCADENA se mantiene para el resto de la tabla a propósito:
+# de ella dependen los plurales y las formas adjetivas y compuestas que trae el
+# corpus (GANGLIO->GANGLIOS, MAMA->INFRAMAMARIO, VERTEBRA->PARAVERTEBRAL,
+# VULVA->HEMIVULVA, MANDIBULA->RETROMANDIBULAR, COLON->COLONICA). Cerrarla en
+# bloque se midió: perdía ~200 casos. Por eso las fronteras se aplican SOLO a los
+# cuatro keywords en los que está medido que la subcadena produce un error.
+_KW_INICIO = frozenset((
+    'AXILA',   # "MAXILAR" / "SENO MAXILAR" no son ganglio (bug de origen)
+    'PIEL',    # "UNION PIELOURETERAL" no es piel
+    'PIE',     # "PIEL …" no es tejido blando del pie
+    'ROTULA',  # "A-ROTULADO MASA RETROAREOLAR" no es hueso
+))
+# AXILA necesita el final ABIERTO ("REGION AXILAR" sí es ganglio); los otros tres no.
+_KW_FIN = _KW_INICIO - {'AXILA'}
+_KW_CACHE: dict = {}
+
+
+def _kw_re(kw: str):
+    r = _KW_CACHE.get(kw)
+    if r is None:
+        k = kw.strip()
+        if k in _KW_INICIO:
+            pat = r'\b' + re.escape(k) + (r'\b' if k in _KW_FIN else '')
+        else:
+            pat = re.escape(kw)
+        r = _KW_CACHE[kw] = re.compile(pat)
+    return r
+
+
 # ----------------------------------------------------------------------
 #  API pública
 # ----------------------------------------------------------------------
@@ -246,7 +290,7 @@ def normalizar_organo(valor: object) -> str:
     for categoria in ORDEN_EVALUACION:
         keywords = CATEGORIAS_ORGANO.get(categoria, [])
         for kw in keywords:
-            if kw in limpio:
+            if _kw_re(kw).search(limpio):
                 return categoria
 
     # Sin coincidencia: devolver el texto limpio (no canónico)

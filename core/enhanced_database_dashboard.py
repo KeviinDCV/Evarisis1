@@ -174,7 +174,10 @@ class EnhancedDatabaseDashboard:
 
         self.metric_cards = {}
         metrics_data = [
-            ("📊", "Total Registros", "0", "primary"),
+            # V6.9.70: era "Total Registros" y confundía: la BD tiene 22.547 filas pero
+            # esta tarjeta muestra 2.076 porque el dashboard es analítica oncológica IHQ y
+            # EXCLUYE las coloraciones (filas M). El nombre ahora lo dice explícitamente.
+            ("📊", "Casos IHQ (sin coloraciones)", "0", "primary"),
             ("🧬", "Con Biomarcadores", "0", "success"),
             ("⚠️", "Casos Malignos", "0", "danger"),
             ("📅", "Días de Datos", "0", "info")
@@ -627,74 +630,63 @@ class EnhancedDatabaseDashboard:
                 'fecha_informe'
             ]
 
-            # Buscar primera columna disponible según prioridad
-            fecha_col = None
-            for priority_col in fecha_priority:
-                if priority_col in self.df.columns:
-                    fecha_col = priority_col
-                    logging.info(f"Usando columna de fecha prioritaria: {fecha_col}")
-                    break
+            # V6.9.70 FIX: se probaba SOLO la primera columna de la lista de prioridad y,
+            # si no daba fechas, se rendía con 0. 'Fecha de toma' EXISTE pero está entera
+            # en "SIN DATO" -> la tarjeta mostraba siempre "Días de Datos: 0" aunque hay
+            # datos de 2025 y 2026. Ahora se recorren TODAS las columnas candidatas hasta
+            # encontrar una con fechas parseables.
+            candidatas = [c for c in fecha_priority if c in self.df.columns]
+            candidatas += [c for c in fecha_cols if c not in candidatas]
 
-            # Si no encuentra columna prioritaria, usar la primera encontrada
-            if not fecha_col:
-                fecha_col = fecha_cols[0]
-                logging.info(f"Usando primera columna de fecha encontrada: {fecha_col}")
+            formatos = [
+                '%d/%m/%Y',      # 25/10/2025
+                '%Y-%m-%d',      # 2025-10-25
+                '%d-%m-%Y',      # 25-10-2025
+                '%m/%d/%Y',      # 10/25/2025
+                'mixed'          # Inferir automáticamente (pandas moderno)
+            ]
 
-            try:
-                # Intentar múltiples formatos de fecha comunes
-                fechas = None
-                formatos = [
-                    '%d/%m/%Y',      # 25/10/2025
-                    '%Y-%m-%d',      # 2025-10-25
-                    '%d-%m-%Y',      # 25-10-2025
-                    '%m/%d/%Y',      # 10/25/2025
-                    'mixed'          # Inferir automáticamente (pandas moderno)
-                ]
-
+            usada = None
+            for fecha_col in candidatas:
+                mejor = None       # (n_validas, dias, min, max)
                 for formato in formatos:
                     try:
                         if formato == 'mixed':
-                            # Para pandas moderno: usar format='mixed' o dejar None
                             try:
-                                fechas = pd.to_datetime(self.df[fecha_col], errors='coerce', format='mixed')
-                            except:
-                                # Fallback para pandas antiguo
+                                fechas = pd.to_datetime(self.df[fecha_col], errors='coerce',
+                                                        format='mixed')
+                            except Exception:
                                 fechas = pd.to_datetime(self.df[fecha_col], errors='coerce')
                         else:
-                            fechas = pd.to_datetime(self.df[fecha_col], errors='coerce', format=formato)
-
-                        fechas_validas = fechas.dropna()
-                        logging.info(f"Formato {formato}: {len(fechas_validas)} fechas válidas de {len(fechas)} totales")
-
-                        if not fechas_validas.empty and len(fechas_validas) > 0:
-                            fecha_min = fechas_validas.min()
-                            fecha_max = fechas_validas.max()
-                            days_of_data = (fecha_max - fecha_min).days
-                            logging.info(f"Rango de fechas: {fecha_min} a {fecha_max} = {days_of_data} días")
-
-                            if days_of_data >= 0:  # Aceptar incluso 0 días si hay fechas válidas
-                                break
+                            fechas = pd.to_datetime(self.df[fecha_col], errors='coerce',
+                                                    format=formato)
+                        validas = fechas.dropna()
+                        if validas.empty:
+                            continue
+                        # se queda con el formato que parsea MÁS filas de esta columna
+                        if mejor is None or len(validas) > mejor[0]:
+                            mejor = (len(validas), (validas.max() - validas.min()).days,
+                                     validas.min(), validas.max())
                     except Exception as e:
-                        logging.debug(f"Formato {formato} falló: {e}")
+                        logging.debug(f"[dias-datos] {fecha_col} formato {formato}: {e}")
                         continue
+                if mejor and mejor[0] > 0:
+                    days_of_data = int(mejor[1])
+                    usada = fecha_col
+                    logging.info(f"[dias-datos] '{fecha_col}': {mejor[0]} fechas válidas · "
+                                 f"{mejor[2].date()} → {mejor[3].date()} = {days_of_data} días")
+                    break
+                logging.info(f"[dias-datos] '{fecha_col}' sin fechas parseables, probando la siguiente")
 
-                if days_of_data == 0 and len(fechas_validas) == 0:
-                    logger.warning(f"No se pudieron parsear fechas de columna '{fecha_col}'")
-                    # Intentar mostrar algunas muestras de datos para debugging
-                    muestras = self.df[fecha_col].head(5).tolist()
-                    logger.warning(f"Muestras de datos en '{fecha_col}': {muestras}")
-
-            except Exception as e:
-                logger.error(f"Error calculando días de datos: {e}")
-                import traceback
-                logger.error(f"Traceback: {traceback.format_exc()}")
-                days_of_data = 0
+            if usada is None:
+                logger.warning("[dias-datos] ninguna columna de fecha dio valores parseables; "
+                               f"candidatas={candidatas}")
         else:
             logging.warning("No se encontraron columnas de fecha en el DataFrame")
 
         # Actualizar cards
         metrics_values = [
-            ("Total Registros", str(total_records)),
+            ("Casos IHQ (sin coloraciones)", str(total_records)),
             ("Con Biomarcadores", str(with_biomarkers)),
             ("Casos Malignos", str(malignant_count)),
             ("Días de Datos", str(days_of_data))

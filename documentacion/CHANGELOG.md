@@ -1,5 +1,130 @@
 # Changelog
 
+## [6.9.71] - 2026-07-27 — Malignidad de coloraciones: las 942 adjudicadas, 229 corregidas
+
+Adjudicación completa de las **942 discrepancias** de Malignidad en las 20.471 filas de coloración, con doble verificación ciega contra el informe.
+
+### Pasada 1 — adjudicación (36 agentes, 941 casos)
+| | |
+|---|--:|
+| La BD **ya estaba bien** | **547** (58%) |
+| **AMBIGUO** (displasias, NIC III, "a clasificar") | **163** (17%) |
+| **Errores propuestos** | **231** (25%) |
+
+### Pasada 2 — verificación CIEGA (10 agentes, sin ver la propuesta previa)
+| | |
+|---|--:|
+| **Confirmados por ambos revisores** | **229** |
+| 2º revisor dice AMBIGUO → no se aplica | 2 |
+| **Discrepan los dos revisores** | **0** |
+
+Concordancia del **99,1%**. Aplicadas **229** con backup y la cita del informe por cada cambio (`evidencia_malig942_20260727_071119.json`). Verificado: 229/229 escritas.
+
+**Reparto:** 209 `MALIGNO → BENIGNO` (falsos positivos de cáncer: *"Cicatriz, negativo para lesión neoplásica"*, *"Epitelio exocervical sin displasia"*, *"Hiperplasia endometrial sin atipia"*) y **20 `BENIGNO → MALIGNO`** — los clínicamente graves: `GLIOBLASTOMA`, `CARCINOMA BASOCELULAR`, `TERATOMA POSPUBERAL con componente germinal maligno`.
+
+**Distribución final coloraciones: 17.024 benignos / 3.447 malignos.**
+
+### Lo que NO se tocó, a propósito
+Los **163 AMBIGUOS** son premalignos reales (displasias, NIC II/III, lesión intraepitelial de alto grado, hiperplasia con atipia, "proliferación hematolinfoide a clasificar"). Forzarlos a maligno o benigno sería inventar un dato clínico. Se quedan como están.
+
+### Los KPIs no se movieron
+El dashboard **excluye las filas M**, así que Estadísticas Generales sigue en 2.076 casos IHQ / 1.429 malignos. BD íntegra: 22.547 filas, **0 filas vacías**.
+
+⚠️ **La doble pasada era necesaria, no ceremonia:** mi verificador determinista inicial acertaba el 32% frente al 68% de la BD (marcaba malignos `TUMOR DE WARTHIN`, `QUERATOSIS SEBORREICA`, `AMELOBLASTOMA`). Aplicar las 942 sin adjudicar habría destruido ~640 valores correctos.
+
+
+## [6.9.70] - 2026-07-27 — Estadísticas Generales: 2 bugs de conteo + 4 malignidades incoherentes
+
+Verificación de la pestaña **Estadísticas Generales** tras cargar las 22.547 filas.
+
+### ✅ Lo que ya estaba bien
+El dashboard **SÍ excluye las filas M** (coloraciones) de la analítica oncológica — lo arregló V6.9.50. Con 20.471 filas M en la BD, contarlas habría inflado todo. Comprobado: `self.df` se filtra con `~str.match(r"^[Mm]\d")`.
+
+### 🔴 Bug 1: "Días de Datos: 0"
+`update_general_stats` tomaba la **primera** columna de fecha de su lista de prioridad —`Fecha de toma`— que existe pero está **entera en "SIN DATO"**, y se rendía con 0. Nunca probaba `Fecha de ingreso` ni `Fecha Informe`.
+**Fix:** recorre TODAS las columnas candidatas hasta encontrar una parseable, y dentro de cada una se queda con el formato que parsea más filas.
+**Resultado: 497 días** (02/01/2025 → 14/05/2026) en vez de 0.
+
+### 🔴 Bug 2: 4 malignidades incoherentes con su diagnóstico — **causadas por mí**
+Al corregir 17 diagnósticos en V6.9.68 **no recalculé `Malignidad`**, que es un campo DERIVADO del dx:
+
+| Caso | Dx | Malignidad tenía |
+|---|---|---|
+| IHQ250879 | `CARCINOMA INVASIVO (DUCTAL)` | BENIGNO ❌ |
+| IHQ260725 | `CARCINOMA INVASIVO (DUCTAL)` | BENIGNO ❌ |
+| IHQ260711 | `SARCOMA HISTIOCÍTICO` | BENIGNO ❌ |
+| IHQ251333 | `NEGATIVO PARA CARCINOMA` | MALIGNO ❌ |
+
+Verificado con la función oficial del proyecto `_malignidad_coherente` (V6.9.42), no con un regex ad-hoc: **2.076 IHQ → 1.683 coherentes, 389 ambiguos (no opina), 4 discrepan**. Corregidos con backup.
+**Casos Malignos: 1427 → 1429** (distribución final: 1429 malignos / 647 benignos).
+
+⚠️ **Lección:** al corregir un dx hay que **recalcular los campos derivados** (Malignidad, y revisar Órgano/categoría). Un fix parcial deja la BD internamente incoherente.
+
+Nota metodológica: mi primer chequeo con regex propio dio 9 "incoherencias", pero 3 eran **falsos positivos míos** (`HEMANGIOBLASTOMA WHO 1` y `CONDROBLASTOMA` son tumores BENIGNOS; mi patrón "blastoma" los marcaba malignos). La función oficial del proyecto era la referencia correcta.
+
+### Claridad: "Total Registros" → "Casos IHQ (sin coloraciones)"
+La tarjeta mostraba `2076` mientras la barra de estado decía `22547 registros`. No era un error —el dashboard es analítica IHQ— pero parecía uno. La etiqueta ahora lo dice.
+
+### Malignidad en coloraciones: 12 corregidas, ~300 estimadas, causa raíz medida
+Al derivar Malignidad del dx en las 20.471 filas M salieron **942 discrepancias**. Adjudicadas 48 a ciegas contra el informe:
+
+| | acierto |
+|---|--:|
+| La BD (`determine_malignancy`) | **68%** |
+| `_malignidad_coherente(dx)` | 24% |
+| Idem quitando antecedentes | **19%** (peor) |
+
+**12 errores reales confirmados y corregidos** (casi todos BENIGNO marcado MALIGNO: `HIPERPLASIA SIN ATIPIA`, `CERVICITIS`, `GANGLIOS NEGATIVOS`, `TUMOR DE WARTHIN`). Estimación: **~300 filas M** afectadas (1,5%).
+
+**Causa raíz** (`medical_extractor.py:3762`): `combined_text` incluye `full_text`, así que un antecedente (*"Historia de adenocarcinoma ductal"*) marca MALIGNO aunque el dx sea `CONDICIÓN FIBROQUÍSTICA`.
+⚠️ **NO se cambió el código: se probó quitar los antecedentes y EMPEORA (68% → 19%).** La lógica actual es la mejor de las tres opciones automáticas probadas.
+
+**Impacto acotado:** son filas M, y el dashboard las **excluye** de la analítica oncológica → los KPIs de Estadísticas Generales NO están afectados.
+
+⚠️ **Nota metodológica:** mi verificador acertaba menos que la BD (32% vs 68%). Marcaba como malignos `TUMOR DE WARTHIN`, `QUERATOSIS SEBORREICA` y `AMELOBLASTOMA`, que son BENIGNOS. Sin la adjudicación por revisores habría "corregido" 942 valores y destrozado ~640 correctos.
+
+### Calidad de las 9.889 filas nuevas de coloración
+Igual o mejor que las anteriores: dx 100%, órgano 100%, malignidad 100%, género 100%, edad 99,6%, procedimiento 97,8% (vs 98,0% de las viejas).
+
+## [6.9.69] - 2026-07-23 — Auditoría completa BD ↔ PDFs (13.355 filas · 82.167 valores)
+
+Auditoría de veracidad de **toda** la BD contra los 765 PDFs: ¿cada dato transcrito está REALMENTE en su informe?
+
+### Resultado
+| | |
+|---|--:|
+| Valores revisados | **82.167** |
+| Filas sin texto de respaldo | **0** |
+| Descripciones macro/micro revisadas | 28.808 |
+| Descripciones con discrepancia | **0** |
+| **Nombres, cédula, edad, EPS, género, médico tratante** | **0 fallos — 100% verbatim** |
+
+Las 2.051 "discrepancias" restantes NO son errores:
+- **2.035 `Sede`** — campo DERIVADO (constante "HUV"), no transcrito: la etiqueta no existe en el PDF.
+- **16 `Servicio`** — corrección deliberada del `validador_medico_servicio` (V5.3.8): el médico es cirujano oncólogo → el servicio se corrige a "UNIDAD DE ONCOLOGIA COEX" aunque el PDF diga otra cosa. Todas del mismo médico. **Decisión de negocio existente, no un bug** (revisable si se quiere priorizar el literal del PDF).
+
+### Corregido: 4 géneros sobrescritos
+El PDF decía `INDETERMINADO` / `AMBOS` / `TRANSGENERO` y la BD tenía `FEMENINO`/`MASCULINO`. Residuo de la versión antigua que **adivinaba el sexo por el nombre de pila** (listas `_NOM_FEM/_NOM_MASC`, eliminadas en V6.9.44). **El extractor actual ya respeta los cuatro** — verificado reprocesándolos. Corregidos en BD con backup (`backup_genero_20260723_064952.json`).
+
+### Tres bugs del AUDITOR, no de los datos
+La auditoría solo fue fiable tras arreglar el instrumento — cada versión daba un número plausible y falso:
+1. **Trocear por nº de caso** partía el informe (el nº aparece en encabezado, tabla y pie) → 9.740 falsos "el apellido no está en el PDF".
+2. **Quedarse con un solo bloque** por caso perdía media página: la página de `IHQ250001` menciona también `M2409633` (su coloración previa) y el corte se comía la DESCRIPCIÓN MICROSCÓPICA → 5.440 falsos positivos.
+   **Solución:** segmentar por PÁGINA (`"CASO Copia|Final Pag. N de M"`), que es la unidad real del documento.
+3. **Solo aceptar "Copia Pag"**: hay dos variantes de cabecera (`Copia` y `Final`) → 811 casos se quedaban sin texto.
+
+Y un cuarto ajuste conceptual: las descripciones `… Coloracion` de un caso IHQ vienen del **informe M vinculado** (la app fusiona coloración + IHQ del mismo paciente), así que no están en el bloque del IHQ. Verificado: 31 de 40 aparecen literalmente en otro informe del corpus; las 9 restantes son estudios de 2024 cuyo PDF no está en la carpeta.
+
+### Procesados los 198 PDFs que faltaban
+Coloraciones 2025 (`M2500001`–`M2502xxx`) + sueltos pendientes: **198 PDFs, 9.256 filas nuevas, 0 errores, 42 s**. La reconciliación enlazó **724 pacientes** (869 IHQ actualizados con su coloración).
+
+**Estado final: 765/765 PDFs procesados · BD 22.547 filas · 0 filas vacías.**
+
+**Auditoría repetida sobre la BD completa:** 131.495 valores revisados, **48.499 descripciones con 0 discrepancias**. Los 9.256 casos nuevos **no añadieron ni un solo fallo** (siguen siendo los mismos 2.051: Sede derivada + 16 de la regla médico-servicio).
+
+### Corregido: nombre con la cédula pegada (`name_splitter`)
+`IHQ251481` era la única fila sin paciente. Causa: el informe trae `Nombre : 16856154 DIEGO PEREA OBONAGA` — la cédula delante del nombre. El número contaba como token y ocupaba el puesto del primer nombre, dejando la fila **sin nombre ni apellido**. `split_full_name` ahora descarta los tokens puramente numéricos (el nº de identificación tiene su propio campo). Verificado sin regresión en nombres de 2, 3 y 4 tokens.
+
 ## [6.9.68] - 2026-07-21 — Los "3 incompletos" eran falsa alarma… y destaparon un fallo grave
 
 **Reporte del usuario:** importó 77 coloraciones → 74 completas, 3 incompletas ("falta Diagnostico Coloracion"). Quería saber por qué no el 100%.

@@ -364,9 +364,25 @@ _DET_BND = re.compile(
     r'RECEPTOR(?:ES)?\s+DE|HER[\s\-]?2|POSITIVO\s+PARA|NEGATIVO\s+PARA\s+(?:CD|P\d|CK|'
     r'GATA|TTF|RECEPT|BCL|ACTIN|VIMENT|S[\s\-]?100|SOX|MELAN|HMB|KI)|'
     r'EXTENSI[OÓ]N\s+TUMORAL|TAMA[NÑ]O\s+TUMORAL|INVASI[OÓ]N\s+(?:LINFOVASC|PERINEURAL|ANGIOLINF)|'
-    r'M[AÁ]RGENES|COMENTARIOS?|PATR[OÓ]N\s+(?:HISTOL|ARQUITECT)|EXPRESI[OÓ]N\s+(?:DE\s+)?(?:P\d|CD|KI))')
+    r'M[AÁ]RGENES|COMENTARIOS?|PATR[OÓ]N\s+(?:HISTOL|ARQUITECT)|EXPRESI[OÓ]N\s+(?:DE\s+)?(?:P\d|CD|KI)|'
+    # V6.9.72: fronteras que se colaban PEGADAS al dx. Ninguna de estas frases aparece
+    # nunca DENTRO del nombre de una entidad, así que cortar aquí no puede truncar un dx:
+    #   "LIPOMA MIXOIDE. BORDES DE RESECCIÓN COMPROMETIDOS…"        (IHQ260122)
+    #   "…TRACTO GASTROINTESTINAL ALTO EXPRESIÓN NUCLEAR INTACTA…"  (IHQ250340)
+    # "PÉRDIDA DE LA" va ANTES en la alternancia: si no, el corte cae en "EXPRESIÓN"
+    # y deja colgando "…DIFERENCIADO PERDIDA DE LA" (IHQ260245).
+    r'BORDES\s+DE\s+RESECCI[OÓ]N|P[EÉ]RDIDA\s+(?:DE\s+LA\s+)?EXPRESI[OÓ]N|'
+    # "BLOQUE A3" al final del dx es la referencia de la laminilla, no parte del
+    # diagnóstico. Antes _DET_RUIDO tiraba la frase ENTERA por mencionarlo, y en
+    # IHQ251205 eso descartaba el dx del espécimen A ("LESIÓN INTRAEPITELIAL DE BAJO
+    # GRADO NIC I … BLOQUE A3") dejando ganar el "NEGATIVO" del espécimen B.
+    r'BLOQUE\s+[A-Z]?\d|EXPRESI[OÓ]N\s+NUCLEAR|PROTE[IÍ]NAS?\s+MMR)')
 _DET_CONN = re.compile(
-    r'(?i)(?:FAVORECEN?|SUGIEREN?|SUGESTIV[OA]S?\s+DE|COMPATIBLES?\s+CON|CONSISTENTES?\s+CON|'
+    # V6.9.72: "FAVORCEN" (sin la E) es una errata RECURRENTE del propio informe
+    # ("LOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORCEN UN CARCINOMA…", IHQ251256,
+    # IHQ260008). Sin esta variante el conector no dispara y el preámbulo entero
+    # se guardaba como diagnóstico.
+    r'(?i)(?:FAVORECEN?|FAVORCEN?|SUGIEREN?|SUGESTIV[OA]S?\s+DE|COMPATIBLES?\s+CON|CONSISTENTES?\s+CON|'
     r'CORRESPONDEN?\s+A|SE\s+TRATA\s+DE|DIAGN[OÓ]STIC[OA]S?\s+DE|SON\s+DE|APOYAN?|'
     r'INDICATIV[OA]S?\s+DE|A\s+FAVOR\s+DE)\s*:?\s*'
     r'(?:UN[OA]?S?\s+|EL\s+|LA\s+|LOS\s+|LAS\s+|DE\s+)?'
@@ -411,6 +427,25 @@ _DET_PROC_SKIP = re.compile(
     r'biopsia(?:\s+(?:por|con|end\w+|escisional|incisional))?|resecci[oó]n|'
     r'citolog[ií]a|punci[oó]n|mastectom[ií]a|colposcopia|protosigmoidectom[ií]a)'
     r'(?:\s+para[^.:]{0,40})?\s*[.:]\s*')  # tolera "inmunohistoquímica para proteínas MMR y HER2:"
+
+# V6.9.72: el rótulo puede cerrar SIN punto y pegar el dx en la misma línea:
+#   "Mama izquierda. Lesión. Biopsia con aguja gruesa. Inmunohistoquímica PERFIL
+#    INMUNOFENOTÍPICO COMPATIBLE CON CARCINOMA DUCTAL INFILTRANTE…"
+# _DET_PROC_SKIP exige [.:] al final, así que no lo saltaba y el dx salía con
+# "INMUNOHISTOQUÍMICA" pegado delante (IHQ250950, IHQ251020…).
+# La señal que lo distingue: en el RÓTULO la técnica va en Title Case
+# ("Inmunohistoquímica"); dentro de un DIAGNÓSTICO va en MAYÚSCULAS
+# ("HALLAZGOS DE INMUNOHISTOQUÍMICA COMPATIBLES CON…"). Por eso este patrón es
+# case-SENSITIVE a propósito y exige que lo que sigue arranque en mayúsculas.
+_DET_PROC_SKIP_TC = re.compile(
+    r'(?:Estudios?\s+de\s+[Ii]nmunohistoqu[ií]mica|Inmunohistoqu[ií]mica)'
+    r'\s+(?=[A-ZÁÉÍÓÚÑ]{3,})')
+# V6.9.72: marca de RÓTULO de espécimen. Un diagnóstico jamás nombra el procedimiento
+# ni la técnica con que se obtuvo la muestra; un rótulo sí, siempre.
+_DET_ES_ROTULO = re.compile(
+    r'(?i)\b(?:BIOPSIA|PERCUT[AÁ]NEA|ESCISIONAL|INCISIONAL|AGUJA\s+GRUESA|TRUCUT|'
+    r'RESECCI[OÓ]N\s+(?:DE|QUIR)|MASTECTOM[IÍ]A|PUNCI[OÓ]N|CITOLOG[IÍ]A|'
+    r'ESTUDIOS?\s+DE\s+INMUNOHISTOQU[IÍ]MICA|BIRADS?|BIRDS)\b')
 _DET_NOMBRES_PAT = (
     'ARMANDO CORTES BUELVAS', 'NANCY MEJIA VARGAS', 'CARLOS CAICEDO ESTRADA',
     'ARMANDO CORTES', 'NANCY MEJIA', 'CARLOS CAICEDO', 'ISABELLA CAICEDO')
@@ -432,6 +467,10 @@ def _det_trim(frase):
     frase = re.sub(r'\s+', ' ', frase).strip(' .,:;-⁠\t\n')
     frase = re.split(r'(?i),?\s+(?:REQUIERE|REQUIRIENDO|SE\s+SUGIERE|SE\s+RECOMIENDA|'
                      r'A\s+PESAR|EN\s+CORRELACI[OÓ]N|PARA\s+LO\s+QUE|POR\s+LO\s+QUE)', frase)[0]
+    # V6.9.72: "VER COMENTARIO" al final del dx se parte en dos: el corte por
+    # _DET_BND (COMENTARIOS?) se lleva la segunda palabra y deja un "VER" colgando
+    # ("PROLIFERACIÓN LINFOIDE ATÍPICA DE CÉLULAS T VER", IHQ260697/IHQ250537).
+    frase = re.sub(r'(?i)[\s.,;:-]+VER\s*$', '', frase)
     return frase.strip(' .,:;-')
 
 
@@ -465,8 +504,34 @@ def _det_seccion_diagnostico(full_text):
     # INMUNOHISTOQUÍMICA" pisando "INFLAMACIÓN CRÓNICA GRANULOMATOSA"), porque _DET_FUERTE
     # matchea "Tumor" DENTRO del propio rótulo. Revertido. El bug de los 49 sigue ABIERTO
     # y necesita distinguir rótulo de dx sin depender de _DET_FUERTE.
-    ims = list(_DET_PROC_SKIP.finditer(cuerpo))
+    # V6.9.72: se suman los rótulos que cierran SIN punto (Title Case + dx en mayúsculas).
+    # Se mantiene ims[-1] (la ÚLTIMA coincidencia): medido contra la BD, es la mejor de las
+    # tres reglas probadas —última 2.027 · primera 2.008 · fin-de-run 2.025—.
+    ims = sorted(list(_DET_PROC_SKIP.finditer(cuerpo)) + list(_DET_PROC_SKIP_TC.finditer(cuerpo)),
+                 key=lambda m: m.end())
     zona = cuerpo[ims[-1].end():] if ims else cuerpo
+    # V6.9.72 (bug multi-espécimen): cuando el informe trae VARIOS especímenes,
+    # ims[-1] salta hasta el ÚLTIMO rótulo y la zona queda vacía o con el rótulo
+    # suelto -> el dx salía 'INMUNOHISTOQUÍMICA' / 'N/A' y el cáncer se perdía.
+    # Se retrocede rótulo a rótulo hasta encontrar uno que SÍ deje un enunciado
+    # diagnóstico. Esta rama solo se ejecuta cuando la regla actual no produce NADA,
+    # por lo que no puede alterar ninguno de los casos que ya funcionaban (a
+    # diferencia del intento de V6.9.63, que cambiaba la elección siempre y provocó
+    # 92 regresiones).
+    # El candidato retrocedido DEBE parecer un diagnóstico y no un rótulo: si nombra
+    # el procedimiento o la técnica es el rótulo del espécimen ("LESIÓN BIRADS 4C.
+    # BIOPSIA PERCUTÁNEA. ESTUDIO DE INMUNOHISTOQUÍMICA", IHQ260133). Sin este guarda
+    # _DET_FUERTE matchea "LESIÓN" DENTRO del rótulo y lo da por bueno.
+    # Se recorre HACIA ADELANTE (no hacia atrás): en un informe multi-espécimen el
+    # diagnóstico principal es el del espécimen A, el PRIMERO. Retrocediendo desde el
+    # final se cogía el espécimen B y en IHQ251205 eso devolvía "NEGATIVO PARA LESIÓN
+    # INTRAEPITELIAL" cuando el espécimen A sí tenía una lesión NIC I.
+    if ims and not _det_buscar_en_zona(_DET_PIE.split(zona)[0]):
+        for m in ims[:-1]:
+            cand = _det_buscar_en_zona(_DET_PIE.split(cuerpo[m.end():])[0])
+            if cand and not _DET_ES_ROTULO.search(cand):
+                zona = cuerpo[m.end():]
+                break
     return _DET_PIE.split(zona)[0].strip(), _DET_PIE.split(coment)[0].strip()
 
 
@@ -598,6 +663,29 @@ def _dp_sospechoso(dp):
         return True
     if re.search(r'ESTUDIO[S]?\s+(?:DE|POR)\s+INMUNOHISTOQU', u):
         return True
+    # V6.9.72: formas de basura INEQUÍVOCA que el guarda dejaba pasar como si fueran
+    # un diagnóstico, impidiendo que el fallback determinista (que en estos casos SÍ
+    # acierta) llegara siquiera a intentarlo. Cada patrón viene de un caso medido.
+    # Esto solo AMPLÍA cuándo se intenta el fallback; si el determinista no encuentra
+    # nada, el valor actual se conserva igual.
+    if re.search(r'P[AÁ]GINA\s*\d|COPIA\s+PAG|FINAL\s+PAG|N\.?\s*PETICI[OÓ]N|'
+                 r'N\.?\s*IDENTIFICACI', u):
+        return True                                    # encabezado de página (IHQ260323)
+    if re.match(r'(?:ESTUDIOS?\s+DE\s+)?INMUNOHISTOQU[IÍ]MICA\W*$', u):
+        return True                                    # solo la técnica (IHQ260126, IHQ260219)
+    if u.count(')') > u.count('('):
+        return True                                    # truncado dentro de un paréntesis (IHQ250102)
+    if re.match(r'[A-ZÁÉÍÓÚÑ]{1,2}[,)]\s', u):
+        return True                                    # arranca a mitad de palabra (IHQ250326)
+    if re.search(r'\bA\s+CLASIFICAR\b', u):
+        return True                                    # dx aplazado, no es el dx (IHQ260245)
+    if re.match(r'DIAGN[OÓ]STICO\s+(?!DE\b)', u):
+        return True                                    # se comió el rótulo de sección (IHQ260134)
+    # un diagnóstico NUNCA termina nombrando el procedimiento: eso es el rótulo del
+    # espécimen ("Mama derecha. Nódulo H2… Biopsia con aguja gruesa", IHQ251049/IHQ251119)
+    if re.search(r'\b(?:BIOPSIA|RESECCI[OÓ]N|CITOLOG[IÍ]A|PUNCI[OÓ]N|MASTECTOM[IÍ]A|'
+                 r'ESCISIONAL|INCISIONAL|AGUJA\s+GRUESA|INMUNOHISTOQU[IÍ]MICA)\W*$', u):
+        return True
     return False
 
 
@@ -620,6 +708,21 @@ _MALIG_BEN = ('NEUROTEQUEOMA', 'NEUROFIBROMA', 'SCHWANNOMA', 'LIPOMA', 'HEMANGIO
               'INFLAMATORI', 'REACTIV', 'FIBROSIS', 'CIRROSIS', 'NEFRITIS', 'CONDILOMA', 'FASCITIS NODULAR')
 
 
+# Categorías que NO afirman nada clínico: el informe no trae diagnóstico, solo
+# marcadores, morfología o una muestra insuficiente. En ellas la malignidad es
+# DESCONOCIDA; forzarla a BENIGNO sería tan falso como dejarla en MALIGNO.
+_CAT_SIN_DIAGNOSTICO = frozenset((
+    'ESTUDIO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)',
+    'RESULTADO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)',
+    'MUESTRA NO REPRESENTATIVA / NO DIAGNOSTICA',
+    'MUESTRA INSUFICIENTE / NO CONCLUYENTE',
+    'SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)',
+    'ESTUDIO EN CURSO / PENDIENTE (INFORME POSTERIOR)',
+    'ESTUDIO DE MEDULA OSEA (MORFOLOGIA)',
+    'MEDULA OSEA / EVALUACION HEMATOLOGICA',
+))
+
+
 def _malignidad_coherente(dx: str) -> str:
     """Devuelve 'MALIGNO'/'BENIGNO' derivado del dx, o '' si es ambiguo (glioma/TNE
     sin pista de grado) -> en ese caso NO se sobreescribe el valor existente."""
@@ -630,6 +733,33 @@ def _malignidad_coherente(dx: str) -> str:
     du = normalizar_texto(str(dx)).upper()
     if not du.strip():
         return ''
+    # V6.9.72: la CATEGORÍA manda sobre el barrido de palabras sueltas. Va primero
+    # porque _MALIG_MAL busca términos crudos y "SIN COMPROMISO POR LINFOMA" o
+    # "NEGATIVO PARA LINFOMA DE CÉLULAS B" contienen la palabra LINFOMA: el barrido
+    # respondía MALIGNO en informes que descartaban el tumor. El categorizador ya
+    # resolvió esa negación, así que es la fuente fiable.
+    # Se EXCLUYEN a propósito las bolsas donde NO hay diagnóstico (marcadores IHQ
+    # sueltos, muestra insuficiente, médula ósea solo morfología, extracción a
+    # revisar): ahí escribir BENIGNO sería inventar tanto como dejar MALIGNO, así
+    # que se devuelve '' y NO se sobreescribe nada.
+    # GUARDA: nunca degradar a BENIGNO un informe que nombra un cáncer. Un mismo
+    # espécimen puede traer las dos cosas — IHQ251066: "GRANULOMA ABIERTO SIN
+    # AMASTIGOTES Y CARCINOMA BASOCELULAR ... INFILTRANTE" cae en la categoría
+    # inflamatoria por el granuloma, pero el paciente tiene un carcinoma. La
+    # excepción es NEGATIVO PARA MALIGNIDAD: ahí el categorizador ya demostró que
+    # el término maligno viene negado.
+    try:
+        from core.normalizador_diagnosticos import CATEGORIAS_NO_ONCOLOGICAS
+        _cat = categorizar_diagnostico(dx)
+        if _cat == 'NEGATIVO PARA MALIGNIDAD':
+            return 'BENIGNO'
+        if ((_cat == 'ADENOMA HIPOFISARIO / TUMOR NEUROENDOCRINO HIPOFISARIO'
+             or (_cat in CATEGORIAS_NO_ONCOLOGICAS and _cat not in _CAT_SIN_DIAGNOSTICO))
+                and not any(m in du for m in _MALIG_MAL)):
+            return 'BENIGNO'
+    except Exception:
+        pass
+
     if any(n in du for n in _MALIG_NEG): return 'BENIGNO'
     if any(m in du for m in _MALIG_MAL): return 'MALIGNO'
     if any(b in du for b in _MALIG_BEN): return 'BENIGNO'

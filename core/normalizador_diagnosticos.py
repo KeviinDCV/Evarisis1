@@ -154,6 +154,19 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "NEGATIVO PARA NEOPLASIA",
         "NEGATIVO PARA CARCINOMA", "NEGATIVO PARA CARCINOMA METASTASICO",
         "NEGATIVO PARA CELULAS NEOPLASICAS",
+        # V6.9.72: faltaban TODAS las formas negativas del linfoma. La palabra
+        # "LINFOMA" dentro de la frase disparaba LINFOMA (OTRO SUBTIPO), así que
+        # 8 informes que descartaban linfoma se contaban como linfomas (y los 8
+        # figuraban además con Malignidad = MALIGNO).
+        "NEGATIVO PARA LINFOMA",
+        "NEGATIVO PARA INFILTRACION POR LINFOMA",
+        "NEGATIVO PARA INFILTRACION LINFOMATOSA",
+        "NEGATIVO PARA PROCESO LINFOMATOSO",
+        "SIN COMPROMISO POR LINFOMA",
+        "SIN EVIDENCIA DE COMPROMISO POR LINFOMA",
+        "SIN EVIDENCIA DE LINFOMA",
+        "SIN INFILTRACION LINFOMATOSA",
+        "SIN INFILTRACION POR LINFOMA",
         "SIN EVIDENCIA DE MALIGNIDAD",
         "SIN EVIDENCIA DE NEOPLASIA",
         "AUSENCIA DE MALIGNIDAD",
@@ -244,6 +257,11 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     # orden, casos NO Hodgkin se clasificarían erróneamente como Hodgkin.
     # V6.6.8 FIX feedback clínico "linfoma especificar".
     "LINFOMA NO HODGKIN B": [
+        # V6.9.72: "NO HODKING" con la misma errata. Debe estar AQUÍ (esta lista se
+        # evalúa antes) o el "HODKING" que añadí abajo se lo llevaría a Hodgkin,
+        # invirtiendo el diagnóstico. Aún no aparece en el corpus; queda cubierto
+        # para los PDFs que vengan.
+        "LINFOMA NO HODKING", "NO HODKING",
         "LINFOMA NO HODGKIN", "LINFOMA B DIFUSO", "LINFOMA DIFUSO DE CELULAS B",
         "LINFOMA FOLICULAR", "LINFOMA DE LA ZONA MARGINAL", "LINFOMA MALT",
         "LINFOMA DE BURKITT", "LINFOMA DE CELULAS DEL MANTO",
@@ -265,6 +283,14 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         # genérica para capturar todas las variantes (extranodal, nodal,
         # esplénico, etc.) que son linfomas B por definición.
         "ZONA MARGINAL",
+        # V6.9.72: erratas de transcripción del propio informe. Sin esto la falta
+        # de ortografía decidía la categoría: los DLBCL bien escritos caían en
+        # LINFOMA NO HODGKIN B y los mal escritos en LINFOMA (OTRO SUBTIPO).
+        "LINFOMA DIFUSO DE CEULAS B",     # IHQ250218, IHQ251112
+        "LINFOMA DIFUSO DE CELUULAS B",   # IHQ250823
+        # "de células grandes" sin la B: por convención OMS el DLBCL. Como literal
+        # NO captura "…DE CELULAS T GRANDES" (la T se interpone), así que es seguro.
+        "LINFOMA DIFUSO DE CELULAS GRANDES",
     ],
     "LINFOMA T/NK": [
         "LINFOMA T", "LINFOMA DE CELULAS T", "LINFOMA NK", "LINFOMA ANAPLASICO",
@@ -276,6 +302,10 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     "LINFOMA HODGKIN": [
         "LINFOMA DE HODGKIN", "LINFOMA HODGKIN CLASICO",
         "ENFERMEDAD DE HODGKIN", "HODGKIN CLASICO", "HODGKIN",
+        # V6.9.72: "HODKING" es una errata RECURRENTE del informe (IHQ251233,
+        # IHQ260035, IHQ260155). Igual que arriba, va DESPUÉS de NO HODGKIN en el
+        # orden de evaluación, así que un "NO HODKING" no puede caer aquí.
+        "HODKING",
     ],
     # V6.6.14 FIX IHQ250105: Reordenar — LEUCEMIA MIELOIDE y LEUCEMIA
     # LINFOIDE AGUDA deben evaluarse ANTES de LINFOMA (OTRO SUBTIPO)
@@ -372,6 +402,20 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Tumores neuroendocrinos ===
+    # V6.9.72: DEBE ir ANTES de "TUMOR / CARCINOMA NEUROENDOCRINO", porque
+    # "TUMOR NEUROENDOCRINO" es subcadena de "TUMOR NEUROENDOCRINO PITUITARIO/
+    # HIPOFISARIO" y se los llevaba: 17 adenomas de hipófisis (PitNET, benignos)
+    # acababan mezclados con los neuroendocrinos de pulmón y aparato digestivo,
+    # y marcados MALIGNO. Con el orden anterior esta categoría solo recogía 2
+    # casos, los que el patólogo escribió literalmente "ADENOMA HIPOFISARIO".
+    # La misma entidad recibía tres categorías distintas según la redacción.
+    "ADENOMA HIPOFISARIO / TUMOR NEUROENDOCRINO HIPOFISARIO": [
+        "ADENOMA HIPOFISARIO", "ADENOMA HIPOFISIARIO", "ADENOMA DE HIPOFISIS",
+        "ADENOMA PITUITARIO", "ADENOMA DE PITUITARIA",
+        "TUMOR NEUROENDOCRINO HIPOFISARIO", "TUMOR NEUROENDOCRINO HIPOFISIARIO",
+        "TUMOR NEUROENDOCRINO PITUITARIO", "TUMOR NEUROENDOCRINO DE LA HIPOFISIS",
+        "PITNET",
+    ],
     "TUMOR / CARCINOMA NEUROENDOCRINO": [
         "CARCINOMA NEUROENDOCRINO", "TUMOR NEUROENDOCRINO", "CARCINOIDE",
         "TUMOR DE CELULAS PEQUENAS", "CARCINOMA DE CELULAS PEQUENAS",
@@ -415,10 +459,6 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
     "MEDULOBLASTOMA / TUMOR EMBRIONARIO SNC": [
         "MEDULOBLASTOMA", "TUMOR EMBRIONARIO", "PNET",
-    ],
-    "ADENOMA HIPOFISARIO / TUMOR NEUROENDOCRINO HIPOFISARIO": [
-        "ADENOMA HIPOFISARIO", "ADENOMA DE HIPOFISIS",
-        "TUMOR NEUROENDOCRINO HIPOFISARIO", "PITNET",
     ],
     "CRANEOFARINGIOMA": [
         "CRANEOFARINGIOMA",
@@ -680,15 +720,22 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Lesiones benignas ===
+    # V6.9.72: esta categoría mezclaba dos cosas clínicamente distintas y por eso
+    # sus 141 casos entraban ENTEROS en el KPI "TUMORES ANALIZADOS": neoplasias
+    # benignas de verdad (fibroadenoma, papiloma, adenoma, lipoma) junto a
+    # hiperplasias REACTIVAS, adenosis, pólipos inflamatorios y quistes, que no
+    # son neoplasias. Se parte en dos.
+    # Aquí quedan SOLO las neoplasias benignas. La categoría reactiva va justo
+    # DESPUÉS, para que un dx que nombre las dos cosas ("PAPILOMA INTRADUCTAL CON
+    # HIPERPLASIA DUCTAL ATÍPICA") se resuelva por la neoplasia, que es lo
+    # clínicamente relevante.
     "LESION BENIGNA / HIPERPLASIA": [
-        "HIPERPLASIA", "FIBROADENOMA", "ADENOMA", "POLIPO",
-        "QUISTE", "LIPOMA", "HEMANGIOMA",
-        # Lesiones benignas mamarias adicionales
-        "ADENOSIS ESCLEROSANTE",
-        "ADENOSIS",
-        "MASTOPATIA FIBROQUISTICA",
-        "CAMBIOS FIBROQUISTICOS",
-        "PAPILOMA",
+        "FIBROADENOMA", "ADENOMA", "LIPOMA", "HEMANGIOMA", "PAPILOMA",
+    ],
+    "HIPERPLASIA / LESION REACTIVA (NO NEOPLASICA)": [
+        "HIPERPLASIA", "POLIPO", "QUISTE",
+        "ADENOSIS ESCLEROSANTE", "ADENOSIS",
+        "MASTOPATIA FIBROQUISTICA", "CAMBIOS FIBROQUISTICOS",
     ],
 
     # ===================================================================
@@ -720,6 +767,10 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         # Términos específicos -> NO captura "cambios oncocíticos" descriptivos
         # de otros dx (p.ej. patrón acinar renal -> CARCINOMA RENAL).
         "ONCOCITOMA", "TUMOR ONCOCITICO",
+        # V6.9.72: "NEOPLASIA PAPILAR ONCOCITICA" (IHQ250049) no tenía categoría y
+        # acababa clasificada por la palabra "QUISTE" que aparecía de pasada en el
+        # mismo diagnóstico. Es una neoplasia oncocítica: su sitio es este.
+        "NEOPLASIA ONCOCITICA", "NEOPLASIA PAPILAR ONCOCITICA",
     ],
     "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES": [
         "HIRSCHSPRUNG", "AGANGLIONOSIS", "CELULAS GANGLIONARES", "CELULAS GANGLI",
@@ -959,6 +1010,9 @@ CATEGORIAS_NO_ONCOLOGICAS: frozenset = frozenset({
     "TEJIDO LINFOIDE REACTIVO / NORMAL",
     "PROCESO INFLAMATORIO / INFECCIOSO (NO NEOPLASICO)",
     "INFLAMACION / PROCESO INFECCIOSO",
+    # V6.9.72: hiperplasias reactivas, adenosis, pólipos inflamatorios y quistes.
+    # No son neoplasias: hasta ahora se contaban dentro de "TUMORES ANALIZADOS".
+    "HIPERPLASIA / LESION REACTIVA (NO NEOPLASICA)",
     "GLIOSIS / LESION REACTIVA SNC",
     "MALFORMACION DEL DESARROLLO / HETEROTOPIA SNC",
     "ENFERMEDAD DE HIRSCHSPRUNG / CELULAS GANGLIONARES",
@@ -1042,6 +1096,29 @@ def _fallback_categoria(t: str) -> str:
     return "SIN DIAGNOSTICO EN TEXTO / REVISAR (EXTRACCION)"
 
 
+# Bolsas de "no se identificó tumor": solo válidas si ninguna categoría tumoral
+# casó. Ver el bucle de categorizar_diagnostico.
+_CATEGORIAS_RESIDUALES = frozenset((
+    "ESTUDIO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
+    "RESULTADO IHQ DE MARCADORES (SIN TUMOR CLASIFICADO)",
+))
+
+# V6.9.72: acrónimos de leucemia que deben casar como PALABRA COMPLETA. Con la
+# comparación por subcadena, "LLA " casaba dentro de "SI-LLA  TURCA" y un tumor
+# neuroendocrino de hipófisis (IHQ260453) se categorizaba como leucemia linfoide
+# aguda. Medido sobre los 2.076: estos tres acrónimos no aportan NINGÚN acierto
+# real y sí ese falso positivo; se conservan con frontera por si un patólogo los
+# escribe así en un informe futuro.
+_KW_PALABRA_COMPLETA = frozenset(("LLA", "LMA", "LAM"))
+
+
+def _casa_patron(patron: str, texto: str) -> bool:
+    p = patron.strip()
+    if p in _KW_PALABRA_COMPLETA:
+        return re.search(r'\b' + p + r'\b', texto) is not None
+    return patron in texto
+
+
 def categorizar_diagnostico(valor: str) -> str:
     """Devuelve la categoría canónica para un diagnóstico libre.
 
@@ -1062,10 +1139,24 @@ def categorizar_diagnostico(valor: str) -> str:
     # COMPATIBLE CON CARCINOMA UROTELIAL".
     t = stripear_preambulos(t)
 
+    # V6.9.72: las dos bolsas "(SIN TUMOR CLASIFICADO)" son un ÚLTIMO RECURSO.
+    # Estaban declaradas por delante de casi todas las categorías tumorales, así
+    # que la sola palabra "INMUNOHISTOQUIMICA" ganaba aunque el diagnóstico
+    # nombrase el tumor: "LINFOMA T ANAPLÁSICO ALK NEGATIVO … ESTUDIO DE
+    # INMUNOHISTOQUÍMICA" se contaba como "sin tumor clasificado". Por definición
+    # esa bolsa solo puede aplicarse si NO se identificó ningún tumor, así que se
+    # anota y se sigue buscando. Solo puede cambiar casos que HOY caen en ellas.
+    residual = None
     for categoria in ORDEN_EVALUACION:
         for patron in CATEGORIAS_DIAGNOSTICO[categoria]:
-            if patron in t:
+            if _casa_patron(patron, t):
+                if categoria in _CATEGORIAS_RESIDUALES:
+                    if residual is None:
+                        residual = categoria
+                    break            # no devuelve todavía: busca un tumor real
                 return categoria
+    if residual:
+        return residual
 
     # V6.9.29: ya no devolvemos "OTRO / NO CATEGORIZADO" — el fallback
     # enruta TODO texto no vacío a un bucket clínico con sentido.
@@ -1172,6 +1263,32 @@ def categorizar_diagnostico_con_organo(valor_dx, valor_organo):
         Categoría canónica refinada usando contexto de órgano cuando aplique.
     """
     base = categorizar_diagnostico(valor_dx)
+
+    # ── V6.9.72: primario mal contado como metástasis ────────────────────────
+    # "ORIGEN PULMONAR/MAMARIO/COLORRECTAL" son patrones de CARCINOMA METASTASICO.
+    # Pero "ADENOCARCINOMA INVASIVO DE ORIGEN PULMONAR" en una muestra DE PULMÓN
+    # es el tumor PRIMARIO, no una metástasis: el patólogo está nombrando la
+    # estirpe, no un segundo sitio. Así se contaban 8 adenocarcinomas primarios de
+    # pulmón dentro de CARCINOMA METASTASICO.
+    # La regla exige LAS DOS condiciones —que el dx NO diga metástasis y que el
+    # órgano de la muestra sea el mismo que el origen declarado—, así que una
+    # metástasis real ("de origen mamario" en un ganglio) no se ve afectada.
+    if base == "CARCINOMA METASTASICO" and valor_organo:
+        _dxn = normalizar_texto(str(valor_dx or ""))
+        _orgn = normalizar_texto(str(valor_organo))
+        if not any(k in _dxn for k in ("METASTASIC", "METASTASIS", "METASTATIC")):
+            for _frase, _org in (("ORIGEN PULMONAR", "PULMON"),
+                                 ("ORIGEN MAMARIO", "MAMA"),
+                                 ("ORIGEN COLORRECTAL", "COLON")):
+                if _frase in _dxn and _org in _orgn:
+                    # se degrada al genérico que corresponda a la estirpe y se deja
+                    # que la refinación por órgano de más abajo elija la categoría
+                    base = ("CARCINOMA ESCAMOCELULAR (OTRAS LOCALIZACIONES)"
+                            if "ESCAMOCELULAR" in _dxn else
+                            "ADENOCARCINOMA (OTRAS LOCALIZACIONES)"
+                            if "ADENOCARCINOMA" in _dxn else
+                            "CARCINOMA (OTRAS LOCALIZACIONES)")
+                    break
 
     # Solo refinar categorías genéricas
     if base not in (

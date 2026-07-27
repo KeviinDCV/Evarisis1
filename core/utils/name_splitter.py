@@ -79,7 +79,13 @@ def split_full_name(full_name: str) -> Dict[str, str]:
     
     # Limpiar y normalizar
     name_clean = full_name.strip().upper()
-    tokens = [t for t in name_clean.split() if t and len(t) > 1]
+    # V6.9.69: algunos informes traen la CÉDULA pegada al nombre
+    #   "Nombre : 16856154 DIEGO PEREA OBONAGA"   (IHQ251481)
+    # El número contaba como token y ocupaba el puesto del primer nombre, con lo que la
+    # fila acababa SIN nombre ni apellido. Un token puramente numérico nunca es parte de
+    # un nombre: se descarta (el nº de identificación se extrae por su propio campo).
+    tokens = [t for t in name_clean.split()
+              if t and len(t) > 1 and not t.replace('.', '').replace('-', '').isdigit()]
     
     if not tokens:
         return {
