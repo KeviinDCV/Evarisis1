@@ -87,7 +87,15 @@ class EnhancedDatabaseDashboard:
         self.visualizar_tab = ttk.Frame(self.notebook)
         self.notebook.add(self.visualizar_tab, text="📊 Visualizador de Datos")
 
-        # Pestaña 3: Análisis de Biomarcadores
+        # V6.9.73 — Pestaña 3: POR PACIENTE.
+        # La tabla del Visualizador es una fila por ESTUDIO, así que los varios
+        # estudios de un mismo paciente (hasta 10) quedaban dispersos por la lista.
+        # Esta vista los agrupa: una fila por paciente que se despliega en sus
+        # estudios. El contenido lo inyecta ui.py, igual que el Visualizador.
+        self.paciente_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.paciente_tab, text="👤 Por Paciente")
+
+        # Pestaña 4: Análisis de Biomarcadores
         self.biomarker_tab = ttk.Frame(self.notebook)
         self.notebook.add(self.biomarker_tab, text="🧬 Biomarcadores")
 

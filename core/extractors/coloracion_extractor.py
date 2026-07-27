@@ -152,6 +152,58 @@ def _limpiar_dx(bloque: str) -> str:
     return txt.strip()
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.73 — quitar el RÓTULO DEL ESPÉCIMEN del diagnóstico.
+#
+# La sección DIAGNÓSTICO del informe empieza describiendo la muestra:
+#     Mucosa gástrica antral. Biopsia por endoscopia.      <- rótulo
+#     GASTRITIS CRÓNICA NO ATRÓFICA…                       <- el diagnóstico
+# Se guardaba el bloque entero, así que en la tabla se leía "Mucosa gástrica
+# antral. Biopsia por endoscopia." donde debía ir el diagnóstico. Medido sobre
+# los 20.455 casos reales: afecta a 15.246 (75%).
+#
+# Se borran LÍNEAS COMPLETAS, nunca trozos: una línea es rótulo solo si TERMINA
+# nombrando el procedimiento con el que se tomó la muestra. Y se exige además
+# que NO contenga ningún término diagnóstico —medido: 0 de las 19.960 líneas
+# quitadas lo contenía—, así que un dx que mencione el procedimiento de pasada
+# ("PÓLIPO HIPERPLÁSICO, POLIPECTOMÍA COMPLETA") jamás se pierde.
+#
+# En informes multi-espécimen (A., B., C.…) se quita el rótulo de CADA uno y se
+# conservan todos los diagnósticos.
+# ═══════════════════════════════════════════════════════════════════════════
+_PROC_ROTULO = (
+    r'BIOPSIA|RESECCI[OÓ]N|POLIPECTOM[IÍ]A|MUCOSECTOM[IÍ]A|CUADRANTECTOM[IÍ]A|'
+    r'MASTECTOM[IÍ]A|COLONOSCOPIA|ENDOSCOPIA|LEGRADO|CONIZACI[OÓ]N|HISTERECTOM[IÍ]A|'
+    r'SACABOCADO|TRUCUT|TREPANACI[OÓ]N|CURETAJE|PUNCI[OÓ]N|CITOLOG[IÍ]A|ESCISI[OÓ]N|'
+    r'APENDICECTOM[IÍ]A|COLECISTECTOM[IÍ]A|AMPUTACI[OÓ]N|NEFRECTOM[IÍ]A|LOBECTOM[IÍ]A|'
+    r'PROSTATECTOM[IÍ]A|ORQUIECTOM[IÍ]A|GASTRECTOM[IÍ]A|TIROIDECTOM[IÍ]A|MOHS|'
+    r'CIRUG[IÍ]A|EXTIRPACI[OÓ]N|TORACOSCOPIA|LAPAROSCOPIA|VITRECTOM[IÍ]A'
+)
+_RE_ROTULO_LINEA = re.compile(
+    r'(?i)^(?:[A-Z]\s*[.\-)]\s*)?[^\n]{0,150}?\b(?:' + _PROC_ROTULO + r')\b'
+    r'(?:\s+(?:por|con|de|end\w+|escisional|incisional|percut[aá]nea|'
+    r'aguja\s+gruesa|sacabocado|endosc[oó]pica|guiada[^\n]{0,30}))?\s*[.:;]?\s*$')
+_RE_TERMINO_DX = re.compile(
+    r'(?i)CARCINOM|SARCOM|LINFOM|MELANOM|MIELOM|LEUCEMI|BLASTOM|ADENOM|'
+    r'NEOPLASI|TUMOR\w*\s|HIPERPLASI|DISPLASI|INFLAMAC|GRANULOM|POLIPO|'
+    r'P[OÓ]LIPO|GASTRITIS|COLITIS|DERMATITIS|CERVICITIS|NEGATIV|POSITIV|'
+    r'BENIGN|MALIGN|ATIPI|METAPLASI|FIBROSIS|NECROSIS|QUISTE|NEVUS|'
+    r'CONDILOM|PAPILOM|LIPOM|HEMANGIOM|MIOM|ADENOSIS|COMPATIBLE|SUGESTIV')
+
+
+def quitar_rotulo_especimen(dx: str) -> str:
+    """Quita las líneas de rótulo del espécimen. Si al hacerlo NO quedaría nada,
+    devuelve el texto original: es preferible mostrar el rótulo a dejar el
+    diagnóstico vacío (el informe no traía otra cosa)."""
+    if not dx:
+        return dx
+    quedan = [ln for ln in dx.split("\n")
+              if not (ln.strip() and _RE_ROTULO_LINEA.match(ln.strip())
+                      and not _RE_TERMINO_DX.search(ln))]
+    limpio = "\n".join(quedan).strip()
+    return limpio if limpio else dx
+
+
 def extraer_diagnostico(texto_caso: str) -> str:
     """Aísla SOLO el bloque DIAGNÓSTICO del texto (1 caso, ya concatenado si era multipágina).
     Devuelve '' si no se puede aislar con seguridad (no inventa)."""
@@ -172,6 +224,11 @@ def extraer_diagnostico(texto_caso: str) -> str:
         if mm and mm.start() < fin:
             fin = mm.start()
     cuerpo = cuerpo[:fin]
+    # OJO: aquí se devuelve el bloque COMPLETO, con el rótulo del espécimen.
+    # El rótulo es la única fuente del Procedimiento ("…Biopsia por endoscopia")
+    # y lo consumen extraer_procedimiento() y clasificar_malignidad(). Quitarlo
+    # aquí costaría 13.839 procedimientos (medido). Se quita en agrupar_y_extraer,
+    # justo al guardar el campo del diagnóstico. Ver quitar_rotulo_especimen().
     return _limpiar_dx(cuerpo)
 
 
@@ -469,7 +526,10 @@ def agrupar_y_extraer(paginas: List[str]) -> List[Dict[str, str]]:
         dx = extraer_diagnostico(texto)
         reg: Dict[str, str] = {
             "numero_caso": m,
-            "diagnostico_coloracion_2": dx if dx else "REVISAR",
+            # V6.9.73: el campo guarda el DIAGNÓSTICO sin el rótulo del espécimen.
+            # `dx` (con rótulo) se sigue usando más abajo para derivar Procedimiento
+            # y Malignidad, que es donde el rótulo sí hace falta.
+            "diagnostico_coloracion_2": quitar_rotulo_especimen(dx) if dx else "REVISAR",
         }
         macro = extraer_descripcion_macro(texto)
         if macro:

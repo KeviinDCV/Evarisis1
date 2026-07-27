@@ -2088,6 +2088,9 @@ Disco {i}:
             # Poblar la pestaña de visualizador en el dashboard
             self._populate_visualizar_tab_in_dashboard()
 
+            # V6.9.73: vista agrupada por paciente (pestaña propia)
+            self._populate_pacientes_tab_in_dashboard()
+
         except ImportError as e:
             # Fallback en caso de error
             ttk.Label(
@@ -5548,6 +5551,300 @@ Disco {i}:
             win.after(300, lambda: win.attributes("-topmost", False))
         except Exception:
             pass
+
+    # ================================================================
+    #  V6.9.73 — VISTA "POR PACIENTE" (pestaña propia)
+    # ================================================================
+    #  El Visualizador es una fila por ESTUDIO: correcto para estadística y
+    #  exportación, pero deja los estudios de un mismo paciente dispersos por
+    #  la lista. Aquí se agrupan: una fila por paciente, desplegable en sus
+    #  estudios.
+    #
+    #  Es una vista APARTE, con su propia hoja: no toca la tabla principal ni
+    #  el dato. Cada estudio sigue siendo su propia fila en la BD.
+    #
+    #  Se agrupa SOLO por cédula (99,7% de las filas la tienen). Agrupar por
+    #  nombre fusionaría homónimos, y mezclar la historia clínica de dos
+    #  pacientes distintos es un error grave, no un detalle de presentación.
+    #  Las filas sin cédula fiable se muestran sueltas, nunca fusionadas.
+    # ================================================================
+    # El NOMBRE del paciente (y el nº de caso en los hijos) NO va como columna: va
+    # como texto del árbol, que tksheet dibuja en la columna índice junto con la
+    # flecha de desplegar. Por eso aquí solo están las columnas de datos.
+    _PAC_COLS = ["Cédula", "Estudios", "Órgano", "Diagnóstico", "Biomarcadores", "Fecha"]
+    _PAC_PREFIJO = "P#"
+    # No son biomarcadores: son metadatos del estudio.
+    _PAC_NO_BIO = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
+
+    def _pac_es_coloracion(self, num) -> bool:
+        return bool(re.match(r"^[Mm]\d", str(num or "").strip()))
+
+    # Campos de fecha en orden de preferencia (mismos que usa la ficha)
+    _PAC_FECHAS = ("Fecha de ingreso (2. Fecha de la muestra)", "Fecha Ingreso",
+                   "Fecha Informe", "Fecha Ingreso Base de Datos")
+
+    def _pac_construir_filas(self, df, solo_multi=False, filtro=""):
+        """Devuelve (filas_para_tree_build, n_pacientes, n_estudios).
+        Cada fila lleva 2 columnas auxiliares al final: iid y parent.
+
+        Trabaja sobre LISTAS de Python, no sobre el DataFrame fila a fila:
+        acceder con df.loc[i] 22.500 veces crea una Serie por fila y tardaba
+        10 s. Con las columnas volcadas a listas baja a menos de 1 s.
+        """
+        import collections
+
+        def col(nombre):
+            if nombre in df.columns:
+                return df[nombre].fillna("").astype(str).tolist()
+            return [""] * len(df)
+
+        ced = [re.sub(r"\D", "", s) for s in col("N. de identificación")]
+        nom = col("Nombre Completo")
+        num = [s.strip() for s in col("Numero de caso")]
+        organo = col("Organo")
+        dx_ihq = col("Diagnostico Principal")
+        dx_col = col("Diagnostico Coloracion 2")
+        dx_alt = col("Diagnostico Coloracion")
+        fechas = [col(c) for c in self._PAC_FECHAS]
+        NA = self._FICHA_NA
+
+        # Biomarcadores: en vez de 125 columnas casi siempre vacías, UNA columna con
+        # los que ESE estudio tiene con resultado. Se prepara una sola vez, en listas.
+        bio_cols = [c for c in df.columns
+                    if str(c).upper().startswith("IHQ_") and str(c) not in self._PAC_NO_BIO]
+        bio_vals = [(str(c)[4:], col(c)) for c in bio_cols]
+
+        def _val(*candidatos):
+            for v in candidatos:
+                v = (v or "").strip()
+                if v and v.upper() not in NA:
+                    return v
+            return ""
+
+        cuenta = collections.Counter(c for c in ced if len(c) >= 4)
+
+        f = filtro.strip().lower()
+        grupos, sueltos = {}, []
+        for k in range(len(num)):
+            if f and f not in nom[k].lower() and f not in ced[k]:
+                continue
+            if len(ced[k]) >= 4:
+                grupos.setdefault(ced[k], []).append(k)
+            else:
+                sueltos.append(k)
+
+        def _bio(k):
+            """Biomarcadores de ese estudio, en una línea.
+            "NO MENCIONADO" se CONSERVA (significa que se solicitó pero el informe
+            no lo reporta: es una señal real de calidad del dato), pero se manda al
+            final para que lo primero que se lea sean los que sí tienen resultado."""
+            res = [(v[k].strip().upper() == "NO MENCIONADO", f"{nom_b}: {v[k].strip()}")
+                   for nom_b, v in bio_vals
+                   if v[k].strip() and v[k].strip().upper() not in NA]
+            res.sort(key=lambda x: x[0])
+            return "   ·   ".join(t for _, t in res)
+
+        # [Cédula, Estudios, Órgano, Diagnóstico, Biomarcadores, Fecha] + [texto, iid, parent]
+        def _fila_estudio(k, pid):
+            es_col = self._pac_es_coloracion(num[k])
+            # el diagnóstico vive en un campo distinto según el tipo de estudio
+            dx = (_val(dx_col[k], dx_alt[k]) if es_col else _val(dx_ihq[k], dx_alt[k]))
+            return ["", "Coloración" if es_col else "IHQ",
+                    _val(organo[k]), dx, _bio(k), _val(*(fc[k] for fc in fechas)),
+                    ("🎨  " if es_col else "🔬  ") + num[k],
+                    num[k] or f"_e{k}", pid]
+
+        orden = sorted(grupos.items(), key=lambda kv: (nom[kv[1][0]].upper(), kv[0]))
+        filas, n_pac, n_est = [], 0, 0
+        for c, idxs in orden:
+            if solo_multi and cuenta[c] < 2:
+                continue
+            n_pac += 1
+            estudios = sorted(idxs, key=lambda k: (self._pac_es_coloracion(num[k]), num[k]))
+            n_col = sum(1 for k in estudios if self._pac_es_coloracion(num[k]))
+            n_ihq = len(estudios) - n_col
+            partes = []
+            if n_ihq:
+                partes.append(f"{n_ihq} IHQ")
+            if n_col:
+                partes.append("1 coloración" if n_col == 1 else f"{n_col} coloraciones")
+            pid = self._PAC_PREFIJO + c
+            # Fila del PACIENTE: resume cuántos estudios tiene y de qué tipo.
+            # Órgano/Diagnóstico van VACÍOS a propósito: son de cada estudio y
+            # elegir uno para "representar" al paciente sería afirmar algo que
+            # el informe no dice.
+            filas.append([c, f"{len(estudios)}  ·  " + " + ".join(partes), "", "", "", "",
+                          nom[estudios[0]] or "(sin nombre)", pid, ""])
+            n_est += len(estudios)
+            filas.extend(_fila_estudio(k, pid) for k in estudios)
+
+        # sin cédula fiable: nunca se fusionan (juntarlos por nombre mezclaría
+        # homónimos), así que van sueltos al final como estudio individual
+        if not solo_multi:
+            for k in sueltos:
+                n_pac += 1
+                n_est += 1
+                fila = _fila_estudio(k, "")
+                fila[0] = "(sin cédula)"
+                fila[6] = f"{nom[k] or '(sin nombre)'}  ·  {num[k]}"
+                filas.append(fila)
+        return filas, n_pac, n_est
+
+    def _populate_pacientes_tab_in_dashboard(self):
+        """Construye la pestaña 'Por Paciente'. Hoja NUEVA creada en modo árbol
+        desde el principio (no se reutiliza la del Visualizador)."""
+        try:
+            dash = getattr(self, "enhanced_dashboard", None)
+            if dash is None or not hasattr(dash, "paciente_tab"):
+                return
+            frame = dash.paciente_tab
+            for w in frame.winfo_children():
+                w.destroy()
+
+            barra = ttk.Frame(frame)
+            barra.pack(fill=X, padx=10, pady=(8, 4))
+            ttk.Label(barra, text="👤 Pacientes", font=("Segoe UI", 14, "bold")).pack(side=LEFT)
+
+            self._pac_resumen = ttk.Label(barra, text="", font=("Segoe UI", 9),
+                                          foreground="#5f6472")
+            self._pac_resumen.pack(side=LEFT, padx=(12, 0))
+
+            ttk.Button(barra, text="↻ Actualizar", bootstyle="secondary",
+                       command=self._pac_refrescar).pack(side=RIGHT)
+            self._pac_solo_multi = tk.BooleanVar(value=False)
+            ttk.Checkbutton(barra, text="Solo con varios estudios",
+                            variable=self._pac_solo_multi, bootstyle="round-toggle",
+                            command=self._pac_refrescar).pack(side=RIGHT, padx=10)
+
+            fbuscar = ttk.Frame(frame)
+            fbuscar.pack(fill=X, padx=10, pady=(0, 6))
+            self._pac_buscar = tk.StringVar()
+            e = ttk.Entry(fbuscar, textvariable=self._pac_buscar, font=("Segoe UI", 10))
+            e.pack(fill=X)
+            e.insert(0, "")
+            ttk.Label(fbuscar, text="Buscar por nombre o cédula…", font=("Segoe UI", 8),
+                      foreground="#8a8f98").pack(anchor="w")
+            self._pac_buscar.trace_add("write", lambda *_: self._pac_refrescar_debounce())
+
+            cont = ttk.Frame(frame)
+            cont.pack(expand=True, fill=BOTH, padx=10, pady=(0, 10))
+            self.sheet_pac = Sheet(
+                cont,
+                treeview=True,
+                headers=list(self._PAC_COLS),
+                # El índice ES la columna del árbol: ahí van la flecha de desplegar,
+                # la sangría y el nombre del paciente / nº de caso. Sin él no hay
+                # forma de expandir nada.
+                show_row_index=True,
+                index_width=330,
+                treeview_indent=24,
+                headers_height=30,
+                default_row_height=25,
+                header_font=("Segoe UI", 10, "bold"),
+                font=("Segoe UI", 10, "normal"),
+                header_bg="#E8F5E9", header_fg="#1B5E20",
+                table_bg="white", table_fg="black",
+                table_selected_cells_bg="#BBDEFB", table_selected_cells_fg="black",
+                startup_select=None,
+                empty_horizontal=0, empty_vertical=0,
+            )
+            self.sheet_pac.pack(expand=True, fill=BOTH)
+            self.sheet_pac.enable_bindings("copy", "row_select", "drag_select",
+                                           "arrowkeys", "rc_select")
+            self.sheet_pac.bind("<Double-Button-1>", self._pac_abrir_ficha, add="+")
+            self._pac_refrescar()
+        except Exception:
+            logging.exception("No se pudo construir la pestaña 'Por Paciente'")
+
+    def _pac_refrescar_debounce(self):
+        """Evita reconstruir el árbol en cada tecla."""
+        try:
+            if getattr(self, "_pac_after", None):
+                self.after_cancel(self._pac_after)
+        except Exception:
+            pass
+        self._pac_after = self.after(350, self._pac_refrescar)
+
+    def _pac_refrescar(self):
+        try:
+            sheet = getattr(self, "sheet_pac", None)
+            if sheet is None:
+                return
+            df = getattr(self, "master_df", None)
+            if df is None or getattr(df, "empty", True) \
+                    or "N. de identificación" not in df.columns:
+                return
+            filas, n_pac, n_est = self._pac_construir_filas(
+                df,
+                solo_multi=bool(getattr(self, "_pac_solo_multi", None)
+                                and self._pac_solo_multi.get()),
+                filtro=(getattr(self, "_pac_buscar", None).get()
+                        if getattr(self, "_pac_buscar", None) else ""))
+            n = len(self._PAC_COLS)
+            if not filas:
+                sheet.set_sheet_data([[""] * n], redraw=True)
+            else:
+                # Las 3 últimas columnas (texto del árbol, iid y padre) son de
+                # servicio: tree_build las consume y con include_*_column=False no
+                # entran en la tabla. Si no, aparecían como dos columnas sueltas
+                # "G" y "H" llenas de "P#12345678".
+                sheet.tree_build(data=filas, iid_column=n + 1, parent_column=n + 2,
+                                 text_column=n, open_ids=[], ncols=n,
+                                 include_text_column=False, include_iid_column=False,
+                                 include_parent_column=False)
+                for i, ancho in enumerate((110, 175, 165, 430, 430, 95)):
+                    try:
+                        sheet.column_width(column=i, width=ancho, redraw=False)
+                    except Exception:
+                        pass
+                sheet.redraw()
+            if getattr(self, "_pac_resumen", None) is not None:
+                self._pac_resumen.config(
+                    text=f"{n_pac:,} pacientes  ·  {n_est:,} estudios".replace(",", "."))
+        except Exception:
+            logging.exception("No se pudo refrescar la vista por paciente")
+
+    def _pac_abrir_ficha(self, event=None):
+        """Doble clic -> ficha completa del paciente (la misma de V6.9.58)."""
+        try:
+            sheet = self.sheet_pac
+            r = sheet.identify_row(event, allow_end=False)
+            if r is None:
+                return
+            # identify_row da la fila MOSTRADA; con los pacientes colapsados eso NO
+            # coincide con la fila de datos (hay miles de estudios ocultos entre
+            # medias). Sin traducir el índice se abría la ficha de otro paciente.
+            filas_vis = sheet.MT.displayed_rows
+            if not sheet.MT.all_rows_displayed and filas_vis is not None:
+                if r >= len(filas_vis):
+                    return
+                r = filas_vis[r]
+            # El iid del nodo ES el identificador: nº de caso en los estudios y
+            # "P#<cédula>" en la fila del paciente. Se lee de ahí en vez de
+            # parsear el texto que se dibuja.
+            iid = str(getattr(sheet.MT._row_index[r], "iid", "")) \
+                if r < len(sheet.MT._row_index) else ""
+            num = (self._primer_caso_de_cedula(iid[len(self._PAC_PREFIJO):])
+                   if iid.startswith(self._PAC_PREFIJO) else iid)
+            if num:
+                self._mostrar_ficha_paciente(num)
+        except Exception:
+            logging.exception("No se pudo abrir la ficha desde la vista por paciente")
+
+    def _primer_caso_de_cedula(self, ced) -> str:
+        """Nº de caso de cualquier estudio de esa cédula (para abrir su ficha)."""
+        try:
+            ced = re.sub(r"\D", "", str(ced or ""))
+            df = getattr(self, "master_df", None)
+            if not ced or df is None or getattr(df, "empty", True):
+                return ""
+            m = (df["N. de identificación"].fillna("").astype(str)
+                 .str.replace(r"\D", "", regex=True)) == ced
+            if not m.any():
+                return ""
+            return str(df.loc[m, "Numero de caso"].iloc[0]).strip()
+        except Exception:
+            return ""
 
     # ================================================================
     #  V6.9.58 — FICHA DEL PACIENTE (agrupa IHQ + Coloraciones)

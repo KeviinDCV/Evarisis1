@@ -251,11 +251,40 @@ def columna_tiene_datos(df, col) -> bool:
     return bool((~vals.isin(_NA_DISPLAY)).any())
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.73: los BIOMARCADORES salen de la tabla.
+# De las 139 columnas que se mostraban, 125 eran biomarcadores: el 90% del ancho
+# de la tabla para un dato que casi siempre está vacío en la fila que miras. Ahora
+# viven donde tienen sentido: en la FICHA DEL PACIENTE, agrupados por estudio y
+# mostrando SOLO los que ese estudio tiene con resultado.
+#
+# Es un cambio de VISTA, no de datos: la BD los conserva, la exportación a Excel
+# los sigue llevando (lee de la BD, no de la tabla), la búsqueda y el orden no
+# cambian. Un solo interruptor para que la tabla Tkinter y el visor Qt sigan en
+# paridad exacta, que fue lo que se buscó en V6.9.50.
+#
+# IHQ_ORGANO e IHQ_ESTUDIOS_SOLICITADOS NO son biomarcadores: son metadatos del
+# estudio (órgano de la muestra y qué panel pidió el patólogo) y se quedan.
+# ═══════════════════════════════════════════════════════════════════════════
+# V6.9.73: se probó ocultarlos (139 -> 17 columnas) pero el usuario los quiere en el
+# Visualizador: es donde se comparan biomarcadores entre casos. El interruptor se deja
+# porque la infraestructura ya está y puede querer apagarlos en otro momento.
+MOSTRAR_BIOMARCADORES_EN_TABLA = True
+BIO_NO_ES_BIOMARCADOR = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
+
+
+def es_columna_biomarcador(col) -> bool:
+    c = str(col or "").strip().upper()
+    return c.startswith("IHQ_") and c not in BIO_NO_ES_BIOMARCADOR
+
+
 def columnas_visibles(df, cols=None):
     """Columnas a mostrar: las de identidad SIEMPRE + las demás solo si aplican
     (tienen algún dato real en el df mostrado). Evita el mar de 'N/A'."""
     if cols is None:
         cols = COLS_TO_SHOW
+    if not MOSTRAR_BIOMARCADORES_EN_TABLA:
+        cols = [c for c in cols if not es_columna_biomarcador(c)]
     if df is None or getattr(df, "empty", True):
         return [c for c in cols if c in getattr(df, "columns", []) and c in COLS_SIEMPRE]
     out = []

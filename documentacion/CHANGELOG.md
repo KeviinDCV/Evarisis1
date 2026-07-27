@@ -1,5 +1,143 @@
 # Changelog
 
+## [6.9.73] - 2026-07-27 — Auditoría del informe estadístico: 7 bugs de clasificación · vista Por Paciente · rótulos de coloración
+
+Cuatro frentes: auditoría del **Informe estadístico (PDF)**, arreglos en el diagnóstico principal, una vista nueva agrupada por paciente, y el rótulo del espécimen que se guardaba como diagnóstico en las coloraciones.
+
+---
+
+### 1. Informe estadístico: la aritmética estaba bien, la clasificación no
+
+Auditoría con 14 agentes (7 recalculando cada bloque contra los datos crudos + 7 escépticos intentando tumbar cada hallazgo): **29 hallazgos confirmados, 6 descartados**.
+
+**76 cifras verificadas una a una y todas cuadran**: periodo, los 2.076 casos, el 68,8 %, las 89 filas de la tabla maestra con sus columnas Hombres/Mujeres, las 22 no oncológicas, los 12 órganos, los 12 biomarcadores. Los bloques *Resumen por sexo* y *Órganos/Biomarcadores* salieron limpios al 100 %.
+
+El problema no era el cálculo: era **qué se cuenta y cómo se etiqueta**.
+
+| KPI | antes | ahora |
+|---|--:|--:|
+| **% MALIGNOS** | 68,8 % | **67,1 %** |
+| **TUMORES ANALIZADOS** | 1.613 | **1.566** |
+| Casos CON diagnóstico | 1.950 (93,9 %) | **2.002 (96,4 %)** |
+| Casos SIN diagnóstico | 126 (6,1 %) | **74 (3,6 %)** |
+| Carcinoma de pulmón | 40 | **48** |
+| Linfoma Hodgkin | 12 | **15** |
+| «Estudio IHQ de marcadores» | 71 | **18** |
+
+**169 casos recategorizados** y **35 malignidades corregidas**.
+
+#### Los siete bugs
+
+1. **Primarios contados como metástasis.** `ORIGEN PULMONAR` era patrón de *carcinoma metastásico*: 8 adenocarcinomas primarios de pulmón, en muestras **de pulmón**, contaban como metástasis. Ahora se exige que el dx diga metástasis **o** que el órgano no coincida con el origen declarado.
+2. **La falta de ortografía decidía la categoría.** `HODKING` (3 casos) y `CEULAS`/`CELUULAS` (5) mandaban linfomas a la bolsa genérica mientras los bien escritos iban a su categoría.
+3. **8 informes que DESCARTABAN linfoma contaban como linfoma** — y los 8 estaban marcados `MALIGNO`. Faltaban todas las formas negativas (`SIN COMPROMISO POR LINFOMA`, `NEGATIVO PARA INFILTRACIÓN LINFOMATOSA`).
+4. **La bolsa «SIN TUMOR CLASIFICADO» se evaluaba antes que los tumores**, así que la sola palabra «inmunohistoquímica» ganaba a `LINFOMA T ANAPLÁSICO`. Ahora es último recurso: se anota y se sigue buscando un tumor real. **55 casos recuperados**, 11 de ellos carcinomas ductales de mama.
+5. **PitNET / adenoma de hipófisis**: la misma entidad recibía tres categorías y dos malignidades según cómo la escribiera el patólogo. Unificada (2 → 20 casos) y corregidos los 17 marcados `MALIGNO` — son tumores benignos.
+6. **`LESION BENIGNA / HIPERPLASIA` mezclaba dos cosas.** 77 hiperplasias reactivas, adenosis y pólipos inflamatorios contaban como tumores. Partida en dos; las neoplasias benignas (fibroadenoma, papiloma, adenoma, lipoma) se quedan como oncológicas.
+7. **`AXILA` casaba dentro de `MAXILAR`** — y al arreglarlo aparecieron cuatro hermanos del mismo bug de subcadena:
+
+| valor real | iba a | ahora |
+|---|---|---|
+| `RETROPERITONEO` (14 casos) | Peritoneo / Epiplón | **Retroperitoneo** |
+| `GLÁNDULA ADRENAL` (7) | Riñón *(por «RENAL»)* | **Glándula suprarrenal** |
+| `MAXILAR` (4) | Ganglio linfático | **Hueso** |
+| `PARATIROIDES` (1) | Tiroides | **Paratiroides** |
+| `SILLA TURCA` (1) | Leucemia linfoide aguda *(por «LLA »)* | **Tumor neuroendocrino** |
+
+*Ganglio Linfático* baja de 201 a 195 casos. La tabla declaraba «lo más específico primero» y tres pares estaban invertidos.
+
+#### Verificación de las 35 malignidades
+Revisión **ciega** por 4 revisores que no veían la propuesta: **35 confirmadas, 0 discrepancias**, 3 declaradas AMBIGUAS (NIC I, displasia biliar de bajo grado) y **no tocadas** — mismo criterio que con las 942 de V6.9.71. Backup con evidencia en `backup_malig38_20260727_083121.json`.
+
+#### Un guarda que hizo falta
+La primera versión de la regla marcaba BENIGNO a `IHQ251066` — *"granuloma abierto sin amastigotes **y carcinoma basocelular trabecular y nodular infiltrante**"*. Un mismo espécimen puede traer las dos cosas. Ahora **nunca se degrada a benigno un informe que nombra un cáncer**.
+
+#### Lo que NO se tocó, a propósito
+**66 casos sin diagnóstico** (26 «ver descripción microscópica», 24 médula ósea solo morfología, 16 marcadores sueltos) conservan su etiqueta binaria de malignidad. Escribir `BENIGNO` ahí sería inventar exactamente igual que dejar `MALIGNO`: el informe no dice nada. La solución honesta es un tercer estado y sacarlos del denominador — decisión de esquema, pendiente.
+
+Quedan también sin tocar los puntos de **presentación** que la auditoría marcó como engañosos: la columna «Órgano principal» (46 de 89 filas deciden la moda con n≤3 o con empate), `CARCINOMA METASTÁSICO` como cajón de sastre (128 de 175 sí dicen el origen), y el KPI «192 categorías anatómicas» (~74 son órganos reales).
+
+---
+
+### 2. Diagnóstico principal: 6 arreglos en el extractor
+
+| | inicio | ahora |
+|---|--:|--:|
+| aciertos en el banco de 44 casos difíciles | 27 | **36** |
+| coincidencia con la BD (2.076) | 2.054 | **2.057** |
+| regresiones | — | **0** |
+
+La errata `FAVORCEN` del propio informe, siete formas de basura que el guarda dejaba pasar como diagnóstico (encabezados de página, la técnica suelta, paréntesis truncados), cortes de frontera (`BORDES DE RESECCIÓN`, `BLOQUE A3`, `VER` colgando) y el retroceso al **espécimen A** cuando la zona del diagnóstico queda vacía.
+
+**Cuatro «regresiones» resultaron ser correcciones:** la BD guardaba el *antecedente entre paréntesis* como diagnóstico — `(historia de linfoma de Hodgkin)` → `'LINFOMA DE HODGKIN)'` — cuando el informe decía `PROLIFERACIÓN LINFOIDE ATÍPICA DE CÉLULAS T`.
+
+⚠️ Un intento intermedio devolvía en `IHQ251205` *"NEGATIVO PARA LESIÓN INTRAEPITELIAL"* (espécimen B) cuando el espécimen A sí tenía una lesión NIC I. Corregido: el retroceso va siempre al primer espécimen.
+
+---
+
+### 3. Vista «Por Paciente» (pestaña nueva)
+
+El Visualizador es una fila por **estudio** —correcto para estadística y exportación—, pero dejaba los estudios de un mismo paciente dispersos por la lista. La pestaña nueva los agrupa: **18.271 pacientes · 22.547 estudios**, una fila por paciente que se despliega.
+
+```
+› ACENETH SUAREZ PINEDA  66991337  2 · 1 IHQ + 1 coloración
+   🔬 IHQ250221  IHQ         MAMA  CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL)  HER2: NEGATIVO (0) · KI-67: 30% · …
+   🎨 M2515312   Coloración  MAMA  CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).
+```
+
+Columnas: Cédula · Estudios · Órgano · Diagnóstico · **Biomarcadores** · Fecha. La columna de biomarcadores muestra **solo los que ese estudio tiene**, en una línea, en vez de 125 columnas casi siempre vacías; los `NO MENCIONADO` se conservan (son señal real de calidad del dato) pero van al final. Doble clic abre la ficha completa del paciente.
+
+Incluye buscador en vivo por nombre o cédula y un interruptor **«Solo con varios estudios»** (3.071 de 18.271).
+
+**Se agrupa SOLO por cédula.** Las filas sin cédula fiable salen sueltas, marcadas `(sin cédula)`: agrupar por nombre fusionaría homónimos, y mezclar la historia clínica de dos pacientes distintos es un error grave, no un detalle de presentación.
+
+**La fila del paciente deja Órgano y Diagnóstico vacíos** a propósito: elegir el diagnóstico de un estudio para «representar» al paciente sería afirmar algo que el informe no dice.
+
+Construirla tardaba 10,2 s leyendo el DataFrame fila a fila; volcando las columnas a listas bajó a **0,3 s**.
+
+⚠️ El mismo árbol **no** se pudo montar sobre la tabla del Visualizador: `tree_build` de tksheet revienta con `KeyError: 0` al reutilizar esa hoja. Descartadas ocho condiciones (datos, kwargs, `grid`, `enable_bindings`, ventana dibujada, pestaña no visible, `safety`, resets) — fuera de la app funciona siempre, dentro falla siempre. Sobre una **hoja nueva creada en modo árbol** funciona sin problema, que es como está hecha esta vista. La tabla del Visualizador quedó sin tocar.
+
+También se probó **quitar los biomarcadores del Visualizador** (139 → 17 columnas). Revertido a petición del usuario: es donde se comparan biomarcadores entre casos. El interruptor `MOSTRAR_BIOMARCADORES_EN_TABLA` queda en `core/columnas_visor.py` por si se quiere apagar en otro momento; afecta a la vez a la tabla Tkinter y al visor Qt, para no romper la paridad buscada en V6.9.50.
+
+---
+
+### 4. Coloraciones: el rótulo del espécimen se guardaba como diagnóstico
+
+La sección DIAGNÓSTICO empieza describiendo la muestra, y se guardaba el bloque entero:
+
+```
+A. Mama izquierda. Tumor. Cuadrantectomía.        ← rótulo (lo que se leía en la tabla)
+CARCINOMA INVASIVO DE TIPO NO ESPECIAL (DUCTAL).  ← el diagnóstico, debajo
+GRADO HISTOLÓGICO NOTTINGHAM GRADO 2.
+```
+
+Corregidas **16.002 filas**: 15.247 de coloración + 755 filas IHQ que llevan copia del mismo texto. Se limpian las dos, o la reconciliación dejaría de reconocerlas como el mismo diagnóstico.
+
+| | |
+|---|--:|
+| filas corregidas | **16.002** |
+| líneas de rótulo quitadas | 19.960 |
+| líneas quitadas que contenían un diagnóstico | **0** |
+| filas rechazadas por el control de integridad | **0** |
+
+Solo se borran **líneas completas**, nunca fragmentos, y únicamente si la línea **termina** nombrando el procedimiento **y no contiene ningún término diagnóstico**. Si al quitar el rótulo no quedaría nada, se conserva el original (pasó en 1 caso: `M2513836`). Respaldo con antes/después/líneas quitadas en `backup_rotulos_coloracion_20260727_143811.json`.
+
+🔴 **Acoplamiento que casi cuesta 13.839 procedimientos.** El rótulo es la **única fuente** del campo Procedimiento (`…Biopsia por endoscopia` → `BIOPSIA`), y lo consumen `extraer_procedimiento()` y `clasificar_malignidad()`. Quitarlo dentro de `extraer_diagnostico` los habría borrado en silencio — el 68 % de las filas de coloración. Ahora el bloque completo sigue alimentando las derivaciones y el rótulo se quita **solo al guardar el campo**, en `agrupar_y_extraer`. Verificado tras aplicar: Procedimiento intacto en **20.049/20.471 (97,9 %)**.
+
+---
+
+### Archivos
+```
+core/normalizador_diagnosticos.py        categorizador: 6 de los 7 bugs
+core/normalizador_organos.py             bugs de subcadena + orden de evaluación
+core/unified_extractor.py                dx principal + malignidad coherente
+core/extractors/coloracion_extractor.py  rótulo del espécimen
+core/columnas_visor.py                   interruptor de biomarcadores en tabla
+core/enhanced_database_dashboard.py      pestaña Por Paciente
+ui.py                                    vista Por Paciente
+```
+
+
 ## [6.9.71] - 2026-07-27 — Malignidad de coloraciones: las 942 adjudicadas, 229 corregidas
 
 Adjudicación completa de las **942 discrepancias** de Malignidad en las 20.471 filas de coloración, con doble verificación ciega contra el informe.
