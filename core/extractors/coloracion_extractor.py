@@ -82,6 +82,22 @@ _RE_NOMBRE = re.compile(r"Nombre\s*\n?\s*:\s*(.+?)\s*\n?\s*N\.?\s*petici", re.IG
 _RE_GENERO = re.compile(r"Genero\s*\n?\s*:\s*([A-Za-z]+)", re.IGNORECASE)
 _RE_EDAD = re.compile(r"Edad\s*\n?\s*:\s*(\d{1,3})", re.IGNORECASE)
 _RE_FECHA_INF = re.compile(r"Fecha\s+Informe\s*\n?\s*:\s*(\d{2}/\d{2}/\d{4})", re.IGNORECASE)
+# V6.9.77: el informe de coloración trae estos CINCO campos con etiqueta fija —
+# medido: aparecen en el 100% de los casos de la muestra— pero no se leían. La
+# demografía se quedaba en 8 campos y se perdían ~20.660 valores por campo.
+# Las etiquetas y el formato son los MISMOS que ya usan las de arriba (la etiqueta,
+# salto de línea opcional, dos puntos, valor hasta fin de línea).
+_RE_EPS = re.compile(r"EPS\s*\n?\s*:\s*([^\n]+)", re.IGNORECASE)
+_RE_MEDICO = re.compile(r"M[eé]dico\s+tratante\s*\n?\s*:\s*([^\n]+)", re.IGNORECASE)
+_RE_SERVICIO = re.compile(r"Servicio\s*\n?\s*:\s*([^\n]+)", re.IGNORECASE)
+_RE_FECHA_ING = re.compile(r"Fecha\s+Ingreso\s*\n?\s*:\s*(\d{2}/\d{2}/\d{4})", re.IGNORECASE)
+# El nombre del patólogo va en la línea ANTERIOR a la etiqueta, no después:
+#     ARMANDO CORTES BUELVAS
+#     Responsable del análisis:
+#     MD Patólogo            <- esto es el CARGO, no el nombre
+# Capturarlo por detrás devolvía "MD Patóloga" en el 100% de los casos.
+_RE_PATOLOGO = re.compile(
+    r"\n\s*([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ ]{5,60}?)\s*\n\s*Responsable\s+del\s+an[aá]lisis")
 # ── Órgano (columna "Organo" de la tabla "Estudios solicitados") ────────────
 # V6.9.49 FIX órgano coloración: el ÓRGANO está en la columna "Organo" de la
 # tabla "Estudios solicitados" (la misma sección que usa el flujo IHQ). El
@@ -471,7 +487,13 @@ def extraer_organo(texto_caso: str) -> str:
 
 
 def extraer_demografia(texto_caso: str) -> Dict[str, str]:
-    """Demografía mínima del PDF M (solo datos REALES presentes; lo ausente queda '')."""
+    """Demografía del PDF M (solo datos REALES presentes; lo ausente queda '').
+
+    V6.9.77: dejó de ser "mínima". Antes solo leía 8 campos y los otros cinco que el
+    informe SÍ trae —EPS, médico tratante, servicio, fecha de ingreso y patólogo— se
+    quedaban fuera, así que 20.471 filas de coloración (el 91% de la BD) los tenían
+    vacíos aunque estuvieran impresos en el PDF.
+    """
     d: Dict[str, str] = {}
     mc = _RE_CEDULA.search(texto_caso)
     if mc:
@@ -493,6 +515,18 @@ def extraer_demografia(texto_caso: str) -> Dict[str, str]:
     org = extraer_organo(texto_caso)
     if org:
         d["Organo"] = org
+    # V6.9.77: los cinco campos que faltaban. Mismo criterio que el resto: solo se
+    # guarda lo que el informe trae de verdad; si la etiqueta no está, no se inventa.
+    for col, rx in (("EPS", _RE_EPS),
+                    ("Médico tratante", _RE_MEDICO),
+                    ("Servicio", _RE_SERVICIO),
+                    ("Fecha de ingreso (2. Fecha de la muestra)", _RE_FECHA_ING),
+                    ("Patologo", _RE_PATOLOGO)):
+        m = rx.search(texto_caso)
+        if m:
+            v = re.sub(r"\s+", " ", m.group(1)).strip(" .:-")
+            if v and v.upper() not in ("N/A", "NA", "SIN DATO"):
+                d[col] = v
     return d
 
 

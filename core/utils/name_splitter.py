@@ -84,8 +84,20 @@ def split_full_name(full_name: str) -> Dict[str, str]:
     # El número contaba como token y ocupaba el puesto del primer nombre, con lo que la
     # fila acababa SIN nombre ni apellido. Un token puramente numérico nunca es parte de
     # un nombre: se descarta (el nº de identificación se extrae por su propio campo).
-    tokens = [t for t in name_clean.split()
-              if t and len(t) > 1 and not t.replace('.', '').replace('-', '').isdigit()]
+    # V6.9.77: el filtro `len(t) > 1` tiraba TODA palabra de una letra, y con ella
+    # las INICIALES intermedias del informe:
+    #   "ELISA DE C ECHETO ECHETO"  -> se perdía la "C"
+    #   "MARINA A CARDONA SAAVEDRA" -> se perdía la "A"
+    # Una inicial es parte del nombre legal del paciente, así que se conserva si es
+    # una LETRA. Lo que se sigue descartando es la basura de verdad: dígitos sueltos
+    # y signos ("-", ".", "1"), que es para lo que estaba puesto el filtro.
+    def _util(t: str) -> bool:
+        limpio = t.replace('.', '').replace('-', '')
+        if not limpio or limpio.isdigit():
+            return False
+        return len(limpio) > 1 or limpio.isalpha()
+
+    tokens = [t for t in name_clean.split() if _util(t)]
     
     if not tokens:
         return {

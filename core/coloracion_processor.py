@@ -31,6 +31,11 @@ _COLS_DEMOGRAFIA = (
     "N. de identificación", "Tipo de documento",
     "Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido",
     "Genero", "Edad", "Organo", "Fecha Informe",
+    # V6.9.77: estos CINCO vienen impresos en el informe de coloración y no se
+    # copiaban, así que 20.471 filas (el 91% de la BD) los tenían vacíos. Sin esta
+    # lista no llegan a la BD aunque el extractor ya los lea.
+    "EPS", "Médico tratante", "Servicio",
+    "Fecha de ingreso (2. Fecha de la muestra)", "Patologo",
 )
 
 # V6.9.55: la descripción REAL del tejido de la coloración (macro/micro del estudio de
