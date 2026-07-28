@@ -89,6 +89,10 @@ def _load_config() -> Dict[str, Any]:
     sec = parser["database"]
     tipo = sec.get("tipo", "sqlite").lower().strip()
     cfg: Dict[str, Any] = {"tipo": tipo}
+    # V6.9.75: interruptor del modelo relacional (fase 1). Por defecto NO, para que
+    # una instalación que aún no lo tenga poblado siga leyendo la tabla plana.
+    cfg["usar_modelo_relacional"] = sec.getboolean("usar_modelo_relacional",
+                                                   fallback=False)
     if tipo == "mysql":
         cfg.update({
             "host": sec.get("host", "127.0.0.1"),

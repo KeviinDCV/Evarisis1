@@ -1008,6 +1008,35 @@ def _save_records_mysql(records: List[Dict[str, Any]]) -> int:
     return saved_count
 
 
+def _sincronizar_modelo_relacional(records: List[Dict[str, Any]]) -> None:
+    """Propaga al modelo relacional los casos recién guardados. Nunca lanza:
+    el dato ya está en la tabla plana, que es la fuente de verdad en la fase 2."""
+    conn = None
+    try:
+        from core import modelo_relacional as _mr
+        nums = []
+        for r in records:
+            for k in ("Numero de caso", "N. peticion (0. Numero de biopsia)"):
+                v = str((r or {}).get(k, "") or "").strip()
+                if v:
+                    nums.append(v)
+                    break
+        if not nums:
+            return
+        conn = _adapter_get_connection()
+        cur = conn.cursor()
+        _mr.sincronizar_casos(cur, nums, log=logger.debug)
+        conn.commit()
+    except Exception as e:
+        logger.warning(f"[modelo relacional] no se pudo sincronizar tras guardar "
+                       f"({e}); la próxima lectura lo resincronizará")
+    finally:
+        try:
+            conn.close()
+        except Exception:
+            pass
+
+
 def save_records(records: List[Dict[str, Any]]) -> int:
     """Guarda una lista de registros (diccionarios) en la base de datos.
 
@@ -1025,7 +1054,16 @@ def save_records(records: List[Dict[str, Any]]) -> int:
 
     # === V6.9.0: Branch MySQL via adapter (multi-usuario LAN) ===
     if _use_mysql():
-        return _save_records_mysql(records)
+        n = _save_records_mysql(records)
+        # V6.9.76 (fase 2): propagar al modelo relacional SOLO los casos que se
+        # acaban de escribir. No se replica aquí la lógica de UPSERT parcial: se
+        # deja que la tabla plana se escriba como siempre y luego se re-leen de
+        # ella esos casos, así los dos modelos no pueden divergir.
+        # Si algo falla, NO se propaga el error: el dato ya está guardado, y la
+        # huella hará que la siguiente lectura resincronice sola.
+        if n and _leer_de_modelo_relacional():
+            _sincronizar_modelo_relacional(records)
+        return n
 
     # === Flujo SQLite legacy ===
     saved_count = 0
@@ -1185,6 +1223,16 @@ def save_records(records: List[Dict[str, Any]]) -> int:
     return saved_count
 
 
+def _leer_de_modelo_relacional() -> bool:
+    """Interruptor de config: [database] usar_modelo_relacional. Por defecto NO,
+    para que instalaciones que aún no han migrado sigan igual."""
+    try:
+        from core.db_adapter import _load_config
+        return bool((_load_config() or {}).get("usar_modelo_relacional", False))
+    except Exception:
+        return False
+
+
 def get_all_records_as_dataframe() -> pd.DataFrame:
     """Obtiene todos los registros de la BD y los devuelve como un DataFrame de Pandas.
 
@@ -1199,6 +1247,35 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
     except Exception as e:
         logger.error(f"No se pudo inicializar la base de datos antes de la consulta: {e}")
         return pd.DataFrame()
+    # V6.9.75 (fase 1): leer del MODELO RELACIONAL en vez de la tabla plana.
+    # El contrato NO cambia: devuelve el mismo DataFrame de 189 columnas, así que
+    # dashboard, informe PDF, auditor, exportaciones y vista Por Paciente siguen
+    # funcionando sin tocarlos.
+    # Mientras la ESCRITURA siga yendo a la tabla plana (eso es la fase 2), esa
+    # tabla manda: antes de leer se compara su huella (CHECKSUM ... EXTENDED,
+    # 95 ms) y si cambió se resincroniza. Es imposible servir datos obsoletos.
+    # Ante CUALQUIER problema se cae al camino de siempre: la app nunca se queda
+    # sin datos por culpa de esto.
+    if _use_mysql() and _leer_de_modelo_relacional():
+        try:
+            from core import modelo_relacional as _mr
+            conn = _adapter_get_connection()
+            cur = conn.cursor()
+            _mr.sincronizar_si_hace_falta(cur, log=logger.info)
+            conn.commit()
+            df = _mr.leer_dataframe(conn, cur)
+            logger.info(f"Cargados {len(df)} registros del modelo relacional")
+            return df
+        except Exception as e:
+            logger.warning(f"[modelo relacional] no disponible ({e}); "
+                           f"se lee la tabla plana")
+        finally:
+            try:
+                conn.close()
+            except Exception:
+                pass
+            conn = None
+
     conn = None
     try:
         if _use_mysql():
