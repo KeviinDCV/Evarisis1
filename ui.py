@@ -5644,13 +5644,26 @@ Disco {i}:
             res.sort(key=lambda x: x[0])
             return "   ·   ".join(t for _, t in res)
 
+        def _dx(k):
+            """El diagnóstico vive en un campo distinto según el tipo de estudio."""
+            if self._pac_es_coloracion(num[k]):
+                return _val(dx_col[k], dx_alt[k])
+            return _val(dx_ihq[k], dx_alt[k])
+
+        def _fecha(k):
+            return _val(*(fc[k] for fc in fechas))
+
+        def _orden_fecha(s):
+            """DD/MM/AAAA -> AAAAMMDD para poder comparar. Lo que no case va al
+            final, nunca delante de una fecha real."""
+            m = re.match(r"^\s*(\d{2})/(\d{2})/(\d{4})", str(s or ""))
+            return (m.group(3) + m.group(2) + m.group(1)) if m else ""
+
         # [Cédula, Estudios, Órgano, Diagnóstico, Biomarcadores, Fecha] + [texto, iid, parent]
         def _fila_estudio(k, pid):
             es_col = self._pac_es_coloracion(num[k])
-            # el diagnóstico vive en un campo distinto según el tipo de estudio
-            dx = (_val(dx_col[k], dx_alt[k]) if es_col else _val(dx_ihq[k], dx_alt[k]))
             return ["", "Coloración" if es_col else "IHQ",
-                    _val(organo[k]), dx, _bio(k), _val(*(fc[k] for fc in fechas)),
+                    _val(organo[k]), _dx(k), _bio(k), _fecha(k),
                     ("🎨  " if es_col else "🔬  ") + num[k],
                     num[k] or f"_e{k}", pid]
 
@@ -5669,11 +5682,29 @@ Disco {i}:
             if n_col:
                 partes.append("1 coloración" if n_col == 1 else f"{n_col} coloraciones")
             pid = self._PAC_PREFIJO + c
-            # Fila del PACIENTE: resume cuántos estudios tiene y de qué tipo.
-            # Órgano/Diagnóstico van VACÍOS a propósito: son de cada estudio y
-            # elegir uno para "representar" al paciente sería afirmar algo que
-            # el informe no dice.
-            filas.append([c, f"{len(estudios)}  ·  " + " + ".join(partes), "", "", "", "",
+            # Fila del PACIENTE. V6.9.85: deja de ir en blanco, pero SIN elegir un
+            # estudio para "representar" al paciente —eso afirmaría algo que el
+            # informe no dice, y era la razón de vaciarla—. Solo se muestra lo que
+            # es cierto del paciente entero:
+            #   · Órgano      el CONJUNTO de sus órganos, no uno.
+            #   · Diagnóstico solo si TODOS sus estudios dicen lo mismo; si
+            #                 difieren, se deja vacío (hay que abrir y mirar).
+            #   · Fecha       la más reciente, que es un agregado honesto.
+            # Biomarcadores sigue vacío: son de cada estudio y juntarlos daría una
+            # línea ilegible que además mezclaría resultados de muestras distintas.
+            orgs = []
+            for k in estudios:
+                o = _val(organo[k])
+                if o and o not in orgs:
+                    orgs.append(o)
+            org_pac = " · ".join(orgs[:2])
+            if len(orgs) > 2:
+                org_pac += f"  +{len(orgs) - 2}"
+            dxs = {d for d in (_dx(k) for k in estudios) if d}
+            dx_pac = dxs.pop() if len(dxs) == 1 else ""
+            fec_pac = max((_fecha(k) for k in estudios), key=_orden_fecha, default="")
+            filas.append([c, f"{len(estudios)}  ·  " + " + ".join(partes),
+                          org_pac, dx_pac, "", fec_pac,
                           nom[estudios[0]] or "(sin nombre)", pid, ""])
             n_est += len(estudios)
             filas.extend(_fila_estudio(k, pid) for k in estudios)

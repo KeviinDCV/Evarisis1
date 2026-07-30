@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.84",
-    "version_name": "Nombre Completo: columna calculada en los dos caminos de lectura",
+    "version": "6.9.85",
+    "version_name": "Vista Por Paciente: fila de paciente con datos agregados",
     "build_date": "29/07/2026",
-    "build_number": "202607291030",
+    "build_number": "202607291100",
     "release_type": "Stable",
     "codename": "Truthful Diagnosis",
 }

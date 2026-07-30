@@ -1,5 +1,45 @@
 # Changelog
 
+## [6.9.85] - 2026-07-29 — La fila del paciente deja de ir en blanco (sin afirmar nada que el informe no diga)
+
+En la vista Por Paciente, las columnas **Órgano, Diagnóstico, Biomarcadores y Fecha** salían vacías. No era un fallo: la fila del paciente las dejaba en blanco **a propósito**, y el motivo sigue siendo bueno —
+
+> elegir uno de sus estudios para «representar» al paciente afirmaría algo que el informe no dice.
+
+El problema es de lectura, no de dato: cuatro de seis columnas en blanco parecen una tabla rota, y el usuario no tiene por qué saber que hay que desplegar la flecha.
+
+### Qué se puede decir del paciente entero sin mentir
+
+| columna | qué muestra ahora |
+|---|---|
+| **Órgano** | el **conjunto** de sus órganos (`MAMA · PIEL`, y `+N` si hay más), no uno elegido |
+| **Diagnóstico** | solo si **todos** sus estudios dicen lo mismo; si difieren, sigue vacío |
+| **Fecha** | la más reciente — un agregado honesto |
+| **Biomarcadores** | sigue vacío: son de cada estudio, y juntarlos mezclaría resultados de muestras distintas en una línea ilegible |
+
+```
+filas de paciente        18.199
+   sin Órgano                 0   (antes: todas)
+   sin Diagnóstico        3.066   (17 % — sus estudios discrepan, es correcto)
+   sin Fecha                  0   (antes: todas)
+```
+
+### La comprobación que importa
+
+No basta con que se rellene: hay que probar que **nada de lo que muestra el padre contradice a sus hijos**. Verificado sobre los 18.199 pacientes, comparando cada fila con la de sus estudios:
+
+```
+filas de paciente que afirman algo que sus estudios no dicen: 0
+```
+
+Coste de la agregación: **0,048 s** sobre 18.199 pacientes.
+
+⚠️ **Se descartó normalizar el diagnóstico antes de compararlo** (quitar puntuación y tildes para dar por iguales `'- MIXOMA CARDIACO.'` y `'MIXOMA CARDIACO'`). Medido: rellenaría **20 de 3.066** filas más, un 0,7 %, a cambio de arriesgarse a fundir diagnósticos que sí difieren. No compensa.
+
+Eso sí, destapa un detalle de datos para otro día: algunos diagnósticos de coloración vienen con un guion inicial (`'- GLIOBLASTOMA.'`) que es residuo del formato del informe.
+
+---
+
 ## [6.9.84] - 2026-07-29 — «(sin nombre)»: la columna calculada que la lectura relacional se dejó atrás
 
 Los pacientes salían como **«(sin nombre)»** con su cédula al lado. El dato nunca se perdió: estaba en la base, repartido en `Primer nombre`, `Segundo nombre`, `Primer apellido` y `Segundo apellido`. Lo que faltaba era quien lo compusiera.
