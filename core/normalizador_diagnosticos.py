@@ -29,6 +29,95 @@ def normalizar_texto(valor: str) -> str:
         return ""
     t = quitar_acentos(valor).upper()
     t = re.sub(r"\s+", " ", t).strip()
+    # V6.6.12 FIX typos del patólogo: corregir errores ortográficos
+    # comunes ANTES del matching de patrones. Estos typos hacen que
+    # casos oncológicos reales (ej. IHQ250060) caigan en
+    # "OTRO / NO CATEGORIZADO".
+    t = t.replace("CARICNOMA", "CARCINOMA")
+    # V6.6.16 FIX IHQ250026: el patólogo escribió "HISTOLOGIOS" (typo
+    # OCR/dactilográfico, falta la 'C'). Sin esta corrección, el
+    # preámbulo "LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA
+    # SON COMPATIBLES CON" no matchea y el caso (MELANOMA) cae en
+    # "ESTUDIO IHQ".
+    t = t.replace("HISTOLOGIOS", "HISTOLOGICOS")
+    return t
+
+
+# V6.6.14 — Preámbulos típicos del patólogo del HUV. Cuando el dx empieza
+# con una de estas frases, la entidad clínica real (CARCINOMA, LINFOMA,
+# MELANOMA, etc.) viene DESPUÉS. Sin stripear el preámbulo, el matching
+# se queda en "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)" porque la palabra
+# "INMUNOHISTOQUIMICA" matchea primero.
+#
+# IMPORTANTE: este stripping ocurre ÚNICAMENTE sobre una copia local del
+# texto durante la categorización. NO modifica el dato original guardado
+# en BD (`Diagnostico Principal`) ni el OCR. El campo del patólogo queda
+# intacto, exactamente como él lo escribió. Solo cambia cómo el bucketing
+# estadístico interpreta el texto para asignar categoría.
+#
+# Ordenado por LONGITUD DESCENDIENTE para que la frase más larga gane
+# primero (ej: "LOS HALLAZGOS MORFOLOGICOS Y EL PERFIL DE EXPRESION..."
+# debe stripear antes que "LOS HALLAZGOS").
+PREAMBULOS_PATOLOGO: list[str] = [
+    "LOS HALLAZGOS MORFOLOGICOS Y EL PERFIL DE EXPRESION DE INMUNOHISTOQUIMICA FAVORECEN",
+    "LOS HALLAZGOS HISTOLOGICOS Y DE INMUNOHISTOQUIMICA SON COMPATIBLES CON",
+    "LOS HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA FAVORECEN",
+    "HALLAZGOS MORFOLOGICOS Y DE INMUNOHISTOQUIMICA COMPATIBLE CON",
+    "HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLES CON",
+    "HALLAZGOS DE INMUNOHISTOQUIMICA COMPATIBLE CON",
+    "PERFIL DE EXPRESION DE INMUNOHISTOQUIMICA COMPATIBLE CON",
+    "PERFIL DE EXPRESION DE INMUNOHISTOQUIMICA QUE FAVORECE",
+    "PERFIL DE INMUNOHISTOQUIMICA COMPATIBLE CON",
+    "LOS HALLAZGOS DE INMUNOHISTOQUIMICA FAVORECEN",
+    "ESTUDIO DE INMUNOHISTOQUIMICA",
+]
+
+
+def stripear_preambulos(texto: str) -> str:
+    """Elimina preámbulos del patólogo del INICIO del texto, solo para
+    propósitos de categorización. NO modifica el dato original.
+
+    Si el texto empieza con un preámbulo conocido y queda contenido
+    sustantivo después, devuelve el contenido residual. Si no, devuelve
+    el texto sin cambios.
+
+    También strip-pea headers de órgano "ÓRGANO:" al inicio (ej.
+    "VEJIGA: HALLAZGOS..." → "HALLAZGOS...").
+    """
+    if not texto:
+        return texto
+
+    t = texto
+
+    def intentar_strip_preambulo(s: str) -> str:
+        for preambulo in PREAMBULOS_PATOLOGO:
+            if s.startswith(preambulo):
+                residual = s[len(preambulo):].strip()
+                # Solo strippear si queda al menos 1 palabra de 4+ chars.
+                # Evita borrar el dx cuando el texto es solo el preámbulo
+                # (caso "ESTUDIO DE INMUNOHISTOQUIMICA" sin más). Permite
+                # 1 palabra para casos como "MELANOMA" o "LEIOMIOSARCOMA"
+                # donde la entidad clínica es una sola palabra.
+                palabras = residual.split()
+                if len(palabras) >= 1 and len(palabras[0]) >= 4:
+                    return residual
+        return s
+
+    # 1. Stripear preámbulo si está al inicio
+    t = intentar_strip_preambulo(t)
+
+    # 2. Stripear header "ÓRGANO:" al inicio (ej. "VEJIGA: ...")
+    # Requisito: 4+ caracteres en mayúsculas (excluye M:, X:, etc.) y
+    # al menos 3 palabras de contenido residual.
+    header_match = re.match(r'^([A-Z]{4,}(?:\s+[A-Z]+)*)\s*:\s*', t)
+    if header_match:
+        residual = t[header_match.end():].strip()
+        if len(residual.split()) >= 3:
+            t = residual
+
+    # 3. Stripear preámbulo OTRA vez (caso "VEJIGA: LOS HALLAZGOS...")
+    t = intentar_strip_preambulo(t)
+
     return t
 
 
@@ -100,6 +189,28 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "RECHAZO DE INJERTO",
         "BANFF",
     ],
+    # V6.6.16 FIX IHQ250037, IHQ250075, IHQ250061: procesos inflamatorios
+    # e infecciosos no oncológicos. Antes caían en OTRO/NO CATEGORIZADO
+    # aunque el extractor de Malignidad los marca BENIGNO correctamente.
+    # Va antes de ESTUDIO IHQ para que matchee primero por la inflamación
+    # específica en lugar del header genérico de IHQ.
+    "INFLAMACION / PROCESO INFECCIOSO": [
+        "INFLAMACION AGUDA",
+        "INFLAMACION CRONICA",
+        "INFLAMACION GRANULOMATOSA",
+        "PERITONITIS AGUDA",
+        "PERITONITIS CRONICA",
+        "PERITONITIS",
+        "COLITIS AGUDA",
+        "COLITIS CRONICA",
+        "GASTRITIS",
+        "ENTERITIS",
+        "PROCTITIS",
+        "GRANULOMA",
+        "ABSCESO",
+        # Hallazgo característico de Hirschsprung sin enfermedad
+        "NO SE IDENTIFICAN CELULAS GANGLIONARES",
+    ],
     "ESTUDIO IHQ (SIN DIAGNOSTICO ESPECIFICO)": [
         "ESTUDIO DE INMUNOHISTOQUIMICA",
         "INMUNOHISTOQUIMICA",
@@ -120,6 +231,18 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "LINFOMA DE CELULAS B",
         "LINFOMA B MADURO",
         "LINFOMA DE LINFOCITOS B",
+        # V6.6.13 FIX IHQ250081: nomenclatura OMS 2022 — algunos patólogos
+        # usan "NEOPLASIA DE CELULAS B" en lugar de "LINFOMA". Captura
+        # estas redacciones para que no caigan en OTRO/NO CATEGORIZADO.
+        "NEOPLASIA DE CELULAS B MADURAS",
+        "NEOPLASIA DE CELULAS B MADURA",
+        "NEOPLASIA B MADURA",
+        # V6.6.14 FIX IHQ250164: "LINFOMA EXTRANODAL DE LA ZONA MARGINAL"
+        # tiene EXTRANODAL en medio, así que el patrón "LINFOMA DE LA
+        # ZONA MARGINAL" no matchea. Agregar "ZONA MARGINAL" como ancla
+        # genérica para capturar todas las variantes (extranodal, nodal,
+        # esplénico, etc.) que son linfomas B por definición.
+        "ZONA MARGINAL",
     ],
     "LINFOMA T/NK": [
         "LINFOMA T", "LINFOMA DE CELULAS T", "LINFOMA NK", "LINFOMA ANAPLASICO",
@@ -132,14 +255,27 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "LINFOMA DE HODGKIN", "LINFOMA HODGKIN CLASICO",
         "ENFERMEDAD DE HODGKIN", "HODGKIN CLASICO", "HODGKIN",
     ],
-    "LINFOMA (OTRO/INESPECIFICO)": ["LINFOMA"],
+    # V6.6.14 FIX IHQ250105: Reordenar — LEUCEMIA MIELOIDE y LEUCEMIA
+    # LINFOIDE AGUDA deben evaluarse ANTES de LINFOMA (OTRO/INESPECIFICO)
+    # porque "LEUCEMIA/LINFOMA LINFOBLASTICO" contiene la palabra
+    # "LINFOMA" que dispararía LINFOMA (OTRO) primero. La leucemia
+    # linfoblástica B (B-ALL/LBL) es una entidad específica.
     "LEUCEMIA MIELOIDE": [
         "LEUCEMIA MIELOIDE", "LEUCEMIA AGUDA MIELOIDE", "LMA", "LAM ",
         "SARCOMA MIELOIDE", "SARCOMA GRANULOCITICO",
     ],
     "LEUCEMIA LINFOIDE AGUDA": [
         "LEUCEMIA LINFOBLASTICA", "LEUCEMIA AGUDA LINFOBLASTICA", "LLA ",
+        # V6.6.14 FIX IHQ250105: B-ALL/LBL puede presentarse como leucemia
+        # o como linfoma; OMS 2022 los unifica. El patólogo a veces escribe
+        # "LEUCEMIA/LINFOMA LINFOBLASTICO". Capturar ambos géneros (-O/-A)
+        # y la forma con barra.
+        "LEUCEMIA/LINFOMA LINFOBLASTICO",
+        "LEUCEMIA/LINFOMA LINFOBLASTICA",
+        "LINFOMA LINFOBLASTICO",
+        "LINFOMA LINFOBLASTICA",
     ],
+    "LINFOMA (OTRO/INESPECIFICO)": ["LINFOMA"],
     "LEUCEMIA (OTRA)": ["LEUCEMIA"],
     "MIELOMA / NEOPLASIA PLASMOCELULAR": [
         "MIELOMA", "PLASMOCITOMA", "NEOPLASIA DE CELULAS PLASMATICAS",
@@ -185,6 +321,26 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "CARCINOMA MEDULAR DE MAMA",
         "CARCINOMA MEDULAR", "CARCINOMA TUBULAR",
         "CARCINOMA METAPLASICO", "CARCINOMA APOCRINO",
+    ],
+    # V6.6.13 FIX IHQ250116: Carcinoma papilar de mama es entidad
+    # distinta de la OMS. El patólogo lo describe a veces como "LESION
+    # NEOPLASICA EN PATRON PAPILAR" sin nombrar explícitamente carcinoma.
+    # Patrones específicos de mama para evitar falsos positivos en otros
+    # órganos (tiroides, vejiga, ovario serio).
+    "CARCINOMA PAPILAR DE MAMA": [
+        "CARCINOMA PAPILAR DE MAMA",
+        "CARCINOMA PAPILAR INTRADUCTAL",
+        "CARCINOMA PAPILAR INVASIVO DE MAMA",
+        "LESION NEOPLASICA EN PATRON PAPILAR",
+        "PATRON PAPILAR CON ATIPIA",
+    ],
+    # V6.6.13 FIX IHQ250071: Tumor Filodes es neoplasia estromal mamaria
+    # distinta de los carcinomas. Puede ser benigno, borderline o maligno.
+    "TUMOR FILODES DE MAMA": [
+        "TUMOR FILODES",
+        "TUMOR PHYLLODES",
+        "FILODES",
+        "PHYLLODES",
     ],
 
     # === Tumores neuroendocrinos ===
@@ -247,6 +403,16 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     # === Piel / melanoma ===
     "MELANOMA": ["MELANOMA"],
     "CARCINOMA BASOCELULAR": ["CARCINOMA BASOCELULAR", "BASOCELULAR"],
+    # V6.6.14 FIX IHQ250166: Carcinoma anexial cutáneo es entidad rara
+    # pero distinta de los carcinomas escamocelulares de piel (origina
+    # de glándulas/anexos cutáneos: sebáceas, sudoríparas, foliculares).
+    "CARCINOMA ANEXIAL CUTANEO": [
+        "CARCINOMA ANEXIAL CUTANEO",
+        "CARCINOMA ANEXIAL",
+        "CARCINOMA DE ANEXOS CUTANEOS",
+        "CARCINOMA SEBACEO",
+        "CARCINOMA SUDORIPARO",
+    ],
 
     # === Sarcomas y partes blandas ===
     "SARCOMA DE KAPOSI": ["SARCOMA DE KAPOSI", "KAPOSI"],
@@ -271,6 +437,20 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "FIBROMATOSIS",
         "DESMOIDE",
     ],
+    # V6.6.13 FIX IHQ250107: Lesiones de células fusiformes son una
+    # categoría histológica que puede contener sarcomas, melanoma
+    # fusocelular, GIST, etc. Cuando el patólogo describe "LESION EN
+    # PATRON FUSIFORME" sin nombrar la entidad específica, va aquí
+    # como neoplasia mesenquimal indeterminada.
+    "NEOPLASIA DE CELULAS FUSIFORMES / FUSOCELULAR": [
+        "NEOPLASIA DE CELULAS FUSIFORMES",
+        "LESION EN PATRON FUSIFORME",
+        "LESION FUSIFORME",
+        "LESION FUSOCELULAR",
+        "TUMOR FUSOCELULAR",
+        "PROLIFERACION FUSOCELULAR",
+        "LESION DE CELULAS FUSIFORMES",
+    ],
 
     # === Vías genitourinarias ===
     "CARCINOMA UROTELIAL": ["UROTELIAL", "CARCINOMA TRANSICIONAL"],
@@ -293,6 +473,19 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
     ],
 
     # === Ginecológico ===
+    # V6.6.13 FIX IHQ250066/IHQ250126: Lesiones intraepiteliales (NIC,
+    # HSIL, LSIL) son neoplasias preinvasivas según OMS. La "N" en NIC
+    # significa Neoplasia. Va ANTES de CARCINOMA DE CERVIX para evitar
+    # que un NIC matchee patrones cervicales invasivos.
+    "LESION ESCAMOSA INTRAEPITELIAL / NIC": [
+        "LESION ESCAMOSA INTRAEPITELIAL",
+        "LESION INTRAEPITELIAL ESCAMOSA",
+        "NEOPLASIA INTRAEPITELIAL CERVICAL",
+        "NEOPLASIA INTRAEPITELIAL",
+        "NIC 3", "NIC 2", "NIC 1",
+        "HSIL", "LSIL",
+        "DISPLASIA CERVICAL",
+    ],
     "CARCINOMA DE CERVIX (ESCAMOCELULAR/ADENO)": [
         "CARCINOMA DE CUELLO UTERINO", "CARCINOMA CERVICAL",
         "CARCINOMA ESCAMOCELULAR DE CERVIX",
@@ -404,11 +597,25 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "ORIGEN COLORRECTAL", "ORIGEN GINECOLOGICO",
     ],
 
+    # === Adenocarcinoma / carcinoma genéricos ===
+    # V6.6.14 FIX IHQ250028, IHQ250147: Reordenados ANTES de RESULTADO IHQ.
+    # Razón: textos como "ADENOCARCINOMA BIEN DIFERENCIADO INFILTRANTE
+    # CON PATRÓN MICROSATELITAL ESTABLE SOBREEXPRESION DE HER-2" empiezan
+    # con ADENOCARCINOMA (entidad clínica real) pero contienen
+    # "SOBREEXPRESION DE" que disparaba RESULTADO IHQ. Si el texto
+    # menciona ADENOCARCINOMA, es un adenocarcinoma — el resultado IHQ
+    # de HER-2 es complementario, no el dx primario.
+    "ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)": [
+        "ADENOCARCINOMA",
+    ],
+    "CARCINOMA (OTRO/INESPECIFICO)": ["CARCINOMA"],
+
     # === Resultado IHQ usado como "diagnóstico" (sin tumor específico) ===
-    # Se evalúa DESPUÉS de todos los carcinomas/linfomas específicos para que
-    # textos como "ADENOCARCINOMA CON EXPRESION POSITIVA DE CK7" matcheen
-    # primero el adenocarcinoma. Solo captura cuando el "diagnóstico" es
-    # estrictamente un resultado IHQ sin entidad clínica nombrada.
+    # Se evalúa DESPUÉS de todos los carcinomas/linfomas específicos y
+    # adenocarcinomas genéricos para que textos como "ADENOCARCINOMA CON
+    # EXPRESION POSITIVA DE CK7" matcheen primero el adenocarcinoma. Solo
+    # captura cuando el "diagnóstico" es estrictamente un resultado IHQ
+    # sin entidad clínica nombrada.
     "RESULTADO IHQ (SIN DIAGNOSTICO ESPECIFICO)": [
         "EXPRESION DE CD",
         "EXPRESION DE LOS MARCADORES",
@@ -424,12 +631,6 @@ CATEGORIAS_DIAGNOSTICO: dict[str, list[str]] = {
         "PERFIL INMUNOHISTOQUIMICO",
         "PANEL INMUNOHISTOQUIMICO",
     ],
-
-    # === Adenocarcinoma genérico (último: solo si no calzó arriba) ===
-    "ADENOCARCINOMA (SIN ORIGEN ESPECIFICADO)": [
-        "ADENOCARCINOMA",
-    ],
-    "CARCINOMA (OTRO/INESPECIFICO)": ["CARCINOMA"],
 
     # === Lesiones benignas ===
     "LESION BENIGNA / HIPERPLASIA": [
@@ -463,6 +664,14 @@ def categorizar_diagnostico(valor: str) -> str:
     if not t or t in {"N/A", "NA", "SIN DATO", "NO MENCIONADO", "NONE", "NULL"}:
         return "SIN DATO"
 
+    # V6.6.14 FIX: Stripear preámbulos del patólogo ANTES del matching.
+    # NO modifica el dato original en BD — solo opera sobre la copia
+    # local `t` para que el matching encuentre la entidad clínica
+    # debajo del preámbulo. Recupera ~13 casos donde el dx oncológico
+    # real estaba escondido tras frases como "PERFIL DE INMUNOHISTOQUIMICA
+    # COMPATIBLE CON CARCINOMA UROTELIAL".
+    t = stripear_preambulos(t)
+
     for categoria in ORDEN_EVALUACION:
         for patron in CATEGORIAS_DIAGNOSTICO[categoria]:
             if patron in t:
@@ -482,6 +691,11 @@ INFERENCIA_POR_ORGANO_ADENO = {
     # ADENOCARCINOMA + órgano → categoría específica
     "COLON": "ADENOCARCINOMA COLORRECTAL",
     "RECTO": "ADENOCARCINOMA COLORRECTAL",
+    # V6.6.14 FIX IHQ250159: el normalizador de órganos devuelve a veces
+    # "TUMOR MUCOSA RECTAL" como literal (variante adjetiva). El patrón
+    # "RECTO" no matchea "RECTAL" como substring (RECTO termina en O,
+    # RECTAL en AL). Agregar "RECTAL" como ancla independiente.
+    "RECTAL": "ADENOCARCINOMA COLORRECTAL",
     "SIGMOIDES": "ADENOCARCINOMA COLORRECTAL",
     "CIEGO": "ADENOCARCINOMA COLORRECTAL",
     "ESTOMAGO": "ADENOCARCINOMA GASTRICO",
@@ -513,6 +727,17 @@ INFERENCIA_POR_ORGANO_ESCAMO = {
     "CAVIDAD ORAL": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
     "ENCIA": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
     "PIEL": "CARCINOMA ESCAMOCELULAR DE PIEL",
+    # V6.6.16: Órganos adicionales detectados como CARCINOMA ESCAMOCELULAR
+    # (OTRO) en producción que pueden refinarse por contexto anatómico.
+    "LABIO": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "BOCA": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "FARINGE": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "HIPOFARINGE": "CARCINOMA ESCAMOCELULAR DE CABEZA Y CUELLO",
+    "NASOFARINGE": "CARCINOMA NASOFARINGEO",
+    "ESOFAGO": "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
+    "ANO": "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
+    "VULVA": "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
+    "VAGINA": "CARCINOMA ESCAMOCELULAR (OTRO/SIN ESPECIFICAR)",
 }
 
 

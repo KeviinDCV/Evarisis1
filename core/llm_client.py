@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🤖 CLIENTE LLM - Local-First (LM Studio) + Cloud Fallback
-==========================================================
+🤖 CLIENTE LLM - Local-First (Ollama / LM Studio) + Cloud Fallback
+==================================================================
 
-Prioridad de proveedores:
-  1. LM Studio LOCAL  (datos NUNCA salen del PC - HIPAA/Ley 1581 safe)
-  2. Google Gemini     (solo si LM Studio no disponible)
-  3. Groq              (fallback cloud)
-  4. OpenRouter        (último recurso cloud)
+Prioridad de proveedores (configurable via [llm].provider en config.ini):
+  1. Ollama LOCAL      (datos NUNCA salen del PC - HIPAA/Ley 1581 safe) [puerto 11434]
+  2. LM Studio LOCAL   (datos NUNCA salen del PC - HIPAA/Ley 1581 safe) [puerto 1234]
+  3. Google Gemini     (solo si los locales no disponibles)
+  4. Groq              (fallback cloud)
+  5. OpenRouter        (último recurso cloud)
 
-⚠️ DATOS MÉDICOS CONFIDENCIALES: Se recomienda usar SOLO LM Studio local.
-   Los proveedores cloud están deshabilitados por defecto.
+⚠️ DATOS MÉDICOS CONFIDENCIALES: Se recomienda usar SOLO proveedores locales
+   (Ollama o LM Studio). Los proveedores cloud están deshabilitados por defecto.
    Para habilitarlos, agregue api_key en config/config.ini.
 
 VERSION 5.0.0 - Local-First (10 Abr 2026):
@@ -19,9 +20,26 @@ VERSION 5.0.0 - Local-First (10 Abr 2026):
 - Cloud providers deshabilitados por defecto para protección HC
 - 32GB RAM soporta modelos 7B-13B cómodamente
 
+V6.9.6 - Ollama support (13 May 2026):
+- Soporte para Ollama (endpoint OpenAI-compatible en localhost:11434)
+- Sección [llm] en config.ini: provider = ollama | lm_studio | both
+- Selección de modelo y endpoint configurables sin tocar código
+- Clase LMStudioClient conservada (compat con ui.py y resto del pipeline)
+
+V6.9.7 - Fix Ollama provider not detected (13 May 2026):
+- FIX: _verificar_servidor_local timeout 3s → 10s con 2 reintentos.
+  Ollama responde a /v1/models en ~2.0s en idle pero supera 3s bajo
+  carga (modelo 27B procesando). Falso negativo dejaba _proveedores_
+  disponibles vacío y completar() devolvía "No hay proveedores
+  configurados" para los 51 chunks subsiguientes en ui.py worker IA.
+- FIX: Fallback "trust-the-config" cuando [llm].provider y [llm].modelo
+  están explícitamente configurados, se registra el proveedor aunque
+  el sondeo inicial falle (la petición real fallará limpiamente si
+  el servidor sí está caído, en vez de fallar en bloque al constructor).
+
 Autor: Sistema EVARISIS
-Versión: 5.0.0
-Fecha: 10 de abril de 2026
+Versión: 6.9.7
+Fecha: 13 de mayo de 2026
 """
 
 import json
@@ -134,8 +152,26 @@ class LMStudioClient:
     _min_request_interval = 0.5  # 500ms entre peticiones
 
     # === CONFIGURACIÓN DE PROVEEDORES ===
-    # Orden = prioridad de uso. LM Studio LOCAL primero (datos no salen del PC).
+    # Orden = prioridad de uso. Proveedores LOCALES primero (datos no salen del PC).
+    # V6.9.6: Ollama añadido como proveedor local prioritario.
     PROVEEDORES_CONFIG = [
+        {
+            "nombre": "Ollama (Local)",
+            "endpoint": "http://localhost:11434/v1",
+            "modelos": [
+                "medgemma:27b",
+                "llama3.1:8b",
+                "qwen2.5:14b",
+                "qwen2.5:7b",
+                "gemma2:9b",
+            ],
+            "config_section": "ollama",
+            "headers_extra": {},
+            "descripcion": "LOCAL (Ollama) - datos nunca salen del PC",
+            "info_key": "Descargar: https://ollama.ai  |  Modelo: ollama pull medgemma:27b",
+            "es_local": True,
+            "tipo_local": "ollama",
+        },
         {
             "nombre": "LM Studio (Local)",
             "endpoint": "http://127.0.0.1:1234/v1",
@@ -151,9 +187,10 @@ class LMStudioClient:
             ],
             "config_section": "lmstudio",
             "headers_extra": {},
-            "descripcion": "LOCAL - datos nunca salen del PC",
+            "descripcion": "LOCAL (LM Studio) - datos nunca salen del PC",
             "info_key": "Descargar: https://lmstudio.ai",
             "es_local": True,
+            "tipo_local": "lmstudio",
         },
         {
             "nombre": "Gemini",
@@ -215,26 +252,116 @@ class LMStudioClient:
         api_key: Optional[str] = None,
         **kwargs
     ):
-        self.timeout = timeout
         self.max_retries = max_retries
         self.session_history = []
+
+        # V6.9.6: Cargar selector de proveedor local desde [llm] en config.ini
+        cfg_llm = self._cargar_config_llm()
+        self.provider = cfg_llm.get("provider", "both").strip().lower() or "both"
+        cfg_base_url = cfg_llm.get("base_url", "").strip()
+        cfg_modelo = cfg_llm.get("modelo", "").strip()
+        cfg_api_key_ollama = cfg_llm.get("api_key", "ollama").strip() or "ollama"
+
+        # Timeout: honra config.ini si no se pasó explícitamente con kwargs
+        try:
+            timeout_cfg = int(cfg_llm.get("timeout", "0") or 0)
+        except (ValueError, TypeError):
+            timeout_cfg = 0
+        # Si el usuario pasó timeout != default (300), respetarlo; si no, usar config si existe
+        self.timeout = timeout if timeout != 300 else (timeout_cfg if timeout_cfg > 0 else timeout)
+
+        # Tokens y temperatura por defecto desde config (consumidos por completar() si no se sobreescriben)
+        try:
+            self._default_max_tokens = int(cfg_llm.get("max_tokens", "0") or 0) or None
+        except (ValueError, TypeError):
+            self._default_max_tokens = None
+        try:
+            self._default_temperature = float(cfg_llm.get("temperature", "")) if cfg_llm.get("temperature", "").strip() != "" else None
+        except (ValueError, TypeError):
+            self._default_temperature = None
+
+        # Determinar qué tipos de locales son admisibles según self.provider
+        # Acepta valores: 'ollama', 'lm_studio', 'lmstudio', 'both', '' (=both)
+        if self.provider in ("ollama",):
+            tipos_locales_permitidos = {"ollama"}
+        elif self.provider in ("lm_studio", "lmstudio"):
+            tipos_locales_permitidos = {"lmstudio"}
+        else:
+            tipos_locales_permitidos = {"ollama", "lmstudio"}
 
         # Cargar todos los proveedores que tengan API key configurada (o sean locales)
         self._proveedores_disponibles = []
         for prov_config in self.PROVEEDORES_CONFIG:
             if prov_config.get("es_local"):
-                # LM Studio local: verificar si está corriendo
-                if self._verificar_lmstudio(prov_config["endpoint"]):
-                    # Usar SOLO modelos realmente cargados
-                    modelos_cargados = self._obtener_modelos_lmstudio(prov_config["endpoint"])
-                    cfg = {**prov_config, "api_key": "local"}
+                tipo_local = prov_config.get("tipo_local", "lmstudio")
+                # Filtrar por provider seleccionado en [llm]
+                if tipo_local not in tipos_locales_permitidos:
+                    continue
+
+                # Aplicar override de endpoint desde [llm].base_url si fue especificado
+                # y coincide con el tipo de proveedor único elegido
+                endpoint_local = prov_config["endpoint"]
+                if cfg_base_url and len(tipos_locales_permitidos) == 1:
+                    endpoint_local = cfg_base_url
+
+                # Verificar si el proveedor local está corriendo
+                servidor_ok = self._verificar_servidor_local(endpoint_local, tipo_local)
+
+                # V6.9.7 FIX: Fallback "trust-the-config" cuando el usuario eligió
+                # EXPLÍCITAMENTE este proveedor en [llm].provider y configuró un modelo.
+                # Si _verificar_servidor_local da un falso negativo (timeout bajo carga,
+                # respuesta lenta, etc.) la lógica anterior dejaba _proveedores_disponibles
+                # vacía y completar() devolvía "No hay proveedores configurados" para
+                # TODOS los chunks subsiguientes — bug crítico V6.9.6 que rompía
+                # _process_files_ia_worker. Ahora, si el usuario lo configuró
+                # explícitamente, registramos el proveedor y dejamos que la petición
+                # real de chat falle limpiamente si el servidor está realmente caído.
+                config_explicit = (
+                    cfg_modelo
+                    and len(tipos_locales_permitidos) == 1
+                    and tipo_local in tipos_locales_permitidos
+                )
+
+                if servidor_ok or config_explicit:
+                    if not servidor_ok and config_explicit:
+                        logging.warning(
+                            f"   ⚠️ {prov_config['nombre']} no respondió al sondeo /models "
+                            f"pero está configurado explícitamente en [llm] con modelo "
+                            f"'{cfg_modelo}'. Se intentará usar bajo demanda."
+                        )
+                    modelos_cargados = (
+                        self._obtener_modelos_servidor_local(endpoint_local) if servidor_ok else []
+                    )
+                    cfg = {
+                        **prov_config,
+                        "endpoint": endpoint_local,
+                        "api_key": cfg_api_key_ollama if tipo_local == "ollama" else "local",
+                    }
                     if modelos_cargados:
-                        cfg["modelos"] = modelos_cargados
-                        logging.info(f"   📦 Modelos cargados en LM Studio: {modelos_cargados}")
+                        # Si [llm].modelo está especificado y existe en el servidor,
+                        # colocarlo PRIMERO (prioridad máxima).
+                        if cfg_modelo and cfg_modelo in modelos_cargados:
+                            ordenados = [cfg_modelo] + [m for m in modelos_cargados if m != cfg_modelo]
+                            cfg["modelos"] = ordenados
+                        elif cfg_modelo:
+                            # Modelo solicitado no está cargado todavía: agregarlo al principio
+                            # (Ollama lo cargará bajo demanda al hacer la primera petición)
+                            cfg["modelos"] = [cfg_modelo] + modelos_cargados
+                            logging.info(
+                                f"   ⚠️ Modelo '{cfg_modelo}' no listado en {prov_config['nombre']}; "
+                                f"se intentará bajo demanda."
+                            )
+                        else:
+                            cfg["modelos"] = modelos_cargados
+                        logging.info(f"   📦 Modelos disponibles en {prov_config['nombre']}: {cfg['modelos']}")
+                    elif cfg_modelo:
+                        # Servidor activo pero sin modelos listados; usar el solicitado
+                        cfg["modelos"] = [cfg_modelo]
                     self._proveedores_disponibles.append(cfg)
                 else:
-                    logging.warning("⚠️ LM Studio no detectado en localhost:1234")
-                    logging.warning("   Inicia LM Studio y carga un modelo para usar IA local")
+                    puerto = "11434" if tipo_local == "ollama" else "1234"
+                    logging.warning(f"⚠️ {prov_config['nombre']} no detectado en {endpoint_local}")
+                    logging.warning(f"   Asegúrate de que el servidor esté corriendo en puerto {puerto}")
                 continue
             key = self._cargar_api_key(prov_config["config_section"])
             if key:
@@ -250,22 +377,27 @@ class LMStudioClient:
                         break
 
         # Backward compatibility: self.endpoint, self.model, self.api_key
+        # V6.9.6: exponer también self.base_url y self.modelo (alias semánticos pedidos por el orquestador)
         if self._proveedores_disponibles:
             self.endpoint = self._proveedores_disponibles[0]["endpoint"]
             self.model = self._proveedores_disponibles[0]["modelos"][0]
             self.api_key = self._proveedores_disponibles[0]["api_key"]
+            self.base_url = self.endpoint
+            self.modelo = self.model
             provs = [p["nombre"] for p in self._proveedores_disponibles]
-            logging.info(f"✅ LLM Multi-proveedor: {', '.join(provs)}")
+            logging.info(f"✅ LLM Multi-proveedor [provider={self.provider}]: {', '.join(provs)}")
             for p in self._proveedores_disponibles:
                 logging.info(f"   📡 {p['nombre']}: {p['modelos'][0]} ({p['descripcion']})")
         else:
             self.endpoint = endpoint
             self.model = model or "google/gemma-4-31b-it:free"
             self.api_key = ""
-            logging.warning("⚠️ No hay API keys configuradas en config/config.ini")
-            logging.warning("   Agrega al menos una de estas (TODAS son gratis):")
+            self.base_url = self.endpoint
+            self.modelo = self.model
+            logging.warning(f"⚠️ No hay proveedores activos (provider={self.provider}) ni API keys en config/config.ini")
+            logging.warning("   Asegúrate de tener Ollama o LM Studio corriendo, o agrega una API key:")
             for prov in self.PROVEEDORES_CONFIG:
-                logging.warning(f"   [{prov['config_section']}] api_key = TU_KEY  # {prov['info_key']}")
+                logging.warning(f"   [{prov['config_section']}] -> {prov['info_key']}")
 
     def _cargar_api_key(self, section: str) -> Optional[str]:
         """Carga API key desde config.ini para una sección específica"""
@@ -295,29 +427,94 @@ class LMStudioClient:
         if key:
             self.api_key = key
 
-    def _verificar_lmstudio(self, endpoint: str) -> bool:
-        """Verifica si LM Studio está corriendo en el endpoint local"""
+    def _cargar_config_llm(self) -> Dict[str, str]:
+        """
+        V6.9.6: Carga la sección [llm] de config.ini.
+        Devuelve un dict con: provider, base_url, api_key, modelo, timeout,
+        max_tokens, temperature. Si la sección no existe, retorna defaults seguros.
+        """
+        defaults = {
+            "provider": "both",         # ollama | lm_studio | both
+            "base_url": "",
+            "api_key": "ollama",
+            "modelo": "",
+            "timeout": "0",
+            "max_tokens": "0",
+            "temperature": "",
+        }
         try:
-            resp = requests.get(f"{endpoint}/models", timeout=3)
-            if resp.status_code == 200:
-                data = resp.json()
-                modelos = data.get("data", [])
-                if modelos:
-                    modelo_id = modelos[0].get("id", "local-model")
-                    logging.info(f"✅ LM Studio detectado: {modelo_id}")
-                    return True
-                logging.info("✅ LM Studio activo pero sin modelo cargado")
-                return True
-            return False
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
-            return False
-        except Exception:
-            return False
+            import configparser
+            config_path = Path(__file__).parent.parent / "config" / "config.ini"
+            if not config_path.exists():
+                return defaults
+            config = configparser.ConfigParser()
+            config.read(config_path, encoding="utf-8")
+            if not config.has_section("llm"):
+                return defaults
+            return {
+                "provider": config.get("llm", "provider", fallback=defaults["provider"]),
+                "base_url": config.get("llm", "base_url", fallback=defaults["base_url"]),
+                "api_key": config.get("llm", "api_key", fallback=defaults["api_key"]),
+                "modelo": config.get("llm", "modelo", fallback=defaults["modelo"]),
+                "timeout": config.get("llm", "timeout", fallback=defaults["timeout"]),
+                "max_tokens": config.get("llm", "max_tokens", fallback=defaults["max_tokens"]),
+                "temperature": config.get("llm", "temperature", fallback=defaults["temperature"]),
+            }
+        except Exception as e:
+            logging.warning(f"No se pudo leer [llm] de config.ini: {e}")
+            return defaults
 
-    def _obtener_modelos_lmstudio(self, endpoint: str) -> List[str]:
-        """Obtiene la lista de modelos CARGADOS actualmente en LM Studio"""
+    # === Detección de servidores locales (Ollama / LM Studio) ===
+    # Ambos exponen el endpoint OpenAI-compatible /v1/models y /v1/chat/completions.
+    # Por eso, una vez detectados, se tratan de forma idéntica en el pipeline.
+
+    def _verificar_servidor_local(self, endpoint: str, tipo_local: str) -> bool:
+        """V6.9.6: Verifica si un servidor LLM local (Ollama o LM Studio) está corriendo.
+
+        V6.9.7 FIX: Timeout subido de 3s → 10s y se reintenta 2 veces. Ollama
+        responde a /v1/models en ~2.0s cuando está libre, pero bajo carga
+        (modelo de 27B procesando otra petición) puede superar 3s y disparar
+        un falso negativo. Tras un falso negativo, _proveedores_disponibles
+        quedaba vacío y completar() devolvía "No hay proveedores configurados"
+        para los 51 chunks subsiguientes.
+        """
+        nombre = "Ollama" if tipo_local == "ollama" else "LM Studio"
+        last_err = None
+        for intento in (1, 2):
+            try:
+                resp = requests.get(f"{endpoint}/models", timeout=10)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    modelos = data.get("data", [])
+                    if modelos:
+                        modelo_id = modelos[0].get("id", "local-model")
+                        logging.info(f"✅ {nombre} detectado en {endpoint}: {modelo_id}")
+                        return True
+                    logging.info(f"✅ {nombre} activo en {endpoint} (sin modelo aún cargado)")
+                    return True
+                last_err = f"HTTP {resp.status_code}"
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+                last_err = type(e).__name__
+                if intento == 1:
+                    logging.info(f"   ⏳ {nombre} ({endpoint}) lento en intento 1 ({last_err}), reintentando...")
+                    time.sleep(0.5)
+                    continue
+            except Exception as e:
+                last_err = str(e)[:120]
+                break
+        logging.warning(f"⚠️ {nombre} no respondió a /models en {endpoint} ({last_err})")
+        return False
+
+    def _obtener_modelos_servidor_local(self, endpoint: str) -> List[str]:
+        """V6.9.6: Lista modelos disponibles en un servidor local (Ollama o LM Studio).
+
+        V6.9.7 FIX: Timeout subido de 3s → 10s (mismo motivo que
+        _verificar_servidor_local). Si el servidor responde con 200 pero sin
+        modelos, no es error; el llamador puede confiar en [llm].modelo
+        del config.ini.
+        """
         try:
-            resp = requests.get(f"{endpoint}/models", timeout=3)
+            resp = requests.get(f"{endpoint}/models", timeout=10)
             if resp.status_code == 200:
                 data = resp.json()
                 ids = [m.get("id", "") for m in data.get("data", []) if m.get("id")]
@@ -325,8 +522,17 @@ class LMStudioClient:
                 ids = [i for i in ids if "embed" not in i.lower()]
                 return ids
         except Exception as e:
-            logging.warning(f"No se pudieron listar modelos de LM Studio: {e}")
+            logging.warning(f"No se pudieron listar modelos del servidor local: {e}")
         return []
+
+    # Aliases legacy (compat con código que importe estos métodos directamente)
+    def _verificar_lmstudio(self, endpoint: str) -> bool:
+        """Legacy alias: usa _verificar_servidor_local con tipo lmstudio."""
+        return self._verificar_servidor_local(endpoint, "lmstudio")
+
+    def _obtener_modelos_lmstudio(self, endpoint: str) -> List[str]:
+        """Legacy alias: usa _obtener_modelos_servidor_local."""
+        return self._obtener_modelos_servidor_local(endpoint)
 
     def _detectar_modelo(self):
         """Compatibilidad: no-op"""

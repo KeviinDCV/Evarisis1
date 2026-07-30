@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.5.94",
-    "version_name": "Complete Alias Mapping",
-    "build_date": "03/02/2026",
-    "build_number": "202602030850",
+    "version": "6.6.16",
+    "version_name": "Diagnosis Categorization Sprint",
+    "build_date": "04/05/2026",
+    "build_number": "202605040949",
     "release_type": "Stable",
     "codename": "Smart Validation",
 }

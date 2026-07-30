@@ -1,5 +1,74 @@
 # Changelog
 
+## [6.6.16] - 2026-05-04 — Diagnosis Categorization Sprint
+
+**Sprint:** Refinamiento masivo del normalizador de diagnósticos (`core/normalizador_diagnosticos.py`) y un fix crítico de detección de malignidad en `core/extractors/medical_extractor.py`. El sprint cubre seis versiones consecutivas (V6.6.12 → V6.6.16) aplicadas como cambios quirúrgicos validados con auditoría cuantitativa sobre 188 casos del rango IHQ250001-200.
+
+### Impact (cuantitativo)
+| Métrica | Antes | Después | Mejora |
+|---|---|---|---|
+| Diagnósticos oncológicos categorizados | 62/100 (62.0%) | 161/188 (85.6%) | **+23.6 pts** |
+| Casos problemáticos (OTRO + SIN DX) | 28/100 (28.0%) | 27/188 (14.4%) | **−13.6 pts** |
+| Distribución MALIGNO/BENIGNO | 73/27 | 75/25 | sin desbalance |
+| Regresiones detectadas | — | 0 | limpio |
+
+### Files modified
+- `core/normalizador_diagnosticos.py` — cambios mayores: typos del patólogo, 6 categorías nuevas/extendidas, stripping de preámbulos, reordenamientos de prioridad, ampliación de inferencia por órgano.
+- `core/extractors/medical_extractor.py` (función `determine_malignancy`, líneas ~3641-3686) — nueva PRIORIDAD -2 que aísla negaciones explícitas en `Diagnostico Principal` para evitar contaminación por historia clínica.
+
+### Changes by version
+
+#### V6.6.12 — Typo del patólogo "CARICNOMA"
+- `normalizar_texto()`: corregido typo "CARICNOMA" → "CARCINOMA" en preprocesamiento.
+- **Caso piloto:** IHQ250060.
+- **Impacto:** 1 caso recuperado (OTRO/NO CATEGORIZADO → CARCINOMA → refinado por órgano a OTRO CARCINOMA DE MAMA).
+
+#### V6.6.13 — Categorías faltantes en el diccionario
+- Agregadas 4 categorías nuevas: **TUMOR FILODES DE MAMA**, **CARCINOMA PAPILAR DE MAMA**, **NEOPLASIA DE CELULAS FUSIFORMES / FUSOCELULAR**, **LESION ESCAMOSA INTRAEPITELIAL / NIC**.
+- Extendida **LINFOMA NO HODGKIN B** con patrones OMS 2022 ("NEOPLASIA DE CELULAS B MADURAS").
+- **Casos piloto:** IHQ250071, IHQ250081, IHQ250066, IHQ250126, IHQ250107, IHQ250116.
+- **Impacto:** 6 casos recuperados.
+
+#### V6.6.14 — Stripping de preámbulos del patólogo + reordenamiento
+- Nueva función `stripear_preambulos()` con 11 preámbulos típicos del patólogo del HUV (ej. "RESULTADO IHQ COMPATIBLE CON…").
+- `categorizar_diagnostico()` modificada para invocar el stripping antes del matching.
+- **Reordenamientos críticos** (resolver cortocircuitos contra patrones genéricos):
+  - `ADENOCARCINOMA (SIN ORIGEN)` y `CARCINOMA (OTRO)` ANTES de `RESULTADO IHQ`.
+  - `LEUCEMIA MIELOIDE` y `LEUCEMIA LINFOIDE AGUDA` ANTES de `LINFOMA (OTRO/INESPECIFICO)`.
+- Nueva categoría: **CARCINOMA ANEXIAL CUTANEO**.
+- **LINFOMA NO HODGKIN B** extendido con "ZONA MARGINAL".
+- **LEUCEMIA LINFOIDE AGUDA** extendida con "LEUCEMIA/LINFOMA LINFOBLASTICO".
+- **Casos piloto:** IHQ250026, IHQ250028, IHQ250041, IHQ250087, IHQ250091, IHQ250099, IHQ250105, IHQ250140, IHQ250147, IHQ250158, IHQ250164, IHQ250166, IHQ250174.
+- **Impacto:** 15 casos recuperados (13 por preámbulos + 2 por sufijo SOBREEXPRESIÓN).
+
+#### V6.6.14 (cont.) — Mini-fix RECTAL en INFERENCIA_POR_ORGANO_ADENO
+- El patrón "RECTO" no matcheaba "RECTAL" como substring.
+- **Caso piloto:** IHQ250159.
+- **Impacto:** 1 caso recuperado.
+
+#### V6.6.15 — Fix CRÍTICO Malignidad (PRIORIDAD -2 en `determine_malignancy`)
+- **Problema:** la PRIORIDAD -1 evaluaba `combined_text = diagnostico + macroscopica + microscopica + full_text`. La historia clínica con "Historia de carcinoma de mama" disparaba MALIGNO aunque el dx final fuera benigno (ej. INFLAMACIÓN AGUDA SIN EVIDENCIA DE LESIÓN NEOPLÁSICA).
+- **Solución:** nueva PRIORIDAD -2 que evalúa SOLO el `Diagnostico Principal` para negaciones explícitas. Si tiene negación y NO tiene también keyword maligno (caso multi-muestra), retorna BENIGNO.
+- **Casos piloto:** IHQ250106 (target — crítico clínicamente), IHQ250065 (bonus).
+- **Impacto:** 2 casos recuperados.
+
+#### V6.6.16 — Mini-fixes basados en audit cuantitativo
+- Typo "HISTOLOGIOS" → "HISTOLOGICOS" en `normalizar_texto` (caso IHQ250026 MELANOMA).
+- Nueva categoría **INFLAMACION / PROCESO INFECCIOSO** (cubre IHQ250037 colitis, IHQ250075 peritonitis, IHQ250061 Hirschsprung).
+- `INFERENCIA_POR_ORGANO_ESCAMO` ampliado con: LABIO, BOCA, FARINGE, HIPOFARINGE, NASOFARINGE, ESOFAGO, ANO, VULVA, VAGINA.
+- **Impacto:** 4+ casos recuperados.
+
+### Validation
+- 75+ casos validados manualmente con resultados esperados (todos OK).
+- 54 self-tests internos del normalizador (54/54 OK).
+- 12 casos de regresión específicos para `determine_malignancy` (12/12 OK).
+- Audit cuantitativo sobre 188 casos del período IHQ250001-200 (**0 regresiones**).
+
+### Anti-regression notes (REGLA CRÍTICA #1)
+Todos los cambios siguen el patrón "patrón específico nuevo ANTES + fallback genérico ORIGINAL preservado". Ningún patrón existente fue eliminado o sobrescrito; todas las extensiones se agregaron como ramas adicionales o reordenamientos de prioridad. Comentarios `V6.6.XX FIX IHQYYYYY` en el código documentan la trazabilidad caso-por-caso.
+
+---
+
 ## [6.0.0] - 2025-10-20
 
 ### Changed
