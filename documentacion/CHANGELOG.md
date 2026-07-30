@@ -1,5 +1,49 @@
 # Changelog
 
+## [6.9.84] - 2026-07-29 — «(sin nombre)»: la columna calculada que la lectura relacional se dejó atrás
+
+Los pacientes salían como **«(sin nombre)»** con su cédula al lado. El dato nunca se perdió: estaba en la base, repartido en `Primer nombre`, `Segundo nombre`, `Primer apellido` y `Segundo apellido`. Lo que faltaba era quien lo compusiera.
+
+```
+BD  ->  JASSIEL | ALBEIRO | CAICEDO | MAZONEZ
+vista ->  (sin nombre)
+```
+
+`Nombre Completo` **no es una columna del esquema**: se calcula al leer. Y ese cálculo vivía dentro de la rama que consulta la tabla plana, así que al activar el modelo relacional (**V6.9.76**) la lectura empezó a devolver un DataFrame sin ella. La vista pedía una columna que ya no venía y mostraba el hueco.
+
+### No era solo la vista Por Paciente
+
+`Nombre Completo` está en `COLS_TO_SHOW` **y en `COLS_SIEMPRE`** —las que nunca se ocultan—, así que el **Visualizador principal** llevaba también esa columna vacía desde la misma versión. Se veía menos porque allí hay 40 columnas más donde mirar.
+
+### El arreglo, donde no puede volver a divergir
+
+La derivación pasa a `_derivar_columnas(df)`, aplicada en el **único punto por el que salen los dos caminos de lectura**. Cualquier columna calculada que haga falta mañana va ahí y la ven los dos.
+
+Vectorizada a propósito: el `df.apply(..., axis=1)` original sobre 22.547 filas cuesta más que la lectura entera. Medido: **0,13 s**, lectura completa 0,90 s.
+
+Y comprobado que es **equivalente**, no parecida: contrastada fila a fila contra `build_clean_full_name()` en 4.000 registros → **0 diferencias**.
+
+```
+Nombre Completo presente          : sí
+con nombre real                   : 22.547 / 22.547
+pacientes que saldrían sin nombre :      0   (antes: los 18.199)
+filas rojas, ambos caminos        :     57   (sin cambios, diferencia 0)
+```
+
+### ⚠️ La tercera de la misma familia
+
+Van tres fallos con el mismo origen desde la fase 1: **la lectura relacional no reproducía algo que la tabla plana sí hacía**.
+
+| | |
+|---|---|
+| V6.9.79 | `'N/A'` contra `NULL` → 2 filas rojas por un camino y 237 por el otro |
+| V6.9.82 | valores escritos en una columna alias → invisibles para la lectura relacional |
+| V6.9.84 | `Nombre Completo` no se calculaba → «(sin nombre)» en toda la app |
+
+Las tres se arreglan igual: **una sola definición que ven los dos caminos**. Cuando algo se calcula o se normaliza al leer, tiene que estar en el punto por el que ambos pasan, no dentro de una de las ramas.
+
+---
+
 ## [6.9.83] - 2026-07-29 — Segundo modelo local: 139 de 154 recuperados, filas rojas 77 → 57
 
 `ministral-3-14b-instruct-2512` sobre los 38 que quedaban, con la misma guarda y la misma regla: **se escribe solo donde coincide con la lectura verificada**.

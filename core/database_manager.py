@@ -1275,6 +1275,39 @@ def _leer_de_modelo_relacional() -> bool:
         return False
 
 
+_NOMBRE_PARTES = ["Primer nombre", "Segundo nombre", "Primer apellido",
+                  "Segundo apellido"]
+_NOMBRE_VACIO = {"", "N/A", "NAN", "NONE", "NULL", "NO APLICA", "NO ENCONTRADO"}
+
+
+def _derivar_columnas(df: pd.DataFrame) -> pd.DataFrame:
+    """Columnas CALCULADAS que la app espera y no están en el esquema.
+
+    V6.9.84: vive aquí, en el único punto por el que salen los dos caminos de
+    lectura. Antes solo la añadía la rama de la tabla plana, así que al activar
+    el modelo relacional (V6.9.76) `Nombre Completo` desapareció y la vista Por
+    Paciente mostraba «(sin nombre)» con la cédula al lado — el dato estaba en
+    la BD, repartido en las cuatro columnas, y nadie lo componía.
+
+    Vectorizado a propósito: `df.apply(..., axis=1)` sobre 22.547 filas cuesta
+    más que la lectura entera (0,64 s), y esto se ejecuta en cada arranque.
+    """
+    if df is None or df.empty:
+        return df
+    if not all(c in df.columns for c in _NOMBRE_PARTES):
+        return df
+    partes = []
+    for c in _NOMBRE_PARTES:
+        s = df[c].fillna("").astype(str).str.strip()
+        partes.append(s.where(~s.str.upper().isin(_NOMBRE_VACIO), ""))
+    nombre = partes[0]
+    for s in partes[1:]:
+        nombre = (nombre + " " + s).str.strip()
+    nombre = nombre.str.replace(r"\s+", " ", regex=True)
+    df["Nombre Completo"] = nombre.where(nombre != "", "N/A")
+    return df
+
+
 def get_all_records_as_dataframe() -> pd.DataFrame:
     """Obtiene todos los registros de la BD y los devuelve como un DataFrame de Pandas.
 
@@ -1307,7 +1340,7 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
             conn.commit()
             df = _mr.leer_dataframe(conn, cur)
             logger.info(f"Cargados {len(df)} registros del modelo relacional")
-            return df
+            return _derivar_columnas(df)
         except Exception as e:
             logger.warning(f"[modelo relacional] no disponible ({e}); "
                            f"se lee la tabla plana")
@@ -1334,25 +1367,7 @@ def get_all_records_as_dataframe() -> pd.DataFrame:
                 conn,
             )
         logger.info(f"Cargados {len(df)} registros de la base de datos")
-
-        # V5.3.9.3: Agregar columna "Nombre Completo" sin N/A para visualización
-        if not df.empty and all(col in df.columns for col in ["Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido"]):
-            from core.unified_extractor import build_clean_full_name
-
-            def crear_nombre_limpio(row):
-                try:
-                    return build_clean_full_name(
-                        str(row.get("Primer nombre", "")),
-                        str(row.get("Segundo nombre", "")),
-                        str(row.get("Primer apellido", "")),
-                        str(row.get("Segundo apellido", ""))
-                    )
-                except:
-                    return "N/A"
-
-            df["Nombre Completo"] = df.apply(crear_nombre_limpio, axis=1)
-
-        return df
+        return _derivar_columnas(df)
 
     except sqlite3.Error as e:
         logger.error(f"Error consultando la base de datos: {e}")
