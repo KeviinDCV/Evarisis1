@@ -2320,7 +2320,10 @@ BIOMARKER_DEFINITIONS = {
     },
 
     'CALRETININA': {
-        'nombres_alternativos': ['CALRETININ', 'CALRRETININA'],  # V6.3.48 FIX IHQ250048: variante con doble R
+        # V6.3.48 FIX IHQ250048: variante con doble R
+        # V6.9.81 FIX IHQ260473: faltaba la combinación doble R SIN la -A final,
+        # que es como la escribe el informe («CALRRETININ (+ FOCAL)»).
+        'nombres_alternativos': ['CALRETININ', 'CALRRETININA', 'CALRRETININ'],
         'descripcion': 'Calretinina - Marcador de células ganglionares (estudio Hirschprung)',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... Calretinina" → NEGATIVO
@@ -4420,8 +4423,19 @@ _ALIAS_PDF = {
     'ACTINA_MUSCULO_ESPECIFICA': ['ACTINA', 'ACTIMINA'],
     'SMA': ['ACTINA DE MUSCULO LISO', 'ACTINA', 'ACTIMINA'],
     'ACTIN': ['ACTINA', 'ACTIMINA'], 'AML': ['ACTINA', 'ACTIMINA'],
-    'CKAE1AE3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1', 'COCTEL DE QUERATINAS', 'PANQUERATINA'],
-    'CKAE1E3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1'],
+    # V6.9.78: formas que usan los informes reales y no estaban — vistas al verificar
+    # los 11.586 biomarcadores contra los PDFs: "CK AE1/3" (sin el segundo AE) y
+    # "AE1/AE2" (errata recurrente del propio informe por AE1/AE3).
+    'CKAE1AE3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1/3', 'CK AE1/3',
+                 'AE1/AE2', 'AE1', 'COCTEL DE QUERATINAS', 'PANQUERATINA'],
+    'CKAE1E3': ['CKAE1/AE3', 'CKAE1E3', 'CK AE1/AE3', 'AE1/AE3', 'AE1/3', 'CK AE1/3',
+                'AE1/AE2', 'AE1'],
+    # El informe lo escribe a secas, sin el "3": "…ARGINASA, HEPATOCITO, GLYPICAN Y CDX2"
+    'GLIPICAN': ['GLYPICAN 3', 'GLYPICAN-3', 'GLYPICAN', 'GPC3', 'GLIPICAN 3', 'GLIPICAN'],
+    'GPC3': ['GLYPICAN 3', 'GLYPICAN-3', 'GLYPICAN', 'GLIPICAN 3', 'GLIPICAN'],
+    # KAPPA no figuraba en este mapa (solo en nombres_alternativos)
+    'KAPPA': ['CADENA LIGERA KAPPA', 'KAPPA LIGHT CHAIN', 'CADENAS LIGERAS KAPPA'],
+    'LAMBDA': ['CADENA LIGERA LAMBDA', 'LAMBDA LIGHT CHAIN', 'CADENAS LIGERAS LAMBDA'],
     'RECEPTOR_ESTROGENOS': ['RECEPTOR DE ESTROGENO', 'RECEPTORES DE ESTROGENOS', 'ESTROGENO',
                             'ESTRÓGENO', 'R.ESTROGENO', 'R. ESTROGENO', 'RECEPTOR ESTROGENO'],
     'RECEPTOR_PROGESTERONA': ['RECEPTOR DE PROGESTERONA', 'PROGESTERONA', 'R.PROGESTERONA',
@@ -5205,6 +5219,38 @@ def extract_biomarkers(text: str, existing_data: Dict[str, Any] = None, debug_mo
     # hacia atrás. Las 23 polaridades invertidas quedan pendientes de un fix medido;
     # sus valores ya fueron neutralizados en BD. NO reactivar sin volver a medir.
 
+    # V6.9.79: columnas SINÓNIMAS a su forma canónica. El informe llama a la misma
+    # tinción «SMA», «AML» o «actina de músculo liso» según quién la escriba, y el
+    # esquema tiene una columna para cada nombre; el valor caía en una y quien lo
+    # buscaba miraba en otra. Se hace AQUÍ, en la única salida de la función, y no
+    # en la docena de sitios que construyen f'IHQ_{...}': un punto que revisar en
+    # vez de doce que mantener sincronizados —que es justo lo que falló antes—.
+    results = _canonizar_sinonimos(results)
+
+    return results
+
+
+def _canonizar_sinonimos(results: Dict[str, str]) -> Dict[str, str]:
+    """Colapsa las columnas duplicadas del esquema en su forma canónica.
+
+    Solo toca claves IHQ_* declaradas en core/biomarcadores_canonicos.py, que es
+    donde vive la evidencia de que dos nombres son el mismo anticuerpo. Las que
+    no lo son se devuelven intactas: `ACTINA MÚSCULO ESPECÍFICA` NO se fusiona
+    con `SMA` porque son tinciones distintas y hay informes que piden las dos.
+    """
+    try:
+        from core.biomarcadores_canonicos import canonico, es_alias, fusionar
+    except ImportError:
+        return results
+    aliases = [k for k in results if es_alias(k)]
+    if not aliases:
+        return results
+    for k in aliases:
+        destino = canonico(k)
+        valor = fusionar([results.get(destino), results.pop(k)])
+        if valor:
+            results[destino] = valor
+        logging.info(f"🔗 [V6.9.79 SINÓNIMO] {k} → {destino} = {valor!r}")
     return results
 
 
@@ -6074,6 +6120,57 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             if normalized_name and normalized_name not in results:
                 results[normalized_name] = estado
                 logging.info(f"✅ [paréntesis invertido] Extraído: '{bio_raw}' → {normalized_name} = {estado}")
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # V6.9.81: notación de signo «MARCADOR (+)» / «MARCADOR (-)»
+    #
+    # El informe abrevia paneles enteros así: "WT1 (+ DEBIL), CALRRETININ
+    # (+ FOCAL), PAX-8 (-)". No es un patrón genérico de prosa —se ancla en un
+    # paréntesis que contiene un signo y nada más—, por eso se intenta donde el
+    # de "marcación para <lista>" hubo que revertirlo: aquí la polaridad está
+    # escrita, no deducida del contexto.
+    #
+    # ADITIVO: solo rellena marcadores sin valor.
+    # ═══════════════════════════════════════════════════════════════════════
+    signo_pattern = (
+        r'(?i)(?<![A-Za-z0-9])([A-Za-z][A-Za-z0-9][A-Za-z0-9\s\-/\.]{0,16}?)'
+        r'\s*\(\s*([+-])\s*([A-Za-zÁÉÍÓÚÑáéíóúñ\s]{0,18})\)'
+    )
+    for match in re.finditer(signo_pattern, text):
+        bio_raw = match.group(1).strip().strip('.,;').strip()
+        matiz = (match.group(3) or '').strip()
+        if not bio_raw:
+            continue
+        estado = 'POSITIVO' if match.group(2) == '+' else 'NEGATIVO'
+        if matiz and estado == 'POSITIVO':
+            estado = f'POSITIVO ({matiz.lower()})'
+        normalized_name = normalize_biomarker_name(bio_raw)
+        if normalized_name and normalized_name not in results:
+            results[normalized_name] = estado
+            logging.info(f"✅ [V6.9.81 signo] '{bio_raw}' → {normalized_name} "
+                         f"= {estado}")
+
+    # NOTA V6.9.81 — INTENTO REVERTIDO, no volver a probarlo así.
+    #
+    # Se añadió aquí un patrón genérico "[no] PRESENTAN <marcación> PARA <lista>"
+    # para recuperar los 122 valores que el informe reporta y ningún patrón casa
+    # (20 solo de E-cadherina). Estaba acotado a la frase (sin re.DOTALL, con
+    # [^.\n]), era aditivo (solo marcadores sin valor) y decidía la polaridad por
+    # la cláusula. Aun así, medido sobre los 2.076 casos:
+    #
+    #     +808 valores nuevos (se buscaban 122) · 206 CAMBIAN DE VALOR
+    #     IHQ250213: CDX2, CK7, CK20, CKAE1AE3, GATA3, PAX8 y TTF1
+    #                pasaban de NEGATIVO a POSITIVO
+    #
+    # Ser aditivo no basta: al entrar antes que los patrones específicos, este
+    # gana la carrera y el valor bueno ya no se escribe. El sustantivo suelto
+    # ("marcación … para …") aparece en el informe describiendo el CONTROL, el
+    # tejido normal acompañante o el panel solicitado, no siempre el resultado
+    # del tumor. Un patrón genérico no distingue eso, y aquí la diferencia es
+    # POSITIVO contra NEGATIVO en un informe oncológico.
+    #
+    # Lo que haría falta no es otro regex, sino resolver la frase con la IA local
+    # + guarda de cita verbatim, que es la vía ya medida al 98 % en la V6.9.61.
 
     # V6.1.3: NUEVO - Patrón para formato compacto de inmunofenotipo (IHQ251010)
     # Ej: "inmunofenotipo CK7+/CK20-, p40+/PAX8+/p63 y negativas para TTF-1"

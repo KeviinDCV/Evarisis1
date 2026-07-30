@@ -609,3 +609,23 @@
 {"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_CD20", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Linfocitos B CD20+ = 0 (cero)"}
 {"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_CD3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Linfocitos T CD3+ = 0 (cero)"}
 {"ts": "2026-07-21T10:28:00", "caso": "IHQ260688", "columna": "IHQ_MUM1", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Células plasmáticas MUM1+ = 0 (cero)"}
+{"ts": "2026-07-28T16:01:27", "caso": "IHQ250149", "columna": "IHQ_S100", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "es Positivo para h-caldesmon, S100"}
+{"ts": "2026-07-28T16:02:18", "caso": "IHQ250696", "columna": "IHQ_EMA", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin tinción para EMA"}
+{"ts": "2026-07-28T16:05:06", "caso": "IHQ251122", "columna": "IHQ_DESMIN", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin marcación para desmina"}
+{"ts": "2026-07-28T16:11:18", "caso": "IHQ250696", "columna": "IHQ_EMA", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin tinción para EMA"}
+{"ts": "2026-07-28T16:14:08", "caso": "IHQ251122", "columna": "IHQ_DESMIN", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin marcación para desmina"}
+{"ts": "2026-07-29T07:35:40", "caso": "IHQ251349", "columna": "IHQ_SOX11", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No hay inmunomarcación para SOX-11"}
+{"ts": "2026-07-29T07:36:44", "caso": "IHQ260090", "columna": "IHQ_CD34", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin incremento de células inmaduras con un 1% positivas para CD34"}
+{"ts": "2026-07-29T07:36:44", "caso": "IHQ260090", "columna": "IHQ_CD117", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "un 3% positivas para CD117"}
+{"ts": "2026-07-29T07:40:04", "caso": "IHQ250143", "columna": "IHQ_S100", "antes": "NEGATIVO", "despues": "POSITIVO", "cita": "la proteína s100 marca algunas células que pudieran corresponder a dendrocitos dérmicos"}
+{"ts": "2026-07-29T07:53:17", "caso": "IHQ250011", "columna": "IHQ_PAX8", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "El tejido endometrial decidualizado es positivo para receptores hormonales de progesterona y negativas para receptores de estrógenos, CD68 y PAX-8"}
+{"ts": "2026-07-29T08:09:00", "caso": "IHQ250176", "columna": "IHQ_LAMBDA", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "con restricción de la expresión de la cadena liviana Lambda"}
+{"ts": "2026-07-29T08:16:19", "caso": "IHQ260324", "columna": "IHQ_CMYC", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "No presenta inmunomarcación para C-MYC"}
+{"ts": "2026-07-29T08:17:07", "caso": "IHQ260679", "columna": "IHQ_RECEPTOR_ESTROGENOS", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Las celulas acinares no presentan inmunoreactividad a RE."}
+{"ts": "2026-07-29T08:18:20", "caso": "IHQ250127", "columna": "IHQ_CD20", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Hay escasa representación de linfocitos B (CD20 + )"}
+{"ts": "2026-07-29T08:18:20", "caso": "IHQ250127", "columna": "IHQ_CD3", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Hay escasa representación de linfocitos T (CD3 + y CD 4+)"}
+{"ts": "2026-07-29T08:18:20", "caso": "IHQ250127", "columna": "IHQ_CD4", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Hay escasa representación de linfocitos T (CD3 + y CD 4+)"}
+{"ts": "2026-07-29T08:24:04", "caso": "IHQ251122", "columna": "IHQ_DESMIN", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin marcación para desmina"}
+{"ts": "2026-07-29T08:30:16", "caso": "IHQ250368", "columna": "IHQ_CD31", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin imnunoreactividad para CD45, CD31,P40,S100, S100, SALL4,SOX 10,CK 5/6, PAX 8 y CKAE1/AE3"}
+{"ts": "2026-07-29T08:30:16", "caso": "IHQ250368", "columna": "IHQ_CK5_6", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Sin imnunoreactividad para CD45, CD31,P40,S100, S100, SALL4,SOX 10,CK 5/6, PAX 8 y CKAE1/AE3"}
+{"ts": "2026-07-29T08:32:24", "caso": "IHQ260236", "columna": "IHQ_TTF1", "antes": "POSITIVO", "despues": "NEGATIVO", "cita": "Asimismo, se realizaron marcadores adicionales (TTF-1, CD31, CD45, c-MYC, S100 y SOX10), los cuales fueron negativos."}

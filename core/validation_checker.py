@@ -852,12 +852,29 @@ for _k, _v in MAPEO_BIOMARCADORES.items():
 
 # Columnas DUPLICADAS en el esquema: al verificar detección, mirar todas. El
 # extractor a veces llena una variante y la completitud buscaba la otra.
+#
+# V6.9.79: las equivalencias comprobadas contra el informe se declaran UNA vez
+# en core/biomarcadores_canonicos.py y se leen de ahí. Antes cada módulo tenía
+# su propia lista y se desincronizaban: la V6.4.24 separó SMA de ACTINA DE
+# MÚSCULO LISO en el extractor —siendo el mismo anticuerpo— y esta tabla no se
+# actualizó, así que 81 casos salían en rojo con el resultado ya extraído.
+# Las tres de abajo son anteriores al registro y siguen aquí hasta tener su
+# evidencia del PDF; declararlas allí colapsaría además sus datos.
 _COLUMNAS_EQUIVALENTES = {
     'IHQ_MAMOGLOBINA': ('IHQ_MAMOGLOBINA', 'IHQ_MAMAGLOBINA'),
     'IHQ_MAMAGLOBINA': ('IHQ_MAMOGLOBINA', 'IHQ_MAMAGLOBINA'),
     'IHQ_CROMOGRANINA': ('IHQ_CROMOGRANINA', 'IHQ_CROMOGRAMINA'),
     'IHQ_CK5_6': ('IHQ_CK5_6', 'IHQ_CK56'),
 }
+
+try:
+    from core.biomarcadores_canonicos import alias as _bio_alias, grupo as _bio_grupo
+    for _col in _bio_alias():
+        _g = _bio_grupo(_col)
+        for _c in _g:
+            _COLUMNAS_EQUIVALENTES.setdefault(_c, _g)
+except ImportError:      # el verificador debe seguir funcionando sin el registro
+    pass
 
 # Stopwords narrativas: si un "biomarcador" no mapea y contiene alguna, es
 # basura de parsing del campo (frases del informe capturadas por error).
@@ -893,23 +910,61 @@ def _parece_biomarcador(nombre: str) -> bool:
 
 def _resolver_columna(estudio: str):
     """Resuelve un estudio solicitado a su columna BD. Directo -> normalizado.
-    Devuelve None si no mapea a ninguna columna del esquema."""
+    Devuelve None si no mapea a ninguna columna del esquema.
+
+    V6.9.79: el resultado se lleva a su columna CANÓNICA. `MAPEO_BIOMARCADORES`
+    conserva entradas hacia columnas duplicadas —'SMA' apuntaba a `IHQ_AML`—, y
+    quien pregunte por ellas recibía una columna que ya no se escribe. Aquí no
+    basta con la equivalencia de `_columna_detectada`: esta función la usan
+    también otros módulos, que se llevaban el nombre muerto.
+    """
     if not estudio:
         return None
     col = MAPEO_BIOMARCADORES.get(estudio.upper())
-    if col:
+    if not col:
+        col = _MAPEO_BIO_NORM.get(_norm_bio(estudio))
+    if not col:
+        return None
+    try:
+        from core.biomarcadores_canonicos import canonico
+        return canonico(col)
+    except ImportError:
         return col
-    return _MAPEO_BIO_NORM.get(_norm_bio(estudio))
+
+
+# V6.9.79: qué cuenta como celda SIN dato.
+#
+# INVARIANTE: este conjunto tiene que CONTENER todo lo que el modelo relacional
+# considera vacío. Si no, el mismo registro da resultados distintos según de
+# dónde se lea y el Visualizador pinta un número de filas rojas u otro según el
+# valor de `usar_modelo_relacional`. Fue exactamente lo que pasó desde V6.9.76:
+# la tabla plana guarda el literal 'N/A', el modelo relacional lo normaliza a
+# NULL, y esta función contaba el primero como dato y el segundo como ausencia
+# → 2 filas rojas por un camino y 237 por el otro.
+#
+# 'N/A' NO es una decisión por marcador: es el relleno por defecto del 90 % de
+# las celdas de biomarcador (272.808 de 303.096; entre 111 y 137 de las 146
+# columnas en CADA fila IHQ). Contarlo como "el sistema lo resolvió" era falso.
+# 'NO MENCIONADO' sí es deliberado —«se pidió y el informe no lo reporta»— y por
+# eso NO entra aquí: sigue contando como detectado.
+_SIN_DATO = {'', 'NO ENCONTRADO', 'NAN', 'NONE', 'NO APLICA'}
+try:
+    from core.modelo_relacional import VACIOS as _VACIOS_RELACIONAL
+    _SIN_DATO |= {str(v).upper() for v in _VACIOS_RELACIONAL}
+except ImportError:      # sin el modelo relacional, el mínimo histórico + N/A
+    _SIN_DATO |= {'N/A', 'NA', 'NULL', '-', '--'}
 
 
 def _columna_detectada(registro: Dict, columna: str) -> bool:
     """True si la columna (o alguna equivalente del esquema) tiene valor válido.
-    'NO MENCIONADO'/'N/A'/'NO VALORABLE' cuentan como detectados (el sistema lo
-    intentó); solo vacío/NO ENCONTRADO/NO APLICA cuentan como faltante."""
-    invalidos = ('', 'NO ENCONTRADO', 'NAN', 'NONE', 'NO APLICA')
+
+    'NO MENCIONADO'/'NO VALORABLE' cuentan como detectados: son un resultado del
+    sistema. El relleno por defecto ('N/A', vacío, NULL…) cuenta como faltante,
+    venga de la tabla plana o del modelo relacional — ver `_SIN_DATO`.
+    """
     for c in _COLUMNAS_EQUIVALENTES.get(columna, (columna,)):
         v = registro.get(c, '')
-        if v is not None and str(v).strip().upper() not in invalidos:
+        if v is not None and str(v).strip().upper() not in _SIN_DATO:
             return True
     return False
 

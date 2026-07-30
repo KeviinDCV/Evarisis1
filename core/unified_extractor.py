@@ -164,6 +164,97 @@ logger = logging.getLogger(__name__)
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+# V6.9.79: el esquema tiene varias columnas para el mismo anticuerpo (SMA, AML y
+# ACTINA_MUSCULO_LISO son la misma tinción). La equivalencia se declara UNA vez,
+# con su evidencia del informe, en core/biomarcadores_canonicos.py.
+try:
+    from core.biomarcadores_canonicos import (canonico as _col_canonica,
+                                              es_alias as _es_alias_col,
+                                              fusionar as _fusionar_col)
+except ImportError:                      # el extractor sigue funcionando sin él
+    def _col_canonica(col):
+        return col
+
+    def _es_alias_col(col):
+        return False
+
+    def _fusionar_col(vals):
+        return next((v for v in vals if v), "")
+
+
+# V6.9.79: columnas IHQ_ que NO son biomarcadores y por tanto no se juzgan con
+# la guarda de veracidad (mismo criterio que core/modelo_relacional.py).
+_NO_BIOMARCADOR = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
+
+# Columnas de biomarcador declaradas por el proyecto. Se usa la lista ESTÁTICA
+# en vez del esquema de la BD: el extractor no debe abrir conexiones, y así la
+# guarda se comporta igual en un equipo sin base de datos.
+try:
+    from core.columnas_huv_ia import COLUMNAS_IA as _COLS_IA
+    _COLS_BIOMARCADOR = frozenset(
+        c.upper() for c in _COLS_IA
+        if c.upper().startswith('IHQ_') and c.upper() not in _NO_BIOMARCADOR)
+except ImportError:
+    _COLS_BIOMARCADOR = frozenset()
+
+
+def _guarda_veracidad(datos: dict, texto: str) -> dict:
+    """Descarta los biomarcadores cuyo marcador el informe NO nombra.
+
+    Reutiliza la misma función que usa `extract_biomarkers` (V6.9.60) — no se
+    reimplementa el criterio, que es justo como se desincronizan las cosas en
+    este código. Solo QUITA; nunca agrega ni cambia un valor.
+
+    Radio medido sobre los 11.577 valores guardados: quitaría 14 (0,12 %), y 13
+    de ellos no tienen ni una sola aparición del marcador en su informe
+    (IHQ250405 guarda RECEPTOR_ESTROGENOS=POSITIVO y el informe solo nombra CK7
+    y CK20). El 14º es IHQ260343·KAPPA, la inferencia clínica que ya quedó
+    anotada en la V6.9.78 a criterio del patólogo.
+    """
+    if not texto:
+        return datos
+    try:
+        from core.extractors.biomarker_extractor import filtrar_biomarcadores_sin_respaldo
+    except ImportError:
+        return datos
+    # Se juzgan DOS formas de la misma clave. `map_to_database_format` convierte
+    # 'ckae1ae3' en la columna IHQ_CKAE1AE3, así que filtrar solo las que ya
+    # llevan el prefijo dejaba viva la minúscula y el fantasma resucitaba una
+    # etapa más tarde (medido en IHQ250076).
+    bio = {}
+    for k, v in datos.items():
+        if not str(v or '').strip():
+            continue
+        ku = k.upper()
+        destino = ku if ku.startswith('IHQ_') else 'IHQ_' + ku
+        if destino in _NO_BIOMARCADOR or destino not in _COLS_BIOMARCADOR:
+            continue
+        bio[k] = (v, destino)
+    if not bio:
+        return datos
+    # el oráculo espera el nombre de la COLUMNA, no la clave suelta
+    limpio = filtrar_biomarcadores_sin_respaldo(
+        {d: v for _, (v, d) in bio.items()}, texto)
+    for k, (_v, destino) in bio.items():
+        if destino not in limpio:
+            datos.pop(k, None)
+            logger.info(f"🛡️ [V6.9.79 veracidad] {k} descartado: el informe no "
+                        f"nombra {destino}")
+    return datos
+
+
+def _colapsar_sinonimos(datos: dict) -> dict:
+    """Deja una sola columna por anticuerpo. Un resultado real gana a 'NO
+    MENCIONADO'; `ACTINA MÚSCULO ESPECÍFICA` NO se toca porque es otra tinción.
+    """
+    for k in [x for x in datos if _es_alias_col(x)]:
+        destino = _col_canonica(k)
+        valor = _fusionar_col([datos.get(destino), datos.pop(k)])
+        if valor:
+            datos[destino] = valor
+        logger.info(f"🔗 [V6.9.79 SINÓNIMO] {k} → {destino} = {valor!r}")
+    return datos
+
 try:
     # Importar extractores nuevos refactorizados
     from core.extractors.biomarker_extractor import (
@@ -1765,7 +1856,13 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                 'CYCLIN D1': 'IHQ_CICLINA_D1',
                 'CYCLIN-D1': 'IHQ_CICLINA_D1'
             }
-            
+
+            # V6.9.79: columnas sinónimas -> canónica. Se reescriben los DESTINOS
+            # del mapeo en vez de sus 12 entradas una a una, para que lo vean por
+            # igual los tres consumidores de abajo (.items() x2 y el `in`).
+            biomarker_mapping = {k: _col_canonica(v)
+                                 for k, v in biomarker_mapping.items()}
+
             # PRIORIDAD 1: Sistema avanzado (narrative_biomarkers) - MÁS PRECISO
             for biomarker_name, result in narrative_biomarkers.items():
                 biomarker_upper = biomarker_name.upper()
@@ -2208,6 +2305,26 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
                     _registrar_auditoria_polaridad(_ncaso, _audit)
             except Exception as _e_pol:
                 logger.warning(f"[polaridad-ia] no aplicada (se conserva el regex): {_e_pol}")
+
+        # V6.9.79: colapso final de columnas sinónimas. Canonizar los dos mapeos
+        # de arriba no basta: hay rutas internas que construyen el nombre de la
+        # columna a mano (f"IHQ_{...}") y colaban IHQ_ACTINA_MUSCULO_LISO junto a
+        # IHQ_SMA. Se hace en la salida ÚNICA de la función, que es lo que ve el
+        # resto del programa, en vez de perseguir cada constructor.
+        combined_data = _colapsar_sinonimos(combined_data)
+
+        # V6.9.79: la guarda de veracidad, TAMBIÉN aquí.
+        #
+        # `extract_biomarkers` ya la aplica, pero esta función vuelve a inyectar
+        # biomarcadores DESPUÉS (pase final, sincronización desde Factor
+        # Pronóstico, extractor narrativo) y esos no pasaban por ella. Medido en
+        # IHQ250076: el informe solo nombra CK7 y CK20, `extract_biomarkers`
+        # devuelve correctamente esos dos, y aquí reaparecía IHQ_CKAE1AE3 =
+        # POSITIVO. Ese valor fantasma no solo ensucia su columna: como la lista
+        # de estudios solicitados se rellena con los biomarcadores QUE TIENEN
+        # VALOR, se colaba además como un estudio que el patólogo nunca pidió, y
+        # la fila salía en rojo por un marcador inexistente.
+        combined_data = _guarda_veracidad(combined_data, text)
 
         logger.info(f"✅ Extraídos {len(combined_data)} campos con extractores refactorizados")
         return combined_data
@@ -2979,7 +3096,11 @@ def map_to_database_format(extracted_data: Dict[str, Any]) -> Dict[str, str]:
         'RCC-MA': 'IHQ_RCC', 'rcc-ma': 'IHQ_RCC',
         'GP200': 'IHQ_RCC', 'gp200': 'IHQ_RCC',
     }
-    
+
+    # V6.9.79: mismo criterio que en biomarker_mapping — ver core/biomarcadores_canonicos.py
+    all_biomarker_mapping = {k: _col_canonica(v)
+                             for k, v in all_biomarker_mapping.items()}
+
     # Aplicar mapeos de biomarcadores
     found_biomarkers = []
 

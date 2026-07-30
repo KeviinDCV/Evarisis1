@@ -1037,6 +1037,40 @@ def _sincronizar_modelo_relacional(records: List[Dict[str, Any]]) -> None:
             pass
 
 
+def _canonizar_columnas(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Reescribe las columnas sinónimas de cada registro a su forma canónica.
+
+    Un anticuerpo, una columna. Si el registro trae valor en la canónica Y en un
+    alias, gana el resultado real sobre 'NO MENCIONADO' —que no es un hallazgo,
+    sino la marca de «se pidió y el informe no lo reporta»—. Ver la evidencia de
+    cada equivalencia en core/biomarcadores_canonicos.py.
+
+    Devuelve la lista original si no hay nada que reescribir, para no copiar
+    22.000 diccionarios en la importación normal.
+    """
+    try:
+        from core.biomarcadores_canonicos import canonico, es_alias, fusionar
+    except ImportError:
+        return records
+    if not any(es_alias(k) for r in records for k in r):
+        return records
+    salida = []
+    for r in records:
+        aliases = [k for k in r if es_alias(k)]
+        if not aliases:
+            salida.append(r)
+            continue
+        nuevo = dict(r)
+        for k in aliases:
+            destino = canonico(k)
+            valor = fusionar([nuevo.get(destino), nuevo.pop(k)])
+            if valor:
+                nuevo[destino] = valor
+            logger.info(f"[V6.9.79] columna sinónima {k} → {destino}")
+        salida.append(nuevo)
+    return salida
+
+
 def save_records(records: List[Dict[str, Any]]) -> int:
     """Guarda una lista de registros (diccionarios) en la base de datos.
 
@@ -1051,6 +1085,14 @@ def save_records(records: List[Dict[str, Any]]) -> int:
     if not records:
         logger.warning("No se proporcionaron registros para guardar")
         return 0
+
+    # V6.9.79: última red antes de tocar la BD. La equivalencia entre columnas
+    # sinónimas ya se aplica en el extractor, pero aquí escriben también la ruta
+    # de IA (core/columnas_huv_ia.py) y el auditor, cada uno con su propio mapeo
+    # heredado. La fase 2 demostró que ESTE es el único punto de escritura, así
+    # que basta con canonizar aquí para que ninguna de esas rutas resucite una
+    # columna duplicada sin que nadie se entere.
+    records = _canonizar_columnas(records)
 
     # === V6.9.0: Branch MySQL via adapter (multi-usuario LAN) ===
     if _use_mysql():

@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.73",
-    "version_name": "Auditoría del informe estadístico · vista Por Paciente · rótulos de coloración",
-    "build_date": "27/07/2026",
-    "build_number": "202607271443",
+    "version": "6.9.83",
+    "version_name": "Dos modelos locales: 139 de 154 valores recuperados",
+    "build_date": "29/07/2026",
+    "build_number": "202607291000",
     "release_type": "Stable",
     "codename": "Truthful Diagnosis",
 }

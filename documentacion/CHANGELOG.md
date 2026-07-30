@@ -1,5 +1,508 @@
 # Changelog
 
+## [6.9.83] - 2026-07-29 — Segundo modelo local: 139 de 154 recuperados, filas rojas 77 → 57
+
+`ministral-3-14b-instruct-2512` sobre los 38 que quedaban, con la misma guarda y la misma regla: **se escribe solo donde coincide con la lectura verificada**.
+
+```
+38 pendientes
+
+COINCIDE con la lectura   23   -> escritos
+no se pronuncia           14   -> cola del patólogo
+DISCREPA                   1   -> cola del patólogo
+```
+
+### El segundo modelo desempata, no manda
+
+De los 23 escritos, **21 son casos donde el primer modelo se abstuvo**: ahí ministral rompe el empate a favor de la lectura y quedan dos lectores de acuerdo, que es la regla de siempre.
+
+Los otros 2 son más interesantes, porque el primer modelo **discrepaba**:
+
+```
+IHQ250688 · CK5/6        «PIERDEN EXPRESION DE CELULAS MIOEPITELIALES (P63, CK 5-6)»
+IHQ260353 · E-CADHERINA  «E-CADHERINA Y P120 CON MARCACION MEMBRANOSA NEGATIVA»
+```
+
+Los dos son NEGATIVO. Con ministral queda **2 contra 1** a favor de la lectura, y coincide con lo que el informe dice literalmente. Eran justo los dos que `mistral-nemo` había leído como POSITIVO — las trampas de «pierde expresión» y de la negación al final de la frase que el propio módulo advierte en su cabecera.
+
+Que un modelo se equivoque en esas dos y el otro no **es el argumento de todo el diseño**: ninguno es de fiar por sí solo, y por eso nada se escribe con un único lector.
+
+### Lo que no gana el modelo grande
+
+14B frente a los 12B de nemo, y **más lento por llamada** (38 valores tardaron lo que 110 con nemo). No sustituye al primero: lo complementa donde se abstiene. La configuración del programa sigue apuntando a `mistral-nemo-instruct-2407`; el segundo modelo se pasó explícito a `_llm_local_call`, sin tocar `config.ini`.
+
+### Estado
+
+```
+biomarcadores en BD   11.708 -> 11.731
+filas rojas               77 ->     57     (ambos caminos: 57, diferencia 0)
+de los 154 del informe   139 dentro · 15 pendientes
+valores atrapados en columna alias : 0     (esta vez se canonizó al escribir)
+```
+
+El rojo, en cinco versiones: **237 → 165 → 150 → 77 → 57**.
+
+### Las 15 que quedan, y por qué
+
+| motivo | |
+|---|--:|
+| ninguno de los dos modelos se pronuncia | 12 |
+| el valor no es una polaridad (un `%`, «no valorable») — ningún modelo puede confirmarlo | 2 |
+| un modelo confirma y el otro discrepa | 1 |
+
+`herramientas_ia/resultados/cola_revision_ia.csv` trae una línea por valor con **lo que dijo cada lector y las dos citas**, para adjudicar sin abrir el PDF. Es el residuo esperado: el proyecto ya tenía medido que el 100 % automático no existe con esta GPU, y estas 15 son exactamente eso — no un fallo del método, sino su frontera.
+
+---
+
+## [6.9.82] - 2026-07-29 — La IA local resuelve la cola: 96 valores más, filas rojas 150 → 77
+
+Lo que un regex no pudo —y costó una reversión medida demostrarlo— lo resuelve la comprensión de la frase. **116 de los 154 valores** que el informe reporta están ya en la base de datos.
+
+### Dos lectores independientes, y solo se escribe cuando coinciden
+
+La IA local **no es la autoridad**: es un segundo lector. La cola ya traía, para cada valor, la lectura de un revisor con verificación adversarial y su cita comprobada literal en el PDF. Ahora se compara con el veredicto del modelo local, y solo se escribe donde los dos dicen lo mismo.
+
+Se reutilizó tal cual la capa de la V6.9.61 (`core/extractors/biomarcador_polaridad_ia`), sin tocar una línea: clasificación **cerrada** (POSITIVO | NEGATIVO | NO_DICE), vocabulario limitado a marcadores que ya sabemos que el informe nombra, y **cita obligatoria verificada literal** — si la cita no está en el texto, el veredicto se descarta. Una alucinación no puede sobrevivir a esa guarda.
+
+`mistralai/mistral-nemo-instruct-2407`, endpoint validado como local antes de cada llamada. Los informes no salieron del equipo.
+
+```
+133 pendientes · 110 casos · 13 min
+
+COINCIDEN            96   72 %   -> escritos
+no se pronuncia      34   26 %   -> siguen en cola
+DISCREPAN             3    2 %   -> decide el patólogo
+```
+
+### Las 3 discrepancias las falla la IA, no la lectura
+
+Vale la pena mirarlas, porque justifican el diseño:
+
+```
+IHQ250688 · CK5/6        «PIERDEN EXPRESION DE CELULAS MIOEPITELIALES (P63, CK 5-6)»
+                          lectura NEGATIVO · IA POSITIVO
+IHQ260353 · E-CADHERINA  «E-CADHERINA Y P120 CON MARCACION MEMBRANOSA NEGATIVA»
+                          lectura NEGATIVO · IA POSITIVO
+IHQ250471 · KI-67        «…ES MENOR AL 5%…»  no es una polaridad, es un porcentaje
+```
+
+Las dos primeras son exactamente la trampa que el propio módulo advierte en su cabecera: «pierde expresión» y una negación al final de la frase. Con un solo lector se habrían escrito invertidas. **El acuerdo de los dos es lo que hace segura la escritura**, no la confianza en el modelo.
+
+### Estado
+
+```
+biomarcadores en BD   11.612 -> 11.708
+filas rojas              150 ->     77     (ambos caminos de lectura: 77, diferencia 0)
+de los 154 del informe   116 dentro · 38 pendientes (6 con polaridad invertida)
+```
+
+Recorrido completo del rojo en tres versiones: **237 → 165 → 150 → 77**.
+
+Las dos colas para el patólogo:
+- `herramientas_ia/resultados/cola_revision_ia.csv` — 37 líneas, cada una con **las dos citas** (la de la lectura y la de la IA) para poder adjudicar sin abrir el PDF.
+- `herramientas_ia/resultados/valores_en_pdf_no_extraidos.csv` — los 38 que siguen sin valor.
+
+### ⚠️ Un fallo propio, detectado por el invariante
+
+Tras escribir los 96, los dos caminos de lectura dejaron de coincidir (77 contra 78). Causa: la cola se construyó **antes** de unificar las columnas duplicadas, así que traía `IHQ_ACTINA_MUSCULO_LISO`, y el script escribió ahí sin canonizar. El valor quedaba visible en la tabla plana e **invisible en la lectura de la app**, porque el modelo relacional ya no registra las columnas alias.
+
+Un solo caso (`IHQ251368`), movido a `IHQ_SMA`. Lo relevante es que **el invariante de la V6.9.79 lo cazó al instante**: para eso se puso. Toda escritura a una columna de biomarcador debe pasar por `canonico()`.
+
+---
+
+## [6.9.81] - 2026-07-29 — 78 resultados recuperados del PDF, y un patrón genérico que hubo que revertir
+
+De los 154 valores que el informe reporta y la base de datos no tenía, **21 ya están dentro**, más **62 recuperados** por un camino que apareció al investigarlos. Las filas rojas bajan de 165 a **150**.
+
+### Los 154 no eran un problema, eran tres
+
+Primera medición, antes de tocar nada: la BD se llenó con código anterior, así que parte del trabajo podía estar hecho.
+
+| | |
+|---|--:|
+| el extractor de hoy **ya los produce** (solo faltaba escribirlos) | 31 |
+| no reconoce el nombre que usa el informe (alias) | 1 |
+| reconoce el nombre pero **ningún patrón casa la frase** | 122 |
+
+### De los 31 «gratis», solo 16 lo eran
+
+Contrastar la polaridad del extractor con la cita verificada del informe destapó que **15 de los 31 la tienen invertida**:
+
+```
+«NO SE OBSERVA MARCACION PARA … CICLYNA-D1»        → el extractor dice POSITIVO
+«MARCACION NEGATIVA PARA PAX8, CK7, CEA, CA19.9»   → el extractor dice POSITIVO
+«SIN MARCACION PARA: … CK5-6 …»                    → el extractor dice POSITIVO
+```
+
+Escribirlos a ciegas habría metido 15 polaridades falsas en una BD clínica. Se escribieron **16**, cada uno con la frase del informe que lo respalda; los 15 quedan en la cola con la marca de por qué no se tocan.
+
+### La notación de signo: 62 valores más
+
+Investigando por qué fallaba E-cadherina apareció que sus 6 patrones exigen el marcador **pegado** a la palabra de polaridad (`E-CADHERINA: POSITIVO`), y el informe escribe otra cosa. Entre las formas no cubiertas había una que sí se puede reconocer sin ambigüedad, porque **la polaridad está escrita, no deducida**:
+
+```
+"WT1 (+ DEBIL), CALRRETININ (+ FOCAL), PAX-8 (-)"
+"SALL-4 (+), OCT-4 (+), D2-40 (+), CD30 (-), AFP (-) Y CKAE1/AE3 (-)"
+```
+
+Patrón nuevo, aditivo (solo rellena marcadores sin valor). Medido sobre los 2.076 casos:
+
+```
++60 valores nuevos · -0 desaparecen · 4 cambian   (los 4, basura -> valor real)
+```
+
+Y verificado uno a uno contra el PDF de forma independiente: **60 de 60** tienen la notación literal en su informe con **el signo correcto, 0 discrepancias de polaridad**. Los 4 cambios sustituyen la etiqueta del campo por el resultado (`'R. ESTROGENO' → 'POSITIVO'`, `'(-) Y TTF1 (-)' → 'NEGATIVO'`).
+
+En BD: **19 celdas vacías rellenadas y 43 `NO MENCIONADO` sustituidos**. Ese literal no es un resultado —es la marca de «se pidió y el informe no lo reporta»— y aquí está probado que sí lo reporta. Mismo criterio que `fusionar()` en el registro canónico.
+
+Más el alias que faltaba: el informe escribe `CALRRETININ` (doble R, sin -A final), combinación que no estaba.
+
+### ⚠️ El patrón genérico: revertido
+
+El grueso de los 122 responde a una sola forma —`PRESENTAN <marcación> PARA <lista>`— y se implementó con todas las precauciones que este archivo ha aprendido a golpes: **sin `re.DOTALL`**, acotado a la frase con `[^.\n]`, aditivo, y con la polaridad decidida por la cláusula que gobierna. Medido:
+
+```
++808 valores nuevos (se buscaban 122) · 206 CAMBIAN DE VALOR
+IHQ250213: CDX2, CK7, CK20, CKAE1AE3, GATA3, PAX8 y TTF1 pasaban de NEGATIVO a POSITIVO
+```
+
+**Revertido**, y confirmado con el banco que la vuelta atrás es exacta (`+0 / -0 / 0 cambios`). El motivo está escrito en el propio archivo para que nadie lo reintente igual: ser aditivo no basta, porque al entrar antes que los patrones específicos gana la carrera y el valor bueno ya no se escribe. Y el sustantivo suelto («marcación … para …») describe en el informe tanto el resultado del tumor como **el control, el tejido normal acompañante o el panel solicitado**. Un regex no distingue eso, y aquí la diferencia es POSITIVO contra NEGATIVO en un informe oncológico.
+
+Lo que haría falta no es otro patrón sino resolver la frase con la IA local + guarda de cita verbatim, que es la vía ya medida al 98 % en la V6.9.61.
+
+### Estado
+
+```
+biomarcadores en BD   11.577 -> 11.612
+filas rojas              165 ->    150
+de los 154 del informe    21 dentro · 133 pendientes (15 con polaridad invertida)
+```
+
+La cola actualizada, con la frase literal de cada caso y por qué está pendiente, en `herramientas_ia/resultados/valores_en_pdf_no_extraidos.csv`.
+
+⚠️ **Encontrado de paso, sin tocar:** `IHQ260474 · IHQ_P63` vale `POSITIVO` en la BD y el informe escribe `P63 (-)`. Sobrescribir una polaridad real no lo decide un script; queda señalado para el patólogo.
+
+---
+
+## [6.9.80] - 2026-07-29 — El marcador fantasma: la guarda de veracidad, también fuera
+
+Las filas rojas bajan de **237 a 165** sin tocar un solo criterio del verificador. Las 72 que desaparecen nunca debieron estar: señalaban un biomarcador que el patólogo jamás pidió.
+
+### No era el patrón de prefijo, era dónde acaba la guarda
+
+La hipótesis de partida —un patrón que confunde `CD38`→`CD138` y cualquier `CK`→pancitoqueratina— era correcta en el síntoma y equivocada en el sitio. Trazado sobre `IHQ250076`, cuyo informe solo nombra CK7 y CK20:
+
+```
+extract_biomarkers   (con la guarda V6.9.60)  ->  CK7, CK20            ✓ correcto
+extract_ihq_data                              ->  + IHQ_CKAE1AE3=POSITIVO   ✗
+map_to_database_format                        ->  + CKAE1AE3 en solicitados ✗
+```
+
+La guarda de veracidad **ya existía y funcionaba**. El problema es que `extract_ihq_data` vuelve a inyectar biomarcadores *después* de ella —pase final, sincronización desde Factor Pronóstico, extractor narrativo— y esa segunda cosecha no la atravesaba.
+
+Y de ahí salta a la lista de estudios: cuando el informe no trae lista propia, `map_to_database_format` la rellena **con los biomarcadores que tienen valor**. Un valor fantasma se convertía así en un estudio solicitado inexistente, y la fila salía en rojo por un marcador que nadie pidió.
+
+La guarda se aplica ahora también en la salida de `extract_ihq_data`, reutilizando la misma función —no se reimplementa el criterio, que es justo como se desincronizan las cosas en este código—.
+
+⚠️ **Hizo falta un segundo intento.** La primera versión filtraba solo las claves con prefijo `IHQ_` y el fantasma resucitaba igual: la clave viva era la minúscula `ckae1ae3`, que `map_to_database_format` convierte en columna una etapa más tarde. Ahora se juzgan las dos formas.
+
+### Radio medido antes de aplicar
+
+No se puede medir re-extrayendo: `extract_ihq_data` tarda >30 s por caso sobre el texto completo (~17 h el corpus). Pero la BD la produjo ese mismo pipeline, así que basta con pasar el oráculo de la guarda por todo lo guardado:
+
+```
+valores de biomarcador en BD      : 11.577
+los que la guarda descartaría     :     14   (0,12 %)
+```
+
+Verificados **uno a uno**: 13 no tienen ni una aparición del marcador en su informe (`IHQ250405` guarda `RECEPTOR_ESTROGENOS=POSITIVO` y el informe solo nombra CK7 y CK20; `IHQ260324` guarda el literal `'Y RP'`). El 14º es `IHQ260343 · KAPPA`, la inferencia clínica que ya quedó anotada en la V6.9.78 a criterio del patólogo. No es una regresión: es la misma limpieza, alcanzando donde antes no llegaba.
+
+### Las 80 entradas fantasma ya guardadas
+
+El arreglo evita que vuelva a pasar; el dato viejo hay que quitarlo aparte. **80 entradas retiradas** de `IHQ_ESTUDIOS_SOLICITADOS` (43 `CD138`, 37 `CKAE1AE3`), con doble evidencia independiente: barrido determinista con frontera de palabra y todas las grafías del informe, más la lectura de los informes por agentes con verificación adversarial.
+
+```
+entradas CD138/CKAE1AE3 en la BD  ->  463 legítimas (intactas) · 80 fantasma (retiradas)
+casos que quedan sin ningún estudio solicitado : 0
+listas malformadas tras la edición             : 0
+```
+
+### Lo que NO se tocó, y por qué
+
+El barrido inicial proponía **107** retiradas. Se aplicaron 80. Las otras 27 se quedan porque los dos oráculos discrepan: `_marcador_mencionado` no reconoce `MIOGENINA` frente a su columna `IHQ_MYOGENIN`, ni `ACTINA DE MÚSCULO LISO` frente a `IHQ_SMA`. Borrar por un oráculo con huecos destruye solicitudes legítimas, y aquí se prefiere un rojo de más que un dato de menos.
+
+⚠️ **Dos trampas de método, para que no se repitan.** La primera versión de la comprobación quitaba `SMA` en 57 casos: `_resolver_columna('SMA')` devolvía `IHQ_AML` —la columna alias que la V6.9.79 vació— y el informe dice «SMA», no «AML». Corregido: el verificador resuelve ya a la columna canónica. La segunda: al contrastar «¿está el marcador en el texto?» sin frontera de palabra, `CD3` daba positivo dentro de `CD38`. Es la familia de errores de subcadena que este proyecto arrastra desde la V6.9.72, y esta vez el que cayó fui yo comprobando.
+
+### Estado del rojo
+
+```
+V6.9.78   2 rojas (medidas mal, contra un SQLite desfasado)
+V6.9.79 237 rojas — ambos caminos de lectura por fin coinciden
+V6.9.80 165 rojas — fuera las que señalaban un estudio inexistente
+```
+
+De esas 165, la mayoría siguen escondiendo **valores que el informe sí reporta y no supimos extraer**: 154 identificados con su cita literal en `herramientas_ia/resultados/valores_en_pdf_no_extraidos.csv`. Ese es el trabajo que queda.
+
+---
+
+## [6.9.79] - 2026-07-28 — Fase 3: un anticuerpo, una columna
+
+`SMA` es la sigla inglesa de «actina de músculo liso»: la misma tinción. El esquema tenía **cuatro** columnas para ella, y el informe elige un nombre u otro sin criterio fijo, así que el valor caía en una y quien lo buscaba miraba en otra.
+
+### Primero: cuáles son duplicados y cuál no
+
+La lista que se iba a fusionar incluía `ACTINA_MUSCULO_ESPECIFICA`. **Es otro anticuerpo** —MSA/HHF35 marca además la esquelética y la cardíaca— y el PDF lo demuestra: hay informes que piden las dos en la misma frase.
+
+```
+IHQ250123: «…myogenina, ACTINA DE MUSCULO LISO, ACTINA MUSCULO ESPECÍFICA, KI-67 y S100»
+IHQ250140: «positivas para ACTINA DE MÚSCULO ESPECIFICA, SMA y caldesmón»
+```
+
+Fusionarlas habría destruido información clínica. La prueba contraria, en un solo informe:
+
+```
+IHQ251122: «Sin marcación para desmina, ACTINA DE MÚSCULO LISO y S100.
+             CD34 y SMA negativos»          <- mismo patólogo, mismo resultado, dos nombres
+```
+
+Y seis casos más donde el informe **pide con un nombre y reporta con el otro** (IHQ250149, 250324, 250488, 250696, 250903, 250997).
+
+| grupo | columnas | valor real |
+|---|---|--:|
+| actina músculo **liso** (SMA) | `IHQ_SMA` · `IHQ_ACTINA_MUSCULO_LISO` · `IHQ_AML` · `IHQ_ACTIN` | 66 · 20 · 0 · 0 |
+| actina músculo **específica** (MSA) | `IHQ_ACTINA_MUSCULO_ESPECIFICA` · `IHQ_MSA` | 2 · 0 |
+
+`IHQ_AML` no contenía un solo resultado: solo el aviso «NO MENCIONADO».
+
+### La causa de fondo no era la extracción
+
+La equivalencia estaba declarada —cuando lo estaba— en **cinco tablas mantenidas a mano**: el extractor, `unified_extractor`, el verificador de completitud, el auditor y la configuración de IA. La V6.4.24 arregló el extractor y nadie tocó el resto; incluso dejó escrito *«Actina de músculo liso (NO confundir con SMA que es biomarcador independiente)»*, que es clínicamente falso. Dos líneas más abajo, el mismo diccionario se contradecía: `'SMOOTH MUSCLE ACTIN': 'ACTINA_MUSCULO_LISO'` junto a `'SMA': 'SMA'`.
+
+Ahora hay **un solo sitio**, `core/biomarcadores_canonicos.py`, con la frase del informe que justifica cada equivalencia. Un grupo sin esa evidencia no entra.
+
+### Qué cambió
+
+```
+IHQ_SMA                    82 -> 100      IHQ_ACTINA_MUSCULO_LISO  23 -> 0
+IHQ_AML                     2 ->   0      IHQ_ACTIN                 0 -> 0
+IHQ_ACTINA_MUSCULO_ESPECIFICA  2 ->   2   <- intacta, es otro anticuerpo
+```
+
+Los 7 que «faltan» son los casos que tenían dos columnas rellenas a la vez y ahora son una. **0 conflictos**: en ningún caso las dos columnas decían cosas distintas. Las columnas alias se quedan vacías, no se borran del esquema: hay `.exe` instalados en otros equipos contra este MySQL.
+
+Regla al fusionar: un resultado real gana a «NO MENCIONADO», que no es un hallazgo sino la marca de «se pidió y el informe no lo reporta». Si dos columnas tuvieran resultados reales distintos, la fila no se toca y se reporta — eso lo decide el patólogo.
+
+### Verificación
+
+Banco anti-regresión sobre los 2.076 casos, antes y después:
+
+```
++16 nuevos · -18 desaparecen · 0 cambian de valor
+casos del grupo con pérdida de valor         : 0
+casos con cambios FUERA del grupo            : 0
+```
+
+Y de punta a punta: BD y lectura de la app coinciden (100/0/0/0/2/0), el modelo relacional reconstruye con **0 celdas distintas**, y el registro `biomarcadores` pasa de 146 a 142 filas — una por anticuerpo, no por nombre.
+
+Dos guardas para que no vuelva: `save_records()` canoniza antes de escribir (la fase 2 demostró que es el único punto de escritura, así que cubre también la ruta de IA y el auditor, que conservan sus mapeos viejos), y el modelo relacional **avisa** si un valor aparece en una columna alias en vez de corregirlo en silencio.
+
+---
+
+## Las filas rojas ya no dependen de por dónde se lea
+
+`_columna_detectada` no tenía `'N/A'` en su lista de vacíos: contaba el literal como *detectado* y un `NULL` como *ausente*. El modelo relacional normaliza `'N/A' → NULL` (276.781 celdas), así que el mismo registro con el mismo verificador daba dos respuestas:
+
+```
+antes  ·  tabla plana cruda   :   2 filas rojas
+          lectura de la app   : 237 filas rojas
+ahora  ·  ambos caminos       : 237 filas rojas     (diferencia: 0 casos)
+```
+
+Entró con la **V6.9.76** y llevaba vivo desde entonces. El peligro no era el número sino el interruptor: `usar_modelo_relacional = false` es la vuelta atrás documentada, y activarlo hacía desaparecer 235 avisos de calidad clínica sin decir nada.
+
+**Qué decidió cuál de los dos números era el bueno.** Un censo de las 303.096 celdas de biomarcador de las filas IHQ:
+
+| contenido de la celda | veces | |
+|---|--:|--:|
+| `N/A` | 272.808 | **90,0 %** |
+| `<NULL>` | 18.711 | 6,2 % |
+| POSITIVO / NEGATIVO / valor | 9.651 | 3,2 % |
+| `NO MENCIONADO` | 931 | 0,3 % |
+
+Cada fila IHQ lleva entre **111 y 137 de sus 146** columnas de biomarcador puestas a `'N/A'` (mediana 132). Es el relleno por defecto, no una decisión por marcador: tratarlo como «el sistema lo resolvió» era falso. `'NO MENCIONADO'` sí es deliberado —«se pidió y el informe no lo reporta»— y **sigue contando como detectado**.
+
+El arreglo no es añadir `'N/A'` a mano —también divergían `NA`, `NULL`, `-` y `--`, que hoy aparecen 0 veces pero volverían— sino un invariante: **`_SIN_DATO` contiene todo lo que el modelo relacional considera vacío**, derivándolo de él. Así los dos caminos no pueden separarse otra vez. Verificado sin importar el orden de carga de los módulos (no hay import circular).
+
+### Y lo que el rojo estaba diciendo era falso en un 88 %
+
+Que ambos caminos coincidan no significa que las 237 estén justificadas. Se leyeron **los 280 pares (caso, marcador) contra el texto del informe**, con verificación adversarial y una comprobación determinista posterior: cada cita tiene que aparecer **literal** en el PDF y la columna tiene que estar realmente vacía en la BD.
+
+| qué pasa de verdad | pares | |
+|---|--:|--:|
+| 🔴 el informe **SÍ da el resultado** y no lo extrajimos | **157** | 56 % |
+| 🔴 el marcador **nunca se pidió** (solicitud inventada) | 89 | 32 % |
+| ✅ se pidió y el informe calla — el rojo es correcto | 34 | **12 %** |
+
+```
+citas comprobadas LITERALMENTE en el PDF   : 154 / 157
+columna vacia en BD, como se afirmaba      : 154 / 154   (0 afirmaciones falsas)
+```
+
+Las 3 restantes son de `IHQ250880`, donde la cita venía abreviada con «...» y el contraste literal la rechaza — correctamente.
+
+**Hay 154 resultados de biomarcador escritos en los informes que no están en la base de datos.** Los más frecuentes: E-CADHERINA (23), SINAPTOFISINA (16), CICLINA D1 (14), IDH1 (11), CK5/6 (9). Lista completa con la frase del informe en `herramientas_ia/resultados/valores_en_pdf_no_extraidos.csv`.
+
+Por caso: de las 237 filas rojas, **126 esconden al menos un valor recuperable del PDF** y **79 son rojo injustificado** (solo solicitud fantasma). Solo 28 lo son por el motivo que el rojo dice significar.
+
+El mecanismo de las fantasma:
+
+```
+IHQ250351  el informe dice CD38   ->  la BD solicita CD138     (43 de 43 casos)
+IHQ250019  el informe pide CK5/6  ->  la BD solicita CKAE1AE3  (35 de 35 casos)
+```
+
+Es la **misma causa que quedó abierta en la V6.9.78**: un patrón que adjudica por prefijo y confunde `CD38`→`CD138` y cualquier `CK`→pancitoqueratina. Allí se vio contaminando resultados; aquí, la lista de estudios solicitados. Listado en `herramientas_ia/resultados/solicitudes_fantasma.csv`.
+
+**Nada de esto se ha tocado.** Son dos trabajos con su propio banco de medición —el patrón genérico por un lado, 154 valores por extraer por otro— y este cambio era el del rojo. Pero conviene saberlo antes de mirar esa pantalla: hoy el rojo no significa «el laboratorio no lo reportó» sino, cuatro de cada cinco veces, «nosotros no lo leímos o nunca se pidió».
+
+⚠️ **Corrección de la V6.9.78:** allí se dijo que había «299 filas rojas, 81 por SMA». Era falso: esa medición llamaba al verificador sin pasarle el registro, y por esa vía lee un SQLite de 2.073 filas que va desfasado. Lo que el usuario ve son las 237 de arriba.
+
+---
+
+## [6.9.78] - 2026-07-28 — Verificación completa contra los PDFs · biomarcadores 99,97 % respaldados
+
+Verificación **independiente del extractor** de todo lo que hay en la BD contra los 765 PDFs, y corrección de lo que apareció. Las reglas de re-lectura se escribieron aparte a propósito: usando el mismo código, la comparación no probaría nada.
+
+### La lectura del PDF no es OCR
+```
+765 PDFs · 36.243 páginas · 69,5 M caracteres · 0 páginas sin capa de texto
+```
+El código usa el texto nativo si la página trae más de 50 caracteres y solo entonces recurre a tesseract. Como **ninguna** página baja de ese umbral, la rama de OCR nunca se ejecuta. Por eso los fallos de extracción son siempre de *lógica* —qué trozo del texto se toma—, nunca de *lectura*.
+
+⚠️ **Tesseract NO está instalado** en el equipo (`TesseractNotFoundError`), y ese error no se captura: reventaría el PDF entero. Hoy da igual porque el HUV genera PDFs digitales, pero el sistema no es tolerante, es afortunado. Y hay una asimetría: los IHQ pasan por el lector con respaldo OCR; las **coloraciones leen con PyMuPDF directo, sin ningún respaldo** — una coloración escaneada saldría vacía en silencio.
+
+### Campos de cabecera: 22.764 casos comparados uno a uno
+| campo | coincide | difiere |
+|---|--:|--:|
+| género, edad, fecha informe, EPS, fecha ingreso | 22.764 | **0** |
+| cédula | 22.691 | **0** |
+| nombre | 22.760 | 4 → corregidos |
+| servicio | 22.086 | 16 *(regla de negocio V5.3.8)* |
+
+Diagnóstico comprobado aparte: **292 de 293 con todas sus líneas literales en el PDF (99,7 %)**; el único fallo es un dx de 4 páginas que quedó pegado al salto arrastrando la letra del siguiente espécimen.
+
+### Las coloraciones no leían 5 campos que el informe SÍ trae
+`extraer_demografia` capturaba 8 campos y se detenía ahí — el propio docstring decía *"demografía mínima"*. Resultado: 20.471 filas (el **91 % de la BD**) con esos campos vacíos aunque estuvieran impresos.
+
+| campo | antes | ahora |
+|---|--:|--:|
+| EPS | 0,1 % | **100 %** |
+| Médico tratante | 0,1 % | **100 %** |
+| Servicio | 0,1 % | **100 %** |
+| Fecha de ingreso | 0,1 % | **100 %** |
+| Patólogo | 0,1 % | **83,5 %** |
+
+**98.854 celdas rellenadas**, solo donde estaban vacías; ningún valor existente se pisó. Más **14 correcciones de identidad** que destaparon bugs viejos: la cédula guardada como nombre (`'42159318' → 'NAYIVE'`, 5 casos), la edad pegada al apellido (`'DE GAMBA 78'`, 4 casos) y un dígito perdido en una cédula (`M2511941: 6218273 → 62182273`).
+
+⚠️ **El patólogo salía mal en la primera versión.** El informe pone el nombre en la línea *anterior* a la etiqueta:
+```
+ARMANDO CORTES BUELVAS       <- el nombre
+Responsable del análisis:
+MD Patólogo                  <- lo que capturaba la primera versión
+```
+De haberse aplicado habría escrito 17.000 veces el cargo en vez del nombre.
+
+### Iniciales del nombre (`name_splitter`)
+El filtro `len(t) > 1` descartaba **toda palabra de una letra**, y con ella las iniciales: `ELISA DE C ECHETO` perdía la "C". Ahora se conserva si es una letra; se siguen descartando dígitos sueltos y signos, que es para lo que estaba el filtro.
+
+### Biomarcadores: 11.586 valores contra el PDF
+Tres comprobaciones de fuerza distinta, reportadas por separado porque mezclarlas daría una cifra engañosa.
+
+| | |
+|---|--:|
+| **presencia** — el marcador se menciona en el informe | **11.583 / 11.586 (99,97 %)** |
+| **valor numérico** — el `%` o el score está literal en el texto | **512 / 512 (100 %)** |
+| **polaridad** | ver abajo |
+
+Se ampliaron los alias con las formas que usan los informes reales: `AE1/3`, `CK AE1/3`, `AE1/AE2` (errata recurrente del propio informe), `GLYPICAN` a secas, y `KAPPA`/`LAMBDA`, que no figuraban en `_ALIAS_PDF`.
+
+**Borrados 2 valores sin respaldo** (`IHQ250345` y `IHQ260591`, `IHQ_CKAE1AE3`): el informe nombra CK7 y CK20 pero **nunca AE1/AE3**. Un patrón genérico de `CK` estaba adjudicando a la pancitoqueratina el resultado de otras citoqueratinas. Evidencia en `backup_borrado_bio_20260728_134951.json`. La causa de fondo —ese patrón genérico— **sigue abierta**.
+
+Queda un tercer caso sin borrar, `IHQ260343 · KAPPA = NEGATIVO`: el informe dice *"restricción a cadenas lambda"*, de lo que se deduce, pero no lo afirma. Es una inferencia clínica, no un error de lectura; se deja a criterio del patólogo.
+
+⚠️ **La polaridad NO se verificó aquí.** Es el 85 % de los valores y va en prosa libre; la comprobación determinista da 22,7 % de coherencia, cifra que mide el método y no los datos. Lo válido sigue siendo el trabajo de V6.9.61 (IA local + guarda de cita, 98 % medido): **585 correcciones esperando la firma del patólogo** en `cola_revision_polaridad.csv`, cada una con la frase literal del informe.
+
+### Por qué hay filas en rojo en el Visualizador
+No es un error: el rojo (`#FFE5E5`) marca los casos donde el patólogo **solicitó** un biomarcador y el informe **no reporta su resultado**. Los 11 campos de datos están completos en esas filas. Es control de calidad, no un fallo — salvo cuando el resultado sí está y no supimos leerlo (`IHQ250013`, SMA: *"FOCAL POSITIVIDAD PARA SMA"*).
+
+---
+
+## [6.9.77] - 2026-07-28 — Modelo relacional: fase 2 (escritura incremental)
+
+`save_records()` resultó ser el **único** punto de escritura: por ahí pasan la importación de PDFs, las coloraciones, la reconciliación, el extractor y las tres llamadas de `ui.py`.
+
+En vez de replicar ahí la lógica de UPSERT parcial —que abre la puerta a que los dos modelos diverjan en silencio— la tabla plana se escribe como siempre y después se **re-leen de ella los casos recién tocados**. Es imposible que difieran: la fuente sigue mandando y el relacional es su proyección exacta.
+
+```
+save_records            0,17 s   (escritura + propagación incremental)
+lectura tras escribir   0,67 s   SIN repoblado   (antes: 5,6 s de repoblado completo)
+```
+
+Tres redes de seguridad en capas: si la propagación falla no se propaga el error (el dato ya está guardado); la huella lo caza en la lectura siguiente; y si el modelo no está disponible se lee la tabla plana. Verificado tras aplicar: `CELDAS DISTINTAS: 0`.
+
+---
+
+## [6.9.76] - 2026-07-28 — Modelo relacional: fase 1 (lectura)
+
+`get_all_records_as_dataframe()` lee del modelo relacional manteniendo su contrato —el mismo DataFrame de 189 columnas—, así que dashboard, informe PDF, auditor, exportaciones y vista Por Paciente siguen funcionando sin tocarlos.
+
+| | |
+|---|--:|
+| lectura hoy | 1,08 s · 171,7 MB |
+| **lectura nueva** | **0,64 s · 70,8 MB** |
+| equivalencia | **0 celdas distintas de 4.238.836** |
+
+**2,4x menos datos por la red** en cada arranque, que importa porque los `.exe` corren en otros equipos contra este MySQL.
+
+⚠️ El riesgo real no era el rendimiento sino **servir datos obsoletos**. La huella que existía —`(COUNT, MAX(Fecha Ingreso Base de Datos))`— no valía: esa columna está **100 % vacía**, así que solo comparaba el número de filas y un `UPDATE` en sitio pasaba desapercibido. Ahora usa `CHECKSUM TABLE ... EXTENDED` (95 ms), que detecta cualquier cambio. Probado: un `UPDATE` directo por fuera de la app se detecta y resincroniza solo.
+
+**Medición que corrigió el plan:** se esperaba que el pivot de 146 biomarcadores fuera el cuello de botella y que hubiera que materializar. Las dos cosas eran falsas — la vista rinde (1,65 s) y materializar es lo **peor** (1,57 s + 4,08 s por escritura). Lo mejor es **no pivotar en SQL**: dos consultas y el pivot en pandas.
+
+Reversible con `usar_modelo_relacional = false` en `config/config.ini`.
+
+---
+
+## [6.9.75] - 2026-07-28 — Modelo relacional: fase 0 (esquema y volcado)
+
+La BD era **una** tabla de 22.547 × 189 sin claves foráneas, con **3.291.862 celdas de biomarcador para 11.586 valores reales (0,35 % de ocupación)** y el paciente repetido en cada fila.
+
+| tabla | filas |
+|---|--:|
+| `pacientes` | 18.271 |
+| `estudios` | 22.547 |
+| `biomarcadores` | 146 |
+| `resultados_biomarcador` | **11.586** |
+
+Con 3 claves foráneas donde antes había 0. `informes_ihq` **no se tocó**.
+
+**Dos decisiones que salieron de medir, no de suponer:**
+
+1. Los datos demográficos **no son constantes por paciente**: el nombre varía en 9 pacientes con la misma cédula, el género en 2, el documento en 19 y la edad en 203. Una tabla `pacientes` ingenua habría **perdido datos**. Cada estudio conserva los suyos tal como los registró ese informe —que además es lo correcto: el informe es un documento legal— y `pacientes` guarda solo la identidad para agrupar.
+2. Hay **dos formas de vacío**: `NULL` (3.003.477 celdas) y el literal `'N/A'` (276.799). Ningún código los distingue, así que la reconstrucción normaliza a `NULL` y la verificación lo reporta aparte.
+
+Verificación: se reconstruye la tabla plana desde el modelo y se compara celda a celda → **0 diferencias**, 22.547 / 22.547.
+
+---
+
+## [6.9.74] - 2026-07-27 — Ficha del paciente: toda la información del informe
+
+La ficha omitía **23 campos con dato** en un caso IHQ y 11 en una coloración: edad, género, documento, patólogo, sede, EPS, especialidad, departamento, municipio, CUPS, tipo de examen y las tres fechas.
+
+Ahora hay tres bloques nuevos: cabecera con los datos del paciente, contexto del estudio, y un cajón final **«Otros datos del informe»** con cualquier campo poblado que no haya salido antes — para que nada quede invisible aunque mañana se añada una columna. Verificado: **0 campos con dato ocultos**.
+
+Y se corrigió el silencio que causó la confusión: cuando un estudio no tiene biomarcadores, la sección no desaparece, dice por qué (*"las coloraciones son tinciones básicas y no llevan biomarcadores"*).
+
+
 ## [6.9.73] - 2026-07-27 — Auditoría del informe estadístico: 7 bugs de clasificación · vista Por Paciente · rótulos de coloración
 
 Cuatro frentes: auditoría del **Informe estadístico (PDF)**, arreglos en el diagnóstico principal, una vista nueva agrupada por paciente, y el rótulo del espécimen que se guardaba como diagnóstico en las coloraciones.

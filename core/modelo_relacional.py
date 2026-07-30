@@ -60,6 +60,25 @@ def partir_columnas(cols):
     return [c for c in cols if c not in bio], bio
 
 
+# V6.9.79: columnas del esquema que son el MISMO anticuerpo con otro nombre
+# (SMA / AML / ACTINA_MUSCULO_LISO). Ver core/biomarcadores_canonicos.py.
+try:
+    from core.biomarcadores_canonicos import alias as _alias_bio
+    ALIAS_BIO = _alias_bio()
+except ImportError:
+    ALIAS_BIO = frozenset()
+
+
+def biomarcadores_reales(bio):
+    """Las columnas que merecen fila en `biomarcadores`: un anticuerpo, una fila.
+
+    Las alias se excluyen del REGISTRO pero siguen en `bio` para que
+    `leer_dataframe` reponga las 189 columnas del contrato. Sus datos ya se
+    consolidaron en la canónica (V6.9.79), así que están vacías.
+    """
+    return [c for c in bio if c.upper() not in ALIAS_BIO]
+
+
 def _norm_ced(v) -> str:
     return "".join(ch for ch in str(v or "") if ch.isdigit())
 
@@ -213,17 +232,27 @@ def poblar(cur, log=logger.info):
     id_est = {n: i for i, n in cur.fetchall()}
 
     # ── biomarcadores + resultados
+    # V6.9.79: una fila por anticuerpo, no por nombre. Las columnas alias no se
+    # registran; si alguna trajera valor sería que la consolidación se saltó una
+    # fila, así que se avisa en vez de corregir en silencio.
+    bio_real = biomarcadores_reales(bio)
     cur.executemany("INSERT INTO biomarcadores (columna, nombre) VALUES (%s, %s)",
-                    [(c, c[4:]) for c in bio])
+                    [(c, c[4:]) for c in bio_real])
     cur.execute("SELECT id, columna FROM biomarcadores")
     id_bio = {c: i for i, c in cur.fetchall()}
-    res = []
+    res, huerfanos = [], 0
     for f in filas:
         eid = id_est[str(f[idx["Numero de caso"]] or "").strip()]
         for c in bio:
             v = f[idx[c]]
             if not _vacio(v):
+                if c not in id_bio:
+                    huerfanos += 1
+                    continue
                 res.append((eid, id_bio[c], str(v)))
+    if huerfanos:
+        logger.warning(f"[modelo] {huerfanos} valores en columnas alias sin "
+                       f"consolidar: revisa herramientas_ia/unificar_columnas")
     for i in range(0, len(res), 5000):
         cur.executemany("INSERT INTO resultados_biomarcador "
                         "(estudio_id, biomarcador_id, valor) VALUES (%s,%s,%s)",
@@ -342,6 +371,11 @@ def sincronizar_casos(cur, numeros, log=logger.debug) -> int:
         for c in bio:
             v = f[idx[c]]
             if not _vacio(v):
+                if c.upper() in ALIAS_BIO:   # V6.9.79: alias, no genera fila propia
+                    logger.warning(f"[modelo] valor en columna alias {c} "
+                                   f"(caso {num}): el extractor debería haberlo "
+                                   f"escrito en su columna canónica")
+                    continue
                 if c not in id_bio:      # biomarcador nuevo: se da de alta solo
                     cur.execute("INSERT INTO biomarcadores (columna, nombre) "
                                 "VALUES (%s,%s)", (c, c[4:]))
