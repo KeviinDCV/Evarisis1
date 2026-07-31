@@ -5624,14 +5624,24 @@ Disco {i}:
         cuenta = collections.Counter(c for c in ced if len(c) >= 4)
 
         f = filtro.strip().lower()
+        # V6.9.86: primero se AGRUPA y despues se filtra el grupo ENTERO.
+        # Filtrando fila a fila se partía al paciente: hay 9 con el nombre escrito
+        # distinto entre sus propias filas ('LUCELLY' / 'LUCENY'), así que buscar
+        # una grafía mostraba solo parte de su historia — y con "solo varios
+        # estudios" encendido aparecían con un único estudio, justo lo que ese
+        # interruptor promete que no pasa. Buscar una errata debe traer al
+        # paciente completo.
         grupos, sueltos = {}, []
         for k in range(len(num)):
-            if f and f not in nom[k].lower() and f not in ced[k]:
-                continue
             if len(ced[k]) >= 4:
                 grupos.setdefault(ced[k], []).append(k)
             else:
                 sueltos.append(k)
+        if f:
+            grupos = {c: ks for c, ks in grupos.items()
+                      if f in c or any(f in nom[k].lower() for k in ks)}
+            sueltos = [k for k in sueltos
+                       if f in nom[k].lower() or f in ced[k]]
 
         def _bio(k):
             """Biomarcadores de ese estudio, en una línea.
@@ -5670,7 +5680,10 @@ Disco {i}:
         orden = sorted(grupos.items(), key=lambda kv: (nom[kv[1][0]].upper(), kv[0]))
         filas, n_pac, n_est = [], 0, 0
         for c, idxs in orden:
-            if solo_multi and cuenta[c] < 2:
+            # V6.9.86: se cuenta sobre el grupo YA construido, no sobre el
+            # recuento global. Ahora que el filtro no parte pacientes son lo
+            # mismo, y así el interruptor no puede volver a contradecirse.
+            if solo_multi and len(idxs) < 2:
                 continue
             n_pac += 1
             estudios = sorted(idxs, key=lambda k: (self._pac_es_coloracion(num[k]), num[k]))
@@ -5703,8 +5716,20 @@ Disco {i}:
             dxs = {d for d in (_dx(k) for k in estudios) if d}
             dx_pac = dxs.pop() if len(dxs) == 1 else ""
             fec_pac = max((_fecha(k) for k in estudios), key=_orden_fecha, default="")
+            # V6.9.86: si el paciente tiene UN solo estudio, la fila no agrega
+            # nada — ES ese estudio, así que puede mostrar sus biomarcadores sin
+            # mezclar muestras. Con varios se deja vacío: unir los marcadores de
+            # muestras distintas daría una línea contradictoria (el mismo
+            # marcador con dos resultados) además de ilegible.
+            # El 90 % de los pacientes son solo coloraciones y ahí queda vacío
+            # con razón: una tinción básica no lleva biomarcadores.
+            # `_bio` recorre 146 columnas; no se llama para coloraciones, que no
+            # llevan biomarcadores. Son el 90 % de los pacientes.
+            bio_pac = ""
+            if len(estudios) == 1 and not self._pac_es_coloracion(num[estudios[0]]):
+                bio_pac = _bio(estudios[0])
             filas.append([c, f"{len(estudios)}  ·  " + " + ".join(partes),
-                          org_pac, dx_pac, "", fec_pac,
+                          org_pac, dx_pac, bio_pac, fec_pac,
                           nom[estudios[0]] or "(sin nombre)", pid, ""])
             n_est += len(estudios)
             filas.extend(_fila_estudio(k, pid) for k in estudios)

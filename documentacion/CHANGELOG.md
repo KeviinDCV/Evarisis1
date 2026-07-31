@@ -1,5 +1,50 @@
 # Changelog
 
+## [6.9.86] - 2026-07-29 — Biomarcadores en la fila del paciente, y el interruptor que se contradecía
+
+### Los biomarcadores vacíos: el 90 % es correcto, el resto no lo era
+
+| | filas de paciente |
+|---|--:|
+| **solo coloraciones** — una tinción básica no lleva biomarcadores | **16.368 (90 %)** |
+| un único estudio y es IHQ | 353 → **338 ahora los muestran** |
+| varios estudios | 1.478 → siguen vacías |
+
+Cuando el paciente tiene **un solo estudio**, la fila no agrega nada: **es** ese estudio, así que puede mostrar sus biomarcadores sin mezclar muestras. Con varios se deja vacío a propósito — unir los marcadores de muestras distintas daría una línea contradictoria (el mismo marcador con dos resultados) además de ilegible: mediana 129 caracteres, máximo 757.
+
+Verificado: **0 filas** donde lo mostrado no sea literalmente la línea de su único estudio.
+
+### ⚠️ «Solo con varios estudios» podía enseñar pacientes con un solo estudio
+
+El interruptor funcionaba solo. Combinado con el buscador, no:
+
+```
+filtro 'lucelly' + interruptor ENCENDIDO  ->  25193142 aparecía con 1 estudio (tiene 2)
+filtro 'balnca'  + interruptor ENCENDIDO  ->  38987974 aparecía con 1 estudio (tiene 2)
+```
+
+El filtro se evaluaba **fila a fila**, y hay **9 pacientes con el nombre escrito distinto entre sus propias filas** (`MARIA LUCELLY` / `MARIA LUCENY`, `BALNCA` / `BLANCA`). Buscar una grafía partía al paciente por la mitad, y el interruptor —que promete justo lo contrario— lo dejaba pasar.
+
+Ahora se **agrupa primero y se filtra el grupo entero**: si cualquiera de sus filas casa, entra el paciente completo. Además de arreglar el interruptor es mejor búsqueda — teclear un nombre con errata trae la historia entera. Y el recuento del interruptor pasa a hacerse sobre el grupo ya construido, no sobre un contador global, para que no puedan volver a discrepar.
+
+```
+ENCENDIDO, sin filtro   3.071 pacientes · con un solo estudio: 0
+ENCENDIDO + 'lucelly'       2 pacientes · con un solo estudio: 0   (antes: 1)
+ENCENDIDO + 'balnca'        1 paciente  · con un solo estudio: 0   (antes: 1)
+```
+
+### Rendimiento
+
+`_bio()` recorre 146 columnas, así que llamarla para los 18.199 pacientes costaba 0,3 s de más. No se llama para coloraciones —el 90 %, y nunca tienen biomarcadores—: **1,29 s → 1,13 s** con resultado idéntico (338 filas en ambos casos).
+
+```
+vista completa        1,13 s
+solo varios estudios  0,61 s
+con filtro            0,43 s
+```
+
+---
+
 ## [6.9.85] - 2026-07-29 — La fila del paciente deja de ir en blanco (sin afirmar nada que el informe no diga)
 
 En la vista Por Paciente, las columnas **Órgano, Diagnóstico, Biomarcadores y Fecha** salían vacías. No era un fallo: la fila del paciente las dejaba en blanco **a propósito**, y el motivo sigue siendo bueno —
