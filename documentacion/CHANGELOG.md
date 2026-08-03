@@ -1,5 +1,106 @@
 # Changelog
 
+## [6.9.88] - 2026-07-29 — Barrido de selección por subcadena: 1 fallo real de 14 sitios
+
+Barrido sistemático del patrón que ha causado la mitad de los fallos de esta sesión. No se juzgó leyendo el código: cada condición se **ejecutó** contra las 190 columnas reales y contra el corpus.
+
+| familia | sitios | resultado |
+|---|--:|---|
+| selección de **columnas** por subcadena | 14 | **1 fallo real**, 1 falso positivo, 12 limpios |
+| `.str.contains()` sin frontera de palabra | 0 | — |
+| subcadena dentro de **valores** | 8 listas marcadas | todas justificadas — ver abajo |
+
+### El fallo: la tabla de correlación de Malignidad
+
+`update_malignancy_biomarker_table` seleccionaba con `['her2','ki67','er','pr','p16']` y casaba **17 columnas**. Inserta una fila por columna, así que la tabla mostraba:
+
+```
+fila                        M+     M-     B+     B-
+Factor pronostico          282    306     88     23   <-- NO es un biomarcador
+Diagnostico Principal       41     46      5     95   <-- NO es un biomarcador
+Numero de caso · Servicio · Primer nombre · Primer apellido ·
+Genero · Procedimiento                                <-- NO son biomarcadores (en 0)
+```
+
+`Factor pronostico` daba **los números más grandes de toda la tabla**, leíbles como una correlación clínica real.
+
+Y en el otro sentido colaba 5 marcadores por accidente —`'er'` dentro de cadh**er**ina, per**ox**idasa, EB**ER**; `'pr'` dentro de **pr**olactina— mientras **perdía dos de los cinco que pretendía mostrar**: Ki-67 (la clave era `'ki67'` y la columna es `IHQ_KI-67`) y el receptor de estrógenos.
+
+Ahora la declaración de los destacados vive **una sola vez** (`BIOMARCADORES_DESTACADOS`) y la usan las dos pestañas, exigiendo además que la columna sea `IHQ_`:
+
+```
+antes  17 filas (8 basura, sin Ki-67, sin ER)
+ahora   7 filas · todas IHQ_ · con Ki-67 y los dos receptores
+```
+
+### El falso positivo
+
+`update_malignancy_analysis` busca `'diagnostico'` y casa también `Descripcion Diagnostico` — pero está bien escrito: prueba primero la coincidencia **exacta** `'diagnostico principal'` y solo cae a la subcadena si esa columna falta. Nunca se ejecuta. Se deja como está.
+
+### Lo que NO se tocó, y por qué
+
+Las 8 listas que buscan subcadenas dentro de valores están **justificadas**: encontrar `'ESTROGENO'` dentro de «RECEPTOR DE ESTROGENOS» es precisamente el objetivo cuando se busca en prosa.
+
+La única clave corta real es **`'HER'`** (3 letras) en dos guardas de `extract_diagnostico_principal`. Medido sobre el corpus:
+
+```
+palabras con HER en los diagnósticos:
+   HER2 125 · HER 88 · HER-2 65 · HER2/NEU 23 · HER/NEU 1     -> el marcador (302)
+   ADHERENCIAS 2 · HERNIORRAFIA 2 · HERNIARIO 1 · HERNIA 1    -> falsos (6)
+```
+
+**No se cambia a `'HER2'`: rompería los 88 casos donde el informe escribe `HER` a secas.** Además la guarda es de *rechazo* —descarta un candidato, no inventa un diagnóstico— y los 4 casos afectados conservan su diagnóstico correcto (`CARCINOMA SEROSO DE ALTO GRADO`, `CARCINOMA DE CÉLULAS CLARAS DE OVARIO`…). Coste real: cero.
+
+### El patrón de fondo
+
+De los 6 fallos de esta familia encontrados en la sesión, **ninguno era la subcadena en sí**: todos eran **una definición duplicada que divergió** — un arreglo aplicado en un sitio y no en su gemelo. La subcadena solo decide cómo de feo es el síntoma.
+
+---
+
+## [6.9.87] - 2026-07-29 — Repaso de las 7 pestañas: dos fallos más de la misma familia
+
+Antes de dar por buena ninguna vista se recalculó lo que muestra cada pestaña y se contrastó contra la BD. Cinco estaban bien; dos no.
+
+### Estadísticas Generales: «Casos con Biomarcadores» decía 1.803, son 1.984
+
+Seleccionaba las columnas por **subcadena del nombre**, con la lista `['her2','ki67','er','pr','pdl1','p16','gata','s100','cd',…]`. Es exactamente la lista que la **V6.9.17** ya había quitado de `update_biomarker_analysis` por este motivo — el arreglo se aplicó a una pestaña y no a su gemela.
+
+```
+casaba 48 columnas · 8 NO son biomarcador:
+   Numero de caso · Servicio · Primer nombre · Primer apellido ·
+   Genero · Procedimiento · Diagnostico Principal · Factor pronostico
+```
+
+Y a la vez **dejaba fuera ~90 columnas de biomarcador reales**, que es de donde salía el error grande. Ahora cuenta sobre las 146 columnas `IHQ_` explícitas, igual que la pestaña hermana: **1.984 de 2.076 (96 %)** en 0,22 s.
+
+Contrastado con SQL independiente, que da 1.987. Los 3 de diferencia dan la razón al dashboard en 2 de ellos: `IHQ250107` e `IHQ250153` tienen todos sus valores en `'NO VALORABLE'`, que no es un resultado. El tercero destapa basura en la BD: `IHQ251135 · IHQ_NAPSIN = ', CK20, Y CK19'`, un trozo de lista guardado como valor.
+
+### Exportaciones: abrir una BD exportada mostraba una tabla sin columnas
+
+`load_database_content` pedía `numero_peticion`, `fecha_informe`, `paciente_nombre`… — nombres de un esquema anterior que **no existen**. `available_cols` quedaba vacía y el Treeview se construía con **0 columnas**.
+
+Está **latente, no activo**: la carpeta de exportaciones existe pero está vacía, así que solo mordería la primera vez que se exporte una BD y se abra. Corregido con los nombres reales y, si el fichero trae otro esquema, cae a sus primeras columnas en vez de no mostrar nada. Probado contra una BD real: 7 columnas.
+
+### Lo que sí estaba bien
+
+| pestaña | comprobación |
+|---|---|
+| **Visualizador de Datos** | `Nombre Completo` recuperado (V6.9.84); columnas de actina unificadas |
+| **Por Paciente** | nombres, agregados, filtro y biomarcadores (V6.9.84-86) |
+| **Biomarcadores** | las 5 tarjetas seleccionan **solo** columnas `IHQ_`, sin colisiones: HER2 397 · Ki-67 580 · ER/PR 420 · P16 251 · PDL-1 0 · Otros 1.766 |
+| **Análisis de Malignidad** | 1.394 malignos + 682 benignos = 2.076, sin indeterminados; cuadra con el total |
+| **Importar Datos** | no muestra datos: es la acción de importar PDFs |
+
+`PDL-1 = 0` es correcto y ya estaba documentado: es de las columnas que solo se **piden** y nunca se reportan.
+
+Las coloraciones se excluyen del dashboard (V6.9.50), por eso todo esto va sobre 2.076 filas y no sobre 22.547.
+
+### La misma familia, otra vez
+
+Van cinco fallos con la misma forma: **un arreglo aplicado en un sitio y no en su gemelo**, o **selección por subcadena**. `_SIN_DATO`, las columnas alias, `Nombre Completo`, el filtro por fila de Por Paciente, y ahora este. La lección se repite: cuando dos sitios calculan lo mismo, tienen que compartir la definición, no copiarla.
+
+---
+
 ## [6.9.86] - 2026-07-29 — Biomarcadores en la fila del paciente, y el interruptor que se contradecía
 
 ### Los biomarcadores vacíos: el 90 % es correcto, el resto no lo era

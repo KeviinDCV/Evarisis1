@@ -46,6 +46,19 @@ class EnhancedDatabaseDashboard:
         sns.set_palette("husl")
 
         # Diccionario de nombres amigables para biomarcadores
+        # V6.9.88: los biomarcadores DESTACADOS se declaran UNA vez y los usan
+        # tanto la pestaña Biomarcadores como la tabla de correlación de
+        # Malignidad. Estaban duplicados y habían divergido: allí la clave de
+        # Ki-67 era solo 'ki67' y la columna real es IHQ_KI-67, así que Ki-67 no
+        # salía en esa tabla.
+        self.BIOMARCADORES_DESTACADOS = {
+            'HER2': ['her2'],
+            'Ki-67': ['ki67', 'ki-67'],
+            'ER/PR': ['receptor'],
+            'P16': ['p16'],
+            'PDL-1': ['pdl-1', 'pdl1', 'pd-l1'],
+        }
+
         self.BIOMARKER_LABELS = {
             'RECEPTOR PROGESTERONOS': 'RECEPTOR DE PROGESTERONA',
             'RECEPTOR PROGESTERONA': 'RECEPTOR DE PROGESTERONA',
@@ -605,9 +618,21 @@ class EnhancedDatabaseDashboard:
         # Calcular métricas principales
         total_records = len(self.df)
 
-        # Contar registros con biomarcadores válidos usando lógica robusta
-        all_biomarker_keywords = ['her2', 'ki67', 'ki-67', 'er', 'pr', 'pdl1', 'p16', 'gata', 's100', 'cd', 'cromogranina', 'sinaptofisina']
-        with_biomarkers = self._count_valid_biomarkers(all_biomarker_keywords)
+        # V6.9.87: se cuenta sobre las COLUMNAS de biomarcador, no por subcadena
+        # del nombre.
+        #
+        # La lista de palabras clave que había aquí ('er', 'pr', 'cd'…) es la que
+        # la V6.9.17 ya quitó de update_biomarker_analysis por matchear columnas
+        # que no son biomarcadores; el arreglo se aplicó allí y no aquí. Medido:
+        # casaba 48 columnas, 8 de ellas 'Numero de caso', 'Servicio', 'Primer
+        # nombre', 'Primer apellido', 'Genero', 'Procedimiento', 'Diagnostico
+        # Principal' y 'Factor pronostico' — y a la vez dejaba fuera ~90 columnas
+        # de biomarcador de verdad. La tarjeta decía 1.803 casos donde son 1.984.
+        NO_SON_BIOMARCADOR = {'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS'}
+        cols_bio = [c for c in self.df.columns
+                    if str(c).upper().startswith('IHQ_')
+                    and str(c).upper() not in NO_SON_BIOMARCADOR]
+        with_biomarkers = self._count_valid_biomarkers_cols(cols_bio)
 
         # Contar casos malignos (v6.0.12: Con validación robusta de tipos + valores correctos)
         malignant_count = 0
@@ -723,13 +748,7 @@ class EnhancedDatabaseDashboard:
         #     -> columnas IHQ_RECEPTOR_ESTROGENOS / IHQ_RECEPTOR_PROGESTERONA (real ~283).
         #   - PDL-1: antes ['pdl1','pd-l1'] NUNCA coincidian con la columna real IHQ_PDL-1
         #     (siempre mostraba 0). Ahora incluye 'pdl-1'.
-        biomarkers = {
-            'HER2': ['her2'],
-            'Ki-67': ['ki67', 'ki-67'],
-            'ER/PR': ['receptor'],
-            'P16': ['p16'],
-            'PDL-1': ['pdl-1', 'pdl1', 'pd-l1'],
-        }
+        biomarkers = self.BIOMARCADORES_DESTACADOS
 
         # Columnas ya representadas por las tarjetas con nombre (se excluyen de "Otros")
         columnas_destacadas = set()
@@ -1457,7 +1476,23 @@ class EnhancedDatabaseDashboard:
 
             # Encontrar columnas relevantes
             malignidad_cols = [col for col in self.df.columns if 'malign' in col.lower()]
-            biomarker_cols = [col for col in self.df.columns if any(bio in col.lower() for bio in ['her2', 'ki67', 'er', 'pr', 'p16'])]
+            # V6.9.88: se usa la MISMA declaración que la pestaña Biomarcadores y
+            # se exige que la columna sea de biomarcador.
+            #
+            # La lista que había —['her2','ki67','er','pr','p16']— casaba 17
+            # columnas: 8 no eran biomarcadores y dos de ellas salían con los
+            # números más grandes de la tabla, leíbles como una correlación real
+            # ('Factor pronostico' 282/306/88/23, 'Diagnostico Principal'
+            # 41/46/5/95). Además colaba 5 marcadores por accidente ('er' dentro
+            # de cadhERina, pERoxidasa, EBER; 'pr' dentro de PRolactina) y perdía
+            # DOS de los cinco que pretendía mostrar: Ki-67 (la clave era 'ki67'
+            # y la columna es IHQ_KI-67) y el receptor de estrógenos.
+            NO_SON_BIOMARCADOR = {'IHQ_ORGANO', 'IHQ_ESTUDIOS_SOLICITADOS'}
+            claves = [k for kws in self.BIOMARCADORES_DESTACADOS.values() for k in kws]
+            biomarker_cols = [col for col in self.df.columns
+                              if str(col).upper().startswith('IHQ_')
+                              and str(col).upper() not in NO_SON_BIOMARCADOR
+                              and any(bio in col.lower() for bio in claves)]
 
             if not malignidad_cols or not biomarker_cols:
                 return
@@ -1985,8 +2020,19 @@ class EnhancedDatabaseDashboard:
             tree.grid(row=0, column=0, sticky="nsew")
 
             # Configurar columnas (mostrar solo las más importantes)
-            important_cols = ['numero_peticion', 'fecha_informe', 'paciente_nombre', 'paciente_apellido', 'diagnostico_coloracion', 'diagnostico_morfologico']
+            # V6.9.87: los nombres que había aquí ('numero_peticion',
+            # 'paciente_nombre'…) NO existen en el esquema — son de una versión
+            # anterior—, así que `available_cols` quedaba VACÍA y al abrir una BD
+            # exportada la tabla salía sin una sola columna. Ahora se usan los
+            # nombres reales y, si el fichero trae otro esquema, se cae a sus
+            # primeras columnas en vez de no mostrar nada.
+            important_cols = ['Numero de caso', 'Fecha de informe',
+                              'N. de identificación', 'Primer nombre',
+                              'Primer apellido', 'Organo',
+                              'Diagnostico Principal', 'Malignidad']
             available_cols = [col for col in important_cols if col in df.columns]
+            if not available_cols:
+                available_cols = list(df.columns[:8])
 
             tree["columns"] = available_cols
             for col in available_cols:
