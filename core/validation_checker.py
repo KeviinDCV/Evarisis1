@@ -920,7 +920,15 @@ def _resolver_columna(estudio: str):
     """
     if not estudio:
         return None
-    col = MAPEO_BIOMARCADORES.get(estudio.upper())
+    # V6.9.89: el REGISTRO ÚNICO manda; esta tabla queda de reserva. Así un
+    # alias nuevo se declara una vez y lo ven los cinco módulos.
+    try:
+        from core.alias_biomarcadores import resolver as _resolver_registro
+        col = _resolver_registro(estudio)
+    except ImportError:
+        col = None
+    if not col:
+        col = MAPEO_BIOMARCADORES.get(estudio.upper())
     if not col:
         col = _MAPEO_BIO_NORM.get(_norm_bio(estudio))
     if not col:

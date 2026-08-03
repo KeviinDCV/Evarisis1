@@ -8939,6 +8939,25 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'CA199': 'CA19_9',
     }
 
+    # NOTA V6.9.89 — NO enchufar aquí el registro único. Probado y REVERTIDO.
+    #
+    # Se intentó consultar core.alias_biomarcadores antes de `name_mapping`, para
+    # que un alias declarado una vez lo vieran los cinco módulos. Medido sobre los
+    # 2.076 casos: convirtió valores buenos en basura.
+    #
+    #     IHQ250011 · ER : 'NEGATIVO' -> ', CD68 Y PAX-8'
+    #     IHQ250005 · PR : 'NEGATIVO' -> 'Y WT1 NEGATIVOS'
+    #     IHQ250040 · PR : 'NEGATIVO' -> 'Y S100'
+    #
+    # El motivo es que aquí **el rechazo es un filtro que sostiene la
+    # extracción**: devolver None para un nombre desconocido es lo que descarta
+    # los fragmentos de frase que los patrones capturan por error. Al ampliar el
+    # vocabulario a 855 nombres, esos fragmentos pasaron a ser marcadores válidos
+    # y se quedaron con el trozo de texto como valor.
+    #
+    # El registro sí se consulta donde un fallo de lookup es inocuo —el
+    # verificador de completitud y el auditor, que solo eligen dónde MIRAR—, no
+    # donde decide qué se ACEPTA.
     return name_mapping.get(raw_clean)
 
 

@@ -1,5 +1,137 @@
 # Changelog
 
+## [6.9.90] - 2026-08-03 — IDH adjudicado contra el informe: 14 correcciones y la fusión desbloqueada
+
+La V6.9.89 dejó `IDH`/`IDH1` sin fusionar porque los datos se contradecían. Adjudicados los 45 casos con IDH **leyendo el informe uno a uno**, la fusión ya está hecha.
+
+### No eran 4 contradicciones, eran 11
+
+El refutador encontró 4. Al barrer los 45 casos aparecieron **11 valores que dicen lo contrario que su informe**, más 3 de formato:
+
+```
+IHQ250187  BD 'POSITIVO (PATRÓN SALVAJE)'  ·  informe: "SON NEGATIVAS PARA IDH"
+IHQ250376  BD 'POSITIVO'                   ·  informe: "IDH SIN SOBREEXPRESION"
+IHQ250681  BD 'POSITIVO (PATRÓN SALVAJE)'  ·  informe: "EXPRESION DE TIPO WILD TYPE PARA IDH-1"   (las DOS columnas)
+IHQ251259  BD 'POSITIVO'                   ·  informe: "LOS MARCADORES ... IDH ... SON NEGATIVOS"
+IHQ251493  BD 'POSITIVO'                   ·  informe: "EXPRESION INTACTA, COMPATIBLE CON ESTADO NO MUTADO"
+IHQ260182  BD 'POSITIVO (no mutado)'       ·  informe: "SIN EXPRESION PARA IDH1 (NO MUTADO)"
+IHQ260228  BD 'POSITIVO (focal)'           ·  informe: "LA INMUNOTINCION PARA IDH1 R132H ES NEGATIVA"
+```
+
+Los valores como `'POSITIVO (PATRÓN SALVAJE)'` o `'POSITIVO (no mutado)'` se contradicen a sí mismos: en esta tinción **POSITIVO = MUTADO** y «patrón salvaje» es justo lo contrario. Varios venían de que el texto de P53 («EXPRESAN P53 TIPO SALVAJE») o de OLIG2 («POSITIVIDAD FOCAL PARA OLIG2») se derramó sobre IDH.
+
+Todas quedan en NEGATIVO, con su cita, en `backups/backup_idh_*.json`.
+
+### ⚠️ Un caso que no es ni positivo ni negativo
+
+`IHQ250591` guardaba `NEGATIVO`. El informe dice:
+
+> «IDH1 CON EXTENSO BACKGROUND QUE LIMITA LA EVALUACIÓN … **(NO CONTRIBUTIVO)**» y «EL ESTADO DE MUTACIÓN PARA IDH **NO FUE CONTRIBUTIVO** EN ESTE ESTUDIO»
+
+La tinción **no fue evaluable**. `NEGATIVO` afirma wild-type, que es más de lo que el informe sostiene. Corregido a `NO VALORABLE`.
+
+Y merece decirse: **mi propio clasificador determinista propuso `POSITIVO` para este caso**, engañado por la frase hipotética «para poder determinar SI corresponde a un astrocitoma IDH mutado». Habría inventado una mutación. Solo se evitó leyendo la frase entera.
+
+### ⚠️ El clasificador falló en los dos sentidos
+
+Además de lo anterior, marcó como «ambiguos» **4 casos inequívocos** porque su patrón de positivo `MUTACION PARA IDH` casaba **dentro** de «AUSENCIA DE MUTACION PARA IDH». Es la misma familia de errores por subcadena que el barrido de la V6.9.88: hizo falta mirar lo que va **delante** de la frase, no solo la frase.
+
+De los 45 casos: **28 ya coincidían**, 14 corregidos, 3 de formato normalizados.
+
+### La fusión
+
+```
+IHQ_IDH   45 -> 0 valores        IHQ_IDH1  ->  45
+IDH / IDH1 / IDH-1 / ISOCITRATE DEHYDROGENASE  ->  todos a IHQ_IDH1
+```
+
+Las 6 parejas que quedaban con las dos columnas pobladas **coincidían en polaridad** y solo diferían en formato; se conserva la anotación clínica (`POSITIVO (MUTADA)`, `NEGATIVO (WILD TYPE)`). El script comprueba la coincidencia antes de tocar: si alguna hubiera discrepado, aborta.
+
+### Verificación
+
+```
+contradicciones IDH restantes  : 0
+banco del extractor            : 0 cambios FUERA del grupo IDH
+modelo relacional              : CELDAS DISTINTAS 0
+filas rojas, ambos caminos     : 56 y 56, diferencia 0
+```
+
+La regla que deja escrita este episodio, en `biomarcadores_canonicos.py`: **antes de fusionar dos columnas hay que comprobar que sus datos no se contradigan**, porque el merge elige ganador en silencio — y aquí la columna con más valores era la equivocada.
+
+---
+
+## [6.9.89] - 2026-08-03 — Un solo registro de alias: se acabó la causa de la mitad de los fallos
+
+Las cinco tablas de alias mantenidas a mano se unifican en `core/alias_biomarcadores.py`. Es la raíz de seis fallos entre la V6.9.79 y la V6.9.88 —siempre el mismo: un arreglo aplicado en un sitio y no en su gemelo—.
+
+```
+unified_extractor      240 nombres        auditor_sistema     524
+validation_checker     504                biomarker_extractor 505
+columnas_huv_ia        102
+                       -> 928 nombres distintos · 471 compartidos · 61 EN CONFLICTO
+```
+
+**61 nombres resolvían a columnas DISTINTAS según quién preguntara.** El auditor buscaba `IHQ_ACTINA_MUSCULO_LISO` —vaciada al unificar las actinas— mientras el verificador miraba `IHQ_SMA`: auditaba contra celdas vacías por un cambio nuestro.
+
+### Cómo se resolvieron los 61
+
+**50 mecánicos.** Una de las columnas no existe en el esquema o tiene 0 valores: gana la que tiene datos, sin juicio. (`CALRETININ`=0 vs `CALRETININA`=55; `CD45`=71 vs `LCA`=0; `CK56`=0 vs `CK5_6`=100…)
+
+**11 clínicos** —6 parejas reales— leídos contra el corpus y después sometidos a un refutador que buscaba activamente un informe que los pidiera por separado:
+
+| pareja | veredicto |
+|---|---|
+| mamoglobina / mamaglobina | **fusionar** → `IHQ_MAMAGLOBINA` (32 casos, 0 los listan como dos) |
+| miogenina / myogenin | **fusionar** → `IHQ_MYOGENIN` (grafía castellana e inglesa) |
+| glipican / GPC3 | **fusionar** → `IHQ_GPC3` (siempre el mismo panel hepático) |
+| ALK / ALK-1 | **fusionar** → `IHQ_ALK` (ALK1 es el clon comercial del anti-ALK) |
+| S100 / SOX10 | **separadas** — anticuerpos distintos |
+| IDH / IDH1 | **fusión BLOQUEADA** — ver abajo |
+
+`S100` y `SOX10` se piden y reportan por separado en el mismo panel («NEGATIVA PARA CK7, GAFP, SOX10, RECEPTOR DE PROGESTERONA Y S100»), y el patrón S100+/SOX10− es lo que discrimina lesión melanocítica. El alias `SOX100` que las enfrentaba era una errata: resuelve a `IHQ_SOX10`.
+
+### ⚠️ El refutador paró una fusión que parecía obvia
+
+`IDH` e `IDH1` **son** clínicamente el mismo anticuerpo (anti-IDH1 R132H). Aun así la fusión no se ejecutó: hay **4 casos donde las dos columnas se contradicen** (`IHQ250993`, `IHQ260182`, `IHQ260253`, `IHQ260279`) y, contrastados con el texto, **la columna con MÁS valores —la que se proponía como canónica— es la equivocada en 3 de los 4**:
+
+```
+IHQ260182  el informe: "SIN EXPRESION PARA IDH1 (NO MUTADO)"   ·  la BD: IHQ_IDH='NEGATIVO (MUTADO)'
+IHQ260279  el informe: "SIN MARCACION PARA IDH (NO MUTADO)"    ·  la BD: IHQ_IDH1='POSITIVO'
+```
+
+Fusionar habría elegido ganador en silencio y cementado el valor falso. Y aquí IDH mutado frente a no mutado separa **ASTROCITOMA IDH-MUTANTE de GLIOBLASTOMA IDH-WILDTYPE**: grado y pronóstico OMS. Queda bloqueada con su razón escrita en el código hasta adjudicar esos 4 casos.
+
+### ⚠️ Dónde NO se enchufa el registro, y por qué
+
+El primer cableado lo puso también en `normalize_biomarker_name`, del extractor. Medido:
+
+```
+IHQ250011 · ER : 'NEGATIVO' -> ', CD68 Y PAX-8'
+IHQ250005 · PR : 'NEGATIVO' -> 'Y WT1 NEGATIVOS'
+IHQ250040 · PR : 'NEGATIVO' -> 'Y S100'
+```
+
+**Revertido.** Ahí el rechazo *es un filtro que sostiene la extracción*: devolver `None` ante un nombre desconocido es lo que descarta los fragmentos de frase que los patrones capturan por error. Al ampliar el vocabulario a 855 nombres, esos fragmentos pasaron a ser marcadores válidos y se quedaron con el texto como valor.
+
+El registro manda donde un lookup de más es inocuo —el verificador y el auditor, que solo eligen **dónde mirar**— y no donde se decide **qué se acepta**. La distinción está escrita en ambos ficheros.
+
+### Verificación
+
+```
+resolver / verificador / auditor sobre los 16 nombres que discrepaban : 0 discrepancias
+banco del extractor, 2.076 casos : 0 cambios FUERA de los grupos fusionados
+modelo relacional                : CELDAS DISTINTAS 0 · reconstrucción exacta
+filas rojas, ambos caminos       : 59 y 59, diferencia 0
+```
+
+Consolidados además los datos de las 4 fusiones: 16 valores movidos a su canónica, 20 celdas alias vaciadas, 1 conflicto adjudicado contra el informe (`IHQ250988`, «No tienen expresión de ALK1» → NEGATIVO, que es lo que ya tenía la canónica).
+
+### Para los PDFs futuros
+
+Un alias nuevo se declara **una vez** en `core/alias_biomarcadores.py` y lo ven todos los consumidores. Ninguna tabla local puede volver a contradecir a otra, y todo destino pasa por `canonico()`, así que ninguna entrada puede apuntar a una columna alias ya vaciada.
+
+---
+
 ## [6.9.88] - 2026-07-29 — Barrido de selección por subcadena: 1 fallo real de 14 sitios
 
 Barrido sistemático del patrón que ha causado la mitad de los fallos de esta sesión. No se juzgó leyendo el código: cada condición se **ejecutó** contra las 190 columnas reales y contra el corpus.

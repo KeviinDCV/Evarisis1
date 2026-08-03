@@ -743,6 +743,22 @@ class AuditorSistema:
     'CCND1': 'IHQ_CICLINA_D1',
     }
 
+    # V6.9.89: el REGISTRO ÚNICO manda sobre esta tabla.
+    #
+    # Esta tabla apuntaba a columnas que la V6.9.79 vació al unificar las actinas
+    # (IHQ_ACTINA_MUSCULO_LISO, IHQ_ACTIN), así que el auditor buscaba en celdas
+    # vacías mientras el verificador miraba IHQ_SMA. Medido: 14 nombres resolvían
+    # a columnas distintas según quién preguntara.
+    #
+    # Aquí el registro puede mandar sin riesgo porque esta tabla solo elige DÓNDE
+    # MIRAR: un lookup de más no acepta un dato falso. En el extractor no se
+    # enchufa, y el porqué está escrito allí.
+    try:
+        from core.alias_biomarcadores import ALIAS as _ALIAS_REGISTRO
+        BIOMARCADORES = {**BIOMARCADORES, **_ALIAS_REGISTRO}
+    except ImportError:
+        pass
+
     def __init__(self):
         # Configurar logger (Optimización: print → logging)
         self.logger = logging.getLogger(__name__)

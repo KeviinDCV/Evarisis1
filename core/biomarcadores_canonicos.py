@@ -59,7 +59,47 @@ _SINONIMOS = {
     # IHQ250140: «positivas para ACTINA DE MÚSCULO ESPECIFICA, SMA y
     #             caldesmón» — los dos, con resultado propio cada uno.
     "IHQ_MSA": "IHQ_ACTINA_MUSCULO_ESPECIFICA",
+
+    # ── V6.9.89: adjudicadas al unificar las cinco tablas de alias ────────
+    # Cada una leída contra el corpus y después sometida a un refutador que
+    # buscaba activamente un informe que las pidiera por separado. Ninguno lo
+    # encontró.
+    #
+    # mamoglobina / mamaglobina — misma proteína (mammaglobin, SCGB2A2),
+    # variación ortográfica A/O del informe. 32 casos, 0 los listan como dos.
+    "IHQ_MAMOGLOBINA": "IHQ_MAMAGLOBINA",
+    # miogenina / myogenin — grafía castellana e inglesa del mismo factor de
+    # transcripción miogénico. 23 casos, 0 co-ocurrencias en la misma lista.
+    "IHQ_MIOGENINA": "IHQ_MYOGENIN",
+    # glipican / glypican-3 / GPC3 — un solo anticuerpo. Siempre en el mismo
+    # panel hepático (HEPAR, ARGINASA, CK7/CK19, CDX2); 0 informes con las dos.
+    "IHQ_GLIPICAN": "IHQ_GPC3",
+    # ALK / ALK-1 — ALK1 es el nombre del clon comercial del anti-ALK. Grafías
+    # vistas: ALK, ALK 1, ALK1, ALK-1, ALK-01. 0 paneles con las dos entradas.
+    "IHQ_ALK1": "IHQ_ALK",
+
+    # IDH / IDH1 — DESBLOQUEADA en V6.9.90. La tinción es anti-IDH1 R132H y el
+    # informe la escribe «IDH», «IDH 1», «IDH-1» indistintamente; 0 informes en
+    # los 2.076 la piden como dos entradas separadas. La fusión estuvo bloqueada
+    # mientras 11 valores contradecían al informe: ya adjudicados uno a uno
+    # contra su cita, 0 contradicciones restantes.
+    "IHQ_IDH": "IHQ_IDH1",
 }
+
+# ── NO fusionar, aunque lo parezcan ──────────────────────────────────────
+#
+# S100 vs SOX10: anticuerpos DISTINTOS. Hay informes que los piden y reportan
+#   por separado en el mismo panel («NEGATIVA PARA CK7, GAFP, SOX10, RECEPTOR
+#   DE PROGESTERONA Y S100»), y el patrón S100+/SOX10− es justo lo que
+#   discrimina lesión melanocítica de otros tumores fusocelulares. El alias
+#   'SOX100' que las enfrentaba es una errata: resuelve a IHQ_SOX10.
+#
+# (IDH vs IDH1 estuvo aquí hasta la V6.9.90. La fusión se bloqueó mientras los
+#  datos se contradecían: 11 valores decían lo contrario que su informe, y la
+#  columna con MÁS valores era la equivocada. Se adjudicaron uno a uno contra su
+#  cita y la fusión ya está arriba. Lo que queda escrito de aquello es la regla:
+#  antes de fusionar dos columnas hay que comprobar que sus datos NO se
+#  contradigan, porque el merge elige ganador en silencio.)
 
 # canónica -> todas las columnas del grupo (canónica primero)
 _GRUPOS = {}

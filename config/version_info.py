@@ -17,10 +17,10 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.88",
-    "version_name": "Barrido de seleccion por subcadena",
-    "build_date": "29/07/2026",
-    "build_number": "202607291230",
+    "version": "6.9.90",
+    "version_name": "IDH adjudicado contra el informe y fusionado",
+    "build_date": "03/08/2026",
+    "build_number": "202608030830",
     "release_type": "Stable",
     "codename": "Truthful Diagnosis",
 }
