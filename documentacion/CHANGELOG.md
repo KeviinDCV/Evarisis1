@@ -1,5 +1,118 @@
 # Changelog
 
+## [6.9.92] - 2026-08-04 — «Ver comentario»: 2 diagnósticos recuperados y 29 que deben quedarse así
+
+Se pidió arreglar los 31 diagnósticos atrapados en «VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO». Leídos los 38 casos que contienen esa frase, uno a uno y con refutación adversarial: **solo 2 eran recuperables**.
+
+### En 29 casos, «ver comentario» es la respuesta correcta
+
+El comentario del patólogo no contiene un diagnóstico: contiene la explicación de por qué no lo hay.
+
+```
+IHQ250616  «NO SERÁ POSIBLE DETERMINAR UNA CONCLUSIÓN DIAGNÓSTICA»
+IHQ250786  «hallazgos SUGESTIVOS PERO NO DIAGNÓSTICOS de micosis fungoide»
+IHQ260258  «NO ES POSIBLE DETERMINAR DE MANERA CONFIABLE QUE CORRESPONDAN A UN ADENOCARCINOMA»
+IHQ260513  «HUBO AGOTAMIENTO DEL TEJIDO POR LO QUE EL ESTUDIO NO ES CONCLUYENTE»
+IHQ250578  «ESTUDIOS ... EN CURSO, SE REPORTARÁN EN UN INFORME ADICIONAL»
+```
+
+**Rellenarlos habría sido inventar una certeza que el informe se niega a dar** — exactamente por lo que se desactivó la capa de IA de diagnóstico. `SUGIERE`, `FAVORECE` y `PUEDE CORRESPONDER` son hipótesis, no conclusiones.
+
+| | casos |
+|---|--:|
+| el patólogo DECLINA diagnosticar | 20 |
+| ya traían diagnóstico (el «ver comentario» era un sufijo) | 7 |
+| el informe solo escribe el rótulo del espécimen | 4 |
+| estudio PENDIENTE de otro informe | 1 |
+| 🟢 **diagnóstico recuperable** | **2** |
+
+### Los 2 recuperados
+
+```
+IHQ250491  ->  ADENOCARCINOMA INVASIVO
+   « LA MUESTRA PRESENTA UN PEQUEÑO FRAGMENTO CON ADENOCARCINOMA INVASIVO »
+IHQ250643  ->  CARCINOMA ESCAMOCELULAR METASTASICO
+   « B. HEMI-CUELLO IZQUIERDO. LESIÓN. BIOPSIA. … CARCINOMA ESCAMOCELULAR METASTÁSICO. »
+```
+
+`IHQ250643` estaba escondido por una **cabecera de página intercalada** en mitad del diagnóstico (`… FECHA INFORME : 20/06/2025 CARCINOMA ESCAMOSCELULAR METASTASICO`). Es el problema de segmentación multipágina que ya conocíamos, aquí en un caso concreto.
+
+Malignidad recalculada en los dos (se mantiene MALIGNO, coherente con el nuevo dx).
+
+### Los refutadores evitaron tres datos falsos
+
+De 13 casos que un primer lector dio por concluyentes, **8 se cayeron**, y el motivo importa:
+
+- `IHQ251041` — la cita era el **diagnóstico del laboratorio externo** que remitió el bloque, no la conclusión de este estudio. Y era factualmente falsa: proponía «parénquima renal sin alteraciones glomerulares» cuando el informe reporta esclerosis global en 1 de 6 glomérulos.
+- `IHQ250899` — el diagnóstico propuesto estaba **ensamblado desde la cabecera del informe remitente**, que además pedía IHQ «para su adecuada clasificación».
+- `IHQ250643` — la cita venía de la **descripción microscópica**, no del comentario; el refutador la tumbó y de paso encontró el diagnóstico verbatim de verdad, que es el que se escribió.
+- `IHQ251241` y `IHQ251459` — la BD **ya guardaba el diagnóstico completo**; la propuesta lo habría sustituido por una paráfrasis.
+
+### Por qué NO se tocó el extractor
+
+La tentación era una regla «si el diagnóstico dice ver comentario, lee el comentario». Con estos datos, esa regla habría escrito **20 diagnósticos falsos** para ganar 2 verdaderos. No se implementa: el criterio para distinguir «FAVORECEN un glioma» de «CORRESPONDE A un adenocarcinoma» es comprensión de la frase, no un patrón.
+
+```
+casos IHQ sin diagnóstico útil : 31 -> 29
+filas rojas, ambos caminos     : 56 y 56, diferencia 0
+```
+
+---
+
+## [6.9.91] - 2026-08-04 — Auditoría del informe estadístico PDF contra los 765 PDFs
+
+Tras 12 versiones tocando datos (columnas unificadas, 14 valores de IDH corregidos, 139 biomarcadores recuperados, 80 solicitudes fantasma retiradas), había que comprobar que el informe que se enseña sigue diciendo la verdad. **No se cambió nada: se verificó.**
+
+### La aritmética es exacta
+
+Cada cifra recalculada desde cero, sin usar el generador:
+
+| | informe | recalculado |
+|---|--:|--:|
+| Total casos | 2.076 | **2.076** |
+| % Malignos | 67,1 % | **67,1 %** |
+| Categorías anatómicas | 195 | **195** |
+| Biomarcadores distintos | 122 | **122** |
+| Tumores analizados | 1.566 | **1.566** |
+| Periodo | 07/01/2025 – 02/06/2026 | **idéntico** |
+
+Y la tabla de cobertura **reconcilia al total**: 1.566 tumores + 436 no-neoplásicos + 74 sin diagnóstico = 2.076. El desglose por sexo también: 804 + 1.268 + 4 = 2.076, con sus porcentajes de malignidad correctos uno a uno.
+
+### Contra los PDFs
+
+```
+diagnósticos guardados que están LITERALES en su PDF : 2.034 / 2.076   (98,0 %)
+ + reformulados (todas sus palabras están en el PDF) :    37           (99,8 %)
+ sin respaldo claro                                  :     5           ( 0,2 %)
+```
+
+Los 5 quedan anotados; cuatro son cuestión de acentos y saltos de línea, y el quinto (`IHQ250835`) es uno de los 31 casos cuyo diagnóstico quedó en «VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO» — el informe sí trae el diagnóstico, en el comentario.
+
+### Lo que el informe no puede enseñar
+
+**42 de los 74 casos «sin diagnóstico específico» están marcados MALIGNO.** No es una incoherencia: son estudios IHQ *complementarios* cuya línea de diagnóstico reporta marcadores o celularidad —
+
+```
+IHQ250030  dx = "EXPRESIÓN DE CD117 Y CD56 NEGATIVA"      historia: "MIELOMA MÚLTIPLE"
+IHQ250194  dx = "CELULARIDAD GLOBAL DEL 10 AL 20%"        comentario: "SÍNDROME MIELODISPLÁSICO"
+```
+
+— y la malignidad se derivó del contexto clínico, que sí lo dice. El informe los cuenta bien como «sin diagnóstico específico», pero **esos hasta 42 cánceres no aparecen en la tabla de diagnósticos más frecuentes**. Es una limitación de lo que se puede mostrar, no un error de cuenta.
+
+### Tres notas menores
+
+⚠️ **`LESIÓN BENIGNA / HIPERPLASIA` (69 casos) se cuenta como «tumor».** La etiqueta de la tabla dice «neoplasias benignas o malignas» y una hiperplasia no es una neoplasia. Es una categoría mixta heredada; separarla movería 69 casos entre dos filas del panorama.
+
+⚠️ **3 casos con categoría no-neoplásica marcados MALIGNO** (`IHQ250850`, `IHQ251160`, `IHQ251342`). Los tres tienen dos hallazgos en la misma frase —inflamación **y** displasia de bajo grado / NIC I—: la categoría se quedó con la inflamación y la malignidad con la displasia. Ninguna de las dos es falsa. No se toca: está medido que cambiar `determine_malignancy` empeora.
+
+⚠️ **Dos de mis tres comprobaciones daban falsos positivos y hubo que rehacerlas.** La de coherencia marcó 91 incoherencias de las que **88 eran mías**: mi patrón `MALIGN` casaba dentro de la categoría `NEGATIVO PARA MALIGNIDAD`, que es benigna. Y la de categorías exigía el término en el diagnóstico cuando el categorizador lo deriva legítimamente de **diagnóstico + órgano**, así que «CARCINOMA DE CÉRVIX» salía 8/36 sin que nada estuviera mal. La misma familia de subcadena de la V6.9.88, otra vez en mi código de verificación.
+
+### Veredicto
+
+El informe estadístico **es veraz**: sus cifras se sostienen contra la base y la base contra los PDFs. Lo que queda no son errores de cálculo sino los límites conocidos de la extracción — 31 diagnósticos en «ver comentario», 42 cánceres sin categoría propia y una categoría mixta.
+
+---
+
 ## [6.9.90] - 2026-08-03 — IDH adjudicado contra el informe: 14 correcciones y la fusión desbloqueada
 
 La V6.9.89 dejó `IDH`/`IDH1` sin fusionar porque los datos se contradecían. Adjudicados los 45 casos con IDH **leyendo el informe uno a uno**, la fusión ya está hecha.
