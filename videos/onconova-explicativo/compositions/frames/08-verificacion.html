@@ -1,0 +1,105 @@
+<template>
+  <div
+    id="f08"
+    data-composition-id="f08"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="26"
+  >
+    <style>
+      #f08 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f08 .clip { position: absolute; inset: 0; }
+      #f08 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f08 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f08 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f08 h2 {
+        position: absolute; left: 80px; top: 140px; width: 1300px;
+        font-size: 68px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+      }
+      #f08 .split {
+        position: absolute; left: 80px; right: 80px; top: 360px;
+        display: grid; grid-template-columns: 1fr 90px 1fr; align-items: center;
+      }
+      #f08 .side { }
+      #f08 .label {
+        font-size: 19px; letter-spacing: 0.14em; color: #8296b5; margin-bottom: 20px;
+      }
+      #f08 .card { background: #f4f6fa; color: #22304a; padding: 34px 32px; }
+      #f08 .field { font-size: 17px; letter-spacing: 0.1em; color: #6a7d9c; margin-bottom: 12px; }
+      #f08 .value { font-size: 30px; line-height: 1.35; }
+      #f08 .value + .field { margin-top: 26px; }
+      #f08 .link {
+        height: 2px; background: rgba(233,238,247,.28); margin: 0 10px;
+      }
+      #f08 .hl { background: #e9a33c; color: #22304a; padding: 2px 4px; }
+      #f08 .score {
+        position: absolute; left: 80px; bottom: 150px;
+        font-size: 40px; font-weight: 700; letter-spacing: 0.02em;
+      }
+      #f08 .score small {
+        display: block; margin-top: 14px; font-size: 21px;
+        font-weight: 400; color: #8296b5; letter-spacing: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="26" data-track-index="1">
+      <h2>La cifra que se proyecta se puede seguir<br />hasta la frase que la sostiene.</h2>
+
+      <div class="split">
+        <div class="side">
+          <p class="label mono">LO QUE HAY EN LA BASE DE DATOS</p>
+          <div class="card">
+            <p class="field mono">N.º CASO</p>
+            <p class="value mono">IHQ251204</p>
+            <p class="field mono">DIAGNÓSTICO PRINCIPAL</p>
+            <p class="value">CARCINOMA DUCTAL INFILTRANTE</p>
+          </div>
+        </div>
+
+        <div class="link"></div>
+
+        <div class="side">
+          <p class="label mono">LO QUE DICE SU PDF DE ORIGEN</p>
+          <div class="card">
+            <p class="field mono">INFORME · DIAGNÓSTICO</p>
+            <p class="value">
+              … los hallazgos son compatibles con
+              <span class="hl">CARCINOMA DUCTAL INFILTRANTE</span>
+              de mama, con estudio de inmunohistoquímica …
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="score mono">
+        2.034 / 2.076 · 98 %
+        <small>diagnósticos que aparecen literalmente en su informe. El resto, anotados uno a uno con el motivo.</small>
+      </p>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">08 / 09 — LA VERIFICACIÓN</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f08"] = gsap.timeline({ paused: true });
+  </script>
+</template>

@@ -1,0 +1,132 @@
+<template>
+  <div
+    id="f05"
+    data-composition-id="f05"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="32"
+  >
+    <style>
+      #f05 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f05 .clip { position: absolute; inset: 0; }
+      #f05 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f05 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f05 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      /* stand-in del Visualizador: panel claro flotando sobre el escenario */
+      #f05 .panel {
+        position: absolute; left: 120px; top: 170px;
+        width: 1400px; height: 760px;
+        background: #f4f6fa; color: #22304a;
+      }
+      #f05 .chrome {
+        height: 62px; background: #2d3e5e; color: #e9eef7;
+        display: flex; align-items: center; padding: 0 28px;
+        font-size: 20px; letter-spacing: 0.14em;
+      }
+      #f05 .tabs {
+        display: flex; gap: 40px; padding: 22px 28px 0;
+        font-size: 21px; font-weight: 700; color: #6a7d9c;
+      }
+      #f05 .tabs .on { color: #22304a; border-bottom: 4px solid #2d3e5e; padding-bottom: 10px; }
+      #f05 .search {
+        margin: 24px 28px 0; height: 58px;
+        border: 2px solid #e9a33c;          /* foco de la escena */
+        display: flex; align-items: center; padding: 0 20px;
+        font-size: 24px; color: #22304a;
+      }
+      #f05 .caret {
+        display: inline-block; width: 3px; height: 30px;
+        background: #e9a33c; margin-left: 4px;
+      }
+      #f05 table { width: calc(100% - 56px); margin: 26px 28px 0; border-collapse: collapse; }
+      #f05 th {
+        text-align: left; font-size: 17px; letter-spacing: 0.1em;
+        color: #6a7d9c; padding: 0 0 14px; border-bottom: 1px solid #c9d3e2;
+      }
+      #f05 td {
+        font-size: 20px; padding: 17px 0; border-bottom: 1px solid #e2e8f1;
+      }
+      #f05 .side {
+        position: absolute; right: 120px; top: 260px; width: 220px;
+      }
+      #f05 .side p { font-size: 21px; color: #8296b5; line-height: 1.5; margin-bottom: 30px; }
+      #f05 .side b { display: block; font-size: 46px; font-weight: 900; color: #e9eef7; }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="32" data-track-index="1">
+      <div class="panel">
+        <div class="chrome mono">VISUALIZADOR DE BASE DE DATOS</div>
+
+        <div class="tabs">
+          <span class="on">Todos los estudios</span>
+          <span>Por Paciente</span>
+          <span>Biomarcadores</span>
+          <span>Análisis</span>
+        </div>
+
+        <div class="search mono">carcinoma ductal<span class="caret"></span></div>
+
+        <table>
+          <tr>
+            <th class="mono">N.º CASO</th>
+            <th class="mono">PACIENTE</th>
+            <th class="mono">ÓRGANO</th>
+            <th class="mono">DIAGNÓSTICO PRINCIPAL</th>
+            <th class="mono">MALIGNIDAD</th>
+            <th class="mono">HER2</th>
+          </tr>
+          <tr>
+            <td class="mono">IHQ251204</td><td>ROSA ELENA MARÍN</td><td>MAMA</td>
+            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
+          </tr>
+          <tr>
+            <td class="mono">IHQ251217</td><td>MARTA LUCÍA OSPINA</td><td>MAMA</td>
+            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">POSITIVO</td>
+          </tr>
+          <tr>
+            <td class="mono">IHQ251233</td><td>GLORIA I. BEDOYA</td><td>MAMA</td>
+            <td>CARCINOMA DUCTAL IN SITU</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
+          </tr>
+          <tr>
+            <td class="mono">IHQ251248</td><td>AMPARO CIFUENTES</td><td>MAMA</td>
+            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">POSITIVO</td>
+          </tr>
+          <tr>
+            <td class="mono">IHQ251261</td><td>NUBIA E. TASCÓN</td><td>MAMA</td>
+            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="side">
+        <p><b>22.547</b>estudios</p>
+        <p><b>18.271</b>pacientes</p>
+        <p><b>189</b>campos por estudio</p>
+      </div>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">05 / 09 — LOS DATOS</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f05"] = gsap.timeline({ paused: true });
+  </script>
+</template>

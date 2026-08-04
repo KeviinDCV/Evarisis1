@@ -1,0 +1,116 @@
+<template>
+  <div
+    id="f07"
+    data-composition-id="f07"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="38"
+  >
+    <style>
+      #f07 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f07 .clip { position: absolute; inset: 0; }
+      #f07 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f07 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f07 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f07 h2 {
+        position: absolute; left: 80px; top: 140px;
+        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
+      }
+      #f07 .pages {
+        position: absolute; left: 80px; right: 80px; top: 290px;
+        display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px;
+      }
+      /* stand-in: cada bloque es una página REAL del PDF, rasterizada en el build */
+      #f07 .page {
+        background: #f4f6fa; height: 470px;
+        display: flex; align-items: flex-end; padding: 22px;
+        color: #6a7d9c; font-size: 17px;
+      }
+      #f07 .page.focal { outline: 4px solid #e9a33c; outline-offset: 6px; }
+      #f07 .cap { margin-top: 24px; }
+      #f07 .cap b {
+        display: block; font-size: 24px; font-weight: 900;
+        letter-spacing: 0.06em; margin-bottom: 12px;
+      }
+      #f07 .cap p { font-size: 20px; font-weight: 400; color: #8296b5; line-height: 1.45; }
+      #f07 .foot {
+        position: absolute; left: 80px; bottom: 56px;
+        font-size: 26px; color: #8296b5;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="38" data-track-index="1">
+      <h2>El informe estadístico</h2>
+
+      <div class="pages">
+        <div>
+          <div class="page"><span class="mono">página 1 del PDF real</span></div>
+          <div class="cap">
+            <b class="mono">01 · VISTAZO</b>
+            <p>Indicadores, reparto por sexo y los tres diagnósticos más frecuentes de cada uno.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="page focal"><span class="mono">página 2 del PDF real</span></div>
+          <div class="cap">
+            <b class="mono">02 · PANORAMA</b>
+            <p>1.566 tumores · 436 hallazgos no neoplásicos · 74 sin diagnóstico específico.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="page"><span class="mono">página 3 del PDF real</span></div>
+          <div class="cap">
+            <b class="mono">03 · DETALLE</b>
+            <p>Cada categoría neoplásica con su órgano principal y sus casos.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="page"><span class="mono">página 4 del PDF real</span></div>
+          <div class="cap">
+            <b class="mono">04 · DETALLE</b>
+            <p>Continuación, con el reparto por sexo de cada categoría.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="page"><span class="mono">página 5 del PDF real</span></div>
+          <div class="cap">
+            <b class="mono">05 · NO ONCOLÓGICO</b>
+            <p>Cierra con lo que no es tumor.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="foot">
+        Informe determinista: sin inteligencia artificial. Las mismas cifras siempre.
+      </p>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">07 / 09 — EL INFORME</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f07"] = gsap.timeline({ paused: true });
+  </script>
+</template>

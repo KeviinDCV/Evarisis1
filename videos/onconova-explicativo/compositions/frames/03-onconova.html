@@ -1,0 +1,73 @@
+<template>
+  <div
+    id="f03"
+    data-composition-id="f03"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="14"
+  >
+    <style>
+      #f03 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f03 .clip { position: absolute; inset: 0; }
+      #f03 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f03 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f03 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f03 .lockup {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1440px; text-align: center;
+      }
+      #f03 h1 {
+        font-size: 190px; font-weight: 900;
+        letter-spacing: -0.045em; line-height: 1;
+      }
+      /* el plinto es el foco de la escena */
+      #f03 .plinth {
+        width: 260px; height: 8px; background: #e9a33c;
+        margin: 42px auto 40px;
+      }
+      #f03 .org {
+        font-size: 26px; letter-spacing: 0.22em; color: #8296b5;
+      }
+      #f03 .promise {
+        margin-top: 64px; font-size: 46px; font-weight: 400;
+        line-height: 1.36; letter-spacing: -0.02em;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="14" data-track-index="1">
+      <div class="lockup">
+        <h1>ONCONOVA</h1>
+        <div class="plinth"></div>
+        <p class="org mono">GESTOR ONCOLÓGICO · HOSPITAL UNIVERSITARIO DEL VALLE</p>
+        <p class="promise">
+          Convierte 765 informes en una base de datos<br />que se puede preguntar.
+        </p>
+      </div>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">03 / 09 — LA APLICACIÓN</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f03"] = gsap.timeline({ paused: true });
+  </script>
+</template>

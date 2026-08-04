@@ -1,0 +1,117 @@
+<template>
+  <div
+    id="f06"
+    data-composition-id="f06"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="30"
+  >
+    <style>
+      #f06 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f06 .clip { position: absolute; inset: 0; }
+      #f06 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f06 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f06 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f06 h2 {
+        position: absolute; left: 80px; top: 140px;
+        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
+      }
+      #f06 .kpis {
+        position: absolute; left: 80px; right: 80px; top: 300px;
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
+      }
+      #f06 .kpi {
+        border: 1px solid rgba(233,238,247,.14); padding: 36px 32px 40px;
+      }
+      #f06 .kpi.focal { border-color: #e9a33c; }
+      #f06 .kpi b {
+        display: block; font-size: 88px; font-weight: 900;
+        letter-spacing: -0.04em; line-height: 1;
+      }
+      #f06 .kpi.focal b { color: #e9a33c; }
+      #f06 .kpi span {
+        display: block; margin-top: 22px; font-size: 21px;
+        letter-spacing: 0.12em; color: #8296b5;
+      }
+      /* stand-in: la tabla de correlación biomarcador × malignidad.
+         Sin cifras: se rellenan en el build con la consulta real. */
+      #f06 .table {
+        position: absolute; left: 80px; right: 80px; top: 620px; height: 300px;
+        border: 1px solid rgba(233,238,247,.14);
+      }
+      #f06 .thead {
+        display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+        padding: 26px 32px; font-size: 19px; letter-spacing: 0.12em;
+        color: #8296b5; border-bottom: 1px solid rgba(233,238,247,.14);
+      }
+      #f06 .trow {
+        display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+        padding: 24px 32px; font-size: 23px;
+        border-bottom: 1px solid rgba(233,238,247,.07);
+      }
+      #f06 .ph { color: #55688a; }
+      #f06 .note {
+        position: absolute; left: 80px; bottom: 56px;
+        font-size: 20px; color: #55688a;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="30" data-track-index="1">
+      <h2>El análisis</h2>
+
+      <div class="kpis">
+        <div class="kpi"><b>2.076</b><span class="mono">CASOS IHQ</span></div>
+        <div class="kpi focal"><b>67,1 %</b><span class="mono">MALIGNOS</span></div>
+        <div class="kpi"><b>195</b><span class="mono">CATEGORÍAS ANATÓMICAS</span></div>
+        <div class="kpi"><b>122</b><span class="mono">BIOMARCADORES</span></div>
+      </div>
+
+      <div class="table">
+        <div class="thead mono">
+          <span>BIOMARCADOR</span><span>SOLICITADO</span><span>POSITIVO</span>
+          <span>% POS.</span><span>TUMOR MÁS FRECUENTE</span>
+        </div>
+        <div class="trow">
+          <span>KI-67</span><span class="ph mono">—</span><span class="ph mono">—</span>
+          <span class="ph mono">—</span><span class="ph mono">—</span>
+        </div>
+        <div class="trow">
+          <span>HER2</span><span class="ph mono">—</span><span class="ph mono">—</span>
+          <span class="ph mono">—</span><span class="ph mono">—</span>
+        </div>
+        <div class="trow">
+          <span>RECEPTOR DE ESTRÓGENO</span><span class="ph mono">—</span><span class="ph mono">—</span>
+          <span class="ph mono">—</span><span class="ph mono">—</span>
+        </div>
+      </div>
+
+      <p class="note mono">
+        Cifras de la tabla pendientes de la consulta real — no se inventan en el boceto.
+      </p>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">06 / 09 — EL ANÁLISIS</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f06"] = gsap.timeline({ paused: true });
+  </script>
+</template>

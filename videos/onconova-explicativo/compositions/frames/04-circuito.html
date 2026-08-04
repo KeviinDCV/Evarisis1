@@ -1,0 +1,122 @@
+<template>
+  <div
+    id="f04"
+    data-composition-id="f04"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="34"
+  >
+    <style>
+      #f04 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f04 .clip { position: absolute; inset: 0; }
+      #f04 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f04 .brand {
+        position: absolute; top: 56px; left: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f04 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f04 h2 {
+        position: absolute; left: 80px; top: 150px;
+        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
+      }
+      #f04 .rail {
+        position: absolute; left: 80px; right: 80px; top: 400px;
+        display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px;
+      }
+      #f04 .station {
+        border: 1px solid rgba(233,238,247,.14);
+        padding: 34px 30px 40px; min-height: 340px;
+      }
+      /* la estación 2 es el foco: la parada de la cámara en el momento clave */
+      #f04 .station.focal { border-color: #e9a33c; }
+      #f04 .n {
+        font-size: 22px; letter-spacing: 0.2em; color: #8296b5;
+        margin-bottom: 26px;
+      }
+      #f04 .station.focal .n { color: #e9a33c; }
+      #f04 .name {
+        font-size: 34px; font-weight: 900; letter-spacing: -0.02em;
+        line-height: 1.2; margin-bottom: 22px;
+      }
+      #f04 .detail {
+        font-size: 22px; font-weight: 400; color: #8296b5; line-height: 1.5;
+      }
+      #f04 .datum {
+        margin-top: 22px; font-size: 22px; color: #e9a33c;
+      }
+      #f04 .foot {
+        position: absolute; left: 80px; bottom: 150px;
+        font-size: 28px; font-weight: 400; color: #8296b5;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="34" data-track-index="1">
+      <h2>El circuito de funcionamiento</h2>
+
+      <div class="rail">
+        <div class="station">
+          <p class="n mono">01</p>
+          <p class="name">CARGA</p>
+          <p class="detail">Se cargan los PDFs del servicio de patología.</p>
+        </div>
+
+        <div class="station focal">
+          <p class="n mono">02</p>
+          <p class="name">LECTURA</p>
+          <p class="detail">
+            Lee la capa de texto que el propio informe lleva dentro. No
+            fotografía el papel.
+          </p>
+          <p class="datum mono">36.243 páginas · 0 sin capa de texto</p>
+        </div>
+
+        <div class="station">
+          <p class="n mono">03</p>
+          <p class="name">SEGMENTACIÓN</p>
+          <p class="detail">Separa el documento en casos: uno por informe.</p>
+        </div>
+
+        <div class="station">
+          <p class="n mono">04</p>
+          <p class="name">EXTRACCIÓN</p>
+          <p class="detail">
+            Paciente, órgano, diagnóstico y biomarcadores, cada uno a su campo.
+          </p>
+          <p class="detail mono" style="margin-top: 18px">189 campos</p>
+        </div>
+
+        <div class="station">
+          <p class="n mono">05</p>
+          <p class="name">BASE DE DATOS</p>
+          <p class="detail">MySQL dentro del hospital.</p>
+          <p class="detail mono" style="margin-top: 18px">
+            Nada sale de la red del HUV.
+          </p>
+        </div>
+      </div>
+
+      <p class="foot">Cinco pasos. Del PDF a la pregunta con respuesta.</p>
+
+      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="mark mono">04 / 09 — EL CIRCUITO</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f04"] = gsap.timeline({ paused: true });
+  </script>
+</template>

@@ -1,0 +1,54 @@
+<template>
+  <div
+    id="f01"
+    data-composition-id="f01"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="16"
+  >
+    <style>
+      #f01 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f01 .clip { position: absolute; inset: 0; }
+      #f01 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f01 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #f01 .stack {
+        position: absolute; left: 200px; top: 300px; width: 1400px;
+      }
+      #f01 .q {
+        font-size: 62px; font-weight: 400; line-height: 1.42;
+        letter-spacing: -0.02em; margin-bottom: 26px;
+      }
+      #f01 .caret {
+        display: inline-block; width: 26px; height: 62px;
+        background: #e9a33c; vertical-align: -12px; margin-left: 10px;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="16" data-track-index="1">
+      <div class="stack">
+        <p class="q">¿Cuántos carcinomas de mama diagnosticamos el año pasado?</p>
+        <p class="q">¿En cuántos se pidió HER2?</p>
+        <p class="q">¿Y cuántos dieron positivo?<span class="caret"></span></p>
+      </div>
+      <div class="mark mono">01 / 09 — LA PREGUNTA</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f01"] = gsap.timeline({ paused: true });
+  </script>
+</template>

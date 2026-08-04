@@ -1,0 +1,94 @@
+<template>
+  <div
+    id="f02"
+    data-composition-id="f02"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="22"
+  >
+    <style>
+      #f02 {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #141d2b;
+        color: #e9eef7;
+        font-family: "Montserrat", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #f02 .clip { position: absolute; inset: 0; }
+      #f02 .mono { font-family: "IBM Plex Mono", monospace; }
+      #f02 .mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      /* stand-in: las miniaturas de informe son bloques planos */
+      #f02 .wall {
+        position: absolute; inset: 0;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-auto-rows: 176px;
+        gap: 18px; padding: 40px;
+      }
+      #f02 .doc { border: 1px solid rgba(233,238,247,.14); }
+      #f02 .center {
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1080px; padding: 64px 72px;
+        background: #141d2b; border: 1px solid rgba(233,238,247,.14);
+        text-align: center;
+      }
+      #f02 h2 {
+        font-size: 84px; font-weight: 900; letter-spacing: -0.03em;
+        line-height: 1.1; margin-bottom: 40px;
+      }
+      #f02 .counter {
+        font-size: 44px; font-weight: 700; color: #e9a33c;
+        letter-spacing: 0.02em;
+      }
+      #f02 .sub {
+        margin-top: 22px; font-size: 26px; color: #8296b5; font-weight: 400;
+      }
+    </style>
+
+    <section class="clip" data-start="0" data-duration="22" data-track-index="1">
+      <div class="wall">
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
+        <div class="doc"></div>
+      </div>
+
+      <div class="center">
+        <h2>El dato existe.<br />Está en PDF.</h2>
+        <p class="counter mono">765 INFORMES · 36.243 PÁGINAS · 22.547 ESTUDIOS</p>
+        <p class="sub">Un PDF se lee. No se consulta.</p>
+      </div>
+
+      <div class="mark mono">02 / 09 — EL PROBLEMA</div>
+    </section>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["f02"] = gsap.timeline({ paused: true });
+  </script>
+</template>
