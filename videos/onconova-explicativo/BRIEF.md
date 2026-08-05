@@ -73,7 +73,7 @@ Narración con voz natural, en español.
 ## Notes
 
 - **Ley 1581 (Habeas Data).** Ningún dato identificable de paciente puede
-  aparecer en pantalla. Las cifras agregadas (2.076 casos, 67,1 % malignos,
+  aparecer en pantalla. Las cifras agregadas (2.076 casos, 67,0 % malignos,
   22.547 estudios…) NO identifican a nadie y sí se muestran.
 - **🔴 Incidente detectado y corregido — números de caso.** El primer boceto de
   la escena 5 usaba IHQ251204/217/233/248/261 como identificadores «ficticios».
@@ -92,15 +92,28 @@ Narración con voz natural, en español.
   nombre** (Cédula · Estudios · Órgano · Diagnóstico · Biomarcadores · Fecha) —
   un acierto de privacidad del producto que el vídeo debe mostrar tal cual.
 - Las cifras en pantalla son las verificadas en la auditoría de la V6.9.91:
-  765 PDFs · 22.547 estudios · 2.076 IHQ · 18.271 pacientes · 67,1 % malignos ·
+  765 PDFs · 22.547 estudios · 2.076 IHQ · 18.271 pacientes · 67,0 % malignos ·
   2.034 de 2.076 diagnósticos comprobados literalmente contra su PDF.
 - **Cifras del informe, contrastadas contra el propio PDF (no de memoria):**
-  página 1 → 2.076 casos · 67,1 % malignos · 195 categorías anatómicas ·
-  122 biomarcadores. Página 2 → 2.004 con diagnóstico (1.568 tumores +
-  436 no neoplásicos) y 72 sin diagnóstico específico.
+  página 1 → 2.076 casos · 67,0 % malignos · 195 categorías anatómicas ·
+  122 biomarcadores. Página 2, tabla de Cobertura → 2.004 con diagnóstico
+  (**1.350 malignos + 654 benignos**, V6.9.93) y 72 sin diagnóstico específico;
+  la banda de detalle de esa misma página sigue diciendo 1.568 casos
+  neoplásicos, que es el OTRO eje y no tiene por qué coincidir.
   El primer guion decía «1.566 tumores / 74 sin diagnóstico»: **era falso** y se
   corrigió. En un vídeo cuyo remate es la verificabilidad, una cifra que
   contradiga el PDF en pantalla es el fallo más caro que existe.
+- **🔴 El informe cambió y el vídeo lo enseña LITERALMENTE.** La escena 11 no
+  describe el PDF: rasteriza sus cinco páginas a 3,6× y las recorre. Así que al
+  cambiar la tabla de Cobertura del informe (V6.9.93: pasa a repartir por
+  Maligno/Benigno) hubo que **volver a rasterizar las cinco páginas** y
+  regenerar la línea 11, que narraba «1.568 tumores y 436 hallazgos
+  no neoplásicos» — cifras que esa página ya no muestra. Y al corregir cuatro
+  biopsias de médula ósea, el KPI bajó de 67,1 % a 67,0 %, lo que obligó a
+  regenerar también la línea 9 y el contador de la escena 9 (`countUp` y el arco
+  del anillo, que estaba calculado sobre 0,671). Regla: **cualquier cambio en el
+  informe o en la BD arrastra el vídeo**, y arrastra tres cosas a la vez —
+  imagen rasterizada, cifra en pantalla y locución.
 - La tabla de la escena 6 reproduce la de la app (`enhanced_database_dashboard.py`
   → `update_malignancy_biomarker_table`), no una agregación hecha para el vídeo.
   Se muestran las 5 filas con dato; PDL-1 y «P16 %» salen a cero en las cuatro
@@ -108,7 +121,8 @@ Narración con voz natural, en español.
 - **El nombre del PDF no es su inventario.** `IHQ260001 al IHQ260050.pdf` no
   trae 50 casos: trae **82**, porque cada archivo arrastra casos de lotes
   vecinos. El árbol de la escena 6 llevaba «(50/50)» inventado; los reales son
-  82 · 92 · 93 · 84, leídos de `auditoria/casos_por_pdf.json`. Lo mismo con los
+  82 · 92 · 93 · 84 según `auditoria/casos_por_pdf.json` — aunque OJO, tampoco
+  son esos los que el producto imprime: ver el punto siguiente. Lo mismo con los
   tamaños, las fechas y el «5 elementos» que se contradecía con la lista visible
   (la carpeta tiene 404). **Cualquier cifra de la carpeta se mide en disco.**
 - **Una ventana del producto se cita entera: valor Y formato.** El resumen de

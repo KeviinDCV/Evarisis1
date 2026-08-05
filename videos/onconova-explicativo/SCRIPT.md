@@ -93,7 +93,7 @@ entienda que son siete cosas distintas y para qué sirve cada una.
 **Delivery:** Las cuatro cifras, una a una, con pausa entre ellas. Sin
 entusiasmo: son hechos.
 
-    Sobre esos datos, el programa calcula. Dos mil setenta y seis casos de inmunohistoquímica. Sesenta y siete coma uno por ciento malignos. Ciento noventa y cinco categorías anatómicas. Ciento veintidós biomarcadores distintos. Y el análisis de malignidad cruza los biomarcadores clave con el resultado del caso: cuántos malignos dieron positivo y cuántos negativo, y lo mismo en los benignos.
+    Sobre esos datos, el programa calcula. Dos mil setenta y seis casos de inmunohistoquímica. Sesenta y siete por ciento malignos. Ciento noventa y cinco categorías anatómicas. Ciento veintidós biomarcadores distintos. Y el análisis de malignidad cruza los biomarcadores clave con el resultado del caso: cuántos malignos dieron positivo y cuántos negativo, y lo mismo en los benignos.
 
 ## Line 10 — El Dashboard gráfico (Frame 10)
 
@@ -109,7 +109,7 @@ apunte, no una lección.
 **Delivery:** Guía de lectura, página por página. La última frase, la del
 determinismo, más lenta: es una garantía.
 
-    Todo eso se exporta en un informe de cinco páginas. La primera es el vistazo: los indicadores, el reparto por sexo y los tres diagnósticos más frecuentes de cada uno. La segunda abre el panorama: de los dos mil setenta y seis casos, dos mil cuatro tienen diagnóstico. Mil quinientos sesenta y ocho son tumores y cuatrocientos treinta y seis, hallazgos no neoplásicos. Setenta y dos se quedaron sin diagnóstico específico. Las páginas tres y cuatro son el detalle: cada categoría neoplásica con su órgano principal, sus casos y su reparto por sexo. Y la quinta cierra con lo no oncológico. Es un informe determinista: sin inteligencia artificial, las mismas cifras siempre.
+    Todo eso se exporta en un informe de cinco páginas. La primera es el vistazo: los indicadores, el reparto por sexo y los tres diagnósticos más frecuentes de cada uno. La segunda abre el panorama: de los dos mil setenta y seis casos, dos mil cuatro tienen diagnóstico. Mil trescientos cincuenta son malignos y seiscientos cincuenta y cuatro, benignos. Setenta y dos se quedaron sin diagnóstico específico. Las páginas tres y cuatro son el detalle: cada categoría neoplásica con su órgano principal, sus casos y su reparto por sexo. Y la quinta cierra con lo no oncológico. Es un informe determinista: sin inteligencia artificial, las mismas cifras siempre.
 
 ## Line 12 — La verificación (Frame 12)
 

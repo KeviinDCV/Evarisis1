@@ -1,6 +1,6 @@
 ---
 format: 1920x1080
-duration: 5m39s
+duration: 5m35s
 message: "El dato oncológico del HUV deja de estar encerrado en PDFs: se consulta, se analiza y se puede verificar contra el informe original — y esto es la aplicación que lo hace, pantalla por pantalla"
 arc: "Membrete institucional → El dato encerrado → ONCONOVA → El circuito → La aplicación abre → De la carpeta a la base → Las siete vistas → Los datos → El análisis → El Dashboard → El informe → La verificación → Cierre"
 audience: "profesionales sanitarios y de gestión del HUV"
@@ -170,11 +170,11 @@ Clic discreto en cada interacción.
 
 - status: built
 - src: compositions/frames/06-analisis.html ← escena 9, no 6
-- duration: 30.63s
+- duration: 27.96s
 - transition_in: crossfade
 - scene: Los KPIs cuentan hacia arriba y el panel de biomarcadores se completa.
 - blueprint: dataviz-countup
-- voiceover: "Sobre esos datos, el programa calcula. Dos mil setenta y seis casos de inmunohistoquímica. Sesenta y siete coma uno por ciento malignos. Ciento noventa y cinco categorías anatómicas. Ciento veintidós biomarcadores distintos. Y el análisis de malignidad cruza los biomarcadores clave con el resultado del caso: cuántos malignos dieron positivo y cuántos negativo, y lo mismo en los benignos."
+- voiceover: "Sobre esos datos, el programa calcula. Dos mil setenta y seis casos de inmunohistoquímica. Sesenta y siete por ciento malignos. Ciento noventa y cinco categorías anatómicas. Ciento veintidós biomarcadores distintos. Y el análisis de malignidad cruza los biomarcadores clave con el resultado del caso: cuántos malignos dieron positivo y cuántos negativo, y lo mismo en los benignos."
 
 Tarjetas KPI con count-up escalonado sobre el fondo navy. La cámara empuja hasta la
 tarjeta de malignidad y de ahí se abre la tabla de correlación biomarcador-malignidad,
@@ -196,8 +196,8 @@ con halo**, no un subrayado tenue — si no, deja de mandar en el encuadre.
 
 Dos correcciones de fidelidad sobre la rejilla del Overview. La rosquilla de
 «Distribución de Malignidad» tiene **dos** sectores, no tres: en producción la
-columna Malignidad solo toma dos valores (MALIGNO 1.394 = 67,1 % y BENIGNO 682 =
-32,9 %) y `_g_pie_malignidad` agrupa en OTROS solo lo que baja del 2,5 %, así que
+columna Malignidad solo toma dos valores (MALIGNO 1.390 = 67,0 % y BENIGNO 686 =
+33,0 %) y `_g_pie_malignidad` agrupa en OTROS solo lo que baja del 2,5 %, así que
 un tercer sector no puede existir — y con el dominante en el 67 % el espectador
 lee la cifra real, de modo que un tercero le estaría enseñando una categoría
 inventada. Y «Top Servicios» se dibuja en **columnas verticales**, igual que «Top
@@ -208,11 +208,11 @@ etiquetas giradas 30°, no una de barras horizontales.
 
 - status: built
 - src: compositions/frames/07-informe.html ← escena 11, no 7
-- duration: 50.58s
+- duration: 48.99s
 - transition_in: crossfade
 - scene: Recorrido vertical por las cinco páginas reales del PDF.
 - blueprint: transcript-scroll-artifact-reveal
-- voiceover: "Todo eso se exporta en un informe de cinco páginas. La primera es el vistazo: los indicadores, el reparto por sexo y los tres diagnósticos más frecuentes de cada uno. La segunda abre el panorama: de los dos mil setenta y seis casos, dos mil cuatro tienen diagnóstico. Mil quinientos sesenta y ocho son tumores y cuatrocientos treinta y seis, hallazgos no neoplásicos. Setenta y dos se quedaron sin diagnóstico específico. Las páginas tres y cuatro son el detalle: cada categoría neoplásica con su órgano principal, sus casos y su reparto por sexo. Y la quinta cierra con lo no oncológico. Es un informe determinista: sin inteligencia artificial, las mismas cifras siempre."
+- voiceover: "Todo eso se exporta en un informe de cinco páginas. La primera es el vistazo: los indicadores, el reparto por sexo y los tres diagnósticos más frecuentes de cada uno. La segunda abre el panorama: de los dos mil setenta y seis casos, dos mil cuatro tienen diagnóstico. Mil trescientos cincuenta son malignos y seiscientos cincuenta y cuatro, benignos. Setenta y dos se quedaron sin diagnóstico específico. Las páginas tres y cuatro son el detalle: cada categoría neoplásica con su órgano principal, sus casos y su reparto por sexo. Y la quinta cierra con lo no oncológico. Es un informe determinista: sin inteligencia artificial, las mismas cifras siempre."
 
 El PDF real, rasterizado a 3,6× para que se lea de verdad, aparece como documento
 continuo y la cámara recorre sus cinco páginas de arriba abajo, deteniéndose en cada

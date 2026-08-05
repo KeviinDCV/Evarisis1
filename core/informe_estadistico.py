@@ -127,7 +127,10 @@ def _barh(data, titulo, path, top=10):
     matplotlib.use("Agg")
     Figure = _fig()
     items = list(data.items())[:top][::-1]
-    fig = Figure(figsize=(7.2, 4.3), dpi=150)
+    # V6.9.93: figura algo mayor y, sobre todo, ETIQUETAS mas grandes. Lo que se
+    # leia mal no era el grafico sino su eje Y, que va a dos lineas (diagnostico
+    # + organo) y estaba a 7 pt.
+    fig = Figure(figsize=(7.6, 4.4), dpi=150)
     fig.patch.set_facecolor("#ffffff")
     ax = fig.add_subplot(111)
     if not items:
@@ -143,14 +146,14 @@ def _barh(data, titulo, path, top=10):
         va = [v for _, v in items]
         colores = [PALETA[i % len(PALETA)] for i in range(len(items))]
         ax.barh(et, va, color=colores)
-        ax.set_title(titulo, fontsize=11, fontweight="bold", color=NAVY, pad=8)
-        ax.tick_params(axis="y", labelsize=7)
-        ax.tick_params(axis="x", labelsize=8)
+        ax.set_title(titulo, fontsize=12, fontweight="bold", color=NAVY, pad=8)
+        ax.tick_params(axis="y", labelsize=8.5)
+        ax.tick_params(axis="x", labelsize=9)
         for sp in ("top", "right"):
             ax.spines[sp].set_visible(False)
         ax.margins(x=0.12)
         for i, v in enumerate(va):
-            ax.text(v, i, f" {v}", va="center", fontsize=8, color=GREY)
+            ax.text(v, i, f" {v}", va="center", fontsize=9, color=GREY)
     fig.tight_layout()
     fig.savefig(path, bbox_inches="tight", facecolor="#ffffff")
 
@@ -475,8 +478,12 @@ def generar_informe_estadistico_pdf(df, out_path,
     story.append(Spacer(1, 12))
 
     # ---------- Panorama general (malignidad + barras + tendencia) ----------
-    pano = Table([[Image(p_mal, 5.0 * cm, 5.0 * cm), Image(p_bar, 10.2 * cm, 5.4 * cm)]],
-                 colWidths=[5.4 * cm, CW - 5.4 * cm])
+    # V6.9.93: el Top-10 se lee mal proyectado — las etiquetas llevan dos líneas
+    # (diagnóstico + órgano) y quedaban diminutas. Se le da el ancho que sobraba
+    # en su columna (12,4 cm de caja para una imagen de 10,2) y algo de alto. El
+    # aumento es contenido a propósito: subir más empuja el bloque de página.
+    pano = Table([[Image(p_mal, 4.8 * cm, 4.8 * cm), Image(p_bar, 12.1 * cm, 6.3 * cm)]],
+                 colWidths=[5.2 * cm, CW - 5.2 * cm])
     pano.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
     story.append(KeepTogether([
         band("Panorama general"), Spacer(1, 6), pano, Spacer(1, 8),
@@ -484,18 +491,46 @@ def generar_informe_estadistico_pdf(df, out_path,
     story.append(Spacer(1, 12))
 
     # ---------- Cobertura: reconciliación al total (banda + tabla juntas) ----------
-    # V6.9.43: agrupado en "Casos CON diagnóstico" (tumores + no-neoplásicos: ambos
-    # SON un diagnóstico, solo que uno tiene tumor y el otro no) vs "Sin diagnóstico".
-    # Las 2 sub-filas indentadas suman el subtotal -> evita verlas como grupos
+    # V6.9.43: agrupado en "Casos CON diagnóstico" vs "Sin diagnóstico". Las 2
+    # sub-filas indentadas suman el subtotal -> evita verlas como grupos
     # separados al mismo nivel (que confundía).
+    #
+    # V6.9.93: las dos sub-filas se parten por MALIGNIDAD, no por si hay tumor.
+    # Antes decían "Tumores (neoplasias benignas o malignas)" y "Hallazgos
+    # no-neoplásicos (negativos, inflamatorios, médula ósea, etc.)", y ese eje
+    # NO es el que la sala lee. Dos problemas concretos:
+    #   · "Tumores" mezclaba 242 neoplasias BENIGNAS con 1.326 malignas, así que
+    #     nadie podía leer la fila como "malignos".
+    #   · la fila de no-neoplásicos escondía 28 casos que el campo Malignidad da
+    #     por MALIGNOS —entre ellos un carcinoma basocelular infiltrante que
+    #     quedó categorizado como inflamación porque el Dx empieza por el
+    #     granuloma—, o sea casos malignos dentro de una fila rotulada como
+    #     hallazgo benigno. Y el rótulo citaba "médula ósea" como ejemplo de
+    #     hallazgo no-neoplásico, que es justo lo que no se sostiene.
+    # El eje de malignidad es el campo Malignidad, que ya se deriva del propio
+    # diagnóstico (V6.9.42) y es el mismo que alimenta el KPI de % malignos.
     n_con_dx = n_onco + n_noneo
     n_sin_dx_total = n_sindx + (n_otrocat if n_otrocat > 0 else 0) + (n_sindato if n_sindato > 0 else 0)
+
+    # máscara "tiene diagnóstico": todo lo que NO cae en los buckets sin dx
+    _SIN_DX_CATS = set(GRUPO_SIN_DX) | {"OTRO / NO CATEGORIZADO", "SIN DATO"}
+    if cat is not None and mal_col is not None:
+        _con_dx = ~cat.astype(str).str.upper().isin(_SIN_DX_CATS)
+        _mal = df[mal_col][_con_dx]
+        n_dx_mal = int(_mal.apply(_es_maligno).sum())
+        n_dx_ben = int(_mal.apply(_es_benigno).sum())
+        # lo que no dice ni una cosa ni otra se queda con los benignos antes que
+        # inventar una tercera fila: la tabla tiene que reconciliar al total.
+        n_dx_ben = n_con_dx - n_dx_mal
+    else:
+        n_dx_mal = n_dx_ben = 0
+
     rec_rows = [["Grupo", "Casos", "%"]]
     rec_rows.append([Paragraph('<b>Casos CON diagnóstico</b>', cell), str(n_con_dx), _pct(n_con_dx, total)])
-    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Tumores (neoplasias benignas o malignas)</font>', cell),
-                     str(n_onco), _pct(n_onco, total)])
-    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Hallazgos no-neoplásicos (negativos, inflamatorios, médula ósea, etc.)</font>', cell),
-                     str(n_noneo), _pct(n_noneo, total)])
+    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Maligno</font>', cell),
+                     str(n_dx_mal), _pct(n_dx_mal, total)])
+    rec_rows.append([Paragraph('<font size=8>&nbsp;&nbsp;&nbsp;Benigno</font>', cell),
+                     str(n_dx_ben), _pct(n_dx_ben, total)])
     rec_rows.append([Paragraph('<b>Casos SIN diagnóstico específico / muestra no diagnóstica</b>', cell),
                      str(n_sin_dx_total), _pct(n_sin_dx_total, total)])
     rec_rows.append([Paragraph('<b>TOTAL</b>', cell), str(total), "100%"])
@@ -506,7 +541,7 @@ def generar_informe_estadistico_pdf(df, out_path,
         ("GRID", (0, 0), (-1, -1), 0.4, line), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("ALIGN", (1, 0), (-1, -1), "CENTER"),
         ("BACKGROUND", (0, 1), (-1, 1), colors.HexColor("#eaf3ee")),  # subtotal CON diagnóstico
-        ("BACKGROUND", (0, 2), (-1, 3), colors.white),                # sub-filas (tumores / no-neoplásicos)
+        ("BACKGROUND", (0, 2), (-1, 3), colors.white),                # sub-filas (maligno / benigno)
         ("BACKGROUND", (0, 4), (-1, 4), colors.HexColor("#f7f0e8")),  # fila SIN diagnóstico
         ("FONTNAME", (0, -1), (-1, -1), "Helvetica-Bold"), ("BACKGROUND", (0, -1), (-1, -1), colors.HexColor("#f4f6fa")),
         ("TOPPADDING", (0, 0), (-1, -1), 3.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
@@ -622,7 +657,16 @@ def generar_informe_estadistico_pdf(df, out_path,
         f"Las cifras son <b>conteos de casos</b> (no incidencia poblacional, mortalidad ni prevalencia). "
         f"De los {total} casos, {n_onco} corresponden a diagnósticos oncológicos categorizados y "
         f"{no_onco} a hallazgos no-neoplásicos, estudios sin diagnóstico específico o pendientes de revisión. "
-        f"% malignos calculado sobre el campo Malignidad ({malignos} malignos, {benignos} benignos).", nota))
+        f"% malignos calculado sobre el campo Malignidad ({malignos} malignos, {benignos} benignos). "
+        # V6.9.93: la tabla de Cobertura y las tablas de detalle usan DOS EJES
+        # distintos y hay que decirlo, o las cifras parecen no cuadrar.
+        f"<b>Dos ejes distintos:</b> la tabla de <i>Cobertura</i> reparte por <b>malignidad</b> "
+        f"(maligno / benigno), mientras que las tablas de detalle reparten por <b>tipo de lesión</b> "
+        f"(neoplásico / no-neoplásico). No son lo mismo: hay neoplasias benignas, y hay hallazgos "
+        f"no-neoplásicos con malignidad informada. Por eso los {n_dx_mal} malignos con diagnóstico "
+        f"de la tabla de Cobertura no coinciden con los {n_onco} casos neoplásicos del detalle, "
+        f"ni con los {malignos} malignos del indicador general, que incluye los casos sin "
+        f"diagnóstico específico.", nota))
 
     # ---------- Footer (banda con logo) ----------
     logo_color = _logo("logo.png")

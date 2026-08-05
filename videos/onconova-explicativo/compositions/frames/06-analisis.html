@@ -1,5 +1,5 @@
 <template>
-  <div id="root" data-composition-id="06-analisis" data-start="0" data-width="1920" data-height="1080" data-duration="30.63">
+  <div id="root" data-composition-id="06-analisis" data-start="0" data-width="1920" data-height="1080" data-duration="27.96">
     <style>
       #root, #root *, #root *::before, #root *::after { box-sizing: border-box; }
       #root {
@@ -124,7 +124,7 @@
         transform: scaleX(0);
       }
 
-      /* arco del 67,1 % — el foco ambar dibuja la proporcion, no solo cuenta */
+      /* arco del 67,0 % — el foco ambar dibuja la proporcion, no solo cuenta */
       #root .s6-ring { position: absolute; right: 26px; top: 26px; }
       #root .s6-halo { opacity: 0; }
 
@@ -233,7 +233,7 @@
     </style>
 
     <!-- ================= fondo (pista 0) ================= -->
-    <div id="s6-clip-fondo" class="clip" data-start="0" data-duration="30.63" data-track-index="0">
+    <div id="s6-clip-fondo" class="clip" data-start="0" data-duration="27.96" data-track-index="0">
       <div class="s6-stage"></div>
       <div class="s6-aliento" id="s6-aliento"></div>
       <div class="s6-radial" id="s6-radial"></div>
@@ -242,7 +242,7 @@
     </div>
 
     <!-- ================= contenido bajo camara (pista 1) ================= -->
-    <div id="s6-clip-mundo" class="clip" data-start="0" data-duration="30.63" data-track-index="1" data-layout-allow-overflow="">
+    <div id="s6-clip-mundo" class="clip" data-start="0" data-duration="27.96" data-track-index="1" data-layout-allow-overflow="">
       <div class="s6-drift" id="s6-drift" data-layout-allow-overflow="">
         <div class="s6-zoom-outer" id="s6-zoom-outer" data-layout-allow-overflow="">
           <div class="s6-zoom-inner" id="s6-zoom-inner" data-layout-allow-overflow="">
@@ -406,7 +406,7 @@
     </div>
 
     <!-- ================= cromo de borde (pista 2) ================= -->
-    <div id="s6-clip-cromo" class="clip" data-start="0" data-duration="30.63" data-track-index="2">
+    <div id="s6-clip-cromo" class="clip" data-start="0" data-duration="27.96" data-track-index="2">
       <div class="s6-brand s6-mono" id="s6-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
       <div class="s6-mark s6-mono" id="s6-mark">09 / 13 — EL ANÁLISIS</div>
       <p class="s6-caption s6-mono" id="s6-cap">
@@ -538,14 +538,17 @@
 
       /* ---------------------------------------------------------------- */
       /* ESCENA 2 (5.0-16.5) — KPI focal: la cifra cuenta Y el arco dibuja */
-      /* stat-bars-and-fills (forma anillo): 0,671 de la circunferencia,   */
+      /* stat-bars-and-fills (forma anillo): 0,670 de la circunferencia,   */
       /* mismo inicio, misma duracion y mismo ease que el conteo, para que */
       /* numero y proporcion aterricen como un solo golpe.                 */
-      /* C = 2*pi*59 = 370,71 ; offset final = 370,71 * (1 - 0,671)        */
+      /* C = 2*pi*59 = 370,71 ; offset final = 370,71 * (1 - 0,670)        */
+      /* V6.9.93: 67,1 -> 67,0. Cuatro biopsias de medula osea llevaban  */
+      /* MALIGNO heredado y su propio informe lo desmiente; corregidas,  */
+      /* la BD pasa de 1394 a 1390 malignos sobre 2076.                  */
       /* ---------------------------------------------------------------- */
       shell(k2, l2, 5.3);
-      countUp(n2, 67.1, 6.1, 2.3, pct);
-      tl.fromTo(arc, { strokeDashoffset: 370.71 }, { strokeDashoffset: 121.96, duration: 2.3, ease: "power3.out" }, 6.1);
+      countUp(n2, 67.0, 6.1, 2.3, pct);
+      tl.fromTo(arc, { strokeDashoffset: 370.71 }, { strokeDashoffset: 122.33, duration: 2.3, ease: "power3.out" }, 6.1);
       tl.fromTo(k2, { borderColor: "rgba(233,238,247,0.14)" }, { borderColor: "#e9a33c", duration: 1.4, ease: "power2.out" }, 6.1);
       /* ambient-glow-bloom detras del focal */
       tl.fromTo(glow, { opacity: 0 }, { opacity: 1, duration: 2.2, ease: "power1.inOut" }, 7.3);
@@ -698,7 +701,7 @@
       // Arranca a la vez que la escena siguiente y dura 0,72 s: la
       // saliente se va MIENTRAS la entrante llega, para que no quede ni
       // un fotograma con el cuadro vacio.
-      tl.duration(30.63);
+      tl.duration(27.96);
 
 
 
