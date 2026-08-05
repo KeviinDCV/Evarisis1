@@ -62,12 +62,16 @@ Ambas van embebidas por el compilador (sin fetch, sin warning de lint).
 | 8      | la frase resaltada del PDF              |
 | 9      | el plinto bajo el lockup                |
 
-**Anclas de borde.** Un esqueleto idéntico en todas las escenas: arriba a la
-izquierda `ONCONOVA · Gestor Oncológico HUV` en mono; abajo a la derecha el
-marcador de sección `04 / 09 — EL CIRCUITO`. **Excepción deliberada:** en las
-escenas 1 y 2 la marca *no* aparece — la aplicación todavía no se ha
-presentado. El esqueleto entra con el lockup en la escena 3, y ese cambio de
-estado es parte del relato.
+**Anclas de borde.** Arriba a la izquierda `ONCONOVA · Gestor Oncológico HUV`
+en mono; abajo a la derecha el marcador de sección `04 / 09 — EL CIRCUITO`.
+Rigen en las escenas **3 a 8**, y solo ahí. Dos excepciones deliberadas:
+
+- **Escenas 1 y 2:** sin marca. La aplicación todavía no se ha presentado; el
+  esqueleto entra con el lockup en la escena 3 y ese cambio de estado es parte
+  del relato.
+- **Escena 9:** sin marca ni marcador. La tarjeta de cierre *es* la marca a
+  tamaño completo; repetirla en la esquina la duplicaría. Solo lleva el sello
+  de Ley 1581.
 
 **Detalle de apoyo.** Las pantallas y el PDF se muestran como paneles claros
 flotando sobre el escenario, con sombra suave y una barra de cromo navy de 1px.

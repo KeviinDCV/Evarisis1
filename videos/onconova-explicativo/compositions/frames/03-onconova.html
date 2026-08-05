@@ -1,73 +1,327 @@
 <template>
-  <div
-    id="f03"
-    data-composition-id="f03"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="14"
-  >
-    <style>
-      #f03 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
-        font-family: "Montserrat", sans-serif;
-        font-variant-numeric: tabular-nums;
-      }
-      #f03 .clip { position: absolute; inset: 0; }
-      #f03 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f03 .brand {
-        position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f03 .mark {
-        position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f03 .lockup {
-        position: absolute; left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        width: 1440px; text-align: center;
-      }
-      #f03 h1 {
-        font-size: 190px; font-weight: 900;
-        letter-spacing: -0.045em; line-height: 1;
-      }
-      /* el plinto es el foco de la escena */
-      #f03 .plinth {
-        width: 260px; height: 8px; background: #e9a33c;
-        margin: 42px auto 40px;
-      }
-      #f03 .org {
-        font-size: 26px; letter-spacing: 0.22em; color: #8296b5;
-      }
-      #f03 .promise {
-        margin-top: 64px; font-size: 46px; font-weight: 400;
-        line-height: 1.36; letter-spacing: -0.02em;
-      }
-    </style>
+  <style>
+    /* ── 03-onconova · 13s · foco: el plinto bajo el lockup ─────────────── */
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clip { position: absolute; inset: 0; }
+    .mono { font-family: "IBM Plex Mono", monospace; }
 
-    <section class="clip" data-start="0" data-duration="14" data-track-index="1">
-      <div class="lockup">
-        <h1>ONCONOVA</h1>
-        <div class="plinth"></div>
-        <p class="org mono">GESTOR ONCOLÓGICO · HOSPITAL UNIVERSITARIO DEL VALLE</p>
-        <p class="promise">
-          Convierte 765 informes en una base de datos<br />que se puede preguntar.
-        </p>
+    .ground { background: #141d2b; }
+
+    /* tres decorativos, una sola respiración lenta compartida */
+    .decor { position: absolute; inset: 0; }
+    .glow {
+      position: absolute;
+      inset: -12%;
+      background: radial-gradient(
+        1060px 820px at 50% 52%,
+        rgba(45, 62, 94, 0.72),
+        rgba(45, 62, 94, 0) 70%
+      );
+      transform-origin: 50% 52%;
+    }
+    .grid {
+      position: absolute;
+      inset: -60px;
+      background-image:
+        linear-gradient(to right, rgba(233, 238, 247, 0.04) 1px, rgba(0, 0, 0, 0) 1px),
+        linear-gradient(to bottom, rgba(233, 238, 247, 0.04) 1px, rgba(0, 0, 0, 0) 1px);
+      background-size: 40px 40px;
+      transform-origin: 50% 50%;
+    }
+    .hrule {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 838px;
+      height: 1px;
+      transform-origin: 50% 50%;
+      background: linear-gradient(
+        to right,
+        rgba(233, 238, 247, 0) 0%,
+        rgba(233, 238, 247, 0.14) 16%,
+        rgba(233, 238, 247, 0.14) 84%,
+        rgba(233, 238, 247, 0) 100%
+      );
+    }
+
+    /* el lockup */
+    .centerwrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lockup {
+      width: 1440px;
+      text-align: center;
+    }
+    /* el isotipo de ONCONOVA: la marca tiene simbolo propio y faltaba.
+       Va coronando el lockup, no compitiendo con el. */
+    .iso {
+      display: block; width: 168px; height: auto;
+      margin: 0 auto 34px; opacity: 0;
+    }
+    .lockup h1 {
+      font-size: 190px;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+    .plinth-wrap {
+      position: relative;
+      width: 260px;
+      height: 8px;
+      margin: 42px auto 40px;
+    }
+    .plinth-glow {
+      position: absolute;
+      left: -110px;
+      right: -110px;
+      top: -54px;
+      bottom: -54px;
+      background: radial-gradient(
+        closest-side,
+        rgba(233, 163, 60, 0.36),
+        rgba(233, 163, 60, 0) 100%
+      );
+      opacity: 0;
+    }
+    .plinth {
+      position: absolute;
+      inset: 0;
+      background: #e9a33c;
+      transform-origin: 0% 50%;
+    }
+    .org {
+      font-size: 26px;
+      letter-spacing: 0.22em;
+      color: #8296b5;
+    }
+    .promise {
+      margin-top: 64px;
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 1.36;
+      letter-spacing: -0.02em;
+    }
+    .promise span { display: inline-block; }
+
+    /* anclas de borde — el esqueleto ENTRA aquí, con el lockup */
+    .brand {
+      position: absolute;
+      top: 56px;
+      left: 80px;
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      color: #8296b5;
+    }
+    .mark {
+      position: absolute;
+      bottom: 56px;
+      right: 80px;
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      color: #8296b5;
+    }
+  </style>
+
+  <div data-hf-id="hf-vpi8" id="root" data-composition-id="03-onconova" data-start="0" data-width="1920" data-height="1080" data-duration="11.35">
+    <div data-hf-id="hf-hhi5" id="f03-onconova-ground" class="clip ground" data-start="0" data-duration="11.35" data-track-index="0">
+      <div data-hf-id="hf-mit3" id="f03-onconova-decor" class="decor">
+        <div data-hf-id="hf-2s7n" id="f03-onconova-glow" class="glow"></div>
+        <div data-hf-id="hf-kxq8" id="f03-onconova-grid" class="grid"></div>
+        <div data-hf-id="hf-e45m" id="f03-onconova-hrule" class="hrule"></div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-s8b5" id="f03-onconova-stage" class="clip stage" data-start="0" data-duration="11.35" data-track-index="1">
+      <div data-hf-id="hf-f5vf" id="f03-onconova-centerwrap" class="centerwrap">
+        <div data-hf-id="hf-6jvi" id="f03-onconova-lockup" class="lockup">
+          <img class="iso" id="f03-onconova-iso" src="assets/marca/onconova-isotipo.png" alt="ONCONOVA">
+          <h1 data-hf-id="hf-4xcv" id="f03-onconova-wordmark">ONCONOVA</h1>
+          <div data-hf-id="hf-vxt2" id="f03-onconova-plinth-wrap" class="plinth-wrap">
+            <div data-hf-id="hf-cgwh" id="f03-onconova-plinth-glow" class="plinth-glow"></div>
+            <div data-hf-id="hf-4fi5" id="f03-onconova-plinth" class="plinth"></div>
+          </div>
+          <p data-hf-id="hf-jn58" id="f03-onconova-org" class="org mono">GESTOR ONCOLÓGICO · HOSPITAL UNIVERSITARIO DEL VALLE</p>
+          <p data-hf-id="hf-qhpq" id="f03-onconova-promise" class="promise"><span data-hf-id="hf-z848" id="f03-onconova-promise-1" class="p1">Convierte 765 informes en una base de datos</span><br data-hf-id="hf-x5px"><span data-hf-id="hf-qohx" id="f03-onconova-promise-2" class="p2">que se puede preguntar.</span></p>
+        </div>
       </div>
 
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">03 / 09 — LA APLICACIÓN</div>
-    </section>
+      <div data-hf-id="hf-5ucx" id="f03-onconova-brand" class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div data-hf-id="hf-dx1d" id="f03-onconova-mark" class="mark mono">03 / 09 — LA APLICACIÓN</div>
+    </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
-    window.__timelines["f03"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "03-onconova";
+      var D = 13;
+      var tl = gsap.timeline({ paused: true });
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+      // porque es identica en todas y superpuesta no se nota.
+      tl.to(".mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 10.05);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+      tl.to(["#f03-onconova-stage"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 9.65);
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+      // que trae la escena siguiente.
+
+
+      tl.to(".brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 9.65);
+
+
+
+      tl.fromTo("#f03-onconova-iso", { opacity: 0, y: 20, scale: 0.94 },
+
+
+
+        { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "power3.out" }, 0.0);
+
+
+
+
+      window.__timelines[ID] = tl;
+
+      var root = document.querySelector('[data-composition-id="' + ID + '"]');
+      if (!root) return;
+
+      var decor = root.querySelector(".decor");
+      var glow = root.querySelector(".glow");
+      var grid = root.querySelector(".grid");
+      var hrule = root.querySelector(".hrule");
+      var lockup = root.querySelector(".lockup");
+
+      /* ── el respiro: el lockup se asienta, sin prisa ──────────────────── */
+      tl.fromTo(
+        root.querySelector("h1"),
+        { opacity: 0, scale: 0.972, y: 12 },
+        { opacity: 1, scale: 1, y: 0, duration: 1.0, ease: "power3.out" },
+        0.03
+      );
+
+      /* el plinto: el único ámbar de la escena, barrido de izquierda a derecha */
+      tl.fromTo(
+        root.querySelector(".plinth"),
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.85, ease: "power3.out" },
+        1.35
+      );
+
+      /* la voz de máquina entra con un barrido de máscara */
+      tl.fromTo(
+        root.querySelector(".org"),
+        { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" },
+        {
+          opacity: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.95,
+          ease: "power2.out"
+        },
+        2.45
+      );
+
+      /* el esqueleto de bordes aparece por primera vez en el vídeo */
+      tl.fromTo(
+        root.querySelector(".brand"),
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.85, ease: "power2.out" },
+        3.6
+      );
+
+      /* la promesa, línea a línea, sobre la voz */
+      tl.fromTo(
+        root.querySelector(".p1"),
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+        4.5
+      );
+      tl.fromTo(
+        root.querySelector(".p2"),
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+        5.7
+      );
+
+      /* el marcador de sección cierra el esqueleto */
+      tl.fromTo(
+        root.querySelector(".mark"),
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" },
+        7.6
+      );
+
+      /* el foco se asienta: el plinto toma su halo */
+      tl.fromTo(
+        root.querySelector(".plinth-glow"),
+        { opacity: 0 },
+        { opacity: 1, duration: 1.8, ease: "power2.out" },
+        9.5
+      );
+
+      /* vida casi imperceptible durante el sostenido */
+      tl.fromTo(
+        lockup,
+        { scale: 1 },
+        { scale: 1.006, duration: D, ease: "power1.out" },
+        0
+      );
+
+      /* escenario */
+      tl.fromTo(decor, { opacity: 0 }, { opacity: 1, duration: 1.5, ease: "power2.out" }, 0);
+      tl.fromTo(hrule, { scaleX: 0.18 }, { scaleX: 1, duration: 1.4, ease: "power3.out" }, 0.2);
+
+      /* ── una sola respiración lenta compartida ────────────────────────── */
+      var CYCLES = 4; // periodo 3.25s
+      var amb = { p: 0 };
+      tl.to(
+        amb,
+        {
+          p: Math.PI * 2 * CYCLES,
+          duration: D,
+          ease: "none",
+          onUpdate: function () {
+            var prog = amb.p / (Math.PI * 2 * CYCLES);
+            var env = prog < 0.8 ? 1 : (1 - prog) / 0.2;
+            var s = Math.sin(amb.p) * env;
+            glow.style.transform = "scale(" + (1 + s * 0.02) + ")";
+            glow.style.opacity = String(0.9 + s * 0.09);
+            grid.style.transform = "scale(" + (1 + s * 0.004) + ")";
+            grid.style.opacity = String(0.92 + s * 0.08);
+          }
+        },
+        0
+      );
+    })();
   </script>
 </template>

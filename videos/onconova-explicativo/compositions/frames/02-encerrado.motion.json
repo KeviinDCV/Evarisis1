@@ -1,0 +1,18 @@
+{
+  "scene": "02-encerrado",
+  "duration_s": 19.0,
+  "rules": [
+    "spring-pop-entrance",
+    "gsap-effects",
+    "counting-dynamic-scale",
+    "sine-wave-loop"
+  ],
+  "exit": {
+    "vector": "none — 0 px/s at 19.0s (measured: the full visual state is byte-identical between 18.967s and 19.0s). Last sheet lands at 16.11s; headline settles at 15.15s; the vignette close ends at 18.40s and the pile's 1→1.022 compression at 18.60s on power2.out; the shared breath is envelope-damped from 15.2s and its phase reaches sin(2*PI*6)=0 exactly at 19.0s, so both amplitude and derivative vanish; counter frozen at 765 / 36.243 / 22.547",
+    "still_moving": false
+  },
+  "entry": {
+    "vector": "none — 0 px/s at 0.0s (no element translates at t=0). The clearing panel's 0.974→1 settle rides power2.inOut, whose velocity is 0 at t=0; the shared breath is envelope-damped up from zero over the first 7% of the scene; everything else at t=0 is opacity only. First sheet starts falling at 0.70s, the amber counter reads out from 0.25s",
+    "from_rest": true
+  }
+}

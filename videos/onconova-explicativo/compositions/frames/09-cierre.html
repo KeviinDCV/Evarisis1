@@ -1,69 +1,303 @@
 <template>
-  <div
-    id="f09"
-    data-composition-id="f09"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="18"
-  >
+  <div data-hf-id="hf-gyw1" id="root" data-composition-id="09-cierre" data-start="0" data-width="1920" data-height="1080" data-duration="20.0">
     <style>
-      #f09 {
+      #root {
         position: relative;
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #141d2b;
         color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum" 1;
       }
-      #f09 .clip { position: absolute; inset: 0; }
-      #f09 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f09 .lockup {
-        position: absolute; left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        width: 1500px; text-align: center;
+      #root .clip { position: absolute; inset: 0; }
+      #root .mono {
+        font-family: "IBM Plex Mono", monospace;
+        font-variant-numeric: tabular-nums;
       }
-      #f09 h1 {
-        font-size: 170px; font-weight: 900;
-        letter-spacing: -0.045em; line-height: 1;
+
+      /* ── escenario + 3 decorativos con una sola respiración compartida ── */
+      #root .c9-field { position: absolute; inset: 0; background: #141d2b; }
+      #root .c9-amb { position: absolute; inset: 0; opacity: 0.96; }
+      #root .c9-radial-wrap { position: absolute; inset: 0; }
+      #root .c9-radial {
+        position: absolute;
+        inset: -16%;
+        opacity: 0;
+        background: radial-gradient(
+          44% 56% at 50% 47%,
+          rgba(45, 62, 94, 0.95) 0%,
+          rgba(45, 62, 94, 0.42) 42%,
+          rgba(45, 62, 94, 0) 72%
+        );
       }
-      #f09 .plinth {
-        width: 260px; height: 8px; background: #e9a33c;
-        margin: 40px auto 38px;
+      #root .c9-grid {
+        position: absolute;
+        inset: -3%;
+        opacity: 0;
+        background-image:
+          repeating-linear-gradient(0deg, rgba(233, 238, 247, 0.045) 0 1px, transparent 1px 40px),
+          repeating-linear-gradient(90deg, rgba(233, 238, 247, 0.045) 0 1px, transparent 1px 40px);
       }
-      #f09 .line {
-        font-size: 42px; font-weight: 400; line-height: 1.4;
+
+      /* ── lockup centrado (sin transform CSS: lo centra el flex) ── */
+      #root .c9-lockup {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #root .c9-lock { width: 1500px; text-align: center; will-change: transform; }
+
+      /* el isotipo de ONCONOVA corona tambien el cierre */
+      #root .c9-iso {
+        display: block; width: 150px; height: auto;
+        margin: 0 auto 30px; opacity: 0;
+      }
+      #root .c9-h1 {
+        font-size: 170px;
+        font-weight: 900;
+        letter-spacing: -0.045em;
+        line-height: 1;
+        opacity: 0;
+      }
+
+      /* la hairline institucional y, sobre ella, EL FOCO: el plinto ámbar */
+      #root .c9-rule-row { position: relative; height: 8px; margin: 40px 0 38px; }
+      #root .c9-hair {
+        position: absolute;
+        left: -210px;
+        right: -210px;
+        top: 3px;
+        height: 1px;
+        background: rgba(233, 238, 247, 0.14);
+        transform-origin: center center;
+        opacity: 0;
+      }
+      #root .c9-plinth {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -130px;
+        width: 260px;
+        height: 8px;
+        background: #e9a33c;
+        transform-origin: center center;
+      }
+
+      #root .c9-line {
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 1.4;
         letter-spacing: -0.02em;
       }
-      #f09 .sub {
-        margin-top: 36px; font-size: 26px; color: #8296b5; line-height: 1.5;
+      #root .c9-seg { display: inline-block; opacity: 0; }
+      #root .c9-sub {
+        margin-top: 36px;
+        font-size: 26px;
+        color: #8296b5;
+        line-height: 1.5;
+        opacity: 0;
       }
-      #f09 .seal {
-        position: absolute; bottom: 76px; left: 50%;
-        transform: translateX(-50%);
-        font-size: 19px; letter-spacing: 0.16em; color: #55688a;
-      }
-    </style>
 
-    <section class="clip" data-start="0" data-duration="18" data-track-index="1">
-      <div class="lockup">
-        <h1>ONCONOVA</h1>
-        <div class="plinth"></div>
-        <p class="line">
-          El dato oncológico del Hospital Universitario del Valle:<br />
-          consultable, analizable y verificable.
-        </p>
-        <p class="sub">Dentro del hospital, y sin que ningún dato de paciente salga de él.</p>
+      /* firma institucional: logo + casa, en horizontal, sobre el sello */
+      #root .c9-huv {
+        position: absolute; left: 0; right: 0; bottom: 138px;
+        display: flex; align-items: center; justify-content: center; gap: 26px;
+        opacity: 0;
+      }
+      #root .c9-huv-logo { display: block; width: 116px; height: auto; }
+      #root .c9-huv-txt { text-align: left; }
+      #root .c9-huv-casa {
+        font-size: 22px; font-weight: 900; letter-spacing: 0.02em; color: #e9eef7;
+      }
+      #root .c9-huv-area {
+        margin-top: 7px; font-size: 16px; letter-spacing: 0.16em; color: #8296b5;
+      }
+      #root .c9-seal {
+        position: absolute;
+        bottom: 76px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 19px;
+        letter-spacing: 0.16em;
+        color: #8296b5;
+        opacity: 0;
+      }
+
+      /* fundido a navy */
+      #root .c9-veil { position: absolute; inset: 0; background: #2d3e5e; opacity: 0; }
+    
+      /* Velo de respiración. frame.md pide un fondo que respire; sin él la
+         escena se queda literalmente congelada en las ventanas sin tween
+         (medido con animation-map.mjs). Va detrás de todo y solo mueve
+         opacidad, así que no compite con ningún tween existente. */
+      #root .c9-aliento {
+        position: absolute; inset: 0; pointer-events: none; z-index: 1;
+        background:
+          radial-gradient(118% 78% at 50% 46%, rgba(45, 62, 94, 0.20) 0%,
+                          rgba(20, 29, 43, 0) 68%);
+        opacity: 0.52;
+      }
+</style>
+
+    <!-- ground: escenario a sangre + decorativos -->
+    <div data-hf-id="hf-35yi" id="c9-fondo" class="clip c9-bg" data-start="0" data-duration="20.0" data-track-index="0">
+      <div data-hf-id="hf-k0p2" class="c9-aliento" id="c9-aliento"></div>
+      <div data-hf-id="hf-eew3" id="c9-campo" class="c9-field"></div>
+      <div data-hf-id="hf-lonz" id="c9-ambiente" class="c9-amb">
+        <div data-hf-id="hf-zqmp" id="c9-radial-wrap" class="c9-radial-wrap"><div data-hf-id="hf-sg8c" id="c9-radial" class="c9-radial"></div></div>
+        <div data-hf-id="hf-b9nl" id="c9-reticula" class="c9-grid"></div>
+      </div>
+    </div>
+
+    <section data-hf-id="hf-n64j" id="c9-tarjeta" class="clip" data-start="0" data-duration="20.0" data-track-index="1">
+      <div data-hf-id="hf-pds7" id="c9-lockup-wrap" class="c9-lockup">
+        <div data-hf-id="hf-uz9c" id="c9-lockup" class="c9-lock">
+          <img class="c9-iso" id="c9-iso" src="assets/marca/onconova-isotipo.png" alt="ONCONOVA">
+          <h1 data-hf-id="hf-woxj" id="c9-marca" class="c9-h1">ONCONOVA</h1>
+
+          <div data-hf-id="hf-bxk8" id="c9-regla" class="c9-rule-row">
+            <div data-hf-id="hf-i8rp" id="c9-hairline" class="c9-hair"></div>
+            <div data-hf-id="hf-1g24" id="c9-plinto" class="c9-plinth"></div>
+          </div>
+
+          <p data-hf-id="hf-mpga" id="c9-linea" class="c9-line">
+            <span data-hf-id="hf-t2du" id="c9-seg-a" class="c9-seg c9-seg-a">El dato oncológico del Hospital Universitario del Valle:</span><br data-hf-id="hf-x5px">
+            <span data-hf-id="hf-ir8u" id="c9-seg-b1" class="c9-seg c9-seg-b">consultable,</span> <span data-hf-id="hf-6vqb" id="c9-seg-b2" class="c9-seg c9-seg-b">analizable</span>
+            <span data-hf-id="hf-rxdn" id="c9-seg-b3" class="c9-seg c9-seg-b">y verificable.</span>
+          </p>
+
+          <p data-hf-id="hf-9hs1" id="c9-subtexto" class="c9-sub">Dentro del hospital, y sin que ningún dato de paciente salga de él.</p>
+        </div>
       </div>
 
-      <div class="seal mono">DOCUMENTO CONFIDENCIAL — LEY 1581 (HABEAS DATA)</div>
+      <!-- firma institucional: el vídeo cierra donde abrió, en la casa -->
+      <div data-hf-id="hf-6nvu" class="c9-huv" id="c9-huv">
+        <img data-hf-id="hf-giqd" class="c9-huv-logo" id="c9-huv-logo" src="assets/marca/huv-isotipo.png" alt="Hospital Universitario del Valle">
+        <div data-hf-id="hf-j5id" class="c9-huv-txt">
+          <div data-hf-id="hf-0x52" class="c9-huv-casa">HOSPITAL UNIVERSITARIO DEL VALLE</div>
+          <div data-hf-id="hf-ii3t" class="c9-huv-area mono">ÁREA DE CIRUGÍA ONCOLÓGICA · EVARISTO GARCÍA E.S.E.</div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-qez2" id="c9-sello" class="c9-seal mono">DOCUMENTO CONFIDENCIAL — LEY 1581 (HABEAS DATA)</div>
     </section>
+
+    <div data-hf-id="hf-votv" id="c9-velo" class="clip c9-veil" data-start="0" data-duration="20.0" data-track-index="2"></div>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f09"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "09-cierre";
+      var tl = gsap.timeline({ paused: true });
+
+      var $ = function (s) { return document.querySelector(s); };
+
+      var amb = $(".c9-amb");
+      var radialWrap = $(".c9-radial-wrap");
+      var hair = $(".c9-hair");
+
+      /* ── Escena 1 (0.0–2.0s) — el foco, el escenario y la marca ────────── */
+
+      // EL FOCO llega primero: el plinto ámbar bajo el lockup (frame.md, escena 9)
+      tl.fromTo(".c9-plinth",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.9, ease: "power3.out" }, 0);
+
+      // ambient-glow-bloom (forma A): radial navy tenue centrado sobre el foco
+      tl.fromTo(".c9-radial",
+        { opacity: 0, scale: 0.88 },
+        { opacity: 0.32, scale: 1, duration: 1.6, ease: "power2.out" }, 0);
+      tl.fromTo(".c9-grid",
+        { opacity: 0 }, { opacity: 1, duration: 1.9, ease: "power1.out" }, 0.1);
+
+      // el único movimiento: la marca se posa (scale-swap-transition, registro contenido)
+      tl.fromTo(".c9-h1",
+        { opacity: 0, scale: 0.968, y: 16 },
+        { opacity: 1, scale: 1, y: 0, duration: 1.35, ease: "power3.out" }, 0.15);
+
+      /* ── Escena 2 (1.75–3.25s) — la hairline institucional se extiende ─── */
+
+      tl.fromTo(".c9-hair",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 0.9, duration: 1.5, ease: "power2.inOut" }, 1.75);
+
+      // respiración lenta ÚNICA y compartida de los TRES decorativos
+      // (radial + retícula + hairline) — sine-wave-loop, registro bajo
+      var BREATH_START = 2.2, BREATH_DUR = 13.2, BREATH_CYCLES = 1.47;
+      var HAIR_IN = 1.05;   // la hairline entra al bucle justo cuando termina su trazo (t=3.25s)
+      var breath = { p: 0 };
+      tl.to(breath, {
+        p: Math.PI * 2 * BREATH_CYCLES,
+        duration: BREATH_DUR,
+        ease: "none",
+        onUpdate: function () {
+          var t = breath.p / (Math.PI * 2 * BREATH_CYCLES);
+          var el = t * BREATH_DUR;                       // segundos desde BREATH_START
+          var env = t < 0.8 ? 1 : (1 - t) / 0.2;         // settle-and-fade
+          var s = Math.sin(breath.p);
+          if (amb) gsap.set(amb, { opacity: 0.96 + s * 0.04 * env });
+          if (radialWrap) gsap.set(radialWrap, { scale: 1 + s * 0.014 * env });
+          if (hair && el >= HAIR_IN) {
+            // rampa desde 0 para engancharse al seno sin salto al terminar el trazo
+            var ramp = Math.min(1, (el - HAIR_IN) / 1.4);
+            gsap.set(hair, { opacity: 0.9 + s * 0.1 * ramp * env });
+          }
+        }
+      }, BREATH_START);
+
+      /* ── Escena 3 (2.8–9.0s) — la línea de cierre, palabra a palabra ───── */
+
+      tl.fromTo(".c9-seg-a",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 2.8);
+
+      // "consultable, analizable y verificable." — cada una llega con su palabra
+      tl.fromTo(".c9-seg-b",
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 1.15, ease: "power2.out" }, 5.15);
+
+      // micro-deriva bajo la retención (registro micro-drift, apenas perceptible)
+      tl.fromTo(".c9-lock",
+        { scale: 1 },
+        { scale: 1.01, duration: 7.0, ease: "power1.inOut" }, 8.0);
+
+      /* ── Escena 4 (9.4–15.3s) — la nota de confidencialidad. Quietud. ──── */
+
+      tl.fromTo(".c9-sub",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 1.1, ease: "power2.out" }, 9.6);
+
+      tl.fromTo(".c9-seal",
+        { opacity: 0, y: 10 },
+        { opacity: 0.72, y: 0, duration: 1.2, ease: "power2.out" }, 12.6);
+
+      /* ── Escena 5 (15.3–17s) — fundido a navy (fotograma final) ────────── */
+
+      tl.fromTo(".c9-veil",
+        { opacity: 0 },
+        { opacity: 1, duration: 1.9, ease: "power2.inOut" }, 18.1);
+      // ^ el fundido se movió de 15,3s a 18,1s al alargar la escena a 20s:
+      //   con el calendario viejo la imagen quedaba en navy plano casi tres
+      //   segundos y la firma del hospital no llegaba a leerse.
+
+      window.__timelines = window.__timelines || {};
+      tl.to("#c9-aliento", { opacity: 0.88, duration: 5.0,
+        repeat: 3, yoyo: true, ease: "sine.inOut" }, 0);
+
+      // La firma de la casa cierra el vídeo, entrando cuando la voz la nombra.
+      tl.fromTo("#c9-huv", { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 1.3, ease: "power2.out" }, 14.0);
+      // ^ respiración de fondo: cubre los 17s completos, sin zonas muertas
+      tl.fromTo("#c9-iso", { opacity: 0, y: 18, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: "power3.out" }, 0.15);
+
+      window.__timelines[ID] = tl;
+    })();
   </script>
 </template>

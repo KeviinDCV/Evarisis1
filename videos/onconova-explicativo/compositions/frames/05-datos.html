@@ -1,132 +1,879 @@
 <template>
-  <div
-    id="f05"
-    data-composition-id="f05"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="32"
-  >
-    <style>
-      #f05 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
-        font-family: "Montserrat", sans-serif;
-        font-variant-numeric: tabular-nums;
-      }
-      #f05 .clip { position: absolute; inset: 0; }
-      #f05 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f05 .brand {
-        position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f05 .mark {
-        position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      /* stand-in del Visualizador: panel claro flotando sobre el escenario */
-      #f05 .panel {
-        position: absolute; left: 120px; top: 170px;
-        width: 1400px; height: 760px;
-        background: #f4f6fa; color: #22304a;
-      }
-      #f05 .chrome {
-        height: 62px; background: #2d3e5e; color: #e9eef7;
-        display: flex; align-items: center; padding: 0 28px;
-        font-size: 20px; letter-spacing: 0.14em;
-      }
-      #f05 .tabs {
-        display: flex; gap: 40px; padding: 22px 28px 0;
-        font-size: 21px; font-weight: 700; color: #6a7d9c;
-      }
-      #f05 .tabs .on { color: #22304a; border-bottom: 4px solid #2d3e5e; padding-bottom: 10px; }
-      #f05 .search {
-        margin: 24px 28px 0; height: 58px;
-        border: 2px solid #e9a33c;          /* foco de la escena */
-        display: flex; align-items: center; padding: 0 20px;
-        font-size: 24px; color: #22304a;
-      }
-      #f05 .caret {
-        display: inline-block; width: 3px; height: 30px;
-        background: #e9a33c; margin-left: 4px;
-      }
-      #f05 table { width: calc(100% - 56px); margin: 26px 28px 0; border-collapse: collapse; }
-      #f05 th {
-        text-align: left; font-size: 17px; letter-spacing: 0.1em;
-        color: #6a7d9c; padding: 0 0 14px; border-bottom: 1px solid #c9d3e2;
-      }
-      #f05 td {
-        font-size: 20px; padding: 17px 0; border-bottom: 1px solid #e2e8f1;
-      }
-      #f05 .side {
-        position: absolute; right: 120px; top: 260px; width: 220px;
-      }
-      #f05 .side p { font-size: 21px; color: #8296b5; line-height: 1.5; margin-bottom: 30px; }
-      #f05 .side b { display: block; font-size: 46px; font-weight: 900; color: #e9eef7; }
-    </style>
+  <style>
+    /* ============================================================
+       05-datos — Los datos (29s)
+       Blueprint: cursor-ui-demo, polo de ESCENARIO FIJO: la camara no
+       viaja; el cursor conduce y la interfaz RESPONDE de verdad.
+         · el campo se enciende al clic  -> unico ambar de la escena
+         · se teclea y las filas que no casan CAEN, las demas suben
+         · el conteo de filas baja al mismo ritmo
+         · la pestana cambia: el subrayado se DESLIZA y entran las
+           seis columnas escalonadas
+         · la fila del paciente se ABRE hacia abajo en su ficha
+       Foco de escena (frame.md): EL CAMPO DE BUSQUEDA.
+       Ley 1581: identidades ficticias, N.º de caso fuera del rango
+       real (serie IHQ2590xx) y cedula enmascarada.
+       Rotulos, columnas y cifras = los reales del producto.
+       ============================================================ */
 
-    <section class="clip" data-start="0" data-duration="32" data-track-index="1">
-      <div class="panel">
-        <div class="chrome mono">VISUALIZADOR DE BASE DE DATOS</div>
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      background: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clip { position: absolute; inset: 0; }
+    .d5-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
 
-        <div class="tabs">
-          <span class="on">Todos los estudios</span>
-          <span>Por Paciente</span>
-          <span>Biomarcadores</span>
-          <span>Análisis</span>
+    /* ---------- fondo: escenario + decorativos, una sola respiracion ---------- */
+    .d5-ground { position: absolute; inset: 0; background: #141d2b; }
+    .d5-veil {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(118% 78% at 50% 46%,
+                  rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+      opacity: 0.46;
+    }
+    .d5-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        820px 620px at 34% 46%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.34) 46%,
+        rgba(45, 62, 94, 0) 72%
+      );
+      opacity: 0.55;
+      will-change: transform, opacity;
+    }
+    .d5-grid40 {
+      position: absolute; inset: -40px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, transparent 1px),
+        linear-gradient(to bottom, #e9eef7 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    .d5-hairline {
+      position: absolute; left: 0; right: 0; top: 128px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+      opacity: 0.6;
+    }
+
+    /* el origen bajo mantiene el borde inferior del panel dentro de margen
+       cuando la escena se acerca al final */
+    .d5-world { position: absolute; inset: 0; transform-origin: 50% 62%; will-change: transform; }
+
+    /* ---------- el Visualizador: pantalla clara sobre el escritorio ---------- */
+    .d5-panel {
+      position: absolute; left: 120px; top: 170px; width: 1400px; height: 720px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 42px 96px rgba(20, 29, 43, 0.62);
+      overflow: hidden;
+      transform-origin: 41% 49%;
+      will-change: transform, opacity;
+    }
+    .d5-chrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 56px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 28px;
+      font-size: 20px; letter-spacing: 0.14em;
+    }
+    .d5-dots { margin-left: auto; display: flex; gap: 10px; }
+    .d5-dots i { width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
+
+    .d5-tabs {
+      position: absolute; left: 28px; top: 78px;
+      display: flex; gap: 40px;
+      font-size: 21px; font-weight: 400; color: rgba(34, 48, 74, 0.58);
+    }
+    .d5-tabs span { display: inline-block; white-space: nowrap; will-change: transform; }
+    .d5-tabline {
+      position: absolute; left: 0; right: 0; top: 118px; height: 1px;
+      background: rgba(45, 62, 94, 0.18);
+    }
+    .d5-tabbar {
+      position: absolute; left: 314px; top: 116px; width: 234px; height: 3px;
+      background: #2d3e5e; transform-origin: 0% 50%; will-change: transform;
+    }
+
+    /* ---------- el buscador: EL foco ambar ---------- */
+    .d5-search {
+      position: absolute; left: 28px; top: 140px; width: 1344px; height: 54px;
+      border: 2px solid rgba(45, 62, 94, 0.22); background: rgba(45, 62, 94, 0.04);
+      display: flex; align-items: center; padding: 0 22px;
+      font-size: 24px; color: #22304a;
+    }
+    .d5-fbord { position: absolute; inset: -2px; border: 2px solid #e9a33c; opacity: 0; }
+    .d5-mag { margin-right: 16px; flex: 0 0 auto; }
+    .d5-ph {
+      position: absolute; left: 60px; top: 0; height: 50px; line-height: 50px;
+      font-size: 22px; color: rgba(34, 48, 74, 0.42);
+    }
+    .d5-q { letter-spacing: 0.01em; white-space: nowrap; position: relative; z-index: 1; }
+    .d5-caret {
+      display: inline-block; width: 3px; height: 28px;
+      background: #22304a; margin-left: 4px; opacity: 0; position: relative; z-index: 1;
+    }
+
+    /* ---------- area de tabla: dos vistas apiladas ---------- */
+    .d5-tablearea {
+      position: absolute; left: 28px; top: 214px; width: 1344px; height: 448px;
+      overflow: hidden;
+    }
+    .d5-view { position: absolute; left: 0; top: 0; width: 1344px; height: 448px; }
+
+    .d5-est { display: grid; grid-template-columns: 160px 360px 130px 1fr 160px 134px; }
+    .d5-pac { display: grid; grid-template-columns: 240px 130px 150px 1fr 250px 150px; }
+    .d5-sub { display: grid; grid-template-columns: 200px 190px 1fr 310px; }
+
+    .d5-head {
+      position: absolute; left: 0; top: 0; width: 1344px; height: 34px;
+      align-items: end; border-bottom: 1px solid rgba(45, 62, 94, 0.22);
+    }
+    .d5-head span {
+      font-size: 18px; letter-spacing: 0.1em; color: rgba(34, 48, 74, 0.58);
+      padding-bottom: 11px; white-space: nowrap;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .d5-row {
+      position: absolute; left: 0; width: 1344px; height: 46px;
+      align-items: center; border-bottom: 1px solid rgba(45, 62, 94, 0.14);
+      will-change: transform, opacity;
+    }
+    .d5-row > span {
+      font-size: 20px; position: relative;
+      padding-right: 18px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    .d5-wash {
+      position: absolute; left: -14px; right: -14px; top: 0; bottom: 0;
+      background: rgba(45, 62, 94, 0.09); opacity: 0;
+    }
+    .d5-swipe {
+      position: absolute; left: -14px; right: -14px; top: 0; bottom: 0;
+      background: rgba(45, 62, 94, 0.11);
+      transform-origin: 0% 50%; opacity: 0;
+    }
+    .d5-dx { overflow: visible !important; }
+    .d5-mk {
+      position: absolute; left: -8px; right: -8px; top: 3px; bottom: 3px;
+      background: rgba(45, 62, 94, 0.16);
+      transform-origin: 0% 50%;
+    }
+    .d5-dx b { position: relative; font-weight: 400; }
+
+    /* filas del resto del corpus: sin identidad en pantalla (Ley 1581) */
+    .d5-ghost {
+      position: absolute; left: 0; width: 1344px; height: 46px;
+      align-items: center; border-bottom: 1px solid rgba(45, 62, 94, 0.09);
+      will-change: transform, opacity;
+    }
+    .d5-ghost i { display: block; height: 11px; background: rgba(45, 62, 94, 0.17); }
+
+    /* barra de desplazamiento del producto */
+    .d5-track {
+      position: absolute; left: 1378px; top: 248px; width: 4px; height: 414px;
+      background: rgba(45, 62, 94, 0.10);
+    }
+    .d5-thumb {
+      position: absolute; left: 1378px; top: 248px; width: 4px; height: 96px;
+      background: rgba(45, 62, 94, 0.34);
+    }
+
+    /* ---------- vista Por Paciente ---------- */
+    .d5-pline {
+      position: absolute; left: 0; width: 1344px; height: 2px;
+      background: rgba(45, 62, 94, 0.5); transform-origin: 0% 50%;
+    }
+    .d5-tick {
+      position: absolute; left: 0; bottom: 7px; width: 22px; height: 2px;
+      background: rgba(45, 62, 94, 0.55); transform-origin: 0% 50%;
+    }
+    .d5-ficha {
+      position: absolute; left: 0; top: 80px; width: 1344px; height: 0;
+      overflow: hidden; background: rgba(45, 62, 94, 0.06);
+      border-left: 3px solid #2d3e5e;
+      will-change: height;
+    }
+    .d5-fpad { padding: 14px 0 14px 24px; }
+    .d5-srow {
+      height: 52px; align-items: center;
+      border-bottom: 1px solid rgba(45, 62, 94, 0.12);
+      will-change: transform, opacity;
+    }
+    .d5-srow span { font-size: 19px; white-space: nowrap; padding-right: 16px; }
+    .d5-srow .d5-lbl {
+      color: rgba(34, 48, 74, 0.58); letter-spacing: 0.08em; font-size: 18px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .d5-chip {
+      display: inline-block; padding: 4px 12px; font-size: 18px; font-style: normal;
+      border: 1px solid rgba(45, 62, 94, 0.28); color: #22304a; background: #f4f6fa;
+      font-family: "IBM Plex Mono", monospace;
+      will-change: transform, opacity;
+    }
+    .d5-crail {
+      position: absolute; left: 1030px; top: 16px; width: 1px; height: 152px;
+      background: rgba(45, 62, 94, 0.34); transform-origin: 50% 0%;
+    }
+
+    /* ---------- plinto de estado del panel ---------- */
+    .d5-status {
+      position: absolute; left: 28px; right: 28px; top: 674px; height: 34px;
+      display: flex; align-items: center;
+      border-top: 1px solid rgba(45, 62, 94, 0.16);
+      font-size: 17px; letter-spacing: 0.14em; color: rgba(34, 48, 74, 0.5);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .d5-status .d5-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+    /* ---------- cifras verificadas, a la derecha ---------- */
+    .d5-side { position: absolute; right: 120px; top: 258px; width: 230px; }
+    .d5-stat { margin-bottom: 30px; will-change: transform, opacity; }
+    .d5-stat b {
+      display: block; font-family: "IBM Plex Mono", monospace; font-weight: 700;
+      font-size: 46px; color: #e9eef7; letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .d5-stat p { font-size: 21px; color: #8296b5; line-height: 1.5; }
+    .d5-u {
+      display: block; height: 2px; width: 100%; margin-top: 12px;
+      background: #8296b5; transform-origin: 0% 50%;
+    }
+
+    /* ---------- cursor + ondas de clic ---------- */
+    .d5-cursor {
+      position: absolute; left: 0; top: 0; width: 0; height: 0;
+      z-index: 40; pointer-events: none; opacity: 0; will-change: transform;
+    }
+    .d5-ring {
+      position: absolute; width: 88px; height: 88px; margin-left: -44px; margin-top: -44px;
+      border-radius: 50%; border: 2px solid rgba(45, 62, 94, 0.5);
+      opacity: 0; pointer-events: none; z-index: 35;
+    }
+
+    /* ---------- anclas de borde ---------- */
+    .d5-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .d5-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+  </style>
+
+  <div id="root" data-composition-id="05-datos" data-start="0" data-width="1920" data-height="1080" data-duration="27.84">
+
+    <div id="c5-clip-fondo" class="clip" data-start="0" data-duration="27.84" data-track-index="0">
+      <div class="d5-ground" id="c5-ground"></div>
+      <div class="d5-veil" id="c5-veil"></div>
+      <div class="d5-radial" id="c5-radial"></div>
+      <div class="d5-grid40" id="c5-grid"></div>
+      <div class="d5-hairline" id="c5-hair"></div>
+    </div>
+
+    <div id="c5-clip-escena" class="clip" data-start="0" data-duration="27.84" data-track-index="1">
+      <div class="d5-world" id="c5-world">
+
+        <!-- ================= VISUALIZADOR DE DATOS ================= -->
+        <div class="d5-panel" id="c5-panel">
+          <div class="d5-chrome d5-mono" id="c5-chrome">
+            VISUALIZADOR DE DATOS
+            <span class="d5-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <!-- pestanas reales del producto, en su orden real -->
+          <div class="d5-tabs" id="c5-tabs">
+            <span id="c5-tab-0" style="width: 246px">Estadísticas Generales</span>
+            <span id="c5-tab-1" style="width: 234px; color: #22304a">Visualizador de Datos</span>
+            <span id="c5-tab-2" style="width: 138px">Por Paciente</span>
+            <span id="c5-tab-3" style="width: 164px">Biomarcadores</span>
+            <span id="c5-tab-4" style="width: 242px">Análisis de Malignidad</span>
+          </div>
+          <div class="d5-tabline" id="c5-tabline"></div>
+          <div class="d5-tabbar" id="c5-tabbar"></div>
+
+          <div class="d5-search" id="c5-search">
+            <div class="d5-fbord" id="c5-fbord"></div>
+            <svg class="d5-mag" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+              <circle cx="9" cy="9" r="6.6" fill="none" stroke='[id="22304a"]' stroke-opacity="0.58" stroke-width="2" />
+              <line x1="13.8" y1="13.8" x2="20" y2="20" stroke='[id="22304a"]' stroke-opacity="0.58" stroke-width="2" />
+            </svg>
+            <span class="d5-ph" id="c5-ph">Buscar…</span>
+            <span class="d5-q d5-mono" id="c5-q"></span><span class="d5-caret" id="c5-caret"></span>
+          </div>
+
+          <div class="d5-tablearea" id="c5-tablearea">
+
+            <!-- ---- vista: Visualizador de Datos ---- -->
+            <div class="d5-view" id="c5-eview">
+              <div class="d5-head d5-est" id="c5-ehead">
+                <span id="c5-eh-0">N.º CASO</span>
+                <span id="c5-eh-1">PACIENTE</span>
+                <span id="c5-eh-2">ÓRGANO</span>
+                <span id="c5-eh-3">DIAGNÓSTICO PRINCIPAL</span>
+                <span id="c5-eh-4">MALIGNIDAD</span>
+                <span id="c5-eh-5">HER2</span>
+              </div>
+
+              <div class="d5-row d5-est" id="c5-r-0" style="top: 34px">
+                <i class="d5-wash" id="c5-w-0"></i>
+                <i class="d5-swipe" id="c5-sw-0"></i>
+                <span class="d5-mono">IHQ259001</span>
+                <span>ELVIRA MONSALVE ARBOLEDA</span>
+                <span>MAMA</span>
+                <span class="d5-dx"><i class="d5-mk" id="c5-mk-0"></i><b>CARCINOMA DUCTAL INFILTRANTE</b></span>
+                <span>MALIGNO</span>
+                <span class="d5-mono">NEGATIVO</span>
+              </div>
+
+              <div class="d5-ghost d5-est" id="c5-gh-0" style="top: 80px">
+                <i style="width: 128px"></i><i style="width: 226px"></i><i style="width: 96px"></i>
+                <i style="width: 244px"></i><i style="width: 112px"></i><i style="width: 92px"></i>
+              </div>
+
+              <div class="d5-row d5-est" id="c5-r-1" style="top: 126px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono">IHQ259002</span>
+                <span>TERESA QUINTERO VALDÉS</span>
+                <span>MAMA</span>
+                <span class="d5-dx"><i class="d5-mk" id="c5-mk-1"></i><b>CARCINOMA DUCTAL INFILTRANTE</b></span>
+                <span>MALIGNO</span>
+                <span class="d5-mono">POSITIVO</span>
+              </div>
+
+              <div class="d5-ghost d5-est" id="c5-gh-1" style="top: 172px">
+                <i style="width: 128px"></i><i style="width: 198px"></i><i style="width: 108px"></i>
+                <i style="width: 176px"></i><i style="width: 112px"></i><i style="width: 92px"></i>
+              </div>
+
+              <div class="d5-row d5-est" id="c5-r-2" style="top: 218px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono">IHQ259003</span>
+                <span>CARMEN ZULETA PALACIOS</span>
+                <span>MAMA</span>
+                <span class="d5-dx"><i class="d5-mk" id="c5-mk-2"></i><b>CARCINOMA DUCTAL IN SITU</b></span>
+                <span>MALIGNO</span>
+                <span class="d5-mono">NEGATIVO</span>
+              </div>
+
+              <div class="d5-row d5-est" id="c5-r-3" style="top: 264px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono">IHQ259004</span>
+                <span>IRENE SALAZAR CUÉLLAR</span>
+                <span>MAMA</span>
+                <span class="d5-dx"><i class="d5-mk" id="c5-mk-3"></i><b>CARCINOMA DUCTAL INFILTRANTE</b></span>
+                <span>MALIGNO</span>
+                <span class="d5-mono">POSITIVO</span>
+              </div>
+
+              <div class="d5-ghost d5-est" id="c5-gh-2" style="top: 310px">
+                <i style="width: 128px"></i><i style="width: 254px"></i><i style="width: 118px"></i>
+                <i style="width: 208px"></i><i style="width: 112px"></i><i style="width: 92px"></i>
+              </div>
+
+              <div class="d5-row d5-est" id="c5-r-4" style="top: 356px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono">IHQ259005</span>
+                <span>MARINA ECHEVERRI DUQUE</span>
+                <span>MAMA</span>
+                <span class="d5-dx"><i class="d5-mk" id="c5-mk-4"></i><b>CARCINOMA DUCTAL INFILTRANTE</b></span>
+                <span>MALIGNO</span>
+                <span class="d5-mono">NEGATIVO</span>
+              </div>
+            </div>
+
+            <!-- ---- vista: Por Paciente — las 6 columnas reales ---- -->
+            <div class="d5-view" id="c5-pview">
+              <div class="d5-head d5-pac" id="c5-phead">
+                <span class="c5-pc-0">CÉDULA</span>
+                <span class="c5-pc-1">ESTUDIOS</span>
+                <span class="c5-pc-2">ÓRGANO</span>
+                <span class="c5-pc-3">DIAGNÓSTICO</span>
+                <span class="c5-pc-4">BIOMARCADORES</span>
+                <span class="c5-pc-5">FECHA</span>
+              </div>
+
+              <div class="d5-row d5-pac" id="c5-p-0" style="top: 34px">
+                <i class="d5-wash" id="c5-pw-0"></i>
+                <span class="d5-mono c5-pc-0">1.144.***.204</span>
+                <span class="d5-mono c5-pc-1">3<i class="d5-tick" id="c5-tick3"></i></span>
+                <span class="c5-pc-2">MAMA</span>
+                <span class="c5-pc-3">CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="d5-mono c5-pc-4">HER2 · RE · RP</span>
+                <span class="d5-mono c5-pc-5">14/11/2025</span>
+                <i class="d5-pline" id="c5-pline" style="bottom: -1px"></i>
+              </div>
+
+              <!-- la ficha del paciente: se abre hacia abajo bajo su fila -->
+              <div class="d5-ficha" id="c5-ficha">
+                <div class="d5-fpad">
+                  <div class="d5-srow d5-sub" id="c5-s-0">
+                    <span class="d5-lbl">ESTUDIO 01</span>
+                    <span>MAMA</span>
+                    <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                    <span><i class="d5-chip" id="c5-chip-0">HER2 NEGATIVO</i></span>
+                  </div>
+                  <div class="d5-srow d5-sub" id="c5-s-1">
+                    <span class="d5-lbl">ESTUDIO 02</span>
+                    <span>MAMA</span>
+                    <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                    <span><i class="d5-chip" id="c5-chip-1">RE POSITIVO</i></span>
+                  </div>
+                  <div class="d5-srow d5-sub" id="c5-s-2">
+                    <span class="d5-lbl">ESTUDIO 03</span>
+                    <span>MAMA</span>
+                    <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                    <span><i class="d5-chip" id="c5-chip-2">RP POSITIVO</i></span>
+                  </div>
+                </div>
+                <i class="d5-crail" id="c5-crail"></i>
+              </div>
+
+              <div class="d5-row d5-pac" id="c5-p-1" style="top: 80px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono c5-pc-0">1.113.***.658</span>
+                <span class="d5-mono c5-pc-1">2</span>
+                <span class="c5-pc-2">MAMA</span>
+                <span class="c5-pc-3">CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="d5-mono c5-pc-4">HER2 · KI-67</span>
+                <span class="d5-mono c5-pc-5">07/11/2025</span>
+              </div>
+
+              <div class="d5-row d5-pac" id="c5-p-2" style="top: 126px">
+                <i class="d5-wash" id="c5-pw-2"></i>
+                <span class="d5-mono c5-pc-0">1.006.***.372</span>
+                <span class="d5-mono c5-pc-1">1</span>
+                <span class="c5-pc-2">MAMA</span>
+                <span class="c5-pc-3">CARCINOMA DUCTAL IN SITU</span>
+                <span class="d5-mono c5-pc-4">RE · RP</span>
+                <span class="d5-mono c5-pc-5">29/10/2025</span>
+              </div>
+
+              <div class="d5-row d5-pac" id="c5-p-3" style="top: 172px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono c5-pc-0">1.144.***.917</span>
+                <span class="d5-mono c5-pc-1">1</span>
+                <span class="c5-pc-2">MAMA</span>
+                <span class="c5-pc-3">CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="d5-mono c5-pc-4">HER2</span>
+                <span class="d5-mono c5-pc-5">21/10/2025</span>
+              </div>
+
+              <div class="d5-row d5-pac" id="c5-p-4" style="top: 218px">
+                <i class="d5-wash"></i>
+                <span class="d5-mono c5-pc-0">1.061.***.243</span>
+                <span class="d5-mono c5-pc-1">1</span>
+                <span class="c5-pc-2">MAMA</span>
+                <span class="c5-pc-3">CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="d5-mono c5-pc-4">HER2 · RE</span>
+                <span class="d5-mono c5-pc-5">15/10/2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="d5-track" id="c5-track"></div>
+          <div class="d5-thumb" id="c5-thumb"></div>
+
+          <div class="d5-status" id="c5-status">
+            <span id="c5-vista">VISTA · VISUALIZADOR DE DATOS</span>
+            <span class="d5-right">
+              <span id="c5-orden">ORDEN · FECHA</span>
+              <svg width="11" height="8" viewBox="0 0 11 8" aria-hidden="true">
+                <path d="M1 1.6 L5.5 6.4 L10 1.6" fill="none" stroke='[id="22304a"]' stroke-opacity="0.5" stroke-width="1.6" />
+              </svg>
+            </span>
+          </div>
         </div>
 
-        <div class="search mono">carcinoma ductal<span class="caret"></span></div>
+        <!-- ================= CIFRAS VERIFICADAS ================= -->
+        <div class="d5-side" id="c5-side">
+          <div class="d5-stat" id="c5-stat-0"><b>22.547</b><p>estudios</p></div>
+          <div class="d5-stat" id="c5-stat-1">
+            <b>18.271</b><p>pacientes</p><span class="d5-u" id="c5-u-1"></span>
+          </div>
+          <div class="d5-stat" id="c5-stat-2"><b>189</b><p>campos por estudio</p></div>
+        </div>
 
-        <table>
-          <tr>
-            <th class="mono">N.º CASO</th>
-            <th class="mono">PACIENTE</th>
-            <th class="mono">ÓRGANO</th>
-            <th class="mono">DIAGNÓSTICO PRINCIPAL</th>
-            <th class="mono">MALIGNIDAD</th>
-            <th class="mono">HER2</th>
-          </tr>
-          <tr>
-            <td class="mono">IHQ251204</td><td>ROSA ELENA MARÍN</td><td>MAMA</td>
-            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
-          </tr>
-          <tr>
-            <td class="mono">IHQ251217</td><td>MARTA LUCÍA OSPINA</td><td>MAMA</td>
-            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">POSITIVO</td>
-          </tr>
-          <tr>
-            <td class="mono">IHQ251233</td><td>GLORIA I. BEDOYA</td><td>MAMA</td>
-            <td>CARCINOMA DUCTAL IN SITU</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
-          </tr>
-          <tr>
-            <td class="mono">IHQ251248</td><td>AMPARO CIFUENTES</td><td>MAMA</td>
-            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">POSITIVO</td>
-          </tr>
-          <tr>
-            <td class="mono">IHQ251261</td><td>NUBIA E. TASCÓN</td><td>MAMA</td>
-            <td>CARCINOMA DUCTAL INFILTRANTE</td><td>MALIGNO</td><td class="mono">NEGATIVO</td>
-          </tr>
-        </table>
+        <!-- ondas de clic, ancladas al punto exacto de cada clic -->
+        <div class="d5-ring" id="c5-ring-a1" style="left: 420px; top: 337px"></div>
+        <div class="d5-ring" id="c5-ring-a2" style="left: 420px; top: 337px"></div>
+        <div class="d5-ring" id="c5-ring-b1" style="left: 777px; top: 262px"></div>
+        <div class="d5-ring" id="c5-ring-b2" style="left: 777px; top: 262px"></div>
+        <div class="d5-ring" id="c5-ring-c1" style="left: 430px; top: 441px"></div>
+        <div class="d5-ring" id="c5-ring-c2" style="left: 430px; top: 441px"></div>
+
+        <div class="d5-cursor" id="c5-cursor">
+          <svg width="30" height="43" viewBox="0 0 30 43" aria-hidden="true">
+            <path d="M3 2 L3 33 L11.2 25.4 L16.4 38.6 L22.4 36.1 L17.2 23.2 L27.6 22.6 Z"
+                  fill="#e9eef7" stroke='[id="141d2b"]' stroke-width="2.6" stroke-linejoin="round" />
+          </svg>
+        </div>
       </div>
 
-      <div class="side">
-        <p><b>22.547</b>estudios</p>
-        <p><b>18.271</b>pacientes</p>
-        <p><b>189</b>campos por estudio</p>
-      </div>
-
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">05 / 09 — LOS DATOS</div>
-    </section>
+      <div class="d5-brand d5-mono" id="c5-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="d5-mark d5-mono" id="c5-mark">05 / 09 — LOS DATOS</div>
+    </div>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f05"] = gsap.timeline({ paused: true });
+    (function () {
+      var D = 29;
+      var tl = gsap.timeline({ paused: true });
+
+      var world = document.getElementById("c5-world");
+      var radial = document.getElementById("c5-radial");
+      var grid = document.getElementById("c5-grid");
+      var hair = document.getElementById("c5-hair");
+      var veil = document.getElementById("c5-veil");
+      var qEl = document.getElementById("c5-q");
+      var caretEl = document.getElementById("c5-caret");
+      var vistaEl = document.getElementById("c5-vista");
+
+      /* --------- marcas de tiempo compartidas por el reloj y la linea --------- */
+      var QUERY = "carcinoma ductal";
+      var FOCUS_AT = 7.05;          // clic en el buscador -> se enciende el ambar
+      var TYPE_AT = 7.35;           // primera tecla
+      var TYPE_DUR = 2.10;          // 16 caracteres, ritmo humano
+      var CARET_OFF = 11.62;        // el campo pierde el cursor al cambiar de pestana
+      var VISTA_AT = 12.05;         // el plinto anuncia la vista nueva
+      var PUSH_AT = 26.4;           // acercamiento final, muy leve
+
+      /* ---------------------------------------------------------
+         ESCENARIO FIJO: la camara no viaja. Un unico reloj lineal
+         escribe la respiracion del fondo, el texto tecleado, el
+         parpadeo del cursor de texto y el conteo de filas — todo
+         deterministico, sin callbacks, seguro ante cualquier salto
+         de fotograma.
+         --------------------------------------------------------- */
+      var clock = { t: 0 };
+      var lastQ = null, lastCaret = null, lastV = null;
+
+      function writeFrame() {
+        var t = clock.t;
+        var b = Math.sin(t * 0.3);
+
+        // acercamiento final: smoothstep, 2,4% — sigue en curso en el ultimo
+        // fotograma (el corte al plano siguiente lo hereda en movimiento) y
+        // nunca llega a la franja del rotulo de esquina
+        var push = 0;
+        if (t > PUSH_AT) {
+          var p = Math.min(1, (t - PUSH_AT) / 3.6);
+          push = 0.024 * (p * p * (3 - 2 * p));
+        }
+
+        world.style.transform =
+          "translate(" +
+          (Math.sin(t * 0.21) * 3).toFixed(2) + "px," +
+          (Math.sin(t * 0.273) * 1.6).toFixed(2) + "px) scale(" +
+          (1 + 0.004 * b + push).toFixed(4) + ")";
+
+        radial.style.transform = "scale(" + (1 + 0.05 * b).toFixed(4) + ")";
+        radial.style.opacity = (0.55 + 0.18 * b).toFixed(4);
+        grid.style.opacity = (0.04 + 0.012 * b).toFixed(4);
+        hair.style.opacity = (0.55 + 0.22 * b).toFixed(4);
+        veil.style.opacity = (0.46 + 0.16 * Math.sin(t * 0.42 + 1.1)).toFixed(4);
+
+        // el campo se escribe letra a letra
+        var shown = 0;
+        if (t > TYPE_AT) {
+          shown = Math.floor(((t - TYPE_AT) / TYPE_DUR) * QUERY.length);
+          if (shown > QUERY.length) shown = QUERY.length;
+        }
+        var nx = QUERY.substring(0, shown);
+        if (nx !== lastQ) { qEl.textContent = nx; lastQ = nx; }
+
+        // cursor de texto: fijo mientras se teclea, parpadeo cuadrado antes y despues
+        var on = 0;
+        if (t >= FOCUS_AT && t <= CARET_OFF) {
+          on = (t >= TYPE_AT && t <= TYPE_AT + TYPE_DUR)
+            ? 1
+            : (Math.sin((t - FOCUS_AT) * Math.PI / 0.55) > 0 ? 1 : 0);
+        }
+        if (on !== lastCaret) { caretEl.style.opacity = on; lastCaret = on; }
+
+
+        var v = t >= VISTA_AT ? "VISTA · POR PACIENTE" : "VISTA · VISUALIZADOR DE DATOS";
+        if (v !== lastV) { vistaEl.textContent = v; lastV = v; }
+      }
+
+      // el reloj recorre exactamente la duracion declarada del root:
+      // el fondo respira los 29 s sin una sola ventana congelada
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame(); // semilla del fotograma 0
+
+      /* ---------------------------------------------------------
+         helpers de cursor (cursor-click-ripple, sin yoyo infinito)
+         --------------------------------------------------------- */
+      var cursor = "#c5-cursor";
+
+      function moveTo(x, y, at, dur) {
+        tl.to(cursor, { x: x, y: y, duration: dur, ease: "power2.inOut" }, at);
+      }
+
+      function click(at, ringA, ringB) {
+        // el cursor comprime mas que el receptor: el cursor es el actor
+        tl.to(cursor, { scale: 0.84, duration: 0.09, ease: "power2.in" }, at);
+        tl.to(cursor, { scale: 1, duration: 0.15, ease: "power2.out" }, at + 0.09);
+        tl.fromTo(
+          [ringA, ringB],
+          { scale: 0, opacity: 0.55 },
+          { scale: 2.6, opacity: 0, duration: 0.74, ease: "power2.out", stagger: 0.09, immediateRender: false },
+          at + 0.03
+        );
+      }
+
+      /* =========================================================
+         BEAT 0 (0.0–2.0) — «Así se ve el resultado.»
+         La superficie llega y la tabla se puebla fila a fila.
+         ========================================================= */
+      tl.fromTo("#c5-panel",
+        { opacity: 0, y: 14, scale: 0.99 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.72, ease: "power3.out" }, 0);
+
+      tl.fromTo("#c5-tabs span",
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.44, ease: "power2.out", stagger: 0.055 }, 0.3);
+
+      tl.fromTo("#c5-tabbar",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.52);
+
+      tl.fromTo("#c5-search",
+        { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.45);
+
+      tl.fromTo("#c5-ehead",
+        { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.6);
+
+      // waterfall-entry: las ocho filas aterrizan una tras otra
+      var estOrder = ["#c5-r-0", "#c5-gh-0", "#c5-r-1", "#c5-gh-1", "#c5-r-2",
+                      "#c5-r-3", "#c5-gh-2", "#c5-r-4"];
+      for (var i = 0; i < estOrder.length; i++) {
+        var isGhost = estOrder[i].indexOf("gh") > -1;
+        tl.fromTo(estOrder[i],
+          { opacity: 0, y: 20 },
+          { opacity: isGhost ? 0.62 : 1, y: 0, duration: 0.5, ease: "power3.out" },
+          0.7 + i * 0.075);
+      }
+
+      tl.fromTo(["#c5-track", "#c5-thumb"],
+        { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 1.15);
+      tl.fromTo("#c5-status",
+        { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.2);
+
+      // el cursor entra desde fuera de la superficie
+      tl.fromTo(cursor,
+        { x: 1720, y: 880, opacity: 0 },
+        { x: 1720, y: 880, opacity: 1, duration: 0.32, ease: "power2.out" }, 0.85);
+
+      /* =========================================================
+         BEAT 1 (2.0–6.3) — «Cada fila es un estudio, con sus
+         ciento ochenta y nueve campos.» El cursor RECORRE la fila
+         y cada columna se enciende a su paso.
+         ========================================================= */
+      moveTo(300, 441, 1.45, 1.15);
+
+      // la fila se pinta como unidad, siguiendo al cursor
+      tl.fromTo("#c5-sw-0",
+        { scaleX: 0, opacity: 1 },
+        { scaleX: 1, duration: 1.6, ease: "power1.inOut" }, 2.95);
+      moveTo(1400, 441, 2.95, 1.6);
+
+      // cada cabecera se oscurece cuando el cursor cruza su columna
+      for (var h = 0; h < 6; h++) {
+        tl.to("#c5-eh-" + h, { color: '[id="22304a"]', duration: 0.24, ease: "power2.out" }, 3.0 + h * 0.28);
+        tl.to("#c5-eh-" + h, { color: "rgba(34,48,74,0.58)", duration: 0.5, ease: "power2.inOut" }, 3.62 + h * 0.28);
+      }
+      tl.to("#c5-sw-0", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 4.9);
+
+      // las cifras verificadas entran a la derecha
+      tl.fromTo("#c5-stat-0", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.66, ease: "power3.out" }, 2.3);
+      tl.fromTo("#c5-stat-1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.66, ease: "power3.out" }, 3.3);
+      tl.fromTo("#c5-stat-2", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.66, ease: "power3.out" }, 4.45);
+
+      /* =========================================================
+         BEAT 2 (6.3–10.6) — «Se busca, se ordena y se filtra.»
+         El cursor sube al buscador, hace clic (EL ambar), teclea, y
+         la tabla FILTRA de verdad: caen las filas que no casan y
+         las que quedan cierran el hueco.
+         ========================================================= */
+      moveTo(860, 372, 5.25, 0.95);
+      moveTo(420, 337, 6.3, 0.62);
+      click(FOCUS_AT, "#c5-ring-a1", "#c5-ring-a2");
+
+      // el campo toma el foco: unico ambar de la escena
+      tl.fromTo("#c5-fbord", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, FOCUS_AT + 0.04);
+      tl.to("#c5-search", { borderColor: "rgba(45,62,94,0.10)", duration: 0.3, ease: "power2.out" }, FOCUS_AT + 0.04);
+      tl.to("#c5-ph", { opacity: 0, duration: 0.2, ease: "power2.out" }, FOCUS_AT + 0.06);
+
+      // --- caida de las filas que no casan + recolocacion de las que quedan ---
+      var DROPS = [
+        { row: "#c5-gh-0", at: 7.95, below: ["#c5-r-1", "#c5-gh-1", "#c5-r-2", "#c5-r-3", "#c5-gh-2", "#c5-r-4"], to: -46 },
+        { row: "#c5-gh-1", at: 8.50, below: ["#c5-r-2", "#c5-r-3", "#c5-gh-2", "#c5-r-4"], to: -92 },
+        { row: "#c5-gh-2", at: 9.05, below: ["#c5-r-4"], to: -138 }
+      ];
+      for (var d = 0; d < DROPS.length; d++) {
+        // la fila que no casa se va de lado y se apaga ANTES de que las de
+        // abajo pasen por su sitio: nunca se solapan dos filas legibles
+        tl.to(DROPS[d].row, { x: -120, opacity: 0, duration: 0.32, ease: "power2.in" }, DROPS[d].at);
+        tl.to(DROPS[d].below,
+          { y: DROPS[d].to, duration: 0.46, ease: "power2.out", stagger: 0.04 },
+          DROPS[d].at + 0.26);
+        // el conteo late en cada baja
+      }
+
+      // el pulgar de la barra crece: ya cabe todo el resultado
+      tl.to("#c5-thumb", { height: 398, duration: 1.15, ease: "power2.inOut" }, 8.1);
+
+      // el termino buscado queda marcado en las filas que sobreviven
+      for (var m = 0; m < 5; m++) {
+        tl.fromTo("#c5-mk-" + m,
+          { scaleX: 0 }, { scaleX: 1, duration: 0.44, ease: "power2.out" },
+          9.55 + m * 0.085);
+      }
+
+      /* =========================================================
+         BEAT 3 (10.6–14.5) — «…la vista Por Paciente los agrupa por
+         cédula.» El subrayado SE DESLIZA y entran las seis columnas
+         reales, una tras otra.
+         ========================================================= */
+      moveTo(777, 262, 10.75, 0.72);
+      click(11.62, "#c5-ring-b1", "#c5-ring-b2");
+      tl.to("#c5-tab-2", { scale: 0.95, duration: 0.09, ease: "power2.in" }, 11.62);
+      tl.to("#c5-tab-2", { scale: 1, duration: 0.16, ease: "power2.out" }, 11.71);
+
+      // el subrayado viaja de «Visualizador de Datos» a «Por Paciente»
+      tl.to("#c5-tabbar", { x: 274, scaleX: 0.5897, duration: 0.62, ease: "power3.inOut" }, 11.66);
+      tl.to("#c5-tab-1", { color: "rgba(34,48,74,0.58)", duration: 0.4, ease: "power2.inOut" }, 11.68);
+      tl.to("#c5-tab-2", { color: '[id="22304a"]', duration: 0.4, ease: "power2.inOut" }, 11.68);
+
+      // el filtro sigue puesto: el ambar baja de tono pero no se apaga
+      tl.to("#c5-fbord", { opacity: 0.6, duration: 0.5, ease: "power2.inOut" }, 11.7);
+
+      // la vista anterior se retira y la nueva se construye por columnas
+      tl.to("#c5-eview", { opacity: 0, y: -14, duration: 0.4, ease: "power2.in" }, 11.7);
+      tl.fromTo("#c5-pview", { opacity: 0 }, { opacity: 1, duration: 0.34, ease: "power1.out" }, 12.0);
+      tl.fromTo("#c5-phead", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 12.02);
+      for (var c = 0; c < 6; c++) {
+        tl.fromTo(".c5-pc-" + c,
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0, duration: 0.56, ease: "power3.out" },
+          12.05 + c * 0.15);
+      }
+      tl.to("#c5-status", { opacity: 0.4, duration: 0.18, ease: "power2.in" }, 11.86);
+      tl.to("#c5-status", { opacity: 1, duration: 0.34, ease: "power2.out" }, 12.06);
+
+      /* =========================================================
+         BEAT 4 (14.5–19.5) — «dieciocho mil doscientos setenta y un
+         pacientes, con toda su historia en una sola línea.»
+         ========================================================= */
+      moveTo(900, 533, 13.15, 1.0);                       // el cursor baja a la lista
+      tl.to("#c5-pw-2", { opacity: 1, duration: 0.3, ease: "power2.out" }, 14.2);
+
+      tl.to(["#c5-stat-0", "#c5-stat-2"], { opacity: 0.5, duration: 0.6, ease: "power2.inOut" }, 14.55);
+      tl.fromTo("#c5-u-1", { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.72, ease: "power3.out" }, 14.6);
+      tl.to("#c5-stat-1", { scale: 1.05, duration: 0.9, ease: "power3.out" }, 14.6);
+
+      tl.to("#c5-pw-2", { opacity: 0, duration: 0.35, ease: "power2.inOut" }, 15.55);
+      moveTo(900, 441, 15.6, 0.85);                       // sube a la primera cédula
+      tl.to("#c5-pw-0", { opacity: 0.7, duration: 0.3, ease: "power2.out" }, 16.45);
+
+      // «en una sola línea»: la fila se subraya de lado a lado
+      tl.fromTo("#c5-pline", { scaleX: 0 },
+        { scaleX: 1, duration: 0.95, ease: "power2.inOut" }, 16.8);
+
+      tl.to(["#c5-stat-0", "#c5-stat-2"], { opacity: 1, duration: 0.7, ease: "power2.inOut" }, 17.6);
+
+      // el numero de estudios de esa cédula se subraya: es lo que va a abrirse
+      tl.fromTo("#c5-tick3", { scaleX: 0 },
+        { scaleX: 1, duration: 0.62, ease: "power2.out" }, 18.25);
+
+      /* =========================================================
+         BEAT 5 (19.5–29.0) — «Al abrir uno se ve su ficha completa:
+         los datos del informe, el diagnóstico y los biomarcadores de
+         cada estudio.» La fila se ABRE hacia abajo.
+         ========================================================= */
+      moveTo(430, 441, 19.45, 0.72);
+      click(20.45, "#c5-ring-c1", "#c5-ring-c2");
+      tl.to("#c5-pw-0", { opacity: 1, duration: 0.28, ease: "power2.out" }, 20.5);
+
+      // la ficha crece y las filas de abajo le hacen sitio, al unisono
+      tl.to("#c5-ficha", { height: 184, duration: 0.72, ease: "power3.out" }, 20.55);
+      tl.to(["#c5-p-1", "#c5-p-2", "#c5-p-3", "#c5-p-4"],
+        { y: 184, duration: 0.72, ease: "power3.out" }, 20.55);
+      tl.to("#c5-thumb", { height: 330, duration: 0.7, ease: "power2.inOut" }, 20.6);
+
+      // los tres estudios del mismo paciente
+      for (var s = 0; s < 3; s++) {
+        tl.fromTo("#c5-s-" + s,
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+          20.95 + s * 0.52);
+      }
+
+      // ...y el biomarcador de cada uno
+      for (var b2 = 0; b2 < 3; b2++) {
+        tl.fromTo("#c5-chip-" + b2,
+          { opacity: 0, scale: 0.86 },
+          { opacity: 1, scale: 1, duration: 0.52, ease: "power3.out" },
+          23.4 + b2 * 0.68);
+      }
+
+      moveTo(600, 530, 22.9, 1.05);
+      moveTo(770, 608, 25.7, 1.15);
+
+      // el cursor se posa sobre el último biomarcador
+      tl.to("#c5-chip-2", { scale: 1.035, duration: 0.5, ease: "power2.out" }, 27.0);
+      tl.to("#c5-chip-2", { scale: 1, duration: 0.7, ease: "sine.inOut" }, 27.7);
+
+      // hilo que ata los tres biomarcadores a la misma cédula
+      tl.fromTo("#c5-crail", { scaleY: 0 },
+        { scaleY: 1, duration: 1.45, ease: "power2.inOut" }, 27.35);
+
+      window.__timelines = window.__timelines || {};
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+      // porque es identica en todas y superpuesta no se nota.
+      tl.to("#c5-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.54);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+      tl.to(["#c5-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 26.14);
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+      // que trae la escena siguiente.
+
+
+      tl.to("#c5-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.14);
+
+
+
+      window.__timelines["05-datos"] = tl;
+    })();
   </script>
 </template>

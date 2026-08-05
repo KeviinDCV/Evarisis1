@@ -1,0 +1,19 @@
+{
+  "scene": "09-cierre",
+  "duration_s": 17,
+  "rules": [
+    "scale-swap-transition",
+    "discrete-text-sequence",
+    "ambient-glow-bloom",
+    "sine-wave-loop",
+    "multi-phase-camera"
+  ],
+  "exit": {
+    "vector": "static · 0 px/s — final frame: the navy veil (#2d3e5e) reaches opacity 1 at t=16.95s on power2.inOut (velocity 0 at the seam), the lockup micro-drift settles at t=15.0s and the shared background breath fades its envelope to 0 by t=15.4s",
+    "still_moving": false
+  },
+  "entry": {
+    "vector": "up · ~36 px/s — ONCONOVA wordmark starts at t=0.15s from y 16px / scale 0.968 over 1.35s on power3.out; the amber plinth (the focus) draws first, scaleX 0→1 from t=0 over 0.9s on power3.out; radial ground blooms scale 0.88→1 from t=0",
+    "from_rest": false
+  }
+}

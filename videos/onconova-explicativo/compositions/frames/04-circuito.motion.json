@@ -1,0 +1,20 @@
+{
+  "scene": "04-circuito",
+  "duration_s": 33,
+  "rules": [
+    "viewport-change",
+    "multi-phase-camera",
+    "coordinate-target-zoom",
+    "waterfall-entry",
+    "spring-pop-entrance",
+    "card-morph-anchor"
+  ],
+  "exit": {
+    "vector": "at rest — the travelling document has become the table and holds centred (world x 6400, screen x ~528-1396, y ~335-810). Camera settled: scale 1.03 (last scale ramp ended 32.60s), pan settled since 27.00s at Tx -5600.2px, dScale/dt = 0. Last reveal is the sixth stacked row at 30.55s; last tween of any kind is the table's settling breath, ending 32.60s. Only the shared ambient drift remains: measured 0.6 px/s right, 0.6 px/s up",
+    "still_moving": false
+  },
+  "entry": {
+    "vector": "at rest — camera wide on station 01 at frame 0 (scale 1.00, pan Tx 0, the document's landing mark centred at screen x 960). Measured ambient drift only: 1.2 px/s right, 0.6 px/s down. First content motion is the headline rising from y+30 starting at t=0.14s",
+    "from_rest": true
+  }
+}

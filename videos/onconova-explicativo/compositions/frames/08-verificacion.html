@@ -1,105 +1,671 @@
 <template>
-  <div
-    id="f08"
-    data-composition-id="f08"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="26"
-  >
+  <div data-hf-id="hf-cmyl" id="root" data-composition-id="08-verificacion" data-start="0" data-width="1920" data-height="1080" data-duration="27.01">
     <style>
-      #f08 {
+      #root {
         position: relative;
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #141d2b;
         color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum" 1;
+        -webkit-font-smoothing: antialiased;
       }
-      #f08 .clip { position: absolute; inset: 0; }
-      #f08 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f08 .brand {
+      #root .clip { position: absolute; inset: 0; }
+      #root .mono {
+        font-family: "IBM Plex Mono", monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ── escenario + decorativos: una sola respiración compartida ───────── */
+      #root .v8-field { position: absolute; inset: 0; background: #141d2b; }
+      #root .v8-aliento {
+        position: absolute; inset: 0; pointer-events: none;
+        background:
+          radial-gradient(118% 78% at 50% 46%, rgba(45, 62, 94, 0.20) 0%,
+                          rgba(20, 29, 43, 0) 68%);
+        opacity: 0.58;
+      }
+      #root .v8-amb { position: absolute; inset: 0; opacity: 0.98; }
+      #root .v8-radial-wrap { position: absolute; inset: 0; }
+      #root .v8-radial {
+        position: absolute;
+        inset: -16%;
+        opacity: 0;
+        background: radial-gradient(
+          46% 56% at 68% 46%,
+          rgba(45, 62, 94, 0.95) 0%,
+          rgba(45, 62, 94, 0.44) 42%,
+          rgba(45, 62, 94, 0) 72%
+        );
+      }
+      #root .v8-grid {
+        position: absolute;
+        inset: -3%;
+        opacity: 0;
+        background-image:
+          repeating-linear-gradient(0deg, rgba(233, 238, 247, 0.045) 0 1px, transparent 1px 40px),
+          repeating-linear-gradient(90deg, rgba(233, 238, 247, 0.045) 0 1px, transparent 1px 40px);
+      }
+      #root .v8-hair {
+        position: absolute;
+        left: 80px; right: 80px; top: 292px;
+        height: 1px;
+        background: rgba(233, 238, 247, 0.14);
+        transform-origin: left center;
+        opacity: 0;
+      }
+
+      /* ── anclas de borde ───────────────────────────────────────────────── */
+      #root .v8-brand {
         position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
-      #f08 .mark {
+      #root .v8-mark {
         position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
-      #f08 h2 {
-        position: absolute; left: 80px; top: 140px; width: 1300px;
-        font-size: 68px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+
+      /* ── rótulo de sección (una palabra; la narración va en la voz) ─────── */
+      #root .v8-hero {
+        position: absolute; left: 80px; top: 146px;
+        width: 1760px; height: 98px; overflow: hidden;
       }
-      #f08 .split {
-        position: absolute; left: 80px; right: 80px; top: 360px;
-        display: grid; grid-template-columns: 1fr 90px 1fr; align-items: center;
+      #root .v8-hero-in {
+        display: block;
+        font-size: 78px; font-weight: 900; letter-spacing: -0.03em;
+        line-height: 98px; color: #e9eef7;
+        opacity: 0;
       }
-      #f08 .side { }
-      #f08 .label {
-        font-size: 19px; letter-spacing: 0.14em; color: #8296b5; margin-bottom: 20px;
+
+      /* ── rótulos de columna ────────────────────────────────────────────── */
+      #root .v8-label {
+        position: absolute; top: 328px;
+        font-size: 19px; letter-spacing: 0.14em; color: #8296b5; opacity: 0;
       }
-      #f08 .card { background: #f4f6fa; color: #22304a; padding: 34px 32px; }
-      #f08 .field { font-size: 17px; letter-spacing: 0.1em; color: #6a7d9c; margin-bottom: 12px; }
-      #f08 .value { font-size: 30px; line-height: 1.35; }
-      #f08 .value + .field { margin-top: 26px; }
-      #f08 .link {
-        height: 2px; background: rgba(233,238,247,.28); margin: 0 10px;
+      #root .v8-label-l { left: 80px; }
+      #root .v8-label-r { left: 1040px; }
+
+      /* ── las dos pantallas claras ──────────────────────────────────────── */
+      #root .v8-persp { position: absolute; inset: 0; perspective: 2400px; }
+      #root .v8-card {
+        position: absolute;
+        top: 366px; height: 240px;
+        background: #f4f6fa;
+        color: #22304a;
+        opacity: 0;
+        will-change: transform;
       }
-      #f08 .hl { background: #e9a33c; color: #22304a; padding: 2px 4px; }
-      #f08 .score {
-        position: absolute; left: 80px; bottom: 150px;
-        font-size: 40px; font-weight: 700; letter-spacing: 0.02em;
+      /* la sombra cae con la dirección del giro */
+      #root .v8-card-left {
+        left: 80px; width: 660px;
+        box-shadow: 34px 26px 72px rgba(20, 29, 43, 0.55), inset 0 0 0 1px #2d3e5e;
       }
-      #f08 .score small {
-        display: block; margin-top: 14px; font-size: 21px;
-        font-weight: 400; color: #8296b5; letter-spacing: 0;
+      #root .v8-card-right {
+        left: 1040px; width: 800px;
+        box-shadow: -34px 26px 72px rgba(20, 29, 43, 0.55), inset 0 0 0 1px #2d3e5e;
+      }
+
+      /* filas de la tarjeta izquierda, posicionadas a mano para que el valor
+         del diagnóstico coincida al píxel con su gemelo del informe */
+      #root .v8-fld {
+        position: absolute; left: 36px;
+        font-size: 18px; letter-spacing: 0.1em; line-height: 22px; color: #2d3e5e;
+        opacity: 0;
+      }
+      #root .v8-val {
+        position: absolute; left: 36px;
+        font-size: 28px; line-height: 34px; white-space: nowrap;
+        opacity: 0;
+      }
+      #root .v8-l1 { top: 38px; }
+      #root .v8-l2 { top: 66px; }
+      #root .v8-l3 { top: 116px; }
+      #root .v8-l4 { top: 144px; }
+      /* el valor que va a viajar: misma métrica exacta que el del informe */
+      #root .v8-dx {
         font-family: "Montserrat", sans-serif;
+        font-weight: 700; color: #8296b5;
       }
+      /* la celda que se enciende bajo el valor */
+      #root .v8-cell {
+        position: absolute; left: 22px; right: 22px; top: 138px; height: 46px;
+        background: rgba(45, 62, 94, 0.10);
+        border-left: 3px solid #2d3e5e;
+        transform-origin: left center;
+        opacity: 0;
+      }
+
+      /* tarjeta derecha: el párrafo del informe */
+      #root .v8-line {
+        position: absolute; left: 36px;
+        font-size: 28px; line-height: 34px; color: #22304a; white-space: nowrap;
+        opacity: 0;
+      }
+      #root .v8-r1 { top: 74px; }
+      #root .v8-r3 { top: 158px; }
+      /* el hueco donde aterriza la palabra */
+      #root .v8-slot {
+        position: absolute; left: 36px; top: 116px;
+        font-size: 28px; line-height: 34px; white-space: nowrap;
+      }
+      #root .v8-slotbox { position: relative; display: inline-block; }
+      #root .v8-slotrule {
+        position: absolute; left: 0; right: 0; bottom: -7px; height: 2px;
+        background: #8296b5; transform-origin: left center; opacity: 0;
+      }
+      /* EL FOCO — único ámbar de la escena */
+      #root .v8-halo {
+        position: absolute; left: -30px; right: -30px; top: -20px; bottom: -18px;
+        background: radial-gradient(58% 118% at 50% 50%,
+                    rgba(233, 163, 60, 0.85) 0%, rgba(233, 163, 60, 0) 72%);
+        opacity: 0;
+      }
+      #root .v8-hl {
+        position: relative;
+        font-weight: 700; color: #22304a;
+        padding: 2px 6px; margin: -2px -6px;
+        background-image: linear-gradient(#e9a33c, #e9a33c);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 0% 100%;
+        opacity: 0;
+      }
+
+      /* ── el trazo ──────────────────────────────────────────────────────── */
+      #root .v8-svg {
+        position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+        pointer-events: none;
+      }
+      #root .v8-path {
+        fill: none; stroke: rgba(233, 238, 247, 0.34);
+        stroke-width: 2; stroke-linecap: round; opacity: 0;
+      }
+      #root .v8-path-b { stroke: rgba(130, 150, 181, 0.62); }
+      #root .v8-node { fill: #8296b5; opacity: 0; }
+      #root .v8-trav { fill: #e9eef7; opacity: 0; }
+      #root .v8-trav-glow { fill: #e9eef7; opacity: 0; }
+
+      /* ── el duplicado que se despega y viaja ───────────────────────────── */
+      #root .v8-chip {
+        position: absolute; left: 100px; top: 500px;
+        will-change: transform;
+      }
+      #root .v8-chip-bg {
+        position: absolute; inset: 0;
+        background: #f4f6fa;
+        box-shadow: 0 26px 58px rgba(20, 29, 43, 0.62), inset 0 0 0 1px #2d3e5e;
+        opacity: 0;
+      }
+      #root .v8-chip-tx {
+        position: relative;
+        padding: 10px 16px;
+        font-size: 28px; font-weight: 700; line-height: 34px;
+        color: #22304a; white-space: nowrap;
+        opacity: 0;
+      }
+
+      /* ── el marcador ───────────────────────────────────────────────────── */
+      #root .v8-metric {
+        position: absolute; left: 80px; top: 660px;
+        font-size: 19px; letter-spacing: 0.14em; line-height: 24px; color: #8296b5;
+        opacity: 0;
+      }
+      #root .v8-score {
+        position: absolute; left: 80px; top: 700px;
+        font-size: 46px; font-weight: 700; letter-spacing: 0.02em; line-height: 56px;
+        white-space: nowrap;
+      }
+      #root .v8-sc { display: inline-block; opacity: 0; }
+      #root .v8-num { transform-origin: left center; }
+      #root .v8-den { color: #8296b5; }
+
+      #root .v8-track {
+        position: absolute; left: 80px; top: 800px; width: 1760px; height: 12px;
+        background: rgba(233, 238, 247, 0.14);
+        transform-origin: left center;
+        overflow: hidden;
+        opacity: 0;
+      }
+      #root .v8-fill {
+        position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        background: #e9eef7; opacity: 0.88;
+        transform-origin: left center;
+      }
+      #root .v8-tail {
+        position: absolute; left: 98%; right: 0; top: 0; bottom: 0;
+        background: repeating-linear-gradient(112deg,
+          rgba(233, 238, 247, 0.62) 0 2px, rgba(233, 238, 247, 0) 2px 7px);
+        transform-origin: left center;
+        opacity: 0;
+      }
+      #root .v8-tick {
+        position: absolute; top: 770px; width: 3px; height: 16px;
+        background: #8296b5; opacity: 0;
+      }
+      #root .v8-tick-a { left: 1793px; }
+      #root .v8-tick-b { left: 1815px; }
+      #root .v8-tick-c { left: 1837px; }
     </style>
 
-    <section class="clip" data-start="0" data-duration="26" data-track-index="1">
-      <h2>La cifra que se proyecta se puede seguir<br />hasta la frase que la sostiene.</h2>
+    <!-- ground: escenario a sangre + decorativos -->
+    <div data-hf-id="hf-m90j" id="08-verificacion-ground" class="clip" data-start="0" data-duration="27.01" data-track-index="0">
+      <div data-hf-id="hf-mejt" class="v8-field"></div>
+      <div data-hf-id="hf-6qxe" class="v8-aliento" id="v8-aliento"></div>
+      <div data-hf-id="hf-bfl1" class="v8-amb">
+        <div data-hf-id="hf-8vdr" class="v8-radial-wrap"><div data-hf-id="hf-anda" class="v8-radial"></div></div>
+        <div data-hf-id="hf-ptmn" class="v8-grid"></div>
+        <div data-hf-id="hf-0pp3" class="v8-hair"></div>
+      </div>
+    </div>
 
-      <div class="split">
-        <div class="side">
-          <p class="label mono">LO QUE HAY EN LA BASE DE DATOS</p>
-          <div class="card">
-            <p class="field mono">N.º CASO</p>
-            <p class="value mono">IHQ251204</p>
-            <p class="field mono">DIAGNÓSTICO PRINCIPAL</p>
-            <p class="value">CARCINOMA DUCTAL INFILTRANTE</p>
-          </div>
+    <section data-hf-id="hf-zrr4" id="08-verificacion-escena" class="clip" data-start="0" data-duration="27.01" data-track-index="1">
+
+      <div data-hf-id="hf-v801" class="v8-hero">
+        <span data-hf-id="hf-v802" class="v8-hero-in" id="v8-hero">TRAZABILIDAD</span>
+      </div>
+
+      <p data-hf-id="hf-61ie" class="v8-label v8-label-l mono">LO QUE HAY EN LA BASE DE DATOS</p>
+      <p data-hf-id="hf-gjtl" class="v8-label v8-label-r mono">LO QUE DICE SU PDF DE ORIGEN</p>
+
+      <div data-hf-id="hf-iw81" class="v8-persp">
+
+        <div data-hf-id="hf-5xdi" class="v8-card v8-card-left">
+          <div data-hf-id="hf-v803" class="v8-cell"></div>
+          <p data-hf-id="hf-3qxm" class="v8-fld v8-l1 mono v8-rowl">N.º CASO</p>
+          <p data-hf-id="hf-0cfj" class="v8-val v8-l2 mono v8-rowl">IHQ259001</p>
+          <p data-hf-id="hf-otw4" class="v8-fld v8-l3 mono v8-rowl">DIAGNÓSTICO PRINCIPAL</p>
+          <p data-hf-id="hf-fc04" class="v8-val v8-l4 v8-dx v8-rowl" id="v8-dx">CARCINOMA DUCTAL INFILTRANTE</p>
         </div>
 
-        <div class="link"></div>
-
-        <div class="side">
-          <p class="label mono">LO QUE DICE SU PDF DE ORIGEN</p>
-          <div class="card">
-            <p class="field mono">INFORME · DIAGNÓSTICO</p>
-            <p class="value">
-              … los hallazgos son compatibles con
-              <span class="hl">CARCINOMA DUCTAL INFILTRANTE</span>
-              de mama, con estudio de inmunohistoquímica …
-            </p>
+        <div data-hf-id="hf-yp3h" class="v8-card v8-card-right">
+          <p data-hf-id="hf-ij79" class="v8-fld v8-l1 mono" id="v8-rfld">INFORME · DIAGNÓSTICO</p>
+          <p data-hf-id="hf-v804" class="v8-line v8-r1" id="v8-r1">… los hallazgos son compatibles con</p>
+          <div data-hf-id="hf-v805" class="v8-slot">
+            <span data-hf-id="hf-v806" class="v8-slotbox">
+              <span data-hf-id="hf-v807" class="v8-halo" id="v8-halo"></span>
+              <span data-hf-id="hf-p4m8" class="v8-hl" id="v8-hl">CARCINOMA DUCTAL INFILTRANTE</span>
+              <span data-hf-id="hf-v808" class="v8-slotrule" id="v8-slotrule"></span>
+            </span>
           </div>
+          <p data-hf-id="hf-v809" class="v8-line v8-r3" id="v8-r3">de mama, con estudio de inmunohistoquímica …</p>
         </div>
       </div>
 
-      <p class="score mono">
-        2.034 / 2.076 · 98 %
-        <small>diagnósticos que aparecen literalmente en su informe. El resto, anotados uno a uno con el motivo.</small>
+      <svg data-hf-id="hf-v810" class="v8-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path data-hf-id="hf-v811" id="v8-path1" class="v8-path" d="M 740 527 C 830 496 950 486 1040 499"></path>
+        <circle data-hf-id="hf-v812" id="v8-node1" class="v8-node" cx="740" cy="527" r="5"></circle>
+        <circle data-hf-id="hf-v813" id="v8-node2" class="v8-node" cx="1040" cy="499" r="5"></circle>
+        <path data-hf-id="hf-v814" id="v8-path2" class="v8-path v8-path-b" d="M 660 728 C 850 736 990 690 1040 500"></path>
+        <circle data-hf-id="hf-v815" id="v8-node3" class="v8-node" cx="1040" cy="500" r="7"></circle>
+        <circle data-hf-id="hf-v816" id="v8-travglow" class="v8-trav-glow" cx="660" cy="728" r="13"></circle>
+        <circle data-hf-id="hf-v817" id="v8-trav" class="v8-trav" cx="660" cy="728" r="5"></circle>
+      </svg>
+
+      <div data-hf-id="hf-v818" class="v8-chip" id="v8-chip">
+        <div data-hf-id="hf-v819" class="v8-chip-bg" id="v8-chipbg"></div>
+        <div data-hf-id="hf-v820" class="v8-chip-tx" id="v8-chiptx" data-layout-allow-overlap>CARCINOMA DUCTAL INFILTRANTE</div>
+      </div>
+
+      <p data-hf-id="hf-v821" class="v8-metric mono" id="v8-metric">COINCIDENCIA LITERAL</p>
+
+      <p data-hf-id="hf-fv7x" class="v8-score mono">
+        <span data-hf-id="hf-985h" class="v8-sc v8-num" id="v8-num">2.034</span>
+        <span data-hf-id="hf-7h62" class="v8-sc v8-den" id="v8-den">/ 2.076</span>
+        <span data-hf-id="hf-ofc7" class="v8-sc" id="v8-pct">· 98 %</span>
       </p>
 
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">08 / 09 — LA VERIFICACIÓN</div>
+      <div data-hf-id="hf-v822" class="v8-track" id="v8-track">
+        <div data-hf-id="hf-v823" class="v8-fill" id="v8-fill"></div>
+        <div data-hf-id="hf-v824" class="v8-tail" id="v8-tail"></div>
+      </div>
+      <div data-hf-id="hf-v825" class="v8-tick v8-tick-a"></div>
+      <div data-hf-id="hf-v826" class="v8-tick v8-tick-b"></div>
+      <div data-hf-id="hf-v827" class="v8-tick v8-tick-c"></div>
+
+      <div data-hf-id="hf-6yua" class="v8-brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div data-hf-id="hf-i9ce" class="v8-mark mono">08 / 09 — LA VERIFICACIÓN</div>
     </section>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f08"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "08-verificacion";
+      var tl = gsap.timeline({ paused: true,
+        // immediateRender:false POR DEFECTO. Sin esto, cada fromTo escribe
+        // su estado FROM al CONSTRUIR la linea de tiempo, no al llegar a su
+        // marca: el ultimo declarado gana y el elemento aparece en pantalla
+        // desde el fotograma 0. Aqui provoco un chip duplicado visible 8s
+        // antes de tiempo, un punto viajero clavado 23s y un parpadeo del
+        // diagnostico. Como default de la timeline lo hereda todo hijo.
+        defaults: { immediateRender: false } });
+
+      var $ = function (s) { return document.querySelector(s); };
+
+      var amb        = $(".v8-amb");
+      var radialWrap = $(".v8-radial-wrap");
+      var aliento    = $("#v8-aliento");
+      var chip       = $("#v8-chip");
+      var hl         = $("#v8-hl");
+      var numEl      = $("#v8-num");
+      var pctEl      = $("#v8-pct");
+      var path1      = $("#v8-path1");
+      var path2      = $("#v8-path2");
+      var trav       = $("#v8-trav");
+      var travGlow   = $("#v8-travglow");
+
+      /* ─────────────────────────────────────────────────────────────────────
+         ESCENA 1 (0.0–4.0) · "se puede comprobar"
+         El escenario abre y el rótulo de sección sube tras una máscara.
+         ──────────────────────────────────────────────────────────────────── */
+
+      // ambient-glow-bloom: radial navy tenue del lado del foco
+      tl.fromTo(".v8-radial",
+        { opacity: 0, scale: 0.88 },
+        { opacity: 0.34, scale: 1, duration: 1.6, ease: "power2.out" }, 0);
+      tl.fromTo(".v8-grid",
+        { opacity: 0 }, { opacity: 1, duration: 1.9, ease: "power1.out" }, 0.1);
+
+      // discrete-text-sequence: una sola palabra, subida enmascarada
+      tl.fromTo("#v8-hero",
+        { yPercent: 105, opacity: 0 },
+        { yPercent: 0, opacity: 1, duration: 0.95, ease: "power3.out" }, 0.15);
+
+      tl.fromTo(".v8-hair",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 1.5, ease: "power2.out" }, 0.3);
+
+      // anclas de borde
+      tl.fromTo(".v8-brand", { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.9, ease: "power2.out" }, 1.1);
+      tl.fromTo(".v8-mark", { opacity: 0, x: 14 },
+        { opacity: 1, x: 0, duration: 0.9, ease: "power2.out" }, 1.4);
+
+      // sine-wave-loop (registro bajo): la respiración ÚNICA del fondo, 0→29s.
+      // Un solo proxy alimenta los tres decorativos: nunca hay ventana quieta.
+      var breath = { p: 0 };
+      var BR_CYCLES = 3.0;
+      tl.fromTo(breath, { p: 0 }, {
+        p: Math.PI * 2 * BR_CYCLES,
+        duration: 29.0,
+        ease: "none",
+        onUpdate: function () {
+          var s = Math.sin(breath.p);
+          if (amb) gsap.set(amb, { opacity: 0.96 + s * 0.04 });
+          if (radialWrap) gsap.set(radialWrap, { scale: 1 + s * 0.016 });
+          if (aliento) gsap.set(aliento, { opacity: 0.58 + s * 0.14 });
+        }
+      }, 0);
+
+      /* ─────────────────────────────────────────────────────────────────────
+         ESCENA 2 (2.0–7.6) · "cada diagnóstico se contrastó contra el texto
+         de su propio informe". Entra la fila; su valor SE ENCIENDE; después
+         entra el informe con el hueco de la palabra todavía vacío.
+         ──────────────────────────────────────────────────────────────────── */
+
+      tl.fromTo(".v8-label-l",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.75, ease: "power2.out" }, 2.0);
+
+      // split-tilt-cards: llega del ala izquierda con el giro de libro
+      tl.fromTo(".v8-card-left",
+        { opacity: 0, x: -74, rotateY: 7 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 1.0, ease: "power3.out" }, 2.35);
+
+      tl.fromTo(".v8-rowl",
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.14, ease: "power2.out" }, 3.05);
+
+      // el rótulo se apaga cuando la tabla se abre
+      tl.fromTo("#v8-hero",
+        { opacity: 1 }, { opacity: 0.30, duration: 1.1, ease: "sine.inOut" }, 4.2);
+
+      // EL VALOR SE ENCIENDE: la celda barre y el texto pasa de apagado a tinta
+      tl.fromTo(".v8-cell",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, 4.35);
+      tl.fromTo("#v8-dx",
+        { color: '[id="8296b5"]' },
+        { color: '[id="22304a"]', duration: 0.75, ease: "power1.inOut" }, 4.45);
+
+      // el ala derecha, ~0.2s detrás del ritmo de la izquierda
+      tl.fromTo(".v8-label-r",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.75, ease: "power2.out" }, 5.4);
+      tl.fromTo(".v8-card-right",
+        { opacity: 0, x: 74, rotateY: -7 },
+        { opacity: 1, x: 0, rotateY: 0, duration: 1.0, ease: "power3.out" }, 5.75);
+
+      tl.fromTo("#v8-rfld",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 6.3);
+      tl.fromTo("#v8-r1",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 6.45);
+      tl.fromTo("#v8-r3",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 6.7);
+
+      // el hueco espera: fantasma de la frase + su renglón
+      tl.fromTo("#v8-hl",
+        { opacity: 0 }, { opacity: 0.16, duration: 0.7, ease: "sine.out" }, 7.05);
+      tl.fromTo("#v8-slotrule",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.8, ease: "power2.out" }, 7.15);
+
+      /* ─────────────────────────────────────────────────────────────────────
+         ESCENA 3 (7.55–12.8) · EL TRAZO.
+         svg-path-draw dibuja el rail cruzando el hueco; el valor se despega
+         de su celda, lo recorre y aterriza sobre las mismas palabras del
+         informe. Ahí, y solo ahí, entra el ámbar.
+         ──────────────────────────────────────────────────────────────────── */
+
+      // svg-path-draw: longitud MEDIDA, nunca adivinada
+      var L1 = 0, L2 = 0;
+      if (path1 && path1.getTotalLength) { L1 = path1.getTotalLength(); }
+      if (path2 && path2.getTotalLength) { L2 = path2.getTotalLength(); }
+      if (!L1) { L1 = 312; }
+      if (!L2) { L2 = 486; }
+      if (path1) {
+        path1.style.strokeDasharray = String(L1);
+        path1.style.strokeDashoffset = String(L1);
+      }
+      if (path2) {
+        path2.style.strokeDasharray = String(L2);
+        path2.style.strokeDashoffset = String(L2);
+      }
+
+      tl.fromTo("#v8-path1", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 7.55);
+      tl.fromTo("#v8-path1",
+        { strokeDashoffset: L1 },
+        { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" }, 7.6);
+      tl.fromTo("#v8-node1", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 7.7);
+      tl.fromTo("#v8-node2", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 9.05);
+
+      // el duplicado se despega de la celda
+      tl.fromTo("#v8-chiptx", { opacity: 0 }, { opacity: 1, duration: 0.30, ease: "power1.out" }, 8.1);
+      tl.fromTo("#v8-dx", { opacity: 1 }, { opacity: 0.32, duration: 0.5, ease: "power1.inOut" }, 8.1);
+      tl.fromTo("#v8-chipbg", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 8.15);
+
+      /* Vuelo. Un solo proxy lineal gobierna despegue + travesía, así que
+         ningún tween pisa a otro sobre el mismo transform y el seek es exacto.
+         Geometría (comprobada contra la maqueta, en px de escenario):
+           salida  → chip left 100 / top 500  (texto en 116 / 510)
+           llegada → chip left 1060 / top 472 (texto en 1076 / 482)
+         es decir dx = +960, dy = −28, con un arco de 56px de altura. */
+      var LIFT_DUR = 0.65, FLY_DUR = 2.35, MOVE_DUR = LIFT_DUR + FLY_DUR;
+      var DX = 960, DY = -28, LIFT = -18, ARC = 56;
+      var move = { t: 0 };
+      tl.fromTo(move, { t: 0 }, {
+        t: 1,
+        duration: MOVE_DUR,
+        ease: "none",
+        onUpdate: function () {
+          var s = move.t * MOVE_DUR, x, y, k;
+          if (s <= LIFT_DUR) {
+            var a = s / LIFT_DUR;
+            var e = 1 - Math.pow(1 - a, 3);          // power2.out
+            x = 0; y = LIFT * e; k = 1 + 0.03 * e;
+          } else {
+            var q = (s - LIFT_DUR) / FLY_DUR;
+            if (q > 1) { q = 1; }
+            // power1.inOut
+            var p = q < 0.5 ? 2 * q * q : 1 - Math.pow(-2 * q + 2, 2) / 2;
+            x = DX * p;
+            y = LIFT + (DY - LIFT) * p - ARC * Math.sin(Math.PI * p);
+            k = 1 + 0.03 * (1 - p * p * p);
+          }
+          if (chip) { gsap.set(chip, { x: x, y: y, scale: k }); }
+        }
+      }, 8.1);
+
+      // aterrizaje: card-morph-anchor — el duplicado se disuelve sobre el
+      // ancla idéntica al píxel (misma familia, cuerpo, interlínea y posición)
+      tl.fromTo("#v8-chipbg", { opacity: 1 }, { opacity: 0, duration: 0.32, ease: "power1.in" }, 11.0);
+      tl.fromTo("#v8-chiptx", { opacity: 1 }, { opacity: 0, duration: 0.32, ease: "power1.inOut" }, 11.18);
+      tl.fromTo("#v8-hl", { opacity: 0.16 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 11.18);
+      tl.fromTo("#v8-slotrule", { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power1.inOut" }, 11.2);
+
+      // EL FOCO: el ámbar barre la frase literal del informe
+      var sweep = { v: 0 };
+      tl.fromTo(sweep, { v: 0 }, {
+        v: 1,
+        duration: 1.15,
+        ease: "power2.inOut",
+        onUpdate: function () {
+          if (hl) { hl.style.backgroundSize = (sweep.v * 100).toFixed(2) + "% 100%"; }
+        }
+      }, 11.65);
+
+      // el valor vuelve a encenderse en su celda: ahora está en los dos sitios
+      tl.fromTo("#v8-dx", { opacity: 0.32 }, { opacity: 1, duration: 1.0, ease: "sine.inOut" }, 12.3);
+
+      /* ─────────────────────────────────────────────────────────────────────
+         ESCENA 4 (13.5–20.4) · "2.034 de 2.076 … el resto, anotados uno a uno"
+         counting-dynamic-scale + stat-bars-and-fills, un gesto cada vez.
+         ──────────────────────────────────────────────────────────────────── */
+
+      tl.fromTo("#v8-metric",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 13.55);
+
+      // counting-dynamic-scale: el valor cuenta mientras el transform crece
+      var COUNT_DUR = 2.25, COUNT_EASE = "power2.out";
+      tl.fromTo("#v8-num", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 13.85);
+      tl.fromTo("#v8-num", { scale: 0.78 }, { scale: 1, duration: COUNT_DUR, ease: COUNT_EASE }, 13.9);
+      var count = { v: 0 };
+      tl.fromTo(count, { v: 0 }, {
+        v: 2034,
+        duration: COUNT_DUR,
+        ease: COUNT_EASE,
+        onUpdate: function () {
+          if (!numEl) { return; }
+          var n = Math.round(count.v);
+          var s = "" + n;
+          numEl.textContent = s.length > 3
+            ? s.slice(0, s.length - 3) + "." + s.slice(s.length - 3)
+            : s;
+        }
+      }, 13.9);
+
+      tl.fromTo("#v8-den",
+        { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 14.7);
+
+      // stat-bars-and-fills: el carril primero, el relleno después
+      tl.fromTo("#v8-track",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 1.0, ease: "power2.inOut" }, 15.6);
+
+      tl.fromTo("#v8-pct", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 16.6);
+      // relleno y porcentaje comparten arranque, duración y ease: un solo latido
+      tl.fromTo("#v8-fill",
+        { scaleX: 0 }, { scaleX: 0.98, duration: 1.7, ease: "power2.inOut" }, 16.6);
+      var pct = { v: 0 };
+      tl.fromTo(pct, { v: 0 }, {
+        v: 98,
+        duration: 1.7,
+        ease: "power2.inOut",
+        onUpdate: function () {
+          if (pctEl) { pctEl.textContent = "· " + Math.round(pct.v) + " %"; }
+        }
+      }, 16.6);
+
+      // el resto: el tramo que falta se raya, y se marca uno a uno
+      tl.fromTo("#v8-tail",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.75, ease: "power2.out" }, 18.55);
+      tl.fromTo(".v8-tick",
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.26, ease: "power2.out" }, 19.3);
+
+      /* ─────────────────────────────────────────────────────────────────────
+         ESCENA 5 (21.2–28.6) · "la cifra se puede seguir hasta la frase
+         que la sostiene". Cae la música: un gesto cada vez, con aire.
+         ──────────────────────────────────────────────────────────────────── */
+
+      // segundo trazo: de la cifra proyectada de vuelta a su frase
+      tl.fromTo("#v8-path2", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 21.2);
+      tl.fromTo("#v8-path2",
+        { strokeDashoffset: L2 },
+        { strokeDashoffset: 0, duration: 2.0, ease: "power2.inOut" }, 21.25);
+
+      // y algo lo recorre: bezier evaluado a mano, misma curva que el path
+      var P0 = [660, 728], P1 = [850, 736], P2 = [990, 690], P3 = [1040, 500];
+      var walk = { p: 0 };
+      tl.fromTo("#v8-trav", { opacity: 0 }, { opacity: 0.95, duration: 0.3, ease: "power1.out" }, 23.45);
+      tl.fromTo("#v8-travglow", { opacity: 0 }, { opacity: 0.16, duration: 0.3, ease: "power1.out" }, 23.45);
+      tl.fromTo(walk, { p: 0 }, {
+        p: 1,
+        duration: 1.75,
+        ease: "sine.inOut",
+        onUpdate: function () {
+          var t = walk.p, u = 1 - t;
+          var a = u * u * u, b = 3 * u * u * t, c = 3 * u * t * t, d = t * t * t;
+          var cx = a * P0[0] + b * P1[0] + c * P2[0] + d * P3[0];
+          var cy = a * P0[1] + b * P1[1] + c * P2[1] + d * P3[1];
+          if (trav) { gsap.set(trav, { attr: { cx: cx, cy: cy } }); }
+          if (travGlow) { gsap.set(travGlow, { attr: { cx: cx, cy: cy } }); }
+        }
+      }, 23.55);
+
+      // relevo: el punto llega y se queda como nodo en el borde de la tarjeta
+      tl.fromTo("#v8-node3", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 25.3);
+      tl.fromTo("#v8-trav", { opacity: 0.95 }, { opacity: 0, duration: 0.5, ease: "power1.inOut" }, 25.3);
+      tl.fromTo("#v8-travglow", { opacity: 0.16 }, { opacity: 0, duration: 0.5, ease: "power1.inOut" }, 25.3);
+
+      // último gesto: la frase que sostiene la cifra respira una sola vez
+      tl.fromTo("#v8-halo",
+        { opacity: 0 }, { opacity: 0.30, duration: 3.0, ease: "sine.inOut" }, 25.55);
+
+      window.__timelines = window.__timelines || {};
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+      // porque es identica en todas y superpuesta no se nota.
+      tl.to(".v8-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 25.71);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+      tl.to(['[id="08-verificacion-escena"]'], { opacity: 0, duration: 0.55, ease: "power2.in" }, 25.31);
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+      // que trae la escena siguiente.
+
+
+      tl.to(".v8-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 25.31);
+
+
+
+      window.__timelines[ID] = tl;
+    })();
   </script>
 </template>

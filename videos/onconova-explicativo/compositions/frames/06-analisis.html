@@ -1,117 +1,676 @@
 <template>
-  <div
-    id="f06"
-    data-composition-id="f06"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="30"
-  >
+  <div id="root" data-composition-id="06-analisis" data-start="0" data-width="1920" data-height="1080" data-duration="28.16">
     <style>
-      #f06 {
+      #root, #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      #root {
         position: relative;
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #141d2b;
         color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
       }
-      #f06 .clip { position: absolute; inset: 0; }
-      #f06 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f06 .brand {
+      #root .clip { position: absolute; inset: 0; }
+      #root .s6-mono { font-family: "IBM Plex Mono", monospace; }
+
+      /* ------------------------------------------------------------------ */
+      /* fondo: escenario plano + 3 decorativos con una sola respiracion      */
+      /* ------------------------------------------------------------------ */
+      #root .s6-stage { position: absolute; inset: 0; background: #141d2b; }
+      #root .s6-aliento {
+        position: absolute; inset: 0; pointer-events: none;
+        background:
+          radial-gradient(118% 78% at 50% 46%, rgba(45, 62, 94, 0.20) 0%,
+                          rgba(20, 29, 43, 0) 68%);
+        opacity: 0.52;
+      }
+      #root .s6-radial {
+        position: absolute; inset: 0;
+        background: radial-gradient(
+          circle at 38% 36%,
+          rgba(45, 62, 94, 0.92) 0%,
+          rgba(45, 62, 94, 0.34) 30%,
+          rgba(45, 62, 94, 0) 60%
+        );
+        transform-origin: 38% 36%;
+        opacity: 0.62;
+      }
+      #root .s6-grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(233, 238, 247, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(233, 238, 247, 0.045) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.9;
+      }
+      #root .s6-hair {
+        position: absolute; left: 80px; top: 222px; width: 1760px; height: 1px;
+        background: rgba(233, 238, 247, 0.14);
+        transform-origin: left center;
+        transform: scaleX(0);
+        opacity: 0.65;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* camara: deriva -> escala -> traslacion (un solo escritor por nodo)   */
+      /* ------------------------------------------------------------------ */
+      #root .s6-drift,
+      #root .s6-zoom-outer,
+      #root .s6-zoom-inner,
+      #root .s6-world { position: absolute; inset: 0; }
+      #root .s6-zoom-outer { transform-origin: 50% 50%; will-change: transform; }
+      #root .s6-zoom-inner { will-change: transform; }
+
+      /* ------------------------------------------------------------------ */
+      /* titular                                                             */
+      /* ------------------------------------------------------------------ */
+      #root .s6-h2 {
+        position: absolute; left: 80px; top: 116px;
+        font-size: 70px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.2;
+        white-space: nowrap;
+      }
+      #root .s6-mask {
+        display: inline-block; overflow: hidden; vertical-align: bottom;
+        padding-top: 10px; margin-top: -10px;
+      }
+      /* sin transform en CSS: yPercent se compone con y, y un translateY(100%)
+         escrito aqui dejaria la palabra 84px mas abajo para siempre. El estado
+         inicial lo fija el immediateRender del propio fromTo. */
+      #root .s6-mask > span { display: inline-block; }
+
+      /* ------------------------------------------------------------------ */
+      /* KPIs — 4 tarjetas, la focal mas ancha porque lleva el arco           */
+      /* ------------------------------------------------------------------ */
+      #root .s6-glow {
+        position: absolute; left: 408px; top: 197px; width: 700px; height: 300px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(233, 163, 60, 0.3) 0%,
+          rgba(233, 163, 60, 0.1) 42%,
+          rgba(233, 163, 60, 0) 68%
+        );
+        filter: blur(10px);
+        opacity: 0;
+      }
+      #root .s6-kpis {
+        position: absolute; left: 80px; right: 80px; top: 252px;
+        display: grid; grid-template-columns: 1fr 1.45fr 1fr 1fr; gap: 26px;
+      }
+      #root .s6-kpi {
+        position: relative; height: 190px; padding: 24px 26px 0;
+        border: 1px solid rgba(233, 238, 247, 0.14);
+        /* Placa OSCURA. En navy al 16% la tarjeta aclaraba el fondo y las
+           etiquetas (#8296b5) caian por debajo de AA. */
+        background: rgba(20, 29, 43, 0.55);
+        opacity: 0;
+      }
+      #root .s6-kpi b {
+        display: block; font-size: 70px; font-weight: 900;
+        letter-spacing: -0.03em; line-height: 1;
+      }
+      /* la cifra nace con el conteo: nunca se ve el cero de relleno */
+      #root .s6-num { display: inline-block; transform-origin: 0% 50%; opacity: 0; }
+      #root .s6-focal .s6-num { color: #e9a33c; }
+      #root .s6-lab {
+        display: block; margin-top: 14px;
+        font-size: 19px; letter-spacing: 0.12em; line-height: 1.2; color: #8296b5;
+        opacity: 0;
+      }
+      #root .s6-rule {
+        position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+        background: #2d3e5e; transform-origin: left center;
+        transform: scaleX(0);
+      }
+
+      /* arco del 67,1 % — el foco ambar dibuja la proporcion, no solo cuenta */
+      #root .s6-ring { position: absolute; right: 26px; top: 26px; }
+      #root .s6-halo { opacity: 0; }
+
+      /* ------------------------------------------------------------------ */
+      /* tabla real: Analisis -> biomarcadores vs malignidad, barras          */
+      /* divergentes desde el eje. Escala comun a TODAS las filas para que    */
+      /* sean comparables: 259 (el maximo del cuadro) = 590px -> 2,27799      */
+      /* px por unidad, mas un canalon de 12px a cada lado del eje.           */
+      /* ------------------------------------------------------------------ */
+      #root .s6-table {
+        position: absolute; left: 80px; right: 80px; top: 480px;
+        border: 1px solid rgba(233, 238, 247, 0.14);
+        background: rgba(20, 29, 43, 0.55);
+        opacity: 0;
+      }
+      #root .s6-chrome {
+        position: absolute; left: 0; right: 0; top: 0; height: 2px;
+        background: #2d3e5e; transform-origin: left center;
+        transform: scaleX(0);
+      }
+      /* el eje vive fuera de la tabla para poder trazarse antes que ella */
+      #root .s6-axis {
+        position: absolute; left: 1146px; top: 481px; width: 1px; height: 412px;
+        background: rgba(233, 238, 247, 0.3);
+        transform-origin: top center; transform: scaleY(0);
+      }
+
+      #root .s6-thead {
+        position: relative; height: 62px;
+        background: rgba(45, 62, 94, 0.5);
+        opacity: 0;
+      }
+      #root .s6-row {
+        position: relative; height: 70px;
+        border-top: 1px solid rgba(233, 238, 247, 0.07);
+        opacity: 0;
+      }
+      #root .s6-name {
+        position: absolute; left: 32px; top: 0; width: 352px; height: 70px;
+        line-height: 70px; font-size: 20px; font-weight: 400;
+      }
+      #root .s6-hname {
+        position: absolute; left: 32px; top: 25px; height: 20px; line-height: 20px;
+        font-size: 17px; letter-spacing: 0.12em; color: #8296b5; opacity: 0;
+      }
+      #root .s6-chart { position: absolute; left: 404px; right: 32px; top: 0; bottom: 0; }
+      #root .s6-side { position: absolute; inset: 0; }
+
+      /* canalon de 12px a cada lado del eje: sin el, la barra de malignos y
+         la de benignos se tocan y se leen como UNA sola barra continua */
+      #root .s6-trk, #root .s6-bar { position: absolute; height: 14px; display: block; }
+      #root .s6-trk { width: 590px; background: rgba(233, 238, 247, 0.045); }
+      #root .s6-bar { transform: scaleX(0); }
+      #root .s6-side-m .s6-trk, #root .s6-side-m .s6-bar {
+        right: calc(50% + 12px); transform-origin: right center;
+      }
+      #root .s6-side-b .s6-trk, #root .s6-side-b .s6-bar {
+        left: calc(50% + 12px); transform-origin: left center;
+      }
+      #root .s6-trk.s6-lane-p, #root .s6-bar.s6-lane-p { top: 17px; }
+      #root .s6-trk.s6-lane-n, #root .s6-bar.s6-lane-n { top: 40px; }
+      /* positivo = luz; negativo = navy que se retira */
+      /* Acotado a barra y muestra de leyenda. Suelto, .s6-pos tambien casaba con
+         las ETIQUETAS de valor (llevan la clase para su color) y pintaba las 20
+         cifras sobre una placa opaca: 1,27:1 de contraste, invisibles. */
+      #root .s6-bar.s6-pos, #root .s6-sw.s6-pos { background: rgba(233, 238, 247, 0.88); }
+      #root .s6-bar.s6-neg, #root .s6-sw.s6-neg { background: #2d3e5e; }
+
+      #root .s6-v {
+        position: absolute; height: 22px; line-height: 22px;
+        font-size: 20px; white-space: nowrap; opacity: 0;
+      }
+      #root .s6-v.s6-lane-p { top: 13px; }
+      #root .s6-v.s6-lane-n { top: 36px; }
+      #root .s6-side-m .s6-v { text-align: right; }
+      #root .s6-side-b .s6-v { text-align: left; }
+      #root .s6-v.s6-pos { color: #e9eef7; }
+      #root .s6-v.s6-neg { color: #8296b5; }
+
+      #root .s6-hlab {
+        position: absolute; height: 20px;
+        display: flex; align-items: center; gap: 9px; white-space: nowrap;
+        font-size: 17px; letter-spacing: 0.1em; color: #8296b5; opacity: 0;
+      }
+      #root .s6-hlab.s6-lane-p { top: 14px; }
+      #root .s6-hlab.s6-lane-n { top: 37px; }
+      #root .s6-side-m .s6-hlab { right: 50%; margin-right: 16px; }
+      #root .s6-side-b .s6-hlab { left: 50%; margin-left: 16px; }
+      #root .s6-sw { display: block; width: 14px; height: 14px; }
+
+      /* ------------------------------------------------------------------ */
+      /* cromo de borde                                                      */
+      /* ------------------------------------------------------------------ */
+      #root .s6-brand {
         position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
-      #f06 .mark {
+      #root .s6-mark {
         position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
-      #f06 h2 {
-        position: absolute; left: 80px; top: 140px;
-        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
-      }
-      #f06 .kpis {
-        position: absolute; left: 80px; right: 80px; top: 300px;
-        display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;
-      }
-      #f06 .kpi {
-        border: 1px solid rgba(233,238,247,.14); padding: 36px 32px 40px;
-      }
-      #f06 .kpi.focal { border-color: #e9a33c; }
-      #f06 .kpi b {
-        display: block; font-size: 88px; font-weight: 900;
-        letter-spacing: -0.04em; line-height: 1;
-      }
-      #f06 .kpi.focal b { color: #e9a33c; }
-      #f06 .kpi span {
-        display: block; margin-top: 22px; font-size: 21px;
-        letter-spacing: 0.12em; color: #8296b5;
-      }
-      /* stand-in: la tabla de correlación biomarcador × malignidad.
-         Sin cifras: se rellenan en el build con la consulta real. */
-      #f06 .table {
-        position: absolute; left: 80px; right: 80px; top: 620px; height: 300px;
-        border: 1px solid rgba(233,238,247,.14);
-      }
-      #f06 .thead {
-        display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-        padding: 26px 32px; font-size: 19px; letter-spacing: 0.12em;
-        color: #8296b5; border-bottom: 1px solid rgba(233,238,247,.14);
-      }
-      #f06 .trow {
-        display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-        padding: 24px 32px; font-size: 23px;
-        border-bottom: 1px solid rgba(233,238,247,.07);
-      }
-      #f06 .ph { color: #55688a; }
-      #f06 .note {
+      #root .s6-caption {
         position: absolute; left: 80px; bottom: 56px;
-        font-size: 20px; color: #55688a;
+        font-size: 20px; color: #8296b5; opacity: 0;
       }
     </style>
 
-    <section class="clip" data-start="0" data-duration="30" data-track-index="1">
-      <h2>El análisis</h2>
+    <!-- ================= fondo (pista 0) ================= -->
+    <div id="s6-clip-fondo" class="clip" data-start="0" data-duration="28.16" data-track-index="0">
+      <div class="s6-stage"></div>
+      <div class="s6-aliento" id="s6-aliento"></div>
+      <div class="s6-radial" id="s6-radial"></div>
+      <div class="s6-grid" id="s6-grid"></div>
+      <div class="s6-hair" id="s6-hair"></div>
+    </div>
 
-      <div class="kpis">
-        <div class="kpi"><b>2.076</b><span class="mono">CASOS IHQ</span></div>
-        <div class="kpi focal"><b>67,1 %</b><span class="mono">MALIGNOS</span></div>
-        <div class="kpi"><b>195</b><span class="mono">CATEGORÍAS ANATÓMICAS</span></div>
-        <div class="kpi"><b>122</b><span class="mono">BIOMARCADORES</span></div>
+    <!-- ================= contenido bajo camara (pista 1) ================= -->
+    <div id="s6-clip-mundo" class="clip" data-start="0" data-duration="28.16" data-track-index="1" data-layout-allow-overflow="">
+      <div class="s6-drift" id="s6-drift" data-layout-allow-overflow="">
+        <div class="s6-zoom-outer" id="s6-zoom-outer" data-layout-allow-overflow="">
+          <div class="s6-zoom-inner" id="s6-zoom-inner" data-layout-allow-overflow="">
+            <div class="s6-world">
+              <h2 class="s6-h2" id="s6-h2"><span class="s6-mask"><span id="s6-w1">El</span></span> <span class="s6-mask"><span id="s6-w2">análisis</span></span></h2>
+
+              <div class="s6-glow" id="s6-glow"></div>
+
+              <div class="s6-kpis" id="s6-kpis">
+                <div class="s6-kpi" id="s6-k1">
+                  <b><span class="s6-num" id="s6-n1">0</span></b>
+                  <span class="s6-lab s6-mono" id="s6-l1">CASOS IHQ</span>
+                  <i class="s6-rule" id="s6-r1"></i>
+                </div>
+                <div class="s6-kpi s6-focal" id="s6-k2">
+                  <b><span class="s6-num" id="s6-n2">0,0 %</span></b>
+                  <span class="s6-lab s6-mono" id="s6-l2">MALIGNOS</span>
+                  <svg class="s6-ring" id="s6-ring" width="136" height="136" viewBox="0 0 136 136" aria-hidden="true">
+                    <g transform="rotate(-90 68 68)">
+                      <circle class="s6-halo" id="s6-halo" cx="68" cy="68" r="66" fill="none" stroke="#e9a33c" stroke-width="1"></circle>
+                      <circle cx="68" cy="68" r="59" fill="none" stroke='[id="2d3e5e"]' stroke-width="10"></circle>
+                      <circle id="s6-arc" cx="68" cy="68" r="59" fill="none" stroke="#e9a33c" stroke-width="10" stroke-dasharray="370.71" stroke-dashoffset="370.71"></circle>
+                    </g>
+                  </svg>
+                </div>
+                <div class="s6-kpi" id="s6-k3">
+                  <b><span class="s6-num" id="s6-n3">0</span></b>
+                  <span class="s6-lab s6-mono" id="s6-l3">CATEGORÍAS ANATÓMICAS</span>
+                  <i class="s6-rule" id="s6-r3"></i>
+                </div>
+                <div class="s6-kpi" id="s6-k4">
+                  <b><span class="s6-num" id="s6-n4">0</span></b>
+                  <span class="s6-lab s6-mono" id="s6-l4">BIOMARCADORES</span>
+                  <i class="s6-rule" id="s6-r4"></i>
+                </div>
+              </div>
+
+              <div class="s6-table" id="s6-table">
+                <i class="s6-chrome" id="s6-tchrome"></i>
+
+                <div class="s6-thead" id="s6-thead">
+                  <span class="s6-hname s6-mono s6-hitem">BIOMARCADOR</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <div class="s6-hlab s6-mono s6-lane-p s6-hitem"><span>MALIGNOS +</span><i class="s6-sw s6-pos"></i></div>
+                      <div class="s6-hlab s6-mono s6-lane-n s6-hitem"><span>MALIGNOS -</span><i class="s6-sw s6-neg"></i></div>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <div class="s6-hlab s6-mono s6-lane-p s6-hitem"><i class="s6-sw s6-pos"></i><span>BENIGNOS +</span></div>
+                      <div class="s6-hlab s6-mono s6-lane-n s6-hitem"><i class="s6-sw s6-neg"></i><span>BENIGNOS -</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s6-row" id="s6-row1">
+                  <span class="s6-name">RECEPTOR DE ESTRÓGENO</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:510.3px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:236.9px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="right:calc(50% + 534.3px)">224</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="right:calc(50% + 260.9px)">104</span>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:84.3px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:31.9px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="left:calc(50% + 108.3px)">37</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="left:calc(50% + 55.9px)">14</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s6-row" id="s6-row2">
+                  <span class="s6-name">RECEPTOR DE PROGESTERONA</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:362.2px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:259.7px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="right:calc(50% + 386.2px)">159</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="right:calc(50% + 283.7px)">114</span>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:52.4px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:18.2px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="left:calc(50% + 76.4px)">23</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="left:calc(50% + 42.2px)">8</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s6-row" id="s6-row3">
+                  <span class="s6-name">P16</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:346.3px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:116.2px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="right:calc(50% + 370.3px)">152</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="right:calc(50% + 140.2px)">51</span>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:25.1px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:84.3px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="left:calc(50% + 49.1px)">11</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="left:calc(50% + 108.3px)">37</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s6-row" id="s6-row4">
+                  <span class="s6-name">HER2</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:136.7px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:590.0px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="right:calc(50% + 160.7px)">60</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="right:calc(50% + 614.0px)">259</span>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:2.3px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:11.4px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="left:calc(50% + 26.3px)">1</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="left:calc(50% + 35.4px)">5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="s6-row" id="s6-row5">
+                  <span class="s6-name">Ki-67</span>
+                  <div class="s6-chart">
+                    <div class="s6-side s6-side-m">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:72.9px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:6.8px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="right:calc(50% + 96.9px)">32</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="right:calc(50% + 30.8px)">3</span>
+                    </div>
+                    <div class="s6-side s6-side-b">
+                      <i class="s6-trk s6-lane-p"></i><i class="s6-trk s6-lane-n"></i>
+                      <i class="s6-bar s6-pos s6-lane-p" style="width:79.7px"></i>
+                      <i class="s6-bar s6-neg s6-lane-n" style="width:6.8px"></i>
+                      <span class="s6-v s6-pos s6-lane-p s6-mono" style="left:calc(50% + 103.7px)">35</span>
+                      <span class="s6-v s6-neg s6-lane-n s6-mono" style="left:calc(50% + 30.8px)">3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <i class="s6-axis" id="s6-axis"></i>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="table">
-        <div class="thead mono">
-          <span>BIOMARCADOR</span><span>SOLICITADO</span><span>POSITIVO</span>
-          <span>% POS.</span><span>TUMOR MÁS FRECUENTE</span>
-        </div>
-        <div class="trow">
-          <span>KI-67</span><span class="ph mono">—</span><span class="ph mono">—</span>
-          <span class="ph mono">—</span><span class="ph mono">—</span>
-        </div>
-        <div class="trow">
-          <span>HER2</span><span class="ph mono">—</span><span class="ph mono">—</span>
-          <span class="ph mono">—</span><span class="ph mono">—</span>
-        </div>
-        <div class="trow">
-          <span>RECEPTOR DE ESTRÓGENO</span><span class="ph mono">—</span><span class="ph mono">—</span>
-          <span class="ph mono">—</span><span class="ph mono">—</span>
-        </div>
-      </div>
-
-      <p class="note mono">
-        Cifras de la tabla pendientes de la consulta real — no se inventan en el boceto.
+    <!-- ================= cromo de borde (pista 2) ================= -->
+    <div id="s6-clip-cromo" class="clip" data-start="0" data-duration="28.16" data-track-index="2">
+      <div class="s6-brand s6-mono" id="s6-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="s6-mark s6-mono" id="s6-mark">06 / 09 — EL ANÁLISIS</div>
+      <p class="s6-caption s6-mono" id="s6-cap">
+        Pestaña Análisis de Malignidad · Biomarcadores vs malignidad — cifras reales de la base de datos.
       </p>
-
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">06 / 09 — EL ANÁLISIS</div>
-    </section>
+    </div>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f06"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "06-analisis";
+      var DUR = 29;
+      var scope = document.querySelector('[data-composition-id="' + ID + '"]');
+      var q = function (s) { return scope.querySelector(s); };
+      var qa = function (s) { return Array.prototype.slice.call(scope.querySelectorAll(s)); };
+
+      var tl = gsap.timeline({ paused: true });
+
+      /* ---------------------------------------------------------------- */
+      /* referencias                                                       */
+      /* ---------------------------------------------------------------- */
+      var aliento = q("#s6-aliento");
+      var radial = q("#s6-radial");
+      var grid = q("#s6-grid");
+      var hair = q("#s6-hair");
+      var drift = q("#s6-drift");
+      var zo = q("#s6-zoom-outer");
+      var zi = q("#s6-zoom-inner");
+
+      var h2 = q("#s6-h2"), w1 = q("#s6-w1"), w2 = q("#s6-w2");
+      var k1 = q("#s6-k1"), k2 = q("#s6-k2"), k3 = q("#s6-k3"), k4 = q("#s6-k4");
+      var n1 = q("#s6-n1"), n2 = q("#s6-n2"), n3 = q("#s6-n3"), n4 = q("#s6-n4");
+      var l1 = q("#s6-l1"), l2 = q("#s6-l2"), l3 = q("#s6-l3"), l4 = q("#s6-l4");
+      var r1 = q("#s6-r1"), r3 = q("#s6-r3"), r4 = q("#s6-r4");
+      var arc = q("#s6-arc"), halo = q("#s6-halo");
+      var glow = q("#s6-glow");
+      var table = q("#s6-table"), tchrome = q("#s6-tchrome");
+      var thead = q("#s6-thead"), hitems = qa(".s6-hitem"), axis = q("#s6-axis");
+      var sidesM = qa(".s6-row .s6-side-m");
+      var sidesB = qa(".s6-row .s6-side-b");
+      var brand = q("#s6-brand"), mark = q("#s6-mark"), cap = q("#s6-cap");
+
+      /* ---------------------------------------------------------------- */
+      /* respiracion unica compartida por los 3 decorativos + deriva       */
+      /* (multi-phase-camera: canal de deriva, un solo escritor por nodo)  */
+      /* Cubre los 29 s enteros: nunca hay una ventana sin tween.          */
+      /* ---------------------------------------------------------------- */
+      var amb = { p: 0 };
+      tl.to(
+        amb,
+        {
+          p: Math.PI * 2 * 1.4,
+          duration: DUR,
+          ease: "none",
+          onUpdate: function () {
+            var s = Math.sin(amb.p);
+            var c = Math.sin(amb.p * 1.3);
+            drift.style.transform =
+              "translate(" + (s * 5).toFixed(3) + "px," + (c * 3).toFixed(3) + "px)";
+            radial.style.opacity = (0.62 + 0.22 * s).toFixed(4);
+            radial.style.transform = "scale(" + (1 + 0.045 * s).toFixed(4) + ")";
+            grid.style.opacity = (0.9 + 0.1 * c).toFixed(4);
+            hair.style.opacity = (0.65 + 0.25 * s).toFixed(4);
+          }
+        },
+        0
+      );
+      /* velo de aliento: 5,8 s x 5 pasadas = 29,0 s exactos, repeat finito */
+      tl.fromTo(
+        aliento,
+        { opacity: 0.52 },
+        { opacity: 0.88, duration: 5.8, repeat: 4, yoyo: true, ease: "sine.inOut" },
+        0
+      );
+
+      /* ---------------------------------------------------------------- */
+      /* ESCENA 1 (0.0-5.0) — titular enmascarado + hairline + primer KPI  */
+      /* waterfall-entry: cada palabra sube desde su propia mascara        */
+      /* ---------------------------------------------------------------- */
+      tl.fromTo(w1, { yPercent: 100 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, 0.1);
+      tl.fromTo(w2, { yPercent: 100 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, 0.28);
+
+      tl.fromTo(hair, { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power3.out" }, 0.9);
+      tl.fromTo(brand, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.3);
+      tl.fromTo(mark, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.55);
+
+      /* ---------------------------------------------------------------- */
+      /* counting-dynamic-scale — el numero crece por transform, no por    */
+      /* font-size; el grafico pareado comparte inicio, duracion y ease.   */
+      /* La cifra materializa EN el instante 'at': ni cero de relleno      */
+      /* visible ni pinchazo de escala antes del conteo.                   */
+      /* ---------------------------------------------------------------- */
+      function miles(v) {
+        var s = String(Math.round(v)), out = "", c = 0;
+        for (var i = s.length - 1; i >= 0; i--) {
+          out = s.charAt(i) + out;
+          c++;
+          if (c % 3 === 0 && i > 0) out = "." + out;
+        }
+        return out;
+      }
+      function pct(v) {
+        return (Math.round(v * 10) / 10).toFixed(1).replace(".", ",") + " %";
+      }
+      function countUp(el, target, at, dur, render) {
+        var st = { v: 0 };
+        tl.to(
+          st,
+          {
+            v: target,
+            duration: dur,
+            ease: "power3.out",
+            onUpdate: function () { el.textContent = render(st.v); }
+          },
+          at
+        );
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power1.out" }, at);
+        tl.fromTo(el, { scale: 0.55 }, { scale: 1, duration: dur, ease: "power3.out" }, at);
+      }
+      function shell(card, label, at) {
+        tl.fromTo(card, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, at);
+        tl.fromTo(label, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, at + 0.5);
+      }
+
+      /* KPI 1 — 2.076 casos IHQ */
+      shell(k1, l1, 1.5);
+      countUp(n1, 2076, 2.3, 2.2, miles);
+      tl.fromTo(r1, { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power3.out" }, 2.3);
+
+      /* ---------------------------------------------------------------- */
+      /* ESCENA 2 (5.0-16.5) — KPI focal: la cifra cuenta Y el arco dibuja */
+      /* stat-bars-and-fills (forma anillo): 0,671 de la circunferencia,   */
+      /* mismo inicio, misma duracion y mismo ease que el conteo, para que */
+      /* numero y proporcion aterricen como un solo golpe.                 */
+      /* C = 2*pi*59 = 370,71 ; offset final = 370,71 * (1 - 0,671)        */
+      /* ---------------------------------------------------------------- */
+      shell(k2, l2, 5.3);
+      countUp(n2, 67.1, 6.1, 2.3, pct);
+      tl.fromTo(arc, { strokeDashoffset: 370.71 }, { strokeDashoffset: 121.96, duration: 2.3, ease: "power3.out" }, 6.1);
+      tl.fromTo(k2, { borderColor: "rgba(233,238,247,0.14)" }, { borderColor: "#e9a33c", duration: 1.4, ease: "power2.out" }, 6.1);
+      /* ambient-glow-bloom detras del focal */
+      tl.fromTo(glow, { opacity: 0 }, { opacity: 1, duration: 2.2, ease: "power1.inOut" }, 7.3);
+      /* el anillo exterior cierra el gesto una vez el arco ha aterrizado */
+      tl.fromTo(halo, { opacity: 0 }, { opacity: 0.55, duration: 0.9, ease: "power1.inOut" }, 8.4);
+
+      /* coordinate-target-zoom (envoltorios anidados: fuera escala, dentro
+         traslada). Centro medido de la tarjeta focal en la reticula
+         1fr 1,45fr 1fr 1fr con hueco 26 sobre 1760 de ancho:
+         1fr = 378,0 ; focal = 548,1.
+         x = 80 + 378 + 26 + 274,05 = 758,05 ; y = 252 + 95 = 347.
+         Se recorre solo el 58 % del desplazamiento: inclinacion sobria,
+         sin sacar la cuarta tarjeta del cuadro. */
+      /* immediateRender:false en toda fase encadenada: si no, el estado
+         inicial de la ULTIMA fromTo se pinta en t=0 y el plano arranca
+         desplazado. */
+      var LEAN = 0.58;
+      var FOC_X = (960 - 758.05) * LEAN;
+      var FOC_Y = (540 - 347) * LEAN;
+      tl.fromTo(zo, { scale: 1 }, { scale: 1.07, duration: 2.8, ease: "power2.out" }, 6.3);
+      tl.fromTo(zi, { x: 0, y: 0 }, { x: FOC_X, y: FOC_Y, duration: 2.8, ease: "power2.out" }, 6.3);
+      tl.fromTo(zo, { scale: 1.07 }, { scale: 1, duration: 3.0, ease: "power2.inOut", immediateRender: false }, 10.4);
+      tl.fromTo(zi, { x: FOC_X, y: FOC_Y }, { x: 0, y: 0, duration: 3.0, ease: "power2.inOut", immediateRender: false }, 10.4);
+
+      /* KPI 3 — 195 categorias anatomicas */
+      shell(k3, l3, 9.6);
+      countUp(n3, 195, 10.3, 2.1, miles);
+      tl.fromTo(r3, { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power3.out" }, 10.3);
+
+      /* KPI 4 — 122 biomarcadores distintos */
+      shell(k4, l4, 13.4);
+      countUp(n4, 122, 14.0, 2.1, miles);
+      tl.fromTo(r4, { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power3.out" }, 14.0);
+
+      /* respiracion de camara entre el regreso y el empuje final: el plano
+         nunca queda quieto en la ventana 13,4-19,4. Cierra acelerando para
+         enlazar sin costura con el empuje lineal que viene detras. */
+      tl.fromTo(zo, { scale: 1 }, { scale: 1.012, duration: 6.0, ease: "sine.in", immediateRender: false }, 13.4);
+
+      /* ---------------------------------------------------------------- */
+      /* ESCENA 3 (16.5-29.0) — se levanta el eje y crecen las barras      */
+      /* ---------------------------------------------------------------- */
+      tl.fromTo(table, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, 16.5);
+      tl.fromTo(tchrome, { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power3.out" }, 16.5);
+      /* el eje se traza ANTES que los datos: es la linea desde la que las
+         barras divergen, malignos a un lado y benignos al otro */
+      tl.fromTo(axis, { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: "power2.inOut" }, 17.2);
+
+      tl.fromTo(thead, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 18.2);
+      tl.fromTo(hitems, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.09, ease: "power2.out" }, 18.35);
+
+      /* el bloom cede: la atencion pasa del KPI a la tabla, pero el foco
+         ambar sigue marcado por la cifra, el arco y el borde de la tarjeta */
+      tl.fromTo(glow, { opacity: 1 }, { opacity: 0.24, duration: 1.6, ease: "power1.inOut", immediateRender: false }, 18.8);
+      /* s6-h2 se apaga al abrirse la tabla: si no, el empuje de camara lo
+         lleva sobre el rotulo de esquina al final de la escena. */
+      tl.fromTo(h2, { opacity: 1 }, { opacity: 0, duration: 0.9, ease: "power2.inOut" }, 19.2);
+
+      /* waterfall-entry en cascada + stat-bars-and-fills: cada fila entra y
+         sus cuatro barras crecen desde el eje; la cifra exacta aterriza en
+         la punta de su barra. Escala comun 259 = 606 px para todas. */
+      var rowAt = [19.5, 20.5, 21.45, 22.35, 23.2];
+      for (var i = 0; i < rowAt.length; i++) {
+        var n = i + 1;
+        var row = q("#s6-row" + n);
+        var bars = qa("#s6-row" + n + " .s6-bar");
+        var valsM = qa("#s6-row" + n + " .s6-side-m .s6-v");
+        var valsB = qa("#s6-row" + n + " .s6-side-b .s6-v");
+        var t = rowAt[i];
+        tl.fromTo(row, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, t);
+        tl.fromTo(bars, { scaleX: 0 }, { scaleX: 1, duration: 0.85, stagger: 0.07, ease: "power3.out" }, t + 0.22);
+        tl.fromTo(valsM, { opacity: 0, x: 16 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.08, ease: "power2.out" }, t + 0.62);
+        tl.fromTo(valsB, { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.08, ease: "power2.out" }, t + 0.62);
+      }
+
+      tl.fromTo(cap, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 24.2);
+
+      /* la voz nombra primero los malignos y despues los benignos: cada
+         mitad del eje toma el turno y luego se devuelve la lectura entera */
+      tl.fromTo(sidesB, { opacity: 1 }, { opacity: 0.32, duration: 1.0, ease: "power1.inOut" }, 24.8);
+      tl.fromTo(sidesB, { opacity: 0.32 }, { opacity: 1, duration: 1.0, ease: "power1.inOut", immediateRender: false }, 26.5);
+      tl.fromTo(sidesM, { opacity: 1 }, { opacity: 0.4, duration: 1.0, ease: "power1.inOut" }, 26.5);
+      tl.fromTo(sidesM, { opacity: 0.4 }, { opacity: 1, duration: 0.9, ease: "power1.inOut", immediateRender: false }, 27.9);
+
+      /* multi-phase-camera, fase final: empuje lento, constante y sin resolver
+         sobre la tabla. Termina EXACTAMENTE en 29,0 s y con ease lineal, asi
+         que el plano sigue moviendose en el ultimo fotograma sin que ningun
+         tween sobrepase la marca (nunca es una salida). */
+      tl.fromTo(zo, { scale: 1.012 }, { scale: 1.058, duration: 9.6, ease: "none", immediateRender: false }, 19.4);
+      tl.fromTo(zi, { y: 0 }, { y: -32, duration: 9.6, ease: "none", immediateRender: false }, 19.4);
+
+      window.__timelines = window.__timelines || {};
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+      // porque es identica en todas y superpuesta no se nota.
+      tl.to("#s6-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.86);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+      tl.to(["#s6-clip-mundo", "#s6-clip-cromo"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 26.46);
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+      // que trae la escena siguiente.
+
+
+      tl.to("#s6-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.46);
+
+
+
+      window.__timelines[ID] = tl;
+    })();
   </script>
 </template>

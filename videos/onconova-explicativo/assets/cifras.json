@@ -1,0 +1,74 @@
+{
+ "kpi": {
+  "casos_ihq": 2076,
+  "pct_malignos": 67.1,
+  "categorias_anatomicas": 195,
+  "biomarcadores": 122,
+  "fuente": "core/informe_estadistico.py — identico al PDF pagina 1"
+ },
+ "tabla_malignidad": [
+  {
+   "columna": "IHQ_RECEPTOR_ESTROGENOS",
+   "nombre": "RECEPTOR DE ESTRÓGENO",
+   "mal_pos": 224,
+   "mal_neg": 104,
+   "ben_pos": 37,
+   "ben_neg": 14
+  },
+  {
+   "columna": "IHQ_HER2",
+   "nombre": "HER2",
+   "mal_pos": 60,
+   "mal_neg": 259,
+   "ben_pos": 1,
+   "ben_neg": 5
+  },
+  {
+   "columna": "IHQ_RECEPTOR_PROGESTERONA",
+   "nombre": "RECEPTOR DE PROGESTERONA",
+   "mal_pos": 159,
+   "mal_neg": 114,
+   "ben_pos": 23,
+   "ben_neg": 8
+  },
+  {
+   "columna": "IHQ_P16_ESTADO",
+   "nombre": "P16",
+   "mal_pos": 152,
+   "mal_neg": 51,
+   "ben_pos": 11,
+   "ben_neg": 37
+  },
+  {
+   "columna": "IHQ_KI-67",
+   "nombre": "Ki-67",
+   "mal_pos": 32,
+   "mal_neg": 3,
+   "ben_pos": 35,
+   "ben_neg": 3
+  },
+  {
+   "columna": "IHQ_PDL-1",
+   "nombre": "PDL-1",
+   "mal_pos": 0,
+   "mal_neg": 0,
+   "ben_pos": 0,
+   "ben_neg": 0
+  },
+  {
+   "columna": "IHQ_P16_PORCENTAJE",
+   "nombre": "P16 %",
+   "mal_pos": 0,
+   "mal_neg": 0,
+   "ben_pos": 0,
+   "ben_neg": 0
+  }
+ ],
+ "columnas_tabla": [
+  "BIOMARCADOR",
+  "MALIGNOS +",
+  "MALIGNOS -",
+  "BENIGNOS +",
+  "BENIGNOS -"
+ ]
+}

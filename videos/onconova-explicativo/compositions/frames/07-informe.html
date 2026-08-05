@@ -1,116 +1,304 @@
 <template>
-  <div
-    id="f07"
-    data-composition-id="f07"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="38"
-  >
+  <div data-hf-id="hf-qvp8" id="root" data-composition-id="07-informe" data-start="0" data-width="1920" data-height="1080" data-duration="46.89">
     <style>
-      #f07 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
+      #root {
+        position: relative; width: 1920px; height: 1080px; overflow: hidden;
+        background: #141d2b; color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
       }
-      #f07 .clip { position: absolute; inset: 0; }
-      #f07 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f07 .brand {
+      #root .clip { position: absolute; inset: 0; }
+      #root .s7-mono { font-family: "IBM Plex Mono", monospace; }
+
+      /* ---- fondo ---- */
+      #root .s7-stage { position: absolute; inset: 0; background: #141d2b; }
+      #root .s7-aliento {
+        position: absolute; inset: 0; pointer-events: none;
+        background:
+          radial-gradient(118% 78% at 50% 46%, rgba(45, 62, 94, 0.20) 0%,
+                          rgba(20, 29, 43, 0) 68%);
+        opacity: 0.52;
+      }
+      #root .s7-grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(233, 238, 247, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(233, 238, 247, 0.045) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.85;
+      }
+      #root .s7-hair {
+        position: absolute; left: 80px; right: 80px; top: 1004px; height: 1px;
+        background: rgba(233, 238, 247, 0.14); opacity: 0;
+      }
+
+      /* ---- EL VISOR ----
+         Recorta el recorrido a una ventana que NO llega a las esquinas. Antes
+         las páginas invadían la franja del rótulo y hubo que taparlas con un
+         degradado; ese parche se veía como una banda clara cruzando el cuadro.
+         Con el visor, el cromo se apoya siempre en el escenario y no hay nada
+         que tapar. */
+      #root .s7-visor {
+        position: absolute; left: 80px; top: 150px;
+        width: 1760px; height: 800px;
+        overflow: hidden;
+      }
+      /* la cámara: sin transform en CSS — lo pone GSAP */
+      #root .s7-world {
+        position: absolute; left: 0; top: 0;
+        width: 5547px; height: 1515px;
+        transform-origin: 0 0;
+      }
+      /* Hoja a 1071x1515 = la MITAD exacta del PNG de origen (2143x3031).
+         Deja 2x de margen: la cámara puede llegar a escala 2 sin pasar de 1:1,
+         que es donde empieza el desenfoque. */
+      #root .s7-sheet {
+        position: absolute; top: 0; width: 1071px; height: 1515px;
+        background: #f4f6fa;
+        box-shadow: 0 26px 60px rgba(20, 29, 43, 0.6);
+        opacity: 0;
+      }
+      #root .s7-sheet img {
+        display: block; width: 100%; height: 100%;
+        object-fit: fill;   /* la hoja y el PNG tienen la MISMA proporción */
+      }
+
+      /* EL ÚNICO ÁMBAR: el marco del bloque que se está nombrando */
+      #root .s7-foco {
+        position: absolute; border: 3px solid #e9a33c;
+        opacity: 0; pointer-events: none;
+      }
+
+      /* ---- cromo, siempre fuera del visor ---- */
+      #root .s7-h2 {
+        position: absolute; left: 80px; top: 52px;
+        font-size: 60px; font-weight: 900; letter-spacing: -0.03em;
+        opacity: 0;
+      }
+      #root .s7-brand {
         position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
-      #f07 .mark {
-        position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f07 h2 {
-        position: absolute; left: 80px; top: 140px;
-        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
-      }
-      #f07 .pages {
-        position: absolute; left: 80px; right: 80px; top: 290px;
-        display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px;
-      }
-      /* stand-in: cada bloque es una página REAL del PDF, rasterizada en el build */
-      #f07 .page {
-        background: #f4f6fa; height: 470px;
-        display: flex; align-items: flex-end; padding: 22px;
-        color: #6a7d9c; font-size: 17px;
-      }
-      #f07 .page.focal { outline: 4px solid #e9a33c; outline-offset: 6px; }
-      #f07 .cap { margin-top: 24px; }
-      #f07 .cap b {
-        display: block; font-size: 24px; font-weight: 900;
-        letter-spacing: 0.06em; margin-bottom: 12px;
-      }
-      #f07 .cap p { font-size: 20px; font-weight: 400; color: #8296b5; line-height: 1.45; }
-      #f07 .foot {
+      #root .s7-cap {
         position: absolute; left: 80px; bottom: 56px;
-        font-size: 26px; color: #8296b5;
+        font-size: 22px; letter-spacing: 0.16em; color: #e9eef7; opacity: 0;
+      }
+      #root .s7-mark {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
     </style>
 
-    <section class="clip" data-start="0" data-duration="38" data-track-index="1">
-      <h2>El informe estadístico</h2>
+    <!-- ================= fondo (pista 0) ================= -->
+    <div data-hf-id="hf-vjkl" id="s7-clip-fondo" class="clip" data-start="0" data-duration="46.89" data-track-index="0">
+      <div data-hf-id="hf-mrjb" class="s7-stage"></div>
+      <div data-hf-id="hf-9b8u" class="s7-aliento" id="s7-aliento"></div>
+      <div data-hf-id="hf-zrp8" class="s7-grid" id="s7-grid"></div>
+      <div data-hf-id="hf-7kzk" class="s7-hair" id="s7-hair"></div>
+    </div>
 
-      <div class="pages">
-        <div>
-          <div class="page"><span class="mono">página 1 del PDF real</span></div>
-          <div class="cap">
-            <b class="mono">01 · VISTAZO</b>
-            <p>Indicadores, reparto por sexo y los tres diagnósticos más frecuentes de cada uno.</p>
+    <!-- ================= el documento (pista 1) ================= -->
+    <div data-hf-id="hf-h1nu" id="s7-clip-doc" class="clip" data-start="0" data-duration="46.89" data-track-index="1">
+      <div data-hf-id="hf-4s9i" class="s7-visor" id="s7-visor">
+        <div data-hf-id="hf-d7xu" class="s7-world" id="s7-world">
+          <div data-hf-id="hf-pcin" class="s7-sheet" id="s7-h1" style="left: 0px">
+            <img data-hf-id="hf-p6qp" src="assets/informe/pagina-1.png" alt="Informe, página 1">
           </div>
-        </div>
-
-        <div>
-          <div class="page focal"><span class="mono">página 2 del PDF real</span></div>
-          <div class="cap">
-            <b class="mono">02 · PANORAMA</b>
-            <p>1.566 tumores · 436 hallazgos no neoplásicos · 74 sin diagnóstico específico.</p>
+          <div data-hf-id="hf-jcv7" class="s7-sheet" id="s7-h2s" style="left: 1119px">
+            <img data-hf-id="hf-ja9x" src="assets/informe/pagina-2.png" alt="Informe, página 2">
           </div>
-        </div>
-
-        <div>
-          <div class="page"><span class="mono">página 3 del PDF real</span></div>
-          <div class="cap">
-            <b class="mono">03 · DETALLE</b>
-            <p>Cada categoría neoplásica con su órgano principal y sus casos.</p>
+          <div data-hf-id="hf-4omy" class="s7-sheet" id="s7-h3" style="left: 2238px">
+            <img data-hf-id="hf-497t" src="assets/informe/pagina-3.png" alt="Informe, página 3">
           </div>
-        </div>
-
-        <div>
-          <div class="page"><span class="mono">página 4 del PDF real</span></div>
-          <div class="cap">
-            <b class="mono">04 · DETALLE</b>
-            <p>Continuación, con el reparto por sexo de cada categoría.</p>
+          <div data-hf-id="hf-lrlc" class="s7-sheet" id="s7-h4" style="left: 3357px">
+            <img data-hf-id="hf-43b1" src="assets/informe/pagina-4.png" alt="Informe, página 4">
           </div>
-        </div>
-
-        <div>
-          <div class="page"><span class="mono">página 5 del PDF real</span></div>
-          <div class="cap">
-            <b class="mono">05 · NO ONCOLÓGICO</b>
-            <p>Cierra con lo que no es tumor.</p>
+          <div data-hf-id="hf-la5e" class="s7-sheet" id="s7-h5" style="left: 4476px">
+            <img data-hf-id="hf-uoxt" src="assets/informe/pagina-5.png" alt="Informe, página 5">
           </div>
+          <div data-hf-id="hf-qhjm" class="s7-foco" id="s7-foco"></div>
         </div>
       </div>
+    </div>
 
-      <p class="foot">
-        Informe determinista: sin inteligencia artificial. Las mismas cifras siempre.
-      </p>
-
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">07 / 09 — EL INFORME</div>
-    </section>
+    <!-- ================= cromo (pista 2) ================= -->
+    <div data-hf-id="hf-z4hb" id="s7-clip-cromo" class="clip" data-start="0" data-duration="46.89" data-track-index="2">
+      <div data-hf-id="hf-y2bq" class="s7-h2" id="s7-titular">El informe estadístico</div>
+      <div data-hf-id="hf-jac9" class="s7-brand s7-mono" id="s7-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <!-- Rótulos apilados en el mismo sitio: se funden con tweens, sin
+           callbacks. Un tl.call() puede no dispararse si el renderizador
+           salta directamente a un fotograma posterior. -->
+      <div data-hf-id="hf-ggyu" class="s7-cap s7-mono" id="s7-cap-0">CINCO PÁGINAS</div>
+      <div data-hf-id="hf-6u7q" class="s7-cap s7-mono" id="s7-cap-1">PÁGINA 1 · DE UN VISTAZO</div>
+      <div data-hf-id="hf-jvin" class="s7-cap s7-mono" id="s7-cap-2">PÁGINA 2 · PANORAMA GENERAL</div>
+      <div data-hf-id="hf-frxl" class="s7-cap s7-mono" id="s7-cap-3">PÁGINA 3 · DIAGNÓSTICOS EN DETALLE</div>
+      <div data-hf-id="hf-kh47" class="s7-cap s7-mono" id="s7-cap-4">PÁGINA 4 · DIAGNÓSTICOS EN DETALLE</div>
+      <div data-hf-id="hf-do0d" class="s7-cap s7-mono" id="s7-cap-5">PÁGINA 5 · HALLAZGOS NO ONCOLÓGICOS</div>
+      <div data-hf-id="hf-kdj7" class="s7-cap s7-mono" id="s7-cap-6">INFORME DETERMINISTA · SIN IA</div>
+      <div data-hf-id="hf-4g94" class="s7-mark s7-mono" id="s7-mark">07 / 09 — EL INFORME</div>
+    </div>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f07"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "07-informe";
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var VW = 1760, VH = 800;            // el visor
+      var SW = 1071, SH = 1515, GAP = 48; // la hoja
+      var MAX = 2.0;                      // 1:1 contra el PNG de origen
+
+      // Encuadra un rectángulo del mundo dentro del visor. Nunca amplía por
+      // encima de MAX: pasado ese punto se estiraría el mapa de bits y el
+      // texto se volvería papilla, que es justo el fallo que esto corrige.
+      function encuadre(x, y, w, h) {
+        var s = Math.min(VW / w, VH / h, MAX);
+        return { scale: s, x: -x * s + (VW - w * s) / 2, y: -y * s + (VH - h * s) / 2 };
+      }
+      function hoja(i) { return i * (SW + GAP); }
+      // rect de un bloque de página, en fracciones de la hoja
+      function bloque(i, y0, y1, m) {
+        m = m === undefined ? 0.06 : m;
+        return encuadre(hoja(i) + SW * m, SH * y0, SW * (1 - 2 * m), SH * (y1 - y0));
+      }
+
+      var TODAS = encuadre(0, 0, 5 * SW + 4 * GAP, SH);
+      var P1 = bloque(0, 0.02, 0.30);   // los indicadores
+      var P2A = encuadre(hoja(1), 0, SW, SH);          // la página entera
+      var P2B = bloque(1, 0.46, 0.68);  // la tabla de cobertura
+      var P3 = bloque(2, 0.02, 0.34);
+      var P4 = bloque(3, 0.02, 0.34);
+      var P5 = bloque(4, 0.02, 0.34);
+
+      function mover(dest, t, dur) {
+        tl.to("#s7-world", {
+          scale: dest.scale, x: dest.x, y: dest.y,
+          duration: dur, ease: "power2.inOut"
+        }, t);
+      }
+      // marco ámbar sobre el bloque que se nombra, en coordenadas del mundo
+      function foco(i, y0, y1, t, dur, m) {
+        m = m === undefined ? 0.06 : m;
+        tl.set("#s7-foco", {
+          left: hoja(i) + SW * m, top: SH * y0,
+          width: SW * (1 - 2 * m), height: SH * (y1 - y0)
+        }, t);
+        tl.fromTo("#s7-foco", { opacity: 0 },
+          { opacity: 1, duration: 0.5, ease: "power2.out" }, t);
+        tl.to("#s7-foco", { opacity: 0, duration: 0.45, ease: "power2.in" }, t + dur);
+      }
+
+      // ---- respiración de fondo: 47s cubiertos, sin fotograma congelado ----
+      tl.to("#s7-aliento", { opacity: 0.86, duration: 4.7, repeat: 9,
+        yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to("#s7-grid", { opacity: 0.6, duration: 7.8333, repeat: 5,
+        yoyo: true, ease: "sine.inOut" }, 0);
+
+      // ---- estado inicial de la cámara: el plano general ----
+      tl.set("#s7-world", { scale: TODAS.scale, x: TODAS.x, y: TODAS.y }, 0);
+
+      tl.fromTo("#s7-titular", { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
+      tl.fromTo("#s7-mark", { opacity: 0 }, { opacity: 1, duration: 0.7 }, 0.9);
+      // cada rótulo entra en su parada y sale cuando llega el siguiente
+      function rotulo(i, t, tFin) {
+        tl.fromTo("#s7-cap-" + i, { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, t);
+        if (tFin !== undefined) {
+          tl.to("#s7-cap-" + i, { opacity: 0, duration: 0.3,
+            ease: "power2.in" }, tFin - 0.3);
+        }
+      }
+      rotulo(0, 1.1, 4.2);
+      rotulo(1, 4.2, 11.1);
+      rotulo(2, 11.1, 25.9);
+      rotulo(3, 25.9, 31.1);
+      rotulo(4, 31.1, 34.5);
+      rotulo(5, 34.5, 39.0);
+      rotulo(6, 39.0);
+      tl.fromTo("#s7-hair", { opacity: 0 }, { opacity: 1, duration: 1.0 }, 1.3);
+
+      // las cinco hojas entran escalonadas: "un informe de cinco páginas"
+      ["#s7-h1", "#s7-h2s", "#s7-h3", "#s7-h4", "#s7-h5"].forEach(function (s, i) {
+        tl.fromTo(s, { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, 0.5 + i * 0.22);
+      });
+
+      // el titular se apaga y entra el rótulo de marca: empieza el recorrido
+      tl.to("#s7-titular", { opacity: 0, duration: 0.7, ease: "power2.inOut" }, 3.4);
+      tl.fromTo("#s7-brand", { opacity: 0 },
+        { opacity: 1, duration: 0.8, ease: "power1.out" }, 4.1);
+
+      // ---- el recorrido, parada por parada ----
+      mover(P1, 3.9, 1.5);
+      foco(0, 0.02, 0.30, 5.0, 5.0);
+
+      mover(P2A, 10.8, 1.4);   // la página 2 entera…
+      mover(P2B, 15.2, 1.6);   // …y dentro, la tabla de cobertura
+      foco(1, 0.46, 0.68, 16.4, 8.4);
+
+      mover(P3, 25.6, 1.5);
+      foco(2, 0.02, 0.34, 26.6, 3.4);
+
+      mover(P4, 30.8, 1.4);
+      foco(3, 0.02, 0.34, 31.7, 2.2);
+
+      mover(P5, 34.2, 1.4);
+      foco(4, 0.02, 0.34, 35.1, 2.3);
+
+      // vuelta al plano general para el cierre
+      mover(TODAS, 38.4, 2.0);
+
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+
+      // porque es identica en todas y superpuesta no se nota.
+
+      tl.to("#s7-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 45.59);
+
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+
+      tl.to(["#s7-clip-doc", "#s7-clip-cromo"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 45.19);
+
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+
+      // que trae la escena siguiente.
+
+
+
+      tl.to("#s7-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 45.19);
+
+
+
+
+      window.__timelines[ID] = tl;
+    })();
   </script>
 </template>

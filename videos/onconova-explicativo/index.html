@@ -1,51 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1920, height=1080">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>ONCONOVA — Gestor Oncológico HUV</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1920px; height: 1080px;
+        overflow: hidden; background: #141d2b;
       }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #000;
+      #root {
+        position: relative; width: 1920px; height: 1080px;
+        overflow: hidden; background: #141d2b;
       }
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      code,
-      pre,
-      .monospace {
-        font-family: "JetBrains Mono", monospace;
+      #root > div[data-composition-src] {
+        position: absolute; inset: 0; width: 1920px; height: 1080px;
+        transform-origin: 50% 50%;
       }
     </style>
   </head>
   <body>
-    <div data-hf-id="hf-199x" id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="1080">
-      
-      
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="211.986"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="esc-01-pregunta"
+        data-composition-id="01-pregunta"
+        data-composition-src="compositions/frames/01-pregunta.html"
+        data-start="0"
+        data-duration="9.071"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
 
-      <!--
-        Add your clips here. Example:
-        <div id="title" class="clip" data-start="0" data-duration="5" data-track-index="1"
-             style="font-size: 64px; color: #fff; padding: 40px">
-          Hello World
-        </div>
-      -->
+      <div
+        id="esc-02-encerrado"
+        data-composition-id="02-encerrado"
+        data-composition-src="compositions/frames/02-encerrado.html"
+        data-start="7.921"
+        data-duration="17.773"
+        data-track-index="2"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-03-onconova"
+        data-composition-id="03-onconova"
+        data-composition-src="compositions/frames/03-onconova.html"
+        data-start="24.544"
+        data-duration="11.355"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-04-circuito"
+        data-composition-id="04-circuito"
+        data-composition-src="compositions/frames/04-circuito.html"
+        data-start="34.749"
+        data-duration="33.085"
+        data-track-index="2"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-05-datos"
+        data-composition-id="05-datos"
+        data-composition-src="compositions/frames/05-datos.html"
+        data-start="66.684"
+        data-duration="27.841"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-06-analisis"
+        data-composition-id="06-analisis"
+        data-composition-src="compositions/frames/06-analisis.html"
+        data-start="93.375"
+        data-duration="28.16"
+        data-track-index="2"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-07-informe"
+        data-composition-id="07-informe"
+        data-composition-src="compositions/frames/07-informe.html"
+        data-start="120.385"
+        data-duration="46.888"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-08-verificacion"
+        data-composition-id="08-verificacion"
+        data-composition-src="compositions/frames/08-verificacion.html"
+        data-start="166.123"
+        data-duration="27.009"
+        data-track-index="2"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <div
+        id="esc-09-cierre"
+        data-composition-id="09-cierre"
+        data-composition-src="compositions/frames/09-cierre.html"
+        data-start="191.983"
+        data-duration="20.003"
+        data-track-index="1"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+
+      <!-- La voz y el colchón viven en el root: el runtime no reproduce
+           media que esté dentro de una sub-composición. -->
+      <audio
+        id="voz-01"
+        class="clip"
+        src=".media/voice/linea-01.wav"
+        data-start="0"
+        data-duration="7.571"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-02"
+        class="clip"
+        src=".media/voice/linea-02.wav"
+        data-start="7.921"
+        data-duration="16.273"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-03"
+        class="clip"
+        src=".media/voice/linea-03.wav"
+        data-start="24.544"
+        data-duration="9.855"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-04"
+        class="clip"
+        src=".media/voice/linea-04.wav"
+        data-start="34.749"
+        data-duration="31.585"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-05"
+        class="clip"
+        src=".media/voice/linea-05.wav"
+        data-start="66.684"
+        data-duration="26.341"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-06"
+        class="clip"
+        src=".media/voice/linea-06.wav"
+        data-start="93.375"
+        data-duration="26.66"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-07"
+        class="clip"
+        src=".media/voice/linea-07.wav"
+        data-start="120.385"
+        data-duration="45.388"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-08"
+        class="clip"
+        src=".media/voice/linea-08.wav"
+        data-start="166.123"
+        data-duration="25.509"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="voz-09"
+        class="clip"
+        src=".media/voice/linea-09.wav"
+        data-start="191.983"
+        data-duration="17.573"
+        data-track-index="10"
+      ></audio>
+      <audio
+        id="colchon"
+        class="clip"
+        src=".media/bgm/colchon.wav"
+        data-start="0"
+        data-duration="211.986"
+        data-track-index="11"
+      ></audio>
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.from("#title", { opacity: 0, y: -50, duration: 1 }, 0);
+  tl.fromTo("#esc-02-encerrado", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 7.921);
+  tl.fromTo("#esc-03-onconova", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 24.544);
+  tl.fromTo("#esc-04-circuito", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 34.749);
+  tl.fromTo("#esc-05-datos", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 66.684);
+  tl.fromTo("#esc-06-analisis", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 93.375);
+  tl.fromTo("#esc-07-informe", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 120.385);
+  tl.fromTo("#esc-08-verificacion", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 166.123);
+  tl.fromTo("#esc-09-cierre", { opacity: 0 },
+    { opacity: 1, duration: 1.15, ease: "sine.inOut",
+      immediateRender: false }, 191.983);
       window.__timelines["main"] = tl;
     </script>
   </body>

@@ -1,0 +1,22 @@
+{
+  "scene": "05-datos",
+  "duration_s": 29,
+  "rules": [
+    "cursor-click-ripple",
+    "discrete-text-sequence",
+    "dynamic-content-sequencing",
+    "waterfall-entry",
+    "scale-swap-transition",
+    "card-morph-anchor",
+    "spring-pop-entrance",
+    "coordinate-target-zoom"
+  ],
+  "exit": {
+    "vector": "still pushing in — the locked stage is mid element-scale zoom toward the opened ficha (smoothstep from 26.4s, unfinished at the cut): panel widening ~8.4 px/s, its centre rising ~0.8 px/s, drifting ~0.2 px/s left; cursor parked on the last biomarker chip and carried by the same ~0.5 px/s ambient drift",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "up ~72 px/s — the Visualizador panel is mid-entrance at frame 0 (opacity 0 at t=0, 0.99 by 0.5s; y+14 to 0 and scale 0.99 to 1 over 0.72s power3.out, so its width grows ~71 px/s and it drifts ~7 px/s right); camera locked otherwise",
+    "from_rest": false
+  }
+}

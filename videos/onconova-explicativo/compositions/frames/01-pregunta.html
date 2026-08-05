@@ -1,54 +1,170 @@
 <template>
-  <div
-    id="f01"
-    data-composition-id="f01"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="16"
-  >
+  <div data-hf-id="hf-2zyp" id="root" data-composition-id="01-pregunta" data-start="0" data-width="1920" data-height="1080" data-duration="9.07">
     <style>
-      #f01 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
+      #root {
+        position: relative; width: 1920px; height: 1080px; overflow: hidden;
+        background: #141d2b; color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
       }
-      #f01 .clip { position: absolute; inset: 0; }
-      #f01 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f01 .mark {
+      #root .clip { position: absolute; inset: 0; }
+      #root .s1-mono { font-family: "IBM Plex Mono", monospace; }
+
+      /* ---- fondo: escenario + 3 decorativos con una respiración compartida ---- */
+      #root .s1-stage { position: absolute; inset: 0; background: #141d2b; }
+      #root .s1-aliento {
+        position: absolute; inset: 0; pointer-events: none; z-index: 1;
+        background:
+          radial-gradient(118% 78% at 50% 46%, rgba(45, 62, 94, 0.20) 0%,
+                          rgba(20, 29, 43, 0) 68%);
+        opacity: 0.52;
+      }
+      #root .s1-radial {
+        position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 44%,
+          rgba(45, 62, 94, 0.82) 0%, rgba(45, 62, 94, 0.26) 34%,
+          rgba(45, 62, 94, 0) 64%);
+        opacity: 0.6;
+      }
+      #root .s1-grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(233, 238, 247, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(233, 238, 247, 0.045) 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.85;
+      }
+      #root .s1-hair {
+        position: absolute; left: 300px; right: 300px; top: 862px; height: 1px;
+        background: rgba(233, 238, 247, 0.14);
+        transform-origin: center;
+        opacity: 0;
+      }
+
+      /* ---- la cartela: membrete de la casa, centrado en el encuadre ---- */
+      #root .s1-card {
+        position: absolute; inset: 0;
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: center;
+        text-align: center;
+      }
+      #root .s1-logo {
+        display: block; width: 306px; height: auto; margin: 0 0 46px;
+        opacity: 0;
+      }
+      #root .s1-casa {
+        font-size: 60px; font-weight: 900; letter-spacing: -0.025em;
+        line-height: 1.08; opacity: 0;
+      }
+      #root .s1-ese {
+        margin-top: 18px; font-size: 22px; letter-spacing: 0.2em;
+        color: #8296b5; opacity: 0;
+      }
+      /* EL ÚNICO ÁMBAR DE LA ESCENA — el foco institucional */
+      #root .s1-plinto {
+        width: 232px; height: 5px; background: #e9a33c;
+        margin: 44px 0 38px; transform-origin: center;
+        opacity: 0;
+      }
+      #root .s1-area {
+        font-size: 25px; letter-spacing: 0.24em; color: #e9eef7;
+        line-height: 1.9; opacity: 0;
+      }
+      #root .s1-mark {
         position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f01 .stack {
-        position: absolute; left: 200px; top: 300px; width: 1400px;
-      }
-      #f01 .q {
-        font-size: 62px; font-weight: 400; line-height: 1.42;
-        letter-spacing: -0.02em; margin-bottom: 26px;
-      }
-      #f01 .caret {
-        display: inline-block; width: 26px; height: 62px;
-        background: #e9a33c; vertical-align: -12px; margin-left: 10px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
     </style>
 
-    <section class="clip" data-start="0" data-duration="16" data-track-index="1">
-      <div class="stack">
-        <p class="q">¿Cuántos carcinomas de mama diagnosticamos el año pasado?</p>
-        <p class="q">¿En cuántos se pidió HER2?</p>
-        <p class="q">¿Y cuántos dieron positivo?<span class="caret"></span></p>
+    <!-- ================= fondo (pista 0) ================= -->
+    <div data-hf-id="hf-nupi" id="s1-clip-fondo" class="clip" data-start="0" data-duration="9.07" data-track-index="0">
+      <div data-hf-id="hf-tab5" class="s1-stage"></div>
+      <div data-hf-id="hf-5u86" class="s1-aliento" id="s1-aliento"></div>
+      <div data-hf-id="hf-5ju2" class="s1-radial" id="s1-radial"></div>
+      <div data-hf-id="hf-ikq8" class="s1-grid" id="s1-grid"></div>
+      <div data-hf-id="hf-xw3s" class="s1-hair" id="s1-hair"></div>
+    </div>
+
+    <!-- ================= cartela institucional (pista 1) ================= -->
+    <section data-hf-id="hf-v0gd" id="s1-clip-cartela" class="clip" data-start="0" data-duration="9.07" data-track-index="1">
+      <div data-hf-id="hf-2v1o" class="s1-card" id="s1-card">
+        <img data-hf-id="hf-w0u1" class="s1-logo" id="s1-logo" src="assets/marca/huv-isotipo.png" alt="Hospital Universitario del Valle">
+        <div data-hf-id="hf-9l21" class="s1-casa" id="s1-casa">HOSPITAL UNIVERSITARIO DEL VALLE</div>
+        <div data-hf-id="hf-n4s5" class="s1-ese s1-mono" id="s1-ese">EVARISTO GARCÍA E.S.E.</div>
+        <div data-hf-id="hf-kzpo" class="s1-plinto" id="s1-plinto"></div>
+        <div data-hf-id="hf-585d" class="s1-area s1-mono" id="s1-area">
+          ÁREA DE CIRUGÍA ONCOLÓGICA<br data-hf-id="hf-x5px">SERVICIO DE PATOLOGÍA
+        </div>
       </div>
-      <div class="mark mono">01 / 09 — LA PREGUNTA</div>
+
+      <div data-hf-id="hf-cpl1" class="s1-mark s1-mono" id="s1-mark">01 / 09 — APERTURA</div>
     </section>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f01"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "01-pregunta";
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // Respiración de fondo: cubre los 13s completos, sin fotograma congelado.
+      tl.to("#s1-aliento", { opacity: 0.86, duration: 4.3333, repeat: 2,
+        yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to("#s1-radial", { opacity: 0.78, duration: 6.5, repeat: 1,
+        yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to("#s1-grid", { opacity: 0.62, duration: 6.5, repeat: 1,
+        yoyo: true, ease: "sine.inOut" }, 0);
+
+      // La casa entra primero. Sin rebote: es un membrete, no un reclamo.
+      tl.fromTo("#s1-logo", { opacity: 0, y: 24, scale: 0.968 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.45, ease: "power3.out" }, 0.4);
+      tl.fromTo("#s1-casa", { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1.1, ease: "power3.out" }, 1.5);
+      tl.fromTo("#s1-ese", { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 2.4);
+
+      // el plinto ámbar: el foco, trazado de dentro afuera
+      tl.fromTo("#s1-plinto", { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.95, ease: "power3.inOut" }, 3.2);
+      tl.fromTo("#s1-area", { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 1.05, ease: "power2.out" }, 4.0);
+      tl.fromTo("#s1-mark", { opacity: 0 },
+        { opacity: 1, duration: 0.8, ease: "power1.out" }, 4.9);
+      tl.fromTo("#s1-hair", { opacity: 0, scaleX: 0.25 },
+        { opacity: 1, scaleX: 1, duration: 1.5, ease: "power2.inOut" }, 6.2);
+
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+
+      // porque es identica en todas y superpuesta no se nota.
+
+      tl.to("#s1-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 7.77);
+
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+
+      tl.to(["#s1-clip-cartela"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 7.37);
+
+
+
+      window.__timelines[ID] = tl;
+    })();
   </script>
 </template>

@@ -1,94 +1,564 @@
 <template>
-  <div
-    id="f02"
-    data-composition-id="f02"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="22"
-  >
+  <div id="root" data-composition-id="02-encerrado" data-start="0" data-width="1920" data-height="1080" data-duration="17.77">
     <style>
-      #f02 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
+      /* ── 02-encerrado · 19s · foco ámbar: el contador ──────────────────── */
+      #root {
+        position: absolute; inset: 0; width: 1920px; height: 1080px;
+        overflow: hidden; color: #e9eef7;
         font-family: "Montserrat", sans-serif;
         font-variant-numeric: tabular-nums;
+        -webkit-font-smoothing: antialiased;
       }
-      #f02 .clip { position: absolute; inset: 0; }
-      #f02 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f02 .mark {
-        position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+      #root .clip { position: absolute; inset: 0; }
+      #root .f02-mono { font-family: "IBM Plex Mono", monospace; }
+
+      /* ── escenario y sus tres decorativos ─────────────────────────────── */
+      #root .f02-suelo { position: absolute; inset: 0; background: #141d2b; }
+      #root .f02-aliento {
+        position: absolute; inset: 0; z-index: 1;
+        background: radial-gradient(118% 78% at 50% 46%,
+          rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+        opacity: 0.52;
       }
-      /* stand-in: las miniaturas de informe son bloques planos */
-      #f02 .wall {
+      #root .f02-glow {
+        position: absolute; inset: -12%;
+        background: radial-gradient(1020px 800px at 50% 50%,
+          rgba(45, 62, 94, 0.80), rgba(45, 62, 94, 0) 70%);
+        transform-origin: 50% 50%;
+      }
+      #root .f02-grid {
+        position: absolute; inset: -60px;
+        background-image:
+          linear-gradient(to right, rgba(233, 238, 247, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(233, 238, 247, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        transform-origin: 50% 50%;
+      }
+      #root .f02-hrule {
+        position: absolute; left: 0; right: 0; top: 838px; height: 1px;
+        transform-origin: 50% 50%;
+        background: linear-gradient(to right,
+          rgba(233, 238, 247, 0) 0%, rgba(233, 238, 247, 0.14) 16%,
+          rgba(233, 238, 247, 0.14) 84%, rgba(233, 238, 247, 0) 100%);
+      }
+
+      /* ── la pila ──────────────────────────────────────────────────────────
+         Tres profundidades reales: tamaño, opacidad, desenfoque y sombra
+         distintos. La sombra es del color del escenario, así que solo se ve
+         cuando una lámina cae SOBRE otra: ahí está el volumen. */
+      #root .f02-pila, #root .f02-respira { position: absolute; inset: 0; }
+      #root .f02-respira { transform-origin: 50% 50%; }
+      #root .f02-capa { position: absolute; inset: 0; }
+      #root .f02-doc {
+        position: absolute; left: 0; top: 0;
+        background: #f4f6fa; overflow: hidden; opacity: 0;
+        transform-origin: 50% 50%;
+      }
+      #root .f02-bar { position: absolute; left: 0; right: 0; top: 0; background: #2d3e5e; }
+      #root .f02-doc::after {
+        content: ""; position: absolute; left: 12%; width: 46%; height: 4%;
+        background: rgba(34, 48, 74, 0.62);
+      }
+      #root .f02-ln {
+        position: absolute; left: 12%; right: 12%;
+        background-image: repeating-linear-gradient(to bottom,
+          rgba(34, 48, 74, 0.46) 0 3px, transparent 3px 11px);
+      }
+      #root .f02-doc:nth-child(3n) .f02-ln {
+        background-image: repeating-linear-gradient(to bottom,
+          rgba(34, 48, 74, 0.38) 0 3px, transparent 3px 14px);
+      }
+      #root .f02-doc:nth-child(4n) .f02-ln {
+        right: 34%;
+        background-image: repeating-linear-gradient(to bottom,
+          rgba(34, 48, 74, 0.42) 0 2px, transparent 2px 9px);
+      }
+      #root .f02-doc:nth-child(5n)::after { width: 62%; }
+
+      #root .f02-capa-fondo .f02-doc {
+        width: 110px; height: 144px; filter: blur(2.4px);
+        box-shadow: 0 9px 18px rgba(20, 29, 43, 0.72), 0 0 0 1px rgba(45, 62, 94, 0.45);
+      }
+      #root .f02-capa-fondo .f02-bar { height: 5px; }
+      #root .f02-capa-fondo .f02-ln { top: 26px; bottom: 12px; }
+      #root .f02-capa-fondo .f02-doc::after { top: 14px; height: 4px; }
+
+      #root .f02-capa-media .f02-doc {
+        width: 152px; height: 198px; filter: blur(0.7px);
+        box-shadow: 0 15px 28px rgba(20, 29, 43, 0.78), 0 0 0 1px rgba(45, 62, 94, 0.5);
+      }
+      #root .f02-capa-media .f02-bar { height: 8px; }
+      #root .f02-capa-media .f02-ln { top: 36px; bottom: 16px; }
+      #root .f02-capa-media .f02-doc::after { top: 19px; height: 5px; }
+
+      #root .f02-capa-frente .f02-doc {
+        width: 204px; height: 266px;
+        box-shadow: 0 26px 46px rgba(20, 29, 43, 0.82), 0 0 0 1px rgba(45, 62, 94, 0.55);
+      }
+      #root .f02-capa-frente .f02-bar { height: 11px; }
+      #root .f02-capa-frente .f02-ln { top: 48px; bottom: 22px; }
+      #root .f02-capa-frente .f02-doc::after { top: 26px; height: 6px; }
+
+      #root .f02-capa-mordida .f02-doc {
+        width: 216px; height: 282px;
+        box-shadow: 0 34px 60px rgba(20, 29, 43, 0.86), 0 0 0 1px rgba(45, 62, 94, 0.6);
+      }
+      #root .f02-capa-mordida .f02-bar { height: 12px; }
+      #root .f02-capa-mordida .f02-ln { top: 52px; bottom: 24px; }
+      #root .f02-capa-mordida .f02-doc::after { top: 28px; height: 6px; }
+
+      /* ── el cierre: viñeta radial, no una banda ───────────────────────── */
+      #root .f02-vineta {
+        position: absolute; inset: 0; opacity: 0;
+        background: radial-gradient(88% 82% at 50% 49%,
+          rgba(20, 29, 43, 0) 0%, rgba(20, 29, 43, 0) 40%,
+          rgba(20, 29, 43, 0.58) 76%, rgba(20, 29, 43, 0.9) 100%);
+      }
+
+      /* ── el claro: la única superficie legible que queda ───────────────── */
+      #root .f02-claro-wrap {
         position: absolute; inset: 0;
-        display: grid;
-        grid-template-columns: repeat(10, 1fr);
-        grid-auto-rows: 176px;
-        gap: 18px; padding: 40px;
+        display: flex; align-items: center; justify-content: center;
       }
-      #f02 .doc { border: 1px solid rgba(233,238,247,.14); }
-      #f02 .center {
-        position: absolute; left: 50%; top: 50%;
-        transform: translate(-50%, -50%);
-        width: 1080px; padding: 64px 72px;
-        background: #141d2b; border: 1px solid rgba(233,238,247,.14);
-        text-align: center;
+      #root .f02-claro {
+        width: 1180px; padding: 44px 72px; background: #141d2b;
+        border: 1px solid rgba(233, 238, 247, 0.14);
+        box-shadow: 0 46px 140px rgba(20, 29, 43, 0.92);
+        text-align: center; transform-origin: 50% 50%;
       }
-      #f02 h2 {
-        font-size: 84px; font-weight: 900; letter-spacing: -0.03em;
-        line-height: 1.1; margin-bottom: 40px;
+      /* la cifra entera cabe holgada en una línea (1036px útiles ≈ 932px de texto) */
+      #root .f02-contador {
+        font-size: 32px; font-weight: 700; color: #e9a33c;
+        letter-spacing: 0.02em; line-height: 1.3; margin-bottom: 26px;
+        text-shadow: 0 0 26px rgba(233, 163, 60, 0.28);
       }
-      #f02 .counter {
-        font-size: 44px; font-weight: 700; color: #e9a33c;
-        letter-spacing: 0.02em;
+      #root .f02-grp { display: inline-block; }
+      /* la escala del count-up va sobre las cifras y anclada a su borde
+         derecho: así crecen contra su rótulo y la línea no se mueve */
+      #root .f02-num {
+        display: inline-block; text-align: right; transform-origin: 100% 50%;
       }
-      #f02 .sub {
-        margin-top: 22px; font-size: 26px; color: #8296b5; font-weight: 400;
+      /* ancho congelado en px: 'ch' ignora el letter-spacing y la línea bailaba */
+      #root .f02-g1 .f02-num { min-width: 60px; }
+      #root .f02-g2 .f02-num,
+      #root .f02-g3 .f02-num { min-width: 120px; }
+      /* el separador va con padding, no con espacios: al ser inline-block el
+         navegador se come los espacios de dentro y la línea salía pegada */
+      #root .f02-sep { display: inline-block; padding: 0 0.55em; }
+      #root .f02-titular {
+        font-size: 80px; font-weight: 900; letter-spacing: -0.03em;
+        line-height: 1.1; color: #e9eef7; opacity: 0;
+      }
+
+      #root .f02-marca {
+        position: absolute; bottom: 56px; right: 80px;
+        font-size: 20px; letter-spacing: 0.16em; color: #8296b5; opacity: 0;
       }
     </style>
 
-    <section class="clip" data-start="0" data-duration="22" data-track-index="1">
-      <div class="wall">
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div><div class="doc"></div><div class="doc"></div>
-        <div class="doc"></div>
+    <!-- ── pista 0 · escenario ────────────────────────────────────────── -->
+    <div id="f02-encerrado-fondo" class="clip" data-start="0" data-duration="17.77" data-track-index="0">
+      <div class="f02-suelo"></div>
+      <div id="f02-encerrado-aliento" class="f02-aliento"></div>
+      <div id="f02-encerrado-decor">
+        <div id="f02-encerrado-glow" class="f02-glow"></div>
+        <div id="f02-encerrado-grid" class="f02-grid"></div>
+        <div id="f02-encerrado-hrule" class="f02-hrule"></div>
       </div>
+    </div>
 
-      <div class="center">
-        <h2>El dato existe.<br />Está en PDF.</h2>
-        <p class="counter mono">765 INFORMES · 36.243 PÁGINAS · 22.547 ESTUDIOS</p>
-        <p class="sub">Un PDF se lee. No se consulta.</p>
+    <!-- ── pista 1 · la pila: 88 láminas en tres profundidades ────────── -->
+    <div id="f02-encerrado-capa-pila" class="clip" data-start="0" data-duration="17.77" data-track-index="1">
+      <div id="f02-encerrado-pila" class="f02-pila">
+        <div id="f02-encerrado-respira" class="f02-respira">
+          <div id="f02-encerrado-capa-fondo" class="f02-capa f02-capa-fondo">
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+          </div>
+          <div id="f02-encerrado-capa-media" class="f02-capa f02-capa-media">
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+          </div>
+          <div id="f02-encerrado-capa-frente" class="f02-capa f02-capa-frente">
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="mark mono">02 / 09 — EL PROBLEMA</div>
-    </section>
+    <!-- ── pista 2 · el cierre ────────────────────────────────────────── -->
+    <div id="f02-encerrado-capa-vineta" class="clip" data-start="0" data-duration="17.77" data-track-index="2">
+      <div id="f02-encerrado-vineta" class="f02-vineta"></div>
+    </div>
+
+    <!-- ── pista 3 · el claro y su contador ───────────────────────────── -->
+    <div id="f02-encerrado-escena" class="clip" data-start="0" data-duration="17.77" data-track-index="3">
+      <div class="f02-claro-wrap">
+        <div id="f02-encerrado-claro" class="f02-claro">
+          <p id="f02-encerrado-contador" class="f02-contador f02-mono"><span class="f02-grp f02-g1"><span class="f02-num">0</span> INFORMES</span><span class="f02-sep f02-s1"> · </span><span class="f02-grp f02-g2"><span class="f02-num">0</span> PÁGINAS</span><span class="f02-sep f02-s2"> · </span><span class="f02-grp f02-g3"><span class="f02-num">0</span> ESTUDIOS</span></p>
+          <h2 id="f02-encerrado-titular" class="f02-titular">SOLO LECTURA</h2>
+        </div>
+      </div>
+      <div id="f02-encerrado-marca" class="f02-marca f02-mono">02 / 09 — EL PROBLEMA</div>
+    </div>
+
+    <!-- ── pista 4 · las seis láminas que muerden el claro ────────────── -->
+    <div id="f02-encerrado-capa-cierre" class="clip" data-start="0" data-duration="17.77" data-track-index="4">
+      <div id="f02-encerrado-capa-mordida" class="f02-capa f02-capa-mordida">
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+        <div class="f02-doc"><i class="f02-bar"></i><i class="f02-ln"></i></div>
+      </div>
+    </div>
   </div>
 
   <script>
     window.__timelines = window.__timelines || {};
-    window.__timelines["f02"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "02-encerrado";
+      var D = 19;
+      var tl = gsap.timeline({ paused: true });
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+      // porque es identica en todas y superpuesta no se nota.
+      tl.to("#f02-encerrado-marca", { opacity: 0, duration: 0.5, ease: "power2.in" }, 16.47);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+      tl.to(["#f02-encerrado-capa-pila", "#f02-encerrado-capa-vineta", "#f02-encerrado-escena", "#f02-encerrado-capa-cierre"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 16.07);
+
+
+      window.__timelines[ID] = tl;
+
+      var root = document.querySelector('[data-composition-id="' + ID + '"]');
+      if (!root) return;
+
+      var glow = root.querySelector(".f02-glow");
+      var grid = root.querySelector(".f02-grid");
+      var respira = root.querySelector(".f02-respira");
+      var pila = root.querySelector(".f02-pila");
+      var contador = root.querySelector(".f02-contador");
+
+      /* hash determinista por (índice, canal) — sin Math.random, sin Date.now */
+      function hsh(i, k) {
+        var x = Math.sin((i + 1) * 12.9898 + k * 78.233) * 43758.5453;
+        return x - Math.floor(x);
+      }
+      var CLX = 960, CLY = 528;      // centro del claro
+      var ERX = 660, ERY = 190;      // radios del claro (elipse)
+      var MKX = 1448, MKY = 936;     // esquina reservada al rótulo 02 / 09
+
+      var CAPAS = [
+        { id: "fondo", cols: 9, rows: 5, x0: -50, y0: -48, cw: 227, ch: 235,
+          jx: 72, jy: 62, w: 110, h: 144, rot: 7.2, op: 0.26,
+          at0: 0.70, span: 5.20, caida: 470, mk: false },
+        { id: "media", cols: 7, rows: 4, x0: -72, y0: -72, cw: 295, ch: 309,
+          jx: 84, jy: 72, w: 152, h: 198, rot: 5.4, op: 0.42,
+          at0: 5.60, span: 4.90, caida: 520, mk: true },
+        { id: "frente", cols: 5, rows: 3, x0: -96, y0: -96, cw: 422, ch: 424,
+          jx: 96, jy: 80, w: 204, h: 266, rot: 3.8, op: 0.62,
+          at0: 10.20, span: 3.70, caida: 580, mk: true }
+      ];
+
+      /* las 6 láminas que muerden el claro al final: posición explícita,
+         calculada contra los márgenes libres del contador y del titular */
+      var MORDIDA = [
+        { x: 244, y: 262, rot: -3.4, at: 13.30 },
+        { x: 1470, y: 236, rot: 3.0, at: 13.75 },
+        { x: 226, y: 430, rot: 2.6, at: 14.20 },
+        { x: 1488, y: 398, rot: -2.4, at: 14.65 },
+        { x: 250, y: 560, rot: 3.2, at: 15.05 },
+        { x: 1452, y: 588, rot: -3.6, at: 15.45 }
+      ];
+      var MORDIDA_W = 216, MORDIDA_H = 282, MORDIDA_OP = 0.74;
+
+      /* coloca una lámina: rejilla jitreada → empuje fuera del claro →
+         reserva del rótulo → vector de caída */
+      function colocar(C, ci, i) {
+        var col = i % C.cols, fila = Math.floor(i / C.cols);
+        var gi = ci * 97 + i;
+        var cx = C.x0 + C.cw * col + C.cw / 2 + (hsh(gi, 1) * 2 - 1) * C.jx;
+        var cy = C.y0 + C.ch * fila + C.ch / 2 + (hsh(gi, 2) * 2 - 1) * C.jy;
+
+        var rx = ERX + C.w / 2, ry = ERY + C.h / 2;
+        function fuera(px, py) {
+          var dx = px - CLX, dy = py - CLY;
+          var q = (dx * dx) / (rx * rx) + (dy * dy) / (ry * ry);
+          if (q >= 1) return [px, py];
+          if (q < 1e-6) {
+            var a = hsh(gi, 12) * 6.28318;
+            dx = Math.cos(a) * rx; dy = Math.sin(a) * ry; q = 1;
+          }
+          var s = 1.045 / Math.sqrt(q);
+          return [CLX + dx * s, CLY + dy * s];
+        }
+        var pos = fuera(cx, cy);
+        cx = pos[0]; cy = pos[1];
+        if (C.mk && cx + C.w / 2 > MKX && cy + C.h / 2 > MKY) {
+          // el rótulo 02 / 09 manda: la lámina sube y, si al subir vuelve a
+          // entrar en el claro, se aparta hacia el borde derecho del claro
+          cy = MKY - C.h / 2 - 14;
+          var k = 1 - ((cy - CLY) / ry) * ((cy - CLY) / ry);
+          if (k > 0) cx = Math.max(cx, CLX + rx * Math.sqrt(k) * 1.045);
+        }
+
+        var rot = (hsh(gi, 3) * 2 - 1) * C.rot;
+        var lateral = hsh(gi, 7) < 0.30;
+        var sx, sy;
+        if (lateral) {
+          sx = (cx < CLX ? -1 : 1) * (320 + 190 * hsh(gi, 8));
+          sy = -(210 + 150 * hsh(gi, 9));
+        } else {
+          sx = (hsh(gi, 8) * 2 - 1) * 140;
+          sy = -(C.caida + 190 * hsh(gi, 9));
+        }
+        var ndx = (cx - CLX) / 960, ndy = (cy - CLY) / 540;
+        return {
+          cx: cx, cy: cy, rot: rot, sx: sx, sy: sy,
+          rs: rot + (hsh(gi, 10) * 2 - 1) * 15,
+          // cada lámina algo distinta de tono: papel apilado, no un tramado
+          op: C.op * (0.80 + 0.40 * hsh(gi, 13)),
+          orden: -Math.sqrt(ndx * ndx + ndy * ndy) + (hsh(gi, 11) - 0.5) * 0.55
+        };
+      }
+
+      /* ── la caída ───────────────────────────────────────────────────────
+         Cada lámina entra fuera de cuadro y cae en dos tiempos:
+         acelera (power1.in, gravedad) y se posa (power2.out, sin rebote).
+         Dentro de cada capa aterrizan de fuera hacia dentro: el cuadro se
+         cierra sobre el claro en vez de rellenarse como una rejilla. */
+      function caer(el, p, at, op) {
+        var mx = p.sx * 0.28, my = p.sy * 0.28;
+        var mr = p.rot + (p.rs - p.rot) * 0.28;
+        tl.fromTo(el, { opacity: 0 },
+          { opacity: op, duration: 0.26, ease: "power1.out" }, at);
+        tl.fromTo(el,
+          { x: p.sx, y: p.sy, rotation: p.rs, scale: 1.07 },
+          { x: mx, y: my, rotation: mr, scale: 1.03,
+            duration: 0.30, ease: "power1.in" }, at);
+        tl.fromTo(el,
+          { x: mx, y: my, rotation: mr, scale: 1.03 },
+          { x: 0, y: 0, rotation: p.rot, scale: 1,
+            duration: 0.36, ease: "power2.out", immediateRender: false },
+          at + 0.30);
+      }
+
+      CAPAS.forEach(function (C, ci) {
+        var els = root.querySelectorAll("#f02-encerrado-capa-" + C.id + " .f02-doc");
+        var piezas = [];
+        for (var i = 0; i < els.length; i++) {
+          var p = colocar(C, ci, i);
+          els[i].style.left = (p.cx - C.w / 2) + "px";
+          els[i].style.top = (p.cy - C.h / 2) + "px";
+          piezas.push({ el: els[i], p: p });
+        }
+        piezas.sort(function (a, b) { return a.p.orden - b.p.orden; });
+        piezas.forEach(function (it, k) {
+          var t = piezas.length > 1 ? k / (piezas.length - 1) : 0;
+          caer(it.el, it.p, C.at0 + t * C.span, it.p.op);
+        });
+      });
+
+      /* ── la mordida: el claro deja de ser un claro ─────────────────────── */
+      var mords = root.querySelectorAll("#f02-encerrado-capa-mordida .f02-doc");
+      for (var m = 0; m < mords.length && m < MORDIDA.length; m++) {
+        var M = MORDIDA[m];
+        mords[m].style.left = M.x + "px";
+        mords[m].style.top = M.y + "px";
+        var lado = M.x < CLX ? -1 : 1;
+        caer(mords[m], {
+          sx: lado * (300 + 90 * hsh(m, 4)),
+          sy: -(230 + 130 * hsh(m, 5)),
+          rot: M.rot,
+          rs: M.rot + (hsh(m, 6) * 2 - 1) * 11
+        }, M.at, MORDIDA_OP);
+      }
+
+      /* ── el claro abre en reposo ───────────────────────────────────────── */
+      tl.fromTo("#f02-encerrado-claro",
+        { opacity: 0, scale: 0.974 },
+        { opacity: 1, scale: 1, duration: 0.55, ease: "power2.inOut" }, 0);
+
+      /* ── el contador: la cifra verificada, y el ámbar llega primero ────
+         (counting-dynamic-scale · valor y escala en la misma posición y ease)
+
+         La cifra se escribe desde un 'modifier', no desde onUpdate: el
+         renderizador salta de fotograma en fotograma y GSAP difiere el
+         cálculo del valor, así que un onUpdate leía todavía el 0 inicial y
+         el contador se congelaba en cero en cada salto. El modifier corre
+         dentro del propio pipeline de render, con lazy desactivado, y por
+         eso da el valor exacto en cualquier fotograma al que se salte. */
+      function fmt(n) {
+        return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      }
+      /* La línea se arma entera en los dos primeros segundos —un contador a
+         cero, centrado— y a partir de ahí lo que narra es la cifra subiendo,
+         cada una en su pie de voz. */
+      var ESC0 = 0.88;
+      var GRUPOS = [
+        { sel: ".f02-g1", sep: null, to: 765, ver: 0.25, at: 0.90, dur: 2.70 },
+        { sel: ".f02-g2", sep: ".f02-s1", to: 36243, ver: 0.90, at: 4.10, dur: 2.20 },
+        { sel: ".f02-g3", sep: ".f02-s2", to: 22547, ver: 1.40, at: 7.00, dur: 3.30 }
+      ];
+      GRUPOS.forEach(function (G) {
+        var grp = root.querySelector(G.sel);
+        var numEl = grp.querySelector(".f02-num");
+        var objetivo = G.sep ? [root.querySelector(G.sep), grp] : [grp];
+        tl.set(numEl, { scale: ESC0 }, 0);
+        tl.fromTo(objetivo, { opacity: 0 },
+          { opacity: 1, duration: 0.40, ease: "power2.out" }, G.ver);
+        var cuenta = { v: 0 };
+        tl.fromTo(cuenta, { v: 0 }, {
+          v: G.to, duration: G.dur, ease: "power3.out",
+          lazy: false, immediateRender: false,
+          modifiers: {
+            v: function (v) { numEl.textContent = fmt(v); return v; }
+          }
+        }, G.at);
+        tl.fromTo(numEl, { scale: ESC0 },
+          { scale: 1, duration: G.dur, ease: "power3.out" }, G.at);
+      });
+
+      /* ── el veredicto, ya con la pila encima ──────────────────────────── */
+      tl.fromTo("#f02-encerrado-titular",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }, 14.30);
+
+      /* ── el cuadro se cierra: viñeta + una compresión mínima de la pila ── */
+      tl.fromTo("#f02-encerrado-vineta", { opacity: 0 },
+        { opacity: 1, duration: 9.00, ease: "power2.inOut" }, 9.40);
+      tl.fromTo(pila, { scale: 1 },
+        { scale: 1.022, duration: 5.80, ease: "power2.out" }, 12.80);
+
+      /* ── escenario y ancla ────────────────────────────────────────────── */
+      tl.fromTo("#f02-encerrado-decor", { opacity: 0 },
+        { opacity: 1, duration: 1.50, ease: "power2.out" }, 0);
+      tl.fromTo("#f02-encerrado-hrule", { scaleX: 0.20 },
+        { scaleX: 1, duration: 1.60, ease: "power3.out" }, 0.15);
+      tl.fromTo("#f02-encerrado-marca", { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.90, ease: "power2.out" }, 1.00);
+
+      /* ── una sola respiración lenta compartida (sine-wave-loop) ─────────
+         Envolvente en los dos extremos: la escena entra y sale en reposo,
+         pero nunca hay una ventana sin tween corriendo. */
+      var CICLOS = 6;
+      var amb = { p: 0 };
+      tl.to(amb, {
+        p: 6.28318 * CICLOS, duration: D, ease: "none",
+        onUpdate: function () {
+          var prog = amb.p / (6.28318 * CICLOS);
+          var env = prog < 0.07 ? prog / 0.07
+                  : prog > 0.80 ? (1 - prog) / 0.20 : 1;
+          var s = Math.sin(amb.p) * env;
+          glow.style.transform = "scale(" + (1 + s * 0.018) + ")";
+          glow.style.opacity = String(0.90 + s * 0.09);
+          grid.style.transform = "scale(" + (1 + s * 0.004) + ")";
+          grid.style.opacity = String(0.92 + s * 0.08);
+          respira.style.transform =
+            "translateY(" + (s * 3.2) + "px) scale(" + (1 + s * 0.005) + ")";
+          contador.style.textShadow =
+            "0 0 " + (26 + s * 11) + "px rgba(233, 163, 60, " + (0.28 + s * 0.10) + ")";
+        }
+      }, 0);
+
+      tl.to("#f02-encerrado-aliento", {
+        opacity: 0.88, duration: 4.75, repeat: 3, yoyo: true, ease: "sine.inOut"
+      }, 0);
+    })();
   </script>
 </template>

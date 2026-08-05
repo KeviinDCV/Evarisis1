@@ -1,0 +1,23 @@
+{
+  "scene": "08-verificacion",
+  "duration_s": 29,
+  "rules": [
+    "split-tilt-cards",
+    "svg-path-draw",
+    "card-morph-anchor",
+    "counting-dynamic-scale",
+    "stat-bars-and-fills",
+    "ambient-glow-bloom",
+    "sine-wave-loop",
+    "discrete-text-sequence",
+    "gsap-effects"
+  ],
+  "exit": {
+    "vector": "static · ~10 px/s at the frame edge — the last content tween is the amber halo behind the highlighted phrase, ending at t=28.55s; at t=29.0 only the shared background breath is live (radial-wrap scale passing through exactly 1.000 at 0.0104 scale/s, i.e. ~10 px/s at the outer edge of a soft gradient) and every card, chip, number and stroke is at rest in its final position",
+    "still_moving": false
+  },
+  "entry": {
+    "vector": "bloom-in · ~0 px/s of translation at t=0 — the frame opens on scale/opacity only (radial ground 0.88→1 at ~0.23 scale/s, ~285 px/s at the outer edge of a soft gradient, plus the 40px grid fading up); the first translation is the masked rise of the section word at t=0.15s, yPercent 105→0 over 0.95s on power3.out, peaking ~410 px/s upward",
+    "from_rest": false
+  }
+}

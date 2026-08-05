@@ -1,122 +1,1007 @@
 <template>
-  <div
-    id="f04"
-    data-composition-id="f04"
-    data-start="0"
-    data-width="1920"
-    data-height="1080"
-    data-duration="34"
-  >
-    <style>
-      #f04 {
-        position: relative;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #141d2b;
-        color: #e9eef7;
-        font-family: "Montserrat", sans-serif;
-        font-variant-numeric: tabular-nums;
-      }
-      #f04 .clip { position: absolute; inset: 0; }
-      #f04 .mono { font-family: "IBM Plex Mono", monospace; }
-      #f04 .brand {
-        position: absolute; top: 56px; left: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f04 .mark {
-        position: absolute; bottom: 56px; right: 80px;
-        font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
-      }
-      #f04 h2 {
-        position: absolute; left: 80px; top: 150px;
-        font-size: 76px; font-weight: 900; letter-spacing: -0.03em;
-      }
-      #f04 .rail {
-        position: absolute; left: 80px; right: 80px; top: 400px;
-        display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px;
-      }
-      #f04 .station {
-        border: 1px solid rgba(233,238,247,.14);
-        padding: 34px 30px 40px; min-height: 340px;
-      }
-      /* la estación 2 es el foco: la parada de la cámara en el momento clave */
-      #f04 .station.focal { border-color: #e9a33c; }
-      #f04 .n {
-        font-size: 22px; letter-spacing: 0.2em; color: #8296b5;
-        margin-bottom: 26px;
-      }
-      #f04 .station.focal .n { color: #e9a33c; }
-      #f04 .name {
-        font-size: 34px; font-weight: 900; letter-spacing: -0.02em;
-        line-height: 1.2; margin-bottom: 22px;
-      }
-      #f04 .detail {
-        font-size: 22px; font-weight: 400; color: #8296b5; line-height: 1.5;
-      }
-      #f04 .datum {
-        margin-top: 22px; font-size: 22px; color: #e9a33c;
-      }
-      #f04 .foot {
-        position: absolute; left: 80px; bottom: 150px;
-        font-size: 28px; font-weight: 400; color: #8296b5;
-      }
-    </style>
+  <style>
+    /* ============================================================
+       04-circuito — El circuito de funcionamiento (33s)
+       Blueprint: spatial-pan-stations. Aquí NO viaja la cámara sola:
+       viaja EL DOCUMENTO. Un mismo objeto atraviesa cinco estaciones
+       y se transforma en cada una (hoja -> texto despegado -> casos
+       -> campos -> fila de tabla). La cámara persigue al objeto con
+       un leve retardo, así el paneo se LEE como transporte.
+       Foco ámbar ÚNICO: el haz de lectura (estación 02).
+       ============================================================ */
 
-    <section class="clip" data-start="0" data-duration="34" data-track-index="1">
-      <h2>El circuito de funcionamiento</h2>
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clip { position: absolute; inset: 0; }
+    .c4-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
 
-      <div class="rail">
-        <div class="station">
-          <p class="n mono">01</p>
-          <p class="name">CARGA</p>
-          <p class="detail">Se cargan los PDFs del servicio de patología.</p>
+    /* ---------- escenario fijo: fondo + 2 decorativos con una respiración ---------- */
+    .c4-ground { position: absolute; inset: 0; background: #141d2b; }
+    .c4-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        820px 620px at 50% 46%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.32) 48%,
+        rgba(45, 62, 94, 0) 74%
+      );
+      transform-origin: 50% 46%;
+      will-change: transform, opacity;
+    }
+    .c4-hair {
+      position: absolute; left: 0; right: 0; top: 262px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+    }
+
+    /* ---------- cámara ---------- */
+    .c4-world {
+      position: absolute; inset: 0;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    /* ---------- mundo: el escritorio que desfila ---------- */
+    .c4-grid {
+      position: absolute; left: -400px; top: -300px; width: 7800px; height: 1700px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, rgba(233, 238, 247, 0) 1px),
+        linear-gradient(to bottom, #e9eef7 1px, rgba(233, 238, 247, 0) 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    /* el riel sobra por los dos lados: nunca debe verse su extremo cortado
+       en mitad del cuadro, ni en la primera parada ni en la última */
+    .c4-rail {
+      position: absolute; left: -400px; top: 826px; width: 7760px; height: 1px;
+      background: rgba(233, 238, 247, 0.16);
+    }
+    .c4-ticks {
+      position: absolute; left: -400px; top: 827px; width: 7760px; height: 7px;
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(233, 238, 247, 0.22) 0 1px,
+        rgba(233, 238, 247, 0) 1px 80px
+      );
+    }
+    .c4-node {
+      position: absolute; top: 819px; width: 13px; height: 13px;
+      border: 1px solid rgba(233, 238, 247, 0.3);
+      background: #141d2b;
+    }
+    .c4-plate {
+      position: absolute; top: 842px; width: 400px;
+      text-align: center;
+      font-size: 18px; letter-spacing: 0.18em; color: #8296b5;
+    }
+
+    /* ---------- el objeto que viaja ---------- */
+    .c4-obj {
+      position: absolute; left: 960px; top: 500px; width: 0; height: 0;
+      will-change: transform;
+    }
+    .c4-obj > * { position: absolute; left: 0; top: 0; }
+
+    /* la hoja: papel claro, tinta oscura */
+    .c4-pad {
+      width: 448px; height: 600px; margin-left: -224px; margin-top: -300px;
+      border: 1px solid rgba(233, 238, 247, 0.13);
+      transform-origin: 50% 50%;
+    }
+    .c4-hoja, .c4-hoja-b {
+      width: 448px; height: 600px;
+      background: #f4f6fa;
+      box-shadow: 0 26px 54px rgba(20, 29, 43, 0.55);
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .c4-hoja { margin-left: -224px; margin-top: -300px; }
+    .c4-hoja-b { opacity: 0; }
+    .c4-b1 { margin-left: -250px; margin-top: -316px; }
+    .c4-b2 { margin-left: -202px; margin-top: -308px; }
+    .c4-b3 { margin-left: -214px; margin-top: -284px; }
+    .c4-chrome {
+      position: absolute; left: 0; top: 0; right: 0; height: 34px;
+      background: #2d3e5e;
+      color: #f4f6fa;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px; letter-spacing: 0.18em; line-height: 34px;
+      padding-left: 14px;
+    }
+    /* líneas impresas sobre el papel */
+    .c4-pl {
+      position: absolute; height: 13px;
+      background: rgba(34, 48, 74, 0.84);
+    }
+
+    /* el haz de lectura — EL ÚNICO ÁMBAR DE LA ESCENA */
+    .c4-haz {
+      width: 132px; height: 660px; margin-left: -290px; margin-top: -330px;
+      background: linear-gradient(
+        to right,
+        rgba(233, 163, 60, 0) 0%,
+        rgba(233, 163, 60, 0.10) 36%,
+        rgba(233, 163, 60, 0.30) 50%,
+        rgba(233, 163, 60, 0.10) 64%,
+        rgba(233, 163, 60, 0) 100%
+      );
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .c4-haz-core {
+      position: absolute; left: 65px; top: 0; width: 2px; height: 660px;
+      background: #e9a33c;
+    }
+
+    /* el texto despegado: la misma información, ahora en voz de máquina */
+    .c4-flotante {
+      width: 448px; height: 600px; margin-left: -224px; margin-top: -300px;
+    }
+    .c4-slab {
+      position: absolute; left: 0; width: 448px; height: 148px;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .c4-s0 { top: 62px; }
+    .c4-s1 { top: 214px; }
+    .c4-s2 { top: 366px; }
+    .c4-caso {
+      position: absolute; left: -16px; right: -16px; top: -34px; bottom: -14px;
+      /* Placa OSCURA. En navy al 62% aclaraba el fondo y el rotulo CASO
+         (#8296b5) caia a 4,2:1. Con el color del escenario al 88% el texto
+         se apoya en oscuro y la tarjeta sigue separandose por su borde. */
+      background: rgba(20, 29, 43, 0.88);
+      border: 1px solid rgba(233, 238, 247, 0.18);
+      box-shadow: inset 3px 0 0 rgba(233, 238, 247, 0.26);
+      opacity: 0;
+    }
+    .c4-caso-tag {
+      position: absolute; left: 16px; top: 8px;
+      font-size: 15px; letter-spacing: 0.2em; color: #8296b5;
+    }
+    /* la línea despegada: misma información, ya en voz de máquina.
+       La sombra es lo que la separa del papel mientras aún hay papel
+       debajo — sin ella, claro sobre claro no se lee como levantado. */
+    .c4-lin {
+      position: absolute; height: 13px;
+      background: rgba(233, 238, 247, 0.88);
+      box-shadow: 0 12px 26px rgba(20, 29, 43, 0.62);
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    /* la rejilla de campos */
+    .c4-campos { width: 828px; height: 288px; margin-left: -414px; margin-top: -84px; }
+    .c4-slot {
+      position: absolute; width: 402px; height: 132px;
+      background: rgba(20, 29, 43, 0.62);
+      border: 1px solid rgba(233, 238, 247, 0.16);
+      opacity: 0;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .c4-k0 { left: 0; top: 0; }
+    .c4-k1 { left: 426px; top: 0; }
+    .c4-k2 { left: 0; top: 156px; }
+    .c4-k3 { left: 426px; top: 156px; }
+    .c4-slot-h {
+      position: absolute; left: 20px; top: 18px;
+      font-size: 19px; letter-spacing: 0.16em; color: #8296b5;
+      /* 0.5, no 0.32: como fantasma a 0.32 el rotulo del campo daba 4,21:1,
+         por debajo de AA. Sigue leyendose como hueco por rellenar, pero se lee. */
+      opacity: 0.62;
+    }
+    .c4-bar {
+      position: absolute; left: 20px;
+      background: rgba(233, 238, 247, 0.55);
+      transform-origin: 0% 50%;
+    }
+    .c4-bar-a { top: 68px; height: 14px; }
+    .c4-bar-b { top: 96px; height: 9px; background: rgba(233, 238, 247, 0.28); }
+
+    /* las etiquetas que se acoplan */
+    .c4-chip {
+      width: 260px; height: 44px; margin-left: -130px; margin-top: -22px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45, 62, 94, 0.92);
+      border: 1px solid rgba(233, 238, 247, 0.22);
+      font-size: 18px; letter-spacing: 0.12em; color: #e9eef7;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+
+    /* la base de datos */
+    .c4-tabla { width: 0; height: 0; transform-origin: 50% 50%; }
+    .c4-tabla > * { position: absolute; left: 0; top: 0; }
+    .c4-thead {
+      width: 840px; height: 30px; margin-left: -420px; margin-top: -165px;
+      opacity: 0;
+    }
+    .c4-th {
+      position: absolute; top: 0;
+      font-size: 15px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .c4-fila {
+      width: 840px; height: 62px; margin-left: -420px;
+      background: rgba(45, 62, 94, 0.5);
+      border-top: 1px solid rgba(233, 238, 247, 0.12);
+      opacity: 0;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .c4-f0 { margin-top: -111px; background: rgba(45, 62, 94, 0.66); }
+    .c4-f1 { margin-top: -41px; }
+    .c4-f2 { margin-top: 29px; }
+    .c4-f3 { margin-top: 99px; }
+    .c4-f4 { margin-top: 169px; }
+    .c4-f5 { margin-top: 239px; }
+    .c4-cel {
+      position: absolute; top: 24px; height: 14px;
+      background: rgba(233, 238, 247, 0.5);
+    }
+
+    /* ---------- rótulos anclados al encuadre ---------- */
+    .c4-pinned { position: absolute; inset: 0; }
+    .c4-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .c4-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .c4-titular {
+      /* 1300px, no 1080: a 74px/900 el titular mide 1123px y PARTIA en dos
+         lineas; la segunda caia justo encima de la barra de los cinco pasos
+         y las marcas se pintaban dentro de las letras. */
+      position: absolute; left: 80px; top: 118px; width: 1300px;
+      font-size: 74px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.05;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .c4-etapa {
+      position: absolute; left: 80px; top: 122px;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .c4-etapa-n {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+      font-size: 24px; letter-spacing: 0.2em; color: #8296b5;
+    }
+    .c4-etapa-t {
+      margin-top: 6px;
+      font-size: 56px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.02;
+    }
+    .c4-pasos { position: absolute; left: 80px; top: 244px; width: 276px; height: 4px; }
+    .c4-tick {
+      position: absolute; top: 0; width: 44px; height: 4px;
+      background: rgba(233, 238, 247, 0.16);
+      transform-origin: 0% 50%;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .c4-tick-fill {
+      position: absolute; left: 0; top: 0; width: 44px; height: 4px;
+      background: #e9eef7;
+      transform-origin: 0% 50%;
+    }
+    .c4-dato {
+      position: absolute; right: 80px; top: 152px;
+      font-size: 22px; letter-spacing: 0.02em; color: #e9eef7;
+      white-space: nowrap;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    /* ---------- plano de conjunto: las cinco estaciones a la vez ----------
+       La escena cuenta UNA etapa cada vez, que se entiende mejor pero deja al
+       espectador sin el esquema completo. Este remate lo devuelve: entra sobre
+       las ultimas palabras y cierra con el circuito entero en pantalla. */
+    .c4-res {
+      /* Opaco y RECORTADO, no a sangre y translucido. Al 94% se transparentaba
+         el rotulo de etapa de detras justo bajo la etiqueta homonima del
+         resumen, y a sangre habria tapado el cromo de las esquinas. Recortar,
+         no velar: la misma leccion que en la escena 7. */
+      position: absolute; left: 0; right: 0; top: 104px; bottom: 104px;
+      background: #141d2b;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+    }
+    .c4-res-rail { position: relative; width: 1640px; height: 200px; }
+    .c4-res-base {
+      position: absolute; left: 0; right: 0; top: 96px; height: 1px;
+      background: rgba(233, 238, 247, 0.16);
+    }
+    /* EL AMBAR DEL REMATE: el circuito completandose. El haz de lectura, que
+       es el foco del cuerpo de la escena, hace 12s que no esta en pantalla. */
+    .c4-res-line {
+      position: absolute; left: 0; top: 95px; width: 1640px; height: 3px;
+      background: #e9a33c; transform-origin: 0% 50%;
+    }
+    .c4-res-n { position: absolute; top: 0; width: 328px; text-align: center; opacity: 0; }
+    .c4-res-dot {
+      width: 15px; height: 15px; margin: 88px auto 0;
+      background: #141d2b; border: 1px solid rgba(233, 238, 247, 0.42);
+    }
+    .c4-res-num {
+      position: absolute; left: 0; right: 0; top: 34px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 19px; letter-spacing: 0.2em; color: #8296b5;
+    }
+    .c4-res-tt {
+      position: absolute; left: 0; right: 0; top: 126px;
+      font-size: 22px; font-weight: 900; letter-spacing: 0.09em; color: #e9eef7;
+    }
+    .c4-res-pie {
+      position: absolute; left: 0; right: 0; top: 176px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 19px; letter-spacing: 0.2em; color: #8296b5;
+      text-align: center; opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="04-circuito" data-start="0" data-width="1920" data-height="1080" data-duration="33.09">
+
+    <!-- fondo a sangre: siempre en una capa clip, nunca en #root -->
+    <div id="c4-capa-fondo" class="clip" data-start="0" data-duration="33.09" data-track-index="0">
+      <div class="c4-ground"></div>
+      <div class="c4-radial" id="c4-radial"></div>
+      <div class="c4-hair" id="c4-hair"></div>
+    </div>
+
+    <div id="c4-capa-circuito" class="clip" data-start="0" data-duration="33.09" data-track-index="1">
+      <div class="c4-world" id="c4-world">
+
+        <!-- el escritorio: se desplaza con la cámara, por eso el viaje se ve -->
+        <div id="c4-mundo">
+          <div class="c4-grid" id="c4-grid"></div>
+          <div class="c4-rail"></div>
+          <div class="c4-ticks"></div>
+          <div class="c4-node" style="left:953px"></div>
+          <div class="c4-node" style="left:2313px"></div>
+          <div class="c4-node" style="left:3673px"></div>
+          <div class="c4-node" style="left:5033px"></div>
+          <div class="c4-node" style="left:6393px"></div>
+          <div class="c4-plate c4-mono" style="left:760px">CARGA</div>
+          <div class="c4-plate c4-mono" style="left:2120px">LECTURA</div>
+          <div class="c4-plate c4-mono" style="left:3480px">SEGMENTACIÓN</div>
+          <div class="c4-plate c4-mono" style="left:4840px">EXTRACCIÓN</div>
+          <div class="c4-plate c4-mono" style="left:6200px">BASE DE DATOS</div>
         </div>
 
-        <div class="station focal">
-          <p class="n mono">02</p>
-          <p class="name">LECTURA</p>
-          <p class="detail">
-            Lee la capa de texto que el propio informe lleva dentro. No
-            fotografía el papel.
-          </p>
-          <p class="datum mono">36.243 páginas · 0 sin capa de texto</p>
-        </div>
+        <!-- EL DOCUMENTO. Un solo objeto, cinco estados. -->
+        <div class="c4-obj" id="c4-obj">
+          <!-- 01 CARGA: el sitio donde va a caer el lote -->
+          <div class="c4-pad" id="c4-pad"></div>
+          <div class="c4-hoja-b c4-b1" id="c4-b1"></div>
+          <div class="c4-hoja-b c4-b2" id="c4-b2"></div>
+          <div class="c4-hoja-b c4-b3" id="c4-b3"></div>
 
-        <div class="station">
-          <p class="n mono">03</p>
-          <p class="name">SEGMENTACIÓN</p>
-          <p class="detail">Separa el documento en casos: uno por informe.</p>
-        </div>
+          <!-- la hoja de arriba: papel claro, tinta oscura -->
+          <div class="c4-hoja" id="c4-hoja">
+            <div class="c4-chrome c4-mono">PDF</div>
+            <div class="c4-pl" data-cx="91" style="left:32px;top:92px;width:118px"></div>
+            <div class="c4-pl" data-cx="212" style="left:166px;top:92px;width:92px"></div>
+            <div class="c4-pl" data-cx="345" style="left:274px;top:92px;width:142px"></div>
+            <div class="c4-pl" data-cx="75" style="left:32px;top:168px;width:86px"></div>
+            <div class="c4-pl" data-cx="202" style="left:134px;top:168px;width:136px"></div>
+            <div class="c4-pl" data-cx="343" style="left:286px;top:168px;width:114px"></div>
+            <div class="c4-pl" data-cx="105" style="left:32px;top:244px;width:146px"></div>
+            <div class="c4-pl" data-cx="230" style="left:194px;top:244px;width:72px"></div>
+            <div class="c4-pl" data-cx="347" style="left:282px;top:244px;width:130px"></div>
+            <div class="c4-pl" data-cx="82" style="left:32px;top:320px;width:100px"></div>
+            <div class="c4-pl" data-cx="210" style="left:148px;top:320px;width:124px"></div>
+            <div class="c4-pl" data-cx="334" style="left:288px;top:320px;width:92px"></div>
+            <div class="c4-pl" data-cx="96" style="left:32px;top:396px;width:128px"></div>
+            <div class="c4-pl" data-cx="218" style="left:176px;top:396px;width:84px"></div>
+            <div class="c4-pl" data-cx="346" style="left:276px;top:396px;width:140px"></div>
+            <div class="c4-pl" data-cx="88" style="left:32px;top:472px;width:112px"></div>
+            <div class="c4-pl" data-cx="208" style="left:160px;top:472px;width:96px"></div>
+            <div class="c4-pl" data-cx="301" style="left:272px;top:472px;width:58px"></div>
+          </div>
 
-        <div class="station">
-          <p class="n mono">04</p>
-          <p class="name">EXTRACCIÓN</p>
-          <p class="detail">
-            Paciente, órgano, diagnóstico y biomarcadores, cada uno a su campo.
-          </p>
-          <p class="detail mono" style="margin-top: 18px">189 campos</p>
-        </div>
+          <!-- 02 LECTURA: el haz. Único ámbar de la escena. -->
+          <div class="c4-haz" id="c4-haz"><div class="c4-haz-core"></div></div>
 
-        <div class="station">
-          <p class="n mono">05</p>
-          <p class="name">BASE DE DATOS</p>
-          <p class="detail">MySQL dentro del hospital.</p>
-          <p class="detail mono" style="margin-top: 18px">
-            Nada sale de la red del HUV.
-          </p>
+          <!-- 02→03: el texto despegado, que luego se parte en tres casos -->
+          <div class="c4-flotante" id="c4-flotante">
+            <div class="c4-slab c4-s0" id="c4-slab-0">
+              <div class="c4-caso"></div>
+              <div class="c4-caso-tag c4-mono">CASO</div>
+              <div class="c4-lin" style="left:32px;top:30px;width:118px"></div>
+              <div class="c4-lin" style="left:166px;top:30px;width:92px"></div>
+              <div class="c4-lin" style="left:274px;top:30px;width:142px"></div>
+              <div class="c4-lin" style="left:32px;top:106px;width:86px"></div>
+              <div class="c4-lin" style="left:134px;top:106px;width:136px"></div>
+              <div class="c4-lin" style="left:286px;top:106px;width:114px"></div>
+            </div>
+            <div class="c4-slab c4-s1" id="c4-slab-1">
+              <div class="c4-caso"></div>
+              <div class="c4-caso-tag c4-mono">CASO</div>
+              <div class="c4-lin" style="left:32px;top:30px;width:146px"></div>
+              <div class="c4-lin" style="left:194px;top:30px;width:72px"></div>
+              <div class="c4-lin" style="left:282px;top:30px;width:130px"></div>
+              <div class="c4-lin" style="left:32px;top:106px;width:100px"></div>
+              <div class="c4-lin" style="left:148px;top:106px;width:124px"></div>
+              <div class="c4-lin" style="left:288px;top:106px;width:92px"></div>
+            </div>
+            <div class="c4-slab c4-s2" id="c4-slab-2">
+              <div class="c4-caso"></div>
+              <div class="c4-caso-tag c4-mono">CASO</div>
+              <div class="c4-lin" style="left:32px;top:30px;width:128px"></div>
+              <div class="c4-lin" style="left:176px;top:30px;width:84px"></div>
+              <div class="c4-lin" style="left:276px;top:30px;width:140px"></div>
+              <div class="c4-lin" style="left:32px;top:106px;width:112px"></div>
+              <div class="c4-lin" style="left:160px;top:106px;width:96px"></div>
+              <div class="c4-lin" style="left:272px;top:106px;width:58px"></div>
+            </div>
+          </div>
+
+          <!-- 04 EXTRACCIÓN: cada dato a su casilla -->
+          <div class="c4-campos" id="c4-campos">
+            <div class="c4-slot c4-k0">
+              <div class="c4-slot-h c4-mono" data-layout-allow-overlap>PACIENTE</div>
+              <div class="c4-bar c4-bar-a" style="width:300px"></div>
+              <div class="c4-bar c4-bar-b" style="width:168px"></div>
+            </div>
+            <div class="c4-slot c4-k1">
+              <div class="c4-slot-h c4-mono" data-layout-allow-overlap>ÓRGANO</div>
+              <div class="c4-bar c4-bar-a" style="width:210px"></div>
+              <div class="c4-bar c4-bar-b" style="width:122px"></div>
+            </div>
+            <div class="c4-slot c4-k2">
+              <div class="c4-slot-h c4-mono" data-layout-allow-overlap>DIAGNÓSTICO</div>
+              <div class="c4-bar c4-bar-a" style="width:340px"></div>
+              <div class="c4-bar c4-bar-b" style="width:214px"></div>
+            </div>
+            <div class="c4-slot c4-k3">
+              <div class="c4-slot-h c4-mono" data-layout-allow-overlap>BIOMARCADORES</div>
+              <div class="c4-bar c4-bar-a" style="width:268px"></div>
+              <div class="c4-bar c4-bar-b" style="width:190px"></div>
+            </div>
+          </div>
+
+          <div class="c4-chip c4-mono" id="c4-chip-0">PACIENTE</div>
+          <div class="c4-chip c4-mono" id="c4-chip-1">ÓRGANO</div>
+          <div class="c4-chip c4-mono" id="c4-chip-2">DIAGNÓSTICO</div>
+          <div class="c4-chip c4-mono" id="c4-chip-3">BIOMARCADORES</div>
+
+          <!-- 05 BASE DE DATOS: una fila, y detrás se apilan más -->
+          <div class="c4-tabla" id="c4-tabla">
+            <div class="c4-thead c4-mono" id="c4-thead">
+              <div class="c4-th" style="left:16px">PACIENTE</div>
+              <div class="c4-th" style="left:226px">ÓRGANO</div>
+              <div class="c4-th" style="left:436px">DIAGNÓSTICO</div>
+              <div class="c4-th" style="left:646px">BIOMARCADORES</div>
+            </div>
+            <div class="c4-fila c4-f0">
+              <div class="c4-cel" style="left:16px;width:152px"></div>
+              <div class="c4-cel" style="left:226px;width:98px"></div>
+              <div class="c4-cel" style="left:436px;width:170px"></div>
+              <div class="c4-cel" style="left:646px;width:126px"></div>
+            </div>
+            <div class="c4-fila c4-f1">
+              <div class="c4-cel" style="left:16px;width:134px"></div>
+              <div class="c4-cel" style="left:226px;width:104px"></div>
+              <div class="c4-cel" style="left:436px;width:158px"></div>
+              <div class="c4-cel" style="left:646px;width:142px"></div>
+            </div>
+            <div class="c4-fila c4-f2">
+              <div class="c4-cel" style="left:16px;width:160px"></div>
+              <div class="c4-cel" style="left:226px;width:88px"></div>
+              <div class="c4-cel" style="left:436px;width:176px"></div>
+              <div class="c4-cel" style="left:646px;width:118px"></div>
+            </div>
+            <div class="c4-fila c4-f3">
+              <div class="c4-cel" style="left:16px;width:128px"></div>
+              <div class="c4-cel" style="left:226px;width:110px"></div>
+              <div class="c4-cel" style="left:436px;width:150px"></div>
+              <div class="c4-cel" style="left:646px;width:136px"></div>
+            </div>
+            <div class="c4-fila c4-f4">
+              <div class="c4-cel" style="left:16px;width:146px"></div>
+              <div class="c4-cel" style="left:226px;width:94px"></div>
+              <div class="c4-cel" style="left:436px;width:164px"></div>
+              <div class="c4-cel" style="left:646px;width:130px"></div>
+            </div>
+            <div class="c4-fila c4-f5">
+              <div class="c4-cel" style="left:16px;width:138px"></div>
+              <div class="c4-cel" style="left:226px;width:100px"></div>
+              <div class="c4-cel" style="left:436px;width:156px"></div>
+              <div class="c4-cel" style="left:646px;width:124px"></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <p class="foot">Cinco pasos. Del PDF a la pregunta con respuesta.</p>
+      <!-- rótulos anclados: no viajan con la cámara -->
+      <div class="c4-pinned" id="c4-pinned">
+        <div class="c4-brand c4-mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+        <div class="c4-mark c4-mono">04 / 09 — EL CIRCUITO</div>
 
-      <div class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="mark mono">04 / 09 — EL CIRCUITO</div>
-    </section>
+        <h2 class="c4-titular" id="c4-titular">El circuito de funcionamiento</h2>
+
+        <div class="c4-etapa" id="c4-etapa-0">
+          <div class="c4-etapa-n">01</div><div class="c4-etapa-t">CARGA</div>
+        </div>
+        <div class="c4-etapa" id="c4-etapa-1">
+          <div class="c4-etapa-n">02</div><div class="c4-etapa-t">LECTURA</div>
+        </div>
+        <div class="c4-etapa" id="c4-etapa-2">
+          <div class="c4-etapa-n">03</div><div class="c4-etapa-t">SEGMENTACIÓN</div>
+        </div>
+        <div class="c4-etapa" id="c4-etapa-3">
+          <div class="c4-etapa-n">04</div><div class="c4-etapa-t">EXTRACCIÓN</div>
+        </div>
+        <div class="c4-etapa" id="c4-etapa-4">
+          <div class="c4-etapa-n">05</div><div class="c4-etapa-t">BASE DE DATOS</div>
+        </div>
+
+        <div class="c4-pasos" id="c4-pasos">
+          <div class="c4-tick" style="left:0"><div class="c4-tick-fill"></div></div>
+          <div class="c4-tick" style="left:58px"><div class="c4-tick-fill"></div></div>
+          <div class="c4-tick" style="left:116px"><div class="c4-tick-fill"></div></div>
+          <div class="c4-tick" style="left:174px"><div class="c4-tick-fill"></div></div>
+          <div class="c4-tick" style="left:232px"><div class="c4-tick-fill"></div></div>
+        </div>
+
+        <div class="c4-dato c4-mono" id="c4-dato-lectura">36.243 páginas · 0 sin capa de texto</div>
+        <div class="c4-dato c4-mono" id="c4-dato-campos">189 campos</div>
+        <div class="c4-dato c4-mono" id="c4-dato-bd">MySQL, dentro del hospital</div>
+      </div>
+    </div>
+
+    <!-- ============ plano de conjunto (pista 2) ============ -->
+    <div id="c4-capa-resumen" class="clip" data-start="0" data-duration="33.09" data-track-index="2">
+      <div class="c4-res" id="c4-res">
+        <div class="c4-res-rail">
+          <div class="c4-res-base"></div>
+          <div class="c4-res-line" id="c4-res-line"></div>
+          <div class="c4-res-n" id="c4-res-0" style="left: 0px"><div class="c4-res-num">01</div><div class="c4-res-dot"></div><div class="c4-res-tt">CARGA</div></div>
+          <div class="c4-res-n" id="c4-res-1" style="left: 328px"><div class="c4-res-num">02</div><div class="c4-res-dot"></div><div class="c4-res-tt">LECTURA</div></div>
+          <div class="c4-res-n" id="c4-res-2" style="left: 656px"><div class="c4-res-num">03</div><div class="c4-res-dot"></div><div class="c4-res-tt">SEGMENTACIÓN</div></div>
+          <div class="c4-res-n" id="c4-res-3" style="left: 984px"><div class="c4-res-num">04</div><div class="c4-res-dot"></div><div class="c4-res-tt">EXTRACCIÓN</div></div>
+          <div class="c4-res-n" id="c4-res-4" style="left: 1312px"><div class="c4-res-num">05</div><div class="c4-res-dot"></div><div class="c4-res-tt">BASE DE DATOS</div></div>
+          <div class="c4-res-pie" id="c4-res-pie">CINCO PASOS · DEL PDF A LA PREGUNTA CON RESPUESTA</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    window.__timelines = window.__timelines || {};
-    window.__timelines["f04"] = gsap.timeline({ paused: true });
+    (function () {
+      var ID = "04-circuito";
+      var D = 33;
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+
+      /* ---- remate: las cinco estaciones alineadas ----
+         Entra sobre las ultimas palabras ("nada sale de la red del hospital",
+         la voz acaba en 31.6s) y sostiene hasta el final de los 33s. */
+      tl.fromTo("#c4-res", { opacity: 0 },
+        { opacity: 1, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 30.35);
+      tl.fromTo("#c4-res-line", { scaleX: 0 },
+        { scaleX: 1, duration: 1.5, ease: "power3.inOut", immediateRender: false }, 30.75);
+      for (i = 0; i < 5; i++) {
+        tl.fromTo("#c4-res-" + i, { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false },
+          30.85 + i * 0.19);
+      }
+      tl.fromTo("#c4-res-pie", { opacity: 0 },
+        { opacity: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, 32.0);
+
+      // marcador-fuera: el numero de seccion cambia entre escenas, asi que
+
+      // si sigue encendido durante el encadenado se ve doble y desplazado.
+
+      // Se apaga justo antes de la costura; la marca de arriba NO se toca,
+
+      // porque es identica en todas y superpuesta no se nota.
+
+      tl.to(".c4-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.79);
+
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+
+
+      // CONTENIDO y se queda solo con el fondo. Asi en la costura no hay
+
+
+      // dos textos superpuestos —que se veia como fantasma— y, como el
+
+
+      // fondo de las dos escenas es el mismo navy, el fondo NO cambia:
+
+
+      // la imagen sigue, solo se releva lo que hay encima.
+
+
+      tl.to(["#c4-capa-circuito", "#c4-capa-resumen"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 31.39);
+
+
+
+      // marca-fuera: la marca de esquina vive fuera de los clips que se
+
+
+
+      // sueltan, asi que hay que apagarla aparte o se queda encima de lo
+
+
+
+      // que trae la escena siguiente.
+
+
+
+      tl.to(".c4-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.39);
+
+
+
+
+      window.__timelines[ID] = tl;
+
+      var root = document.querySelector('[data-composition-id="' + ID + '"]');
+      if (!root) return;
+      var q = function (s) { return root.querySelector(s); };
+      var qa = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+
+      var world = q("#c4-world");
+      var obj = q("#c4-obj");
+      var radial = q("#c4-radial");
+      var grid = q("#c4-grid");
+      var hair = q("#c4-hair");
+
+      /* =========================================================
+         RELOJ DE CÁMARA — función pura del tiempo.
+         viewport-change: una sola envoltura .world con transform
+         compuesto translate()scale(); la posición en pantalla de un
+         punto p del mundo es 960 + (p-960)*S + Tx.
+         multi-phase-camera: cuatro paradas encadenadas + deriva sinusoidal.
+         El truco de la escena: la cámara PERSIGUE al objeto con
+         LAG segundos de retardo, así el documento se adelanta en
+         pantalla durante el traslado y vuelve al centro al llegar.
+         ========================================================= */
+      var STOP = [960, 2320, 3680, 5040, 6400];
+      var MOVE = [
+        { at: 6.50, dur: 1.10, a: 0, b: 1 },
+        { at: 14.50, dur: 1.05, a: 1, b: 2 },
+        { at: 18.50, dur: 1.05, a: 2, b: 3 },
+        { at: 25.90, dur: 1.10, a: 3, b: 4 }
+      ];
+      var LAG = 0.12;
+      var SCALE = [
+        { at: 6.60, dur: 1.20, a: 1.00, b: 1.05 },
+        { at: 14.40, dur: 1.10, a: 1.05, b: 1.00 },
+        { at: 27.40, dur: 5.20, a: 1.00, b: 1.03 }
+      ];
+
+      function ez(p) { return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+      function ramp(t, at, dur, a, b) {
+        if (t <= at) return a;
+        if (t >= at + dur) return b;
+        return a + (b - a) * ez((t - at) / dur);
+      }
+      function trackX(t, lag) {
+        var v = STOP[0];
+        for (var i = 0; i < MOVE.length; i++) {
+          var m = MOVE[i];
+          if (t >= m.at + lag) v = ramp(t, m.at + lag, m.dur, STOP[m.a], STOP[m.b]);
+        }
+        return v;
+      }
+      function scaleAt(t) {
+        var s = 1;
+        for (var i = 0; i < SCALE.length; i++) {
+          var m = SCALE[i];
+          if (t >= m.at) s = ramp(t, m.at, m.dur, m.a, m.b);
+        }
+        return s;
+      }
+
+      var clock = { t: 0 };
+      function writeFrame() {
+        var t = clock.t;
+        var b1 = Math.sin(t * 0.30);
+        var b2 = Math.sin(t * 0.21);
+        var S = scaleAt(t);
+        var camX = trackX(t, LAG);
+        var objX = trackX(t, 0);
+        var Tx = -(camX - 960) * S + b2 * 5;
+        var Ty = Math.sin(t * 0.273) * 3;
+
+        world.style.transform =
+          "translate(" + Tx.toFixed(2) + "px," + Ty.toFixed(2) + "px) scale(" + S.toFixed(4) + ")";
+        obj.style.transform = "translate(" + (objX - 960).toFixed(2) + "px,0px)";
+
+        radial.style.transform = "scale(" + (1 + 0.045 * b1).toFixed(4) + ")";
+        radial.style.opacity = (0.52 + 0.16 * b1).toFixed(4);
+        grid.style.opacity = (0.04 + 0.011 * b1).toFixed(4);
+        hair.style.opacity = (0.52 + 0.22 * b2).toFixed(4);
+      }
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame();
+
+      /* =========================================================
+         0.0–3.5  "El circuito tiene cinco pasos."
+         El escritorio aparece y el contador de etapas se dibuja:
+         cinco marcas, una a una. Ahí está el "cinco".
+         ========================================================= */
+      tl.fromTo(q("#c4-mundo"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power2.out" }, 0);
+      tl.fromTo(q("#c4-titular"),
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.14);
+
+      var ticks = qa(".c4-tick");
+      var fills = qa(".c4-tick-fill");
+      for (var i = 0; i < ticks.length; i++) {
+        tl.fromTo(ticks[i],
+          { opacity: 0, scaleX: 0 },
+          { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.62 + i * 0.14);
+      }
+
+      /* el titular se apaga para dejar sitio al rótulo de etapa */
+      tl.fromTo(q("#c4-titular"),
+        { opacity: 1, y: 0 },
+        { opacity: 0, y: -22, duration: 0.55, ease: "power2.in", immediateRender: false }, 3.05);
+
+      /* rótulo de la etapa activa — uno cada vez, nunca cinco a la vez */
+      var ETAPA_IN = [3.55, 7.30, 15.25, 19.25, 26.75];
+      var ETAPA_OUT = [6.55, 14.55, 18.55, 25.95];
+      for (i = 0; i < 5; i++) {
+        tl.fromTo(q("#c4-etapa-" + i),
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, ETAPA_IN[i]);
+        if (i < 4) {
+          tl.fromTo(q("#c4-etapa-" + i),
+            { opacity: 1, y: 0 },
+            { opacity: 0, y: -16, duration: 0.5, ease: "power2.in", immediateRender: false },
+            ETAPA_OUT[i]);
+        }
+      }
+
+      /* la barra de progreso se llena parada a parada */
+      var FILL_AT = [3.55, 7.35, 15.30, 19.30, 26.80];
+      for (i = 0; i < fills.length; i++) {
+        tl.fromTo(fills[i], { scaleX: 0 },
+          { scaleX: 1, duration: 0.7, ease: "power2.out" }, FILL_AT[i]);
+        if (i < 4) {
+          tl.fromTo(fills[i], { opacity: 1 },
+            { opacity: 0.42, duration: 0.6, ease: "power2.inOut", immediateRender: false },
+            FILL_AT[i + 1]);
+        }
+      }
+
+      /* =========================================================
+         3.5–7.5  "Uno: se cargan los informes en PDF del servicio."
+         waterfall-entry: el lote cae desde arriba, una dirección,
+         entradas solapadas, la hoja de arriba es la que más viaja.
+         ========================================================= */
+      tl.fromTo(q("#c4-pad"),
+        { opacity: 0, scale: 0.97 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 1.85);
+
+      tl.fromTo(q("#c4-b1"),
+        { opacity: 0, y: -680, rotation: -3.2 },
+        { opacity: 0.34, y: 0, rotation: -1.2, duration: 0.72, ease: "power3.out" }, 3.30);
+      tl.fromTo(q("#c4-b2"),
+        { opacity: 0, y: -700, rotation: 2.4 },
+        { opacity: 0.26, y: 0, rotation: 0.9, duration: 0.70, ease: "power3.out" }, 3.44);
+      tl.fromTo(q("#c4-b3"),
+        { opacity: 0, y: -660, rotation: -2.0 },
+        { opacity: 0.18, y: 0, rotation: 1.5, duration: 0.68, ease: "power3.out" }, 3.58);
+      tl.fromTo(q("#c4-hoja"),
+        { opacity: 0, y: -740 },
+        { opacity: 1, y: 0, duration: 0.82, ease: "expo.out" }, 3.72);
+
+      tl.fromTo(q("#c4-pad"),
+        { opacity: 1 },
+        { opacity: 0, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 4.30);
+
+      /* =========================================================
+         7.5–15.5 "Dos: lee la capa de texto del documento.
+                   No fotografía el papel."
+         El haz ámbar barre la hoja y, a su paso, cada bloque de
+         texto SE DESPEGA del papel: la tinta oscura se apaga sobre
+         la hoja y la misma línea reaparece flotando, ya en voz de
+         máquina. La hoja se queda fantasma.
+         ========================================================= */
+      var SW_AT = 8.20, SW_DUR = 2.80, SW_A = -30, SW_B = 470;
+
+      tl.fromTo(q("#c4-haz"), { opacity: 0 },
+        { opacity: 1, duration: 0.32, ease: "power2.out" }, 8.15);
+      tl.fromTo(q("#c4-haz"), { x: SW_A },
+        { x: SW_B, duration: SW_DUR, ease: "none" }, SW_AT);
+      tl.fromTo(q("#c4-haz"), { opacity: 1 },
+        { opacity: 0, duration: 0.55, ease: "power2.inOut", immediateRender: false }, 11.00);
+
+      var impresas = qa(".c4-pl");
+      var lineas = qa(".c4-lin");
+      for (i = 0; i < impresas.length; i++) {
+        var cx = parseFloat(impresas[i].getAttribute("data-cx"));
+        var tA = SW_AT + ((cx - SW_A) / (SW_B - SW_A)) * SW_DUR;
+        tl.fromTo(impresas[i], { opacity: 1 },
+          { opacity: 0.1, duration: 0.3, ease: "power2.out" }, tA);
+        tl.fromTo(lineas[i],
+          { opacity: 0, y: 0 },
+          { opacity: 1, y: -44, duration: 0.62, ease: "power3.out" }, tA);
+      }
+
+      tl.fromTo(q("#c4-dato-lectura"),
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 11.45);
+      tl.fromTo(q("#c4-dato-lectura"),
+        { opacity: 1, y: 0 },
+        { opacity: 0, y: -12, duration: 0.5, ease: "power2.in", immediateRender: false }, 14.60);
+
+      /* el papel se vacía MIENTRAS lo lee, no después: el barrido aún corre
+         cuando la hoja empieza a apagarse, y así lo despegado destaca sobre
+         lo que queda. Al final es sólo un fantasma, y luego se va. */
+      tl.fromTo(q("#c4-hoja"), { opacity: 1 },
+        { opacity: 0.18, duration: 2.5, ease: "power2.inOut", immediateRender: false }, 9.10);
+      tl.fromTo(q("#c4-hoja"), { opacity: 0.18 },
+        { opacity: 0, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 14.10);
+      var LOTE = [["#c4-b1", 0.34], ["#c4-b2", 0.26], ["#c4-b3", 0.18]];
+      for (i = 0; i < LOTE.length; i++) {
+        tl.fromTo(q(LOTE[i][0]), { opacity: LOTE[i][1] },
+          { opacity: 0.08, duration: 2.5, ease: "power2.inOut", immediateRender: false }, 9.10);
+        tl.fromTo(q(LOTE[i][0]), { opacity: 0.08 },
+          { opacity: 0, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 14.10);
+      }
+
+      /* =========================================================
+         15.5–19.5 "Tres: separa el documento en casos, uno por informe."
+         El bloque de líneas flotantes se PARTE en tres y se abre
+         en abanico. Cada trozo gana su placa de caso detrás.
+         ========================================================= */
+      var placas = qa(".c4-caso");
+      var tags = qa(".c4-caso-tag");
+      for (i = 0; i < 3; i++) {
+        tl.fromTo(placas[i], { opacity: 0 },
+          { opacity: 1, duration: 0.7, ease: "power2.out" }, 15.85 + i * 0.12);
+        tl.fromTo(tags[i], { opacity: 0, x: -10 },
+          { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 16.95 + i * 0.12);
+      }
+      /* las líneas levantadas se posan dentro de su caso */
+      for (i = 0; i < lineas.length; i++) {
+        tl.fromTo(lineas[i], { y: -44 },
+          { y: 0, duration: 0.55, ease: "power2.inOut", immediateRender: false },
+          15.90 + (i % 6) * 0.03);
+      }
+      var FAN = [
+        { x: -232, y: -46, r: -4.2, s: 0.86 },
+        { x: 0, y: 6, r: 0, s: 0.94 },
+        { x: 232, y: 46, r: 4.2, s: 0.86 }
+      ];
+      for (i = 0; i < 3; i++) {
+        tl.fromTo(q("#c4-slab-" + i),
+          { x: 0, y: 0, rotation: 0, scale: 1 },
+          { x: FAN[i].x, y: FAN[i].y, rotation: FAN[i].r, scale: FAN[i].s,
+            duration: 1.0, ease: "power3.inOut" }, 16.05 + i * 0.06);
+      }
+
+      /* =========================================================
+         19.5–27.0 "Cuatro: de cada caso extrae el paciente, el órgano,
+                    el diagnóstico y los biomarcadores, cada uno a su campo."
+         Dos casos se retiran; el del medio sube y encoge. De él salen
+         cuatro etiquetas que se acoplan a su casilla.
+         ========================================================= */
+      tl.fromTo(q("#c4-slab-0"), { opacity: 1 },
+        { opacity: 0, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 18.55);
+      tl.fromTo(q("#c4-slab-2"), { opacity: 1 },
+        { opacity: 0, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 18.55);
+      tl.fromTo(q("#c4-slab-1"),
+        { x: 0, y: 6, rotation: 0, scale: 0.94 },
+        { x: 0, y: -236, rotation: 0, scale: 0.64,
+          duration: 1.15, ease: "power3.inOut", immediateRender: false }, 18.60);
+
+      var slots = qa(".c4-slot");
+      var heads = qa(".c4-slot-h");
+      var barsA = qa(".c4-bar-a");
+      var barsB = qa(".c4-bar-b");
+      for (i = 0; i < 4; i++) {
+        tl.fromTo(slots[i],
+          { opacity: 0, y: 22 },
+          { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 19.05 + i * 0.18);
+        // 19.05, no 19.95: el rotulo de etapa entra en 19.25 y las casillas
+        // llegaban 0.7s despues, dejando el cuadro casi vacio ese rato.
+      }
+
+      var CHIP = [
+        { at: 20.85, x: -213, y: -18 },
+        { at: 21.75, x: 213, y: -18 },
+        { at: 22.65, x: -213, y: 138 },
+        { at: 23.55, x: 213, y: 138 }
+      ];
+      for (i = 0; i < 4; i++) {
+        var c = CHIP[i];
+        var chip = q("#c4-chip-" + i);
+        tl.fromTo(chip,
+          { opacity: 0, scale: 0.72, x: 0, y: -244 },
+          { opacity: 1, scale: 1, x: 0, y: -212, duration: 0.3, ease: "power2.out" }, c.at);
+        tl.fromTo(chip,
+          { x: 0, y: -212 },
+          { x: c.x, y: c.y, duration: 0.78, ease: "power3.inOut", immediateRender: false },
+          c.at + 0.3);
+        tl.fromTo(chip,
+          { opacity: 1, scale: 1 },
+          { opacity: 0, scale: 0.92, duration: 0.34, ease: "power2.in", immediateRender: false },
+          c.at + 1.02);
+
+        var dock = c.at + 1.02;
+        tl.fromTo(heads[i], { opacity: 0.32 },
+          { opacity: 1, duration: 0.42, ease: "power2.out" }, dock);
+        tl.fromTo(barsA[i], { scaleX: 0 },
+          { scaleX: 1, duration: 0.55, ease: "power3.out" }, dock + 0.06);
+        tl.fromTo(barsB[i], { scaleX: 0 },
+          { scaleX: 1, duration: 0.5, ease: "power3.out" }, dock + 0.22);
+      }
+
+      tl.fromTo(q("#c4-dato-campos"),
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 24.75);
+      tl.fromTo(q("#c4-dato-campos"),
+        { opacity: 1, y: 0 },
+        { opacity: 0, y: -12, duration: 0.5, ease: "power2.in", immediateRender: false }, 26.35);
+
+      /* =========================================================
+         27.0–31.6 "Y cinco: lo guarda en una base de datos que vive
+                    en el hospital."
+         card-morph-anchor: las cuatro casillas se compactan sobre la
+         línea de la fila y se entregan a la fila real, que entra
+         debajo. Detrás se van apilando más filas.
+         ========================================================= */
+      var COMPACT = [
+        { dx: -102, dy: -62 },
+        { dx: -318, dy: -62 },
+        { dx: 318, dy: -218 },
+        { dx: 102, dy: -218 }
+      ];
+      tl.fromTo(q("#c4-slab-1"), { opacity: 1 },
+        { opacity: 0, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 25.95);
+      for (i = 0; i < 4; i++) {
+        tl.fromTo(slots[i],
+          { x: 0, y: 0, scale: 1 },
+          { x: COMPACT[i].dx, y: COMPACT[i].dy, scale: 0.52,
+            duration: 1.05, ease: "power2.inOut", immediateRender: false }, 25.95);
+        tl.fromTo(slots[i], { opacity: 1 },
+          { opacity: 0, duration: 0.4, ease: "power2.in", immediateRender: false }, 26.62);
+      }
+
+      var filas = qa(".c4-fila");
+      tl.fromTo(filas[0],
+        { opacity: 0, scaleX: 0.86, scaleY: 0.5 },
+        { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.55, ease: "power3.out" }, 26.75);
+      tl.fromTo(q("#c4-thead"),
+        { opacity: 0, y: -14 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 27.25);
+
+      var FONDO = [0.86, 0.74, 0.62, 0.5, 0.4];
+      for (i = 1; i < filas.length; i++) {
+        tl.fromTo(filas[i],
+          { opacity: 0, y: 30 },
+          { opacity: FONDO[i - 1], y: 0, duration: 0.62, ease: "power3.out" },
+          27.85 + (i - 1) * 0.52);
+      }
+
+      tl.fromTo(q("#c4-dato-bd"),
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 28.55);
+
+      /* sostenido final: la base respira, no se congela */
+      tl.fromTo(q("#c4-tabla"), { scale: 1 },
+        { scale: 1.012, duration: 2.0, ease: "power1.out" }, 30.60);
+    })();
   </script>
 </template>

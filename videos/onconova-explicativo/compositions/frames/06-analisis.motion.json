@@ -1,0 +1,22 @@
+{
+  "scene": "06-analisis",
+  "duration_s": 29.0,
+  "rules": [
+    "counting-dynamic-scale",
+    "stat-bars-and-fills",
+    "svg-path-draw",
+    "waterfall-entry",
+    "multi-phase-camera",
+    "coordinate-target-zoom",
+    "ambient-glow-bloom",
+    "gsap-effects"
+  ],
+  "exit": {
+    "vector": "push-in lineal sin resolver que termina justo en la marca de 29 s: scale 1,058 subiendo a 0,00479/s (≈4,6 px/s de expansion radial en el borde del cuadro) + zoom-inner y = -32,0 px subiendo a ≈3,5 px/s; encima, deriva ambiental sinusoidal (±5 px x / ±3 px y) a ≈1,3 px/s. Ningun tween sobrepasa los 29,0 s.",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "camara en reposo: scale 1,0, x/y 0; solo la deriva ambiental sinusoidal (±5 px x / ±3 px y) arranca en t=0 a ≈1,9 px/s; la primera entrada (titular enmascarado) cae en t=0,10 s",
+    "from_rest": true
+  }
+}

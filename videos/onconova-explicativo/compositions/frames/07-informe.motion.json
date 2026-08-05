@@ -1,0 +1,20 @@
+{
+  "scene": "07-informe",
+  "duration_s": 47.0,
+  "rules": [
+    "waterfall-entry",
+    "coordinate-target-zoom",
+    "multi-phase-camera",
+    "css-marker-patterns",
+    "dynamic-content-sequencing",
+    "gsap-effects"
+  ],
+  "exit": {
+    "vector": "push-in muy lento sobre el plano general: scale 1.0166 en t=47 y subiendo hacia 1.02 (tween scale 0.995 -> 1.02, power1.inOut, arranca en 42.2 con duracion 6.5 y no ha terminado); +3.9 px/s de expansion radial en el borde; sin desplazamiento lateral (x/y del zoom-inner en reposo); deriva ambiental sinusoidal ±4 px",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "camara quieta (zoom-outer en scale 1.0, zoom-inner en x/y 0) pero el plano NO esta del todo en reposo: la deriva ambiental arranca a velocidad maxima, ~1.26 px/s en diagonal abajo-derecha (0.96 px/s en x, 0.81 px/s en y); primera entrada (titular) en t=0.15s y primera hoja en t=0.45s",
+    "from_rest": false
+  }
+}

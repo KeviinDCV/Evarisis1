@@ -1,0 +1,17 @@
+{
+  "scene": "03-onconova",
+  "duration_s": 13.0,
+  "rules": [
+    "css-marker-patterns",
+    "asr-keyword-glow",
+    "sine-wave-loop"
+  ],
+  "exit": {
+    "vector": "none — ~0 px/s at 13.0s (lockup micro-scale runs power1.out to a dead stop; ambient breath enveloped to zero from 10.4s)",
+    "still_moving": false
+  },
+  "entry": {
+    "vector": "none — 0 px/s at 0.0s (cleared stage; the lockup settles in place, nothing travels)",
+    "from_rest": true
+  }
+}

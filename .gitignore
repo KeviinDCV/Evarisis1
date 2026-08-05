@@ -90,3 +90,16 @@ Thumbs.db
 #    *.pdf, *.rar/.zip, *.log, *.xlsx/.csv, data/ → datos de pacientes
 #    y archivos pesados. NUNCA quitar el bloque crítico de arriba.
 # ===================================================================
+
+# ---- Proyectos de video (HyperFrames): artefactos regenerables ----
+# Todo esto se reconstruye desde el proyecto. Ojo: los MP4 renderizados pesan
+# 111-123 MB y GitHub rechaza cualquier archivo de mas de 100 MB, que es lo que
+# estaba bloqueando el push (el mensaje de VS Code decia "haz pull", enganoso).
+# OJO: git NO admite comentarios en la misma linea que un patron.
+videos/*/node_modules/
+videos/*/renders/
+videos/*/.media/
+videos/*/snapshots/
+videos/*/.hyperframes/
+videos/*/.thumbnails/
+videos/*/.waveform-cache/
