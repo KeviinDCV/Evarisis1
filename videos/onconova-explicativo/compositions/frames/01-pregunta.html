@@ -1,5 +1,5 @@
 <template>
-  <div data-hf-id="hf-2zyp" id="root" data-composition-id="01-pregunta" data-start="0" data-width="1920" data-height="1080" data-duration="10.49">
+  <div data-hf-id="hf-2zyp" id="root" data-composition-id="01-pregunta" data-start="0" data-width="1920" data-height="1080" data-duration="8.14">
     <style>
       #root {
         position: relative; width: 1920px; height: 1080px; overflow: hidden;
@@ -78,7 +78,7 @@
     </style>
 
     <!-- ================= fondo (pista 0) ================= -->
-    <div data-hf-id="hf-nupi" id="s1-clip-fondo" class="clip" data-start="0" data-duration="10.49" data-track-index="0">
+    <div data-hf-id="hf-nupi" id="s1-clip-fondo" class="clip" data-start="0" data-duration="8.14" data-track-index="0">
       <div data-hf-id="hf-tab5" class="s1-stage"></div>
       <div data-hf-id="hf-5u86" class="s1-aliento" id="s1-aliento"></div>
       <div data-hf-id="hf-5ju2" class="s1-radial" id="s1-radial"></div>
@@ -87,14 +87,18 @@
     </div>
 
     <!-- ================= cartela institucional (pista 1) ================= -->
-    <section data-hf-id="hf-v0gd" id="s1-clip-cartela" class="clip" data-start="0" data-duration="10.49" data-track-index="1">
+    <section data-hf-id="hf-v0gd" id="s1-clip-cartela" class="clip" data-start="0" data-duration="8.14" data-track-index="1">
       <div data-hf-id="hf-2v1o" class="s1-card" id="s1-card">
         <img data-hf-id="hf-w0u1" class="s1-logo" id="s1-logo" src="assets/marca/huv-isotipo.png" alt="Hospital Universitario del Valle">
         <div data-hf-id="hf-9l21" class="s1-casa" id="s1-casa">HOSPITAL UNIVERSITARIO DEL VALLE</div>
         <div data-hf-id="hf-n4s5" class="s1-ese s1-mono" id="s1-ese">EVARISTO GARCÍA E.S.E.</div>
         <div data-hf-id="hf-kzpo" class="s1-plinto" id="s1-plinto"></div>
+        <!-- Una sola línea a propósito. Antes iba también «SERVICIO DE
+             PATOLOGÍA»: de ahí SALEN los informes, pero el área no trabaja con
+             ese servicio, así que atribuirse su nombre en la cartela de
+             apertura era impreciso. -->
         <div data-hf-id="hf-585d" class="s1-area s1-mono" id="s1-area">
-          ÁREA DE CIRUGÍA ONCOLÓGICA<br data-hf-id="hf-x5px">SERVICIO DE PATOLOGÍA
+          ÁREA DE ONCOLOGÍA QUIRÚRGICA
         </div>
       </div>
 
@@ -192,7 +196,7 @@
       // Arranca a la vez que la escena siguiente y dura 0,72 s: la
       // saliente se va MIENTRAS la entrante llega, para que no quede ni
       // un fotograma con el cuadro vacio.
-      tl.duration(10.49);
+      tl.duration(8.14);
 
 
 

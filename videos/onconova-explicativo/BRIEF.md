@@ -103,6 +103,18 @@ Narración con voz natural, en español.
   El primer guion decía «1.566 tumores / 74 sin diagnóstico»: **era falso** y se
   corrigió. En un vídeo cuyo remate es la verificabilidad, una cifra que
   contradiga el PDF en pantalla es el fallo más caro que existe.
+- **El área es ONCOLOGÍA QUIRÚRGICA, no «Cirugía Oncológica».** Y la cartela de
+  apertura ya NO acredita al «Servicio de Patología»: de ahí salen los informes,
+  pero el área no trabaja con ese servicio, solo extrae su dato. El nombre vivía
+  en tres sitios y había que cambiarlos los tres a la vez —cartela de apertura,
+  firma del cierre y el `area=` por defecto de
+  `generar_informe_estadistico_pdf`—, porque el vídeo rasteriza la página 1 de
+  ese informe: tocar solo las cartelas habría puesto los dos rótulos
+  contradiciéndose dentro del mismo plano.
+  ⚠️ **Pendiente:** la línea 2 sigue diciendo «El servicio produce setecientos
+  sesenta y cinco informes». Sin la mención a Patología en la apertura, «el
+  servicio» se queda sin antecedente y puede leerse como si los produjera
+  Oncología Quirúrgica. Requiere regenerar esa línea (16,2 s de cuota).
 - **🔴 El informe cambió y el vídeo lo enseña LITERALMENTE.** La escena 11 no
   describe el PDF: rasteriza sus cinco páginas a 3,6× y las recorre. Así que al
   cambiar la tabla de Cobertura del informe (V6.9.93: pasa a repartir por

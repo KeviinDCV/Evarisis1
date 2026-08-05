@@ -130,7 +130,7 @@ def _barh(data, titulo, path, top=10):
     # V6.9.93: figura algo mayor y, sobre todo, ETIQUETAS mas grandes. Lo que se
     # leia mal no era el grafico sino su eje Y, que va a dos lineas (diagnostico
     # + organo) y estaba a 7 pt.
-    fig = Figure(figsize=(7.6, 4.4), dpi=150)
+    fig = Figure(figsize=(8.0, 4.7), dpi=150)
     fig.patch.set_facecolor("#ffffff")
     ax = fig.add_subplot(111)
     if not items:
@@ -146,14 +146,14 @@ def _barh(data, titulo, path, top=10):
         va = [v for _, v in items]
         colores = [PALETA[i % len(PALETA)] for i in range(len(items))]
         ax.barh(et, va, color=colores)
-        ax.set_title(titulo, fontsize=12, fontweight="bold", color=NAVY, pad=8)
-        ax.tick_params(axis="y", labelsize=8.5)
-        ax.tick_params(axis="x", labelsize=9)
+        ax.set_title(titulo, fontsize=12.5, fontweight="bold", color=NAVY, pad=8)
+        ax.tick_params(axis="y", labelsize=9.5)
+        ax.tick_params(axis="x", labelsize=9.5)
         for sp in ("top", "right"):
             ax.spines[sp].set_visible(False)
         ax.margins(x=0.12)
         for i, v in enumerate(va):
-            ax.text(v, i, f" {v}", va="center", fontsize=9, color=GREY)
+            ax.text(v, i, f" {v}", va="center", fontsize=9.5, color=GREY)
     fig.tight_layout()
     fig.savefig(path, bbox_inches="tight", facecolor="#ffffff")
 
@@ -188,7 +188,13 @@ def _trend(monthly, path):
 
 def generar_informe_estadistico_pdf(df, out_path,
                                     institucion="Hospital Universitario del Valle",
-                                    area="Área de Cirugía Oncológica"):
+                                    # V6.9.93: el área es ONCOLOGÍA QUIRÚRGICA, no
+                                    # «Cirugía Oncológica». Se corrige aquí y no solo
+                                    # en el vídeo porque el vídeo RASTERIZA la página 1
+                                    # de este informe: cambiar solo la cartela habría
+                                    # dejado los dos rótulos contradiciéndose dentro
+                                    # del mismo plano.
+                                    area="Área de Oncología Quirúrgica"):
     """Genera el informe estadístico PDF decorado. Devuelve la ruta de salida."""
     from reportlab.lib.pagesizes import A4
     from reportlab.lib import colors
@@ -347,6 +353,15 @@ def generar_informe_estadistico_pdf(df, out_path,
         Paragraph('<font color="#cfd8e6">Informe de un vistazo · ONCONOVA Gestor Oncológico</font>', h_sub1),
         Spacer(1, 3),
         Paragraph(f'<font color="#cfd8e6">{institucion} · {area}</font>', h_sub2),
+        # V6.9.93 — ALCANCE, dentro de la cabecera. Este informe SOLO cubre
+        # inmunohistoquímica: las coloraciones se excluyen aguas arriba (el
+        # dashboard tira las filas con clave M…) y todavía no tienen analítica
+        # propia. Sin decirlo, un lector razonable asume que estas cifras son
+        # «lo que hace el servicio», y no lo son: son una parte. Va aquí y no
+        # en una banda aparte porque una fila más empujaba el informe a una
+        # sexta página.
+        Paragraph('<font color="#e9a33c" size=8.5><b>Solo estudios de '
+                  'inmunohistoquímica (IHQ) — no incluye coloraciones</b></font>', h_sub2),
     ]
     if fav:
         try:
@@ -482,8 +497,8 @@ def generar_informe_estadistico_pdf(df, out_path,
     # (diagnóstico + órgano) y quedaban diminutas. Se le da el ancho que sobraba
     # en su columna (12,4 cm de caja para una imagen de 10,2) y algo de alto. El
     # aumento es contenido a propósito: subir más empuja el bloque de página.
-    pano = Table([[Image(p_mal, 4.8 * cm, 4.8 * cm), Image(p_bar, 12.1 * cm, 6.3 * cm)]],
-                 colWidths=[5.2 * cm, CW - 5.2 * cm])
+    pano = Table([[Image(p_mal, 4.4 * cm, 4.4 * cm), Image(p_bar, 12.9 * cm, 7.4 * cm)]],
+                 colWidths=[4.7 * cm, CW - 4.7 * cm])
     pano.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
     story.append(KeepTogether([
         band("Panorama general"), Spacer(1, 6), pano, Spacer(1, 8),
@@ -653,7 +668,9 @@ def generar_informe_estadistico_pdf(df, out_path,
     nota = ParagraphStyle("n", parent=styles["Normal"], fontSize=7.5, textColor=grey, leading=10)
     no_onco = total - n_onco
     story.append(Paragraph(
-        f"<b>Nota metodológica:</b> informe basado en {total} estudios de inmunohistoquímica del periodo. "
+        f"<b>Nota metodológica:</b> informe basado en {total} estudios de <b>inmunohistoquímica</b> del "
+        f"periodo. <b>No incluye coloraciones</b> (básicas ni histoquímicas): esa analítica aún no "
+        f"está incorporada y llegará en una edición posterior. "
         f"Las cifras son <b>conteos de casos</b> (no incidencia poblacional, mortalidad ni prevalencia). "
         f"De los {total} casos, {n_onco} corresponden a diagnósticos oncológicos categorizados y "
         f"{no_onco} a hallazgos no-neoplásicos, estudios sin diagnóstico específico o pendientes de revisión. "

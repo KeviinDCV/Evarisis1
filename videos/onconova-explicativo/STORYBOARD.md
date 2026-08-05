@@ -1,6 +1,6 @@
 ---
 format: 1920x1080
-duration: 5m35s
+duration: 5m33s
 message: "El dato oncológico del HUV deja de estar encerrado en PDFs: se consulta, se analiza y se puede verificar contra el informe original — y esto es la aplicación que lo hace, pantalla por pantalla"
 arc: "Membrete institucional → El dato encerrado → ONCONOVA → El circuito → La aplicación abre → De la carpeta a la base → Las siete vistas → Los datos → El análisis → El Dashboard → El informe → La verificación → Cierre"
 audience: "profesionales sanitarios y de gestión del HUV"
@@ -28,14 +28,14 @@ mode: collaborative
 
 - status: built
 - src: compositions/frames/01-pregunta.html
-- duration: 10.49s
+- duration: 8.14s
 - transition_in: —
 - scene: Cartela institucional del HUV: membrete de la casa, sin más.
 - blueprint: titlecard-reveal
-- voiceover: "Hospital Universitario del Valle, Evaristo García. Área de Cirugía Oncológica. Servicio de Patología."
+- voiceover: "Hospital Universitario del Valle, Evaristo García. Área de Oncología Quirúrgica."
 
 Abre con la marca del Hospital Universitario del Valle sobre el escenario navy:
-isotipo, nombre de la casa, plinto ámbar, área y servicio. Nada más. Se quitaron
+isotipo, nombre de la casa, plinto ámbar y área. Nada más. Se quitaron
 las tres preguntas que abrían el vídeo: la sala son los profesionales del propio
 servicio y no necesitan que se les cuente su trabajo. Lo que justifica el programa
 son las cifras de la escena 2, que son un hecho y no una interpelación.
@@ -239,11 +239,11 @@ para que no pueda desalinearse.
 
 - status: built
 - src: compositions/frames/09-cierre.html ← escena 13, no 9
-- duration: 21.94s
+- duration: 22.70s
 - transition_in: crossfade
 - scene: Lockup final, firma del hospital y nota de confidencialidad.
 - blueprint: titlecard-reveal
-- voiceover: "ONCONOVA. El dato oncológico del Hospital Universitario del Valle: consultable, analizable y verificable. Dentro del hospital, y sin que ningún dato de paciente salga de él. Área de Cirugía Oncológica. Hospital Universitario del Valle, Evaristo García."
+- voiceover: "ONCONOVA. El dato oncológico del Hospital Universitario del Valle: consultable, analizable y verificable. Dentro del hospital, y sin que ningún dato de paciente salga de él. Área de Oncología Quirúrgica. Hospital Universitario del Valle, Evaristo García."
 
 Vuelve el lockup, ahora acompañado de la línea de cierre y del sello discreto
 «Documento confidencial — Ley 1581 (Habeas Data)», el mismo que lleva el informe.

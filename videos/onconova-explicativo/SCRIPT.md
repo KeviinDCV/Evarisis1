@@ -31,7 +31,7 @@ más: tres bloques con una pausa clara entre ellos, como quien lee un membrete.
 No hay preguntas al público — la audiencia es el propio servicio y conoce su
 trabajo mejor que este vídeo.
 
-    Hospital Universitario del Valle, Evaristo García. Área de Cirugía Oncológica. Servicio de Patología.
+    Hospital Universitario del Valle, Evaristo García. Área de Oncología Quirúrgica.
 
 ## Line 2 — El problema (Frame 2)
 
@@ -39,7 +39,7 @@ trabajo mejor que este vídeo.
 **Delivery:** Constatación, no queja. «Y un PDF se lee, no se consulta» cae
 seca, sin subrayar.
 
-    El servicio produce setecientos sesenta y cinco informes: treinta y seis mil páginas de patología. Cada diagnóstico, cada biomarcador y cada paciente está escrito ahí dentro. Pero está en PDF. Y un PDF se lee, no se consulta.
+    Patología produce setecientos sesenta y cinco informes: treinta y seis mil páginas. Cada diagnóstico, cada biomarcador y cada paciente está escrito ahí dentro. Pero está en PDF. Y un PDF se lee, no se consulta.
 
 ## Line 3 — ONCONOVA (Frame 3)
 
@@ -124,5 +124,5 @@ determinismo, más lenta: es una garantía.
 **Delivery:** Serena. Nombre, promesa, punto — y la atribución de la casa al
 final, dicha como se firma un documento: despacio y sin énfasis.
 
-    ONCONOVA. El dato oncológico del Hospital Universitario del Valle: consultable, analizable y verificable. Dentro del hospital, y sin que ningún dato de paciente salga de él. Área de Cirugía Oncológica. Hospital Universitario del Valle, Evaristo García.
+    ONCONOVA. El dato oncológico del Hospital Universitario del Valle: consultable, analizable y verificable. Dentro del hospital, y sin que ningún dato de paciente salga de él. Área de Oncología Quirúrgica. Hospital Universitario del Valle, Evaristo García.
 
