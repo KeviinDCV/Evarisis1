@@ -353,16 +353,16 @@
     }
   </style>
 
-  <div id="root" data-composition-id="04-circuito" data-start="0" data-width="1920" data-height="1080" data-duration="33.09">
+  <div id="root" data-composition-id="04-circuito" data-start="0" data-width="1920" data-height="1080" data-duration="39.59">
 
     <!-- fondo a sangre: siempre en una capa clip, nunca en #root -->
-    <div id="c4-capa-fondo" class="clip" data-start="0" data-duration="33.09" data-track-index="0">
+    <div id="c4-capa-fondo" class="clip" data-start="0" data-duration="39.59" data-track-index="0">
       <div class="c4-ground"></div>
       <div class="c4-radial" id="c4-radial"></div>
       <div class="c4-hair" id="c4-hair"></div>
     </div>
 
-    <div id="c4-capa-circuito" class="clip" data-start="0" data-duration="33.09" data-track-index="1">
+    <div id="c4-capa-circuito" class="clip" data-start="0" data-duration="39.59" data-track-index="1">
       <div class="c4-world" id="c4-world">
 
         <!-- el escritorio: se desplaza con la cámara, por eso el viaje se ve -->
@@ -530,7 +530,7 @@
       <!-- rótulos anclados: no viajan con la cámara -->
       <div class="c4-pinned" id="c4-pinned">
         <div class="c4-brand c4-mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-        <div class="c4-mark c4-mono">04 / 09 — EL CIRCUITO</div>
+        <div class="c4-mark c4-mono">04 / 13 — EL CIRCUITO</div>
 
         <h2 class="c4-titular" id="c4-titular">El circuito de funcionamiento</h2>
 
@@ -565,7 +565,7 @@
     </div>
 
     <!-- ============ plano de conjunto (pista 2) ============ -->
-    <div id="c4-capa-resumen" class="clip" data-start="0" data-duration="33.09" data-track-index="2">
+    <div id="c4-capa-resumen" class="clip" data-start="0" data-duration="39.59" data-track-index="2">
       <div class="c4-res" id="c4-res">
         <div class="c4-res-rail">
           <div class="c4-res-base"></div>
@@ -592,16 +592,16 @@
          Entra sobre las ultimas palabras ("nada sale de la red del hospital",
          la voz acaba en 31.6s) y sostiene hasta el final de los 33s. */
       tl.fromTo("#c4-res", { opacity: 0 },
-        { opacity: 1, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 30.35);
+        { opacity: 1, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 28.75);
       tl.fromTo("#c4-res-line", { scaleX: 0 },
-        { scaleX: 1, duration: 1.5, ease: "power3.inOut", immediateRender: false }, 30.75);
+        { scaleX: 1, duration: 1.5, ease: "power3.inOut", immediateRender: false }, 29.15);
       for (i = 0; i < 5; i++) {
         tl.fromTo("#c4-res-" + i, { opacity: 0, y: 14 },
           { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false },
-          30.85 + i * 0.19);
+          29.25 + i * 0.19);
       }
       tl.fromTo("#c4-res-pie", { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, 32.0);
+        { opacity: 1, duration: 0.6, ease: "power2.out", immediateRender: false }, 30.4);
 
       // marcador-fuera: el numero de seccion cambia entre escenas, asi que
 
@@ -611,7 +611,7 @@
 
       // porque es identica en todas y superpuesta no se nota.
 
-      tl.to(".c4-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.79);
+      tl.to(".c4-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.34);
 
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
@@ -629,7 +629,7 @@
       // la imagen sigue, solo se releva lo que hay encima.
 
 
-      tl.to(["#c4-capa-circuito", "#c4-capa-resumen"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 31.39);
+      tl.to(["#c4-capa-circuito", "#c4-capa-resumen"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 38.59);
 
 
 
@@ -646,6 +646,37 @@
 
 
       tl.to(".c4-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.39);
+
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+
+      // duraba 33.09s; la nueva dura 39.59s. tl.duration() reescala TODA la
+
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+
+      tl.duration(39.59);
+
 
 
 

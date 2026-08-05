@@ -1,5 +1,5 @@
 <template>
-  <div data-hf-id="hf-2zyp" id="root" data-composition-id="01-pregunta" data-start="0" data-width="1920" data-height="1080" data-duration="9.07">
+  <div data-hf-id="hf-2zyp" id="root" data-composition-id="01-pregunta" data-start="0" data-width="1920" data-height="1080" data-duration="10.49">
     <style>
       #root {
         position: relative; width: 1920px; height: 1080px; overflow: hidden;
@@ -78,7 +78,7 @@
     </style>
 
     <!-- ================= fondo (pista 0) ================= -->
-    <div data-hf-id="hf-nupi" id="s1-clip-fondo" class="clip" data-start="0" data-duration="9.07" data-track-index="0">
+    <div data-hf-id="hf-nupi" id="s1-clip-fondo" class="clip" data-start="0" data-duration="10.49" data-track-index="0">
       <div data-hf-id="hf-tab5" class="s1-stage"></div>
       <div data-hf-id="hf-5u86" class="s1-aliento" id="s1-aliento"></div>
       <div data-hf-id="hf-5ju2" class="s1-radial" id="s1-radial"></div>
@@ -87,7 +87,7 @@
     </div>
 
     <!-- ================= cartela institucional (pista 1) ================= -->
-    <section data-hf-id="hf-v0gd" id="s1-clip-cartela" class="clip" data-start="0" data-duration="9.07" data-track-index="1">
+    <section data-hf-id="hf-v0gd" id="s1-clip-cartela" class="clip" data-start="0" data-duration="10.49" data-track-index="1">
       <div data-hf-id="hf-2v1o" class="s1-card" id="s1-card">
         <img data-hf-id="hf-w0u1" class="s1-logo" id="s1-logo" src="assets/marca/huv-isotipo.png" alt="Hospital Universitario del Valle">
         <div data-hf-id="hf-9l21" class="s1-casa" id="s1-casa">HOSPITAL UNIVERSITARIO DEL VALLE</div>
@@ -98,7 +98,7 @@
         </div>
       </div>
 
-      <div data-hf-id="hf-cpl1" class="s1-mark s1-mono" id="s1-mark">01 / 09 — APERTURA</div>
+      <div data-hf-id="hf-cpl1" class="s1-mark s1-mono" id="s1-mark">01 / 13 — APERTURA</div>
     </section>
   </div>
 
@@ -142,7 +142,7 @@
 
       // porque es identica en todas y superpuesta no se nota.
 
-      tl.to("#s1-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 7.77);
+      tl.to("#s1-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 7.32);
 
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
@@ -161,6 +161,31 @@
 
 
       tl.to(["#s1-clip-cartela"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 7.37);
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+      // duraba 9.07s; la nueva dura 10.49s. tl.duration() reescala TODA la
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+      tl.duration(10.49);
+
 
 
 

@@ -105,6 +105,40 @@ Narración con voz natural, en español.
   → `update_malignancy_biomarker_table`), no una agregación hecha para el vídeo.
   Se muestran las 5 filas con dato; PDL-1 y «P16 %» salen a cero en las cuatro
   columnas —columnas duplicadas del esquema— y se omiten para no aparentar avería.
+- **El nombre del PDF no es su inventario.** `IHQ260001 al IHQ260050.pdf` no
+  trae 50 casos: trae **82**, porque cada archivo arrastra casos de lotes
+  vecinos. El árbol de la escena 6 llevaba «(50/50)» inventado; los reales son
+  82 · 92 · 93 · 84, leídos de `auditoria/casos_por_pdf.json`. Lo mismo con los
+  tamaños, las fechas y el «5 elementos» que se contradecía con la lista visible
+  (la carpeta tiene 404). **Cualquier cifra de la carpeta se mide en disco.**
+- **Una ventana del producto se cita entera: valor Y formato.** El resumen de
+  importación mostraba «12 · 11 · 1 · 92 %», inventado, y además con un formato
+  que la aplicación no usa. Lo real, medido sobre esos mismos cuatro PDF con la
+  función que llama `ui.py` (`core.validation_checker.analizar_batch_registros`):
+  **347 · 327 · 20 · 94.2 %** — y con punto y un decimal, porque el badge es una
+  f-string de Python (`f"{porcentaje_exito:.1f}%"`). El total es 347 y no 351
+  porque cuatro casos salen en dos archivos. La barra de progreso cuenta
+  ARCHIVOS (`Procesando (2/4)`), el resumen cuenta REGISTROS: no son lo mismo y
+  el borrador los había mezclado.
+- **🔴 Un arreglo automático puede romper lo que no miraba.** El pase que escapó
+  los `id` que empiezan por dígito (`#05-datos` → `[id="05-datos"]`) se comió
+  también **nueve colores hexadecimales**: `stroke='#22304a'` acabó como
+  `stroke='[id="22304a"]'`. Efecto: la lupa del buscador y un aro del donut
+  invisibles, el cursor sin contorno, las cabeceras que nunca oscurecían y la
+  pestaña pulsada que nunca se resaltaba. **Ninguno daba error**; salieron
+  porque el verificador de contraste señaló los elementos que seguían apagados.
+  Un `replace` con regex sobre HTML se audita después, siempre.
+- **Escena nueva = escena que suelta su contenido.** Las cuatro escenas del
+  recorrido se escribieron sin la suelta que ya tenían las nueve originales, y
+  en la costura 7→8 se veían **dos interfaces superpuestas** y el marcador hecho
+  un amasijo («078//133—LASSVISTAS» = «07 / 13 — LAS VISTAS» sobre
+  «08 / 13 — LOS DATOS»). Toda escena apaga su contenido, su marca y su marcador
+  antes del encadenado y se queda solo con el fondo navy, que es idéntico en las
+  trece. Ese fondo común es lo que hace que la imagen no se corte nunca.
+- **Un diálogo se abre opaco.** Fundir opacidad y escala juntas durante medio
+  segundo deja ver el panel POR DEBAJO de la ventana modal — el mismo artefacto
+  de «se ve lo de detrás» que ya nos costó una corrección en la marca de
+  esquina. Opacidad en 0,16 s, escala en 0,5 s, por separado.
 - No es una grabación de pantalla: HyperFrames renderiza desde HTML. Las
   pantallas son reconstrucciones fieles, decisión asumida por el usuario.
 - Paleta tomada del propio producto (navy `#2d3e5e`) para que el vídeo y la

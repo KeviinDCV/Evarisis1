@@ -1,0 +1,1206 @@
+<template>
+  <style>
+    /* ============================================================
+       06-cargar — De la carpeta a la base de datos (33.42s)
+       Escenario FIJO: la camara no viaja, el cursor conduce y la
+       interfaz RESPONDE de verdad.
+         0.0–6.0   explorador: pdfs_patologia -> se abre 2026
+         6.0–9.5   se eligen archivos, y luego la carpeta entera
+         9.5–13.0  la aplicacion, pestana «Importar Datos»
+        13.0–17.5  «Seleccionar pendientes»: se marcan ◐ y ●
+        17.5–18.5  «Procesar seleccionados»  <- UNICO AMBAR
+        18.5–26.5  ventana de progreso, barra verde a rayas
+        26.5–31.9  ventana de resultados: 347 · 327 · 20 · 94,2%
+       Foco de escena: EL BOTON DE PROCESAR en el instante del clic.
+       Rotulos = los literales del producto (emojis incluidos).
+       Ley 1581: ni un dato de paciente en pantalla; solo nombres de
+       archivo y cifras de lote.
+       Dentro de una pantalla recreada manda la aplicacion (frame.md):
+       el verde #2f8f6b del boton, los estados #1565C0 / #E65100 / #1B5E20
+       de las marcas ✓ ◐ ● y los emoji de las pestañas van a color porque
+       asi se ven en el producto. Por eso el ambar de la escena es un ARO
+       GRUESO con halo, no un relleno tenue: tiene que ganar de calle.
+       Cifras del explorador y del arbol: medidas en disco (pdfs_patologia/
+       2026 = 404 elementos, 27/05/2026) y en auditoria/casos_por_pdf.json
+       (82 · 92 · 93 · 84 casos, no 50: cada PDF arrastra casos vecinos).
+       Cifras de la ventana de resultados: medidas sobre esos mismos cuatro
+       PDF con core.validation_checker.analizar_batch_registros, que es la
+       que llama ui.py al terminar la importacion.
+       ============================================================ */
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      background: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clip { position: absolute; inset: 0; }
+    .f6-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- fondo: escenario + decorativos, una sola respiracion ---------- */
+    .f6-ground { position: absolute; inset: 0; background: #141d2b; }
+    .f6-veil {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(120% 80% at 50% 46%,
+                  rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+      opacity: 0.46;
+    }
+    .f6-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        860px 640px at 44% 48%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.34) 46%,
+        rgba(45, 62, 94, 0) 72%
+      );
+      opacity: 0.55;
+      will-change: transform, opacity;
+    }
+    .f6-grid40 {
+      position: absolute; inset: -40px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, transparent 1px),
+        linear-gradient(to bottom, #e9eef7 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    .f6-hairline {
+      position: absolute; left: 0; right: 0; top: 124px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+      opacity: 0.6;
+    }
+
+    .f6-world { position: absolute; inset: 0; transform-origin: 50% 55%; will-change: transform; }
+
+    /* ================= EXPLORADOR DE ARCHIVOS ================= */
+    .f6-exp {
+      position: absolute; left: 236px; top: 186px; width: 1448px; height: 632px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 42px 96px rgba(20, 29, 43, 0.62);
+      overflow: hidden;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .f6-chrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 56px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 26px;
+      font-size: 19px; letter-spacing: 0.14em;
+    }
+    .f6-dots { margin-left: auto; display: flex; gap: 10px; }
+    .f6-dots i { width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
+
+    .f6-side {
+      position: absolute; left: 0; top: 56px; width: 288px; bottom: 0;
+      background: rgba(45, 62, 94, 0.05);
+      border-right: 1px solid rgba(45, 62, 94, 0.14);
+    }
+    .f6-snode {
+      position: absolute; box-sizing: border-box;
+      left: 20px; width: 248px; height: 40px;
+      display: flex; align-items: center; gap: 12px;
+      font-size: 20px; color: rgba(34, 48, 74, 0.72);
+      padding-left: 10px; white-space: nowrap;
+    }
+    .f6-snode.f6-sub { padding-left: 34px; }
+    .f6-snode.f6-sub2 { padding-left: 58px; font-size: 17px; color: rgba(34, 48, 74, 0.72); }
+    .f6-selw {
+      position: absolute; left: 0; right: 0; top: 2px; bottom: 2px;
+      background: rgba(45, 62, 94, 0.16); opacity: 0;
+    }
+    .f6-snode span, .f6-snode svg { position: relative; }
+
+    .f6-bc {
+      position: absolute; left: 318px; top: 68px;
+      font-size: 21px; color: rgba(34, 48, 74, 0.72); letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .f6-bcrule {
+      position: absolute; left: 288px; right: 0; top: 110px; height: 1px;
+      background: rgba(45, 62, 94, 0.14);
+    }
+
+    .f6-cols {
+      position: absolute; left: 318px; top: 116px; width: 1100px; height: 36px;
+      display: grid; grid-template-columns: 46px 1fr 150px 190px;
+      align-items: end; border-bottom: 1px solid rgba(45, 62, 94, 0.20);
+    }
+    .f6-cols span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 16px; letter-spacing: 0.11em; color: rgba(34, 48, 74, 0.72);
+      padding-bottom: 10px; white-space: nowrap;
+    }
+
+    .f6-list {
+      position: absolute; left: 318px; top: 156px; width: 1100px; height: 384px;
+      overflow: hidden;
+    }
+    .f6-group { position: absolute; left: 0; top: 0; width: 1100px; }
+    .f6-frow {
+      position: absolute; left: 0; width: 1100px; height: 76px;
+      display: grid; grid-template-columns: 46px 1fr 150px 190px;
+      align-items: center;
+      border-bottom: 1px solid rgba(45, 62, 94, 0.10);
+      will-change: transform, opacity;
+    }
+    .f6-frow > * { position: relative; white-space: nowrap; }
+    .f6-fname { font-size: 22px; }
+    .f6-fmeta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 19px; color: rgba(34, 48, 74, 0.72);
+      font-variant-numeric: tabular-nums;
+    }
+    .f6-fwash {
+      position: absolute !important; left: -12px; right: -12px; top: 2px; bottom: 2px;
+      background: rgba(45, 62, 94, 0.15); opacity: 0;
+    }
+
+    .f6-foot {
+      position: absolute; left: 318px; top: 570px; width: 1100px; height: 1px;
+      background: rgba(45, 62, 94, 0.14);
+    }
+    .f6-foottx {
+      position: absolute; left: 318px; top: 586px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 18px; letter-spacing: 0.1em; color: rgba(34, 48, 74, 0.72);
+    }
+
+    /* ================= LA APLICACION ================= */
+    .f6-app {
+      position: absolute; left: 200px; top: 152px; width: 1520px; height: 732px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 42px 96px rgba(20, 29, 43, 0.62);
+      overflow: hidden; opacity: 0;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    .f6-tabs {
+      position: absolute; left: 24px; top: 62px; right: 24px; height: 44px;
+      display: flex; gap: 4px; overflow: hidden;
+    }
+    /* las siete llevan su emoji, como en el producto; 16px + 12px de aire
+       dejan la fila en ~1350px dentro de los 1472px disponibles */
+    .f6-tab {
+      flex: 0 0 auto;
+      height: 44px; line-height: 44px; padding: 0 12px; font-size: 16px;
+      background: rgba(45, 62, 94, 0.07); color: rgba(34, 48, 74, 0.72);
+      white-space: nowrap; will-change: transform, opacity;
+    }
+    .f6-tab.f6-on { background: #2d3e5e; color: #f4f6fa; }
+    .f6-tabrule {
+      position: absolute; left: 0; right: 0; top: 106px; height: 1px;
+      background: rgba(45, 62, 94, 0.20);
+    }
+
+    .f6-h1 {
+      position: absolute; left: 40px; top: 146px; width: 480px;
+      font-size: 34px; font-weight: 900; letter-spacing: -0.02em; color: #22304a;
+      will-change: transform, opacity;
+    }
+    /* OJO: esta clase se llamaba «.f6-sub» y chocaba con «.f6-snode.f6-sub»
+       del arbol lateral (misma especificidad, esta va despues y ganaba):
+       los nodos 2025/2026 heredaban left:40px y width:466px y el resaltado
+       se salia de la barra lateral. Nombre inequivoco = colision imposible. */
+    .f6-panel-sub {
+      position: absolute; left: 40px; top: 206px; width: 466px;
+      font-size: 20px; line-height: 1.6; color: rgba(34, 48, 74, 0.72);
+      will-change: transform, opacity;
+    }
+
+    .f6-btn {
+      position: absolute; left: 40px; width: 420px;
+      display: flex; align-items: center; gap: 14px; padding-left: 24px;
+      font-size: 20px; white-space: nowrap;
+      will-change: transform, opacity;
+    }
+    .f6-outline {
+      height: 60px; border: 2px solid #2d3e5e; color: #22304a;
+      background: rgba(45, 62, 94, 0);
+    }
+    .f6-em { font-size: 21px; }
+    .f6-rule {
+      position: absolute; left: 40px; top: 512px; width: 420px; height: 1px;
+      background: rgba(45, 62, 94, 0.18); transform-origin: 0% 50%;
+    }
+    .f6-proc {
+      height: 66px; background: #2f8f6b; color: #f4f6fa;
+      border: 2px solid #2f8f6b; font-size: 21px;
+      box-shadow: 0 10px 22px rgba(20, 29, 43, 0.16);
+    }
+    /* EL FOCO DE LA ESCENA. Contorno grueso + halo: tiene que ganar de calle
+       a los emoji a color de las pestañas y del arbol, que meten tonos
+       vecinos del ambar. Aro, nunca relleno tenue. */
+    .f6-amber {
+      position: absolute; box-sizing: border-box;
+      left: 30px; top: 620px; width: 468px; height: 90px;
+      border: 5px solid #e9a33c; opacity: 0;
+      box-shadow:
+        0 0 0 3px rgba(233, 163, 60, 0.26),
+        0 0 40px 8px rgba(233, 163, 60, 0.34),
+        inset 0 0 22px 2px rgba(233, 163, 60, 0.20);
+      transform-origin: 50% 50%; will-change: transform, opacity;
+    }
+
+    .f6-treelbl {
+      position: absolute; left: 560px; top: 148px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 19px; letter-spacing: 0.13em; color: rgba(34, 48, 74, 0.72);
+      will-change: transform, opacity;
+    }
+    .f6-treebox {
+      position: absolute; left: 560px; top: 186px; width: 920px; height: 424px;
+      border: 1px solid rgba(45, 62, 94, 0.20);
+      background: rgba(45, 62, 94, 0.03);
+      overflow: hidden;
+      will-change: transform, opacity;
+    }
+    .f6-roll { position: absolute; left: 8px; top: 8px; width: 894px; will-change: transform; }
+    .f6-trow {
+      position: absolute; left: 0; width: 894px; height: 46px;
+      display: grid; grid-template-columns: 34px 1fr 124px;
+      align-items: center; padding: 0 14px 0 12px;
+      will-change: transform, opacity;
+    }
+    .f6-trow > * { position: relative; white-space: nowrap; }
+    .f6-twash {
+      position: absolute !important; left: 0; right: 0; top: 1px; bottom: 1px;
+      background: rgba(45, 62, 94, 0.11); opacity: 0;
+    }
+    .f6-tbar {
+      position: absolute !important; left: 0; top: 1px; bottom: 1px; width: 3px;
+      background: #2d3e5e; transform-origin: 50% 50%;
+    }
+    .f6-st { font-size: 21px; font-family: "IBM Plex Mono", monospace; }
+    .f6-ok { color: #1565C0; }
+    .f6-half { color: #E65100; }
+    .f6-none { color: #1B5E20; }
+    .f6-tname { font-size: 19px; color: #22304a; }
+    .f6-tcount {
+      font-family: "IBM Plex Mono", monospace; font-size: 18px;
+      color: rgba(34, 48, 74, 0.72); text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .f6-skel { display: block; height: 11px; background: rgba(45, 62, 94, 0.15); }
+    .f6-ttrack {
+      position: absolute; right: 8px; top: 8px; width: 4px; height: 408px;
+      background: rgba(45, 62, 94, 0.09);
+    }
+    .f6-tthumb {
+      position: absolute; right: 8px; top: 8px; width: 4px; height: 262px;
+      background: rgba(45, 62, 94, 0.32); will-change: transform;
+    }
+
+    .f6-legend {
+      position: absolute; left: 560px; top: 638px; width: 920px; height: 30px;
+      display: flex; align-items: center; gap: 26px;
+      font-size: 19px; color: rgba(34, 48, 74, 0.72);
+      will-change: transform, opacity;
+    }
+    .f6-legend i { font-style: normal; font-family: "IBM Plex Mono", monospace; font-size: 20px; }
+    .f6-legend b { font-weight: 400; color: rgba(34, 48, 74, 0.28); }
+    .f6-lg { display: flex; align-items: center; gap: 10px; }
+
+    /* ================= MODAL DE PROGRESO ================= */
+    .f6-dim {
+      position: absolute; left: 200px; top: 152px; width: 1520px; height: 732px;
+      background: rgba(20, 29, 43, 0.46); opacity: 0;
+    }
+    .f6-modal {
+      position: absolute; left: 560px; top: 384px; width: 800px; height: 268px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 34px 78px rgba(20, 29, 43, 0.7);
+      overflow: hidden; opacity: 0;
+      transform-origin: 50% 50%; will-change: transform, opacity;
+    }
+    .f6-mchrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 48px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 24px; font-size: 20px;
+    }
+    .f6-mstat {
+      position: absolute; left: 40px; top: 84px;
+      font-family: "IBM Plex Mono", monospace; font-size: 21px; color: #22304a;
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .f6-track {
+      position: absolute; left: 40px; top: 134px; width: 720px; height: 28px;
+      background: rgba(45, 62, 94, 0.12);
+      border: 1px solid rgba(45, 62, 94, 0.18);
+    }
+    .f6-fill {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+      background-color: #2f8f6b;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(244, 246, 250, 0.30) 0px,
+        rgba(244, 246, 250, 0.30) 9px,
+        rgba(244, 246, 250, 0) 9px,
+        rgba(244, 246, 250, 0) 18px
+      );
+      background-size: 25.46px 25.46px;
+    }
+    .f6-hint {
+      position: absolute; left: 40px; top: 202px;
+      font-size: 18px; color: rgba(34, 48, 74, 0.72);
+    }
+
+    /* ================= VENTANA DE RESULTADOS ================= */
+    .f6-res {
+      position: absolute; left: 460px; top: 330px; width: 1000px; height: 430px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 38px 88px rgba(20, 29, 43, 0.7);
+      overflow: hidden; opacity: 0;
+      transform-origin: 50% 50%; will-change: transform, opacity;
+    }
+    .f6-resband { position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #2d3e5e; }
+    .f6-rtitle {
+      position: absolute; left: 0; right: 0; top: 46px; text-align: center;
+      font-size: 44px; font-weight: 900; letter-spacing: -0.02em; color: #2f8f6b;
+      will-change: transform, opacity;
+    }
+    .f6-rsub {
+      position: absolute; left: 0; right: 0; top: 116px; text-align: center;
+      font-size: 24px; color: #22304a;
+      will-change: transform, opacity;
+    }
+    .f6-rrule {
+      position: absolute; left: 120px; width: 760px; height: 1px;
+      background: rgba(45, 62, 94, 0.18); transform-origin: 50% 50%;
+    }
+    .f6-cards {
+      position: absolute; left: 21px; top: 196px;
+      display: flex; gap: 26px;
+    }
+    .f6-card {
+      width: 220px; height: 152px;
+      border: 1px solid rgba(45, 62, 94, 0.18);
+      background: rgba(45, 62, 94, 0.04);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; will-change: transform, opacity;
+    }
+    .f6-cval {
+      font-family: "IBM Plex Mono", monospace; font-weight: 700;
+      font-size: 50px; letter-spacing: -0.02em; color: #22304a;
+      font-variant-numeric: tabular-nums;
+    }
+    .f6-clbl { font-size: 17px; color: rgba(34, 48, 74, 0.72); white-space: nowrap; }
+
+    /* ---------- cursor + ondas de clic ---------- */
+    .f6-cursor {
+      position: absolute; left: 0; top: 0; width: 0; height: 0;
+      z-index: 40; pointer-events: none; opacity: 0; will-change: transform;
+    }
+    .f6-ring {
+      position: absolute; width: 88px; height: 88px; margin-left: -44px; margin-top: -44px;
+      border-radius: 50%; border: 2px solid rgba(45, 62, 94, 0.5);
+      opacity: 0; pointer-events: none; z-index: 35;
+    }
+
+    /* ---------- anclas de borde ---------- */
+    .f6-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .f6-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+  </style>
+
+  <div id="root" data-composition-id="06-cargar" data-start="0" data-width="1920" data-height="1080" data-duration="33.42">
+
+    <div id="f6-clip-fondo" class="clip" data-start="0" data-duration="33.42" data-track-index="0">
+      <div class="f6-ground"></div>
+      <div class="f6-veil" id="f6-veil"></div>
+      <div class="f6-radial" id="f6-radial"></div>
+      <div class="f6-grid40" id="f6-grid"></div>
+      <div class="f6-hairline" id="f6-hair"></div>
+    </div>
+
+    <div id="f6-clip-escena" class="clip" data-start="0" data-duration="33.42" data-track-index="1">
+      <div class="f6-world" id="f6-world">
+
+        <!-- ============ EXPLORADOR: pdfs_patologia ============ -->
+        <div class="f6-exp" id="f6-exp">
+          <div class="f6-chrome f6-mono">
+            <span id="f6-exp-title">pdfs_patologia</span>
+            <span class="f6-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <div class="f6-side">
+            <div class="f6-snode" id="f6-sn-root" style="top: 20px">
+              <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true">
+                <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                      fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.62" stroke-width="1.6" />
+              </svg>
+              <span>pdfs_patologia</span>
+            </div>
+            <div class="f6-snode f6-sub" id="f6-sn-2025" style="top: 66px">
+              <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true">
+                <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                      fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.5" stroke-width="1.6" />
+              </svg>
+              <span>2025</span>
+            </div>
+            <div class="f6-snode f6-sub" id="f6-sn-2026" style="top: 110px">
+              <i class="f6-selw" id="f6-sw-2026"></i>
+              <svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true">
+                <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                      fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.72" stroke-width="1.6" />
+              </svg>
+              <span>2026</span>
+            </div>
+            <div class="f6-snode f6-sub2" id="f6-sn-col" style="top: 154px">
+              <svg width="18" height="15" viewBox="0 0 20 16" aria-hidden="true">
+                <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                      fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.44" stroke-width="1.6" />
+              </svg>
+              <span>Coloraciones basicas</span>
+            </div>
+          </div>
+
+          <div class="f6-bc f6-mono">
+            <span>pdfs_patologia</span><span id="f6-bc-tail">&nbsp;&nbsp;›&nbsp;&nbsp;2026</span>
+          </div>
+          <div class="f6-bcrule"></div>
+
+          <div class="f6-cols">
+            <span></span><span>NOMBRE</span><span>TAMAÑO</span><span>MODIFICADO</span>
+          </div>
+
+          <div class="f6-list">
+            <!-- estado A: la raiz, con los dos anos -->
+            <div class="f6-group" id="f6-gA">
+              <div class="f6-frow" id="f6-a-0" style="top: 0px">
+                <svg width="24" height="19" viewBox="0 0 20 16" aria-hidden="true">
+                  <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                        fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.66" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname">2025</span>
+                <span class="f6-fmeta">—</span>
+                <span class="f6-fmeta">17/06/2026</span>
+              </div>
+              <div class="f6-frow" id="f6-a-1" style="top: 76px">
+                <svg width="24" height="19" viewBox="0 0 20 16" aria-hidden="true">
+                  <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                        fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.66" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname">2026</span>
+                <span class="f6-fmeta">—</span>
+                <span class="f6-fmeta">21/07/2026</span>
+              </div>
+            </div>
+
+            <!-- estado B: dentro de 2026 -->
+            <div class="f6-group" id="f6-gB">
+              <div class="f6-frow" id="f6-b-0" style="top: 0px">
+                <i class="f6-fwash" id="f6-fw-0"></i>
+                <svg width="24" height="19" viewBox="0 0 20 16" aria-hidden="true">
+                  <path d="M1 3.2 A1.6 1.6 0 0 1 2.6 1.6 H7.4 L9.2 4 H17.4 A1.6 1.6 0 0 1 19 5.6 V13.4 A1.6 1.6 0 0 1 17.4 15 H2.6 A1.6 1.6 0 0 1 1 13.4 Z"
+                        fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.66" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname">Coloraciones basicas</span>
+                <span class="f6-fmeta">—</span>
+                <span class="f6-fmeta">16/07/2026</span>
+              </div>
+
+              <div class="f6-frow" id="f6-b-1" style="top: 76px">
+                <i class="f6-fwash" id="f6-fw-1"></i>
+                <svg width="20" height="24" viewBox="0 0 18 22" aria-hidden="true">
+                  <path d="M2 1.6 H11 L16 6.4 V20.4 H2 Z" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                  <path d="M11 1.6 V6.4 H16" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname f6-mono">IHQ260001 al IHQ260050.pdf</span>
+                <span class="f6-fmeta">16,4 MB</span>
+                <span class="f6-fmeta">27/05/2026</span>
+              </div>
+
+              <div class="f6-frow" id="f6-b-2" style="top: 152px">
+                <i class="f6-fwash" id="f6-fw-2"></i>
+                <svg width="20" height="24" viewBox="0 0 18 22" aria-hidden="true">
+                  <path d="M2 1.6 H11 L16 6.4 V20.4 H2 Z" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                  <path d="M11 1.6 V6.4 H16" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname f6-mono">IHQ260051 al IHQ260100.pdf</span>
+                <span class="f6-fmeta">20,8 MB</span>
+                <span class="f6-fmeta">27/05/2026</span>
+              </div>
+
+              <div class="f6-frow" id="f6-b-3" style="top: 228px">
+                <i class="f6-fwash" id="f6-fw-3"></i>
+                <svg width="20" height="24" viewBox="0 0 18 22" aria-hidden="true">
+                  <path d="M2 1.6 H11 L16 6.4 V20.4 H2 Z" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                  <path d="M11 1.6 V6.4 H16" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname f6-mono">IHQ260101 al IHQ260150.pdf</span>
+                <span class="f6-fmeta">19,9 MB</span>
+                <span class="f6-fmeta">27/05/2026</span>
+              </div>
+
+              <div class="f6-frow" id="f6-b-4" style="top: 304px">
+                <i class="f6-fwash" id="f6-fw-4"></i>
+                <svg width="20" height="24" viewBox="0 0 18 22" aria-hidden="true">
+                  <path d="M2 1.6 H11 L16 6.4 V20.4 H2 Z" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                  <path d="M11 1.6 V6.4 H16" fill="none" stroke="rgb(45,62,94)" stroke-opacity="0.6" stroke-width="1.5" />
+                </svg>
+                <span class="f6-fname f6-mono">IHQ260151 al IHQ260200.pdf</span>
+                <span class="f6-fmeta">16,7 MB</span>
+                <span class="f6-fmeta">27/05/2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="f6-foot"></div>
+          <div class="f6-foottx" id="f6-foottx">404 elementos</div>
+        </div>
+
+        <!-- ============ LA APLICACION: Importar Datos ============ -->
+        <div class="f6-app" id="f6-app">
+          <div class="f6-chrome f6-mono">
+            <span class="f6-ctitle">Gestión de la base de datos</span>
+            <span class="f6-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <div class="f6-tabs" id="f6-tabs">
+            <span class="f6-tab" id="f6-tab-0">📊 Estadísticas Generales</span>
+            <span class="f6-tab" id="f6-tab-1">📊 Visualizador de Datos</span>
+            <span class="f6-tab" id="f6-tab-2">👤 Por Paciente</span>
+            <span class="f6-tab" id="f6-tab-3">🧬 Biomarcadores</span>
+            <span class="f6-tab" id="f6-tab-4">⚠️ Análisis de Malignidad</span>
+            <span class="f6-tab f6-on" id="f6-tab-5">📥 Importar Datos</span>
+            <span class="f6-tab" id="f6-tab-6">📤 Exportaciones</span>
+          </div>
+          <div class="f6-tabrule"></div>
+
+          <div class="f6-h1" id="f6-h1">Importación de datos</div>
+          <div class="f6-panel-sub" id="f6-subt">Seleccioná archivos PDF o carpetas para procesar e importar a la base de datos.</div>
+
+          <div class="f6-btn f6-outline" id="f6-btn-file" style="top: 344px">
+            <span class="f6-em">📄</span><span>Seleccionar archivo PDF</span>
+          </div>
+          <div class="f6-btn f6-outline" id="f6-btn-dir" style="top: 420px">
+            <span class="f6-em">📁</span><span>Seleccionar carpeta de PDFs</span>
+          </div>
+
+          <div class="f6-rule" id="f6-rule"></div>
+
+          <div class="f6-btn f6-outline" id="f6-btn-pend" style="top: 548px">
+            <span class="f6-em">🎯</span><span>Seleccionar pendientes</span>
+          </div>
+          <div class="f6-btn f6-proc" id="f6-btn-proc" style="top: 630px">
+            <span class="f6-em">⚡</span><span>Procesar seleccionados</span>
+          </div>
+          <div class="f6-amber" id="f6-amber"></div>
+
+          <!-- data-layout-allow-overlap: la lista rueda DENTRO de .f6-treebox,
+               que recorta con overflow:hidden. Las filas que salen por arriba
+               dejan de verse, pero su caja sigue existiendo y cae encima de
+               este rotulo, asi que el verificador canta solape. Comprobado en
+               captura a 108,7s: el rotulo se lee limpio y no hay ni una fila
+               pintada sobre el. Se marca el rotulo y tambien el carrete, que
+               es el otro lado del par. -->
+          <div class="f6-treelbl" id="f6-treelbl" data-layout-allow-overlap>Archivos disponibles</div>
+
+          <div class="f6-treebox" id="f6-treebox">
+            <div class="f6-roll" id="f6-roll" data-layout-allow-overlap>
+
+              <div class="f6-trow" id="f6-t-0" style="top: 0px">
+                <i class="f6-twash" id="f6-tw-0"></i><i class="f6-tbar" id="f6-tb-0"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span class="f6-tname">📄 IHQ260001 al IHQ260050.pdf</span>
+                <span class="f6-tcount">(45/45)</span>
+              </div>
+              <div class="f6-trow" id="f6-t-1" style="top: 46px">
+                <i class="f6-twash" id="f6-tw-1"></i><i class="f6-tbar" id="f6-tb-1"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span class="f6-tname">📄 IHQ260051 al IHQ260100.pdf</span>
+                <span class="f6-tcount">(50/50)</span>
+              </div>
+              <div class="f6-trow" id="f6-t-2" style="top: 92px">
+                <i class="f6-twash" id="f6-tw-2"></i><i class="f6-tbar" id="f6-tb-2"></i>
+                <span class="f6-st f6-half">◐</span>
+                <span class="f6-tname">📄 IHQ260101 al IHQ260150.pdf</span>
+                <span class="f6-tcount">(31/50)</span>
+              </div>
+              <div class="f6-trow" id="f6-t-3" style="top: 138px">
+                <i class="f6-twash" id="f6-tw-3"></i><i class="f6-tbar" id="f6-tb-3"></i>
+                <span class="f6-st f6-none">●</span>
+                <span class="f6-tname">📄 IHQ260151 al IHQ260200.pdf</span>
+                <span class="f6-tcount">(0/48)</span>
+              </div>
+
+              <div class="f6-trow" id="f6-t-4" style="top: 184px">
+                <i class="f6-twash" id="f6-tw-4"></i><i class="f6-tbar" id="f6-tb-4"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 404px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-5" style="top: 230px">
+                <i class="f6-twash" id="f6-tw-5"></i><i class="f6-tbar" id="f6-tb-5"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 438px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-6" style="top: 276px">
+                <i class="f6-twash" id="f6-tw-6"></i><i class="f6-tbar" id="f6-tb-6"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 396px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-7" style="top: 322px">
+                <i class="f6-twash" id="f6-tw-7"></i><i class="f6-tbar" id="f6-tb-7"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 452px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-8" style="top: 368px">
+                <i class="f6-twash" id="f6-tw-8"></i><i class="f6-tbar" id="f6-tb-8"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 372px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-9" style="top: 414px">
+                <i class="f6-twash" id="f6-tw-9"></i><i class="f6-tbar" id="f6-tb-9"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 418px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-10" style="top: 460px">
+                <i class="f6-twash" id="f6-tw-10"></i><i class="f6-tbar" id="f6-tb-10"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 386px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-11" style="top: 506px">
+                <i class="f6-twash" id="f6-tw-11"></i><i class="f6-tbar" id="f6-tb-11"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 444px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-12" style="top: 552px">
+                <i class="f6-twash" id="f6-tw-12"></i><i class="f6-tbar" id="f6-tb-12"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 408px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+              <div class="f6-trow" id="f6-t-13" style="top: 598px">
+                <i class="f6-twash" id="f6-tw-13"></i><i class="f6-tbar" id="f6-tb-13"></i>
+                <span class="f6-st f6-ok">✓</span>
+                <span><i class="f6-skel" style="width: 362px"></i></span>
+                <span class="f6-tcount"></span>
+              </div>
+            </div>
+
+            <div class="f6-ttrack"></div>
+            <div class="f6-tthumb" id="f6-tthumb"></div>
+          </div>
+
+          <div class="f6-legend" id="f6-legend">
+            <span class="f6-lg"><i class="f6-ok">✓</i><span>ya analizado</span></span>
+            <b>·</b>
+            <span class="f6-lg"><i class="f6-half">◐</i><span>a medias</span></span>
+            <b>·</b>
+            <span class="f6-lg"><i class="f6-none">●</i><span>sin analizar</span></span>
+          </div>
+        </div>
+
+        <!-- ============ MODAL DE PROGRESO ============ -->
+        <div class="f6-dim" id="f6-dim"></div>
+
+        <div class="f6-modal" id="f6-modal">
+          <div class="f6-mchrome">⏳ Procesando archivos PDF...</div>
+          <div class="f6-mstat" id="f6-mstat">Procesando (1/2): IHQ260101 al IHQ260150.pdf</div>
+          <div class="f6-track">
+            <div class="f6-fill" id="f6-fill"></div>
+          </div>
+          <div class="f6-hint">El OCR puede tardar varios minutos por archivo...</div>
+        </div>
+
+        <!-- ============ VENTANA DE RESULTADOS ============ -->
+        <div class="f6-res" id="f6-res">
+          <div class="f6-resband"></div>
+          <div class="f6-rtitle" id="f6-rtitle">🎉 Importación Completada</div>
+          <div class="f6-rsub" id="f6-rsub">📊 Resumen de Importación</div>
+          <div class="f6-rrule" id="f6-rrule-a" style="top: 162px"></div>
+          <div class="f6-cards">
+            <div class="f6-card" id="f6-card-0">
+              <span class="f6-cval" id="f6-v-0">0</span>
+              <span class="f6-clbl">📄 Total Procesados</span>
+            </div>
+            <div class="f6-card" id="f6-card-1">
+              <span class="f6-cval" id="f6-v-1">0</span>
+              <span class="f6-clbl">✅ Completos</span>
+            </div>
+            <div class="f6-card" id="f6-card-2">
+              <span class="f6-cval" id="f6-v-2">0</span>
+              <span class="f6-clbl">⚠️ Incompletos</span>
+            </div>
+            <div class="f6-card" id="f6-card-3">
+              <!-- punto y no coma: el badge es una f-string de Python -->
+              <span class="f6-cval" id="f6-v-3">0.0%</span>
+              <span class="f6-clbl">📈 Éxito</span>
+            </div>
+          </div>
+          <div class="f6-rrule" id="f6-rrule-b" style="top: 386px"></div>
+        </div>
+
+        <!-- ondas de clic, ancladas al punto exacto de cada clic -->
+        <div class="f6-ring" id="f6-rg-open-a" style="left: 760px; top: 456px"></div>
+        <div class="f6-ring" id="f6-rg-open-b" style="left: 760px; top: 456px"></div>
+        <div class="f6-ring" id="f6-rg-s1" style="left: 720px; top: 456px"></div>
+        <div class="f6-ring" id="f6-rg-s2" style="left: 720px; top: 532px"></div>
+        <div class="f6-ring" id="f6-rg-s3" style="left: 720px; top: 608px"></div>
+        <div class="f6-ring" id="f6-rg-side" style="left: 330px; top: 372px"></div>
+        <div class="f6-ring" id="f6-rg-pend-a" style="left: 450px; top: 730px"></div>
+        <div class="f6-ring" id="f6-rg-pend-b" style="left: 450px; top: 730px"></div>
+        <div class="f6-ring" id="f6-rg-proc-a" style="left: 450px; top: 815px"></div>
+        <div class="f6-ring" id="f6-rg-proc-b" style="left: 450px; top: 815px"></div>
+
+        <div class="f6-cursor" id="f6-cursor">
+          <svg width="30" height="43" viewBox="0 0 30 43" aria-hidden="true">
+            <path d="M3 2 L3 33 L11.2 25.4 L16.4 38.6 L22.4 36.1 L17.2 23.2 L27.6 22.6 Z"
+                  fill="rgb(233,238,247)" stroke="rgb(20,29,43)" stroke-width="2.6" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="f6-brand f6-mono" id="f6-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="f6-mark f6-mono" id="f6-mark">06 / 13 — CARGAR</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "06-cargar";
+      var D = 33.42;
+      var tl = gsap.timeline({ paused: true });
+
+      var world = document.getElementById("f6-world");
+      var radial = document.getElementById("f6-radial");
+      var grid = document.getElementById("f6-grid");
+      var hair = document.getElementById("f6-hair");
+      var veil = document.getElementById("f6-veil");
+
+      var expTitle = document.getElementById("f6-exp-title");
+      var footTx = document.getElementById("f6-foottx");
+      var mstat = document.getElementById("f6-mstat");
+      var fill = document.getElementById("f6-fill");
+      var val = [
+        document.getElementById("f6-v-0"),
+        document.getElementById("f6-v-1"),
+        document.getElementById("f6-v-2"),
+        document.getElementById("f6-v-3")
+      ];
+
+      /* --------- marcas de tiempo compartidas con la narracion --------- */
+      var OPEN_AT = 3.05;        // se abre la carpeta 2026
+      var PROC_A = 18.85;        // arranca la barra de progreso
+      var PROC_B = 26.15;        // la barra llega al final
+      var PUSH_AT = 30.2;        // acercamiento final, muy leve
+
+      // los cuatro nombres reales del lote; el resto del lote son filas sin
+      // nombre en el arbol (no se inventa ningun nombre de archivo)
+      // el lote son las DOS pendientes que el boton acaba de marcar, en su
+      // orden. Ni una fila ✓: esas ya estaban.
+      var LOTE = [
+        "IHQ260101 al IHQ260150.pdf",
+        "IHQ260151 al IHQ260200.pdf"
+      ];
+
+      function sstep(t, a, b) {
+        var p = (t - a) / (b - a);
+        if (p <= 0) return 0;
+        if (p >= 1) return 1;
+        return p * p * (3 - 2 * p);
+      }
+
+      /* ---------------------------------------------------------
+         ESCENARIO FIJO: un unico reloj lineal escribe la respiracion
+         del fondo, el rotulo del explorador, el contador del lote, el
+         ancho y las rayas de la barra y las cuatro cifras del resumen
+         — todo deterministico, sin callbacks, seguro ante cualquier
+         salto de fotograma.
+         --------------------------------------------------------- */
+      var clock = { t: 0 };
+      var lastTitle = null, lastFoot = null, lastStat = null, lastVal = [null, null, null, null];
+
+      function writeFrame() {
+        var t = clock.t;
+        var b = Math.sin(t * 0.3);
+
+        // acercamiento final: la rampa termina DESPUES del corte (34,6 s), asi
+        // que en el ultimo fotograma sigue subiendo y el montaje hereda la
+        // escena en movimiento. Nunca invade la franja de los rotulos de
+        // esquina (viven fuera del mundo que escala).
+        var push = 0.018 * sstep(t, PUSH_AT, 34.6);
+
+        world.style.transform =
+          "translate(" +
+          (Math.sin(t * 0.19) * 3).toFixed(2) + "px," +
+          (Math.sin(t * 0.263) * 1.6).toFixed(2) + "px) scale(" +
+          (1 + 0.0035 * b + push).toFixed(4) + ")";
+
+        radial.style.transform = "scale(" + (1 + 0.05 * b).toFixed(4) + ")";
+        radial.style.opacity = (0.55 + 0.18 * b).toFixed(4);
+        grid.style.opacity = (0.04 + 0.012 * b).toFixed(4);
+        hair.style.opacity = (0.55 + 0.22 * b).toFixed(4);
+        veil.style.opacity = (0.46 + 0.16 * Math.sin(t * 0.42 + 1.1)).toFixed(4);
+
+        // el titulo del explorador sigue a la carpeta abierta
+        var ttl = t < OPEN_AT ? "pdfs_patologia" : "2026";
+        if (ttl !== lastTitle) { expTitle.textContent = ttl; lastTitle = ttl; }
+
+        // el pie cuenta lo que el cursor va eligiendo. 404 = los elementos
+        // reales de pdfs_patologia/2026 (medidos en disco); la lista solo
+        // enseña los primeros, por eso el total no puede ser 5.
+        var ft = "404 elementos";
+        if (t >= 8.66) ft = "404 elementos  |  carpeta 2026 seleccionada";
+        else if (t >= 7.80) ft = "404 elementos  |  3 seleccionados";
+        else if (t >= 7.10) ft = "404 elementos  |  2 seleccionados";
+        else if (t >= 6.36) ft = "404 elementos  |  1 seleccionado";
+        if (ft !== lastFoot) { footTx.textContent = ft; lastFoot = ft; }
+
+        // la barra de progreso: ancho real, rayas en marcha y contador
+        var pp = (t - PROC_A) / (PROC_B - PROC_A);
+        if (pp < 0) pp = 0;
+        if (pp > 1) pp = 1;
+        fill.style.width = (pp * 720).toFixed(1) + "px";
+        fill.style.backgroundPosition = (-((t * 62) % 25.46)).toFixed(2) + "px 0px";
+
+        // ui.py:11144 -> f"Procesando ({idx + 1}/{total}): {filename}", y ese
+        // total es total_files: el lote son CUATRO archivos, no doce.
+        var idx = Math.floor(pp * LOTE.length) + 1;
+        if (idx > LOTE.length) idx = LOTE.length;
+        var st = "Procesando (" + idx + "/" + LOTE.length + "): " + LOTE[idx - 1];
+        if (st !== lastStat) { mstat.textContent = st; lastStat = st; }
+
+        // el resumen: cada cifra sube a su sitio, una despues de otra.
+        // Las cuatro son REALES, medidas sobre estos mismos cuatro PDF con la
+        // funcion que llama la aplicacion (core.validation_checker.
+        // analizar_batch_registros): 347 casos unicos -> 327 completos, 20
+        // incompletos, 94,2% de exito. El total NO es 351 (82+92+93+84) porque
+        // cuatro casos aparecen en dos PDF: son los arrastrados.
+        var v0 = String(Math.round(98 * sstep(t, 26.95, 27.85)));
+        var v1 = String(Math.round(96 * sstep(t, 27.55, 28.45)));
+        var v2 = String(Math.round(2 * sstep(t, 28.15, 28.95)));
+        // el badge de la aplicacion imprime f"{porcentaje_exito:.1f}%"
+        var v3 = (98.0 * sstep(t, 28.75, 29.95)).toFixed(1) + "%";
+        var vs = [v0, v1, v2, v3];
+        for (var k = 0; k < 4; k++) {
+          if (vs[k] !== lastVal[k]) { val[k].textContent = vs[k]; lastVal[k] = vs[k]; }
+        }
+      }
+
+      // el reloj recorre exactamente la duracion declarada del root:
+      // el fondo respira los 33,42 s sin una sola ventana congelada
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame(); // semilla del fotograma 0
+
+      /* ---------------------------------------------------------
+         helpers de cursor (cursor-click-ripple, sin repeticion infinita)
+         --------------------------------------------------------- */
+      var cursor = "#f6-cursor";
+
+      function moveTo(x, y, at, dur) {
+        tl.to(cursor, { x: x, y: y, duration: dur, ease: "power2.inOut" }, at);
+      }
+
+      function click(at, rings) {
+        // el cursor comprime mas que el receptor: el cursor es el actor
+        tl.to(cursor, { scale: 0.84, duration: 0.09, ease: "power2.in" }, at);
+        tl.to(cursor, { scale: 1, duration: 0.15, ease: "power2.out" }, at + 0.09);
+        tl.fromTo(rings,
+          { scale: 0, opacity: 0.55 },
+          { scale: 2.6, opacity: 0, duration: 0.74, ease: "power2.out", stagger: 0.09, immediateRender: false },
+          at + 0.03);
+      }
+
+      /* =========================================================
+         BEAT 0 (0.0–3.0) — «El trabajo empieza en la carpeta donde
+         el servicio deja los informes, ordenados por año.»
+         ========================================================= */
+      tl.fromTo("#f6-exp",
+        { opacity: 0, y: 14, scale: 0.99 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.68, ease: "power3.out" }, 0);
+
+      tl.fromTo(["#f6-sn-root", "#f6-sn-2025", "#f6-sn-2026"],
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.46, ease: "power2.out", stagger: 0.09 }, 0.42);
+
+      tl.fromTo("#f6-a-0",
+        { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.66);
+      tl.fromTo("#f6-a-1",
+        { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.78);
+      tl.fromTo("#f6-foottx",
+        { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 1.05);
+
+      // el cursor entra desde fuera de la superficie
+      tl.fromTo(cursor,
+        { x: 1420, y: 720, opacity: 0 },
+        { x: 1420, y: 720, opacity: 1, duration: 0.34, ease: "power2.out" }, 0.9);
+
+      // rotulos de esquina
+      tl.fromTo("#f6-brand", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.5);
+      tl.fromTo("#f6-mark", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.72);
+
+      /* =========================================================
+         BEAT 1 (2.1–6.0) — se abre 2026 y aparecen los informes
+         ========================================================= */
+      moveTo(760, 456, 2.05, 1.05);
+      click(2.86, ["#f6-rg-open-a"]);
+      click(3.02, ["#f6-rg-open-b"]);
+
+      // la vista de la raiz se retira y entra el contenido de 2026
+      tl.to("#f6-gA", { opacity: 0, y: -16, duration: 0.34, ease: "power2.in" }, 3.06);
+
+      var gbOrden = ["#f6-b-0", "#f6-b-1", "#f6-b-2", "#f6-b-3", "#f6-b-4"];
+      for (var g = 0; g < gbOrden.length; g++) {
+        tl.fromTo(gbOrden[g],
+          { opacity: 0, y: 22 },
+          { opacity: 1, y: 0, duration: 0.52, ease: "power3.out" },
+          3.28 + g * 0.24);
+      }
+
+      // la ruta baja un nivel y el arbol lateral se despliega
+      tl.fromTo("#f6-bc-tail",
+        { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.44, ease: "power2.out" }, 3.2);
+      tl.fromTo("#f6-sn-col",
+        { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.46, ease: "power2.out" }, 3.62);
+      tl.to("#f6-sn-2026", { color: "rgb(34,48,74)", duration: 0.4, ease: "power2.out" }, 3.16);
+
+      /* =========================================================
+         BEAT 2 (6.0–9.4) — «Se eligen los archivos, o la carpeta
+         entera.» Tres clics, y luego el nodo de la carpeta.
+         ========================================================= */
+      moveTo(720, 456, 6.00, 0.66);
+      click(6.33, ["#f6-rg-s1"]);
+      tl.fromTo("#f6-fw-1", { opacity: 0 }, { opacity: 1, duration: 0.26, ease: "power2.out" }, 6.36);
+
+      moveTo(720, 532, 6.74, 0.46);
+      click(7.07, ["#f6-rg-s2"]);
+      tl.fromTo("#f6-fw-2", { opacity: 0 }, { opacity: 1, duration: 0.26, ease: "power2.out" }, 7.10);
+
+      moveTo(720, 608, 7.44, 0.46);
+      click(7.77, ["#f6-rg-s3"]);
+      tl.fromTo("#f6-fw-3", { opacity: 0 }, { opacity: 1, duration: 0.26, ease: "power2.out" }, 7.80);
+
+      // ...o la carpeta entera: el nodo 2026 se ilumina y caen las cinco filas
+      moveTo(330, 372, 8.16, 0.52);
+      click(8.63, ["#f6-rg-side"]);
+      tl.fromTo("#f6-sw-2026", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 8.66);
+      tl.to(["#f6-fw-0", "#f6-fw-1", "#f6-fw-2", "#f6-fw-3", "#f6-fw-4"],
+        { opacity: 1, duration: 0.34, ease: "power2.out", stagger: 0.05 }, 8.68);
+
+      /* =========================================================
+         BEAT 3 (9.4–13.0) — la aplicacion, pestaña «Importar Datos».
+         El explorador se va y la pantalla del producto ocupa su sitio.
+         ========================================================= */
+      moveTo(900, 520, 9.06, 0.72);
+
+      tl.to("#f6-exp", { opacity: 0, scale: 1.045, duration: 0.42, ease: "power2.in" }, 9.16);
+      tl.fromTo("#f6-app",
+        { opacity: 0, scale: 0.958, y: 12 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.62, ease: "power3.out" }, 9.34);
+
+      tl.fromTo(".f6-tab",
+        { opacity: 0, y: 9 },
+        { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.045 }, 9.58);
+      tl.fromTo("#f6-tab-5",
+        { scale: 0.94 }, { scale: 1, duration: 0.5, ease: "power3.out" }, 9.92);
+
+      tl.fromTo("#f6-h1",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 9.86);
+      tl.fromTo("#f6-subt",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 10.06);
+
+      tl.fromTo("#f6-btn-file",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.30);
+      tl.fromTo("#f6-btn-dir",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.48);
+
+      // el cursor pasa por los dos selectores: son los dos caminos de entrada
+      moveTo(450, 526, 10.62, 0.62);
+      tl.to("#f6-btn-file", { backgroundColor: "rgba(45,62,94,0.07)", duration: 0.26, ease: "power2.out" }, 11.06);
+      tl.to("#f6-btn-file", { backgroundColor: "rgba(45,62,94,0)", duration: 0.34, ease: "power2.inOut" }, 11.52);
+      moveTo(450, 602, 11.40, 0.5);
+      tl.to("#f6-btn-dir", { backgroundColor: "rgba(45,62,94,0.07)", duration: 0.26, ease: "power2.out" }, 11.80);
+      tl.to("#f6-btn-dir", { backgroundColor: "rgba(45,62,94,0)", duration: 0.34, ease: "power2.inOut" }, 12.30);
+
+      tl.fromTo("#f6-rule",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power3.out" }, 10.72);
+      tl.fromTo("#f6-btn-pend",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.90);
+      tl.fromTo("#f6-btn-proc",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 11.10);
+
+      // «El programa marca cuáles ya analizó...»: el arbol se puebla
+      tl.fromTo("#f6-treelbl",
+        { opacity: 0, x: 16 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 10.34);
+      tl.fromTo("#f6-treebox",
+        { opacity: 0, x: 22 }, { opacity: 1, x: 0, duration: 0.58, ease: "power3.out" }, 10.46);
+
+      // ninguna fila nace seleccionada: la barra de seleccion esta plegada
+      for (var z = 0; z < 14; z++) {
+        tl.set("#f6-tb-" + z, { scaleY: 0 }, 0);
+      }
+
+      for (var r = 0; r < 9; r++) {
+        tl.fromTo("#f6-t-" + r,
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+          10.72 + r * 0.185);
+      }
+      tl.fromTo("#f6-tthumb",
+        { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 12.10);
+      tl.fromTo("#f6-legend",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 12.46);
+
+      // el cursor acompaña al arbol mientras se puebla
+      moveTo(1180, 430, 12.42, 0.62);
+
+      /* =========================================================
+         BEAT 4 (13.0–17.4) — «...y con un botón selecciona solo los
+         pendientes.» Se marcan las filas ◐ y ●, y el arbol rueda
+         para enseñar que hay mas debajo.
+         ========================================================= */
+      moveTo(450, 730, 13.14, 0.72);
+      click(13.96, ["#f6-rg-pend-a", "#f6-rg-pend-b"]);
+      tl.to("#f6-btn-pend", { y: 2, duration: 0.09, ease: "power2.in" }, 13.96);
+      tl.to("#f6-btn-pend", { y: 0, duration: 0.18, ease: "power2.out" }, 14.05);
+      tl.to("#f6-btn-pend", { backgroundColor: "rgba(45,62,94,0.10)", duration: 0.2, ease: "power2.out" }, 13.98);
+      tl.to("#f6-btn-pend", { backgroundColor: "rgba(45,62,94,0)", duration: 0.5, ease: "power2.inOut" }, 14.42);
+
+      // solo lo pendiente. Los UNICOS pendientes del arbol son las dos filas
+      // con nombre: la ◐ (31/50) y la ● (0/48). Las demas ya estan analizadas,
+      // asi que el boton marca dos y el lote procesa esas dos. Antes marcaba 12
+      // y procesaba 4 —y ademas empezaba por una fila ✓—, o sea que la imagen
+      // desmentia la frase de la voz cuatro segundos despues de decirla.
+      for (var s = 2; s < 4; s++) {
+        tl.fromTo("#f6-tw-" + s,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.3, ease: "power2.out" },
+          14.12 + (s - 2) * 0.11);
+        tl.fromTo("#f6-tb-" + s,
+          { scaleY: 0 },
+          { scaleY: 1, duration: 0.34, ease: "power3.out" },
+          14.16 + (s - 2) * 0.11);
+      }
+
+      // el arbol rueda: los pendientes no caben en la caja
+      tl.fromTo("#f6-roll",
+        { y: 0 }, { y: -92, duration: 1.15, ease: "power2.inOut" }, 15.70);
+      tl.fromTo("#f6-tthumb",
+        { y: 0 }, { y: 58, duration: 1.15, ease: "power2.inOut" }, 15.70);
+
+      moveTo(1120, 560, 15.30, 0.85);
+
+      /* =========================================================
+         BEAT 5 (17.4–18.5) — «Se pulsa Procesar seleccionados.»
+         EL AMBAR DE LA ESCENA: el foco cae sobre el boton verde.
+         ========================================================= */
+      moveTo(450, 815, 16.96, 0.62);
+      click(17.62, ["#f6-rg-proc-a", "#f6-rg-proc-b"]);
+
+      // el boton se hunde de verdad
+      tl.to("#f6-btn-proc", { y: 3, duration: 0.10, ease: "power2.in" }, 17.62);
+      tl.to("#f6-btn-proc", { y: 0, duration: 0.20, ease: "power2.out" }, 17.72);
+      tl.to("#f6-btn-proc", { backgroundColor: "rgb(38,116,87)", duration: 0.12, ease: "power2.in" }, 17.62);
+      tl.to("#f6-btn-proc", { backgroundColor: "rgb(47,143,107)", duration: 0.38, ease: "power2.out" }, 17.78);
+
+      // el unico elemento ambar de la escena, sobre el foco. Entra grande y
+      // se cierra sobre el boton, late una vez y se queda: el ojo no tiene
+      // donde ir salvo aqui.
+      tl.fromTo("#f6-amber",
+        { opacity: 0, scale: 1.09 },
+        { opacity: 1, scale: 1, duration: 0.42, ease: "power3.out" }, 17.58);
+      tl.to("#f6-amber", { scale: 1.035, duration: 0.16, ease: "power2.out" }, 18.02);
+      tl.to("#f6-amber", { scale: 1, duration: 0.34, ease: "power2.inOut" }, 18.18);
+      tl.to("#f6-amber", { opacity: 0.94, duration: 0.6, ease: "sine.inOut" }, 18.14);
+
+      /* =========================================================
+         BEAT 6 (18.5–26.4) — «A partir de ahí no hay que hacer nada
+         más: lee cada informe, lo separa en casos y lo guarda.»
+         ========================================================= */
+      tl.fromTo("#f6-dim",
+        { opacity: 0 }, { opacity: 1, duration: 0.42, ease: "power2.out" }, 18.20);
+      // La opacidad y la escala van POR SEPARADO a proposito. Con una sola
+      // tween de 0,5s la ventana pasaba medio segundo translucida y se leia el
+      // arbol POR DEBAJO del dialogo: el mismo artefacto de «se ve lo de
+      // detras» que ya nos toco corregir en la marca de esquina. Asi la
+      // ventana es opaca en 0,16s y el muelle de la escala se conserva entero.
+      tl.fromTo("#f6-modal",
+        { opacity: 0 }, { opacity: 1, duration: 0.16, ease: "power1.out" }, 18.34);
+      tl.fromTo("#f6-modal",
+        { scale: 0.94 }, { scale: 1, duration: 0.5, ease: "power3.out" }, 18.34);
+
+      moveTo(1520, 730, 18.60, 0.95);
+
+      /* =========================================================
+         BEAT 7 (26.4–31.9) — «Al terminar avisa de cuántos quedaron
+         completos y cuántos incompletos.»
+         ========================================================= */
+      // el progreso se va del todo ANTES de que entre el resumen: dos ventanas
+      // translucidas superpuestas eran un amasijo de texto sobre texto
+      tl.to("#f6-modal", { opacity: 0, duration: 0.16, ease: "power2.in" }, 26.24);
+      tl.to("#f6-modal", { scale: 0.972, duration: 0.34, ease: "power2.in" }, 26.24);
+      tl.fromTo("#f6-res",
+        { opacity: 0 }, { opacity: 1, duration: 0.16, ease: "power1.out" }, 26.46);
+      tl.fromTo("#f6-res",
+        { scale: 0.952 }, { scale: 1, duration: 0.62, ease: "power3.out" }, 26.46);
+
+      tl.fromTo("#f6-rtitle",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.58, ease: "power3.out" }, 26.60);
+      tl.fromTo("#f6-rsub",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 26.86);
+      tl.fromTo("#f6-rrule-a",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 26.94);
+
+      for (var c = 0; c < 4; c++) {
+        tl.fromTo("#f6-card-" + c,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          27.02 + c * 0.6);
+      }
+
+      moveTo(1560, 700, 27.30, 0.9);
+
+      // el cierre del resumen: la regla inferior se dibuja despacio y la
+      // cifra de exito se asienta — la escena sigue viva hasta el corte,
+      // pero NO se despide: el relevo lo hace el montaje.
+      tl.fromTo("#f6-rrule-b",
+        { scaleX: 0 }, { scaleX: 1, duration: 3.40, ease: "power2.inOut" }, 29.60);
+      tl.to("#f6-card-3", { scale: 1.03, duration: 3.00, ease: "sine.inOut" }, 30.40);
+
+      window.__timelines = window.__timelines || {};
+
+      // marcador-fuera: el numero de seccion CAMBIA entre escenas, asi que si
+      // sigue encendido durante el encadenado se leen los dos a la vez y sale
+      // el amasijo que vimos en la costura ("078//133--LASSVISTAS").
+      tl.to("#f6-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.67);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+      // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
+      // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
+      tl.to(["#f6-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 31.72);
+
+      // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
+      // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
+      tl.to("#f6-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.72);
+
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

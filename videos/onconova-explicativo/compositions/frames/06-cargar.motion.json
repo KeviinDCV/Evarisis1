@@ -1,0 +1,20 @@
+{
+  "scene": "06-cargar",
+  "duration_s": 33.42,
+  "rules": [
+    "cursor-click-ripple",
+    "waterfall-entry",
+    "scale-swap-transition",
+    "dynamic-content-sequencing",
+    "discrete-text-sequence",
+    "coordinate-target-zoom"
+  ],
+  "exit": {
+    "vector": "still pushing in — the locked stage is mid element-scale zoom on the results window (smoothstep ramped from 30.2s toward 34.6s, so it is unfinished at the 33.42s cut): the results window widens ~3.0 px/s and its top edge rises ~1.1 px/s while it drifts ~0.9 px/s left; the app panel behind it widens ~4.6 px/s, rises ~1.6 px/s and drifts ~1.7 px/s left; the Éxito card is still easing out of its 1.00→1.03 settle and the lower hairline finished drawing 0.4s earlier; cursor parked right of the results window and carried by the same ambient drift",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "up ~93 px/s — the file-explorer panel is mid-entrance at frame 0 (opacity 0 at t=0, ~0.95 by 0.5s; y+14→0 and scale 0.99→1 over 0.68s power3.out): its top edge rises ~93 px/s, its bottom edge rises ~59 px/s, it widens ~78 px/s and its left edge opens ~38 px/s outward; camera otherwise locked, ambient world drift ~0.6 px/s right",
+    "from_rest": false
+  }
+}

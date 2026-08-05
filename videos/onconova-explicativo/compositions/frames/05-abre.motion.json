@@ -1,0 +1,17 @@
+{
+  "scene": "05-abre",
+  "duration_s": 17.51,
+  "rules": [
+    "cursor-click-ripple",
+    "physics-press-reaction",
+    "waterfall-entry"
+  ],
+  "exit": {
+    "vector": "still pushing in — the stage is locked but mid smoothstep zoom (starts 14.60s over 3.20s, 97.7% done at the cut, so it never lands): world scale 1.0165 and rising 0.0036/s, which widens the app window ~5.9 px/s (each edge out ~2.9 px/s, its bottom edge down ~1.3 px/s) and drifts the whole frame ~0.6 px/s left, ~0.04 px/s up. Content is at rest: the cursor finished settling on the Dashboard row at 17.50s and the last reveal (its hover wash + left bar) closed at 16.28s",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "outward ~90 px/s per edge and up ~49 px/s — the app window is mid-entrance at frame 0 (opacity 0 to 1 over 0.40s; scale 0.968 to 1 and y +14 to 0 over 0.86s power3.out, whose initial rate is 3x the average), so its 1620px width grows ~181 px/s while its centre rises ~49 px/s. Stage otherwise locked, carrying only the shared ambient drift (~0.57 px/s right, ~0.39 px/s down at t=0)",
+    "from_rest": false
+  }
+}

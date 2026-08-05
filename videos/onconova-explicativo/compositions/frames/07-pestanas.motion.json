@@ -1,0 +1,22 @@
+{
+  "scene": "07-pestanas",
+  "duration_s": 44.52,
+  "rules": [
+    "cursor-click-ripple",
+    "waterfall-entry",
+    "dynamic-content-sequencing",
+    "scale-swap-transition",
+    "stat-bars-and-fills",
+    "discrete-text-sequence",
+    "spring-pop-entrance",
+    "coordinate-target-zoom"
+  ],
+  "exit": {
+    "vector": "sigue entrando — escenario fijo con un acercamiento smoothstep que arranca en 41,2 s y NO resuelve dentro de la escena (en 44,52 s va por el 98,3 % de un empuje del 1,8 %): la escala del mundo sube a 0,00215/s y, sumada a la respiración ambiental (+0,00085/s), abre el borde del panel ~2,6 px/s en horizontal y ~0,75 px/s arriba y abajo; encima, deriva sinusoidal de ~0,63 px/s hacia la izquierda y ~0,40 px/s hacia abajo. El cursor quedó posado sobre el Visor de contenido en 42,95 s y solo lo mueve esa deriva. Ningún tween sobrepasa los 44,52 s.",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "arriba ~65 px/s — la ventana está a media entrada en el fotograma 0 (opacity 0 → 1, y 16 → 0 y scale 0,99 → 1 en 0,74 s power3.out, cuya velocidad inicial es 3×): el panel sube ~65 px/s y se ensancha ~70 px/s (~28 px/s en alto); la cámara no viaja, solo la deriva ambiental sinusoidal arranca en t=0 a ~0,63 px/s en x y ~0,44 px/s en y.",
+    "from_rest": false
+  }
+}

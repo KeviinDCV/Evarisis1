@@ -1,5 +1,5 @@
 <template>
-  <div data-hf-id="hf-cmyl" id="root" data-composition-id="08-verificacion" data-start="0" data-width="1920" data-height="1080" data-duration="27.01">
+  <div data-hf-id="hf-cmyl" id="root" data-composition-id="08-verificacion" data-start="0" data-width="1920" data-height="1080" data-duration="29.35">
     <style>
       #root {
         position: relative;
@@ -250,7 +250,7 @@
     </style>
 
     <!-- ground: escenario a sangre + decorativos -->
-    <div data-hf-id="hf-m90j" id="08-verificacion-ground" class="clip" data-start="0" data-duration="27.01" data-track-index="0">
+    <div data-hf-id="hf-m90j" id="08-verificacion-ground" class="clip" data-start="0" data-duration="29.35" data-track-index="0">
       <div data-hf-id="hf-mejt" class="v8-field"></div>
       <div data-hf-id="hf-6qxe" class="v8-aliento" id="v8-aliento"></div>
       <div data-hf-id="hf-bfl1" class="v8-amb">
@@ -260,7 +260,7 @@
       </div>
     </div>
 
-    <section data-hf-id="hf-zrr4" id="08-verificacion-escena" class="clip" data-start="0" data-duration="27.01" data-track-index="1">
+    <section data-hf-id="hf-zrr4" id="08-verificacion-escena" class="clip" data-start="0" data-duration="29.35" data-track-index="1">
 
       <div data-hf-id="hf-v801" class="v8-hero">
         <span data-hf-id="hf-v802" class="v8-hero-in" id="v8-hero">TRAZABILIDAD</span>
@@ -325,7 +325,7 @@
       <div data-hf-id="hf-v827" class="v8-tick v8-tick-c"></div>
 
       <div data-hf-id="hf-6yua" class="v8-brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div data-hf-id="hf-i9ce" class="v8-mark mono">08 / 09 — LA VERIFICACIÓN</div>
+      <div data-hf-id="hf-i9ce" class="v8-mark mono">12 / 13 — LA VERIFICACIÓN</div>
     </section>
   </div>
 
@@ -425,8 +425,8 @@
         { scaleX: 0, opacity: 0 },
         { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, 4.35);
       tl.fromTo("#v8-dx",
-        { color: '[id="8296b5"]' },
-        { color: '[id="22304a"]', duration: 0.75, ease: "power1.inOut" }, 4.45);
+        { color: '#8296b5' },
+        { color: '#22304a', duration: 0.75, ease: "power1.inOut" }, 4.45);
 
       // el ala derecha, ~0.2s detrás del ritmo de la izquierda
       tl.fromTo(".v8-label-r",
@@ -637,7 +637,7 @@
       // si sigue encendido durante el encadenado se ve doble y desplazado.
       // Se apaga justo antes de la costura; la marca de arriba NO se toca,
       // porque es identica en todas y superpuesta no se nota.
-      tl.to(".v8-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 25.71);
+      tl.to(".v8-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 25.26);
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
 
@@ -662,6 +662,31 @@
 
 
       tl.to(".v8-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 25.31);
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+      // duraba 27.01s; la nueva dura 29.35s. tl.duration() reescala TODA la
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+      tl.duration(29.35);
+
 
 
 

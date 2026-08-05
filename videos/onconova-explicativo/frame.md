@@ -77,6 +77,28 @@ Rigen en las escenas **3 a 8**, y solo ahí. Dos excepciones deliberadas:
 flotando sobre el escenario, con sombra suave y una barra de cromo navy de 1px.
 Leen como «una pantalla sobre un escritorio», nunca a sangre.
 
+**Excepción: dentro de una pantalla recreada manda la aplicación.**
+Las escenas que enseñan el programa (la que abre, la de cargar PDF, la de las
+siete pestañas, el dashboard) reproducen una interfaz real que es CLARA y que
+tiene sus propios colores: el verde `#2f8f6b` del botón de procesar, el
+`#eef1f6` del botón flotante, los estados `#1565C0` / `#E65100` / `#1B5E20` de
+las marcas ✓ ◐ ●, y los emoji de las pestañas, que van a color porque así se
+ven en la app. **Todo eso es fiel y está autorizado.** La paleta de siete
+tokens gobierna el ESCENARIO y el CROMO del vídeo, no el interior de una
+ventana que estamos reproduciendo: falsear los colores de la aplicación sería
+mentir sobre lo que la sala va a ver cuando la abra.
+Con una condición: como los emoji a color meten tonos cercanos al ámbar, en
+esas escenas **el foco ámbar tiene que ser inequívoco** —un aro o un contorno
+grueso, no un relleno tenue— para que siga mandando en el encuadre.
+
+Y con una excepción a la excepción: **el gris apagado sí se oscurece.** El gris
+secundario del producto es `#8a909c` sobre blanco, que da 3,2:1 — por debajo de
+AA. En una pantalla a un palmo se lee; proyectado en una sala, no. Así que los
+textos apagados de las pantallas recreadas van a alpha 0,72 del navy en vez del
+0,42–0,62 original. Cambia el gris, **nunca la palabra ni la cifra**: lo que
+dice la aplicación se respeta al carácter. Es lo único de la interfaz que el
+vídeo se permite retocar, y se retoca porque el vídeo se proyecta.
+
 **Fondo.** Escenario plano `--stage` + tres decorativos con una única
 respiración lenta compartida: un radial navy muy tenue del lado del foco, una
 retícula de 40px al 4% (el registro de una tabla de datos) y una hairline

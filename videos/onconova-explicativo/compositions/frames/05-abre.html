@@ -1,0 +1,591 @@
+<template>
+  <style>
+    /* ============================================================
+       05-abre — «La aplicación abre» (17.51s)
+       Primera vez que se ve el programa en todo el vídeo.
+       La ventana clara flota sobre el escenario navy; el cursor
+       conduce y la interfaz RESPONDE: el botón redondo se enciende,
+       se hunde al clic y el panel de navegación ENTRA deslizándose
+       desde x=-300, exactamente como en la app.
+       Foco / único ámbar: el botón redondo del menú, en el clic.
+       Rótulos: literales del producto (no se traduce ni se mejora
+       ni una tilde). Ningún dato de paciente en pantalla.
+       Colores en atributos y en JS escritos en rgb(): el hex
+       entrecomillado se corrompe en los pases de corrección.
+       ============================================================ */
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      background: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clip { position: absolute; inset: 0; }
+    .abre-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- escenario: fondo + tres decorativos, una respiración ---------- */
+    .abre-ground { position: absolute; inset: 0; background: #141d2b; }
+    .abre-veil {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(120% 80% at 50% 48%,
+                  rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+      opacity: 0.46;
+    }
+    .abre-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        860px 640px at 26% 62%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.34) 46%,
+        rgba(45, 62, 94, 0) 72%
+      );
+      opacity: 0.55;
+      transform-origin: 26% 62%;
+      will-change: transform, opacity;
+    }
+    .abre-grid40 {
+      position: absolute; inset: -40px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, rgba(0, 0, 0, 0) 1px),
+        linear-gradient(to bottom, #e9eef7 1px, rgba(0, 0, 0, 0) 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    .abre-hairline {
+      position: absolute; left: 0; right: 0; top: 116px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+      opacity: 0.6;
+    }
+
+    .abre-world {
+      position: absolute; inset: 0;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    /* ---------- la ventana: la app abierta a pantalla completa ---------- */
+    .abre-win {
+      position: absolute; left: 150px; top: 150px; width: 1620px; height: 726px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 44px 104px rgba(20, 29, 43, 0.64);
+      overflow: hidden;
+      transform-origin: 50% 46%;
+      will-change: transform, opacity;
+    }
+    .abre-chrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 48px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 24px;
+      font-size: 18px; letter-spacing: 0.09em;
+    }
+    .abre-chrome span { display: inline-block; white-space: nowrap; }
+    .abre-chrome .abre-dots { margin-left: auto; display: flex; align-items: center; gap: 11px; }
+    .abre-dots i { display: block; width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
+
+    /* cabecera de la app */
+    .abre-head { position: absolute; left: 0; right: 0; top: 48px; height: 76px; }
+    .abre-lock {
+      position: absolute; left: 28px; top: 20px;
+      display: flex; align-items: center; gap: 15px;
+      will-change: transform, opacity;
+    }
+    .abre-lock img { display: block; height: 34px; width: auto; }
+    .abre-lock b {
+      font-size: 21px; font-weight: 900; letter-spacing: 0.055em; color: #2d3e5e;
+      white-space: nowrap;
+    }
+    .abre-user {
+      position: absolute; right: 138px; top: 24px; text-align: right;
+      will-change: transform, opacity;
+    }
+    .abre-user u { display: block; text-decoration: none; font-size: 15px; color: rgba(34, 48, 74, 0.78); }
+    .abre-user s { display: block; text-decoration: none; font-size: 13px; color: rgba(34, 48, 74, 0.48); margin-top: 2px; }
+    .abre-pill {
+      position: absolute; right: 28px; top: 27px;
+      border: 1px solid rgba(45, 62, 94, 0.75); border-radius: 999px;
+      padding: 5px 15px; font-size: 15px; color: #2d3e5e;
+      will-change: transform, opacity;
+    }
+    .abre-hrule {
+      position: absolute; left: 0; right: 0; top: 124px; height: 1px;
+      background: rgba(45, 62, 94, 0.18);
+      transform-origin: 0% 50%;
+    }
+
+    /* ---------- cuerpo: la pantalla de bienvenida ---------- */
+    .abre-welcome {
+      position: absolute; left: 0; right: 0; top: 204px; text-align: center;
+    }
+    .abre-bigiso {
+      display: block; height: 118px; width: auto; margin: 0 auto 26px;
+      will-change: transform, opacity;
+    }
+    .abre-h1 {
+      font-size: 50px; font-weight: 900; letter-spacing: -0.02em;
+      line-height: 1.16; color: #2d3e5e; margin-bottom: 20px;
+      will-change: transform, opacity;
+    }
+    .abre-sub {
+      font-size: 24px; font-weight: 400; line-height: 1.5;
+      color: rgba(34, 48, 74, 0.62);
+      will-change: transform, opacity;
+    }
+    .abre-sel {
+      font-size: 22px; font-weight: 400; line-height: 1.5;
+      color: rgba(34, 48, 74, 0.5);
+      will-change: transform, opacity;
+    }
+    .abre-gap { height: 22px; }
+    .abre-gap2 { height: 34px; }
+    .abre-hint {
+      font-size: 17px; color: rgba(34, 48, 74, 0.46);
+      white-space: pre;
+      will-change: transform, opacity;
+    }
+    .abre-hint span { font-family: "IBM Plex Mono", monospace; color: rgba(34, 48, 74, 0.62); }
+
+    /* ---------- el botón redondo del menú: EL foco ---------- */
+    .abre-btn {
+      position: absolute; left: 30px; top: 638px; width: 58px; height: 58px;
+      border-radius: 50%; background: #eef1f6;
+      border: 1px solid rgba(45, 62, 94, 0.22);
+      box-shadow: 0 6px 18px rgba(20, 29, 43, 0.14);
+      z-index: 5;
+      will-change: transform, opacity;
+    }
+    .abre-btn i.abre-slat {
+      position: absolute; left: 17px; width: 24px; height: 2px;
+      background: rgba(34, 48, 74, 0.55);
+    }
+    .abre-rim {
+      position: absolute; inset: -5px; border-radius: 50%;
+      border: 2px solid #e9a33c; opacity: 0;
+    }
+    .abre-ring {
+      position: absolute; left: 11px; top: 619px; width: 96px; height: 96px;
+      border-radius: 50%; border: 2px solid rgba(233, 163, 60, 0.9);
+      opacity: 0; z-index: 4; pointer-events: none;
+    }
+
+    /* ---------- panel de navegación: entra desde x = -300 ---------- */
+    .abre-nav {
+      position: absolute; left: 0; top: 124px; width: 300px; height: 602px;
+      background: #f4f6fa;
+      border-right: 1px solid rgba(45, 62, 94, 0.22);
+      box-shadow: 26px 0 54px rgba(20, 29, 43, 0.16);
+      overflow: hidden; z-index: 8;
+      will-change: transform;
+    }
+    .abre-navhead { position: absolute; left: 26px; top: 30px; will-change: transform, opacity; }
+    /* el isotipo del HUV es blanco (nació para fondo oscuro): sobre el panel
+       claro se apoya en una placa navy del propio producto, o desaparece */
+    .abre-navbadge {
+      display: inline-block; background: #2d3e5e; border-radius: 5px;
+      padding: 11px 15px; margin-bottom: 16px;
+    }
+    .abre-navhead img { display: block; height: 34px; width: auto; }
+    .abre-navhead b {
+      display: block; font-size: 19px; font-weight: 900; letter-spacing: 0.055em;
+      color: #2d3e5e;
+    }
+    .abre-navhead p {
+      font-size: 14px; color: rgba(34, 48, 74, 0.52); margin-top: 6px;
+    }
+    .abre-navrule {
+      position: absolute; left: 26px; width: 248px; top: 156px; height: 1px;
+      background: rgba(45, 62, 94, 0.18);
+      transform-origin: 0% 50%;
+    }
+    .abre-item {
+      position: absolute; left: 0; width: 300px; height: 52px;
+      display: flex; align-items: center; padding-left: 26px;
+      will-change: transform, opacity;
+    }
+    .abre-item span {
+      position: relative; font-size: 18px; font-weight: 400; color: #2d3e5e;
+      white-space: nowrap;
+    }
+    .abre-fill {
+      position: absolute; left: 0; top: 0; width: 300px; height: 52px;
+      background: #2d3e5e; transform-origin: 0% 50%;
+    }
+    .abre-wash {
+      position: absolute; left: 0; top: 0; width: 300px; height: 52px;
+      background: rgba(45, 62, 94, 0.09); opacity: 0;
+    }
+    .abre-bar {
+      position: absolute; left: 0; top: 0; width: 3px; height: 52px;
+      background: #2d3e5e; transform-origin: 50% 50%;
+    }
+    .abre-uline {
+      position: absolute; left: 26px; bottom: 11px; width: 58px; height: 2px;
+      background: rgba(233, 238, 247, 0.92); transform-origin: 0% 50%;
+    }
+    .abre-close {
+      position: absolute; left: 26px; top: 540px; font-size: 16px;
+      color: rgba(34, 48, 74, 0.55); white-space: pre;
+      will-change: transform, opacity;
+    }
+
+    /* ---------- cursor ---------- */
+    .abre-cursor {
+      position: absolute; left: 0; top: 0; width: 0; height: 0;
+      z-index: 40; pointer-events: none; opacity: 0; will-change: transform;
+    }
+
+    /* ---------- anclas de borde ---------- */
+    .abre-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    .abre-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+  </style>
+
+  <div id="root" data-composition-id="05-abre" data-start="0" data-width="1920" data-height="1080" data-duration="17.51">
+
+    <div id="f05-abre-clip-fondo" class="clip" data-start="0" data-duration="17.51" data-track-index="0">
+      <div class="abre-ground" id="f05-abre-ground"></div>
+      <div class="abre-veil" id="f05-abre-veil"></div>
+      <div class="abre-radial" id="f05-abre-radial"></div>
+      <div class="abre-grid40" id="f05-abre-grid"></div>
+      <div class="abre-hairline" id="f05-abre-hair"></div>
+    </div>
+
+    <div id="f05-abre-clip-escena" class="clip" data-start="0" data-duration="17.51" data-track-index="1">
+      <div class="abre-world" id="f05-abre-world">
+
+        <!-- ===================== LA VENTANA ===================== -->
+        <div class="abre-win" id="f05-abre-win">
+
+          <div class="abre-chrome abre-mono" id="f05-abre-chrome">
+            <span id="f05-abre-chrome-txt">ONCONOVA · Gestión Oncológica Inteligente</span>
+            <span class="abre-dots" id="f05-abre-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <div class="abre-head" id="f05-abre-head">
+            <div class="abre-lock" id="f05-abre-lock">
+              <img src="assets/marca/onconova-isotipo.png" alt="ONCONOVA" id="f05-abre-headiso">
+              <b id="f05-abre-wordmark">ONCONOVA CIRUGÍA ONCOLÓGICA</b>
+            </div>
+            <div class="abre-user" id="f05-abre-user">
+              <u>Usuario Sistema</u>
+              <s>Administrador</s>
+            </div>
+            <div class="abre-pill abre-mono" id="f05-abre-pill">v6.9.92</div>
+          </div>
+          <div class="abre-hrule" id="f05-abre-hrule"></div>
+
+          <!-- ---------------- pantalla de bienvenida ---------------- -->
+          <div class="abre-welcome" id="f05-abre-welcome">
+            <img class="abre-bigiso" src="assets/marca/onconova-isotipo.png" alt="ONCONOVA" id="f05-abre-bigiso">
+            <div class="abre-h1" id="f05-abre-h1">Bienvenido a ONCONOVA</div>
+            <div class="abre-sub" id="f05-abre-sub-1">Investigación y mejora del área de oncología</div>
+            <div class="abre-sub" id="f05-abre-sub-2">del Hospital Universitario del Valle</div>
+            <div class="abre-gap"></div>
+            <div class="abre-sel" id="f05-abre-sel-1">Seleccioná una opción del menú para comenzar</div>
+            <div class="abre-sel" id="f05-abre-sel-2">a trabajar con los datos oncológicos</div>
+            <div class="abre-gap2"></div>
+            <div class="abre-hint" id="f05-abre-hint">💡  Presioná   <span>Ctrl + B</span>   para abrir el menú de navegación</div>
+          </div>
+
+          <!-- ondas del clic: viven dentro de la ventana, así el panel
+               que entra las tapa igual que taparía al botón -->
+          <i class="abre-ring" id="f05-abre-ring-1"></i>
+          <i class="abre-ring" id="f05-abre-ring-2"></i>
+
+          <!-- el botón redondo de la esquina inferior izquierda -->
+          <div class="abre-btn" id="f05-abre-btn">
+            <i class="abre-slat" id="f05-abre-slat-1" style="top: 20px"></i>
+            <i class="abre-slat" id="f05-abre-slat-2" style="top: 28px"></i>
+            <i class="abre-slat" id="f05-abre-slat-3" style="top: 36px"></i>
+            <i class="abre-rim" id="f05-abre-rim"></i>
+          </div>
+
+          <!-- ---------------- panel de navegación ---------------- -->
+          <div class="abre-nav" id="f05-abre-nav">
+            <div class="abre-navhead" id="f05-abre-navhead">
+              <span class="abre-navbadge"><img src="assets/marca/huv-isotipo.png" alt="HUV"></span>
+              <b>HUV ONCOLOGÍA</b>
+              <p>Panel de navegación</p>
+            </div>
+            <div class="abre-navrule" id="f05-abre-navrule"></div>
+
+            <div class="abre-item" id="f05-abre-item-0" style="top: 186px">
+              <i class="abre-fill" id="f05-abre-fill-0"></i>
+              <span id="f05-abre-txt-0">Inicio</span>
+              <i class="abre-uline" id="f05-abre-uline"></i>
+            </div>
+
+            <div class="abre-item" id="f05-abre-item-1" style="top: 246px">
+              <i class="abre-wash" id="f05-abre-wash-1"></i>
+              <i class="abre-bar" id="f05-abre-bar-1"></i>
+              <span id="f05-abre-txt-1">Base de Datos</span>
+            </div>
+
+            <div class="abre-item" id="f05-abre-item-2" style="top: 306px">
+              <i class="abre-wash" id="f05-abre-wash-2"></i>
+              <i class="abre-bar" id="f05-abre-bar-2"></i>
+              <span id="f05-abre-txt-2">Dashboard</span>
+            </div>
+
+            <div class="abre-item" id="f05-abre-item-3" style="top: 366px">
+              <span id="f05-abre-txt-3">Interoperabilidad QHORTE</span>
+            </div>
+
+            <div class="abre-close" id="f05-abre-close">✕   Cerrar menú</div>
+          </div>
+        </div>
+
+        <div class="abre-cursor" id="f05-abre-cursor">
+          <svg width="30" height="43" viewBox="0 0 30 43" aria-hidden="true">
+            <path d="M3 2 L3 33 L11.2 25.4 L16.4 38.6 L22.4 36.1 L17.2 23.2 L27.6 22.6 Z"
+                  fill="rgb(233,238,247)" stroke="rgb(20,29,43)" stroke-width="2.6" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="abre-brand abre-mono" id="f05-abre-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="abre-mark abre-mono" id="f05-abre-mark">05 / 13 — LA APLICACIÓN</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "05-abre";
+      var D = 17.51;
+      var tl = gsap.timeline({ paused: true });
+
+      var world = document.getElementById("f05-abre-world");
+      var radial = document.getElementById("f05-abre-radial");
+      var grid = document.getElementById("f05-abre-grid");
+      var hair = document.getElementById("f05-abre-hair");
+      var veil = document.getElementById("f05-abre-veil");
+
+      /* ---------------------------------------------------------
+         ESCENARIO FIJO. Un único reloj lineal escribe la respiración
+         del fondo y el acercamiento final: determinista, sin
+         callbacks, seguro ante cualquier salto de fotograma.
+         --------------------------------------------------------- */
+      var PUSH_AT = 14.6;      // el acercamiento arranca y NO termina:
+      var PUSH_DUR = 3.2;      // en el último fotograma sigue en curso,
+      var PUSH_AMT = 0.02;     // así el montaje hereda la escena en movimiento
+
+      var clock = { t: 0 };
+
+      function writeFrame() {
+        var t = clock.t;
+        var b = Math.sin(t * 0.3);
+
+        var push = 0;
+        if (t > PUSH_AT) {
+          var p = Math.min(1, (t - PUSH_AT) / PUSH_DUR);
+          push = PUSH_AMT * (p * p * (3 - 2 * p));
+        }
+
+        world.style.transform =
+          "translate(" +
+          (Math.sin(t * 0.19) * 3).toFixed(2) + "px," +
+          (Math.sin(t * 0.263) * 1.5).toFixed(2) + "px) scale(" +
+          (1 + 0.0035 * b + push).toFixed(4) + ")";
+
+        radial.style.transform = "scale(" + (1 + 0.05 * b).toFixed(4) + ")";
+        radial.style.opacity = (0.55 + 0.18 * b).toFixed(4);
+        grid.style.opacity = (0.04 + 0.012 * b).toFixed(4);
+        hair.style.opacity = (0.55 + 0.22 * b).toFixed(4);
+        veil.style.opacity = (0.46 + 0.16 * Math.sin(t * 0.42 + 1.1)).toFixed(4);
+      }
+
+      // el reloj recorre exactamente la duración declarada: el fondo
+      // respira los 17,51 s sin una sola ventana congelada
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame(); // semilla del fotograma 0
+
+      /* --------- helpers de cursor (cursor-click-ripple, finito) --------- */
+      var cursor = "#f05-abre-cursor";
+
+      function moveTo(x, y, at, dur) {
+        tl.to(cursor, { x: x, y: y, duration: dur, ease: "power2.inOut" }, at);
+      }
+
+      /* =========================================================
+         BEAT 0 (0.0–4.5) — «Así abre el programa: a pantalla
+         completa, sin instalación y sin contraseña.»
+         La ventana crece y se asienta; el cromo y la cabecera
+         llegan detrás, sin splash y sin pedir nada.
+         ========================================================= */
+      tl.fromTo("#f05-abre-win",
+        { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
+      tl.fromTo("#f05-abre-win",
+        { scale: 0.968, y: 14 },
+        { scale: 1, y: 0, duration: 0.86, ease: "power3.out" }, 0);
+
+      tl.fromTo("#f05-abre-chrome-txt",
+        { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" },
+        { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.62, ease: "power2.out" }, 0.18);
+      tl.fromTo("#f05-abre-dots",
+        { opacity: 0 }, { opacity: 1, duration: 0.42, ease: "power2.out" }, 0.42);
+
+      tl.fromTo("#f05-abre-lock",
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.66, ease: "power3.out" }, 0.40);
+      tl.fromTo("#f05-abre-user",
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.68);
+      tl.fromTo("#f05-abre-pill",
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 0.82);
+      tl.fromTo("#f05-abre-hrule",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.66, ease: "power3.out" }, 0.92);
+
+      // el botón del menú ya está ahí desde que abre: es parte de la app
+      tl.fromTo("#f05-abre-btn",
+        { opacity: 0, scale: 0.84 },
+        { opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" }, 1.1);
+
+      tl.fromTo("#f05-abre-bigiso",
+        { opacity: 0, y: 16, scale: 0.94 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out" }, 1.28);
+      tl.fromTo("#f05-abre-h1",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 2.2);
+      tl.fromTo("#f05-abre-sub-1",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 3.1);
+      tl.fromTo("#f05-abre-sub-2",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 3.45);
+
+      /* =========================================================
+         BEAT 1 (4.5–7.0) — «Esta es la pantalla de bienvenida.»
+         Se completa el texto de la bienvenida y aparece el atajo.
+         ========================================================= */
+      tl.fromTo("#f05-abre-sel-1",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 4.75);
+      tl.fromTo("#f05-abre-sel-2",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 5.1);
+      tl.fromTo("#f05-abre-hint",
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.75, ease: "power2.out" }, 6.0);
+
+      // el cursor entra por la derecha, fuera del recorrido del texto
+      tl.fromTo(cursor,
+        { x: 1430, y: 842, opacity: 0 },
+        { x: 1430, y: 842, opacity: 1, duration: 0.34, ease: "power2.out" }, 6.05);
+
+      /* =========================================================
+         BEAT 2 (7.0–11.5) — «Y abajo a la izquierda, el botón que
+         despliega el panel de navegación.»
+         El cursor baja al botón, éste se enciende en navy, se hunde
+         al clic —ÚNICO ámbar de la escena— y el panel entra
+         deslizándose desde el borde izquierdo.
+         ========================================================= */
+      // la punta se posa en el cuadrante inferior del botón: sobre el centro
+      // exacto, el cuerpo de la flecha tapaba la tercera raya del icono
+      moveTo(198, 831, 6.6, 1.3);
+
+      // reposo -> hover: relleno navy, rayas en blanco (estado real del producto)
+      tl.to("#f05-abre-btn",
+        { backgroundColor: "rgb(45,62,94)", borderColor: "rgba(45,62,94,1)", duration: 0.3, ease: "power2.out" }, 7.92);
+      tl.to(["#f05-abre-slat-1", "#f05-abre-slat-2", "#f05-abre-slat-3"],
+        { backgroundColor: "rgb(233,238,247)", duration: 0.3, ease: "power2.out" }, 7.94);
+
+      // el clic: el cursor comprime más que el receptor
+      tl.to(cursor, { scale: 0.84, duration: 0.09, ease: "power2.in" }, 10.25);
+      tl.to(cursor, { scale: 1, duration: 0.15, ease: "power2.out" }, 10.34);
+      tl.to("#f05-abre-btn", { scale: 0.93, duration: 0.1, ease: "power2.in" }, 10.27);
+      tl.to("#f05-abre-btn", { scale: 1, duration: 0.24, ease: "power2.out" }, 10.37);
+
+      // EL ÁMBAR: el aro del botón se enciende y dos ondas salen de él
+      tl.fromTo("#f05-abre-rim",
+        { opacity: 0 }, { opacity: 1, duration: 0.16, ease: "power2.out" }, 10.26);
+      tl.fromTo(["#f05-abre-ring-1", "#f05-abre-ring-2"],
+        { scale: 0.55, opacity: 0.75 },
+        { scale: 2.3, opacity: 0, duration: 0.62, ease: "power2.out", stagger: 0.1, immediateRender: false },
+        10.28);
+      tl.to("#f05-abre-rim", { opacity: 0.35, duration: 0.45, ease: "power2.inOut" }, 10.72);
+
+      // el panel ENTRA desde x = -300, con ease-out, como en la app
+      tl.fromTo("#f05-abre-nav",
+        { x: -300 }, { x: 0, duration: 0.48, ease: "power2.out" }, 10.55);
+
+      // el contenido del panel llega arrastrando, sin dejarlo vacío al deslizar
+      tl.fromTo("#f05-abre-navhead",
+        { opacity: 0.25, x: -16 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 10.66);
+      tl.fromTo("#f05-abre-navrule",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 10.78);
+      tl.fromTo(["#f05-abre-item-0", "#f05-abre-item-1", "#f05-abre-item-2", "#f05-abre-item-3"],
+        { opacity: 0.3, x: -24 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.09 }, 10.72);
+      tl.fromTo("#f05-abre-close",
+        { opacity: 0, x: -12 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 11.5);
+
+      // el ítem activo se pinta: fondo navy, texto blanco
+      tl.fromTo("#f05-abre-fill-0",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power3.out" }, 11.28);
+      tl.to("#f05-abre-txt-0",
+        { color: "rgb(244,246,250)", duration: 0.35, ease: "power2.out" }, 11.42);
+
+      /* =========================================================
+         BEAT 3 (11.5–16.0) — «Desde ahí se llega a todo: Inicio,
+         Base de Datos y Dashboard.»
+         El cursor sube por el menú y cada destino nombrado responde.
+         El cuarto ítem —Interoperabilidad QHORTE— está, como en la
+         app, pero ni se nombra ni se resalta.
+         ========================================================= */
+      moveTo(270, 486, 12.6, 0.75);                    // Inicio
+      tl.fromTo("#f05-abre-uline",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 13.42);
+
+      moveTo(270, 546, 14.05, 0.55);                   // Base de Datos
+      tl.to("#f05-abre-wash-1", { opacity: 1, duration: 0.3, ease: "power2.out" }, 14.62);
+      tl.fromTo("#f05-abre-bar-1",
+        { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "power3.out" }, 14.66);
+      tl.to("#f05-abre-wash-1", { opacity: 0, duration: 0.35, ease: "power2.inOut" }, 15.3);
+      tl.to("#f05-abre-bar-1", { scaleY: 0, duration: 0.35, ease: "power2.inOut" }, 15.3);
+
+      moveTo(270, 606, 15.25, 0.55);                   // Dashboard
+      tl.to("#f05-abre-wash-2", { opacity: 1, duration: 0.3, ease: "power2.out" }, 15.82);
+      tl.fromTo("#f05-abre-bar-2",
+        { scaleY: 0 }, { scaleY: 1, duration: 0.42, ease: "power3.out" }, 15.86);
+
+      // el cursor se queda vivo hasta el corte: sigue moviéndose cuando
+      // el montaje releva la escena
+      moveTo(276, 614, 16.6, 0.9);
+
+      window.__timelines = window.__timelines || {};
+
+      // marcador-fuera: el numero de seccion CAMBIA entre escenas, asi que si
+      // sigue encendido durante el encadenado se leen los dos a la vez y sale
+      // el amasijo que vimos en la costura ("078//133--LASSVISTAS").
+      tl.to("#f05-abre-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 15.76);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+      // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
+      // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
+      tl.to(["#f05-abre-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 15.81);
+
+      // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
+      // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
+      tl.to("#f05-abre-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 15.81);
+
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

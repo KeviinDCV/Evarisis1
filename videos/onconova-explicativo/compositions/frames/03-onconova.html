@@ -136,8 +136,8 @@
     }
   </style>
 
-  <div data-hf-id="hf-vpi8" id="root" data-composition-id="03-onconova" data-start="0" data-width="1920" data-height="1080" data-duration="11.35">
-    <div data-hf-id="hf-hhi5" id="f03-onconova-ground" class="clip ground" data-start="0" data-duration="11.35" data-track-index="0">
+  <div data-hf-id="hf-vpi8" id="root" data-composition-id="03-onconova" data-start="0" data-width="1920" data-height="1080" data-duration="12.47">
+    <div data-hf-id="hf-hhi5" id="f03-onconova-ground" class="clip ground" data-start="0" data-duration="12.47" data-track-index="0">
       <div data-hf-id="hf-mit3" id="f03-onconova-decor" class="decor">
         <div data-hf-id="hf-2s7n" id="f03-onconova-glow" class="glow"></div>
         <div data-hf-id="hf-kxq8" id="f03-onconova-grid" class="grid"></div>
@@ -145,7 +145,7 @@
       </div>
     </div>
 
-    <div data-hf-id="hf-s8b5" id="f03-onconova-stage" class="clip stage" data-start="0" data-duration="11.35" data-track-index="1">
+    <div data-hf-id="hf-s8b5" id="f03-onconova-stage" class="clip stage" data-start="0" data-duration="12.47" data-track-index="1">
       <div data-hf-id="hf-f5vf" id="f03-onconova-centerwrap" class="centerwrap">
         <div data-hf-id="hf-6jvi" id="f03-onconova-lockup" class="lockup">
           <img class="iso" id="f03-onconova-iso" src="assets/marca/onconova-isotipo.png" alt="ONCONOVA">
@@ -160,7 +160,7 @@
       </div>
 
       <div data-hf-id="hf-5ucx" id="f03-onconova-brand" class="brand mono">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div data-hf-id="hf-dx1d" id="f03-onconova-mark" class="mark mono">03 / 09 — LA APLICACIÓN</div>
+      <div data-hf-id="hf-dx1d" id="f03-onconova-mark" class="mark mono">03 / 13 — LA APLICACIÓN</div>
     </div>
   </div>
 
@@ -174,7 +174,7 @@
       // si sigue encendido durante el encadenado se ve doble y desplazado.
       // Se apaga justo antes de la costura; la marca de arriba NO se toca,
       // porque es identica en todas y superpuesta no se nota.
-      tl.to(".mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 10.05);
+      tl.to(".mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 9.6);
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
 
@@ -207,6 +207,37 @@
 
 
         { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "power3.out" }, 0.0);
+
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+
+      // duraba 11.35s; la nueva dura 12.47s. tl.duration() reescala TODA la
+
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+
+      tl.duration(12.47);
+
 
 
 

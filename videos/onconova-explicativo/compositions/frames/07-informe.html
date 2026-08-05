@@ -1,5 +1,5 @@
 <template>
-  <div data-hf-id="hf-qvp8" id="root" data-composition-id="07-informe" data-start="0" data-width="1920" data-height="1080" data-duration="46.89">
+  <div data-hf-id="hf-qvp8" id="root" data-composition-id="07-informe" data-start="0" data-width="1920" data-height="1080" data-duration="50.58">
     <style>
       #root {
         position: relative; width: 1920px; height: 1080px; overflow: hidden;
@@ -91,7 +91,7 @@
     </style>
 
     <!-- ================= fondo (pista 0) ================= -->
-    <div data-hf-id="hf-vjkl" id="s7-clip-fondo" class="clip" data-start="0" data-duration="46.89" data-track-index="0">
+    <div data-hf-id="hf-vjkl" id="s7-clip-fondo" class="clip" data-start="0" data-duration="50.58" data-track-index="0">
       <div data-hf-id="hf-mrjb" class="s7-stage"></div>
       <div data-hf-id="hf-9b8u" class="s7-aliento" id="s7-aliento"></div>
       <div data-hf-id="hf-zrp8" class="s7-grid" id="s7-grid"></div>
@@ -99,7 +99,7 @@
     </div>
 
     <!-- ================= el documento (pista 1) ================= -->
-    <div data-hf-id="hf-h1nu" id="s7-clip-doc" class="clip" data-start="0" data-duration="46.89" data-track-index="1">
+    <div data-hf-id="hf-h1nu" id="s7-clip-doc" class="clip" data-start="0" data-duration="50.58" data-track-index="1">
       <div data-hf-id="hf-4s9i" class="s7-visor" id="s7-visor">
         <div data-hf-id="hf-d7xu" class="s7-world" id="s7-world">
           <div data-hf-id="hf-pcin" class="s7-sheet" id="s7-h1" style="left: 0px">
@@ -123,7 +123,7 @@
     </div>
 
     <!-- ================= cromo (pista 2) ================= -->
-    <div data-hf-id="hf-z4hb" id="s7-clip-cromo" class="clip" data-start="0" data-duration="46.89" data-track-index="2">
+    <div data-hf-id="hf-z4hb" id="s7-clip-cromo" class="clip" data-start="0" data-duration="50.58" data-track-index="2">
       <div data-hf-id="hf-y2bq" class="s7-h2" id="s7-titular">El informe estadístico</div>
       <div data-hf-id="hf-jac9" class="s7-brand s7-mono" id="s7-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
       <!-- Rótulos apilados en el mismo sitio: se funden con tweens, sin
@@ -136,7 +136,7 @@
       <div data-hf-id="hf-kh47" class="s7-cap s7-mono" id="s7-cap-4">PÁGINA 4 · DIAGNÓSTICOS EN DETALLE</div>
       <div data-hf-id="hf-do0d" class="s7-cap s7-mono" id="s7-cap-5">PÁGINA 5 · HALLAZGOS NO ONCOLÓGICOS</div>
       <div data-hf-id="hf-kdj7" class="s7-cap s7-mono" id="s7-cap-6">INFORME DETERMINISTA · SIN IA</div>
-      <div data-hf-id="hf-4g94" class="s7-mark s7-mono" id="s7-mark">07 / 09 — EL INFORME</div>
+      <div data-hf-id="hf-4g94" class="s7-mark s7-mono" id="s7-mark">11 / 13 — EL INFORME</div>
     </div>
   </div>
 
@@ -259,7 +259,7 @@
 
       // porque es identica en todas y superpuesta no se nota.
 
-      tl.to("#s7-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 45.59);
+      tl.to("#s7-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 45.14);
 
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
@@ -294,6 +294,37 @@
 
 
       tl.to("#s7-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 45.19);
+
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+
+      // duraba 46.89s; la nueva dura 50.58s. tl.duration() reescala TODA la
+
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+
+      tl.duration(50.58);
+
 
 
 

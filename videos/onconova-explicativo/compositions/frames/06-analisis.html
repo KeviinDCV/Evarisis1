@@ -1,5 +1,5 @@
 <template>
-  <div id="root" data-composition-id="06-analisis" data-start="0" data-width="1920" data-height="1080" data-duration="28.16">
+  <div id="root" data-composition-id="06-analisis" data-start="0" data-width="1920" data-height="1080" data-duration="30.63">
     <style>
       #root, #root *, #root *::before, #root *::after { box-sizing: border-box; }
       #root {
@@ -233,7 +233,7 @@
     </style>
 
     <!-- ================= fondo (pista 0) ================= -->
-    <div id="s6-clip-fondo" class="clip" data-start="0" data-duration="28.16" data-track-index="0">
+    <div id="s6-clip-fondo" class="clip" data-start="0" data-duration="30.63" data-track-index="0">
       <div class="s6-stage"></div>
       <div class="s6-aliento" id="s6-aliento"></div>
       <div class="s6-radial" id="s6-radial"></div>
@@ -242,7 +242,7 @@
     </div>
 
     <!-- ================= contenido bajo camara (pista 1) ================= -->
-    <div id="s6-clip-mundo" class="clip" data-start="0" data-duration="28.16" data-track-index="1" data-layout-allow-overflow="">
+    <div id="s6-clip-mundo" class="clip" data-start="0" data-duration="30.63" data-track-index="1" data-layout-allow-overflow="">
       <div class="s6-drift" id="s6-drift" data-layout-allow-overflow="">
         <div class="s6-zoom-outer" id="s6-zoom-outer" data-layout-allow-overflow="">
           <div class="s6-zoom-inner" id="s6-zoom-inner" data-layout-allow-overflow="">
@@ -263,7 +263,7 @@
                   <svg class="s6-ring" id="s6-ring" width="136" height="136" viewBox="0 0 136 136" aria-hidden="true">
                     <g transform="rotate(-90 68 68)">
                       <circle class="s6-halo" id="s6-halo" cx="68" cy="68" r="66" fill="none" stroke="#e9a33c" stroke-width="1"></circle>
-                      <circle cx="68" cy="68" r="59" fill="none" stroke='[id="2d3e5e"]' stroke-width="10"></circle>
+                      <circle cx="68" cy="68" r="59" fill="none" stroke='#2d3e5e' stroke-width="10"></circle>
                       <circle id="s6-arc" cx="68" cy="68" r="59" fill="none" stroke="#e9a33c" stroke-width="10" stroke-dasharray="370.71" stroke-dashoffset="370.71"></circle>
                     </g>
                   </svg>
@@ -406,9 +406,9 @@
     </div>
 
     <!-- ================= cromo de borde (pista 2) ================= -->
-    <div id="s6-clip-cromo" class="clip" data-start="0" data-duration="28.16" data-track-index="2">
+    <div id="s6-clip-cromo" class="clip" data-start="0" data-duration="30.63" data-track-index="2">
       <div class="s6-brand s6-mono" id="s6-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
-      <div class="s6-mark s6-mono" id="s6-mark">06 / 09 — EL ANÁLISIS</div>
+      <div class="s6-mark s6-mono" id="s6-mark">09 / 13 — EL ANÁLISIS</div>
       <p class="s6-caption s6-mono" id="s6-cap">
         Pestaña Análisis de Malignidad · Biomarcadores vs malignidad — cifras reales de la base de datos.
       </p>
@@ -642,7 +642,7 @@
       // si sigue encendido durante el encadenado se ve doble y desplazado.
       // Se apaga justo antes de la costura; la marca de arriba NO se toca,
       // porque es identica en todas y superpuesta no se nota.
-      tl.to("#s6-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.86);
+      tl.to("#s6-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.41);
 
       // suelta-contenido: al empezar el encadenado la escena deja ir su
 
@@ -667,6 +667,31 @@
 
 
       tl.to("#s6-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.46);
+
+
+
+      // reescalado-a-la-voz: la coreografia se escribio contra una voz que
+
+
+
+      // duraba 28.16s; la nueva dura 30.63s. tl.duration() reescala TODA la
+
+
+
+      // linea de tiempo de golpe —incluidos los tiempos que salen de
+
+
+
+      // constantes como ETAPA_IN, que un buscar-y-reemplazar no ve— y deja
+
+
+
+      // la coreografia pegada a la narracion sin tocar un solo numero.
+
+
+
+      tl.duration(30.63);
+
 
 
 

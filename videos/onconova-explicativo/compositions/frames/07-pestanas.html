@@ -1,0 +1,1154 @@
+<template>
+  <style>
+    /* ==================================================================
+       07-pestanas — Las siete pestañas (44.52s)
+       Escenario FIJO: la cámara no viaja. El cursor conduce y el
+       notebook RESPONDE: la pestaña se hunde al clic, se rellena de
+       navy, el subrayado ÁMBAR se desliza hasta ella y debajo se
+       construye la miniatura de esa vista.
+         · 7 activaciones, una por cada nombre que dice la voz
+         · cada miniatura se puebla (tarjetas, cabeceras, filas)
+         · el plinto anuncia la vista y el índice 0N / 07
+       Foco de escena: LA PESTAÑA ACTIVA (único ámbar del cuadro).
+       Ley 1581: identidades ficticias verificadas contra la BD,
+       cédulas enmascaradas, nº de caso de la serie IHQ2590xx.
+       Rótulos = los literales del producto (enhanced_database_dashboard.py
+       y ui.py), emojis incluidos. Cifras: solo las auditadas; donde no
+       hay dato verificado va un bloque neutro, nunca un número inventado.
+       ================================================================== */
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      background: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    #root, #root *, #root *::before, #root *::after { box-sizing: border-box; }
+    #root .clip { position: absolute; inset: 0; }
+    #root .p7-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- fondo: escenario + 3 decorativos, una sola respiración ---------- */
+    #root .p7-ground { position: absolute; inset: 0; background: #141d2b; }
+    #root .p7-veil {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(118% 78% at 50% 46%,
+                  rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+      opacity: 0.46;
+    }
+    #root .p7-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        860px 640px at 50% 44%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.34) 46%,
+        rgba(45, 62, 94, 0) 72%
+      );
+      opacity: 0.55;
+      will-change: transform, opacity;
+    }
+    #root .p7-grid40 {
+      position: absolute; inset: -40px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, transparent 1px),
+        linear-gradient(to bottom, #e9eef7 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    #root .p7-hairline {
+      position: absolute; left: 0; right: 0; top: 118px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+      opacity: 0.6;
+    }
+
+    /* el origen alto mantiene el borde inferior del panel lejos del
+       rótulo de esquina cuando entra el acercamiento final */
+    #root .p7-world {
+      position: absolute; inset: 0;
+      transform-origin: 50% 46%; will-change: transform;
+    }
+
+    /* ---------- la ventana: pantalla clara sobre el escritorio ---------- */
+    #root .p7-panel {
+      position: absolute; left: 100px; top: 148px; width: 1720px; height: 704px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 42px 96px rgba(20, 29, 43, 0.62);
+      overflow: hidden;
+      will-change: transform, opacity;
+    }
+    #root .p7-chrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 60px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 28px;
+      font-size: 25px; font-weight: 400;
+    }
+    #root .p7-mask {
+      display: inline-block; overflow: hidden; vertical-align: bottom;
+      padding-top: 8px; margin-top: -8px;
+    }
+    #root .p7-mask > span { display: inline-block; }
+    #root .p7-dots { margin-left: auto; display: flex; gap: 10px; }
+    #root .p7-dots i { width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
+
+    /* ---------- la fila de siete pestañas ---------- */
+    #root .p7-tabs {
+      position: absolute; left: 24px; top: 88px; width: 1672px; height: 48px;
+    }
+    #root .p7-tab {
+      position: absolute; top: 0; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45, 62, 94, 0.06);
+      white-space: nowrap; will-change: transform, opacity;
+    }
+    #root .p7-tabfill { position: absolute; inset: 0; background: #2d3e5e; opacity: 0; }
+    #root .p7-tab span {
+      position: relative; z-index: 1;
+      font-size: 18px; color: rgba(34, 48, 74, 0.62);
+    }
+    #root .p7-tabline {
+      position: absolute; left: 0; right: 0; top: 136px; height: 1px;
+      background: rgba(45, 62, 94, 0.18);
+      transform-origin: 0% 50%;
+    }
+    /* EL ÁMBAR — el único del cuadro: viaja hasta la pestaña que se nombra.
+       Barra GRUESA (8px) y muy luminosa: los emoji de las pestañas traen
+       tonos cercanos al ámbar, así que el foco no puede ser un tinte suave
+       sino un trazo inequívoco bajo la pestaña activa. */
+    #root .p7-amber {
+      position: absolute; left: 24px; top: 136px; width: 270px; height: 8px;
+      background: #e9a33c;
+      box-shadow: 0 0 26px rgba(233, 163, 60, 0.85), 0 0 6px rgba(233, 163, 60, 0.95);
+      transform-origin: 0% 50%; will-change: transform;
+    }
+
+    /* ---------- escenario de miniaturas ---------- */
+    #root .p7-stage {
+      position: absolute; left: 24px; top: 158px; width: 1672px; height: 480px;
+      overflow: hidden;
+    }
+    #root .p7-view {
+      position: absolute; left: 0; top: 0; width: 1672px; height: 480px; opacity: 0;
+    }
+
+    /* ---------- piezas comunes de las miniaturas ---------- */
+    #root .p7-card {
+      position: absolute;
+      border: 1px solid rgba(45, 62, 94, 0.16);
+      background: rgba(45, 62, 94, 0.045);
+      will-change: transform, opacity;
+    }
+    #root .p7-kv { position: absolute; left: 24px; top: 24px; height: 50px; }
+    #root .p7-kv b {
+      display: inline-block; font-size: 44px; font-weight: 700;
+      letter-spacing: -0.02em; line-height: 1; color: #22304a;
+    }
+    #root .p7-klab {
+      position: absolute; left: 24px; right: 18px; bottom: 22px;
+      font-size: 13px; letter-spacing: 0.1em; line-height: 1.35;
+      color: rgba(34, 48, 74, 0.55);
+    }
+    /* bloque neutro: ocupa el sitio de una cifra que no está auditada */
+    #root .p7-blk {
+      display: block; background: rgba(45, 62, 94, 0.18);
+      transform-origin: 0% 50%; will-change: transform;
+    }
+
+    #root .p7-sect {
+      position: absolute; left: 0; font-size: 22px; font-weight: 400; color: #22304a;
+      will-change: transform, opacity;
+    }
+    #root .p7-head {
+      position: absolute; left: 0; width: 1672px; height: 34px;
+      align-items: end; border-bottom: 1px solid rgba(45, 62, 94, 0.22);
+    }
+    #root .p7-head span {
+      font-size: 14px; letter-spacing: 0.11em; color: rgba(34, 48, 74, 0.52);
+      padding-bottom: 10px; padding-right: 14px; white-space: nowrap;
+      font-family: "IBM Plex Mono", monospace;
+      will-change: transform, opacity;
+    }
+    #root .p7-row {
+      position: absolute; left: 0; width: 1672px;
+      align-items: center; border-bottom: 1px solid rgba(45, 62, 94, 0.12);
+      will-change: transform, opacity;
+    }
+    /* position:relative para que el texto quede POR ENCIMA del wash: un
+       hijo absoluto pinta sobre los hermanos sin posicionar y el tinte de
+       la fila resaltada se comía la línea. */
+    #root .p7-row > span {
+      position: relative;
+      font-size: 18px; color: #22304a; padding-right: 16px;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    #root .p7-ghost {
+      position: absolute; left: 0; width: 1672px;
+      align-items: center; border-bottom: 1px solid rgba(45, 62, 94, 0.08);
+      will-change: transform, opacity;
+    }
+    #root .p7-ghost i {
+      display: block; height: 11px; background: rgba(45, 62, 94, 0.15);
+    }
+    #root .p7-wash {
+      position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+      background: rgba(45, 62, 94, 0.09); opacity: 0;
+    }
+
+    /* rejillas reales de cada tabla del producto */
+    #root .p7-g1 { display: grid; grid-template-columns: 1fr 320px 220px 220px; }
+    #root .p7-g2 { display: grid; grid-template-columns: 160px 380px 170px 1fr 190px 150px; }
+    #root .p7-g3 { display: grid; grid-template-columns: 240px 140px 200px 1fr 300px 170px; }
+    #root .p7-g5 { display: grid; grid-template-columns: 1fr 280px 280px 280px 280px; }
+
+    /* ---------- buscador y filtros (Visualizador de datos) ---------- */
+    #root .p7-search {
+      position: absolute; left: 0; top: 40px; width: 1000px; height: 52px;
+      border: 2px solid rgba(45, 62, 94, 0.22); background: rgba(45, 62, 94, 0.04);
+      display: flex; align-items: center; padding: 0 20px;
+      will-change: transform, opacity;
+    }
+    #root .p7-mag { margin-right: 14px; flex: 0 0 auto; }
+    #root .p7-ph { font-size: 19px; color: rgba(34, 48, 74, 0.42); white-space: nowrap; }
+    #root .p7-verlab {
+      position: absolute; top: 55px; font-size: 19px; color: rgba(34, 48, 74, 0.7);
+      will-change: transform, opacity;
+    }
+    #root .p7-pill {
+      position: absolute; top: 46px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; border: 1px solid rgba(45, 62, 94, 0.3);
+      color: rgba(34, 48, 74, 0.7); background: #f4f6fa;
+      will-change: transform, opacity;
+    }
+    #root .p7-pill-on {
+      background: #2d3e5e; color: #f4f6fa; border-color: #2d3e5e;
+    }
+
+    /* ---------- interruptor (Por Paciente) ---------- */
+    #root .p7-sw {
+      position: absolute; left: 0; top: 8px; width: 46px; height: 24px;
+      border: 1px solid rgba(45, 62, 94, 0.35); background: rgba(45, 62, 94, 0.08);
+    }
+    #root .p7-knob {
+      position: absolute; left: 2px; top: 2px; width: 18px; height: 18px;
+      background: #2d3e5e; will-change: transform;
+    }
+    #root .p7-swlab {
+      position: absolute; left: 62px; top: 9px; font-size: 19px; color: rgba(34, 48, 74, 0.78);
+    }
+
+    /* ---------- tarjetas de biomarcador ---------- */
+    #root .p7-bname {
+      position: absolute; left: 0; right: 0; top: 34px;
+      text-align: center; font-size: 26px; color: #22304a;
+    }
+    #root .p7-bval {
+      position: absolute; left: 76px; top: 108px; width: 110px; height: 44px;
+    }
+    #root .p7-bcasos {
+      position: absolute; left: 0; right: 0; top: 168px;
+      text-align: center; font-size: 17px; letter-spacing: 0.08em;
+      color: rgba(34, 48, 74, 0.5);
+    }
+    #root .p7-btrk {
+      position: absolute; left: 32px; top: 232px; width: 198px; height: 10px;
+      background: rgba(45, 62, 94, 0.09);
+    }
+    #root .p7-bfill {
+      position: absolute; left: 0; top: 0; height: 10px; background: #2d3e5e;
+      transform-origin: 0% 50%; will-change: transform;
+    }
+
+    /* ---------- botones y árbol (Importar Datos) ---------- */
+    #root .p7-btn {
+      position: absolute; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px; border: 2px solid #2d3e5e; color: #2d3e5e; background: #f4f6fa;
+      white-space: nowrap; will-change: transform, opacity;
+    }
+    #root .p7-tree {
+      position: absolute; left: 0; top: 96px; width: 1000px; height: 330px;
+      border: 1px solid rgba(45, 62, 94, 0.16); background: rgba(45, 62, 94, 0.03);
+      overflow: hidden; will-change: transform, opacity;
+    }
+    #root .p7-trow {
+      position: absolute; left: 0; width: 1000px; height: 44px;
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(45, 62, 94, 0.07);
+      font-size: 18px; color: #22304a;
+      will-change: transform, opacity;
+    }
+    #root .p7-tmark {
+      display: block; width: 9px; height: 9px; flex: 0 0 auto;
+      background: #2d3e5e; margin-right: 14px;
+    }
+    #root .p7-tst {
+      margin-left: auto; margin-right: 20px; display: block; height: 11px;
+      background: rgba(45, 62, 94, 0.18);
+    }
+
+    /* ---------- columnas (Exportaciones) ---------- */
+    #root .p7-col {
+      position: absolute; top: 0; height: 460px;
+      border: 1px solid rgba(45, 62, 94, 0.16); background: rgba(45, 62, 94, 0.03);
+      overflow: hidden; will-change: transform, opacity;
+    }
+    #root .p7-coltit {
+      position: absolute; left: 0; right: 0; top: 0; height: 46px;
+      display: flex; align-items: center; padding: 0 22px;
+      background: rgba(45, 62, 94, 0.09);
+      font-size: 19px; color: #22304a;
+    }
+    #root .p7-frow {
+      position: absolute; left: 0; width: 100%; height: 46px;
+      display: flex; align-items: center; padding: 0 22px;
+      border-bottom: 1px solid rgba(45, 62, 94, 0.07);
+      font-size: 17px; color: #22304a;
+      will-change: transform, opacity;
+    }
+    #root .p7-vline {
+      position: absolute; left: 24px; display: block; height: 12px;
+      background: rgba(45, 62, 94, 0.15); transform-origin: 0% 50%;
+      will-change: transform, opacity;
+    }
+
+    /* ---------- plinto de estado ---------- */
+    #root .p7-status {
+      position: absolute; left: 24px; right: 24px; top: 652px; height: 34px;
+      display: flex; align-items: center;
+      border-top: 1px solid rgba(45, 62, 94, 0.16);
+      font-size: 16px; letter-spacing: 0.14em; color: rgba(34, 48, 74, 0.5);
+      font-family: "IBM Plex Mono", monospace;
+      will-change: transform, opacity;
+    }
+    #root .p7-status .p7-r { margin-left: auto; }
+
+    /* ---------- cursor + ondas de clic ---------- */
+    #root .p7-cursor {
+      position: absolute; left: 0; top: 0; width: 0; height: 0;
+      z-index: 40; pointer-events: none; opacity: 0; will-change: transform;
+    }
+    #root .p7-rings { position: absolute; width: 0; height: 0; z-index: 35; }
+    #root .p7-rings i {
+      position: absolute; display: block;
+      width: 92px; height: 92px; margin-left: -46px; margin-top: -46px;
+      border-radius: 50%; border: 2px solid rgba(45, 62, 94, 0.5);
+      opacity: 0; will-change: transform, opacity;
+    }
+
+    /* ---------- anclas de borde ---------- */
+    #root .p7-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    #root .p7-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+  </style>
+
+  <div id="root" data-composition-id="07-pestanas" data-start="0" data-width="1920" data-height="1080" data-duration="44.52">
+
+    <div id="p7-clip-fondo" class="clip" data-start="0" data-duration="44.52" data-track-index="0">
+      <div class="p7-ground"></div>
+      <div class="p7-veil" id="p7-veil"></div>
+      <div class="p7-radial" id="p7-radial"></div>
+      <div class="p7-grid40" id="p7-grid"></div>
+      <div class="p7-hairline" id="p7-hair"></div>
+    </div>
+
+    <div id="p7-clip-escena" class="clip" data-start="0" data-duration="44.52" data-track-index="1">
+      <div class="p7-world" id="p7-world">
+
+        <div class="p7-panel" id="p7-panel">
+
+          <!-- cabecera de la sección -->
+          <div class="p7-chrome">
+            <span class="p7-mask" id="p7-titmask"><span id="p7-tit">Gestión de la base de datos</span></span>
+            <span class="p7-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <!-- las SIETE pestañas, con su rótulo literal -->
+          <div class="p7-tabs">
+            <div class="p7-tab" id="p7-tab-0" style="left: 0px; width: 270px">
+              <i class="p7-tabfill" id="p7-fill-0"></i><span id="p7-lbl-0">📊 Estadísticas Generales</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-1" style="left: 276px; width: 258px">
+              <i class="p7-tabfill" id="p7-fill-1"></i><span id="p7-lbl-1">📊 Visualizador de Datos</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-2" style="left: 540px; width: 178px">
+              <i class="p7-tabfill" id="p7-fill-2"></i><span id="p7-lbl-2">👤 Por Paciente</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-3" style="left: 724px; width: 190px">
+              <i class="p7-tabfill" id="p7-fill-3"></i><span id="p7-lbl-3">🧬 Biomarcadores</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-4" style="left: 920px; width: 270px">
+              <i class="p7-tabfill" id="p7-fill-4"></i><span id="p7-lbl-4">⚠️ Análisis de Malignidad</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-5" style="left: 1196px; width: 198px">
+              <i class="p7-tabfill" id="p7-fill-5"></i><span id="p7-lbl-5">📥 Importar Datos</span>
+            </div>
+            <div class="p7-tab" id="p7-tab-6" style="left: 1400px; width: 190px">
+              <i class="p7-tabfill" id="p7-fill-6"></i><span id="p7-lbl-6">📤 Exportaciones</span>
+            </div>
+          </div>
+          <div class="p7-tabline" id="p7-tabline"></div>
+          <div class="p7-amber" id="p7-amber"></div>
+
+          <div class="p7-stage">
+
+            <!-- ============ 1 · Estadísticas Generales ============ -->
+            <div class="p7-view" id="p7-view-0">
+              <div class="p7-card p7-v0c" style="left: 0px; top: 0px; width: 403px; height: 148px">
+                <div class="p7-kv"><b class="p7-mono" id="p7-cifra-2076">2.076</b></div>
+                <div class="p7-klab p7-mono">CASOS IHQ (SIN COLORACIONES)</div>
+              </div>
+              <div class="p7-card p7-v0c" style="left: 423px; top: 0px; width: 403px; height: 148px">
+                <div class="p7-kv"><i class="p7-blk p7-v0b" style="width: 138px; height: 34px; margin-top: 8px"></i></div>
+                <div class="p7-klab p7-mono">CON BIOMARCADORES</div>
+              </div>
+              <div class="p7-card p7-v0c" style="left: 846px; top: 0px; width: 403px; height: 148px">
+                <div class="p7-kv"><i class="p7-blk p7-v0b" style="width: 118px; height: 34px; margin-top: 8px"></i></div>
+                <div class="p7-klab p7-mono">CASOS MALIGNOS</div>
+              </div>
+              <div class="p7-card p7-v0c" style="left: 1269px; top: 0px; width: 403px; height: 148px">
+                <div class="p7-kv"><i class="p7-blk p7-v0b" style="width: 96px; height: 34px; margin-top: 8px"></i></div>
+                <div class="p7-klab p7-mono">DÍAS DE DATOS</div>
+              </div>
+
+              <div class="p7-sect" id="p7-v0-sect" style="top: 178px">Top 10 diagnósticos principales</div>
+
+              <div class="p7-head p7-g1" id="p7-v0-head" style="top: 214px">
+                <span class="p7-v0h">DIAGNÓSTICO PRINCIPAL</span>
+                <span class="p7-v0h">ÓRGANO</span>
+                <span class="p7-v0h">FRECUENCIA</span>
+                <span class="p7-v0h">% DEL TOTAL</span>
+              </div>
+              <div class="p7-ghost p7-g1 p7-v0r" style="top: 248px; height: 44px">
+                <i style="width: 468px"></i><i style="width: 206px"></i><i style="width: 78px"></i><i style="width: 96px"></i>
+              </div>
+              <div class="p7-ghost p7-g1 p7-v0r" style="top: 292px; height: 44px">
+                <i style="width: 392px"></i><i style="width: 168px"></i><i style="width: 72px"></i><i style="width: 88px"></i>
+              </div>
+              <div class="p7-ghost p7-g1 p7-v0r" style="top: 336px; height: 44px">
+                <i style="width: 512px"></i><i style="width: 142px"></i><i style="width: 66px"></i><i style="width: 84px"></i>
+              </div>
+              <div class="p7-ghost p7-g1 p7-v0r" style="top: 380px; height: 44px">
+                <i style="width: 344px"></i><i style="width: 192px"></i><i style="width: 62px"></i><i style="width: 80px"></i>
+              </div>
+              <div class="p7-ghost p7-g1 p7-v0r" style="top: 424px; height: 44px">
+                <i style="width: 428px"></i><i style="width: 156px"></i><i style="width: 58px"></i><i style="width: 76px"></i>
+              </div>
+            </div>
+
+            <!-- ============ 2 · Visualizador de datos ============ -->
+            <div class="p7-view" id="p7-view-1">
+              <!-- rótulos literales de ui.py: título del panel, texto de ayuda
+                   del buscador y el grupo «Ver: Todos · IHQ · Coloración» -->
+              <div class="p7-sect" id="p7-v1-tit" style="top: 0px">Visualizador de datos</div>
+
+              <div class="p7-search" id="p7-v1-search">
+                <svg class="p7-mag" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+                  <circle cx="9" cy="9" r="6.6" fill="none" stroke="rgba(34,48,74,0.58)" stroke-width="2" />
+                  <line x1="13.8" y1="13.8" x2="20" y2="20" stroke="rgba(34,48,74,0.58)" stroke-width="2" />
+                </svg>
+                <span class="p7-ph" id="p7-v1-ph">Buscar por N° Petición, Cédula, Nombre o Apellido...</span>
+              </div>
+
+              <div class="p7-verlab p7-v1f" style="left: 1206px">Ver:</div>
+              <div class="p7-pill p7-pill-on p7-v1f" style="left: 1252px; width: 104px">Todos</div>
+              <div class="p7-pill p7-v1f" style="left: 1364px; width: 82px">IHQ</div>
+              <div class="p7-pill p7-v1f" style="left: 1454px; width: 150px">Coloración</div>
+
+              <div class="p7-head p7-g2" style="top: 124px">
+                <span class="p7-v1h">N.º CASO</span>
+                <span class="p7-v1h">PACIENTE</span>
+                <span class="p7-v1h">ÓRGANO</span>
+                <span class="p7-v1h">DIAGNÓSTICO PRINCIPAL</span>
+                <span class="p7-v1h">MALIGNIDAD</span>
+                <span class="p7-v1h">HER2</span>
+              </div>
+
+              <div class="p7-row p7-g2 p7-v1r" style="top: 158px; height: 44px">
+                <i class="p7-wash" id="p7-v1-wash"></i>
+                <span class="p7-mono">IHQ259001</span>
+                <span>ELVIRA MONSALVE ARBOLEDA</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                <span>MALIGNO</span>
+                <span class="p7-mono">NEGATIVO</span>
+              </div>
+              <div class="p7-ghost p7-g2 p7-v1r" style="top: 202px; height: 44px">
+                <i style="width: 122px"></i><i style="width: 268px"></i><i style="width: 104px"></i>
+                <i style="width: 318px"></i><i style="width: 118px"></i><i style="width: 92px"></i>
+              </div>
+              <div class="p7-row p7-g2 p7-v1r" style="top: 246px; height: 44px">
+                <span class="p7-mono">IHQ259002</span>
+                <span>TERESA QUINTERO VALDÉS</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                <span>MALIGNO</span>
+                <span class="p7-mono">POSITIVO</span>
+              </div>
+              <div class="p7-ghost p7-g2 p7-v1r" style="top: 290px; height: 44px">
+                <i style="width: 122px"></i><i style="width: 232px"></i><i style="width: 118px"></i>
+                <i style="width: 262px"></i><i style="width: 118px"></i><i style="width: 92px"></i>
+              </div>
+              <div class="p7-row p7-g2 p7-v1r" style="top: 334px; height: 44px">
+                <span class="p7-mono">IHQ259003</span>
+                <span>CARMEN ZULETA PALACIOS</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL IN SITU</span>
+                <span>MALIGNO</span>
+                <span class="p7-mono">NEGATIVO</span>
+              </div>
+              <div class="p7-ghost p7-g2 p7-v1r" style="top: 378px; height: 44px">
+                <i style="width: 122px"></i><i style="width: 294px"></i><i style="width: 96px"></i>
+                <i style="width: 226px"></i><i style="width: 118px"></i><i style="width: 92px"></i>
+              </div>
+              <div class="p7-ghost p7-g2 p7-v1r" style="top: 422px; height: 44px">
+                <i style="width: 122px"></i><i style="width: 246px"></i><i style="width: 132px"></i>
+                <i style="width: 288px"></i><i style="width: 118px"></i><i style="width: 92px"></i>
+              </div>
+            </div>
+
+            <!-- ============ 3 · Por Paciente ============ -->
+            <div class="p7-view" id="p7-view-2">
+              <div class="p7-sw" id="p7-v2-sw"><i class="p7-knob" id="p7-v2-knob"></i></div>
+              <div class="p7-swlab" id="p7-v2-swlab">Solo con varios estudios</div>
+
+              <div class="p7-head p7-g3" style="top: 62px">
+                <span class="p7-v2h">CÉDULA</span>
+                <span class="p7-v2h">ESTUDIOS</span>
+                <span class="p7-v2h">ÓRGANO</span>
+                <span class="p7-v2h">DIAGNÓSTICO</span>
+                <span class="p7-v2h">BIOMARCADORES</span>
+                <span class="p7-v2h">FECHA</span>
+              </div>
+
+              <div class="p7-row p7-g3 p7-v2r" style="top: 96px; height: 44px">
+                <span class="p7-mono">1.144.***.204</span>
+                <span class="p7-mono">3</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="p7-mono">HER2 · RE · RP</span>
+                <span class="p7-mono">14/11/2025</span>
+              </div>
+              <div class="p7-row p7-g3 p7-v2r" style="top: 140px; height: 44px">
+                <span class="p7-mono">1.113.***.658</span>
+                <span class="p7-mono">2</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL INFILTRANTE</span>
+                <span class="p7-mono">HER2 · KI-67</span>
+                <span class="p7-mono">07/11/2025</span>
+              </div>
+              <div class="p7-row p7-g3 p7-v2r" style="top: 184px; height: 44px">
+                <span class="p7-mono">1.006.***.372</span>
+                <span class="p7-mono">2</span>
+                <span>MAMA</span>
+                <span>CARCINOMA DUCTAL IN SITU</span>
+                <span class="p7-mono">RE · RP</span>
+                <span class="p7-mono">29/10/2025</span>
+              </div>
+              <div class="p7-ghost p7-g3 p7-v2r" style="top: 228px; height: 44px">
+                <i style="width: 186px"></i><i style="width: 22px"></i><i style="width: 118px"></i>
+                <i style="width: 284px"></i><i style="width: 208px"></i><i style="width: 128px"></i>
+              </div>
+              <div class="p7-ghost p7-g3 p7-v2r" style="top: 272px; height: 44px">
+                <i style="width: 186px"></i><i style="width: 22px"></i><i style="width: 96px"></i>
+                <i style="width: 342px"></i><i style="width: 162px"></i><i style="width: 128px"></i>
+              </div>
+              <div class="p7-ghost p7-g3 p7-v2r" style="top: 316px; height: 44px">
+                <i style="width: 186px"></i><i style="width: 22px"></i><i style="width: 132px"></i>
+                <i style="width: 246px"></i><i style="width: 194px"></i><i style="width: 128px"></i>
+              </div>
+            </div>
+
+            <!-- ============ 4 · Biomarcadores ============ -->
+            <div class="p7-view" id="p7-view-3">
+              <div class="p7-card p7-v3c" style="left: 0px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">HER2</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 152px"></i></div>
+              </div>
+              <div class="p7-card p7-v3c" style="left: 282px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">Ki-67</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 124px"></i></div>
+              </div>
+              <div class="p7-card p7-v3c" style="left: 564px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">ER/PR</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 168px"></i></div>
+              </div>
+              <div class="p7-card p7-v3c" style="left: 846px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">P16</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 96px"></i></div>
+              </div>
+              <div class="p7-card p7-v3c" style="left: 1128px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">PDL-1</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 72px"></i></div>
+              </div>
+              <div class="p7-card p7-v3c" style="left: 1410px; top: 60px; width: 262px; height: 300px">
+                <div class="p7-bname">Otros</div>
+                <div class="p7-bval"><i class="p7-blk p7-v3b" style="width: 110px; height: 44px"></i></div>
+                <div class="p7-bcasos p7-mono">casos</div>
+                <div class="p7-btrk"><i class="p7-bfill p7-v3f" style="width: 186px"></i></div>
+              </div>
+            </div>
+
+            <!-- ============ 5 · Análisis de Malignidad ============ -->
+            <div class="p7-view" id="p7-view-4">
+              <div class="p7-card p7-v4c" style="left: 0px; top: 0px; width: 403px; height: 132px">
+                <div class="p7-kv"><i class="p7-blk p7-v4b" style="width: 118px; height: 30px; margin-top: 6px"></i></div>
+                <div class="p7-klab p7-mono">CASOS MALIGNOS</div>
+              </div>
+              <div class="p7-card p7-v4c" style="left: 423px; top: 0px; width: 403px; height: 132px">
+                <div class="p7-kv"><i class="p7-blk p7-v4b" style="width: 96px; height: 30px; margin-top: 6px"></i></div>
+                <div class="p7-klab p7-mono">CASOS BENIGNOS</div>
+              </div>
+              <div class="p7-card p7-v4c" style="left: 846px; top: 0px; width: 403px; height: 132px">
+                <div class="p7-kv"><i class="p7-blk p7-v4b" style="width: 74px; height: 30px; margin-top: 6px"></i></div>
+                <div class="p7-klab p7-mono">INDETERMINADOS</div>
+              </div>
+              <div class="p7-card p7-v4c" style="left: 1269px; top: 0px; width: 403px; height: 132px">
+                <div class="p7-kv"><b class="p7-mono" id="p7-cifra-671" style="font-size: 40px">67,1 %</b></div>
+                <div class="p7-klab p7-mono">% MALIGNIDAD</div>
+              </div>
+
+              <div class="p7-head p7-g5" style="top: 164px">
+                <span class="p7-v4h">BIOMARCADOR</span>
+                <span class="p7-v4h">MALIGNOS POSITIVOS</span>
+                <span class="p7-v4h">MALIGNOS NEGATIVOS</span>
+                <span class="p7-v4h">BENIGNOS POSITIVOS</span>
+                <span class="p7-v4h">BENIGNOS NEGATIVOS</span>
+              </div>
+
+              <!-- las CINCO filas reales del cruce, con las cifras verificadas
+                   contra la BD en la auditoría. Ninguna etiqueta de otra
+                   pestaña y ningún número de relleno. -->
+              <div class="p7-row p7-g5 p7-v4r" style="top: 198px; height: 46px">
+                <span>RECEPTOR DE ESTRÓGENO</span>
+                <span class="p7-mono p7-v4v">224</span>
+                <span class="p7-mono p7-v4v">104</span>
+                <span class="p7-mono p7-v4v">37</span>
+                <span class="p7-mono p7-v4v">14</span>
+              </div>
+              <div class="p7-row p7-g5 p7-v4r" style="top: 244px; height: 46px">
+                <span>RECEPTOR DE PROGESTERONA</span>
+                <span class="p7-mono p7-v4v">159</span>
+                <span class="p7-mono p7-v4v">114</span>
+                <span class="p7-mono p7-v4v">23</span>
+                <span class="p7-mono p7-v4v">8</span>
+              </div>
+              <div class="p7-row p7-g5 p7-v4r" style="top: 290px; height: 46px">
+                <span>P16</span>
+                <span class="p7-mono p7-v4v">152</span>
+                <span class="p7-mono p7-v4v">51</span>
+                <span class="p7-mono p7-v4v">11</span>
+                <span class="p7-mono p7-v4v">37</span>
+              </div>
+              <div class="p7-row p7-g5 p7-v4r" style="top: 336px; height: 46px">
+                <span>HER2</span>
+                <span class="p7-mono p7-v4v">60</span>
+                <span class="p7-mono p7-v4v">259</span>
+                <span class="p7-mono p7-v4v">1</span>
+                <span class="p7-mono p7-v4v">5</span>
+              </div>
+              <div class="p7-row p7-g5 p7-v4r" style="top: 382px; height: 46px">
+                <span>Ki-67</span>
+                <span class="p7-mono p7-v4v">32</span>
+                <span class="p7-mono p7-v4v">3</span>
+                <span class="p7-mono p7-v4v">35</span>
+                <span class="p7-mono p7-v4v">3</span>
+              </div>
+            </div>
+
+            <!-- ============ 6 · Importar Datos ============ -->
+            <div class="p7-view" id="p7-view-5">
+              <div class="p7-btn p7-v5btn" style="left: 0px; top: 8px; width: 350px">📄  Seleccionar archivo PDF</div>
+              <div class="p7-btn p7-v5btn" style="left: 372px; top: 8px; width: 392px">📁  Seleccionar carpeta de PDFs</div>
+
+              <!-- la MISMA carpeta que abre la escena anterior: pdfs_patologia
+                   con los años 2025 y 2026, y dentro de 2026 la subcarpeta de
+                   coloraciones y los cuatro informes por rangos. -->
+              <div class="p7-tree" id="p7-v5-tree">
+                <div class="p7-trow p7-v5r" style="top: 0px; padding-left: 20px">
+                  <i class="p7-tmark"></i><span>2025</span>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 44px; padding-left: 20px">
+                  <i class="p7-tmark"></i><span>2026</span>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 88px; padding-left: 56px">
+                  <i class="p7-tmark"></i><span>Coloraciones básicas</span>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 132px; padding-left: 56px">
+                  <span class="p7-mono">IHQ260001 al IHQ260050.pdf</span><i class="p7-tst" style="width: 128px"></i>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 176px; padding-left: 56px">
+                  <span class="p7-mono">IHQ260051 al IHQ260100.pdf</span><i class="p7-tst" style="width: 128px"></i>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 220px; padding-left: 56px">
+                  <span class="p7-mono">IHQ260101 al IHQ260150.pdf</span><i class="p7-tst" style="width: 92px"></i>
+                </div>
+                <div class="p7-trow p7-v5r" style="top: 264px; padding-left: 56px">
+                  <span class="p7-mono">IHQ260151 al IHQ260200.pdf</span><i class="p7-tst" style="width: 66px"></i>
+                </div>
+              </div>
+
+              <div class="p7-tree" id="p7-v5-log" style="left: 1032px; width: 640px">
+                <i class="p7-vline p7-v5l" style="top: 40px; width: 512px"></i>
+                <i class="p7-vline p7-v5l" style="top: 84px; width: 428px"></i>
+                <i class="p7-vline p7-v5l" style="top: 128px; width: 486px"></i>
+                <i class="p7-vline p7-v5l" style="top: 172px; width: 352px"></i>
+                <i class="p7-vline p7-v5l" style="top: 216px; width: 462px"></i>
+                <i class="p7-vline p7-v5l" style="top: 260px; width: 288px"></i>
+              </div>
+            </div>
+
+            <!-- ============ 7 · Exportaciones ============ -->
+            <div class="p7-view" id="p7-view-6">
+              <div class="p7-col" id="p7-v6-izq" style="left: 0px; width: 700px">
+                <div class="p7-coltit">Archivos exportados</div>
+                <div class="p7-frow p7-v6r" style="top: 46px">
+                  <i class="p7-wash" id="p7-v6-wash"></i>
+                  <span class="p7-mono" style="position: relative">Informe_estadistico_ONCONOVA.pdf</span>
+                </div>
+                <div class="p7-frow p7-v6r" style="top: 92px"><i class="p7-blk" style="width: 386px; height: 12px"></i></div>
+                <div class="p7-frow p7-v6r" style="top: 138px"><i class="p7-blk" style="width: 442px; height: 12px"></i></div>
+                <div class="p7-frow p7-v6r" style="top: 184px"><i class="p7-blk" style="width: 312px; height: 12px"></i></div>
+                <div class="p7-frow p7-v6r" style="top: 230px"><i class="p7-blk" style="width: 408px; height: 12px"></i></div>
+                <div class="p7-frow p7-v6r" style="top: 276px"><i class="p7-blk" style="width: 356px; height: 12px"></i></div>
+              </div>
+
+              <div class="p7-col" id="p7-v6-der" style="left: 732px; width: 940px">
+                <div class="p7-coltit">Visor de contenido</div>
+                <i class="p7-vline p7-v6v" style="top: 84px; width: 692px"></i>
+                <i class="p7-vline p7-v6v" style="top: 122px; width: 588px"></i>
+                <i class="p7-vline p7-v6v" style="top: 160px; width: 742px"></i>
+                <i class="p7-vline p7-v6v" style="top: 198px; width: 512px"></i>
+                <i class="p7-vline p7-v6v" style="top: 236px; width: 664px"></i>
+                <i class="p7-vline p7-v6v" style="top: 274px; width: 448px"></i>
+                <i class="p7-vline p7-v6v" style="top: 312px; width: 706px"></i>
+                <i class="p7-vline p7-v6v" style="top: 350px; width: 376px"></i>
+                <i class="p7-vline p7-v6v" style="top: 388px; width: 620px"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p7-status" id="p7-status">
+            <span id="p7-vista">GESTIÓN DE LA BASE DE DATOS</span>
+            <span class="p7-r" id="p7-indice">7 VISTAS</span>
+          </div>
+        </div>
+
+        <!-- ondas de clic, ancladas al centro de cada pestaña -->
+        <div class="p7-rings" id="p7-rg-0" style="left: 259px;  top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-1" style="left: 529px;  top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-2" style="left: 753px;  top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-3" style="left: 943px;  top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-4" style="left: 1179px; top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-5" style="left: 1419px; top: 260px"><i></i><i></i></div>
+        <div class="p7-rings" id="p7-rg-6" style="left: 1619px; top: 260px"><i></i><i></i></div>
+
+        <div class="p7-cursor" id="p7-cursor">
+          <svg width="30" height="43" viewBox="0 0 30 43" aria-hidden="true">
+            <path d="M3 2 L3 33 L11.2 25.4 L16.4 38.6 L22.4 36.1 L17.2 23.2 L27.6 22.6 Z"
+                  fill="#e9eef7" stroke="rgba(20,29,43,0.92)" stroke-width="2.6" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="p7-brand p7-mono" id="p7-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="p7-mark p7-mono" id="p7-mark">07 / 13 — LAS VISTAS</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var D = 44.52;
+      var tl = gsap.timeline({ paused: true });
+
+      var world = document.getElementById("p7-world");
+      var radial = document.getElementById("p7-radial");
+      var grid = document.getElementById("p7-grid");
+      var hair = document.getElementById("p7-hair");
+      var veil = document.getElementById("p7-veil");
+      var vistaEl = document.getElementById("p7-vista");
+      var indiceEl = document.getElementById("p7-indice");
+
+      /* ---------------------------------------------------------------
+         Geometría de la fila de pestañas. El ámbar nace con el ancho de
+         la primera (270px) y viaja escalándose al ancho de cada una: un
+         solo elemento acentuado en todo el cuadro.
+         --------------------------------------------------------------- */
+      var TABX = [0, 276, 540, 724, 920, 1196, 1400];
+      var TABW = [270, 258, 178, 190, 270, 198, 190];
+      var CX   = [259, 529, 753, 943, 1179, 1419, 1619];  // centros, coords de página
+      var CY   = 260;
+
+      // el instante en que la voz nombra cada vista
+      var T = [3.50, 9.50, 15.00, 19.50, 25.50, 32.50, 36.50];
+
+      var VISTAS = [
+        "VISTA · ESTADÍSTICAS GENERALES",
+        "VISTA · VISUALIZADOR DE DATOS",
+        "VISTA · POR PACIENTE",
+        "VISTA · BIOMARCADORES",
+        "VISTA · ANÁLISIS DE MALIGNIDAD",
+        "VISTA · IMPORTAR DATOS",
+        "VISTA · EXPORTACIONES"
+      ];
+      var INDICES = ["01 / 07", "02 / 07", "03 / 07", "04 / 07", "05 / 07", "06 / 07", "07 / 07"];
+
+      var PUSH_AT = 41.2;   // acercamiento final: sigue en curso en el último fotograma
+
+      /* ---------------------------------------------------------------
+         ESCENARIO FIJO. Un único reloj lineal escribe la respiración del
+         fondo y los rótulos del plinto — determinista, sin callbacks y
+         seguro ante cualquier salto de fotograma del renderizador.
+         --------------------------------------------------------------- */
+      var clock = { t: 0 };
+      var lastV = null, lastI = null;
+
+      function writeFrame() {
+        var t = clock.t;
+        var b = Math.sin(t * 0.3);
+
+        // smoothstep del 1,8 %: nace en 41,2 s y NO termina dentro de la escena
+        var push = 0;
+        if (t > PUSH_AT) {
+          var p = Math.min(1, (t - PUSH_AT) / 3.6);
+          push = 0.018 * (p * p * (3 - 2 * p));
+        }
+
+        world.style.transform =
+          "translate(" +
+          (Math.sin(t * 0.21) * 3).toFixed(2) + "px," +
+          (Math.sin(t * 0.273) * 1.6).toFixed(2) + "px) scale(" +
+          (1 + 0.004 * b + push).toFixed(4) + ")";
+
+        radial.style.transform = "scale(" + (1 + 0.05 * b).toFixed(4) + ")";
+        radial.style.opacity = (0.55 + 0.18 * b).toFixed(4);
+        grid.style.opacity = (0.04 + 0.012 * b).toFixed(4);
+        hair.style.opacity = (0.55 + 0.22 * b).toFixed(4);
+        veil.style.opacity = (0.46 + 0.16 * Math.sin(t * 0.42 + 1.1)).toFixed(4);
+
+        // el plinto nombra la vista que se acaba de abrir
+        var v = "GESTIÓN DE LA BASE DE DATOS", ix = "7 VISTAS";
+        for (var k = 0; k < T.length; k++) {
+          if (t >= T[k]) { v = VISTAS[k]; ix = INDICES[k]; }
+        }
+        if (v !== lastV) { vistaEl.textContent = v; lastV = v; }
+        if (ix !== lastI) { indiceEl.textContent = ix; lastI = ix; }
+      }
+
+      // el reloj recorre exactamente la duración declarada: el fondo
+      // respira los 44,52 s sin una sola ventana congelada
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame(); // semilla del fotograma 0
+
+      /* ---------------------------------------------------------------
+         helpers: cursor, clic con onda, y activación de pestaña
+         --------------------------------------------------------------- */
+      var cursor = "#p7-cursor";
+      var amber = "#p7-amber";
+
+      function moveTo(x, y, at, dur) {
+        tl.to(cursor, { x: x, y: y, duration: dur, ease: "power2.inOut" }, at);
+      }
+
+      // el cursor va a la pestaña i y la deja resaltada al llegar (respuesta
+      // de hover antes del clic: la interfaz reacciona, no espera)
+      function irAPestana(i, at, dur) {
+        moveTo(CX[i], CY, at, dur);
+        tl.to("#p7-tab-" + i,
+          { backgroundColor: "rgba(45,62,94,0.12)", duration: 0.3, ease: "power2.out" },
+          at + dur - 0.06);
+      }
+
+      function activar(i, at) {
+        var press = at - 0.10;
+
+        // el cursor comprime más que el receptor: el cursor es el actor
+        tl.to(cursor, { scale: 0.84, duration: 0.09, ease: "power2.in" }, press);
+        tl.to(cursor, { scale: 1, duration: 0.15, ease: "power2.out" }, press + 0.09);
+        tl.fromTo("#p7-rg-" + i + " i",
+          { scale: 0, opacity: 0.5 },
+          { scale: 2.5, opacity: 0, duration: 0.72, ease: "power2.out",
+            stagger: 0.09, immediateRender: false },
+          press + 0.03);
+
+        // la pestaña se HUNDE bajo el clic
+        tl.to("#p7-tab-" + i, { scale: 0.965, duration: 0.09, ease: "power2.in" }, press);
+        tl.to("#p7-tab-" + i, { scale: 1, duration: 0.2, ease: "power2.out" }, press + 0.09);
+
+        // la anterior se apaga y suelta su miniatura
+        if (i > 0) {
+          tl.to("#p7-fill-" + (i - 1), { opacity: 0, duration: 0.3, ease: "power2.inOut" }, at);
+          tl.to("#p7-lbl-" + (i - 1), { color: "rgba(34,48,74,0.62)", duration: 0.3, ease: "power2.inOut" }, at);
+          tl.to("#p7-tab-" + (i - 1), { backgroundColor: "rgba(45,62,94,0.06)", duration: 0.42, ease: "power2.inOut" }, at);
+          tl.to("#p7-view-" + (i - 1), { opacity: 0, duration: 0.28, ease: "power2.in" }, at);
+        }
+
+        // la nueva toma el navy y el texto claro (así es el notebook real)
+        tl.fromTo("#p7-fill-" + i,
+          { opacity: 0 }, { opacity: 1, duration: 0.34, ease: "power2.out", immediateRender: false }, at);
+        tl.to("#p7-lbl-" + i, { color: "rgba(244,246,250,0.98)", duration: 0.3, ease: "power2.out" }, at + 0.04);
+
+        // el ÁMBAR se desliza hasta ella y adopta su ancho
+        if (i === 0) {
+          tl.fromTo(amber, { x: 0, scaleX: 0 },
+            { x: 0, scaleX: 1, duration: 0.52, ease: "power3.out" }, at + 0.02);
+        } else {
+          tl.to(amber, { x: TABX[i], scaleX: TABW[i] / 270, duration: 0.58, ease: "power3.inOut" }, at + 0.02);
+        }
+
+        // y debajo entra la miniatura de esa vista
+        tl.fromTo("#p7-view-" + i,
+          { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out", immediateRender: false }, at + 0.14);
+      }
+
+      /* =========================================================
+         BEAT 0 (0.0–3.5) — «La base de datos tiene siete vistas.»
+         Llega la ventana y las siete pestañas caen una tras otra.
+         ========================================================= */
+      tl.fromTo("#p7-panel",
+        { opacity: 0, y: 16, scale: 0.99 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.74, ease: "power3.out" }, 0);
+
+      tl.fromTo("#p7-tit",
+        { yPercent: 110 }, { yPercent: 0, duration: 0.66, ease: "power3.out" }, 0.28);
+
+      // waterfall-entry: las SIETE, en su orden, mientras la voz las anuncia
+      tl.fromTo(".p7-tab",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.19 }, 0.55);
+
+      tl.fromTo("#p7-tabline",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.85, ease: "power3.out" }, 1.95);
+
+      tl.fromTo("#p7-status",
+        { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.35);
+
+      // el cursor entra desde fuera de la superficie y sube a la primera
+      tl.fromTo(cursor,
+        { x: 1700, y: 880, opacity: 0 },
+        { x: 1700, y: 880, opacity: 1, duration: 0.34, ease: "power2.out" }, 1.05);
+      irAPestana(0, 2.45, 0.92);
+
+      /* =========================================================
+         BEAT 1 (3.5–9.5) — «Estadísticas Generales: los indicadores
+         del servicio y los diagnósticos más frecuentes.»
+         ========================================================= */
+      activar(0, T[0]);
+
+      tl.fromTo(".p7-v0c",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.62, ease: "power3.out", stagger: 0.3, immediateRender: false }, 3.78);
+      tl.fromTo("#p7-cifra-2076",
+        { opacity: 0, scale: 0.92 },
+        { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out", immediateRender: false }, 4.12);
+      tl.fromTo(".p7-v0b",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power2.out", stagger: 0.3, immediateRender: false }, 4.42);
+
+      tl.fromTo("#p7-v0-sect",
+        { opacity: 0, x: 18 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out", immediateRender: false }, 5.55);
+      tl.fromTo(".p7-v0h",
+        { opacity: 0, x: 22 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.13, immediateRender: false }, 5.95);
+      tl.fromTo(".p7-v0r",
+        { opacity: 0, y: 16 },
+        { opacity: 0.72, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.32, immediateRender: false }, 6.45);
+
+      moveTo(620, 620, 4.75, 1.15);   // el cursor baja a la tabla mientras se puebla
+      irAPestana(1, 8.45, 0.92);
+
+      /* =========================================================
+         BEAT 2 (9.5–15.0) — «Visualizador de Datos: la tabla completa,
+         estudio por estudio, con buscador y filtros.»
+         ========================================================= */
+      activar(1, T[1]);
+
+      tl.fromTo("#p7-v1-tit",
+        { opacity: 0, x: 18 }, { opacity: 1, x: 0, duration: 0.52, ease: "power3.out", immediateRender: false }, 9.62);
+      tl.fromTo("#p7-v1-search",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.52, ease: "power3.out", immediateRender: false }, 9.78);
+      tl.fromTo("#p7-v1-ph",
+        { opacity: 0 }, { opacity: 1, duration: 0.42, ease: "power2.out", immediateRender: false }, 10.05);
+      tl.fromTo(".p7-v1f",
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.46, ease: "power3.out", stagger: 0.16, immediateRender: false }, 10.35);
+
+      tl.fromTo(".p7-v1h",
+        { opacity: 0, x: 24 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.1, immediateRender: false }, 11.1);
+      tl.fromTo(".p7-v1r",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.25, immediateRender: false }, 11.6);
+
+      // el cursor pasa por la primera fila y la fila responde
+      moveTo(700, 486, 12.55, 1.05);
+      tl.fromTo("#p7-v1-wash",
+        { opacity: 0 }, { opacity: 1, duration: 0.34, ease: "power2.out", immediateRender: false }, 13.35);
+      tl.to("#p7-v1-wash", { opacity: 0, duration: 0.42, ease: "power2.inOut" }, 13.95);
+
+      irAPestana(2, 13.95, 0.92);
+
+      /* =========================================================
+         BEAT 3 (15.0–19.5) — «Por Paciente: los estudios agrupados
+         por cédula.»
+         ========================================================= */
+      activar(2, T[2]);
+
+      tl.fromTo("#p7-v2-sw",
+        { opacity: 0 }, { opacity: 1, duration: 0.36, ease: "power2.out", immediateRender: false }, 15.3);
+      tl.fromTo("#p7-v2-swlab",
+        { opacity: 0, x: 14 }, { opacity: 1, x: 0, duration: 0.46, ease: "power3.out", immediateRender: false }, 15.38);
+      // el interruptor se pone: el knob viaja y la pista se llena de navy
+      tl.fromTo("#p7-v2-knob",
+        { x: 0 }, { x: 22, duration: 0.42, ease: "power3.inOut", immediateRender: false }, 15.85);
+      tl.to("#p7-v2-sw", { backgroundColor: "rgba(45,62,94,0.22)", duration: 0.42, ease: "power2.out" }, 15.85);
+
+      tl.fromTo(".p7-v2h",
+        { opacity: 0, x: 24 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.12, immediateRender: false }, 16.15);
+      tl.fromTo(".p7-v2r",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.26, immediateRender: false }, 16.75);
+
+      moveTo(560, 520, 17.5, 1.0);
+      irAPestana(3, 18.45, 0.92);
+
+      /* =========================================================
+         BEAT 4 (19.5–25.5) — «Biomarcadores: cuántos se pidieron y
+         con qué positividad.»
+         ========================================================= */
+      activar(3, T[3]);
+
+      tl.fromTo(".p7-v3c",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.58, ease: "power3.out", stagger: 0.26, immediateRender: false }, 19.82);
+      tl.fromTo(".p7-v3b",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.5, ease: "power2.out", stagger: 0.26, immediateRender: false }, 20.42);
+      // «…y con qué positividad»: las barras crecen una a una
+      tl.fromTo(".p7-v3f",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.72, ease: "power3.out", stagger: 0.3, immediateRender: false }, 22.05);
+
+      moveTo(900, 500, 21.15, 1.1);
+      irAPestana(4, 24.3, 1.0);
+
+      /* =========================================================
+         BEAT 5 (25.5–32.5) — «Análisis de Malignidad: el cruce entre
+         cada biomarcador y el resultado del caso.»
+         ========================================================= */
+      activar(4, T[4]);
+
+      tl.fromTo(".p7-v4c",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.3, immediateRender: false }, 25.82);
+      tl.fromTo(".p7-v4b",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out", stagger: 0.3, immediateRender: false }, 26.1);
+      tl.fromTo("#p7-cifra-671",
+        { opacity: 0, scale: 0.92 },
+        { opacity: 1, scale: 1, duration: 0.66, ease: "power3.out", immediateRender: false }, 27.05);
+
+      tl.fromTo(".p7-v4h",
+        { opacity: 0, x: 26 },
+        { opacity: 1, x: 0, duration: 0.52, ease: "power3.out", stagger: 0.14, immediateRender: false }, 27.85);
+      tl.fromTo(".p7-v4r",
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.34, immediateRender: false }, 28.6);
+      // el cruce: cada cifra aterriza de izquierda a derecha, fila a fila
+      tl.fromTo(".p7-v4v",
+        { opacity: 0, y: 9 },
+        { opacity: 1, y: 0, duration: 0.42, ease: "power3.out", stagger: 0.07, immediateRender: false }, 29.25);
+
+      moveTo(1010, 600, 30.0, 1.15);
+      irAPestana(5, 31.3, 1.0);
+
+      /* =========================================================
+         BEAT 6 (32.5–36.5) — «Importar Datos, que es por donde
+         acabamos de entrar.»
+         ========================================================= */
+      activar(5, T[5]);
+
+      tl.fromTo(".p7-v5btn",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.22, immediateRender: false }, 32.8);
+      tl.fromTo("#p7-v5-tree",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, 33.28);
+      tl.fromTo(".p7-v5r",
+        { opacity: 0, x: 20 },
+        { opacity: 1, x: 0, duration: 0.44, ease: "power3.out", stagger: 0.17, immediateRender: false }, 33.5);
+      tl.fromTo("#p7-v5-log",
+        { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, 34.35);
+      tl.fromTo(".p7-v5l",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.42, ease: "power2.out", stagger: 0.12, immediateRender: false }, 34.6);
+
+      moveTo(480, 560, 34.15, 1.0);
+      irAPestana(6, 35.4, 0.94);
+
+      /* =========================================================
+         BEAT 7 (36.5–44.52) — «Y Exportaciones, donde queda todo lo
+         que se ha generado.» La última vista se construye entera y la
+         escena se queda mirándola con un acercamiento que NO resuelve.
+         ========================================================= */
+      activar(6, T[6]);
+
+      tl.fromTo("#p7-v6-izq",
+        { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out", immediateRender: false }, 36.8);
+      tl.fromTo(".p7-v6r",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.3, immediateRender: false }, 37.15);
+
+      tl.fromTo("#p7-v6-der",
+        { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out", immediateRender: false }, 38.3);
+      tl.fromTo(".p7-v6v",
+        { scaleX: 0, opacity: 0 },
+        { scaleX: 1, opacity: 1, duration: 0.44, ease: "power2.out", stagger: 0.19, immediateRender: false }, 38.75);
+
+      // el cursor baja a la lista y el archivo generado responde al pasar
+      moveTo(430, 560, 39.7, 1.2);
+      tl.fromTo("#p7-v6-wash",
+        { opacity: 0 }, { opacity: 1, duration: 0.38, ease: "power2.out", immediateRender: false }, 41.0);
+      moveTo(1000, 620, 41.75, 1.2);
+
+      window.__timelines = window.__timelines || {};
+
+      // marcador-fuera: el numero de seccion CAMBIA entre escenas, asi que si
+      // sigue encendido durante el encadenado se leen los dos a la vez y sale
+      // el amasijo que vimos en la costura ("078//133--LASSVISTAS").
+      tl.to("#p7-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 42.77);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+      // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
+      // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
+      tl.to(["#p7-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 42.82);
+
+      // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
+      // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
+      tl.to("#p7-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 42.82);
+
+      window.__timelines["07-pestanas"] = tl;
+    })();
+  </script>
+</template>

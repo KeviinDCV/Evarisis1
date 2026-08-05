@@ -1,0 +1,669 @@
+<template>
+  <style>
+    /* ============================================================
+       10-dashboard — El Dashboard gráfico (14.3s)
+       Apunte breve que cierra el recorrido por la aplicación:
+       aparte de la Base de Datos hay un Dashboard con CINCO vistas.
+         · el cursor pulsa «Overview» y la pestaña RESPONDE
+         · la rejilla 2x2 se dibuja escalonada: linea, tarta, barras
+           horizontales y columnas
+         · al final las otras cuatro pestañas se encienden EN ORDEN,
+           siguiendo la enumeración de la voz
+       Foco de escena (frame.md): la pestaña «Overview» activa — un ARO
+       ámbar grueso cerrado sobre ella, con pie macizo. Contorno, no
+       relleno: la interfaz recreada lleva emoji a color (autorizados por
+       frame.md) y el foco tiene que ganarles sin discusión. Es el único
+       ámbar de la escena.
+       Sin cifras: no hay dato verificado para estos gráficos, así
+       que las formas son plausibles y NO llevan números ni rótulos
+       de serie. Ley 1581: no aparece ningún dato de paciente.
+       Todo rótulo de interfaz es literal del producto.
+       ============================================================ */
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #e9eef7;
+      background: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    #root, #root *, #root *::before, #root *::after { box-sizing: border-box; }
+    #root .clip { position: absolute; inset: 0; }
+    #root .d10-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- fondo: escenario + tres decorativos, una respiración ---------- */
+    #root .d10-ground { position: absolute; inset: 0; background: #141d2b; }
+    #root .d10-veil {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(118% 78% at 50% 46%,
+                  rgba(45, 62, 94, 0.20) 0%, rgba(20, 29, 43, 0) 68%);
+      opacity: 0.48;
+    }
+    #root .d10-radial {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: radial-gradient(
+        860px 640px at 32% 42%,
+        rgba(45, 62, 94, 0.95) 0%,
+        rgba(45, 62, 94, 0.34) 46%,
+        rgba(45, 62, 94, 0) 72%
+      );
+      opacity: 0.55;
+      will-change: transform, opacity;
+    }
+    #root .d10-grid40 {
+      position: absolute; inset: -40px;
+      background-image:
+        linear-gradient(to right, #e9eef7 1px, transparent 1px),
+        linear-gradient(to bottom, #e9eef7 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.04;
+    }
+    #root .d10-hairline {
+      position: absolute; left: 0; right: 0; top: 112px; height: 1px;
+      background: rgba(233, 238, 247, 0.14);
+      opacity: 0.6;
+    }
+
+    #root .d10-world {
+      position: absolute; inset: 0;
+      transform-origin: 50% 47%;
+      will-change: transform;
+    }
+
+    /* ---------- el Dashboard: pantalla clara sobre el escritorio ---------- */
+    #root .d10-panel {
+      position: absolute; left: 160px; top: 150px; width: 1600px; height: 720px;
+      background: #f4f6fa; color: #22304a;
+      border: 1px solid rgba(45, 62, 94, 0.9);
+      box-shadow: 0 42px 96px rgba(20, 29, 43, 0.62);
+      overflow: hidden;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+    }
+    #root .d10-chrome {
+      position: absolute; left: 0; right: 0; top: 0; height: 56px;
+      background: #2d3e5e; color: #e9eef7;
+      display: flex; align-items: center; padding: 0 28px;
+      font-size: 20px; letter-spacing: 0.14em;
+    }
+    #root .d10-dots { margin-left: auto; display: flex; gap: 10px; }
+    #root .d10-dots i { width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
+
+    #root .d10-title {
+      position: absolute; left: 32px; top: 82px;
+      font-size: 34px; font-weight: 900; letter-spacing: -0.02em;
+      color: #22304a; white-space: nowrap;
+      will-change: transform, opacity;
+    }
+    #root .d10-filtros {
+      position: absolute; right: 32px; top: 84px; width: 138px; height: 42px;
+      border: 2px solid rgba(45, 62, 94, 0.62);
+      background: #f4f6fa; color: #22304a;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px; letter-spacing: 0.02em;
+      will-change: transform, opacity;
+    }
+
+    /* ---------- las cinco vistas del Dashboard ---------- */
+    #root .d10-tabs {
+      position: absolute; left: 32px; top: 150px; height: 46px;
+      display: flex; gap: 6px;
+    }
+    /* la pestaña inactiva del producto (#eef1f6 sobre #5a6172) se escribe
+       como alfa del navy: sobre el panel da el mismo gris azulado y, al
+       encenderse, la interpolación es una rampa de alfa del MISMO tono —
+       nunca pasa por un gris sucio, como pasaría entre dos opacos. */
+    #root .d10-tab {
+      height: 46px; display: flex; align-items: center; justify-content: center;
+      background: rgba(45, 62, 94, 0.05); color: rgba(34, 48, 74, 0.58);
+      font-size: 19px; letter-spacing: 0.01em; white-space: nowrap;
+      will-change: transform, opacity;
+    }
+    #root .d10-tabrule {
+      position: absolute; left: 0; right: 0; top: 196px; height: 1px;
+      background: rgba(45, 62, 94, 0.18);
+      transform-origin: 0% 50%;
+    }
+    /* EL ÚNICO ÁMBAR DE LA ESCENA: el foco de la vista activa.
+       Esta pantalla recreada trae los emoji de la aplicación a color
+       (frame.md — «dentro de una pantalla recreada manda la aplicación»), y
+       esos emoji meten tonos vecinos del ámbar. Por eso el foco NO es un
+       relleno tenue sino un ARO GRUESO de 4px cerrado sobre la pestaña
+       «Overview», con un pie macizo de 9px que lo ancla. Aro y pie son la
+       MISMA marca sobre el MISMO elemento: sigue habiendo un solo ámbar. */
+    #root .d10-amber {
+      position: absolute; left: 32px; top: 192px; width: 150px; height: 9px;
+      background: #e9a33c; transform-origin: 0% 50%;
+      box-shadow: 0 0 20px rgba(233, 163, 60, 0.55);
+    }
+    #root .d10-amber-ring {
+      position: absolute; left: 32px; top: 150px; width: 150px; height: 46px;
+      border: 4px solid #e9a33c; background: transparent;
+      pointer-events: none; transform-origin: 50% 50%;
+      box-shadow: 0 0 22px rgba(233, 163, 60, 0.42);
+      will-change: transform, opacity;
+    }
+    /* las otras cuatro se insinúan: subrayado navy, breve */
+    #root .d10-hint {
+      position: absolute; top: 194px; height: 3px;
+      background: rgba(45, 62, 94, 0.72); transform-origin: 50% 50%;
+    }
+
+    /* ---------- rejilla 2x2 de tarjetas de gráfico ---------- */
+    #root .d10-card {
+      position: absolute; width: 756px; height: 220px;
+      border: 1px solid rgba(45, 62, 94, 0.16);
+      background: rgba(45, 62, 94, 0.03);
+      will-change: transform, opacity;
+    }
+    #root .d10-ctitle {
+      position: absolute; left: 22px; top: 15px;
+      font-size: 20px; letter-spacing: 0.005em; color: #22304a; white-space: nowrap;
+      will-change: transform, opacity;
+    }
+    #root .d10-crule {
+      position: absolute; left: 22px; top: 46px; width: 712px; height: 1px;
+      background: rgba(45, 62, 94, 0.16); transform-origin: 0% 50%;
+    }
+    #root .d10-plot {
+      position: absolute; left: 22px; top: 60px; width: 712px; height: 140px;
+    }
+
+    /* barras horizontales (Top Servicios) */
+    #root .d10-lbl { position: absolute; height: 9px; background: rgba(45, 62, 94, 0.16); }
+    #root .d10-bar { position: absolute; height: 16px; transform-origin: 0% 50%; will-change: transform; }
+
+    /* columnas (Top Órganos) */
+    #root .d10-base {
+      position: absolute; left: 0; top: 128px; width: 712px; height: 2px;
+      background: rgba(45, 62, 94, 0.24); transform-origin: 0% 50%;
+    }
+    #root .d10-col { position: absolute; width: 86px; transform-origin: 50% 100%; will-change: transform; }
+    #root .d10-clbl { position: absolute; top: 133px; width: 46px; height: 6px; background: rgba(45, 62, 94, 0.16); }
+
+    /* ---------- plinto inferior del panel ---------- */
+    #root .d10-plinto {
+      position: absolute; left: 32px; top: 700px; width: 1536px; height: 2px;
+      background: rgba(45, 62, 94, 0.28); transform-origin: 0% 50%;
+    }
+
+    /* ---------- cursor + ondas de clic ---------- */
+    #root .d10-cursor {
+      position: absolute; left: 0; top: 0; width: 0; height: 0;
+      z-index: 40; pointer-events: none; opacity: 0; will-change: transform;
+    }
+    #root .d10-ring {
+      position: absolute; width: 88px; height: 88px; margin-left: -44px; margin-top: -44px;
+      border-radius: 50%; border: 2px solid rgba(45, 62, 94, 0.5);
+      opacity: 0; pointer-events: none; z-index: 35;
+    }
+
+    /* ---------- anclas de borde ---------- */
+    #root .d10-brand {
+      position: absolute; top: 56px; left: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+    #root .d10-mark {
+      position: absolute; bottom: 56px; right: 80px;
+      font-size: 20px; letter-spacing: 0.16em; color: #8296b5;
+    }
+  </style>
+
+  <div id="root" data-composition-id="10-dashboard" data-start="0" data-width="1920" data-height="1080" data-duration="14.3">
+
+    <div id="c10-clip-fondo" class="clip" data-start="0" data-duration="14.3" data-track-index="0">
+      <div class="d10-ground" id="c10-ground"></div>
+      <div class="d10-veil" id="c10-veil"></div>
+      <div class="d10-radial" id="c10-radial"></div>
+      <div class="d10-grid40" id="c10-grid"></div>
+      <div class="d10-hairline" id="c10-hair"></div>
+    </div>
+
+    <div id="c10-clip-escena" class="clip" data-start="0" data-duration="14.3" data-track-index="1">
+      <div class="d10-world" id="c10-world">
+
+        <!-- ==================== DASHBOARD ==================== -->
+        <div class="d10-panel" id="c10-panel">
+          <div class="d10-chrome d10-mono" id="c10-chrome">
+            DASHBOARD
+            <span class="d10-dots"><i></i><i></i><i></i></span>
+          </div>
+
+          <div class="d10-title" id="c10-title">📈 Análisis Gráfico de la Base de Datos</div>
+          <div class="d10-filtros" id="c10-filtros">Filtros…</div>
+
+          <!-- las cinco vistas, en su orden real -->
+          <div class="d10-tabs" id="c10-tabs">
+            <div class="d10-tab" id="c10-tab-0" style="width: 150px">Overview</div>
+            <div class="d10-tab" id="c10-tab-1" style="width: 200px">Biomarcadores</div>
+            <div class="d10-tab" id="c10-tab-2" style="width: 140px">Tiempos</div>
+            <div class="d10-tab" id="c10-tab-3" style="width: 140px">Calidad</div>
+            <div class="d10-tab" id="c10-tab-4" style="width: 175px">Comparador</div>
+          </div>
+          <div class="d10-tabrule" id="c10-tabrule"></div>
+          <div class="d10-amber" id="c10-amber"></div>
+          <div class="d10-amber-ring" id="c10-amber-ring"></div>
+
+          <div class="d10-hint" id="c10-hint-1" style="left: 188px; width: 200px"></div>
+          <div class="d10-hint" id="c10-hint-2" style="left: 394px; width: 140px"></div>
+          <div class="d10-hint" id="c10-hint-3" style="left: 540px; width: 140px"></div>
+          <div class="d10-hint" id="c10-hint-4" style="left: 686px; width: 175px"></div>
+
+          <!-- ---------- tarjeta 1: Informes por mes ---------- -->
+          <div class="d10-card" id="c10-card-0" style="left: 32px; top: 224px">
+            <div class="d10-ctitle" id="c10-ctitle-0">Informes por mes</div>
+            <div class="d10-crule" id="c10-crule-0"></div>
+            <svg class="d10-plot" id="c10-plot-0" width="712" height="140" viewBox="0 0 712 140" aria-hidden="true">
+              <defs>
+                <clipPath id="c10-clip-area">
+                  <rect id="c10-arear" x="0" y="0" width="0" height="140"></rect>
+                </clipPath>
+              </defs>
+              <g id="c10-grid-0">
+                <line x1="0" y1="44" x2="712" y2="44" stroke="rgba(45,62,94,0.10)" stroke-width="1"></line>
+                <line x1="0" y1="86" x2="712" y2="86" stroke="rgba(45,62,94,0.10)" stroke-width="1"></line>
+                <line x1="0" y1="128" x2="712" y2="128" stroke="rgba(45,62,94,0.26)" stroke-width="1.5"></line>
+              </g>
+              <g clip-path="url(#c10-clip-area)">
+                <path d="M6,104 L70,92 L134,110 L197,84 L261,72 L324,88 L388,64 L451,52 L515,68 L578,44 L642,56 L706,34 L706,128 L6,128 Z"
+                      fill="rgba(45,62,94,0.12)"></path>
+              </g>
+              <path id="c10-line-0"
+                    d="M6,104 L70,92 L134,110 L197,84 L261,72 L324,88 L388,64 L451,52 L515,68 L578,44 L642,56 L706,34"
+                    fill="none" stroke="rgba(45,62,94,0.92)" stroke-width="2.6"
+                    stroke-linejoin="round" stroke-linecap="round"
+                    pathLength="1" stroke-dasharray="1 3" stroke-dashoffset="1.05"></path>
+              <g id="c10-dots-0">
+                <circle class="c10-dot" cx="6" cy="104" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="70" cy="92" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="134" cy="110" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="197" cy="84" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="261" cy="72" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="324" cy="88" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="388" cy="64" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="451" cy="52" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="515" cy="68" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="578" cy="44" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="642" cy="56" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+                <circle class="c10-dot" cx="706" cy="34" r="3.4" fill="rgba(45,62,94,0.92)"></circle>
+              </g>
+            </svg>
+          </div>
+
+          <!-- ---------- tarjeta 2: Distribución de Malignidad ---------- -->
+          <div class="d10-card" id="c10-card-1" style="left: 812px; top: 224px">
+            <div class="d10-ctitle" id="c10-ctitle-1">Distribución de Malignidad</div>
+            <div class="d10-crule" id="c10-crule-1"></div>
+            <svg class="d10-plot" id="c10-plot-1" width="712" height="140" viewBox="0 0 712 140" aria-hidden="true">
+              <circle id="c10-dtrack" cx="95" cy="70" r="46" fill="none"
+                      stroke="rgba(45,62,94,0.08)" stroke-width="24"></circle>
+              <!-- La circunferencia real es 289,03. El trazo se declara MÁS
+                   largo (292) con un hueco enorme detrás (600) y arranca en
+                   300: así el sector oculto queda 8 unidades ANTES del inicio
+                   del arco y el redondeo del navegador no puede dejar la
+                   astilla de trazo que se veía asomar antes de dibujarse. -->
+              <circle id="c10-seg-0" cx="95" cy="70" r="46" fill="none"
+                      stroke="rgba(45,62,94,0.92)" stroke-width="24"
+                      stroke-dasharray="292 600" stroke-dashoffset="300"
+                      transform="rotate(-90 95 70)"></circle>
+              <circle id="c10-seg-1" cx="95" cy="70" r="46" fill="none"
+                      stroke="rgba(45,62,94,0.44)" stroke-width="24"
+                      stroke-dasharray="292 600" stroke-dashoffset="300"
+                      transform="rotate(151.2 95 70)"></circle>
+              <circle id="c10-seg-2" cx="95" cy="70" r="46" fill="none"
+                      stroke="rgba(45,62,94,0.20)" stroke-width="24"
+                      stroke-dasharray="292 600" stroke-dashoffset="300"
+                      transform="rotate(226.8 95 70)"></circle>
+              <g id="c10-leg-0">
+                <rect x="214" y="28" width="14" height="14" fill="rgba(45,62,94,0.92)"></rect>
+                <rect x="240" y="31" width="164" height="8" fill="rgba(45,62,94,0.16)"></rect>
+              </g>
+              <g id="c10-leg-1">
+                <rect x="214" y="62" width="14" height="14" fill="rgba(45,62,94,0.44)"></rect>
+                <rect x="240" y="65" width="128" height="8" fill="rgba(45,62,94,0.16)"></rect>
+              </g>
+              <g id="c10-leg-2">
+                <rect x="214" y="96" width="14" height="14" fill="rgba(45,62,94,0.20)"></rect>
+                <rect x="240" y="99" width="96" height="8" fill="rgba(45,62,94,0.16)"></rect>
+              </g>
+            </svg>
+          </div>
+
+          <!-- ---------- tarjeta 3: Top Servicios ---------- -->
+          <div class="d10-card" id="c10-card-2" style="left: 32px; top: 464px">
+            <div class="d10-ctitle" id="c10-ctitle-2">Top Servicios</div>
+            <div class="d10-crule" id="c10-crule-2"></div>
+            <div class="d10-plot" id="c10-plot-2">
+              <i class="d10-lbl c10-slbl" style="left: 0; top: 6px; width: 92px"></i>
+              <i class="d10-lbl c10-slbl" style="left: 0; top: 34px; width: 78px"></i>
+              <i class="d10-lbl c10-slbl" style="left: 0; top: 62px; width: 88px"></i>
+              <i class="d10-lbl c10-slbl" style="left: 0; top: 90px; width: 70px"></i>
+              <i class="d10-lbl c10-slbl" style="left: 0; top: 118px; width: 84px"></i>
+              <i class="d10-bar c10-sbar" id="c10-sbar-0" style="left: 104px; top: 3px;  width: 608px; background: rgba(45,62,94,0.92)"></i>
+              <i class="d10-bar c10-sbar" id="c10-sbar-1" style="left: 104px; top: 31px; width: 499px; background: rgba(45,62,94,0.74)"></i>
+              <i class="d10-bar c10-sbar" id="c10-sbar-2" style="left: 104px; top: 59px; width: 383px; background: rgba(45,62,94,0.56)"></i>
+              <i class="d10-bar c10-sbar" id="c10-sbar-3" style="left: 104px; top: 87px; width: 286px; background: rgba(45,62,94,0.40)"></i>
+              <i class="d10-bar c10-sbar" id="c10-sbar-4" style="left: 104px; top: 115px; width: 189px; background: rgba(45,62,94,0.28)"></i>
+            </div>
+          </div>
+
+          <!-- ---------- tarjeta 4: Top Órganos ---------- -->
+          <div class="d10-card" id="c10-card-3" style="left: 812px; top: 464px">
+            <div class="d10-ctitle" id="c10-ctitle-3">Top Órganos</div>
+            <div class="d10-crule" id="c10-crule-3"></div>
+            <div class="d10-plot" id="c10-plot-3">
+              <i class="d10-base" id="c10-obase"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-0" style="left: 23px;  top: 10px;  height: 118px; background: rgba(45,62,94,0.92)"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-1" style="left: 139px; top: 32px;  height: 96px;  background: rgba(45,62,94,0.78)"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-2" style="left: 255px; top: 50px;  height: 78px;  background: rgba(45,62,94,0.64)"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-3" style="left: 371px; top: 66px;  height: 62px;  background: rgba(45,62,94,0.50)"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-4" style="left: 487px; top: 83px;  height: 45px;  background: rgba(45,62,94,0.38)"></i>
+              <i class="d10-col c10-ocol" id="c10-ocol-5" style="left: 603px; top: 98px;  height: 30px;  background: rgba(45,62,94,0.26)"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 43px"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 159px"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 275px"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 391px"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 507px"></i>
+              <i class="d10-clbl c10-oclbl" style="left: 623px"></i>
+            </div>
+          </div>
+
+          <div class="d10-plinto" id="c10-plinto"></div>
+        </div>
+
+        <!-- ondas de clic, ancladas al centro de la pestaña «Overview» -->
+        <div class="d10-ring" id="c10-ring-1" style="left: 267px; top: 323px"></div>
+        <div class="d10-ring" id="c10-ring-2" style="left: 267px; top: 323px"></div>
+
+        <div class="d10-cursor" id="c10-cursor">
+          <svg width="30" height="43" viewBox="0 0 30 43" aria-hidden="true">
+            <path d="M3 2 L3 33 L11.2 25.4 L16.4 38.6 L22.4 36.1 L17.2 23.2 L27.6 22.6 Z"
+                  fill="rgb(233,238,247)" stroke="rgb(20,29,43)" stroke-width="2.6" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="d10-brand d10-mono" id="c10-brand">ONCONOVA · GESTOR ONCOLÓGICO HUV</div>
+      <div class="d10-mark d10-mono" id="c10-mark">10 / 13 — EL DASHBOARD</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var D = 14.3;
+      var tl = gsap.timeline({ paused: true });
+
+      var world = document.getElementById("c10-world");
+      var radial = document.getElementById("c10-radial");
+      var grid = document.getElementById("c10-grid");
+      var hair = document.getElementById("c10-hair");
+      var veil = document.getElementById("c10-veil");
+
+      var PUSH_AT = 11.6;   // el acercamiento final sigue en curso en el corte
+
+      /* ---------------------------------------------------------
+         ESCENARIO FIJO: la cámara no viaja, sólo respira. Un único
+         reloj lineal escribe la respiración del fondo y el
+         acercamiento final — determinista, sin callbacks, seguro
+         ante cualquier salto de fotograma del renderizador.
+         --------------------------------------------------------- */
+      var clock = { t: 0 };
+
+      function writeFrame() {
+        var t = clock.t;
+        var b = Math.sin(t * 0.3);
+
+        var push = 0;
+        if (t > PUSH_AT) {
+          var p = Math.min(1, (t - PUSH_AT) / 3.6);
+          push = 0.022 * (p * p * (3 - 2 * p));
+        }
+
+        world.style.transform =
+          "translate(" +
+          (Math.sin(t * 0.21) * 3).toFixed(2) + "px," +
+          (Math.sin(t * 0.273) * 1.6).toFixed(2) + "px) scale(" +
+          (1 + 0.004 * b + push).toFixed(4) + ")";
+
+        radial.style.transform = "scale(" + (1 + 0.05 * b).toFixed(4) + ")";
+        radial.style.opacity = (0.55 + 0.18 * b).toFixed(4);
+        grid.style.opacity = (0.04 + 0.012 * b).toFixed(4);
+        hair.style.opacity = (0.55 + 0.22 * b).toFixed(4);
+        veil.style.opacity = (0.48 + 0.16 * Math.sin(t * 0.42 + 1.1)).toFixed(4);
+      }
+
+      // el reloj recorre exactamente la duración declarada del root:
+      // el fondo respira los 14,3 s sin una sola ventana congelada
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: writeFrame }, 0);
+      writeFrame(); // semilla del fotograma 0
+
+      /* ---------------------------------------------------------
+         helpers de cursor (cursor-click-ripple, repeticiones finitas)
+         --------------------------------------------------------- */
+      var cursor = "#c10-cursor";
+
+      function moveTo(x, y, at, dur) {
+        tl.to(cursor, { x: x, y: y, duration: dur, ease: "power2.inOut" }, at);
+      }
+
+      function click(at) {
+        // el cursor comprime más que el receptor: el cursor es el actor
+        tl.to(cursor, { scale: 0.84, duration: 0.09, ease: "power2.in" }, at);
+        tl.to(cursor, { scale: 1, duration: 0.15, ease: "power2.out" }, at + 0.09);
+        tl.fromTo(
+          ["#c10-ring-1", "#c10-ring-2"],
+          { scale: 0, opacity: 0.52 },
+          { scale: 2.6, opacity: 0, duration: 0.74, ease: "power2.out",
+            stagger: 0.09, immediateRender: false },
+          at + 0.03
+        );
+      }
+
+      /* =========================================================
+         BEAT 0 (0.0–2.6) — «Y aparte de la base de datos está el
+         Dashboard,». La ventana del Dashboard llega y se arma:
+         cromo, título, botón de filtros y la fila de vistas.
+         ========================================================= */
+      tl.fromTo("#c10-panel",
+        { opacity: 0, y: 16, scale: 0.99 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.74, ease: "power3.out" }, 0);
+
+      tl.fromTo("#c10-brand", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.25);
+      tl.fromTo("#c10-mark", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.45);
+
+      tl.fromTo("#c10-title",
+        { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.58, ease: "power3.out" }, 0.42);
+      tl.fromTo("#c10-filtros",
+        { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.72);
+
+      tl.fromTo("#c10-tabs .d10-tab",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.46, ease: "power3.out", stagger: 0.075 }, 1.05);
+
+      tl.fromTo("#c10-tabrule",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.72, ease: "power3.out" }, 1.5);
+
+      // el cursor entra desde fuera de la superficie
+      tl.fromTo(cursor,
+        { x: 1720, y: 900, opacity: 0 },
+        { x: 1720, y: 900, opacity: 1, duration: 0.34, ease: "power2.out" }, 0.9);
+
+      // la rejilla 2x2 llega con el esqueleto —los marcos vacíos, aún sin
+      // trazar—: así el cuerpo del panel nunca se queda en blanco y el clic
+      // de «Overview» tiene algo concreto que rellenar
+      var cards = ["#c10-card-0", "#c10-card-1", "#c10-card-2", "#c10-card-3"];
+      for (var i = 0; i < cards.length; i++) {
+        tl.fromTo(cards[i],
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.55 + i * 0.15);
+        tl.fromTo("#c10-ctitle-" + i,
+          { opacity: 0, x: 12 },
+          { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 1.69 + i * 0.15);
+        tl.fromTo("#c10-crule-" + i,
+          { scaleX: 0 }, { scaleX: 1, duration: 0.62, ease: "power3.out" }, 1.73 + i * 0.15);
+      }
+
+      /* =========================================================
+         BEAT 1 (2.1–3.8) — el cursor pulsa «Overview» y la vista
+         RESPONDE: la pestaña se hunde, se llena de navy y su
+         subrayador ámbar se traza. Es el único ámbar de la escena.
+         ========================================================= */
+      moveTo(267, 323, 2.15, 0.92);
+      click(3.12);
+
+      tl.to("#c10-tab-0", { scale: 0.96, duration: 0.09, ease: "power2.in" }, 3.12);
+      tl.to("#c10-tab-0", { scale: 1, duration: 0.18, ease: "power2.out" }, 3.21);
+      tl.to("#c10-tab-0",
+        { backgroundColor: "#2d3e5e", color: "#f4f6fa", duration: 0.34, ease: "power2.out" }, 3.16);
+      tl.fromTo("#c10-amber",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.54, ease: "power3.out" }, 3.2);
+      // el aro cierra sobre la pestaña un instante antes de que el pie acabe
+      // de barrer: el foco queda como CONTORNO grueso, no como relleno, y
+      // manda en el encuadre por encima de los emoji a color de la interfaz
+      tl.fromTo("#c10-amber-ring",
+        { opacity: 0, scale: 1.16 },
+        { opacity: 1, scale: 1, duration: 0.46, ease: "power3.out" }, 3.18);
+
+      /* =========================================================
+         BEAT 2 (3.9–7.2) — «con cinco vistas de gráficos: el
+         panorama general,». Los cuatro gráficos se DIBUJAN
+         escalonados dentro de los marcos que ya estaban: la línea se
+         traza, la tarta se llena, las barras crecen y las columnas
+         suben. Son formas plausibles y NO llevan cifras: para estos
+         gráficos no hay dato verificado.
+         ========================================================= */
+      // 1 · Informes por mes — svg-path-draw + relleno por barrido
+      tl.fromTo("#c10-grid-0",
+        { opacity: 0 }, { opacity: 1, duration: 0.42, ease: "power2.out" }, 3.88);
+      tl.fromTo("#c10-line-0",
+        { strokeDashoffset: 1.05 },
+        { strokeDashoffset: 0, duration: 1.15, ease: "power1.inOut" }, 3.98);
+      tl.fromTo("#c10-arear",
+        { attr: { width: 0 } },
+        { attr: { width: 712 }, duration: 1.15, ease: "power1.inOut" }, 3.98);
+      tl.fromTo(".c10-dot",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: "power2.out", stagger: 0.075 }, 4.18);
+
+      // 2 · Distribución de Malignidad — la tarta se llena por sectores
+      tl.fromTo("#c10-dtrack",
+        { opacity: 0 }, { opacity: 1, duration: 0.36, ease: "power2.out" }, 4.7);
+      // sectores: 67 / 21 / 12 por ciento del arco (offset = 292 − longitud)
+      tl.fromTo("#c10-seg-0",
+        { strokeDashoffset: 300 },
+        { strokeDashoffset: 98.35, duration: 0.85, ease: "power2.inOut" }, 4.8);
+      tl.fromTo("#c10-seg-1",
+        { strokeDashoffset: 300 },
+        { strokeDashoffset: 231.30, duration: 0.44, ease: "power2.inOut" }, 5.6);
+      tl.fromTo("#c10-seg-2",
+        { strokeDashoffset: 300 },
+        { strokeDashoffset: 257.32, duration: 0.34, ease: "power2.inOut" }, 5.98);
+      for (var g = 0; g < 3; g++) {
+        tl.fromTo("#c10-leg-" + g,
+          { opacity: 0, x: 14 },
+          { opacity: 1, x: 0, duration: 0.46, ease: "power2.out" }, 5.72 + g * 0.13);
+      }
+
+      // 3 · Top Servicios — las barras crecen desde el eje
+      tl.fromTo(".c10-slbl",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.34, ease: "power2.out", stagger: 0.06 }, 5.55);
+      tl.fromTo(".c10-sbar",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.62, ease: "power3.out", stagger: 0.09 }, 5.7);
+
+      // 4 · Top Órganos — las columnas suben desde la línea base
+      tl.fromTo("#c10-obase",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.52, ease: "power3.out" }, 6.1);
+      tl.fromTo(".c10-ocol",
+        { scaleY: 0 },
+        { scaleY: 1, duration: 0.56, ease: "power3.out", stagger: 0.075 }, 6.22);
+      tl.fromTo(".c10-oclbl",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.32, ease: "power2.out", stagger: 0.06 }, 6.5);
+
+      // el cursor acompaña el dibujo: pasa por la línea y baja a las columnas
+      moveTo(640, 500, 3.85, 0.92);
+      moveTo(1240, 690, 5.30, 0.85);
+
+      /* =========================================================
+         BEAT 3 (6.8–12.4) — «los biomarcadores, los tiempos de
+         proceso, la calidad del dato, y un comparador que se arma a
+         medida.» Las otras cuatro vistas se insinúan encendiéndose
+         EN ORDEN, al ritmo exacto de la enumeración.
+         ========================================================= */
+      var HINTS = [
+        { n: 1, on: 6.88, off: 7.72 },   // Biomarcadores
+        { n: 2, on: 8.00, off: 8.86 },   // Tiempos
+        { n: 3, on: 9.28, off: 10.18 },  // Calidad
+        { n: 4, on: 10.50, off: 12.30 }  // Comparador (se sostiene: «a medida»)
+      ];
+      for (var k = 0; k < HINTS.length; k++) {
+        var h = HINTS[k];
+        tl.to("#c10-tab-" + h.n,
+          { backgroundColor: "rgba(45,62,94,0.16)", color: "#22304a",
+            duration: 0.3, ease: "power2.out" }, h.on);
+        tl.fromTo("#c10-hint-" + h.n,
+          { scaleX: 0 },
+          { scaleX: 1, duration: 0.42, ease: "power3.out" }, h.on + 0.04);
+
+        tl.to("#c10-tab-" + h.n,
+          { backgroundColor: "rgba(45,62,94,0.05)", color: "rgba(34,48,74,0.58)",
+            duration: 0.42, ease: "power2.inOut" }, h.off);
+        tl.to("#c10-hint-" + h.n,
+          { scaleX: 0, duration: 0.38, ease: "power2.inOut" }, h.off + 0.03);
+      }
+
+      // el cursor recorre la fila de vistas, una por una, sin pulsar:
+      // sólo las señala mientras la voz las enumera
+      moveTo(448, 323, 6.22, 0.66);
+      moveTo(624, 323, 7.52, 0.48);
+      moveTo(770, 323, 8.80, 0.46);
+      moveTo(933, 323, 10.05, 0.44);
+
+      /* =========================================================
+         BEAT 4 (11.9–14.3) — el recorrido vuelve al panorama: el
+         cursor regresa a «Overview», el plinto del panel se traza y
+         el acercamiento sigue vivo en el último fotograma.
+         ========================================================= */
+      moveTo(267, 323, 11.95, 0.95);
+
+      tl.fromTo("#c10-plinto",
+        { scaleX: 0 }, { scaleX: 1, duration: 1.15, ease: "power2.inOut" }, 12.6);
+
+      // el foco ámbar respira una vez al cerrar —aro y pie a la vez, son la
+      // misma marca—: sigue siendo la vista activa cuando la escena se releva.
+      // La respiración es corta (1 → 0.88) para que el foco no llegue nunca a
+      // leerse como un relleno tenue.
+      var AMBER = ["#c10-amber", "#c10-amber-ring"];
+      tl.to(AMBER, { opacity: 0.88, duration: 0.55, ease: "sine.inOut" }, 12.95);
+      tl.to(AMBER, { opacity: 1, duration: 0.7, ease: "sine.inOut" }, 13.5);
+
+      window.__timelines = window.__timelines || {};
+
+      // marcador-fuera: el numero de seccion CAMBIA entre escenas, asi que si
+      // sigue encendido durante el encadenado se leen los dos a la vez y sale
+      // el amasijo que vimos en la costura ("078//133--LASSVISTAS").
+      tl.to("#c10-mark", { opacity: 0, duration: 0.5, ease: "power2.in" }, 12.55);
+
+      // suelta-contenido: al empezar el encadenado la escena deja ir su
+      // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
+      // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
+      tl.to(["#c10-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 12.6);
+
+      // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
+      // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
+      tl.to("#c10-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 12.6);
+
+      window.__timelines["10-dashboard"] = tl;
+    })();
+  </script>
+</template>

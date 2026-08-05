@@ -1,0 +1,20 @@
+{
+  "scene": "10-dashboard",
+  "duration_s": 14.3,
+  "rules": [
+    "cursor-click-ripple",
+    "waterfall-entry",
+    "svg-path-draw",
+    "stat-bars-and-fills",
+    "dynamic-content-sequencing",
+    "coordinate-target-zoom"
+  ],
+  "exit": {
+    "vector": "acercamiento sin resolver que sigue vivo en el corte: el smoothstep arrancado en 11,6 s va por p=0,75, con escala 1,0149 subiendo a 0,00639/s — el borde del panel se expande ~5,1 px/s en horizontal y ~2,3 px/s en vertical. Encima, la deriva ambiental sinusoidal va a ~0,62 px/s hacia la izquierda y ~0,32 px/s hacia arriba. El cursor está posado en «Overview» y lo arrastra esa misma deriva. Ningún tween sobrepasa los 14,3 s (el último acaba en 14,2).",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "arriba ~57 px/s — la ventana del Dashboard está a media entrada en el fotograma 0 (opacity 0 → 1, y +14 → 0 y scale 0,99 → 1 en 0,74 s power3.out, cuya derivada inicial es 3): sube ~57 px/s y se expande ~32 px/s en horizontal desde su centro. La cámara está en reposo salvo la deriva ambiental, que arranca en t=0 a ~0,63 px/s hacia la derecha y ~0,44 px/s hacia abajo.",
+    "from_rest": false
+  }
+}
