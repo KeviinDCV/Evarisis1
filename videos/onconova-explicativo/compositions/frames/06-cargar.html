@@ -7,10 +7,10 @@
          0.0–6.0   explorador: pdfs_patologia -> se abre 2026
          6.0–9.5   se eligen archivos, y luego la carpeta entera
          9.5–13.0  la aplicacion, pestana «Importar Datos»
-        13.0–17.5  «Seleccionar pendientes»: se marcan ◐ y ●
+        13.0–17.5  «Seleccionar pendientes»: se marcan la ◐ y la ●
         17.5–18.5  «Procesar seleccionados»  <- UNICO AMBAR
         18.5–26.5  ventana de progreso, barra verde a rayas
-        26.5–31.9  ventana de resultados: 347 · 327 · 20 · 94,2%
+        26.5–31.9  ventana de resultados: 98 · 96 · 2 · 98,0%
        Foco de escena: EL BOTON DE PROCESAR en el instante del clic.
        Rotulos = los literales del producto (emojis incluidos).
        Ley 1581: ni un dato de paciente en pantalla; solo nombres de
@@ -20,12 +20,24 @@
        de las marcas ✓ ◐ ● y los emoji de las pestañas van a color porque
        asi se ven en el producto. Por eso el ambar de la escena es un ARO
        GRUESO con halo, no un relleno tenue: tiene que ganar de calle.
-       Cifras del explorador y del arbol: medidas en disco (pdfs_patologia/
-       2026 = 404 elementos, 27/05/2026) y en auditoria/casos_por_pdf.json
-       (82 · 92 · 93 · 84 casos, no 50: cada PDF arrastra casos vecinos).
-       Cifras de la ventana de resultados: medidas sobre esos mismos cuatro
-       PDF con core.validation_checker.analizar_batch_registros, que es la
-       que llama ui.py al terminar la importacion.
+       CIFRAS. Explorador: medido en disco (pdfs_patologia/2026 = 404
+       elementos, 27/05/2026 y los cuatro tamaños).
+       Contador del arbol: lo escribe ui.py:8880-8884 como ({en_bd}/{total}),
+       y ese total lo da core.estado_pdfs, que INTERSECTA los casos leidos del
+       texto con el rango del propio nombre del archivo para tirar las
+       referencias cruzadas a informes ajenos. Medido: (45/45) (50/50) (50/50)
+       (48/48). OJO: 82 · 92 · 93 · 84 es el barrido CRUDO de
+       auditoria/casos_por_pdf.json y NUNCA llega a esta pantalla. El contador
+       se imprime siempre que 'total' no sea 0, asi que un PDF sin tocar sale
+       (0/48) y no en blanco.
+       El estado mixto ESTA ESCENIFICADO: hoy los cuatro PDF estan COMPLETO en
+       la base. Se escenifica porque la escena enseña una importacion, y sin
+       pendientes no hay nada que importar; pero los denominadores son los que
+       el producto puede escribir de verdad.
+       Ventana de resultados: los DOS PDF pendientes suman 98 casos propios,
+       los 98 estan guardados, y core.validation_checker.analizar_batch_registros
+       —la que llama ui.py al acabar— devuelve 98 · 96 · 2 · 98.0%.
+       El resumen cuenta REGISTROS; la barra de progreso cuenta ARCHIVOS.
        ============================================================ */
 
     #root {
@@ -96,6 +108,16 @@
       background: #2d3e5e; color: #e9eef7;
       display: flex; align-items: center; padding: 0 26px;
       font-size: 19px; letter-spacing: 0.14em;
+    }
+    /* El titulo de la ventana. La barra .f6-chrome lleva la clase mono con
+       tracking ancho porque nacio para una etiqueta suelta; un titulo de
+       ventana no va en monoespaciada. Se le devuelve la Montserrat y el
+       cuerpo que usa la MISMA ventana en la escena 7, para que las dos
+       pantallas de producto se reconozcan como la misma aplicacion.
+       Literal: core/enhanced_database_dashboard.py:86 */
+    .f6-ctitle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px; font-weight: 400; letter-spacing: normal;
     }
     .f6-dots { margin-left: auto; display: flex; gap: 10px; }
     .f6-dots i { width: 9px; height: 9px; border: 1px solid rgba(233, 238, 247, 0.42); }
@@ -568,7 +590,13 @@
         </div>
 
         <!-- ============ LA APLICACION: Importar Datos ============ -->
-        <div class="f6-app" id="f6-app">
+        <!-- Este panel queda TAPADO por dos ventanas modales opacas durante la
+             segunda mitad de la escena. El verificador compara cajas y mide el
+             contraste del texto de debajo como si se viera, asi que canta
+             solape y contraste sobre rotulos que en pantalla no estan. Se
+             marca el panel entero: comprobado en captura a 122,5 s, donde el
+             dialogo no deja pasar ni una letra. -->
+        <div class="f6-app" id="f6-app" data-layout-allow-overlap data-layout-allow-occlusion>
           <div class="f6-chrome f6-mono">
             <span class="f6-ctitle">Gestión de la base de datos</span>
             <span class="f6-dots"><i></i><i></i><i></i></span>
@@ -720,17 +748,34 @@
         <!-- ============ MODAL DE PROGRESO ============ -->
         <div class="f6-dim" id="f6-dim"></div>
 
-        <div class="f6-modal" id="f6-modal">
+        <!-- data-layout-allow-overlap: es una VENTANA MODAL sobre el panel de
+             la aplicacion. Tapa lo de detras a proposito y es opaca
+             (#f4f6fa, borde macizo y sombra); comprobado en captura a
+             122,5 s, donde no se transparenta ni una letra. El
+             verificador solo compara cajas, asi que ve texto sobre
+             texto donde lo que hay es un dialogo encima. -->
+        <div class="f6-modal" id="f6-modal" data-layout-allow-overlap>
           <div class="f6-mchrome">⏳ Procesando archivos PDF...</div>
           <div class="f6-mstat" id="f6-mstat">Procesando (1/2): IHQ260101 al IHQ260150.pdf</div>
           <div class="f6-track">
             <div class="f6-fill" id="f6-fill"></div>
           </div>
-          <div class="f6-hint">El OCR puede tardar varios minutos por archivo...</div>
+          <!-- El producto escribe aqui «El OCR puede tardar varios minutos por
+               archivo...» (ui.py:11091). Es literal fiel, pero contradice de
+               frente lo que la voz acaba de garantizar en la escena 4: «No
+               fotografia el papel: lee el texto que el propio informe lleva
+               dentro» —y es verdad, el corpus entero se lee por capa de texto
+               nativa, tesseract no llega a entrar—. Proyectar la palabra OCR
+               justo despues de negarla invita a la pregunta en la sala. Se
+               omite la linea entera en vez de reescribirla: preferimos enseñar
+               menos que enseñar algo que ya no describe lo que pasa. Y se
+               OMITE, no se reescribe: inventar un rotulo que el producto no
+               tiene seria justo lo que esta escena no puede permitirse.
+               El rotulo del PRODUCTO conviene actualizarlo aparte. -->
         </div>
 
         <!-- ============ VENTANA DE RESULTADOS ============ -->
-        <div class="f6-res" id="f6-res">
+        <div class="f6-res" id="f6-res" data-layout-allow-overlap>
           <div class="f6-resband"></div>
           <div class="f6-rtitle" id="f6-rtitle">🎉 Importación Completada</div>
           <div class="f6-rsub" id="f6-rsub">📊 Resumen de Importación</div>
@@ -1194,11 +1239,9 @@
       // suelta-contenido: al empezar el encadenado la escena deja ir su
       // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
       // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
-      tl.to(["#f6-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 31.72);
 
       // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
       // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
-      tl.to("#f6-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 31.72);
 
       window.__timelines[ID] = tl;
     })();

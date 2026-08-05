@@ -112,7 +112,7 @@
     #root .p7-tabfill { position: absolute; inset: 0; background: #2d3e5e; opacity: 0; }
     #root .p7-tab span {
       position: relative; z-index: 1;
-      font-size: 18px; color: rgba(34, 48, 74, 0.62);
+      font-size: 18px; color: rgba(34, 48, 74, 0.72);
     }
     #root .p7-tabline {
       position: absolute; left: 0; right: 0; top: 136px; height: 1px;
@@ -154,7 +154,7 @@
     #root .p7-klab {
       position: absolute; left: 24px; right: 18px; bottom: 22px;
       font-size: 13px; letter-spacing: 0.1em; line-height: 1.35;
-      color: rgba(34, 48, 74, 0.55);
+      color: rgba(34, 48, 74, 0.72);
     }
     /* bloque neutro: ocupa el sitio de una cifra que no está auditada */
     #root .p7-blk {
@@ -171,7 +171,7 @@
       align-items: end; border-bottom: 1px solid rgba(45, 62, 94, 0.22);
     }
     #root .p7-head span {
-      font-size: 14px; letter-spacing: 0.11em; color: rgba(34, 48, 74, 0.52);
+      font-size: 14px; letter-spacing: 0.11em; color: rgba(34, 48, 74, 0.72);
       padding-bottom: 10px; padding-right: 14px; white-space: nowrap;
       font-family: "IBM Plex Mono", monospace;
       will-change: transform, opacity;
@@ -216,16 +216,16 @@
       will-change: transform, opacity;
     }
     #root .p7-mag { margin-right: 14px; flex: 0 0 auto; }
-    #root .p7-ph { font-size: 19px; color: rgba(34, 48, 74, 0.42); white-space: nowrap; }
+    #root .p7-ph { font-size: 19px; color: rgba(34, 48, 74, 0.72); white-space: nowrap; }
     #root .p7-verlab {
-      position: absolute; top: 55px; font-size: 19px; color: rgba(34, 48, 74, 0.7);
+      position: absolute; top: 55px; font-size: 19px; color: rgba(34, 48, 74, 0.72);
       will-change: transform, opacity;
     }
     #root .p7-pill {
       position: absolute; top: 46px; height: 40px;
       display: flex; align-items: center; justify-content: center;
       font-size: 17px; border: 1px solid rgba(45, 62, 94, 0.3);
-      color: rgba(34, 48, 74, 0.7); background: #f4f6fa;
+      color: rgba(34, 48, 74, 0.72); background: #f4f6fa;
       will-change: transform, opacity;
     }
     #root .p7-pill-on {
@@ -256,7 +256,7 @@
     #root .p7-bcasos {
       position: absolute; left: 0; right: 0; top: 168px;
       text-align: center; font-size: 17px; letter-spacing: 0.08em;
-      color: rgba(34, 48, 74, 0.5);
+      color: rgba(34, 48, 74, 0.72);
     }
     #root .p7-btrk {
       position: absolute; left: 32px; top: 232px; width: 198px; height: 10px;
@@ -325,7 +325,7 @@
       position: absolute; left: 24px; right: 24px; top: 652px; height: 34px;
       display: flex; align-items: center;
       border-top: 1px solid rgba(45, 62, 94, 0.16);
-      font-size: 16px; letter-spacing: 0.14em; color: rgba(34, 48, 74, 0.5);
+      font-size: 16px; letter-spacing: 0.14em; color: rgba(34, 48, 74, 0.72);
       font-family: "IBM Plex Mono", monospace;
       will-change: transform, opacity;
     }
@@ -901,7 +901,7 @@
         // la anterior se apaga y suelta su miniatura
         if (i > 0) {
           tl.to("#p7-fill-" + (i - 1), { opacity: 0, duration: 0.3, ease: "power2.inOut" }, at);
-          tl.to("#p7-lbl-" + (i - 1), { color: "rgba(34,48,74,0.62)", duration: 0.3, ease: "power2.inOut" }, at);
+          tl.to("#p7-lbl-" + (i - 1), { color: "rgba(34,48,74,0.72)", duration: 0.3, ease: "power2.inOut" }, at);
           tl.to("#p7-tab-" + (i - 1), { backgroundColor: "rgba(45,62,94,0.06)", duration: 0.42, ease: "power2.inOut" }, at);
           tl.to("#p7-view-" + (i - 1), { opacity: 0, duration: 0.28, ease: "power2.in" }, at);
         }
@@ -1142,11 +1142,9 @@
       // suelta-contenido: al empezar el encadenado la escena deja ir su
       // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
       // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
-      tl.to(["#p7-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 42.82);
 
       // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
       // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
-      tl.to("#p7-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 42.82);
 
       window.__timelines["07-pestanas"] = tl;
     })();

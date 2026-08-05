@@ -123,7 +123,7 @@
        nunca pasa por un gris sucio, como pasaría entre dos opacos. */
     #root .d10-tab {
       height: 46px; display: flex; align-items: center; justify-content: center;
-      background: rgba(45, 62, 94, 0.05); color: rgba(34, 48, 74, 0.58);
+      background: rgba(45, 62, 94, 0.05); color: rgba(34, 48, 74, 0.72);
       font-size: 19px; letter-spacing: 0.01em; white-space: nowrap;
       will-change: transform, opacity;
     }
@@ -317,11 +317,7 @@
               <circle id="c10-seg-1" cx="95" cy="70" r="46" fill="none"
                       stroke="rgba(45,62,94,0.44)" stroke-width="24"
                       stroke-dasharray="292 600" stroke-dashoffset="300"
-                      transform="rotate(151.2 95 70)"></circle>
-              <circle id="c10-seg-2" cx="95" cy="70" r="46" fill="none"
-                      stroke="rgba(45,62,94,0.20)" stroke-width="24"
-                      stroke-dasharray="292 600" stroke-dashoffset="300"
-                      transform="rotate(226.8 95 70)"></circle>
+                      transform="rotate(151.56 95 70)"></circle>
               <g id="c10-leg-0">
                 <rect x="214" y="28" width="14" height="14" fill="rgba(45,62,94,0.92)"></rect>
                 <rect x="240" y="31" width="164" height="8" fill="rgba(45,62,94,0.16)"></rect>
@@ -329,10 +325,6 @@
               <g id="c10-leg-1">
                 <rect x="214" y="62" width="14" height="14" fill="rgba(45,62,94,0.44)"></rect>
                 <rect x="240" y="65" width="128" height="8" fill="rgba(45,62,94,0.16)"></rect>
-              </g>
-              <g id="c10-leg-2">
-                <rect x="214" y="96" width="14" height="14" fill="rgba(45,62,94,0.20)"></rect>
-                <rect x="240" y="99" width="96" height="8" fill="rgba(45,62,94,0.16)"></rect>
               </g>
             </svg>
           </div>
@@ -342,16 +334,19 @@
             <div class="d10-ctitle" id="c10-ctitle-2">Top Servicios</div>
             <div class="d10-crule" id="c10-crule-2"></div>
             <div class="d10-plot" id="c10-plot-2">
-              <i class="d10-lbl c10-slbl" style="left: 0; top: 6px; width: 92px"></i>
-              <i class="d10-lbl c10-slbl" style="left: 0; top: 34px; width: 78px"></i>
-              <i class="d10-lbl c10-slbl" style="left: 0; top: 62px; width: 88px"></i>
-              <i class="d10-lbl c10-slbl" style="left: 0; top: 90px; width: 70px"></i>
-              <i class="d10-lbl c10-slbl" style="left: 0; top: 118px; width: 84px"></i>
-              <i class="d10-bar c10-sbar" id="c10-sbar-0" style="left: 104px; top: 3px;  width: 608px; background: rgba(45,62,94,0.92)"></i>
-              <i class="d10-bar c10-sbar" id="c10-sbar-1" style="left: 104px; top: 31px; width: 499px; background: rgba(45,62,94,0.74)"></i>
-              <i class="d10-bar c10-sbar" id="c10-sbar-2" style="left: 104px; top: 59px; width: 383px; background: rgba(45,62,94,0.56)"></i>
-              <i class="d10-bar c10-sbar" id="c10-sbar-3" style="left: 104px; top: 87px; width: 286px; background: rgba(45,62,94,0.40)"></i>
-              <i class="d10-bar c10-sbar" id="c10-sbar-4" style="left: 104px; top: 115px; width: 189px; background: rgba(45,62,94,0.28)"></i>
+              <i class="d10-base" id="c10-sbase"></i>
+              <i class="d10-col c10-scol" id="c10-scol-0" style="left: 23px;  top: 10px;  height: 118px; background: rgba(45,62,94,0.92)"></i>
+              <i class="d10-col c10-scol" id="c10-scol-1" style="left: 139px; top: 31px;  height: 97px;  background: rgba(45,62,94,0.78)"></i>
+              <i class="d10-col c10-scol" id="c10-scol-2" style="left: 255px; top: 54px;  height: 74px;  background: rgba(45,62,94,0.64)"></i>
+              <i class="d10-col c10-scol" id="c10-scol-3" style="left: 371px; top: 73px;  height: 55px;  background: rgba(45,62,94,0.50)"></i>
+              <i class="d10-col c10-scol" id="c10-scol-4" style="left: 487px; top: 91px;  height: 37px;  background: rgba(45,62,94,0.38)"></i>
+              <i class="d10-col c10-scol" id="c10-scol-5" style="left: 603px; top: 104px; height: 24px;  background: rgba(45,62,94,0.26)"></i>
+              <i class="d10-clbl c10-slbl" style="left: 43px"></i>
+              <i class="d10-clbl c10-slbl" style="left: 159px"></i>
+              <i class="d10-clbl c10-slbl" style="left: 275px"></i>
+              <i class="d10-clbl c10-slbl" style="left: 391px"></i>
+              <i class="d10-clbl c10-slbl" style="left: 507px"></i>
+              <i class="d10-clbl c10-slbl" style="left: 623px"></i>
             </div>
           </div>
 
@@ -556,29 +551,37 @@
       // 2 · Distribución de Malignidad — la tarta se llena por sectores
       tl.fromTo("#c10-dtrack",
         { opacity: 0 }, { opacity: 1, duration: 0.36, ease: "power2.out" }, 4.7);
-      // sectores: 67 / 21 / 12 por ciento del arco (offset = 292 − longitud)
+      // DOS sectores, no tres. En produccion la columna Malignidad sobre los
+      // casos IHQ solo toma dos valores —MALIGNO 1.394 (67,1%) y BENIGNO 682
+      // (32,9%)— y ui.py:_g_pie_malignidad agrupa en OTROS solo lo que baja
+      // del 2,5%, asi que un tercer sector no puede existir. Con el sector
+      // dominante en el 67% el espectador lee la cifra real, y un tercer
+      // sector le estaria enseñando una categoria de malignidad inventada.
+      // visible = 292 − offset ; fraccion = visible / 289,03 (2πr, r=46)
+      //   67,1% -> visible 193,94 -> offset  98,06   arranca en −90
+      //   32,9% -> visible  95,09 -> offset 196,91   arranca en −90 + 241,56
       tl.fromTo("#c10-seg-0",
         { strokeDashoffset: 300 },
-        { strokeDashoffset: 98.35, duration: 0.85, ease: "power2.inOut" }, 4.8);
+        { strokeDashoffset: 98.06, duration: 0.85, ease: "power2.inOut" }, 4.8);
       tl.fromTo("#c10-seg-1",
         { strokeDashoffset: 300 },
-        { strokeDashoffset: 231.30, duration: 0.44, ease: "power2.inOut" }, 5.6);
-      tl.fromTo("#c10-seg-2",
-        { strokeDashoffset: 300 },
-        { strokeDashoffset: 257.32, duration: 0.34, ease: "power2.inOut" }, 5.98);
-      for (var g = 0; g < 3; g++) {
+        { strokeDashoffset: 196.91, duration: 0.52, ease: "power2.inOut" }, 5.6);
+      for (var g = 0; g < 2; g++) {
         tl.fromTo("#c10-leg-" + g,
           { opacity: 0, x: 14 },
           { opacity: 1, x: 0, duration: 0.46, ease: "power2.out" }, 5.72 + g * 0.13);
       }
 
       // 3 · Top Servicios — las barras crecen desde el eje
+      tl.fromTo("#c10-sbase",
+        { scaleX: 0 }, { scaleX: 1, duration: 0.42, ease: "power2.out" }, 5.55);
       tl.fromTo(".c10-slbl",
         { opacity: 0 },
-        { opacity: 1, duration: 0.34, ease: "power2.out", stagger: 0.06 }, 5.55);
-      tl.fromTo(".c10-sbar",
-        { scaleX: 0 },
-        { scaleX: 1, duration: 0.62, ease: "power3.out", stagger: 0.09 }, 5.7);
+        { opacity: 1, duration: 0.34, ease: "power2.out", stagger: 0.06 }, 5.62);
+      // crecen DESDE la base, como las de Top Organos (transform-origin 50% 100%)
+      tl.fromTo(".c10-scol",
+        { scaleY: 0 },
+        { scaleY: 1, duration: 0.62, ease: "power3.out", stagger: 0.075 }, 5.7);
 
       // 4 · Top Órganos — las columnas suben desde la línea base
       tl.fromTo("#c10-obase",
@@ -616,7 +619,7 @@
           { scaleX: 1, duration: 0.42, ease: "power3.out" }, h.on + 0.04);
 
         tl.to("#c10-tab-" + h.n,
-          { backgroundColor: "rgba(45,62,94,0.05)", color: "rgba(34,48,74,0.58)",
+          { backgroundColor: "rgba(45,62,94,0.05)", color: "rgba(34,48,74,0.72)",
             duration: 0.42, ease: "power2.inOut" }, h.off);
         tl.to("#c10-hint-" + h.n,
           { scaleX: 0, duration: 0.38, ease: "power2.inOut" }, h.off + 0.03);
@@ -657,11 +660,9 @@
       // suelta-contenido: al empezar el encadenado la escena deja ir su
       // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
       // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
-      tl.to(["#c10-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 12.6);
 
       // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
       // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
-      tl.to("#c10-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 12.6);
 
       window.__timelines["10-dashboard"] = tl;
     })();

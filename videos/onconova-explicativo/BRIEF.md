@@ -113,13 +113,32 @@ Narración con voz natural, en español.
   (la carpeta tiene 404). **Cualquier cifra de la carpeta se mide en disco.**
 - **Una ventana del producto se cita entera: valor Y formato.** El resumen de
   importación mostraba «12 · 11 · 1 · 92 %», inventado, y además con un formato
-  que la aplicación no usa. Lo real, medido sobre esos mismos cuatro PDF con la
-  función que llama `ui.py` (`core.validation_checker.analizar_batch_registros`):
-  **347 · 327 · 20 · 94.2 %** — y con punto y un decimal, porque el badge es una
-  f-string de Python (`f"{porcentaje_exito:.1f}%"`). El total es 347 y no 351
-  porque cuatro casos salen en dos archivos. La barra de progreso cuenta
-  ARCHIVOS (`Procesando (2/4)`), el resumen cuenta REGISTROS: no son lo mismo y
-  el borrador los había mezclado.
+  que la aplicación no usa: el badge es una f-string de Python
+  (`f"{porcentaje_exito:.1f}%"`), o sea punto y un decimal. Y la barra de
+  progreso cuenta ARCHIVOS (`Procesando (2/4)`) mientras el resumen cuenta
+  REGISTROS: no son lo mismo, y el borrador los había mezclado.
+- **🔴 `casos_por_pdf.json` no es la cifra buena — caí dos veces.** Es el barrido
+  CRUDO del texto, con las referencias cruzadas a informes ajenos dentro; la
+  intersección con el rango del nombre la hace `core/estado_pdfs.py` DESPUÉS.
+  Corregí «(50/50)» por «(82/82)» creyendo que arreglaba una cifra falsa, y puse
+  otra: el contador que el producto escribe es `({en_bd}/{total})` con el total
+  ya intersecado, o sea **(45/45) (50/50) (50/50) (48/48)**. El 82 no puede
+  aparecer en esa pantalla. Igual con el resumen: de los 347 casos que reuní así,
+  **14 no existían como registro** y el checker los devolvía como «Registro no
+  encontrado» — contados como incompletos. Aquello inflaba el fallo al triple.
+  Lo real, sobre los dos PDF que el lote procesa de verdad: **98 · 96 · 2 ·
+  98.0 %**. Regla: si una cifra imita una pantalla, la fuente es el código que
+  la pinta o la BD, nunca un JSON de caché; y toda lista de casos se filtra
+  contra `informes_ihq` antes de medir completitud.
+- **Una pantalla no puede desmentir a la voz cuatro segundos después.** «Selec­-
+  cionar pendientes» dejaba fuera, a la vista, las dos filas ✓ … y el lote
+  arrancaba justo por esas dos, y contaba 4 cuando se habían marcado 12. La voz
+  vende ese botón como el ahorro de trabajo de la semana, delante de quien lo va
+  a usar. Ahora los únicos pendientes del árbol son los dos que se procesan.
+- **Un estado escenificado se declara.** Hoy los cuatro PDF están COMPLETO en la
+  base, así que el ◐ y el ● de la escena están puestos: sin pendientes no hay
+  importación que enseñar. Escenificar el ESTADO es legítimo; inventarse los
+  DENOMINADORES no lo es.
 - **🔴 Un arreglo automático puede romper lo que no miraba.** El pase que escapó
   los `id` que empiezan por dígito (`#05-datos` → `[id="05-datos"]`) se comió
   también **nueve colores hexadecimales**: `stroke='#22304a'` acabó como
@@ -135,6 +154,31 @@ Narración con voz natural, en español.
   «08 / 13 — LOS DATOS»). Toda escena apaga su contenido, su marca y su marcador
   antes del encadenado y se queda solo con el fondo navy, que es idéntico en las
   trece. Ese fondo común es lo que hace que la imagen no se corte nunca.
+- **…y el relevo lo hace el MONTAJE, no cada escena.** Que cada escena apagara
+  su contenido antes del cruce dejaba el cuadro **vacío**: se apagaba en
+  `D−1,15`, justo cuando la siguiente empieza a aparecer desde opacidad cero.
+  Medido con `signalstats` sobre el render: **cinco costuras** caían a navy
+  pelado —las cinco en las que la escena saliente es una pantalla clara— y en
+  una de ellas medio segundo largo de nada. Y quitar la suelta devolvía las dos
+  interfaces superpuestas. La salida está en el montaje: **la saliente se
+  desvanece en 0,45 s y la entrante llega en 0,55 s, las dos con `power2.out`**,
+  arrancando a la vez. La suma de opacidades nunca baja de 0,9 —no hay hueco— y
+  la saliente cae tan deprisa que la ventana en que se leen las dos dura ~0,15 s:
+  un encadenado normal. Debajo no asoma nada raro porque `#root` es exactamente
+  el mismo `#141d2b` que el fondo de las trece escenas.
+- **Un tiempo escrito DENTRO de una escena no cae donde parece.** Las nueve
+  originales reescalan su línea con `tl.duration(D)` al final, cada una con su
+  factor. Ancié la suelta dividiendo por ese factor —tomado en el navegador con
+  `tl.duration()` sin argumento— y aun así **02-encerrado se disparaba 0,9 s
+  antes de tiempo**. Por eso la continuidad se resolvió arriba: el montaje es el
+  único sitio donde el tiempo absoluto es el que se escribe. Regla: lo que deba
+  ocurrir en un instante EXACTO del vídeo no se escribe dentro de una escena que
+  reescala.
+- **Un `check` en verde con el muestreo por defecto prueba poco.** Toma 9
+  instantes en 339 s. La corrección de contraste a alpha 0,72 se había quedado
+  en dos escenas de cinco y el verificador seguía dando 0 avisos, porque no cayó
+  en los beats donde se ve ese texto. Para dar algo por bueno hay que muestrear
+  los instantes que importan (`--at`), no confiar en la rejilla.
 - **Un diálogo se abre opaco.** Fundir opacidad y escala juntas durante medio
   segundo deja ver el panel POR DEBAJO de la ventana modal — el mismo artefacto
   de «se ve lo de detrás» que ya nos costó una corrección en la marca de

@@ -109,7 +109,7 @@
       will-change: transform, opacity;
     }
     .abre-user u { display: block; text-decoration: none; font-size: 15px; color: rgba(34, 48, 74, 0.78); }
-    .abre-user s { display: block; text-decoration: none; font-size: 13px; color: rgba(34, 48, 74, 0.48); margin-top: 2px; }
+    .abre-user s { display: block; text-decoration: none; font-size: 13px; color: rgba(34, 48, 74, 0.72); margin-top: 2px; }
     .abre-pill {
       position: absolute; right: 28px; top: 27px;
       border: 1px solid rgba(45, 62, 94, 0.75); border-radius: 999px;
@@ -137,22 +137,22 @@
     }
     .abre-sub {
       font-size: 24px; font-weight: 400; line-height: 1.5;
-      color: rgba(34, 48, 74, 0.62);
+      color: rgba(34, 48, 74, 0.72);
       will-change: transform, opacity;
     }
     .abre-sel {
       font-size: 22px; font-weight: 400; line-height: 1.5;
-      color: rgba(34, 48, 74, 0.5);
+      color: rgba(34, 48, 74, 0.72);
       will-change: transform, opacity;
     }
     .abre-gap { height: 22px; }
     .abre-gap2 { height: 34px; }
     .abre-hint {
-      font-size: 17px; color: rgba(34, 48, 74, 0.46);
+      font-size: 17px; color: rgba(34, 48, 74, 0.72);
       white-space: pre;
       will-change: transform, opacity;
     }
-    .abre-hint span { font-family: "IBM Plex Mono", monospace; color: rgba(34, 48, 74, 0.62); }
+    .abre-hint span { font-family: "IBM Plex Mono", monospace; color: rgba(34, 48, 74, 0.72); }
 
     /* ---------- el botón redondo del menú: EL foco ---------- */
     .abre-btn {
@@ -199,7 +199,7 @@
       color: #2d3e5e;
     }
     .abre-navhead p {
-      font-size: 14px; color: rgba(34, 48, 74, 0.52); margin-top: 6px;
+      font-size: 14px; color: rgba(34, 48, 74, 0.72); margin-top: 6px;
     }
     .abre-navrule {
       position: absolute; left: 26px; width: 248px; top: 156px; height: 1px;
@@ -233,7 +233,7 @@
     }
     .abre-close {
       position: absolute; left: 26px; top: 540px; font-size: 16px;
-      color: rgba(34, 48, 74, 0.55); white-space: pre;
+      color: rgba(34, 48, 74, 0.72); white-space: pre;
       will-change: transform, opacity;
     }
 
@@ -536,11 +536,16 @@
         { opacity: 0, x: -12 },
         { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 11.5);
 
-      // el ítem activo se pinta: fondo navy, texto blanco
+      // el ítem activo se pinta: fondo navy, texto blanco.
+      // El texto ACLARA ANTES de que el relleno lo alcance. Iba 0,14 s por
+      // detrás, y en ese hueco «Inicio» quedaba navy sobre navy: la palabra
+      // desaparecía un cuarto de segundo justo cuando la voz la está
+      // nombrando. Ahora arranca 0,06 s antes que el relleno y no hay un solo
+      // fotograma en que la etiqueta se pierda.
+      tl.to("#f05-abre-txt-0",
+        { color: "rgb(244,246,250)", duration: 0.3, ease: "power2.out" }, 11.22);
       tl.fromTo("#f05-abre-fill-0",
         { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power3.out" }, 11.28);
-      tl.to("#f05-abre-txt-0",
-        { color: "rgb(244,246,250)", duration: 0.35, ease: "power2.out" }, 11.42);
 
       /* =========================================================
          BEAT 3 (11.5–16.0) — «Desde ahí se llega a todo: Inicio,
@@ -579,11 +584,9 @@
       // suelta-contenido: al empezar el encadenado la escena deja ir su
       // CONTENIDO y se queda solo con el fondo. Como el fondo de las 13 es el
       // mismo navy, la imagen NO se corta: solo se releva lo que hay encima.
-      tl.to(["#f05-abre-clip-escena"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 15.81);
 
       // marca-fuera: la marca de esquina vive FUERA del clip que se suelta,
       // asi que hay que apagarla aparte o se queda sobre la escena siguiente.
-      tl.to("#f05-abre-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 15.81);
 
       window.__timelines[ID] = tl;
     })();

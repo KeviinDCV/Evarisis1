@@ -654,7 +654,7 @@
 
       // la imagen sigue, solo se releva lo que hay encima.
 
-      tl.to(["#s6-clip-mundo", "#s6-clip-cromo"], { opacity: 0, duration: 0.55, ease: "power2.in" }, 26.46);
+      
 
 
       // marca-fuera: la marca de esquina vive fuera de los clips que se
@@ -666,7 +666,7 @@
       // que trae la escena siguiente.
 
 
-      tl.to("#s6-brand", { opacity: 0, duration: 0.5, ease: "power2.in" }, 26.46);
+      
 
 
 
@@ -690,6 +690,14 @@
 
 
 
+      // suelta-contenido, anclada al reloj FINAL. Esta linea de tiempo se
+      // reescala abajo con tl.duration(), asi que un instante escrito a
+      // pelo NO cae donde parece: hay que dividir por el factor. Se toma
+      // AQUI, antes de añadir nada, porque tl.duration() sin argumento
+      // devuelve la duracion autorizada.
+      // Arranca a la vez que la escena siguiente y dura 0,72 s: la
+      // saliente se va MIENTRAS la entrante llega, para que no quede ni
+      // un fotograma con el cuadro vacio.
       tl.duration(30.63);
 
 

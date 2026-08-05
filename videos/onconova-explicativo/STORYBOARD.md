@@ -15,11 +15,14 @@ mode: collaborative
 > orden de esta lista, y el mismo orden manda en `montar.py`.
 
 > **Continuidad.** No hay un solo corte ni barrido: trece escenas encadenadas
-> con opacidad pura, la entrante opaca por encima. Cada escena **suelta su
-> contenido** 1,70 s antes de acabar y se queda solo con el fondo navy, que es
-> idéntico en las trece — así en la costura no hay dos interfaces superpuestas.
-> La voz manda las duraciones: cada línea entra 0,35 s después de callar la
-> anterior. Silencio total del vídeo: 4,2 s repartidos en doce respiraciones.
+> con opacidad pura. El relevo lo hace el **montaje**, no cada escena: la
+> saliente se va en 0,45 s y la entrante llega en 0,55 s, ambas con
+> `power2.out`, arrancando a la vez. Los dos extremos se pagan caros —soltar el
+> contenido antes deja el cuadro vacío (medido: cinco costuras caían a navy
+> pelado) y no soltarlo deja dos interfaces superpuestas—; con estas dos curvas
+> la suma de opacidades nunca baja de 0,9 y la ventana en que se leen las dos
+> dura ~0,15 s. La voz manda las duraciones: cada línea entra 0,35 s después de
+> callar la anterior. Silencio total: 4,2 s en doce respiraciones.
 
 ## Frame 1 — Apertura institucional
 
@@ -115,13 +118,22 @@ procesar es el foco ámbar de la escena** → ventana de progreso → ventana de
 resultados.
 
 **Todo lo que se ve medido, nada supuesto:** la carpeta tiene 404 elementos y los
-PDF pesan 16,4 / 20,8 / 19,9 / 16,7 MB con fecha 27/05/2026; los casos por archivo
-son 82 · 92 · 93 · 84 (leídos de `auditoria/casos_por_pdf.json`, no del nombre del
-archivo: cada PDF arrastra casos vecinos). El resumen final — **347 · 327 · 20 ·
-94.2 %** — se midió sobre esos mismos cuatro PDF con la función que llama la propia
-aplicación, `core.validation_checker.analizar_batch_registros`. El total es 347 y
-no 351 porque cuatro casos salen en dos archivos. El porcentaje va con punto y un
-decimal porque el badge del producto es una f-string de Python.
+PDF pesan 16,4 / 20,8 / 19,9 / 16,7 MB con fecha 27/05/2026. Los contadores del
+árbol son los que el producto escribe —`({en_bd}/{total})` con el total ya
+intersecado con el rango del nombre por `core/estado_pdfs.py`— es decir
+**(45/45) (50/50) (50/50) (48/48)**; el barrido crudo de `casos_por_pdf.json`
+(82 · 92 · 93 · 84) incluye referencias cruzadas a informes ajenos y no llega
+nunca a esa pantalla. El resumen final — **98 · 96 · 2 · 98.0 %** — se midió con
+`core.validation_checker.analizar_batch_registros`, la que llama la propia
+aplicación, sobre los dos PDF que el lote procesa de verdad y filtrando antes
+contra la base. El porcentaje va con punto y un decimal porque el badge del
+producto es una f-string de Python.
+
+**El estado mixto está escenificado y se declara:** hoy los cuatro PDF constan
+COMPLETO en la base. Se escenifica porque la escena enseña una importación y sin
+pendientes no hay nada que importar; los denominadores, en cambio, son los que
+el producto puede escribir. Los únicos pendientes del árbol son los dos que el
+botón marca y el lote procesa: la pantalla ya no desmiente a la voz.
 
 ## Frame 7 — Las siete vistas de la base de datos
 
@@ -181,6 +193,16 @@ cuyas filas entran en cascada.
 La escena más corta: es un apunte, no una lección. Como aquí los emoji a color de
 las pestañas compiten con el acento, el foco ámbar es un **aro cerrado de contorno
 con halo**, no un subrayado tenue — si no, deja de mandar en el encuadre.
+
+Dos correcciones de fidelidad sobre la rejilla del Overview. La rosquilla de
+«Distribución de Malignidad» tiene **dos** sectores, no tres: en producción la
+columna Malignidad solo toma dos valores (MALIGNO 1.394 = 67,1 % y BENIGNO 682 =
+32,9 %) y `_g_pie_malignidad` agrupa en OTROS solo lo que baja del 2,5 %, así que
+un tercer sector no puede existir — y con el dominante en el 67 % el espectador
+lee la cifra real, de modo que un tercero le estaría enseñando una categoría
+inventada. Y «Top Servicios» se dibuja en **columnas verticales**, igual que «Top
+Órganos»: en la aplicación las dos tarjetas son el mismo `ax.bar` con las
+etiquetas giradas 30°, no una de barras horizontales.
 
 ## Frame 11 — El informe estadístico
 
