@@ -160,21 +160,19 @@ _MODELO_CACHE = None
 
 
 def _es_endpoint_local(url: str) -> bool:
-    """Solo permite localhost / IP privada de LAN. Bloquea nube (Ley 1581)."""
-    if not url:
-        return False
-    host = re.sub(r"^https?://", "", url).split("/")[0].split(":")[0].strip().lower()
-    if host in ("localhost", "127.0.0.1", "0.0.0.0", "::1"):
-        return True
-    # IP privada LAN (10.x, 192.168.x, 172.16-31.x)
-    if re.match(r"^10\.", host):
-        return True
-    if re.match(r"^192\.168\.", host):
-        return True
-    m = re.match(r"^172\.(\d+)\.", host)
-    if m and 16 <= int(m.group(1)) <= 31:
-        return True
-    return False
+    """¿El endpoint está dentro del hospital? (Ley 1581)
+
+    V6.9.93 — delega en core/red_local.py. Antes esta funcion tenia su PROPIA
+    implementacion con expresiones regulares, y la capa de polaridad tenia otra
+    distinta y mas estricta: dos reglas para la misma decision de seguridad, que
+    es como se acaba con una permitiendo lo que la otra prohibe. Ademas la de
+    aqui se rompia con IPv6 entre corchetes (http://[::1]:1234 -> host '[')
+    y no contemplaba 169.254.x.
+
+    El nombre y la firma se mantienen porque core/biomarcadores_ia.py la importa.
+    """
+    from core.red_local import endpoint_dentro_del_hospital
+    return endpoint_dentro_del_hospital(url)
 
 
 def _leer_config():
@@ -212,8 +210,21 @@ def _ia_habilitada() -> bool:
     if _HABILITADA_CACHE is not None:
         return _HABILITADA_CACHE
     val = True
+    # V6.9.93 — en el .exe (onefile) __file__ apunta al temporal _MEIPASS,
+    # o sea al config EMPAQUETADO en tiempo de compilacion. El cliente
+    # editaba dist/config/config.ini, veia cambiar la BD (db_adapter SI
+    # contempla sys.frozen) y creia haber apagado la IA, pero los
+    # interruptores seguian congelados al valor del build. Se usa la
+    # MISMA raiz que db_adapter para que el fichero de al lado del .exe
+    # mande sobre todo, no solo sobre la base de datos.
+    try:
+        from core.db_adapter import _get_base_path as _bp
+        _raiz_cfg = str(_bp())
+    except Exception:
+        _raiz_cfg = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     aqui = os.path.dirname(os.path.abspath(__file__))
-    for ruta in (os.path.join(aqui, "..", "config", "config.ini"),
+    for ruta in (os.path.join(_raiz_cfg, "config", "config.ini"),
+                 os.path.join(aqui, "..", "config", "config.ini"),
                  os.path.join(os.getcwd(), "config", "config.ini")):
         try:
             if os.path.isfile(ruta):

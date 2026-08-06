@@ -1305,7 +1305,18 @@ def _usar_ia_polaridad() -> bool:
     try:
         import configparser
         import os as _os
-        raiz = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        # V6.9.93 — en el .exe (onefile) __file__ apunta al temporal _MEIPASS,
+        # o sea al config EMPAQUETADO en tiempo de compilacion. El cliente
+        # editaba dist/config/config.ini, veia cambiar la BD (db_adapter SI
+        # contempla sys.frozen) y creia haber apagado la IA, pero los
+        # interruptores seguian congelados al valor del build. Se usa la
+        # MISMA raiz que db_adapter para que el fichero de al lado del .exe
+        # mande sobre todo, no solo sobre la base de datos.
+        try:
+            from core.db_adapter import _get_base_path as _bp
+            raiz = str(_bp())
+        except Exception:
+            raiz = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
         cfg = configparser.ConfigParser(inline_comment_prefixes=('#', ';'))
         cfg.read(_os.path.join(raiz, 'config', 'config.ini'), encoding='utf-8')
         if cfg.has_option('llm', 'usar_ia_polaridad'):

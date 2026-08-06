@@ -1,5 +1,28 @@
 # 🏥 ONCONOVA Gestor Oncología — Setup Cliente HUV (V6.9.0)
 
+> ### ⚠️ V6.9.93 — LEE ESTO ANTES DE SEGUIR
+>
+> Este documento describía un usuario `huv_app` con la contraseña `huv2026`.
+> **Ese usuario NUNCA se creó**: el servidor solo tenía `root@localhost`,
+> `root@127.0.0.1`, `root@::1` y `pma@localhost`, las cuatro **sin contraseña**.
+> Por eso ninguna PC cliente podía conectarse, aunque se abriera el firewall.
+>
+> Las cuentas se crean ahora con **`docs/mysql_multiusuario_LAN.sql`**, que
+> monta dos roles de mínimo privilegio:
+>
+> | Cuenta | Permisos | Para quién |
+> |---|---|---|
+> | `huv_consulta` | SELECT | mira, filtra y exporta |
+> | `huv_captura` | SELECT, INSERT, UPDATE | además importa PDFs y corrige casos |
+>
+> Ninguna lleva CREATE, ALTER, DROP ni DELETE, a propósito.
+>
+> **Las contraseñas ya no van escritas en este documento.** Este fichero viaja a
+> cada PC cliente: una contraseña aquí es una contraseña repartida. Las eliges
+> tú al ejecutar el script y las pones en el `config.ini` de cada equipo,
+> partiendo de la plantilla **`docs/config.ini.cliente`**.
+
+
 ## Para administradores: compilar el .exe
 
 Desde la PC servidor (con todo el código fuente):
@@ -37,8 +60,8 @@ Distribuye toda la carpeta `dist\` a cada PC cliente (vía red, USB, o instalado
    tipo = mysql
    host = 192.168.2.172    ; <-- IP del servidor (XAMPP)
    puerto = 3306
-   usuario = huv_app
-   password = huv2026      ; <-- Cambiar por el password real
+   usuario = huv_consulta        ; o huv_captura, segun el rol de la PC
+   password = (la que hayas puesto al crear la cuenta)
    base_datos = huv_oncologia
    charset = utf8mb4
    ```
@@ -59,8 +82,8 @@ Distribuye toda la carpeta `dist\` a cada PC cliente (vía red, USB, o instalado
 
 2. **BD y usuario ya creados** (V6.9.0):
    - BD: `huv_oncologia`
-   - Usuario: `huv_app`
-   - Password: `huv2026`
+   - Usuario: `huv_consulta` o `huv_captura`
+   - Password: la definida al ejecutar `docs/mysql_multiusuario_LAN.sql`
    - Acceso: `localhost` + `%` (cualquier IP de la LAN)
 
 3. **Firewall**: permitir entrada TCP puerto **3306** para LAN:
@@ -113,7 +136,7 @@ Programar en el **Programador de Tareas de Windows** para que corra todos los d�
 - Verificar IP correcta en `config.ini`
 - Probar `ping 192.168.2.172` desde la PC cliente
 
-### "Access denied for user 'huv_app'"
+### "Access denied for user 'huv_consulta'"
 - Verificar password en `config.ini`
 - Si se cambió el password en MySQL, actualizar `config.ini` en TODAS las PCs
 
@@ -128,12 +151,12 @@ Programar en el **Programador de Tareas de Windows** para que corra todos los d�
 
 ---
 
-## Cambiar el password de `huv_app` (producción)
+## Cambiar el password (producción)
 
-⚠️ El password `huv2026` es de prueba. Para producción:
+⚠️ Nunca escribas la contraseña en este documento: viaja a cada PC cliente.
 
 1. En phpMyAdmin (`http://localhost/phpmyadmin`):
-   - Cuentas de usuario → `huv_app` → Editar privilegios → Cambiar contraseña
+   - Cuentas de usuario → `huv_consulta` / `huv_captura` → Editar privilegios → Cambiar contraseña
    - Generar password fuerte (16+ caracteres con símbolos)
 
 2. **Actualizar `config.ini`** en TODAS las PCs cliente con el nuevo password.

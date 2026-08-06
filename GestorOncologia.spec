@@ -71,4 +71,9 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon='imagenes/branding/onconova.ico',
+    # V6.9.93 — recurso de version. Sin esto el .exe salia con FileVersion,
+    # CompanyName y FileDescription vacios y Windows lo mostraba como
+    # "Editor: desconocido". Lo genera COMPILADOR.bat a partir de
+    # config/version_info.py, asi que no hay que tocarlo a mano.
+    version='version_exe.txt',
 )

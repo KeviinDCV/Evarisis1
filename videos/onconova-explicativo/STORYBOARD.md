@@ -44,11 +44,11 @@ son las cifras de la escena 2, que son un hecho y no una interpelación.
 
 - status: built
 - src: compositions/frames/02-encerrado.html
-- duration: 17.72s
+- duration: 17.90s
 - transition_in: crossfade
 - scene: 765 informes en PDF se acumulan hasta rodear el encuadre.
 - blueprint: overwhelm-surround
-- voiceover: "El servicio produce setecientos sesenta y cinco informes: treinta y seis mil páginas de patología. Cada diagnóstico, cada biomarcador y cada paciente está escrito ahí dentro. Pero está en PDF. Y un PDF se lee, no se consulta."
+- voiceover: "Patología produce setecientos sesenta y cinco informes: treinta y seis mil páginas. Cada diagnóstico, cada biomarcador y cada paciente está escrito ahí dentro. Pero está en PDF. Y un PDF se lee, no se consulta."
 
 Miniaturas de informes entran desde los bordes y se acumulan por capas hasta cerrar
 el centro. Contador que sube: 765 informes · 36.243 páginas · 22.547 estudios.

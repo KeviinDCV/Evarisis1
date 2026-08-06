@@ -43,6 +43,13 @@ pip install --upgrade cryptography
 pip install --upgrade psutil
 REM V6.9.0 - MySQL/MariaDB driver para BD compartida en LAN
 pip install --upgrade pymysql
+REM V6.9.93 — faltaban las dos, y son dependencias VIVAS:
+REM   tksheet  -> ui.py:19 (la tabla del visualizador)
+REM   reportlab-> el informe estadistico en PDF
+REM Colaban porque PyInstaller las detecta por si solo, pero en una
+REM maquina de compilacion limpia el pip install las dejaba fuera.
+pip install --upgrade tksheet
+pip install --upgrade reportlab
 
 echo.
 echo [STEP 3/9] Verificando instalación de dependencias críticas...
@@ -72,7 +79,13 @@ echo [STEP 4/9] Limpiando compilaciones anteriores...
 if exist "build" rmdir /s /q "build" 2>nul
 if exist "dist" rmdir /s /q "dist" 2>nul
 if exist "__pycache__" rmdir /s /q "__pycache__" 2>nul
-if exist "*.spec" del /q "*.spec" 2>nul
+REM V6.9.93 — YA NO se borra el .spec.
+REM GestorOncologia.spec esta versionado en git y es la receta BUENA:
+REM lleva reportlab, core.informe_estadistico y los normalizadores. El
+REM .spec que este .bat generaba mas abajo estaba congelado en la V6.9.0
+REM y NO los tenia, asi que compilar con el sacaba un binario que reventaba
+REM al generar el informe estadistico en PDF. Borrarlo y regenerarlo era
+REM destruir lo bueno para poner lo malo.
 
 echo.
 echo [STEP 5/9] Verificando archivos requeridos...
@@ -99,106 +112,25 @@ if not exist "imagenes\icono.png" (
 echo ✅ Archivos principales verificados
 
 echo.
-echo [STEP 6/9] Generando archivo .spec OPTIMIZADO para Gestor Oncología...
+echo [STEP 6/9] Preparando recurso de version y verificando el .spec...
 
-(
-echo # -*- mode: python ; coding: utf-8 -*-
-echo.
-echo import os
-echo import sys
-echo from PyInstaller.utils.hooks import collect_submodules, collect_data_files
-echo.
-echo # Obtener módulos de dependencias críticas
-echo ttkbootstrap_modules = collect_submodules('ttkbootstrap'^)
-echo matplotlib_modules = collect_submodules('matplotlib'^)
-echo selenium_modules = collect_submodules('selenium'^)
-echo numpy_modules = collect_submodules('numpy'^)
-echo.
-echo # Datos adicionales - archivos y carpetas necesarias
-echo added_files = [
-echo     ('imagenes', 'imagenes'^),
-echo     ('config', 'config'^),
-echo     ('core', 'core'^),
-echo     ('requirements.txt', '.'^)
-echo ]
-echo.
-echo # Importaciones ocultas para Gestor Oncología
-echo # V6.9.0 - Agregado pymysql (MySQL driver) + nuevos modulos core
-echo hiddenimports = [
-echo     'numpy',
-echo     'pandas',
-echo     'tkinter',
-echo     'ttkbootstrap',
-echo     'matplotlib.backends.backend_tkagg',
-echo     'seaborn',
-echo     'pytesseract',
-echo     'fitz',
-echo     'PIL.Image',
-echo     'selenium.webdriver',
-echo     'webdriver_manager.chrome',
-echo     'openpyxl',
-echo     'dateutil',
-echo     'babel',
-echo     'holidays',
-echo     'sqlite3',
-echo     'psutil',
-echo     'cryptography',
-echo     'pymysql',
-echo     'pymysql.cursors',
-echo     'pymysql.constants',
-echo     'core.calendario',
-echo     'core.database_manager',
-echo     'core.db_adapter',
-echo     'core.diagnosticos_ia_db',
-echo     'core.columnas_huv_ia',
-echo     'core.llm_client',
-echo     'core.huv_web_automation',
-echo     'core.ocr_processing',
-echo     'core.procesador_ihq',
-echo     'core.procesador_ihq_biomarcadores',
-echo     'core.enhanced_export_system',
-echo     'core.enhanced_database_dashboard',
-echo     'config.version_info'
-echo ] + ttkbootstrap_modules + matplotlib_modules + selenium_modules + numpy_modules
-echo.
-echo a = Analysis(
-echo     ['%SCRIPT_NAME%'],
-echo     pathex=[],
-echo     binaries=[],
-echo     datas=added_files,
-echo     hiddenimports=hiddenimports,
-echo     hookspath=[],
-echo     hooksconfig={},
-echo     runtime_hooks=[],
-echo     excludes=[],
-echo     noarchive=False,
-echo     optimize=0,
-echo ^)
-echo.
-echo pyz = PYZ(a.pure^)
-echo.
-echo exe = EXE(
-echo     pyz,
-echo     a.scripts,
-echo     a.binaries,
-echo     a.datas,
-echo     [],
-echo     name='%EXE_NAME%',
-echo     debug=False,
-echo     bootloader_ignore_signals=False,
-echo     strip=False,
-echo     upx=True,
-echo     console=False,
-echo     disable_windowed_traceback=False,
-echo     argv_emulation=False,
-echo     target_arch=None,
-echo     codesign_identity=None,
-echo     entitlements_file=None,
-echo     icon='imagenes/branding/onconova.ico'
-echo ^)
-) > "%EXE_NAME%.spec"
+if not exist "%EXE_NAME%.spec" (
+    echo ERROR: falta %EXE_NAME%.spec, que es la receta de compilacion.
+    echo Deberia estar versionado en git. No se compila a ciegas.
+    pause
+    exit /b 1
+)
 
-echo ✅ Archivo .spec generado
+REM El recurso de version se genera desde configersion_info.py para que
+REM el numero del .exe no pueda quedarse atras respecto al del programa.
+python build_tools\generar_version_exe.py
+if %ERRORLEVEL% neq 0 (
+    echo ERROR generando version_exe.txt
+    pause
+    exit /b 1
+)
+
+echo Listo: se compilara con el %EXE_NAME%.spec versionado
 
 echo.
 echo [STEP 7/9] Compilando con PyInstaller (modo ONEFILE - archivo único)...
@@ -207,66 +139,17 @@ pyinstaller --clean --noconfirm "%EXE_NAME%.spec"
 if %ERRORLEVEL% neq 0 (
     echo ❌ ERROR en la compilación principal
     echo.
-    echo Intentando compilación de emergencia (onefile)...
     echo.
-    pyinstaller --onefile --windowed --clean ^
-        --add-data "imagenes;imagenes" ^
-        --add-data "config;config" ^
-        --add-data "core;core" ^
-        --add-data "requirements.txt;." ^
-        --hidden-import "numpy" ^
-        --hidden-import "numpy.core" ^
-        --hidden-import "pandas" ^
-        --hidden-import "pandas.core" ^
-        --hidden-import "ttkbootstrap" ^
-        --hidden-import "ttkbootstrap.constants" ^
-        --hidden-import "ttkbootstrap.style" ^
-        --hidden-import "matplotlib" ^
-        --hidden-import "matplotlib.pyplot" ^
-        --hidden-import "matplotlib.backends.backend_tkagg" ^
-        --hidden-import "seaborn" ^
-        --hidden-import "pytesseract" ^
-        --hidden-import "fitz" ^
-        --hidden-import "PIL" ^
-        --hidden-import "PIL.Image" ^
-        --hidden-import "selenium" ^
-        --hidden-import "selenium.webdriver" ^
-        --hidden-import "selenium.webdriver.chrome" ^
-        --hidden-import "webdriver_manager" ^
-        --hidden-import "webdriver_manager.chrome" ^
-        --hidden-import "openpyxl" ^
-        --hidden-import "dateutil" ^
-        --hidden-import "babel" ^
-        --hidden-import "holidays" ^
-        --hidden-import "psutil" ^
-        --hidden-import "cryptography" ^
-        --hidden-import "sqlite3" ^
-        --hidden-import "core.calendario" ^
-        --hidden-import "core.database_manager" ^
-        --hidden-import "core.huv_web_automation" ^
-        --hidden-import "core.ocr_processing" ^
-        --hidden-import "core.procesador_ihq" ^
-        --hidden-import "core.procesador_ihq_biomarcadores" ^
-        --hidden-import "core.enhanced_export_system" ^
-        --hidden-import "core.enhanced_database_dashboard" ^
-        --hidden-import "config.version_info" ^
-        --noconsole ^
-        --name "%EXE_NAME%" ^
-        "%SCRIPT_NAME%"
-
-    if %ERRORLEVEL% neq 0 (
-        echo ❌ ERROR CRÍTICO: Falló también el modo de emergencia
-        echo.
-        echo Posibles causas:
-        echo - Falta alguna dependencia Python crítica (numpy, pandas, etc.)
-        echo - Problema con Tesseract OCR o configuración
-        echo - Problema con Selenium WebDriver
-        echo - Permisos insuficientes
-        echo.
-        pause
-        exit /b 1
-    )
-    echo ✅ Compilación de emergencia exitosa
+    echo V6.9.93 — Se ha RETIRADO la "compilacion de emergencia".
+    echo Aquella lanzaba pyinstaller --onefile a mano, sin reportlab ni
+    echo core.informe_estadistico, asi que cuando la compilacion buena
+    echo fallaba se entregaba igualmente un binario que reventaba al
+    echo generar el informe en PDF. Un fallo ruidoso es mejor que un
+    echo ejecutable roto en manos del hospital.
+    echo.
+    echo Revisa el error de arriba y vuelve a intentarlo.
+    pause
+    exit /b 1
 )
 
 echo.

@@ -1,0 +1,47 @@
+# =====================================================================
+#  despliegue.ini — datos del SERVIDOR que se hornean en el instalador
+# =====================================================================
+#
+#  COMO USARLO
+#  -----------
+#  1. Copia este fichero a  build_tools\despliegue.ini
+#  2. Rellena la contrasena real
+#  3. Ejecuta  python build_tools\construir_instalador.py
+#
+#  build_tools\despliegue.ini esta en .gitignore: NO se sube al repositorio.
+#  Este .ejemplo si, para que se sepa que hay que crearlo.
+#
+#  POR QUE LA CONTRASENA VA AQUI
+#  -----------------------------
+#  Porque pediste "instalar y ya, sin modificar nada". Para que el usuario
+#  final no tenga que editar un config.ini, el instalador tiene que escribirlo
+#  ya relleno — y para eso necesita la credencial en tiempo de construccion.
+#
+#  Eso significa que QUIEN TENGA EL INSTALADOR TIENE LA CREDENCIAL. Por eso la
+#  cuenta por defecto es `huv_consulta`, que solo puede hacer SELECT: si el
+#  instalador se filtra, lo que se filtra es acceso de lectura, no la capacidad
+#  de borrar o alterar la base de datos.
+#
+#  Para las PC que ademas importan PDFs hay que construir un instalador aparte
+#  con usuario = huv_captura. Son dos ficheros distintos, a proposito.
+# =====================================================================
+
+[servidor]
+# La PC que corre MySQL y LM Studio. Tiene que ser una IP FIJA: si el router
+# se la cambia, todos los clientes dejan de funcionar a la vez.
+ip = 192.168.2.172
+
+[base_datos]
+# huv_consulta -> solo consulta (SELECT)
+# huv_captura  -> ademas importa PDFs y corrige casos (SELECT/INSERT/UPDATE)
+usuario = huv_consulta
+password = PON_AQUI_LA_CONTRASENA_REAL
+base_datos = huv_oncologia
+puerto = 3306
+
+[ia]
+# LM Studio en el servidor. Requiere "Serve on Local Network" activado alli.
+# Si se pone en false, el cliente no llama a la IA y se queda con el valor del
+# regex — mas rapido, pero con el ~29% de polaridades mal que mide el proyecto.
+activa = true
+puerto = 1234

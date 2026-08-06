@@ -111,10 +111,23 @@ Narración con voz natural, en español.
   `generar_informe_estadistico_pdf`—, porque el vídeo rasteriza la página 1 de
   ese informe: tocar solo las cartelas habría puesto los dos rótulos
   contradiciéndose dentro del mismo plano.
-  ⚠️ **Pendiente:** la línea 2 sigue diciendo «El servicio produce setecientos
-  sesenta y cinco informes». Sin la mención a Patología en la apertura, «el
-  servicio» se queda sin antecedente y puede leerse como si los produjera
-  Oncología Quirúrgica. Requiere regenerar esa línea (16,2 s de cuota).
+  Resuelto además el efecto colateral: la línea 2 decía «**El** servicio produce
+  setecientos sesenta y cinco informes» y, sin Patología en la apertura, ese
+  «el servicio» se quedaba sin antecedente y sonaba a que los producía Oncología
+  Quirúrgica. Ahora dice «**Patología** produce…», que además arregla algo que
+  ya chirriaba: los 22.547 estudios de ese contador **incluyen coloraciones**,
+  así que atribuírselos al área habría sido doblemente inexacto.
+- **El informe declara su ALCANCE en la cabecera.** «Solo estudios de
+  inmunohistoquímica (IHQ) — no incluye coloraciones», en ámbar, bajo el nombre
+  del área; y repetido en la nota metodológica. Sin eso, un lector razonable
+  asume que 2.076 casos es «lo que hace el servicio», cuando el servicio produce
+  22.547 estudios y las coloraciones aún no tienen analítica.
+  ⚠️ **Va DENTRO de la cabecera, no en una banda aparte.** Como banda suelta
+  empujaba el informe a una **sexta página** — y el vídeo narra «un informe de
+  cinco páginas» y enseña cinco hojas. Se probaron cuatro tamaños del gráfico,
+  incluso menores que el original, y seguían saliendo seis: el culpable era la
+  fila extra, no el gráfico. Metida en la cabecera, cabe el Top-10 al máximo
+  (12,9 × 7,4 cm, etiquetas a 9,5 pt) y el informe vuelve a cinco páginas.
 - **🔴 El informe cambió y el vídeo lo enseña LITERALMENTE.** La escena 11 no
   describe el PDF: rasteriza sus cinco páginas a 3,6× y las recorre. Así que al
   cambiar la tabla de Cobertura del informe (V6.9.93: pasa a repartir por

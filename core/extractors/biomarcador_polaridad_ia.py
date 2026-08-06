@@ -452,10 +452,15 @@ def _endpoint_local() -> Optional[Tuple[str, str]]:
         if not base:
             base = ('http://localhost:11434/v1' if prov == 'ollama'
                     else 'http://127.0.0.1:1234/v1')
-        host = (urlparse(base).hostname or '').lower()
-        if host not in _HOSTS_LOCALES:
-            logger.error(f"🚫 [polaridad-ia] endpoint NO local ({host}): se rehúsa la llamada. "
-                         f"Los informes no pueden salir del hospital.")
+        # V6.9.93 — antes solo se aceptaba loopback, y eso dejaba la IA APAGADA
+        # en cada PC cliente del esquema LAN (una sola maquina sirve MySQL y
+        # LM Studio para todo el servicio). Ahora se aceptan tambien las
+        # direcciones PRIVADAS, que no son enrutables en internet, y se sigue
+        # rechazando todo lo publico. La regla vive en core/red_local.py para
+        # que no haya dos versiones que se separen con el tiempo.
+        from core.red_local import endpoint_dentro_del_hospital, explicar_rechazo
+        if not endpoint_dentro_del_hospital(base):
+            logger.error("🚫 [polaridad-ia] " + explicar_rechazo(base))
             return None
         modelo = (cfg.get('llm', 'modelo', fallback='') or
                   cfg.get('llm', 'model', fallback='') or '').strip()
@@ -465,7 +470,13 @@ def _endpoint_local() -> Optional[Tuple[str, str]]:
         return None
 
 
-_RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# V6.9.93 — misma raiz que db_adapter: en el .exe el config que manda es el
+# que esta AL LADO del ejecutable, no el empaquetado dentro del onefile.
+try:
+    from core.db_adapter import _get_base_path as _bp_cfg
+    _RAIZ = str(_bp_cfg())
+except Exception:
+    _RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def _llm_local_call(base: str, modelo: str, max_tokens: int = 500):

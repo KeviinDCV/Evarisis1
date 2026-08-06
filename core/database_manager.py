@@ -573,17 +573,50 @@ def _create_table_mysql():
     logger.info(f"[init_db MySQL] Tabla {TABLE_NAME} creada/verificada con 186 columnas (TEXT-based)")
 
 
-def _migrate_columns_mysql():
-    """V6.9.0 — Agrega columnas faltantes en MySQL (migración soft).
-    Compara COLUMNAS_IA con las columnas existentes y agrega lo que falte.
+def _columnas_esperadas_mysql() -> set:
+    """V6.9.93 — Las columnas que el esquema debería tener.
+
+    Extraída de _migrate_columns_mysql para que el atajo de solo lectura de
+    init_db() pueda preguntar «¿falta algo?» sin ejecutar ni una ALTER. Las dos
+    funciones comparten esta lista a propósito: si divergen, un cliente sin
+    permisos de DDL entraría en bucle intentando migrar en cada lectura.
     """
     try:
         from core.columnas_huv_ia import COLUMNAS_IA
     except Exception:
-        return
+        return set()
+    return set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos",
+                               "Diagnostico Coloracion 2",
+                               "Descripcion macroscopica Coloracion",
+                               "Descripcion microscopica Coloracion"}
+
+
+def _esquema_mysql_al_dia() -> bool:
+    """V6.9.93 — ¿Está la tabla creada y con todas sus columnas?
+
+    Solo LEE (information_schema, vía get_existing_columns). Devuelve False si
+    la tabla no existe o le falta alguna columna, en cuyo caso init_db() sigue
+    por el camino normal e intenta el DDL. Un cliente LAN con permisos de solo
+    lectura sobre un esquema ya montado devuelve True aquí y nunca toca DDL.
+    """
     existing = _adapter_existing_cols(TABLE_NAME)
-    expected = set(COLUMNAS_IA) | {"Estado Auditoria IA", "Fecha Ingreso Base de Datos", "Diagnostico Coloracion 2",
-                                   "Descripcion macroscopica Coloracion", "Descripcion microscopica Coloracion"}
+    if not existing:
+        return False  # la tabla no existe: hay que crearla
+    faltan = _columnas_esperadas_mysql() - existing
+    if faltan:
+        logger.info(f"Esquema MySQL incompleto, faltan {len(faltan)} columnas")
+        return False
+    return True
+
+
+def _migrate_columns_mysql():
+    """V6.9.0 — Agrega columnas faltantes en MySQL (migración soft).
+    Compara COLUMNAS_IA con las columnas existentes y agrega lo que falte.
+    """
+    existing = _adapter_existing_cols(TABLE_NAME)
+    expected = _columnas_esperadas_mysql()
+    if not expected:
+        return
     missing = expected - existing
     for col in missing:
         col_type = "VARCHAR(500)"
@@ -603,6 +636,28 @@ def init_db():
     Si tipo = sqlite → flujo legacy con archivo .db local.
     """
     if _use_mysql():
+        # V6.9.93 — ATAJO DE SOLO LECTURA, imprescindible para el acceso LAN.
+        #
+        # init_db() se llama en CADA lectura (get_all_records_as_dataframe), y en
+        # MySQL hacía siempre CREATE TABLE IF NOT EXISTS + CREATE INDEX + ALTER
+        # TABLE. Eso obligaba a dar permisos de DDL a todos los clientes, con dos
+        # consecuencias feas: (a) cualquier PC podía alterar el esquema
+        # compartido, y un .exe viejo con su lista de columnas antigua las volvía
+        # a añadir; (b) esas ALTER crean VARCHAR(500) donde el DDL quiere TEXT,
+        # que es el patrón de truncado ya conocido.
+        # Y si el cliente NO tenía DDL, init_db lanzaba y
+        # get_all_records_as_dataframe devolvía un DataFrame VACÍO en silencio:
+        # el usuario veía la tabla en blanco sin ningún error.
+        #
+        # Ahora se comprueba primero, con una lectura barata a information_schema,
+        # si ya está todo. Si lo está —el caso normal— no se ejecuta ni una
+        # sentencia DDL y basta con permisos SELECT/INSERT/UPDATE.
+        try:
+            if _esquema_mysql_al_dia():
+                return
+        except Exception as e:
+            # No se pudo comprobar: se sigue por el camino de siempre.
+            logger.debug(f"No se pudo verificar el esquema MySQL, se intenta migrar: {e}")
         try:
             _create_table_mysql()
             _migrate_columns_mysql()
@@ -700,25 +755,25 @@ def update_campo_registro(
     Returns:
         True si se actualizó correctamente
     """
+    # V6.9.93 SPLIT-BRAIN: abría sqlite3.connect(DB_FILE) a pelo, así que las
+    # correcciones campo a campo se escribían en el SQLite local aunque la
+    # configuración dijera mysql. PRAGMA table_info es además SQLite-only; el
+    # adaptador ya expone get_existing_columns para los dos motores.
     try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-
-        # Verificar que el campo existe
-        cursor.execute(f"PRAGMA table_info({TABLE_NAME})")
-        columnas = [row[1] for row in cursor.fetchall()]
-
+        columnas = _adapter_existing_cols(TABLE_NAME)
         if campo not in columnas:
             logger.warning(f"Campo '{campo}' no existe en la tabla")
-            conn.close()
             return False
 
-        # Actualizar
-        query = f'UPDATE {TABLE_NAME} SET "{campo}" = ? WHERE "Numero de caso" = ?'
-        cursor.execute(query, (valor, numero_peticion))
-
-        conn.commit()
-        conn.close()
+        col = _adapter_q(campo)
+        pk = _adapter_q("Numero de caso")
+        marca = _adapter_ph()
+        with _adapter_cursor() as (conn, cursor):
+            cursor.execute(
+                f'UPDATE {TABLE_NAME} SET {col} = {marca} WHERE {pk} = {marca}',
+                (valor, numero_peticion)
+            )
+            conn.commit()
 
         logger.info(f"✅ Campo '{campo}' actualizado para {numero_peticion}")
         return True
@@ -730,6 +785,18 @@ def update_campo_registro(
 
 def smart_update_records(records: List[Dict[str, Any]]) -> int:
     """
+    ⚠️ V6.9.93 — CÓDIGO MUERTO Y YA ROTO. NO PORTAR SIN REESCRIBIR.
+
+    Sigue abriendo sqlite3.connect(DB_FILE) a pelo, o sea que escribiría en el
+    SQLite local aunque la config diga mysql. Pero además consulta
+    "N. peticion (0. Numero de biopsia)", columna que YA NO EXISTE en el esquema
+    (189 columnas, comprobado): fallaría en la primera SELECT.
+    Su único llamador es update_incomplete_records_with_debug_data, y a esa solo
+    la llaman `ui copy.py` (copia obsoleta) y dos tests que la sustituyen por un
+    no-op. Desde ui.py no se alcanza.
+    Si alguna vez hace falta, hay que reescribirla contra el adaptador y contra
+    la PK real (`Numero de caso`), no adaptarla tal cual.
+
     Actualiza registros de forma inteligente, preservando campos que ya tienen datos válidos.
     Solo actualiza campos que están vacíos, son None, o contienen 'NO ENCONTRADO'.
 
@@ -1423,34 +1490,43 @@ def get_statistics() -> Dict[str, Any]:
     """
     conn: Optional[sqlite3.Connection] = None
     try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
+        # V6.9.93 SPLIT-BRAIN: leía del SQLite local, así que las estadísticas
+        # salían de una copia congelada de 2.073 casos en vez de los 22.547 de
+        # la BD compartida. DATE() existe en los dos motores; solo cambia el
+        # quoting del identificador.
         stats: Dict[str, Any] = {}
-        
-        # Total de registros
-        cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME}")
-        stats['total_registros'] = cursor.fetchone()[0]
-        
-        # Registros por malignidad
-        cursor.execute(f"SELECT Malignidad, COUNT(*) FROM {TABLE_NAME} GROUP BY Malignidad")
-        stats['por_malignidad'] = dict(cursor.fetchall())
-        
-        # Últimos registros procesados
-        cursor.execute(f'SELECT DATE("Fecha Ingreso Base de Datos"), COUNT(*) FROM {TABLE_NAME} GROUP BY DATE("Fecha Ingreso Base de Datos") ORDER BY DATE("Fecha Ingreso Base de Datos") DESC LIMIT 7')
-        stats['ultimos_7_dias'] = dict(cursor.fetchall())
-        
+        fecha = _adapter_q("Fecha Ingreso Base de Datos")
+        malig = _adapter_q("Malignidad")
+        with _adapter_cursor() as (conn, cursor):
+            cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME}")
+            stats['total_registros'] = cursor.fetchone()[0]
+
+            cursor.execute(f"SELECT {malig}, COUNT(*) FROM {TABLE_NAME} GROUP BY {malig}")
+            stats['por_malignidad'] = dict(cursor.fetchall())
+
+            cursor.execute(
+                f'SELECT DATE({fecha}), COUNT(*) FROM {TABLE_NAME} '
+                f'GROUP BY DATE({fecha}) ORDER BY DATE({fecha}) DESC LIMIT 7'
+            )
+            stats['ultimos_7_dias'] = dict(cursor.fetchall())
+
         return stats
-        
-    except sqlite3.Error as e:
+
+    except Exception as e:
         logger.error(f"Error obteniendo estadísticas: {e}")
         return {}
-    finally:
-        if conn:
-            conn.close()
 
 
 def validate_database_integrity() -> bool:
-    """Valida la integridad de la base de datos.
+    """⚠️ V6.9.93 — SIN LLAMADORES, y solo sabe de SQLite.
+
+    Usa PRAGMA integrity_check y sqlite_master, que no existen en MySQL, y abre
+    el fichero local directamente. No se porta porque no la llama nadie (0
+    referencias en todo el proyecto): escribir aquí una comprobación de
+    integridad para MySQL sería inventar comportamiento que nadie ejecuta.
+    Si se decide usarla, el equivalente es consultar information_schema.
+
+    Valida la integridad de la base de datos.
     
     Returns:
         bool: True si la base de datos es válida, False en caso contrario
@@ -1695,18 +1771,24 @@ def get_fecha_range_registros() -> Dict[str, str]:
 
     CORREGIDO: Ordena correctamente las fechas usando SUBSTR para convertir DD/MM/YYYY a YYYY-MM-DD
     """
+    # V6.9.93 SPLIT-BRAIN: leía del SQLite local. Además el reordenado
+    # DD/MM/YYYY -> YYYY-MM-DD usaba `||`, que en MySQL NO concatena (es OR
+    # lógico salvo en modo PIPES_AS_CONCAT): había que ramificar por dialecto.
     try:
-        with sqlite3.connect(DB_FILE) as conn:
-            cursor = conn.cursor()
-            # CORREGIDO: Ordenar fechas correctamente con conversión DD/MM/YYYY -> YYYY-MM-DD
+        c = _adapter_q("Fecha Informe")
+        if _use_mysql():
+            orden = f"CONCAT(SUBSTR({c}, 7, 4), '-', SUBSTR({c}, 4, 2), '-', SUBSTR({c}, 1, 2))"
+        else:
+            orden = f"SUBSTR({c}, 7, 4) || '-' || SUBSTR({c}, 4, 2) || '-' || SUBSTR({c}, 1, 2)"
+        with _adapter_cursor() as (conn, cursor):
             cursor.execute(f"""
                 SELECT
-                    MIN(SUBSTR("Fecha Informe", 7, 4) || '-' || SUBSTR("Fecha Informe", 4, 2) || '-' || SUBSTR("Fecha Informe", 1, 2)) as fecha_min_sorted,
-                    MAX(SUBSTR("Fecha Informe", 7, 4) || '-' || SUBSTR("Fecha Informe", 4, 2) || '-' || SUBSTR("Fecha Informe", 1, 2)) as fecha_max_sorted,
+                    MIN({orden}) as fecha_min_sorted,
+                    MAX({orden}) as fecha_max_sorted,
                     COUNT(*) as total
                 FROM {TABLE_NAME}
-                WHERE "Fecha Informe" IS NOT NULL AND "Fecha Informe" != '' AND LENGTH("Fecha Informe") = 10
-                  AND "Fecha Informe" LIKE '__/__/____'
+                WHERE {c} IS NOT NULL AND {c} != '' AND LENGTH({c}) = 10
+                  AND {c} LIKE '__/__/____'
             """)
 
             result = cursor.fetchone()
@@ -1736,11 +1818,13 @@ def get_distribucion_mensual() -> Dict[str, int]:
     CORREGIDO: Usa format='%d/%m/%Y' para parsear correctamente fechas en formato español
     """
     try:
-        with sqlite3.connect(DB_FILE) as conn:
+        # V6.9.93 SPLIT-BRAIN: leía del SQLite local.
+        c = _adapter_q("Fecha Informe")
+        with _adapter_cursor() as (conn, _cur):
             df = pd.read_sql_query(f"""
-                SELECT "Fecha Informe"
+                SELECT {c} AS "Fecha Informe"
                 FROM {TABLE_NAME}
-                WHERE "Fecha Informe" IS NOT NULL AND "Fecha Informe" != ''
+                WHERE {c} IS NOT NULL AND {c} != ''
             """, conn)
 
             if df.empty:
@@ -1819,17 +1903,23 @@ def get_estado_auditoria(numero_peticion: str) -> Optional[str]:
     Returns:
         str: Estado de auditoría ("PARCIAL", "COMPLETA", o None si no auditado)
     """
+    # V6.9.93 SPLIT-BRAIN: esta función abría sqlite3.connect(DB_FILE) a pelo,
+    # ignorando que la configuración diga mysql. Consecuencia medida: los estados
+    # de auditoría se escribían en data/huv_oncologia_NUEVO.db (2.073 filas, una
+    # copia congelada) mientras la BD compartida tenía 22.547 casos con la
+    # columna VACÍA. Con un solo operador no se notaba; con dos, son dos
+    # verdades distintas. Se pasa al adaptador, que ya resuelve motor,
+    # placeholder y quoting.
     try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-
-        cursor.execute(
-            f'SELECT "Estado Auditoria IA" FROM {TABLE_NAME} WHERE "Numero de caso" = ?',
-            (numero_peticion,)
-        )
-
-        result = cursor.fetchone()
-        conn.close()
+        col = _adapter_q("Estado Auditoria IA") if _ADAPTER_AVAILABLE else '"Estado Auditoria IA"'
+        pk = _adapter_q("Numero de caso") if _ADAPTER_AVAILABLE else '"Numero de caso"'
+        marca = _adapter_ph() if _ADAPTER_AVAILABLE else "?"
+        with _adapter_cursor() as (conn, cursor):
+            cursor.execute(
+                f'SELECT {col} FROM {TABLE_NAME} WHERE {pk} = {marca}',
+                (numero_peticion,)
+            )
+            result = cursor.fetchone()
 
         if result:
             return result[0]
@@ -1856,16 +1946,18 @@ def set_estado_auditoria(numero_peticion: str, estado: str) -> bool:
             logger.warning(f"Estado inválido: {estado}. Debe ser 'PARCIAL' o 'COMPLETA'")
             return False
 
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-
-        cursor.execute(
-            f'UPDATE {TABLE_NAME} SET "Estado Auditoria IA" = ? WHERE "Numero de caso" = ?',
-            (estado, numero_peticion)
-        )
-
-        conn.commit()
-        conn.close()
+        # V6.9.93 SPLIT-BRAIN: ver el comentario de get_estado_auditoria. Este
+        # era el punto de ESCRITURA que llenó el SQLite local mientras MySQL
+        # quedaba a cero.
+        col = _adapter_q("Estado Auditoria IA") if _ADAPTER_AVAILABLE else '"Estado Auditoria IA"'
+        pk = _adapter_q("Numero de caso") if _ADAPTER_AVAILABLE else '"Numero de caso"'
+        marca = _adapter_ph() if _ADAPTER_AVAILABLE else "?"
+        with _adapter_cursor() as (conn, cursor):
+            cursor.execute(
+                f'UPDATE {TABLE_NAME} SET {col} = {marca} WHERE {pk} = {marca}',
+                (estado, numero_peticion)
+            )
+            conn.commit()
 
         logger.info(f"✅ Estado de auditoría actualizado para {numero_peticion}: {estado}")
         return True

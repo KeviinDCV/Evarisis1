@@ -1,0 +1,228 @@
+# =====================================================================
+#  config.ini — PC CLIENTE (LAN del hospital)
+#  Generado por build_tools/generar_config_cliente.py — V6.9.93
+# =====================================================================
+#
+#  Este fichero va AL LADO de GestorOncologia.exe. Es el que manda: el que
+#  viaja empaquetado dentro del .exe se ignora.
+#
+#  ANTES DE REPARTIRLO:
+#    1. Pon la contrasena real donde dice <<<PON_AQUI_LA_CONTRASENA>>>
+#    2. Elige el usuario segun el rol de esa PC:
+#         huv_consulta -> solo mira, filtra y exporta
+#         huv_captura  -> ademas importa PDFs y corrige casos
+#       (se crean con docs/mysql_multiusuario_LAN.sql)
+#    3. Comprueba que la ruta de Tesseract existe en esa PC.
+#
+#  NO subas este fichero al repositorio una vez tenga la contrasena.
+# =====================================================================
+
+# config.ini:
+[PATHS]
+# Edita la ruta según la instalación de Tesseract en tu sistema.
+# Deja la línea en blanco si Tesseract está en el PATH del sistema.
+WINDOWS_TESSERACT = C:\Program Files\Tesseract-OCR\tesseract.exe
+MACOS_TESSERACT = /usr/local/bin/tesseract
+LINUX_TESSERACT = /usr/bin/tesseract
+
+[OCR_SETTINGS]
+# Calidad de la imagen para el OCR. 300-400 es un buen rango.
+DPI = 400
+# Modo de segmentación de página de Tesseract. 6 asume un bloque de texto uniforme.
+PSM_MODE = 6
+# Idioma para el OCR.
+LANGUAGE = spa
+# Configuraciones adicionales de Tesseract.
+OCR_CONFIG = -c preserve_interword_spaces=1 -c tessedit_do_invert=0
+
+[PROCESSING]
+# Página inicial a procesar (1 es la primera).
+FIRST_PAGE = 1
+# Última página a procesar (0 para procesar hasta el final).
+LAST_PAGE = 0
+# Ancho mínimo de la imagen para el OCR. Se redimensionará si es menor.
+MIN_WIDTH = 2000
+
+[OUTPUT]
+# Formato del timestamp para el nombre del archivo de salida.
+TIMESTAMP_FORMAT = %Y%m%d_%H%M%S
+# Nombre base para el archivo Excel generado.
+OUTPUT_FILENAME = Informes_HUV
+
+[INTERFACE]
+# Dimensiones de la ventana de la aplicación.
+WINDOW_WIDTH = 1100
+WINDOW_HEIGHT = 800
+# Altura de la caja de registro de actividades (en líneas de texto).
+LOG_HEIGHT = 10
+
+[PROCESSORS]
+# Habilita enrutamiento a procesadores especializados (IHQ, Biopsia, Revisión)
+ENABLE_PROCESSORS = true
+
+# =====================================================================
+# V6.9.30 - FALLBACK IA PARA EXTRACCIÓN DEL DIAGNÓSTICO
+# =====================================================================
+[extraccion]
+# Cuando el regex devuelve un valor NO-diagnóstico en "Diagnóstico Principal"
+# (resultado de marcadores IHQ, "ver comentario", línea de espécimen sola, o
+# fragmento), se usa el LLM LOCAL configurado en [llm] para extraer el
+# diagnóstico real leyendo el informe completo (sección DIAGNÓSTICO + viñetas
+# + COMENTARIOS). SOLO se activa cuando el regex falla => NO afecta las
+# extracciones correctas (cero regresión). Los datos NUNCA salen del PC local.
+#   true  = activado (requiere LM Studio/Ollama corriendo)
+#   false = desactivado (solo regex, comportamiento anterior)
+#
+# V6.9.32 - DESACTIVADO. El LLM local (mistral-nemo) ALUCINA diagnósticos
+# cuando el regex da N/A: inventó "LEUCEMIA MIELOIDE AGUDA" y "CARCINOMA DE
+# CUELLO DE ÚTERO" con malignidad BENIGNO (incongruente) en casos que NO los
+# tenían (IHQ260034/354/599/711/725). Para datos médicos esto es inaceptable.
+# Es preferible un "N/A" honesto (regex) que un diagnóstico inventado.
+usar_ia_diagnostico = false
+
+# =====================================================================
+# V6.9.6 - SELECTOR DE PROVEEDOR LLM LOCAL (Ollama / LM Studio)
+# =====================================================================
+[llm]
+# Proveedor LLM local a usar. Valores soportados:
+#   ollama     -> Ollama (endpoint OpenAI-compatible en puerto 11434)
+#   lm_studio  -> LM Studio (endpoint OpenAI-compatible en puerto 1234)
+#   both       -> Detectar ambos y usar el primero disponible (Ollama primero)
+provider = lm_studio
+
+# V6.9.61 — Corrección de la POLARIDAD de biomarcadores con la IA LOCAL.
+# Medido con revisores independientes contra el informe: la polaridad por regex sale
+# mal en ~29% de los casos (frases como "sin marcación para CK20, CDX2, napsina" se
+# leían como POSITIVO). Con esta capa: 100% de acierto sobre lo que afirma.
+# Es SEGURA: no crea biomarcadores, solo corrige la polaridad de los que ya existen,
+# y exige que la IA cite el fragmento del informe (verificado literal). Si la cita no
+# está en el texto, se descarta y se conserva el valor del regex.
+# El proveedor DEBE ser local (Habeas Data): si el endpoint no es localhost, se rehúsa.
+# Ponlo en false para volver al comportamiento anterior (solo regex).
+usar_ia_polaridad = true
+
+# V6.9.63 — CONSENSO A DOS LENTES + COLA DE REVISIÓN.
+# Ningún extractor automático acierta el 100% en frases como "positivas para A, B;
+# negativas para C, D". Medido: regex 40%, IA con una lente ~82%. El problema de una
+# sola lente no es fallar, es que NO AVISA cuando falla.
+# Con dos lentes (mismo modelo, encuadre distinto) el DESACUERDO es la señal de "no sé":
+#   · las dos coinciden + cita verificada -> se escribe el valor
+#   · discrepan                           -> NO se adivina: se conserva el valor previo y
+#                                            el marcador va a auditoria/polaridad_revision.jsonl
+# Cuesta 2 llamadas al LLM por lote (~2x tiempo). Ponlo en false para una sola lente.
+usar_consenso_polaridad = true
+
+# V6.9.63 — REVISAR TODO CAMBIO DE POLARIDAD (modo 100% verificado).
+# MEDIDO sobre 90 casos difíciles con veredicto conocido: incluso cuando las DOS lentes
+# coinciden ("confianza ALTA"), se escribieron 20 datos FALSOS (22%). Conclusión: la
+# seguridad que declara el modelo local NO es un aval suficiente para dato clínico.
+# Con esto en true, TODO cambio de polaridad se escribe (la IA acierta 82% vs 40% del
+# regex) pero queda encolado en auditoria/polaridad_revision.jsonl para que un humano lo
+# confirme contra la cita del informe. Ningún cambio queda silencioso.
+# Volumen: ~522 marcadores sobre 2.077 casos (25%). Revisar con:
+#     python herramientas_ia/cola_revision.py --revision
+#     python herramientas_ia/cola_revision.py --csv cola.csv    (para Excel)
+# En false: solo se encolan los dudosos (más rápido de revisar, pero NO es 100%).
+revisar_todos_los_cambios = true
+
+# URL base del proveedor seleccionado. El sistema añade /chat/completions y /models.
+# Si se deja vacío, se usa el endpoint por defecto del provider seleccionado:
+#   ollama    -> http://localhost:11434/v1
+#   lm_studio -> http://127.0.0.1:1234/v1
+base_url = http://192.168.2.172:1234/v1
+
+# API key. Ollama acepta cualquier valor (no la valida). LM Studio no la requiere.
+api_key = lm-studio
+
+# Modelo por defecto a usar. Si está vacío, se usa el primer modelo cargado/listado.
+# Ejemplos:
+#   ollama    -> medgemma:27b, llama3.1:8b, qwen2.5:14b
+#   lm_studio -> google/gemma-3-4b, qwen/qwen3-14b
+modelo = mistralai/mistral-nemo-instruct-2407
+
+# Timeout HTTP en segundos (modelos grandes pueden tardar)
+timeout = 900
+
+# Tokens máximos por respuesta
+max_tokens = 8000
+
+# Temperatura (0 = determinista, recomendado para extracción médica)
+temperature = 0
+
+# V6.9.10 - Numero maximo de chunks procesados en paralelo.
+# Debe coincidir con n_parallel de LM Studio (por defecto 4 slots).
+#   paralelo_max = 1  -> SECUENCIAL (comportamiento original, retrocompat)
+#   paralelo_max = 4  -> PARALELO con 4 workers (aprovecha 4 slots LM Studio)
+#   paralelo_max = N  -> PARALELO con N workers (N debe ser <= n_parallel LM Studio)
+# Si se sube a N > n_slots del backend, los chunks extra esperan en cola del cliente,
+# pero el throughput maximo igual queda limitado por los slots reales del backend.
+# V6.9.12: Bajado a 2 porque nemotron-3-nano (reasoning) saturaba contexto con 4.
+# V6.9.13: Bajado a 1 - paralelo=2 tambien daba "Context size exceeded".
+# V6.9.14: Subido a 4 con mistral-7b-instruct-v0.3 (cabe completo en VRAM, no reasoning).
+# V6.9.15: Bajado a 1 - Mistral con n_ctx=13312 y 4 slots da 3328 tok/slot,
+#   insuficiente para prompt fusionado (instrucciones 184 campos + chunk ~3856 tok).
+#   Modo SECUENCIAL: 1 chunk a la vez con todo el contexto disponible. Sin riesgo
+#   de "Context size exceeded". Mas lento (1x) pero 100% confiable.
+paralelo_max = 1
+
+# V6.9.11 - Filtrar secciones relevantes del OCR antes de enviar al LLM.
+# true: solo envia cabecera + DESCRIPCION MICROSCOPICA + DIAGNOSTICO (~70% menos texto, 3-4x mas rapido).
+# false: envia el chunk completo (comportamiento V6.9.10).
+# Si un PDF tiene formato no estandar, el filtro hace fallback automatico al texto completo.
+filtrar_secciones = true
+
+[ollama]
+# Ollama LOCAL - alternativa a LM Studio con endpoint OpenAI-compatible
+# Instala: https://ollama.ai
+# Descargar modelo: `ollama pull medgemma:27b`
+# Servidor: arranca automáticamente en localhost:11434
+endpoint = http://localhost:11434/v1
+enabled = true
+
+[lmstudio]
+# LM Studio LOCAL - RECOMENDADO para datos médicos confidenciales
+# Los datos NUNCA salen del PC. Descarga: https://lmstudio.ai
+# 1. Instala LM Studio
+# 2. Descarga un modelo (recomendado: Qwen2.5-7B-Instruct o Llama-3.1-8B)
+# 3. Carga el modelo y activa el servidor local (puerto 1234)
+# El sistema lo detecta automáticamente
+endpoint = http://192.168.2.172:1234/v1
+enabled = true
+
+[gemini]
+# API Key de Google Gemini (DESHABILITADO - datos médicos confidenciales)
+# ADVERTENCIA: Habilitar esto envía datos de pacientes a servidores de Google
+# api_key = TU_KEY_AQUI
+api_key =
+
+[groq]
+# API Key de Groq (DESHABILITADO - datos médicos confidenciales)
+# ADVERTENCIA: Habilitar esto envía datos de pacientes a servidores de Groq
+# api_key = TU_KEY_AQUI
+api_key =
+
+[openrouter]
+# API Key de OpenRouter (DESHABILITADO - datos médicos confidenciales)
+# ADVERTENCIA: Habilitar esto envía datos de pacientes a servidores de OpenRouter
+# api_key = TU_KEY_AQUI
+api_key =
+
+# =====================================================================
+# V6.9.26 - BD COMPARTIDA EN RED LAN (MySQL/MariaDB via XAMPP)
+# Esta PC ES el servidor (IP LAN 192.168.2.172). Por eso host=127.0.0.1
+# (la propia maquina). Las PCs CLIENTE usan host=192.168.2.172
+# (ver dist/config/config.ini). Para trabajar OFFLINE: tipo = sqlite
+# =====================================================================
+[database]
+tipo = mysql
+host = 192.168.2.172
+puerto = 3306
+usuario = huv_consulta
+password = <<<PON_AQUI_LA_CONTRASENA>>>
+base_datos = huv_oncologia
+charset = utf8mb4
+; V6.9.75 (fase 1) — leer del modelo relacional (pacientes/estudios/biomarcadores)
+; en vez de la tabla plana. La ESCRITURA sigue yendo a informes_ihq, que manda:
+; antes de leer se compara su huella y, si cambió, el modelo se resincroniza solo.
+; Si algo falla se lee la tabla plana como siempre. Ponlo en false para volver atrás.
+usar_modelo_relacional = false

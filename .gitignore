@@ -103,3 +103,9 @@ videos/*/snapshots/
 videos/*/.hyperframes/
 videos/*/.thumbnails/
 videos/*/.waveform-cache/
+
+# V6.9.93 — el instalador lleva la credencial del servidor horneada dentro.
+# Ese fichero NO se sube: quien lo tiene, tiene acceso a la base de datos.
+build_tools/despliegue.ini
+dist_instalador/
+version_exe.txt
