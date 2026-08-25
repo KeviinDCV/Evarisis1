@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.92",
-    "version_name": "Ver comentario: 2 diagnosticos recuperados, 29 correctos",
-    "build_date": "03/08/2026",
-    "build_number": "202608030830",
+    "version": "6.9.94",
+    "version_name": "Patrones de biomarcador: 3 recuperados, familia de tildes cerrada, 0 regresiones",
+    "build_date": "25/08/2026",
+    "build_number": "202608251430",
     "release_type": "Stable",
-    "codename": "Truthful Diagnosis",
+    "codename": "Accent And Boundary",
 }
 
 # Información del equipo de desarrollo

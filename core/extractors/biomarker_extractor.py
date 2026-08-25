@@ -4409,6 +4409,14 @@ _ALIAS_PDF = {
     'HEPATOCITO': ['HEPATOCYTE', 'HEPAR 1', 'HEPAR-1', 'HEPPAR-1'],
     'MYOD1': ['MYO D1', 'MYO-D1', 'MYOD-1'],
     'MIOGENINA': ['MYOGENINA', 'MYOGENIN'],
+    # V6.9.94 FIX IHQ250140: la clave de arriba está MUERTA. El código consulta
+    # _ALIAS_PDF.get(base) con base sacado de la COLUMNA, y la columna viva es
+    # IHQ_MYOGENIN (4 valores) — no IHQ_MIOGENINA, que existe pero está a 0.
+    # Resultado: el vocabulario de MYOGENIN era solo ['MYOGENIN'], así que un
+    # informe que escribiera "miogenina" en español no se reconocía. Medido:
+    # "...MyoD1, miogenina, MDM2..." daba MYOD1=NEGATIVO y MYOGENIN=nada.
+    # Se AÑADE la clave correcta; la vieja se deja intacta (es inocua).
+    'MYOGENIN': ['MIOGENINA', 'MYOGENINA', 'MIOGENIN', 'MYF4'],
     'CICLINA_D1': ['CYCLINA D1', 'CYCLIN D1', 'CICLYNA D1', 'CICLYNA-D1', 'BCL1', 'CICLINA D'],
     'IDH1': ['IDH', 'IDH-1', 'IDH1 R132H'], 'IDH': ['IDH1', 'IDH-1'],
     'CK5_6': ['CK 5-6', 'CK5-6', 'CK 5/6', 'CK5/6'], 'CK56': ['CK 5-6', 'CK5-6', 'CK 5/6', 'CK5/6'],
@@ -4482,6 +4490,19 @@ def _regex_marcador(nombre: str):
         return None
     cuerpo = r'[\s\-/\._]*'.join(re.escape(p) for p in partes)
     fin = r'(?!\d)' if partes[-1].isdigit() else r''
+    # V6.9.94 — alias de UNA SOLA LETRA. KAPPA y LAMBDA declaran 'K' y 'L' como
+    # nombres alternativos (los símbolos κ y λ). Con la regla de arriba eso
+    # generaba \bK y \bL, que casan con CUALQUIER palabra que empiece por esa
+    # letra: "la", "los", "lesión"… Medido sobre el corpus: LAMBDA salía como
+    # "mencionado" en 190 de 199 casos y KAPPA en 79, así que la guarda de
+    # veracidad (filtrar_biomarcadores_sin_respaldo) nunca podía descartar un
+    # valor suyo. Ya dejó una víctima en la BD:
+    #   IHQ_KAPPA = 'POSITIVO (NO SE OBSERVA MARCACIÓN PARA CADENAS LIVIANAS KAPPA)'
+    # Se exige frontera TAMBIÉN al final, para que 'K' solo case con la K suelta.
+    # Es la misma familia de fallo que AXILA dentro de MAXILAR.
+    # Solo cambia el comportamiento de los alias de 1 letra; los demás, idénticos.
+    if len(partes) == 1 and len(partes[0]) == 1 and partes[0].isalpha():
+        fin = r'\b'
     return re.compile(r'(?i)\b' + cuerpo + fin)
 
 
@@ -8882,6 +8903,13 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'HCALDESMON': 'H_CALDESMON',
         'H-CALDESMÓN': 'H_CALDESMON',
         'H CALDESMÓN': 'H_CALDESMON',
+        # V6.9.94 FIX IHQ250140 (otra vez): el arreglo V6.4.14 añadió la forma
+        # suelta SIN tilde, pero el informe escribe "caldesmón" CON tilde y sin la
+        # H. Las únicas variantes acentuadas que había llevaban la H delante, así
+        # que esta caía por el hueco. Este mapa se consulta por igualdad exacta
+        # de cadena (no normaliza tildes), de ahí que faltara justo esta.
+        # Medido: la misma frase con "caldesmon" daba POSITIVO y con "caldesmón" nada.
+        'CALDESMÓN': 'H_CALDESMON',
         # V6.4.1: FIX - Mapear a ACTINA_MUSCULO_LISO (nueva columna agregada por FUNC-03)
         'ACTINA DE MÚSCULO LISO': 'ACTINA_MUSCULO_LISO',
         'ACTINA DE MUSCULO LISO': 'ACTINA_MUSCULO_LISO',
@@ -8958,7 +8986,57 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
     # El registro sí se consulta donde un fallo de lookup es inocuo —el
     # verificador de completitud y el auditor, que solo eligen dónde MIRAR—, no
     # donde decide qué se ACEPTA.
-    return name_mapping.get(raw_clean)
+    _directo = name_mapping.get(raw_clean)
+    if _directo is not None:
+        return _directo
+
+    def _busca(_s):
+        """Consulta EL MISMO name_mapping, tolerando la tilde.
+
+        V6.9.94 — este mapa se consulta por igualdad exacta de cadena y nunca
+        normalizó tildes, así que cada clave necesitaba su gemela acentuada
+        escrita a mano. Faltaban varias, y no por descuido: son invisibles hasta
+        que un informe las escribe. Medidas al hacer este arreglo:
+            CALDESMÓN, ACTINA_MÚSCULO_ESPECÍFICA, ACTINA-MÚSCULO-ESPECÍFICA,
+            ACTINA_MÚSCULO_LISO, ACTINA-MÚSCULO-LISO,
+            ACTIMINA DE MÚSCULO LISO, ANTÍGENO LEUCOCITARIO COMÚN
+        Y "actina de músculo específica" sale en casi todos los informes.
+
+        NO amplía el vocabulario: son las MISMAS claves, con una ortografía más
+        cada una. Medido sobre las 446 claves literales: 22 llevan tilde o eñe y
+        al quitarlas hay CERO colisiones — ninguna pareja colapsa hacia destinos
+        distintos. Esto importa por la nota V6.9.89 de más abajo: aquí el rechazo
+        SOSTIENE la extracción, y ampliar el vocabulario de verdad convirtió
+        valores buenos en fragmentos de frase.
+        """
+        if not _s:
+            return None
+        _r = name_mapping.get(_s)
+        if _r is not None:
+            return _r
+        _sa = _sin_acentos(_s).upper()
+        return name_mapping.get(_sa) if _sa != _s else None
+
+    _sin_tilde = _busca(raw_clean)
+    if _sin_tilde is not None:
+        return _sin_tilde
+
+    # V6.9.94 FIX IHQ250128 — el informe repite la polaridad pegada al nombre:
+    #   "son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80%"
+    # El limpiador de la lista quita FUERTE/DIFUSO/EN UN 80% pero deja POSITIVO,
+    # así que aquí llegaba 'E-CADHERINA POSITIVO' y se rechazaba. Medido: la misma
+    # frase sin ese POSITIVO redundante sí extraía. No es cosa de la e-cadherina;
+    # pasa con cualquier marcador ("SMA POSITIVO ..." también se perdía).
+    #
+    # OJO CON LA NOTA DE ARRIBA: aquí el rechazo SOSTIENE la extracción, así que
+    # este fallback NO amplía el vocabulario ni un nombre. Solo quita el sufijo de
+    # polaridad y vuelve a consultar EL MISMO name_mapping: si lo que queda no era
+    # ya un marcador conocido, se sigue devolviendo None igual que antes.
+    _sin_polaridad = re.match(
+        r'^(.+?)[\s:,\-]+(?:POSITIV[OA]S?|NEGATIV[OA]S?)$', raw_clean)
+    if _sin_polaridad:
+        return _busca(_sin_polaridad.group(1).strip())
+    return None
 
 
 def extract_single_biomarker(

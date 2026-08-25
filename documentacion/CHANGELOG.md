@@ -1,5 +1,114 @@
 # Changelog
 
+## [6.9.94] - 2026-08-25 — Patrones de biomarcador: 3 valores recuperados, 0 regresiones
+
+Los 199 casos del reproceso salieron con 3 casos incompletos. Ninguno era un biomarcador sin dar de alta: los tres estaban registrados y FUNC-03 los rechazaba con `ERROR_YA_EXISTE`. Lo que fallaba eran los patrones de lectura, y cada uno por un motivo distinto.
+
+### Validación antirregresión
+
+En vez de los 3-5 casos de referencia que pide la Regla Crítica #1, se montó un banco con **los 199 casos del corpus**: el texto sale de `data/debug_maps` (`ocr.texto_consolidado`, el segmento exacto que vio el extractor, sin releer un PDF) y la IA de polaridad se apaga vía `_IA_POL_CACHE`. Una corrida completa tarda **71 s**, así que cada cambio se midió entero antes de pasar al siguiente.
+
+```
+ANTES                 1569 valores
+FIX1 miogenina        +1   0 perdidos  0 alterados
+FIX2 caldesmón        +1   0 perdidos  0 alterados
+FIX3 e-cadherina      +1   0 perdidos  0 alterados
+FIX4 letra suelta      0   0 perdidos  0 alterados
+─────────────────────────────────────────────────
+acumulado             +3   0 perdidos  0 alterados
+```
+
+Los 3 valores recuperados coinciden exactamente con los que se habían corregido a mano leyendo el PDF, y sobreviven a la capa de IA y a la guarda de cita verbatim con la configuración de producción.
+
+### 1. `miogenina` en español no se reconocía — IHQ250140
+
+`_ALIAS_PDF` tenía la clave `MIOGENINA`, pero el código consulta `_ALIAS_PDF.get(base)` con `base` sacado de la **columna**, y la columna viva es `IHQ_MYOGENIN` (`IHQ_MIOGENINA` existe pero está a 0). El vocabulario de MYOGENIN quedaba en `['MYOGENIN']` y un informe que escribiera «miogenina» se perdía. Medido: en la misma frase, `MyoD1` salía y `miogenina` no.
+
+Se **añade** la clave correcta; la vieja se deja intacta. De las 5 claves huérfanas del mismo tipo (`CKAE1E3`, `KI67`, `CHROMOGRANINA`, `SYNAPTOFISINA`, `MIOGENINA`), las otras 4 son inocuas: su columna real ya tiene esos alias por `BIOMARKER_DEFINITIONS`.
+
+### 2. La tilde rompía el caldesmón — IHQ250140
+
+El mapa de nombres de `normalize_biomarker_name` se consulta por **igualdad exacta de cadena**, sin normalizar tildes. Tenía `CALDESMON`, `H-CALDESMÓN` y `H CALDESMÓN`, pero no `CALDESMÓN` a secas — y así es como lo escribe el informe. Medido: la misma frase con `caldesmon` daba POSITIVO y con `caldesmón` nada.
+
+Irónicamente el arreglo V6.4.14 ya atacó **este mismo caso** y añadió la forma suelta… sin tilde.
+
+### 3. `POSITIVO` pegado al nombre anulaba la lista — IHQ250128
+
+El informe repite la polaridad dentro de la lista:
+
+```
+"son positivas para E-CADHERINA POSITIVO FUERTE Y DIFUSO EN UN 80%"
+```
+
+El regex captura bien la lista; el limpiador quita `FUERTE`, `DIFUSO` y `EN UN 80%` pero deja `POSITIVO`, así que a `normalize_biomarker_name` llegaba `E-CADHERINA POSITIVO` y se rechazaba. **No es cosa de la e-cadherina**: `SMA POSITIVO ...` también se perdía.
+
+Se añade un fallback al final de la función que quita el sufijo de polaridad y vuelve a consultar **el mismo mapa**. No amplía el vocabulario ni un nombre — importante, porque ahí el rechazo es lo que sostiene la extracción (ver la nota V6.9.89, donde ampliarlo convirtió valores buenos en fragmentos de frase).
+
+### 4. Alias de una sola letra casaban con media frase
+
+Hallazgo colateral del barrido. KAPPA y LAMBDA declaran `K` y `L` como nombres alternativos (los símbolos κ y λ), y `_regex_marcador` los convertía en `\bK` y `\bL`, que casan con **cualquier palabra que empiece por esa letra**. Medido: LAMBDA constaba como «mencionado» en 190 de 199 casos y KAPPA en 79, con lo que la guarda de veracidad nunca podía descartar un valor suyo. Ya hay una víctima en la BD:
+
+```
+IHQ_KAPPA = 'POSITIVO (NO SE OBSERVA MARCACIÓN PARA CADENAS LIVIANAS KAPPA)'
+```
+
+Se exige frontera también al final **solo para alias de 1 carácter**; el resto queda idéntico. Es la misma familia que AXILA dentro de MAXILAR.
+
+⚠️ Este cambio **no arregla ningún valor existente** (0 ganados, 0 perdidos): los 9 valores de lambda/kappa del corpus sí están nombrados de verdad. Cierra el agujero para lo que venga, y no toca la polaridad de esa fila mala, que es otra guarda.
+
+### 5. La familia entera de tildes — hallazgo de la revisión adversarial
+
+Tres agentes independientes localizaron las mismas causas raíz, y uno midió que el
+arreglo 2 dejaba **la familia abierta**: el mapa se consulta por igualdad exacta,
+así que cada clave necesita su gemela acentuada escrita a mano, y faltaban varias
+que solo se ven cuando un informe las escribe:
+
+```
+ACTINA_MUSCULO_ESPECIFICA      ACTINA-MUSCULO-ESPECIFICA
+ACTINA_MUSCULO_LISO            ACTINA-MUSCULO-LISO
+ACTIMINA DE MUSCULO LISO       ANTIGENO LEUCOCITARIO COMUN
+```
+
+Y «actina de músculo específica» aparece en casi todos los informes.
+
+Se añade un fallback general que reintenta sin tildes **sobre el mismo mapa**.
+Verificado parseando el fuente con `ast`, no fiándose de la lista ajena:
+
+```
+claves únicas          447
+con tilde o eñe         23
+COLISIONES               0   ninguna pareja colapsa a destinos distintos
+ganan tolerancia       266
+```
+
+`ANTÍGENO LEUCOCITARIO COMÚN` → `CD45` y `ACTINA_MÚSCULO_ESPECÍFICA` →
+`ACTINA_MUSCULO_ESPECIFICA` ya resuelven. Y `CD34 (focal)` **sigue devolviendo
+None**: el vocabulario no se amplió, que era el riesgo grave de la nota V6.9.89.
+
+0 ganados y 0 perdidos en el corpus: estos 199 informes escriben las formas sin
+tilde. Es preventivo, para los 50 tomos que faltan.
+
+### Lo que queda sin cerrar
+
+**El corpus de validación son 199 casos, no los 2.076 de antes** — esa BD se borró
+y se reconstruyó. Un revisor simuló un arreglo alternativo contra el corpus viejo y
+encontró casos como `IHQ250659 IHQ_E_CADHERINA` con valor rico
+(`POSITIVO FUERTE Y DIFUSO EN UN 70%`) que ese arreglo degradaba a `POSITIVO`. Ese
+arreglo **se rechazó** y no es el que está aquí. Pero conviene saberlo: el camino
+narrativo sobrescribe con prioridad, y no puedo descartar con 199 casos lo que se
+midió sobre 2.076. Comprobado de frente: con el arreglo actual, tanto
+`E-CADHERINA: POSITIVO FUERTE Y DIFUSO EN UN 70%` como su forma de lista dan
+`POSITIVO` — el mismo valor que daba el camino existente, así que no hay degradación
+**relativa** al comportamiento previo.
+
+También sigue abierta la asimetría de tildes en la rama de reserva
+(`nombres_alternativos` escaneados con `...` sin normalizar): no rompe nada,
+pero tampoco rescata.
+
+### Lo que NO se tocó
+
+`IHQ250007` sigue incompleto y es correcto: el informe pide 13 marcadores y reporta 12. La sinaptofisina —escrita `synaptofisina`— solo aparece en la lista de solicitados. `N/A` es la respuesta buena; el hueco es del informe, no del extractor.
+
 ## [6.9.92] - 2026-08-04 — «Ver comentario»: 2 diagnósticos recuperados y 29 que deben quedarse así
 
 Se pidió arreglar los 31 diagnósticos atrapados en «VER DESCRIPCIÓN MICROSCÓPICA Y COMENTARIO». Leídos los 38 casos que contienen esa frase, uno a uno y con refutación adversarial: **solo 2 eran recuperables**.
