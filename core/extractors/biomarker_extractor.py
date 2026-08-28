@@ -1787,7 +1787,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)negativas?\s+para\s+ck[^\w]*20.*?(negativa|negativo)',
             # V6.0.20: Formato narrativo con "positividad ... para CK20" (IHQ251023)
             # Estos patrones NO capturan grupo, pero normalizacion convierte match completo
-            r'(?i)positividad\s+(?:citopl[aá]sm[aá]tica\s+)?(?:\w+\s+)?(?:\w+\s+)?para\s+(?:.*?\s+y\s+)?CK[^\w]*20(?:\s|,|$|\.)',
+            r'(?i)positividad\s+(?:citopl[aá]sm[aá]tica\s+)?(?:\w+\s+)?(?:\w+\s+)?para\s+(?:(?:(?!positiv|negativ)[^.]){0,200}\s+y\s+)?CK[^\w]*20(?:\s|,|$|\.)',  # V6.9.98 acotado
             r'(?i)marcaci[óo]n\s+positiva\s+(?:citopl[aá]sm[aá]tica\s+)?(?:\w+\s+)?(?:\w+\s+)?para\s+(?:.*?\s+y\s+)?CK[^\w]*20(?:\s|,|$|\.)',
             # Formato narrativo negativo (sin grupo)
             r'(?i)marcaci[óo]n\s+negativa\s+para\s+(?:.*?\s+y\s+)?CK[^\w]*20(?:\s|,|$|\.)',
@@ -1850,10 +1850,10 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Antígeno de membrana epitelial',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... EMA" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?EMA',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?EMA',
             r'(?i)ema[:\s]*(positivo|negativo|positiva|negativa)',
-            r'(?i)positivas?\s+para\s+.*?ema(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?ema(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bema(?:\s|,|$)',  # V6.9.98 acotado
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bema(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)positivas?\s+para\s+[\w\s]*?\s+y\s+ema(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
@@ -1923,7 +1923,7 @@ BIOMARKER_DEFINITIONS = {
             # V6.4.60 FIX IHQ250197: "marcación positiva de p53, GFAP"
             r'(?i)marcaci[óo]n\s+(positiva|negativa)(?:\s+\w+)*?\s+de\s+[^.]*?gfap(?:\s|,|\.)',
             r'(?i)positivas?\s+para\s+.*?gfap(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?gfap(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bgfap(?:\s|,|$)',  # V6.9.98 acotado
             # V6.3.5 FIX IHQ250004: Detectar por nombre completo
             r'(?i)positivas?\s+para\s+prote[íi]na\s+[áa]cid[oa]\s+fibrilar\s+glial',
             r'(?i)negativas?\s+para\s+prote[íi]na\s+[áa]cid[oa]\s+fibrilar\s+glial',
@@ -1976,7 +1976,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)neun[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)neu[\s-]?n[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)positivas?\s+para\s+.*?neun(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?neun(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bneun(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)tinci[óo]n\s+de\s+neun',  # "Bajo la tinción de NeuN se observa..."
             # V6.3.47 FIX IHQ250043: "cuerpos neuronales inmunorreactivos con el NeuN"
             r'(?i)(?:c[ée]lulas?|cuerpos?)\s+(?:neuronales?|tumorales?)?\s*inmunorreactiv[oa]s?\s+(?:con\s+)?(?:el\s+)?neun',
@@ -2009,7 +2009,7 @@ BIOMARKER_DEFINITIONS = {
             # Patrones generales
             r'(?i)atrx[:\s]*(positivo|negativo|mutado|ausencia)',
             r'(?i)positivas?\s+para\s+.*?atrx(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?atrx(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\batrx(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'AUSENCIA DE EXPRESIÓN', 'NEGATIVO (MUTADO)'],
         'normalizacion': {
@@ -2027,7 +2027,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Factor de transcripción SOX10',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... SOX10" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?SOX\s*(?:10|IO)',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?SOX\s*(?:10|IO)',
             r'(?i)sox[^\w]*10[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)positivas?\s+para\s+.*?sox\s*(?:10|io)(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?sox\s*(?:10|io)(?:\s|,|$)',
@@ -2094,8 +2094,8 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Factor de transcripción tiroideo 1',
         'patrones': [
             r'(?i)ttf[^\w]*1[:\s]*(positivo|negativo|positiva|negativa)',
-            r'(?i)positivas?\s+para\s+.*?ttf\s*-?\s*1(?:\s|,|$)',  # V6.5.06 FIX IHQ250231: Tolerar espacio después de guión (TTF- 1)
-            r'(?i)negativas?\s+para\s+.*?ttf\s*-?\s*1(?:\s|,|$)',  # V6.5.06 FIX IHQ250231
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bttf\s*-?\s*1(?:\s|,|$)',  # V6.9.98 acotado  # V6.5.06 FIX IHQ250231: Tolerar espacio después de guión (TTF- 1)
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bttf\s*-?\s*1(?:\s|,|$)',  # V6.9.98 acotado  # V6.5.06 FIX IHQ250231
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -2113,7 +2113,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Proteína S100',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... S100" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?S\s*100',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?S\s*100',
             r'(?i)s[^\w]*100[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)positivas?\s+para\s+.*?s\s*100(?:\s|,|$)',
             r'(?i)negativas?\s+para\s+.*?s\s*100(?:\s|,|$)',
@@ -2157,7 +2157,7 @@ BIOMARKER_DEFINITIONS = {
         'patrones': [
             r'(?i)desmin[a]?[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)(?:para|de)\s+desmin[a]?\s+(?:fue\s+)?(positiv[ao]|negativ[ao])',
-            r'(?i)positivas?\s+para\s+.*?desmin[a]?(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bdesmin[a]?(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)negativas?\s+para\s+.*?desmin[a]?(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
@@ -2186,7 +2186,7 @@ BIOMARKER_DEFINITIONS = {
         'patrones': [
             r'(?i)(?:EBERP4|BER[\s-]?EP4|Ep[\s-]?CAM)[\s/]*(?:Ep[\s-]?CAM)?[:\s]*(positiv[ao]s?|negativ[ao]s?)',
             r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?(?:EBERP4|BER[\s-]?EP4)',
-            r'(?i)positiv[ao]s?\s+para[:\s]+.*?(?:EBERP4|BER[\s-]?EP4)',
+            r'(?i)positiv[ao]s?\s+para[:\s]+(?:(?!positiv|negativ)[^.]){0,200}(?:\bEBERP4|BER[\s-]?EP4)',  # V6.9.98 acotado
             r'(?i)(?:BER[\s-]?EP4|BERRP4|EBERP4)[:\s]*(positiv[ao]s?|negativ[ao]s?)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
@@ -2224,7 +2224,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Proteína p63 - Marcador de células basales/mioepiteliales',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... p63" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?[pP][\s-]?63',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?[pP][\s-]?63',
             # V6.5.79 FIX IHQ250268: NUEVO patrón para formato agrupado en paréntesis
             # Formato: "(p63 y CK34BETA negativos)" - Resultado agrupado dentro de paréntesis
             r'(?i)\(p[\s-]?63\s+y\s+[A-Za-z0-9\s]+\s+(positiv[oa]s?|negativ[oa]s?)\)',
@@ -2242,7 +2242,7 @@ BIOMARKER_DEFINITIONS = {
             # En contexto positivo (expresión/inmunorreactividad) → infiere POSITIVO
             r'(?i)(?:expresi[oó]n|inmunor+eactividad)\s+(?:de\s+)?(?:mioepiteliales\s+|para\s+)?[A-Za-z0-9/\-]+\s+y\s+[pP][\s-]?63\s+(?:en\s+las\s+c[eé]lulas|en\s+)',
             # V6.2.2: FIX IHQ251015 - Formato: "positividad para ... y P63"
-            r'(?i)(positividad|positiv[ao]s?)\s+para[:\s]+.*?y\s+[pP][\s-]?63(?:\s|,|\.)',
+            r'(?i)(positividad|positiv[ao]s?)\s+para[:\s]+(?:(?!positiv|negativ)[^.]){0,200}\by\s+[pP][\s-]?63(?:\s|,|\.)',  # V6.9.98 acotado
             # V6.2.1: PRIORIDAD 2 - FIX IHQ251012: Captura en listas con "y" CON estado explícito
             # Formato: "positivas para [BIOMARCADOR] y p63" → captura "positivas"
             r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para\s+[A-Za-z0-9/\-]+\s+y\s+[pP][\s-]?63(?:\s|,|\.)',
@@ -2304,7 +2304,7 @@ BIOMARKER_DEFINITIONS = {
         'patrones': [
             # V6.1.3: Biomarcadores celulas mioepiteliales (IHQ250999)
             # Formato narrativo "positivas para ... calponina"
-            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?calponina(?:\s|,|\.)',
+            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+(?:(?!positiv|negativ)[^.]){0,200}\bcalponina(?:\s|,|\.)',  # V6.9.98 acotado
             # Formato "calponina: positivo"
             r'(?i)calponina[:\s]*(positiv[ao]s?|negativ[ao]s?)',
         ],
@@ -2327,7 +2327,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Calretinina - Marcador de células ganglionares (estudio Hirschprung)',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... Calretinina" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?calr?retinin[a]?',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?calr?retinin[a]?',
             # V6.3.48 FIX IHQ250048: calr?retinina acepta "CALRETININA" y "CALRRETININA"
             # Formato narrativo: 'Calretinina negativa para células ganglionares'
             r'(?i)calr?retinina\s+(negativa?|positiva?)\s+para\s+c[eé]lulas\s+ganglionares',
@@ -2368,7 +2368,7 @@ BIOMARKER_DEFINITIONS = {
         'patrones': [
             # V6.1.1: FIX IHQ250995 - Biomarcador de próstata
             # Formato narrativo "marcación positiva para Racemasa"
-            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+.*?[Rr]acemas[ae](?:\s|,|\.)',
+            r'(?i)marcaci[óo]n\s+positiva\s+para[:\s]+(?:(?!positiv|negativ)[^.]){0,200}[Rr]acemas[ae](?:\s|,|\.)',  # V6.9.98 acotado
             r'(?i)marcaci[óo]n\s+negativa\s+para[:\s]+.*?[Rr]acemas[ae](?:\s|,|\.)',
             r'(?i)positiv[ao]s?\s+para[:\s]+.*?[Rr]acemas[ae](?:\s|,|\.)',
             r'(?i)negativ[ao]s?\s+para[:\s]+.*?[Rr]acemas[ae](?:\s|,|\.)',
@@ -2393,7 +2393,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Cromogranina A',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... CROMOGRAMINA" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?(?:chrom|crom)ogr[ao]min[a]?',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?(?:chrom|crom)ogr[ao]min[a]?',
             r'(?i)(?:chrom|crom)ogranin[a]?\s*(?:A)?\s*\+',  # Cromogranina A+ → POSITIVO
             r'(?i)(?:chrom|crom)ogranin[a]?\s*(?:A)?\s*\-',  # Cromogranina A- → NEGATIVO
             r'(?i)(?:chrom|crom)ogranin[a]?[:\s]*(positivo|negativo|positiva|negativa)',
@@ -2439,7 +2439,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Melan-A / MART-1',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... MELAN A" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?MELAN\s*A',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?MELAN\s*A',
             r'(?i)melan[^\w]*a[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)mart[^\w]*1[:\s]*(positivo|negativo|positiva|negativa)',
             r'(?i)positivas?\s+para\s+.*?melan[^\w]*a(?:\s|,|$)',
@@ -2544,8 +2544,8 @@ BIOMARKER_DEFINITIONS = {
             # V6.4.4 FIX IHQ250121: "inmunorreactividad heterogénea con el CDX2"
             r'(?i)inmunorreactividad\s+heterog[ée]nea\s+(?:con\s+)?(?:el\s+)?CDX\s*2',
             r'(?i)cdx[^\w]*2[:\s]*(positivo|negativo|positiva|negativa)',
-            r'(?i)positivas?\s+para\s+.*?cdx\s*2(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cdx\s*2(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcdx\s*2(?:\s|,|$)',  # V6.9.98 acotado
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcdx\s*2(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'POSITIVO HETEROGÉNEO'],
         'normalizacion': {
@@ -2563,8 +2563,8 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Antígeno de cáncer 19-9',
         'patrones': [
             r'(?i)ca\s*19[.\-_]?9[:\s]*(positivo|negativo|positiva|negativa)',
-            r'(?i)positivas?\s+para\s+.*?ca\s*19[.\-_]?9(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?ca\s*19[.\-_]?9(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bca\s*19[.\-_]?9(?:\s|,|$)',  # V6.9.98 acotado
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bca\s*19[.\-_]?9(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -2580,8 +2580,8 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Napsina A',
         'patrones': [
             r'(?i)napsin[a]?(?:\s*a)?[:\s]*(.+?)(?:\.|$|\n)',
-            r'(?i)positivas?\s+para\s+.*?napsin[a]?(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?napsin[a]?(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bnapsin[a]?(?:\s|,|$)',  # V6.9.98 acotado
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bnapsin[a]?(?:\s|,|$)',  # V6.9.98 acotado
             # Fallback
             r'(?i)napsin[a]?[:\s]*(positivo|negativo|positiva|negativa)',
         ],
@@ -2654,7 +2654,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*4(?:\s|,|\.)',
             r'(?i)cd[^\w]*4[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*4(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*4(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*4(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -2729,7 +2729,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*8(?:\s|,|\.)',
             r'(?i)cd[^\w]*8[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*8(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*8(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*8(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -2765,7 +2765,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*CD\s*15(?:\s|,|\.)',
             r'(?i)cd[^\w]*15[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*15(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*15(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*15(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -2832,7 +2832,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)el\s+cd\s*30\s+es\s+(negativo|positivo)',
             r'(?i)cd[^\w]*30[:\s]*(positivo|negativo|\d+%?)',
             r'(?i)positivas?\s+para\s+.*?cd\s*30(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*30(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*30(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
         'normalizacion': {
@@ -2851,7 +2851,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)PECAM[\s-]?1[:\s]*(positiv[ao]s?|negativ[ao]s?)',
             r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?(?:CD[\s-]?31|PECAM[\s-]?1)(?:\s|,|\.)',
             # V6.5.92: Patrón para "Con marcación positiva focal en membrana para ... CD31"
-            r'(?i)(?:con\s+)?marcaci[óo]n\s+positiva(?:\s+focal)?\s+.*?para\s+.*?CD[\s-]?31',
+            r'(?i)(?:con\s+)?marcaci[óo]n\s+positiva(?:\s+focal)?\s+(?:(?!positiv|negativ)[^.]){0,200}para\s+(?:(?!positiv|negativ)[^.]){0,200}\bCD[\s-]?31',  # V6.9.98 acotado
             # V6.9.33 FIX: formas narrativas endoteliales que CD34 ya soporta pero CD31 no.
             # CD31 es marcador endotelial específico (angiosarcomas/lesiones vasculares).
             # Símbolo +/- pegado o separado (IHQ250299/250311: "CD31+ y CD34+")
@@ -2968,7 +2968,7 @@ BIOMARKER_DEFINITIONS = {
         'patrones': [
             r'(?i)cd[^\w]*79\s*[aAª][: \s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?cd\s*79\s*[aAª](?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*79\s*[aAª](?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*79\s*[aAª](?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -3026,7 +3026,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)cd[^\w]*56[:\s]*(positivo|negativo|\d+%?)',
             # V6.4.60 FIX IHQ250198: "es negativo para CD8, CD10, TDT, CD 30, BCL2, ALK y CD 56"
             r'(?i)(?:es|son)\s+(negativo|negativa)(?:s)?\s+para\s+[^.]*?cd\s*56(?:\s|,|\.)',
-            r'(?i)positivas?\s+para\s+.*?cd\s*56(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*56(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)negativas?\s+para\s+.*?cd\s*56(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE', 'POSITIVO ABERRANTE'],
@@ -3072,7 +3072,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'Cluster de diferenciación 68',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... CD68" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?CD\s*68',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?CD\s*68',
             # V6.2.1: PRIORIDAD 0 - "CD68+" con detalles de expresión (IHQ251002)
             r'(?i)cd\s*68\s*\+.*?(?:presenta\s+)?expresi[óo]n\s+(\w+)\s+(\w+)\s+y?\s+(\w+)',
             r'(?i)cd\s*68\s*\+',
@@ -3154,7 +3154,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)syndecan[^\w]*1[:\s]*(positivo|negativo)',
             # Formatos narrativos
             r'(?i)positivas?\s+para\s+.*?cd\s*138(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?cd\s*138(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bcd\s*138(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PERCENTAGE'],
         'normalizacion': {
@@ -3172,7 +3172,7 @@ BIOMARKER_DEFINITIONS = {
             # V6.2.1: Formato narrativo "timocitos son positivos para CD1a, CD3..."
             r'(?i)timocitos\s+son\s+(positiv[ao]s?|negativ[ao]s?)\s+para\s+[A-Z0-9,\s]*CD1[aA]',
             # Formato "positivos para CD1a"
-            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para\s+.*?CD1[aA](?:\s|,|\.)',
+            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bCD1[aA](?:\s|,|\.)',  # V6.9.98 acotado
             # Formato directo "CD1a: positivo"
             r'(?i)CD1[aA][:\s]*(positiv[ao]s?|negativ[ao]s?)',
         ],
@@ -3247,7 +3247,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)mum\s*-?\s*1\s*:\s*(positivo|negativo)',
             # Formato narrativo
             r'(?i)marcadores?\s+mum\s*-?\s*1\s+(positivo|negativo)',
-            r'(?i)positivas?\s+para\s+.*?mum\s*-?\s*1(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bmum\s*-?\s*1(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)negativas?\s+para\s+.*?mum\s*-?\s*1(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO', 'PORCENTAJE'],
@@ -3268,8 +3268,8 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)muc\s*-?\s*2\s*:\s*(positivo|negativo)',
             # Formato narrativo
             r'(?i)marcadores?\s+muc\s*-?\s*2\s+(positivo|negativo)',
-            r'(?i)positivas?\s+para\s+.*?muc\s*-?\s*2(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?muc\s*-?\s*2(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bmuc\s*-?\s*2(?:\s|,|$)',  # V6.9.98 acotado
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bmuc\s*-?\s*2(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -3293,7 +3293,7 @@ BIOMARKER_DEFINITIONS = {
             # Formato narrativo
             r'(?i)marcadores?\s+muc\s*-?\s*1\s+(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?muc\s*-?\s*1(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?muc\s*-?\s*1(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bmuc\s*-?\s*1(?:\s|,|$)',  # V6.9.98 acotado
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -3384,7 +3384,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)\blambda\b\s*:?\s*(positivo|negativo)',
             # Formato narrativo
             r'(?i)positivas?\s+para\s+.*?lambda(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?lambda(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\blambda(?:\s|,|$)',  # V6.9.98 acotado
             # Formato "restricción de cadenas livianas lambda"
             r'(?i)restricci[óo]n\s+de\s+cadenas?\s+livianas?\s+lambda',
             # Formato "expresión de lambda"
@@ -3410,11 +3410,23 @@ BIOMARKER_DEFINITIONS = {
             # V6.6.6 FIX IHQ250050: Acotar `.*?` (con re.DOTALL hace match cross-section
             # y captura "lca" dentro de "alcance" del disclaimer legal). Limitar a línea/oración
             # actual y agregar word-boundaries \b para evitar substring spurio.
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+[^.\n]{0,200}\b(?:LCA|CD[\s-]?45)\b',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+[^.\n]{0,200}\b(?:LCA|CD[\s-]?45)\b',
             # Patrones básicos
             r'(?i)LCA[:\s]*(positiv[ao]s?|negativ[ao]s?)',
             r'(?i)CD[\s-]?45[:\s]*(positiv[ao]s?|negativ[ao]s?)',
-            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?(?:LCA|CD[\s-]?45)(?:\s|,|\.)',
+            # V6.9.97 FIX IHQ250166/250512/250671/250777/250791/251157/251191/251339/260636:
+            # el `.*?` iba SIN acotar y este bloque compila con re.DOTALL, asi que el patron se
+            # anclaba en cualquier "positivo/negativo ... para" del documento entero -- incluida
+            # la historia clinica ("POSITIVO PARA TUMOR") -- y saltaba secciones completas hasta
+            # el primer CD45. Medido sobre 43 casos: acertaba el 46%, peor que una moneda.
+            # Se acota igual que hizo V6.6.6 con el patron de arriba, con dos fronteras:
+            #   - el punto  -> frontera de frase/seccion (es lo que dejaba cruzar a MICROSCOPICA)
+            #   - otra marca de polaridad -> frontera de clausula, para el caso frecuente
+            #     "positivas para A, B, siendo negativas para C, CD45" (aqui CD45 es NEGATIVO)
+            # El salto de linea SI se permite a proposito: las listas de marcadores se parten a
+            # mitad por el ancho del PDF y prohibirlo dejaba mudo el patron en 19 casos.
+            # Medicion contra IHQ_CD45: 94% (30 aciertos / 2 fallos) frente al 46% (17/20).
+            r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+(?:(?!positiv|negativ)[^.]){0,200}\b(?:LCA|CD[\s-]?45)\b',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'normalizacion': {
@@ -3438,12 +3450,12 @@ BIOMARKER_DEFINITIONS = {
             # V6.3.49 FIX IHQ250050: "NEGATIVO PARA TINCIÓN CON LMP-1"
             r'(?i)(positivo|negativo)\s+para\s+(?:tinci[óo]n\s+con\s+)?lmp[^\w]*1',
             # V6.3.49 FIX IHQ250050: "no presentan inmunorreactividad para LMP1"
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para\s+lmp[^\w]*1',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para\s+lmp[^\w]*1',
             # V6.0.16: "No tienen expresión de ALK1 ni de LMP1" (IHQ250988)
             r'(?i)no\s+tienen?\s+expresi[óo]n\s+de\s+.*?LMP\s*1',
             r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*LMP\s*1(?:\s|,|\.)',
             r'(?i)lmp[^\w]*1[:\s]*(positivo|negativo)',
-            r'(?i)positivas?\s+para\s+.*?lmp\s*1(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\blmp\s*1(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)negativas?\s+para\s+.*?lmp\s*1(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
@@ -3465,7 +3477,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)\bno\s+SALL\s*4\b',
             r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:[A-Z0-9]+,\s*)*SALL\s*4(?:\s|,|\.)',
             r'(?i)sall[^\w]*4[:\s]*(positivo|negativo)',
-            r'(?i)positivas?\s+para\s+.*?sall\s*4(?:\s|,|$)',
+            r'(?i)positivas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bsall\s*4(?:\s|,|$)',  # V6.9.98 acotado
             r'(?i)negativas?\s+para\s+.*?sall\s*4(?:\s|,|$)',
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
@@ -3559,7 +3571,7 @@ BIOMARKER_DEFINITIONS = {
         'descripcion': 'ALK - Anaplastic Lymphoma Kinase (linfomas, NSCLC ALK+)',
         'patrones': [
             # V6.5.93 PRIORIDAD MÁXIMA: "no presentan inmunorreactividad para: ... ALK 01" → NEGATIVO
-            r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+.*?ALK[\s-]?(?:01|1)?',
+            r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+.*?ALK[\s-]?(?:01|1)?',
             # Patrones básicos
             r'(?i)ALK[\s-]?(?:01|1)?[:\s]*(positiv[ao]s?|negativ[ao]s?)',
             r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para[:\s]+.*?ALK[\s-]?(?:01|1)?(?:\s|,|\.)',
@@ -3773,13 +3785,13 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)CKAE1[E/\-\s]*[AE]*3\s+y\s+[A-Za-z0-9]+\s+positivos?',
             # V6.4.0 FIX IHQ250013: Formato "y a CKAE1/AE3" en lista con grupo de captura
             r'(?i)(negatividad)\s+para\s+.*?\s+y\s+a\s+CKAE1[-/\s]*AE3',
-            r'(?i)(positividad)\s+para\s+.*?\s+y\s+a\s+CKAE1[-/\s]*AE3',
+            r'(?i)(positividad)\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\s+y\s+a\s+CKAE1[-/\s]*AE3',  # V6.9.98 acotado
             # V6.2.9: PRIORIDAD -2 - Formato símbolo: "CKAE1-AE3+" (IHQ251029)
             r'(?i)CKAE1[-/\s]*AE3\s*\+',  # CKAE1-AE3+ → POSITIVO
             r'(?i)CKAE1[-/\s]*AE3\s*\-',  # CKAE1-AE3- → NEGATIVO
             # V6.2.2: Formato negativo: "Sin marcación para CKAE1AE3" (IHQ251014)
             r'(?i)sin\s+marcaci[óo]n\s+para\s+.*?ckae1\s*ae3',
-            r'(?i)sin\s+marcaci[óo]n\s+para\s+.*?ckae1\s*/\s*ae3',
+            r'(?i)sin\s+marcaci[óo]n\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\bckae1\s*/\s*ae3',  # V6.9.98 acotado
             # V6.2.1: PRIORIDAD -1 - Formato "positivas para CKAE1E3 y p63" (IHQ251012)
             r'(?i)(positiv[ao]s?|negativ[ao]s?)\s+para\s+CKAE1[E/\s]*[AE]*3(?:\s+y\s+|,|\.)',
             # Patrones existentes
@@ -4039,7 +4051,7 @@ BIOMARKER_DEFINITIONS = {
             r'(?i)\bMPO\s*(\+|-)',
             r'(?i)\b(?:MPO|MIELOPEROXIDASA|MYELOPEROXIDASE)[:\s]*(positivo|negativo)',
             r'(?i)positivas?\s+para\s+.*?\b(?:MPO|MIELOPEROXIDASA|MYELOPEROXIDASE)\b(?:\s|,|$)',
-            r'(?i)negativas?\s+para\s+.*?\b(?:MPO|MIELOPEROXIDASA|MYELOPEROXIDASE)\b(?:\s|,|$)',
+            r'(?i)negativas?\s+para\s+(?:(?!positiv|negativ)[^.]){0,200}\b(?:MPO|MIELOPEROXIDASA|MYELOPEROXIDASE)\b(?:\s|,|$)',  # V6.9.98 acotado
             # V6.4.3: Nuevo patrón para "marcación para mieloperoxidasa" (IHQ250127)
             r'(?i)marcaci[óo]n\s+para\s+(?:mieloperoxidasa|MPO|myeloperoxidase)'
         ],
@@ -6452,7 +6464,7 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     # V6.3.74 FIX IHQ250093: NUEVO - Patrón para "No hay inmunorreactividad para X ni Y"
     # Ej: "No hay inmunorreactividad para IgG4 ni CD38" → IgG4 NEGATIVO, CD38 NEGATIVO
     # Captura listas con "ni" o "y" como separadores
-    no_inmunorreactividad_pattern = r'(?i)No\s+hay\s+inmunorreactividad\s+para\s+([A-Za-z0-9\s,./\-\(\)yYnNiI]+?)(?:\.|\s*$)'
+    no_inmunorreactividad_pattern = r'(?i)No\s+hay\s+inmunorr?eactividad\s+para\s+([A-Za-z0-9\s,./\-\(\)yYnNiI]+?)(?:\.|\s*$)'
     for match in re.finditer(no_inmunorreactividad_pattern, text, re.DOTALL):
         lista_biomarkers_raw = match.group(1).strip()
 
@@ -6482,7 +6494,7 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     # Ej: "Las células tumorales no presentan inmunorreactividad para: SOX10, S100, MELAN A, CROMOGRAMINA..."
     # Captura listas completas de biomarcadores NEGATIVOS en descripciones microscópicas
     # Formato: "no presentan inmunorreactividad para:" seguido de lista con comas y punto final
-    no_presentan_inmunorreactividad_pattern = r'(?i)no\s+presentan?\s+inmunorreactividad\s+para[:\s]+([A-Za-z0-9\s,./\-\(\)yYnNiIóÓéÉ]+?)(?:\.|\s*$)'
+    no_presentan_inmunorreactividad_pattern = r'(?i)no\s+presentan?\s+inmunorr?eactividad\s+para[:\s]+([A-Za-z0-9\s,./\-\(\)yYnNiIóÓéÉ]+?)(?:\.|\s*$)'
     for match in re.finditer(no_presentan_inmunorreactividad_pattern, text, re.DOTALL):
         lista_biomarkers_raw = match.group(1).strip()
 
@@ -6509,6 +6521,52 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
                 # NEGATIVO sobrescribe valores anteriores (es alta confianza)
                 results[normalized_name] = 'NEGATIVO'
                 logging.info(f"✅ [no presentan inmunorreactividad] Extraído: '{bio_raw}' → {normalized_name} = NEGATIVO")
+
+    # V6.9.96 FIX IHQ251294/IHQ251311/IHQ251211/IHQ251336: NUEVO - "presentan/muestran
+    # inmunorreactividad [localizacion] para[:] <lista>" -> POSITIVO.
+    # ADITIVO: no reescribe ningun patron vivo. Va DESPUES del NEGATIVO V6.5.93 (para
+    # que el NEGATIVO gane el empate) y ANTES del PASE FINAL V6.4.23/V6.9.95.
+    # Cubre las DOS causas del fallo: la ortografia con una sola 'r' (inmunoreactividad,
+    # IHQ251294/IHQ251311) y el adverbio de localizacion intercalado (IHQ251211/IHQ251336),
+    # mas la errata real del corpus "inmunorreactividad PARA citoplasmatica PARA <lista>"
+    # (IHQ250762/IHQ251290/IHQ251321), donde el marcador de cabeza se perdia.
+    # OJO: esta familia MEZCLA polaridades dentro de la propia lista ("CAM 5.2 negativo",
+    # "y negatividad para p40", "con perdida de expresion para PAX 8"). La guarda de
+    # negacion por trozo NO es decorativa: normalize_biomarker_name() quita el sufijo
+    # POSITIVO/NEGATIVO pegado al nombre (V6.9.94), asi que sin ella 'CAM 5.2 negativo'
+    # entra como CAM5 = POSITIVO. Medido en IHQ251336.
+    # Y la negacion NO puede ir en el lookahead: probado, cortar la lista justo ANTES
+    # de 'negativo' deja 'CAM 5.2' colgando del lado POSITIVO y produce el mismo falso
+    # positivo que se queria evitar (IHQ251336 CAM5 NEGATIVO -> POSITIVO). Va por trozo.
+    inmunorreact_para_pattern = (
+        r'(?is)(?<![a-zà-ÿ])(no\s+)?(?:presentan?|muestran?)\s+'
+        r'inmunorr?eactividad\s*(?:para[:\s]+)?'
+        r'(?:(?:citoplasm[aá]tica|nuclear|de\s+membrana|granular|perinuclear)\s+)?'
+        r'para[:\s]+(.{1,220}?)'
+        r'(?=\.(?!\d)|;|[\s,]*\b(?:siendo|son|sin|con|que|as[ií]\s+como|de\s+forma|'
+        r'de\s+manera|focal|focalmente|resto\s+de|los?\s+dem[aá]s|hay\s+marcaci\w*|'
+        r'el\s+[ií]ndice|tambi[eé]n|presento|presenta|'
+        r'diagn[oó]stico|descripci[oó]n|comentarios?|'
+        r'estudios?\s+de\s+inmunohistoqu\w*)\b|$)'
+    )
+    for _m_ipp in re.finditer(inmunorreact_para_pattern, text):
+        # GUARDA 1: la forma negada es competencia del bloque V6.5.93 de arriba.
+        if _m_ipp.group(1):
+            continue
+        _lista_ipp = ' '.join(_m_ipp.group(2).split())
+        for _bio_ipp in re.split(r'[,;]\s*|\s+[yYeE]\s+', _lista_ipp):
+            _bio_ipp = _bio_ipp.strip().rstrip('.')
+            if not _bio_ipp or len(_bio_ipp) < 2:
+                continue
+            # GUARDA 2 (polaridad): el trozo trae su propia negacion pegada.
+            if re.search(r'(?i)negativ|p[eé]rdida|ausen|no\s+contributiv', _bio_ipp):
+                continue
+            _norm_ipp = normalize_biomarker_name(_bio_ipp)
+            # GUARDA 3: NUNCA sobrescribe. Un NEGATIVO ya puesto o un calificador
+            # rico ya extraido mandan sobre este 'POSITIVO' pelado.
+            if _norm_ipp and _norm_ipp not in results:
+                results[_norm_ipp] = 'POSITIVO'
+                logging.info(f"[V6.9.96 inmunorreactividad para] '{_bio_ipp}' -> {_norm_ipp} = POSITIVO")
 
     # V6.4.41 FIX IHQ250175: NUEVO - Patrón para "No se identifica marcación para X (negativo tipo salvaje)"
     # Ej: "No se identifica marcación para IDH (negativo tipo salvaje)" → IDH NEGATIVO
@@ -8236,6 +8294,68 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
                     results[normalized] = 'NEGATIVO'
                     logging.info(f"🔴 [PASE FINAL v6.3.77] FORZANDO: {normalized} = NEGATIVO (era: {valor_anterior}) desde 'tienen marcación negativa'")
 
+    # V6.9.96 FIX IHQ251046/251243/251204 — familia "polaridad detras de la lista".
+    # Patron ENDURECIDO por la revision adversarial: el original usaba una clase
+    # negada de 120 chars y eso se tragaba listas verticales y sujetos NO tumorales.
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # POLARIDAD-DETRÁS: "<lista> con marcación [cualif.] positiva/negativa."
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # Todos los patrones vivos de esta función están escritos «<polaridad> PARA <lista>».
+    # Cuando el informe invierte el orden y pone el resultado AL FINAL de la oración
+    # ("E-CADHERINA, P120 y Betacatenina con marcación membranosa positiva.") no existe
+    # el ancla "para" y NO dispara ningún patrón: la lista entera se pierde. No es
+    # problema de vocabulario — normalize_biomarker_name resuelve EMA, ECADHERINA,
+    # Betacatenina, SMA, CD56, CD34 y CA19-9 sin tocar nada; el trozo nunca le llega.
+    #
+    # LO QUE HACE SEGURO ESTO SON LAS DOS GUARDAS, no el vocabulario:
+    #
+    #  GUARDA 1 (hacia atrás, grupo 1) — la lista solo puede ser TOKENS separados por
+    #  ',' ';' o ' y '. NO es una clase negada de 120 caracteres: una clase negada
+    #  admite '\n' y prosa, y entonces (medido) se traga listas verticales del bloque
+    #  "Anticuerpos:" y sujetos NO tumorales ("En el estroma adyacente, SMA …",
+    #  "Los linfocitos T acompañantes y CD3 …"), atribuyendo al tumor una marcación
+    #  que no es suya.
+    #
+    #  GUARDA 2 (hacia delante) — tras la polaridad se exige FIN DE ORACIÓN ('.', ';',
+    #  fin de texto) o una coma seguida de "<NOMBRE> positivo/negativo". Ésta es la que
+    #  descarta la forma «polaridad-delante», que es la MAYORITARIA: el núcleo
+    #  "con marcación […] positiva/negativa" sale 81 veces en el corpus y en 74 (91,4%)
+    #  la lista va DETRÁS ("con marcación positiva nuclear PARA PAX5", "…fuerte y
+    #  difusa PARA CK7"). Un patrón que lea hacia atrás sin este terminador INVIERTE
+    #  esas 74. El rechazo ES el arreglo.
+    #
+    # 🛑 NO relajar el grupo 1 a una clase negada ni quitar el terminador: son las dos
+    #    cosas que impiden que este patrón se desborde.
+    # Escribe SOLO si la clave no existe (`not in results`) y va ANTES de los PASE
+    # FINAL (V6.4.23 / V6.9.95), que conservan su autoridad para forzar NEGATIVO.
+    #
+    # Medido sobre 2.077 casos (pipeline completo, IA de polaridad apagada):
+    # GANA 7 · PIERDE 0 · CAMBIA 3 (los 3 en IHQ251204, corrigen una polaridad
+    # invertida: "SMA, CD56 y CD34 con marcación negativa esperada" en un SCHWANNOMA).
+    _polaridad_detras_tok = r"[A-Za-zÁÉÍÓÚÑáéíóúñ][\w/.\-+]{0,19}"
+    polaridad_detras_pattern = (
+        r"(?i)(?:^|[.;:\n])[ \t]*"
+        r"((?:" + _polaridad_detras_tok + r")"
+        r"(?:\s*(?:,|;|\sy\s)\s*(?:" + _polaridad_detras_tok + r")){0,7})"
+        r"\s*,?\s*con\s+marcaci[oó]n"
+        r"(?:\s+(?!positiv|negativ)[a-záéíóúñ]{3,}){0,2}"
+        r"\s+(positiv|negativ)[ao]s?"
+        r"(?:[ \t]+(?!(?:para|con|del|sin|que|los|las|una|uno|por|entre|hasta|desde|tanto)\b)"
+        r"[a-záéíóúñ]{3,}){0,3}[ \t]*"
+        r"(?:[.;]|$|,[ \t]*(?=[A-Za-z0-9][\w/.+-]*\s+(?:positiv|negativ)))"
+    )
+    for _pd_m in re.finditer(polaridad_detras_pattern, text):
+        _pd_lista = re.sub(r'\s*\n\s*', ' ', _pd_m.group(1).strip())
+        _pd_valor = 'POSITIVO' if _pd_m.group(2).lower() == 'positiv' else 'NEGATIVO'
+        for _pd_bio in re.split(r'[,;]\s*|\s+y\s+', _pd_lista):
+            _pd_bio = _pd_bio.strip().strip('.').strip()
+            if not _pd_bio:
+                continue
+            _pd_norm = normalize_biomarker_name(_pd_bio)
+            if _pd_norm and _pd_norm not in results:
+                results[_pd_norm] = _pd_valor
+                logging.info(f"🧬 [POLARIDAD-DETRAS] {_pd_norm} = {_pd_valor} desde '{_pd_m.group(0)[:70]}'")
+
     # V6.4.23 PASE FINAL (PRIORIDAD MÁXIMA): FIX IHQ250162 - Patrón "No presentan expresión para [lista]" → NEGATIVO
     # Ej: "No presentan expresión para calretinina, desmina, SMA, EMA, progesterona, CD34, GFAP, p53"
     # CRÍTICO: Este patrón se ejecuta AL FINAL para sobrescribir valores incorrectos capturados por patrones anteriores
@@ -8265,6 +8385,211 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
                 results[normalized_name] = 'NEGATIVO (0)' if normalized_name == 'HER2' else 'NEGATIVO'
                 logging.info(f"🔴 [PASE FINAL v6.4.23] FORZANDO: {normalized_name} = NEGATIVO (era: {valor_anterior}) desde 'No presentan expresión'")
 
+    # V6.9.95 FIX IHQ250880: patrón HERMANO del de arriba, para la variante con DOS
+    # PUNTOS — "No presentan expresión a: [lista]" en vez de "expresión para [lista]".
+    # El de arriba exige la palabra "para", así que esta forma no disparaba nunca y se
+    # perdía una lista entera de 19 marcadores.
+    #
+    # Se AÑADE detrás; el de V6.4.23 queda intacto. Exigir los dos puntos es lo que lo
+    # hace seguro: casa 1 caso de 2.078, así que no puede desbordarse sobre el corpus.
+    #
+    # OJO con la clase [óo]: es o-con-tilde y o. Escribirla [oo] (dos oes) es un typo
+    # que solo casa la ocurrencia sin tilde y deja fuera 2 marcadores (CD56 y GATA3),
+    # que además viven en la ocurrencia acentuada, la de la lista más larga.
+    no_presentan_expresion_dp_pattern = (
+        r'(?i)No\s+presentan?\s+expresi[óo]n\s*a\s*:\s*([A-Za-z0-9\s,./\-yY]+?)(?:\.\s|\.$|$)')
+    for match in re.finditer(no_presentan_expresion_dp_pattern, text, re.DOTALL):
+        lista_biomarkers_raw = match.group(1).strip()
+        logging.info(f"🔍 [V6.9.95 - No presentan expresión A:] Lista detectada: '{lista_biomarkers_raw}'")
+        lista_biomarkers_raw = re.sub(r'\s*\n\s*', ' ', lista_biomarkers_raw)
+        for bio_raw in re.split(r'[,;]\s*|\s+y\s+', lista_biomarkers_raw):
+            bio_raw = bio_raw.strip().rstrip('.')
+            if not bio_raw:
+                continue
+            normalized_name = normalize_biomarker_name(bio_raw)
+            if normalized_name:
+                valor_anterior = results.get(normalized_name, 'NO EXISTÍA')
+                results[normalized_name] = 'NEGATIVO (0)' if normalized_name == 'HER2' else 'NEGATIVO'
+                logging.info(f"🔴 [V6.9.95] FORZANDO: {normalized_name} = NEGATIVO (era: {valor_anterior}) desde 'No presentan expresión a:'")
+
+    # V6.9.96 FIX IHQ251081/251082/251213/251299/251466: familia "no muestra marcación para X ni Y"
+    #
+    # CUATRO huecos que se suman y que ningún patrón vivo cubre:
+    #   1) el VERBO "muestra/muestran" (los PASE FINAL solo conocen "presentan",
+    #      "tienen marcación negativa", "Negativo para", "No presentan expresión a:").
+    #   2) la PREPOSICIÓN "de" (todos los patrones vivos exigen literalmente "para").
+    #   3) el SEPARADOR " ni " (los troceadores parten por coma y por " y ", nunca por " ni ").
+    #   4) la COLETILLA: normalize_biomarker_name('CK34BETA12') -> 'CK34BETAE12', pero
+    #      normalize_biomarker_name('CK34BETA12 para células basales') -> None. El alias NO
+    #      falta; falta cortar la frase, y eso lo hace el lookahead final.
+    #
+    # ADITIVO: no reescribe nada. Se añade DETRÁS del hermano V6.9.95 y ANTES del
+    # post-filtro V6.4.89 (este bloque puede escribir CD3 —lo hace en IHQ260646— y ese
+    # post-filtro es la red que lo retira si viene de "linfocitos T acompañantes").
+    #
+    # 🛑 LA GUARDA `not in results` NO ES OPCIONAL. Sin ella este bloque FUERZA y pisa
+    # 25 valores existentes, de los cuales DOS son daño verificado leyendo el informe:
+    #   · IHQ250595 P40: informe de DOS especímenes, "A. Sin marcación para ... p40 ..."
+    #     pero "B. ... marcación nuclear positiva difusa para p40". Pisar = destruir B.
+    #   · IHQ250928 P63: "células mioepiteliales positivas para CK5/6 y p63 ... sin marcación
+    #     para p63 ni CK5/6 [en los nidos invasivos] ... carcinoma ductal in situ dada
+    #     marcación positiva focal para CK5/6 y p63". El informe afirma P63 POSITIVO dos veces.
+    # Otros 18 son inversiones de polaridad reales, pero son OTRA familia (la que trata la
+    # IA local V6.9.61) y no se tocan aquí: con la guarda el parche es RELLENO, no FORZADO.
+    #
+    # La captura es perezosa y solo se detiene en '.', ';', ':', " para " o línea en blanco:
+    # no conoce espécimen ni sección, y se la ha visto llegar hasta la cabecera DIAGNÓSTICO
+    # (IHQ260025) y hasta el boilerplate ISO 17043 (IHQ251227). Ahí no hace daño porque los
+    # trozos sobrantes devuelven None, pero por eso mismo NO debe sobrescribir nunca.
+    _V9996_VERBO = (r'(?:marcaci[oó]n|marcaje|tinci[oó]n|expresi[oó]n|positividad|reactividad'
+                    r'|inmunomarcaci[oó]n|inmuno-?rr?eactivi?[ai]dad)')
+    no_muestra_marcacion_pattern = (
+        r'(?i)(?:no\s+(?:se\s+)?muestran?\s+' + _V9996_VERBO + r'\s+(?:para|del?|con|a)'
+        r'|sin\s+' + _V9996_VERBO + r'\s+del?'
+        r'|sin\s+' + _V9996_VERBO + r'\s+para(?=[^.;:\n]{0,120}?\sni\s))'
+        r'\s+(?:los?\s+|las?\s+)?'
+        r'([A-Za-z0-9ÁÉÍÓÚÑÜáéíóúñü][A-Za-z0-9ÁÉÍÓÚÑÜáéíóúñü\s,;/\-\+]*?)'
+        r'(?=\s+para\s|\s*[.;:]|\s*\n\s*\n|$)'
+    )
+    # Alias LOCAL: solo lo ve este patrón. NO tocar name_mapping (nota V6.9.89: allí el
+    # rechazo SOSTIENE la extracción). Verificado ejecutando el código vivo:
+    # normalize_biomarker_name('CMV') -> None y ('SV40') -> None, aunque IHQ_CITOMEGALOVIRUS
+    # e IHQ_SV40 son columnas vivas (core/columnas_visor.py:143-144).
+    _V9996_ALIAS_LOCAL = {
+        'CMV': 'CITOMEGALOVIRUS',
+        'CITOMEGALOVIRUS': 'CITOMEGALOVIRUS',
+        'SV40': 'SV40', 'SV-40': 'SV40', 'SV 40': 'SV40',
+    }
+    for _m9996 in re.finditer(no_muestra_marcacion_pattern, text):
+        _lista9996 = re.sub(r'\s*\n\s*', ' ', _m9996.group(1).strip())
+        logging.info(f"🔍 [V6.9.96 - no muestra marcación] Lista detectada: '{_lista9996}'")
+        for _bio9996 in re.split(r'[,;]\s*|\s+y\s+|\s+ni\s+', _lista9996):
+            _bio9996 = _bio9996.strip().rstrip('.')
+            if not _bio9996:
+                continue
+            # El troceo compara por IGUALDAD contra dicts literales, nunca con `in`:
+            # no hay bug de subcadena (IgG vs IgG4 verificado en IHQ251299, CD3 vs CD34
+            # verificado en IHQ250933 y IHQ260646).
+            _nn9996 = _V9996_ALIAS_LOCAL.get(_bio9996.upper())
+            if not _nn9996:
+                _nn9996 = normalize_biomarker_name(_bio9996)
+            if _nn9996 and _nn9996 not in results:  # 🛑 RELLENA, NO PISA. Ver cabecera.
+                results[_nn9996] = 'NEGATIVO (0)' if _nn9996 == 'HER2' else 'NEGATIVO'
+                logging.info(f"🔴 [V6.9.96] {_nn9996} = NEGATIVO (rellenado) desde 'no muestra/sin marcación'")
+
+    # V6.9.99 — familia "expresión para X" (la frase que ninguna columna reconocía)
+    #
+    # Se descubrió persiguiendo CD45, pero no es cosa de CD45: son 59 valores repartidos
+    # en 36 columnas distintas que hoy se pierden porque NINGÚN patrón cubre esta forma.
+    #
+    # 🛑 ESTA FRASE NO ES POSITIVA POR DEFECTO. Medido sobre el corpus: de 170 menciones
+    # de "expresión ... para", 71 (el 42%) llevan una negación delante. Darla por POSITIVO
+    # —que es lo que parece a primera vista— metía 15 polaridades invertidas. La negación
+    # aquí no descarta el candidato: le DA EL SIGNO.
+    #
+    # Las cinco trampas que costó encontrar, cada una hallada revisando a mano la salida
+    # de la versión anterior. Se dejan escritas porque las cinco "parecían bien":
+    #   1) "siendo negativa LA expresion para TSH, ACTH, LH y FSH" -> la guarda pedía que
+    #      la negación pegara con "expresión" y se cuela un determinante. 4 invertidos.
+    #   2) "No\ntienen expresión para BCL2 ni ALK" -> el PDF parte la línea entre "No" y
+    #      "tienen"; la ventana no cruzaba el salto. Por eso mira [^.] y no [^.\n].
+    #   3) "No hay evidencia de poblaciones celulares con expresión para CD1a" -> la
+    #      negación cae más atrás; de ahí los 75 caracteres de margen.
+    #   4) "expresión para CD20, PAX5, BCL2 ... SIN expresión para CD10, LMP-1, c-MYC" ->
+    #      la lista se cortaba en "positiv|negativ", pero quien cambia el signo aquí es
+    #      "sin", que no contiene ninguno de los dos: se tragaba los negativos como
+    #      positivos. Y como finditer NO solapa, el segundo match —el que sí habría leído
+    #      la negación— ya no llegaba a ocurrir. Cualquier marca de negación corta la lista.
+    #   5) "células de la CAPA BASAL con expresión para P63" y "Se encuentra ACOMPAÑADA de
+    #      una población de linfocitos T" -> población no tumoral con otra redacción.
+    #
+    # Sobre 'linfocitos': NO se rechazan. En un linfoma el tumor SON los linfocitos y
+    # tirarlos destruiría positivos legítimos (misma decisión que la guarda de
+    # biomarcador_polaridad_ia.py:68). Lo que delata al microambiente es "acompañada/
+    # acompañante", "microambiente", "serie mieloide", no la palabra linfocito.
+    #
+    # ADITIVO y CON GUARDA `not in results`: rellena, NUNCA pisa (misma regla que V6.9.96).
+    # Va delante del post-filtro V6.4.89 a propósito: ese filtro es una red extra que
+    # retira CD3/BCL2 si vinieran de linfocitos acompañantes.
+    _V9999_LISTA = (r'(?P<lista>(?:(?!positiv|negativ|\bsin\b|ausencia|p[eé]rdida|perdida'
+                    r'|carecen?|\bd[eé]bil|\btenue)[^.]){0,200})')
+    _V9999_RX = re.compile(r'(?i)(?P<antes>[^.]{0,110})\bexpresi[oó]n\s+(?:positiva\s+)?'
+                           r'para[:\s]+' + _V9999_LISTA)
+    # 🛑 'pérdida' A SECAS NO VALE COMO NEGACIÓN. Medido en IHQ260329: el informe dice
+    # "ganglio linfático con PÉRDIDA PARCIAL DE LA ARQUITECTURA por una proliferación
+    # nodular que muestran expresión para CD20, PAX5, CD10, BCL6" — eso es pérdida de
+    # ARQUITECTURA, no de expresión, y volteaba CUATRO positivos a negativo de golpe.
+    # Solo cuenta la pérdida referida a la marcación.
+    _V9999_NEG = re.compile(
+        r'(?i)(?:ausencia|\bsin\b|negativ\w*|falta|carecen?\s+de|'
+        r'p[eé]rdida\s+(?:parcial\s+|completa\s+|total\s+)?(?:de\s+)?(?:la\s+)?'
+        r'(?:expresi|marcaci|tinci|inmuno|positivi)|'
+        r'no\s+(?:hay|se|presentan?|tienen?|muestran?|expresan?|observ\w*|evidenc\w*))'
+        r'(?:(?!\bpositiv)[\s\S]){0,75}?$')
+    # Si la frase trae su propia INTENSIDAD, la escribe mejor otra capa: este bloque solo
+    # sabe de polaridad pelada y llegar antes le costaría el matiz. Medido en IHQ260574:
+    # "muestran FUERTE expresión para receptores de Estrógeno y Progesterona" degradaba
+    # 'POSITIVO (fuerte)' a 'POSITIVO', y en receptores hormonales la intensidad es dato
+    # clínico, no adorno.
+    _V9999_INTENSIDAD = re.compile(
+        r'(?i)(?:fuerte|d[eé]bil|tenue|focal|intensa|parchead|heterog[eé]ne|'
+        r'moderada|difusa|en\s+mosaico)\s*\w*\s*expresi[oó]n')
+    # Local a propósito: la guarda de biomarcador_polaridad_ia cubre vasos/estroma/basales,
+    # pero no "capa basal" ni "acompañada". No se toca allí (tiene su propia validación).
+    _V9999_NO_TUMOR = re.compile(
+        r'acompan\w*|microambiente|serie\s+(?:mieloide|eritroide|megacarioc)|'
+        r'poblacion\s+(?:reactiva|residual|normal)|linfocitos\s+t\s+maduros|'
+        r'celularidad\s+hematopoyetica|fondo\s+inflamatorio|centros\s+germinales|'
+        r'capa\s+basal|celulas\s+de\s+la\s+capa|pared(?:es)?\s+vascular|endotelio|'
+        r'estromal|del\s+estroma|queratinocitos?\s+basal|celulas\s+basales|'
+        r'control\s+interno')
+    _V9999_ES_TUMOR = re.compile(r'tumoral|neoplasic|lesional|celulas\s+atipicas|'
+                                 r'del\s+tumor|carcinom')
+    _V9999_PARADA = re.compile(r'(?i)^(y|e|ni|de|del|la|el|los|las|un|una|con|en|para|es|'
+                               r'son|se|que|su|sus|al|por|todas?|estas?|c[eé]lulas)$')
+    # 🛑 MARCADORES EXCLUIDOS — su valor lo escribe lógica dedicada, MÁS RICA que una
+    # polaridad pelada, y este bloque la destruiría por LLEGAR ANTES (no por pisar: al
+    # rellenar primero, la capa buena se encuentra la clave ocupada y se calla).
+    #   · MMR (MLH1/MSH2/MSH6/PMS2): la etiqueta canónica es
+    #     'POSITIVO (EXPRESIÓN NUCLEAR INTACTA)' y está en 535 filas. Medido: este bloque
+    #     la degradaba a 'POSITIVO' en 6 casos. Ver la nota de las tres guardas más abajo.
+    #   · HER2: su resultado es un score (0/1+/2+/3+), no una polaridad. Medido:
+    #     escribía 'NEGATIVO (0)' encima de '(SCORE 0)' en 7 casos.
+    _V9999_EXCLUIDOS = {'HER2', 'MLH1', 'MSH2', 'MSH6', 'PMS2'}
+    # Y por el mismo motivo se descarta la frase entera si habla de expresión NUCLEAR:
+    # es el vocabulario del panel MMR. Mismo remedio que la guarda (1) documentada abajo.
+    _V9999_NUCLEAR = re.compile(r'(?i)nuclear')
+    for _m9999 in _V9999_RX.finditer(text):
+        _frase9999 = _sin_acentos(_m9999.group(0)).lower()
+        if _V9999_NUCLEAR.search(_frase9999) or _V9999_INTENSIDAD.search(_frase9999):
+            continue
+        if _V9999_NO_TUMOR.search(_frase9999) and not _V9999_ES_TUMOR.search(_frase9999):
+            logging.info("⚠️ [V6.9.99] frase descartada: la marcación no es del tumor")
+            continue
+        _negado9999 = bool(_V9999_NEG.search(_sin_acentos(_m9999.group('antes')).lower()))
+        _pol9999 = 'NEGATIVO' if _negado9999 else 'POSITIVO'
+        for _bio9999 in re.split(r'[,;]\s*|\s+y\s+|\s+e\s+|\s+ni\s+', _m9999.group('lista')):
+            _bio9999 = _bio9999.strip(' .:;()[]-')
+            if not _bio9999 or _V9999_PARADA.match(_bio9999):
+                continue
+            _nn9999 = normalize_biomarker_name(_bio9999)
+            if not _nn9999 or _nn9999 in _V9999_EXCLUIDOS:
+                # HER2 se excluye: tiene su propia lógica de score (0/1+/2+/3+) y este
+                # bloque solo sabe de polaridad. Medido: escribía 'NEGATIVO (0)' encima
+                # de '(SCORE 0)' en 7 casos, que es perder información, no ganarla.
+                continue
+            # 🛑 RELLENA, NO PISA — y hay que mirar LAS DOS FORMAS de la clave.
+            # `results` convive con nombre pelado y con prefijo IHQ_ según qué capa lo
+            # escribiera (el post-filtro V6.4.89 de abajo comprueba 'CD3' Y 'IHQ_CD3' por
+            # esta misma razón). Comprobando solo una, este bloque pisaba 34 valores MÁS
+            # RICOS con uno más pobre: 'POSITIVO (EXPRESIÓN NUCLEAR INTACTA)' -> 'POSITIVO'
+            # en los MMR (MSH2/MSH6/PMS2), donde el matiz es justo el resultado clínico.
+            if _nn9999 in results or ('IHQ_%s' % _nn9999) in results:
+                continue
+            results[_nn9999] = _pol9999
+            logging.info(f"🆕 [V6.9.99 expresión para] {_nn9999} = {_pol9999} "
+                         f"(rellenado, negación={_negado9999})")
+
     # V6.4.89 FIX IHQ250218: POST-PROCESAMIENTO - Eliminar CD3/BCL2 si provienen de "linfocitos T acompañantes"
     # Problema: Linfomas B tienen linfocitos T acompañantes (células normales, NO tumorales)
     # Formato OCR: "Hay linfocitos T acompañantes CD3+, BCL2+" → CD3/BCL2 NO deben reportarse
@@ -8288,6 +8613,116 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             if 'IHQ_BCL2' in results:
                 valor_removido = results.pop('IHQ_BCL2')
                 logging.info(f"⚠️ [V6.4.89 POST-FILTRO] IHQ_BCL2 removido: '{valor_removido}' (contexto: linfocitos T acompañantes, NO resultado tumoral)")
+
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # V6.9.96 PASE FINAL INVERSO: "pérdida" NEGADA y expresión CONSERVADA
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # Hermano con el SIGNO CAMBIADO de los pases V6.4.23 / V6.9.95 de arriba.
+    # Causa raíz: normalize_biomarker_value (~9813) dispara 'NEGATIVO (pérdida de
+    # expresión)' al ver "pérdida de expresión" SIN mirar la negación que lleva
+    # delante, así que "SIN pérdida de expresión de ATRX" se guardaba invertido.
+    # No se toca esa función (la usa todo el fichero); se corrige aquí, con nombre.
+    #
+    # Se escribe 'POSITIVO (expresión conservada)': empieza por POSITIVO, así que
+    # _polaridad_valor() lo lee POS y no puede confundirse con un negativo.
+    #
+    # TRES GUARDAS, y las tres son OBLIGATORIAS (cada una se midió por separado):
+    #  (1) nuclear → se descarta el match ENTERO mirando m.group(0), NO con un
+    #      lookahead. Un (?!nuclear\b) NO sirve: los prefijos son opcionales, el
+    #      motor backtrackea y arranca la captura una palabra antes ("la expresión
+    #      nuclear para MLH1, PMS2, MSH2 y MSH6"), y entonces PMS2/MSH2/MSH6 se
+    #      escriben igual, pisando la etiqueta canónica MMR de 535 filas
+    #      ('POSITIVO (EXPRESIÓN NUCLEAR INTACTA)'). Comprobado.
+    #  (2) _FLIP → la captura se CORTA en el cambio de polaridad. [^.;:\n] cruza
+    #      comas, así que "sin pérdida de MLH1 y PMS2, CON PÉRDIDA de MSH2 y MSH6"
+    #      arrastraba MSH6 al lado equivocado y lo marcaba conservado. Comprobado.
+    #  (3) _POL_TOK → se tira el trozo que trae su propia polaridad. Sin esto,
+    #      el fallback que ya existe en normalize_biomarker_name (quita el sufijo
+    #      POSITIVO/NEGATIVO pegado) convierte "CD56 positivo" en "CD56" y R3 lo
+    #      mete en la lista negativa: inversión fabricada. Comprobado.
+    #
+    # Solo rellena huecos o corrige un NEGATIVO pelado / '(pérdida...)'. NUNCA pisa
+    # un POSITIVO ni un negativo cualificado ('NEGATIVO (SCORE 0)', 'NEGATIVO (0)').
+    _CONSERVADA = 'POSITIVO (expresión conservada)'
+    _SEP_LISTA = r'(?i)[,;]\s*|\s+(?:y|o|u|e|ni)(?:\s+|\s*$)'
+    _FLIP = r'(?i)\b(?:con|pero|mientras|aunque|salvo|excepto|s[ií]|adem[áa]s)\b|\bp[ée]rdida\b|\bsobreexpresi[óo]n\b'
+    _POL_TOK = r'(?i)(?:positiv|negativ|d[ée]bil|fuerte|focal|score|\d\s*\+)'
+    _TOK_OK = r'(?i)^[A-Za-z0-9ÁÉÍÓÚÑ][A-Za-z0-9ÁÉÍÓÚÑ\-/\.]{0,19}(?:\s[A-Za-z0-9\-/\.]{1,8}){0,2}$'
+    _CUANTIF = r'(?i)\s+(?:mayor|menor|superior|inferior|igual)\s+(?:a|de|del|que|al)\s.*$'
+    _NEG_PISABLE = r'(?i)^NEGATIVO$|^NEGATIVO\s*\(\s*p[ée]rdida[^)]*\)$'
+
+    # R1 — pérdida NEGADA: "Sin pérdida de expresión para CD2, CD5 o CD7"
+    _RX_SIN_PERDIDA = (
+        r'(?i)(?:sin|no\s+(?:hay|existe|presentan?|se\s+(?:observa|evidencia|aprecia|identifica|detecta)))'
+        r'\s+p[ée]rdida\s+(?:de\s+)?(?:la\s+)?'
+        r'(?:(?:expresi[óo]n|inmunoexpresi[óo]n|marcaci[óo]n|tinci[óo]n)\s+)?'
+        r'(?:nuclear\s+)?(?:de\s+|para\s+|en\s+)?([^.;:\n]{1,120})')
+    # R2 — conservación AFIRMADA: "La expresión de ATRX se encuentra conservada"
+    _RX_CONSERVADA = (
+        r'(?i)(?:expresi[óo]n|inmunoexpresi[óo]n|marcaci[óo]n|tinci[óo]n)\s+(?:de|para)\s+'
+        r'([A-Za-z0-9][A-Za-z0-9\-/\. ]{1,20}?)\s+'
+        r'(?:se\s+encuentra\s+|se\s+halla\s+|es\s+|est[áa]\s+|permanece\s+)?'
+        r'(?:conservad|preservad|mantenid|intact)[ao]s?\b')
+    # R3 — polaridad DELANTE arrastrada por un conector de coordinación:
+    # "La sinaptofisina es negativa, al igual que cromogranina y ..."
+    # El conector es OBLIGATORIO: sin él, "La X es negativa" suelta (106 casos del
+    # corpus) degrada 'POSITIVO HETEROGÉNEO'→'POSITIVO' y '0 (NEGATIVO)'→'NEGATIVO'.
+    _RX_POL_DELANTE = (
+        r'(?i)\b(?:la|el|las|los)\s+([A-Za-zÁÉÍÓÚÑáéíóúñ][A-Za-z0-9ÁÉÍÓÚÑáéíóúñ\s\-/\.]{1,28}?)'
+        r'\s+(?:es|son)\s+(positiv|negativ)[oa]s?\s*,?\s*'
+        r'(?:al\s+igual\s+que|as[ií]\s+como|lo\s+mismo\s+que|igual\s+que)\s+([^.;:\n]{1,120})')
+
+    def _v6996_tokens(captura, trim_cuantif=False):
+        """Trocea una lista y devuelve SOLO los trozos que parecen nombre limpio."""
+        captura = re.sub(r'\s*\n\s*', ' ', captura)
+        captura = re.split(_FLIP, captura)[0]          # GUARDA (2)
+        limpios = []
+        for tok in re.split(_SEP_LISTA, captura):
+            tok = (tok or '').strip().rstrip('.').strip()
+            if not tok:
+                continue
+            if trim_cuantif:
+                # recorte LOCAL del cuantificador ("CD7 mayor del 10%" → "CD7").
+                # LOCAL a propósito: como fallback GLOBAL en normalize_biomarker_name
+                # se midió y es la TRAMPA (IHQ251067 IHQ_CD7 sale NEGATIVO).
+                tok = re.sub(_CUANTIF, '', tok).strip()
+            if re.search(_POL_TOK, tok):               # GUARDA (3)
+                continue
+            if not re.match(_TOK_OK, tok):
+                continue
+            limpios.append(tok)
+        return limpios
+
+    def _v6996_conservada(nombre_raw):
+        _n = normalize_biomarker_name(nombre_raw)
+        if not _n:
+            return
+        _prev = results.get(_n)
+        if _prev is None or _prev in ('N/A', '', 'NO MENCIONADO') or \
+           re.match(_NEG_PISABLE, str(_prev).strip()):
+            results[_n] = _CONSERVADA
+            logging.info(f"🟢 [V6.9.96 CONSERVADA] {_n} = {_CONSERVADA} (era: {_prev})")
+
+    for _m in re.finditer(_RX_SIN_PERDIDA, text):
+        if re.search(r'(?i)\bnuclear\b', _m.group(0)):     # GUARDA (1)
+            continue
+        for _tok in _v6996_tokens(_m.group(1), trim_cuantif=True):
+            _v6996_conservada(_tok)
+
+    for _m in re.finditer(_RX_CONSERVADA, text):
+        if re.search(r'(?i)\bnuclear\b', _m.group(0)):     # GUARDA (1)
+            continue
+        for _tok in _v6996_tokens(_m.group(1)):
+            _v6996_conservada(_tok)
+
+    for _m in re.finditer(_RX_POL_DELANTE, text):
+        _pol = 'POSITIVO' if _m.group(2).lower().startswith('positiv') else 'NEGATIVO'
+        for _raw in _v6996_tokens(_m.group(1)) + _v6996_tokens(_m.group(3)):
+            _n = normalize_biomarker_name(_raw)
+            if _n and _n not in results:     # solo rellena huecos, nunca pisa
+                results[_n] = 'NEGATIVO (0)' if (_n == 'HER2' and _pol == 'NEGATIVO') else _pol
+                logging.info(f"🟢 [V6.9.96 POL-DELANTE] {_n} = {results[_n]} (desde '{_raw}')")
+
 
     return results
 
@@ -8374,6 +8809,11 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'CD11': 'CD11',
         'CD11': 'CD11',
         'CD11': 'CD11',
+        # NOTA V6.9.95 — parece que apunta a una columna muerta (IHQ_MIOGENINA
+        # tiene 0 valores; la viva es IHQ_MYOGENIN). NO lo es: _col_canonica()
+        # de unified_extractor ya redirige IHQ_MIOGENINA -> IHQ_MYOGENIN al
+        # final del pipeline. Se probó cambiarlo aquí y da 0 diferencias sobre
+        # los 995 casos. Dejar como está.
         'MIOGENINA': 'MIOGENINA',
         'MIOGENINA': 'MIOGENINA',
         'MIOGENINA': 'MIOGENINA',
@@ -10232,7 +10672,7 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
         # → DESMINA=NEGATIVO, MYOGENINA=NEGATIVO, MYOD1=NEGATIVO
         # DEBE IR ANTES del patrón genérico "no se observa" para capturar el formato completo
         # Cambios v6.5.13: +? → + (greedy), \.? → \. (punto obligatorio)
-        r'(?i)No\s+se\s+observan?\s+c[eé]lulas\s+inmunorreactivas\s+para\s+([A-Za-z0-9\s,./\-\(\)+yYeÉóÓ\n]+)\.',
+        r'(?i)No\s+se\s+observan?\s+c[eé]lulas\s+inmunorr?eactivas\s+para\s+([A-Za-z0-9\s,./\-\(\)+yYeÉóÓ\n]+)\.',
 
         # V6.5.18 FIX IHQ250237: PRIORIDAD MÁXIMA - "es negativo para [lista]"
         # V6.5.19 FIX: Terminador corregido para capturar lista completa con " y "
@@ -10282,6 +10722,16 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
         r'con\s+marcaci[óo]n\s+positiva\s+para\s+((?:(?!siendo\s+negativ[oa]s?|son\s+negativ[oa]s?|y\s+es\s+negativ[oa]s?|y\s+negativ[oa]s?|,\s*negativ[oa]s?)[\w\s,./\-\(\)+yYeÉóÓ\n])+?)(?=\s+y\s+c[eé]lulas|\.|$|,\s*(?:son|siendo)?\s*negativ[ao]s?)',
         # V6.4.3 FIX IHQ250120: Patrón para listas que terminan en "son negativas"
         r'((?:(?!son\s+positiv[oa]s?|son\s+negativ[oa]s?)[\w\s,./\-\(\)+yYeÉóÓ\n])+?)\s+son\s+negativ[oa]s?',
+        # V6.9.9X FIX IHQ251133 — familia "expresion-de-es"
+        # "La expresion de A, B y C es parcheada" -> A, B, C = POSITIVO (PARCHEADO)
+        # POSICION: al FINAL de patrones_narrativo a proposito. La lista es FIRST-WINS
+        # ("elif col not in resultados", ~10617), asi que desde aqui el patron solo
+        # puede RELLENAR columnas que ningun otro patron reclamo; nunca pre-empta.
+        # TOKENS TEMPLADOS (mismo estilo que los patrones V6.4.3/V6.4.5 de mas arriba):
+        # el grupo no puede atravesar es|no|ni|sin|ausencia|negativ*|positiv*, lo que
+        # impide que la lista cruce de una polaridad a la contraria.
+        # \.(?=\d) permite decimales dentro del nombre ("CAM5.2") sin cruzar el punto final.
+        r'(?i)\bla\s+expresi[oó]n\s+(?:de|para)\s+((?:(?!\s*\b(?:es|no|ni|sin|ausencia|negativ\w*|positiv\w*)\b)(?:[^.;:()]|\.(?=\d))){3,60}?(?:\s*,\s*|\s+y\s+)(?:(?!\s*\b(?:es|no|ni|sin|ausencia|negativ\w*|positiv\w*)\b)(?:[^.;:()]|\.(?=\d))){2,60}?)\s+es\s+(?:parchead[oa]|en\s+parches)\b',
     ]
 
     for patron in patrones_narrativo:
@@ -10494,6 +10944,13 @@ def extract_narrative_biomarkers_list(texto_microscopica: str, biomarker_definit
             # CRÍTICO: "heterogénea" indica expresión variable/parcial pero positiva
             if 'HETEROG' in match_full and estado_defecto == 'POSITIVO':
                 estado_defecto = 'POSITIVO HETEROGÉNEO'
+
+            # V6.9.9X FIX IHQ251133 — calificador PARCHEADO de la familia "expresion-de-es".
+            # Acotado con re.match al patron nuevo: ningun otro match de la lista lo activa.
+            if estado_defecto == 'POSITIVO' and re.match(
+                    r'(?i)\bla\s+expresi[oó]n\s+(?:de|para)\s+((?:(?!\s*\b(?:es|no|ni|sin|ausencia|negativ\w*|positiv\w*)\b)(?:[^.;:()]|\.(?=\d))){3,60}?(?:\s*,\s*|\s+y\s+)(?:(?!\s*\b(?:es|no|ni|sin|ausencia|negativ\w*|positiv\w*)\b)(?:[^.;:()]|\.(?=\d))){2,60}?)\s+es\s+(?:parchead[oa]|en\s+parches)\b',
+                    match.group(0)):
+                estado_defecto = 'POSITIVO (PARCHEADO)'
 
             # V6.4.65 FIX IHQ250203: Pre-procesar calificadores individuales por biomarcador
             # Problema: "p16 ( en bloque ) y p63" asignaba "(bloque)" a ambos biomarcadores

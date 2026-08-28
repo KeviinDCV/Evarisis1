@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.94",
-    "version_name": "Patrones de biomarcador: 3 recuperados, familia de tildes cerrada, 0 regresiones",
+    "version": "6.9.99",
+    "version_name": "Familia \"expresion para\": 56 valores recuperados y 7 lecturas corregidas, 0 regresiones",
     "build_date": "25/08/2026",
-    "build_number": "202608251430",
+    "build_number": "202608270730",
     "release_type": "Stable",
-    "codename": "Accent And Boundary",
+    "codename": "Six Drafts",
 }
 
 # Información del equipo de desarrollo

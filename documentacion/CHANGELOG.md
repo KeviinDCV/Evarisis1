@@ -1,5 +1,462 @@
 # Changelog
 
+## [6.9.99] - 2026-08-28 — «expresión para X»: 56 valores recuperados y 7 lecturas corregidas
+
+```
+DUR98B -> FRASE99D     56 ganados   0 perdidos   8 cambiados
+```
+
+De los 8 cambiados, 7 son correcciones verificadas contra el informe y 1 es un matiz
+discutible con la MISMA polaridad. Cero regresiones.
+
+### El hueco
+
+Se descubrió persiguiendo CD45, pero no era cosa de CD45: la frase «expresión para X»
+no la reconocía NINGUNA columna. Son 56 valores repartidos en 36 columnas distintas.
+
+### Por qué esta entrada es sobre todo un aviso
+
+La frase PARECE positiva. No lo es: de 170 menciones en el corpus, **71 (el 42%) llevan
+una negación delante**. Hicieron falta SEIS versiones, y cada una salió de revisar a mano
+la salida de la anterior. Las cinco primeras «parecían bien»:
+
+```
+v1  "expresion para X" -> POSITIVO siempre           15 polaridades INVERTIDAS
+v2  la negacion decide el signo                       "siendo negativa LA expresion" se
+                                                      colaba (4 mas); microambiente como tumor
+v3  + determinante + guarda de poblacion              "No\ntienen" partido por el salto de
+                                                      linea; "No hay evidencia de..." fuera
+v4  + ventana que cruza saltos de linea               la lista no paraba en "SIN expresion
+                                                      para" y se comia los negativos
+v5  + la negacion corta la lista                      "capa basal" y "acompanada": la misma
+                                                      poblacion con otra redaccion
+v6  + guardas de intensidad y de perdida              LISTA
+```
+
+Si se hubiera implementado la v1 —que es la lectura obvia— habrían entrado **15
+polaridades invertidas** en historias clínicas oncológicas.
+
+### Los dos fallos más instructivos
+
+**1. `pérdida` a secas no es una negación.** IHQ260329: «ganglio linfático con PÉRDIDA
+PARCIAL DE LA ARQUITECTURA por una proliferación nodular que muestran expresión para
+CD20, PAX5, CD10, BCL6». Eso es pérdida de ARQUITECTURA, no de expresión, y volteaba
+CUATRO positivos a negativo de una vez. Ahora solo cuenta la pérdida referida a la
+marcación.
+
+**2. Llegar antes es tan destructivo como pisar.** La guarda `not in results` estaba
+puesta, pero:
+  · `results` convive con la clave pelada (`MSH2`) y con prefijo (`IHQ_MSH2`) según qué
+    capa la escribiera —el post-filtro V6.4.89 comprueba las dos por esto mismo—, y
+    mirando solo una se degradaban 34 valores;
+  · aun con las dos, al rellenar PRIMERO, la capa buena se encuentra la clave ocupada y
+    se calla. Así se degradaba `POSITIVO (EXPRESIÓN NUCLEAR INTACTA)` —la etiqueta
+    canónica MMR de 535 filas— a un `POSITIVO` pelado.
+
+De ahí las exclusiones: MMR (MLH1/MSH2/MSH6/PMS2), HER2 (su resultado es un score, no una
+polaridad), toda frase que diga «nuclear» y toda frase que traiga su propia intensidad
+(«FUERTE expresión para receptores de Estrógeno y Progesterona» perdía el «fuerte», y en
+receptores hormonales la intensidad es dato clínico).
+
+### Las correcciones verificadas
+
+```
+IHQ250608 CD34    POSITIVO -> NEGATIVO   "Blastos mieloides CD117+ ... sin expresion para CD34"
+IHQ250787 CD117   POSITIVO -> NEGATIVO   "Sin expresion para CD117 y ciclina D1"
+IHQ251308 CMYC    NEGATIVO -> POSITIVO   "hay expresion para CMYC y MUM1 en mas del 40%"
+IHQ260210 NAPSIN  POS(focal) -> NEGATIVO "No se observa expresion para Napsina A"
+IHQ260211 PROLACT POS(focal) -> NEGATIVO "no se detecto expresion para Prolactina, LH, TSH..."
+IHQ251135 NAPSIN  ', CK20, Y CK19' -> NEGATIVO    (basura -> valor limpio)
+IHQ260347 WT1     'NI GATA3' -> NEGATIVO          (basura -> valor limpio)
+```
+
+El octavo, IHQ260547 LH, pasa de `POSITIVO (focal)` a `POSITIVO`: el informe dice «El
+perfil hormonal muestra expresión para LH y positividad focal débil para FSH» —el «focal»
+es de FSH—, pero el diagnóstico resume «(LH y FSH focal)». Misma polaridad, matiz
+discutible. Se deja anotado en vez de forzarlo.
+
+---
+
+## [6.9.98] - 2026-08-28 — Fuga entre frases: 38 patrones acotados, 10 lecturas falsas eliminadas
+
+```
+LCA97 -> DUR98B     0 ganados   10 perdidos   0 cambiados
+```
+
+Los 10 "perdidos" son 10 valores ERRONEOS que dejan de escribirse. Verificado contra la BD
+uno a uno: **0 valores correctos perdidos, 0 cambiados**. El banco solo distingue vacio de
+no-vacio, por eso los cuenta como perdida.
+
+### El intento que fallo, primero
+
+Se endurecieron los 92 patrones que la medida AISLADA aprobaba (fallos 621 -> 55, saldo
+483 -> 882). De punta a punta el resultado fue el contrario:
+
+```
+LCA97 -> DUR98      0 ganados   92 perdidos   5 cambiados
+                    de los 92:  68 eran CORRECTOS
+```
+
+**Se revirtio entero.** La leccion vale mas que el cambio: la medida aislada de un patron
+NO sirve para decidir. Muchos de esos patrones son el ULTIMO que lee en su caso; al
+acotarlos no leen mejor, es que no lee nadie y el valor desaparece. La medida aislada no
+puede ver eso porque no conoce las otras capas.
+
+### Lo que se hizo en su lugar
+
+Se atribuyo cada una de las 97 diferencias observadas de punta a punta al patron
+responsable (0 quedaron sin dueno) y se conservo SOLO el que no rompe nada por si mismo:
+
+```
+38 patrones no causan ninguna perdida  -> se conservan
+   10 con beneficio medible
+   28 neutros hoy
+54 patrones causan perdidas            -> descartados
+```
+
+Los 28 neutros se mantienen a proposito: hoy no cambian ningun valor, pero quitan la fuga
+de cara a los PDFs que vengan, que es la mitad del encargo.
+
+### Las dos correcciones aplicadas
+
+1. **Acotar el salto.** El comodin perezoso pasa a una clase templada con dos fronteras: el
+   punto (frase/seccion) y otra marca de polaridad (clausula). El salto de linea se permite
+   a proposito: las listas de marcadores se parten a mitad por el ancho del PDF.
+
+2. **Frontera de palabra.** EMA casaba "ema" dentro de "sistEMA" (IHQ250785: "WHO grado 1
+   para sistema"). Misma familia que AXILA dentro de MAXILAR.
+
+### Los 10 valores falsos que desaparecen
+
+```
+IHQ250339 NEUN       borraba NEGATIVO   (es POSITIVO)
+IHQ250594 DESMIN     borraba POSITIVO   (es NEGATIVO)
+IHQ251246 CD4, CD8   borraba NEGATIVO   (son POSITIVO)
+IHQ251252 CD56, CALPONINA, EMA          (los tres al reves)
+IHQ251450 CD138      borraba NEGATIVO   (es POSITIVO)
+IHQ251501 TTF1       borraba NEGATIVO   (es POSITIVO)
+IHQ260254 CDX2       borraba NEGATIVO   (es POSITIVO)
+```
+
+En estos casos la BD ya tenia el valor bueno porque otra capa pisaba al patron con fuga.
+Lo que se corrige es que el extractor deje de producir la lectura falsa.
+
+### Lo que sigue abierto
+
+Los **54 patrones descartados** siguen con la fuga. No se tocan porque acotarlos, hoy, borra
+mas de lo que arregla: el valor correcto sale de ese mismo patron aunque lea por el camino
+equivocado. Arreglarlos de verdad pide cubrir antes la frase con un patron NUEVO que lea
+bien, y solo despues acotar el viejo. Es trabajo aditivo, no de recorte.
+
+---
+
+## [6.9.97] - 2026-08-27 — Fuga de polaridad entre frases: localizada, medida y acotada en LCA
+
+**Impacto en produccion: NINGUNO.** Se dice primero para que nadie lo lea al reves.
+La columna que se arregla, `IHQ_LCA`, esta VACIA en las 22.547 filas y en 0 registros del
+modelo relacional: `map_to_database_format` la descarta al guardar. Lo que aqui se corrige
+es un defecto latente y, sobre todo, lo que aparecio al investigarlo.
+
+### El defecto
+
+El cuarto patron de `BIOMARKER_DEFINITIONS['LCA']` llevaba un `.*?` SIN acotar, y el bloque
+se compila con `re.DOTALL`. Resultado: se anclaba en cualquier "positivo/negativo ... para"
+del documento entero y saltaba hasta el primer CD45, cruzando secciones.
+
+En IHQ250166 se anclaba en las palabras "POSITIVO PARA TUMOR" — de la historia clinica, que
+ni siquiera es un resultado de inmunohistoquimica — y se tragaba 419 caracteres pasando por
+encima de DESCRIPCION MICROSCOPICA hasta el CD45. Disparaba asi en 18 de los 20 casos en que
+`IHQ_LCA` e `IHQ_CD45` se contradecian.
+
+```
+patron actual, medido sobre 43 casos:  17 aciertos / 20 fallos  =  46%
+```
+
+Peor que una moneda, sobre un anticuerpo que es el mismo que CD45 con su nombre antiguo.
+
+### El arreglo, y por que asi
+
+Se acota el salto con dos fronteras, igual que hizo V6.6.6 con el patron hermano dos lineas
+mas arriba (mismo bloque, mismo remedio, precedente documentado):
+
+- el **punto**, frontera de frase/seccion — es lo que dejaba cruzar a la microscopica;
+- **otra marca de polaridad**, frontera de clausula, para el caso muy frecuente
+  "positivas para A, B, siendo negativas para C, CD45" (ahi CD45 es NEGATIVO).
+
+El salto de linea SI se permite, a proposito: las listas de marcadores se parten a mitad por
+el ancho del PDF, y prohibirlo dejaba el patron mudo en 19 casos. Se midieron cuatro
+variantes ANTES de escribir nada:
+
+```
+variante                              acierta  falla    %
+sin acotar (la actual)                     17     20   46%
+bloquea salto de linea y punto             23      1   96%   (pero calla en 19)
+bloquea punto y polaridad   <-- ELEGIDA    30      2   94%
+bloquea solo el punto                      22     10   69%
+```
+
+La ultima fila es la que importa: sin la guarda de polaridad se queda en 69%. Lo decisivo no
+es el punto, es no cruzar un cambio de signo.
+
+### Regresion
+
+```
+FAM5 -> LCA97     2 ganados   8 perdidos   11 cambiados
+```
+
+**Las 21 diferencias caen TODAS en `IHQ_LCA`.** Ninguna otra columna se movio: la contencion
+es total. Verificado uno a uno contra el informe:
+
+- los 11 cambiados son 11 correcciones POSITIVO → NEGATIVO, todas correctas;
+- de los 8 perdidos, 4 eran valores ERRONEOS que desaparecen (bien), 2 eran correctos pero
+  `IHQ_CD45` ya los cubre, y 2 dejan hueco real (IHQ250368, IHQ251308);
+- 1 ganado es correcto y **1 es un error nuevo** (IHQ250078): el patron lee bien
+  ("positivas para CD45" → POSITIVO) pero el valor final sale NEGATIVO de otra capa. Se deja
+  anotado en vez de taparlo.
+
+Neto: 11 aciertos contra 1 error, en una columna que nadie lee.
+
+### Lo que aparecio al investigar (esto si importa)
+
+Ese `.*?` sin acotar NO es exclusivo de LCA. Un escaneo de `BIOMARKER_DEFINITIONS` encuentra
+**179 patrones con la misma forma**, de los cuales **91 fugan** entre frases en el corpus,
+sobre **56 columnas VIVAS** (P63, S100, PAX8, CD34, TTF1, CDX2, CD30, SINAPTOFISINA, EMA,
+CKAE1AE3...). El 36% de sus disparos cruza un punto.
+
+Antes de dar la alarma se midio lo unico concluyente — si la fuga LLEGA al valor guardado — y
+la respuesta tranquiliza: de 881 disparos con fuga, 478 "contradicen" la BD, pero al leer los
+informes **la BD tiene lo correcto y el patron lo incorrecto**. El patron fuga, pero PIERDE:
+otra capa (narrativo directo, generico, "no hay marcacion") lo pisa. Es coherente con el
+98-100% verbatim de la auditoria.
+
+No se concluye que sea inofensivo: en LCA GANABA, y por eso habia 20 lecturas invertidas. Los
+~450 valores de polaridad invertida que se corrigieron con la IA local son compatibles con que
+gane de vez en cuando.
+
+**No se ha tocado ni uno de esos 91.** Arreglarlos en bloque es exactamente lo que la Regla
+Critica #1 prohibe, y ya hubo un intento generico revertido por mover 206 valores. El camino
+es una campana por marcador, uno a uno con el banco.
+
+Candidato siguiente: **EMA** (lineas 1855-1856), que acumula DOS defectos — la fuga y la falta
+de frontera de palabra, que le hace casar "ema" dentro de "sistema" (IHQ250785: "WHO grado 1
+para sistema"). Misma familia de errores de subcadena que AXILA dentro de MAXILAR.
+
+### Hueco de vocabulario, independiente de todo lo anterior
+
+Los 2 casos que quedan sin cubrir lo estan porque NINGUNA columna reconoce la frase:
+
+```
+IHQ250293  "una expresion para CD 45, CD 20, CD 79A"          -> POSITIVO, se pierde
+IHQ251308  "Tampoco presenta marcacion para ... CD38 y CD45"  -> NEGATIVO, se pierde
+IHQ250368  "Sin imnunoreactividad para CD45"                  -> NEGATIVO (y ojo: el
+           informe escribe "imnuno", con la n y la m cambiadas)
+```
+
+"expresion para X", "Tampoco presenta marcacion para X" y "Sin inmunoreactividad para X" son
+formas de frase generales: afectan a TODOS los biomarcadores, no solo a CD45.
+
+---
+
+## [6.9.96] - 2026-08-27 — Cinco familias de frase: 80 recuperados, 16 polaridades corregidas
+
+Con 6.000 casos en la base, los incompletos se estabilizaron en torno al 6-9%. Un triaje
+por CLAUSULA (no por ventana de caracteres) separo lo que es hueco del informe de lo que
+es fallo nuestro, y lo segundo resulto ser CINCO formas de frase que ningun patron cubria.
+
+```
+BASE6000 -> FAM5     +80 ganados   0 perdidos   16 cambiados
+```
+
+Los 16 cambiados se verificaron UNO A UNO contra el informe: 15 son correcciones
+inequivocas y 1 es un criterio razonado (ver abajo).
+
+### El triaje, primero
+
+La herramienta anterior preguntaba «.hay una palabra de resultado a menos de 130
+caracteres?». Eso confunde la lista de solicitud con un resultado: marcaba 28 de 33
+como fallo cuando eran ~20. La v3 mira que rodea a CADA mencion. Medida contra 22
+marcadores leidos a mano del PDF:
+
+```
+precision sobre FALLO   11 de 11   100%    ninguna falsa alarma
+recall                  11 de 14    79%
+```
+
+El sesgo es deliberado: falla POR DEFECTO. Se le escapa algun fallo real, pero nunca
+manda a arreglar algo que no esta roto. Y en el examen **encontro dos errores mios**:
+casos que yo habia clasificado como «solo solicitud» leyendo un fragmento, cuando el
+informe traia mas adelante una clausula con resultado.
+
+### Las cinco familias
+
+**1. La polaridad va DETRAS de la lista.** «E-CADHERINA, P120 y Betacatenina con
+marcacion membranosa positiva.» Todos los patrones vivos esperan «positivas PARA X».
+La revision cambio la clase negada de 120 caracteres por una lista de TOKENS: la clase
+negada se tragaba saltos de linea y sujetos NO tumorales («En el estroma adyacente,
+SMA…»), atribuyendo al tumor marcaciones que no son suyas.
+Guarda clave: tras la polaridad se exige FIN DE ORACION. El nucleo «con marcacion
+positiva» sale 81 veces en el corpus y en 74 (91,4%) la lista va DETRAS — sin ese
+terminador el patron INVERTIRIA esas 74. El rechazo ES el arreglo.
+
+**2. «no muestra marcacion para X ni Y».** Cuatro huecos que se suman: el verbo
+«muestra», la preposicion «de», el separador « ni », y una coletilla que impedia
+normalizar «CK34BETA12 para celulas basales».
+La revision RECHAZO la politica de escritura: sin `not in results` el bloque pisaba 25
+valores, dos de ellos dano verificado en informes de DOS especimenes (negativo en A,
+positivo en B; sobrescribir destruia B).
+
+**3. «La expresion de A, B y C es parcheada».** Se le quitaron cinco ramas del
+vocabulario (heterogenea, difusa, focal, granular, perinuclear): **no disparan ni una
+vez** en los 2.077 informes y cuando lo hacen, hacen dano.
+
+**4. «presentan inmunorreactividad para <lista>» en positivo.** Incluye la ortografia
+de UNA r. La V6.9.94 arreglo el lado negativo pero el positivo se revirtio porque
+degradaba calificadores. Aqui se consigue la ganancia con un patron nuevo especifico,
+sin tocar los 13 patrones del lado positivo. Aditividad verificada BYTE A BYTE: el
+fuente original queda entero dentro del resultado.
+
+**5. Sueltos, y una trampa clinica.** «Sin perdida de expresion para CD7» NO es un
+negativo: *sin perdida* significa CONSERVADA. Un patron ingenuo escribiria lo contrario.
+
+### Las 16 correcciones
+
+Las tres que mas importan, todas polaridades invertidas que estaban guardadas al reves:
+
+```
+IHQ250993 · ATRX          'NEGATIVO (perdida)' -> 'POSITIVO (conservada)'
+   informe: "sin perdida de la expresion de ATRX"  ·  "ATRX NO MUTADO"
+IHQ260279 · ATRX          'NEGATIVO'           -> 'POSITIVO (conservada)'
+   informe: "sin perdida de la expresion de ATRX y con sobreexpresion de p53"
+IHQ251204 · CD34/CD56/SMA 'POSITIVO (fuerte y difusa)' -> 'NEGATIVO'
+   informe: "SMA, CD56 y CD34 con marcacion negativa esperada"
+```
+
+Y una que arregla DOS bugs a la vez: `IHQ251212 · WT1` pasa de
+`POSITIVO (PATRON SALVAJE)` a `NEGATIVO`. El informe dice «No muestran
+inmunoreactividad para CEA y WT1. El p53 presenta expresion de tipo salvaje» — el
+calificador de p53 se habia pegado a WT1.
+
+Tres mas eran basura estructural: `'E INHIBINA CON'`, `'NI PROGESTERONA'`,
+`'ES PARCHEADA'` — frases sueltas guardadas como si fueran el valor.
+
+### El unico discutible
+
+`IHQ260685 · BCL2` pasa de POSITIVO a NEGATIVO. El informe afirma las dos cosas:
+«centros germinales … sin expresion de Bcl-2» y «linfocitos T … con clara expresion de
+CD3 y Bcl-2». En el estudio de un linfoma folicular lo diagnostico es el centro
+germinal y los linfocitos T son control interno, asi que NEGATIVO parece lo correcto.
+Pero es un criterio, no una lectura literal. Queda anotado por si el patologo discrepa.
+
+### Lo que NO se aplico
+
+Ninguno de los cinco patrones entro tal y como se diseno: **los cinco revisores
+rechazaron la version original** y entregaron una endurecida. Uno lo resumio asi: «no
+puedo refutar su medida, pero rechazo el entregable» — media bien y dejaba abiertos
+canales de falso positivo.
+
+## [6.9.95] - 2026-08-25 — Una sola letra: 35 biomarcadores recuperados y 4 polaridades corregidas
+
+Tras procesar 796 casos mas, quedaron 45 incompletos. Un triaje determinista sobre los
+debug_maps los separo en tres cubos: 5 marcadores que el informe **no nombra**, 7 que
+solo aparecen en la lista de **solicitados** (ahi `N/A` es la respuesta correcta) y **47
+nombrados CON resultado que se perdian**. Solo el tercero es trabajo.
+
+Cinco agentes diagnosticaron una familia cada uno y una segunda ronda intento
+refutarlos. **Rechazaron 3 de los 6 arreglos propuestos**, uno de ellos porque invertia
+la polaridad de 20 marcadores. Lo que sigue es lo que sobrevivio y ademas paso el banco.
+
+```
+BASE995 -> FIX10     +35 ganados   0 perdidos   4 cambiados
+```
+
+Los 4 cambiados son correcciones, no danos (ver abajo).
+
+### 1. Un candado ortografico de UNA letra — 27 patrones, 123 casos
+
+Los informes escriben «inmuno**r**eactividad», con una r. Veintisiete patrones del
+extractor exigen **dos**. En IHQ250277 eso dejaba sin procesar una lista de 18
+marcadores.
+
+Lo que lo convierte en anecdota del proyecto: el comentario de cabecera de ese patron
+dice `V6.5.93 FIX IHQ250277`. **Se escribio para este caso exacto y no ha llegado a
+ejecutarse ni una vez.**
+
+Se amplia la ortografia a un superconjunto (`inmunorr?eactiv`) en las **14 lineas del
+lado negativo**. Aditivo por construccion: lo que casaba antes casa igual.
+
+Resultado: **+14 valores y 4 correcciones**, todas en IHQ250277:
+
+```
+IHQ_ALK           POSITIVO -> NEGATIVO
+IHQ_CALRETININA   POSITIVO -> NEGATIVO
+IHQ_P63           POSITIVO -> NEGATIVO
+IHQ_P40_ESTADO    'POSITIVO (POSITIVA PARA: CD34 FOCAL, VIMENTINA...)' -> NEGATIVO
+```
+
+El informe dice «no presentan inmunoreactividad para: ... ALK 01, ... p63, ...
+Calretinina». Estaban **invertidas**. La cuarta tenia una frase entera dentro del campo.
+
+**Se probo extenderlo a las 13 lineas del lado positivo y se REVIRTIO.** Ganaba 2 y
+arreglaba otro campo con basura, pero **degradaba 5**: `POSITIVO (marcacion
+heterogenea)` se quedaba en `POSITIVO`. La polaridad seguia bien, pero el matiz clinico
+no es adorno. Sin el banco de 995 casos no se habria visto.
+
+### 2. Un patron hermano con dos puntos — 19 valores de un solo caso
+
+El patron «No presentan expresion **para** [lista]» exige la palabra *para*. IHQ250880
+escribe «No presentan expresion **a:** [lista]» y perdia los 19 marcadores de golpe.
+
+Se anade un patron hermano detras, con el original intacto. Exigir los dos puntos es lo
+que lo hace seguro: casa **1 caso de 2.078**.
+
+⚠️ La clase de caracteres es `[óo]` (o-con-tilde y o), no `[oo]`. Ese typo estaba en la
+propuesta original y cuesta 2 marcadores (CD56 y GATA3), que viven precisamente en la
+ocurrencia acentuada, la de la lista mas larga.
+
+**+19 ganados, 0 perdidos, 0 cambiados.**
+
+### 3. El carril prefijado — con cinco candados
+
+`narrative_biomarkers` devuelve claves MEZCLADAS: los patrones que trocean listas emiten
+la clave ya con `IHQ_` delante y el resto el nombre pelado. El enrutado solo entiende
+las peladas, asi que un valor **bien calculado, que sobrevive a las dos guardas**, se
+tira al final porque su columna no tiene autoentrada en `biomarker_mapping` — y **112 de
+135 no la tienen**.
+
+🛑 La version obvia («si empieza por IHQ_, escribela») esta MEDIDA y es peligrosa: sobre
+56 casos da **30 cambios con 15 polaridades invertidas**. Tampoco vale anadir la
+autoentrada al dict: esa via no admite abstencion y escriben las dos claves, ganando la
+ultima segun el orden de insercion.
+
+Se anade un `elif` con lista blanca y cinco condiciones, la quinta de ellas no estetica:
+**solo escribe NEGATIVOs**, porque el carril prefijado produce POSITIVOs contaminados
+(el patron generico no corta en «sin marcacion para»). Un miogenina+ falso apunta a
+rabdomiosarcoma: el coste de un falso positivo aqui no es simetrico.
+
+**+2 ganados, 0 perdidos, 0 cambiados.** Cierra IHQ250414, que se habia resistido a
+tres intentos.
+
+### Un callejon sin salida que merece quedar escrito
+
+Se diagnostico que «miogenina» se perdia porque `name_mapping` la enviaba a
+`IHQ_MIOGENINA` (columna muerta, 0 valores) en vez de a `IHQ_MYOGENIN` (13). Encajaba.
+Se aplico: **0 diferencias sobre 995 casos**. Motivo: `_col_canonica()` ya redirige
+`IHQ_MIOGENINA -> IHQ_MYOGENIN` al final del pipeline. La ruta nunca estuvo rota, y el
+valor se perdia mas adelante, en el carril prefijado. Revertido, con una nota en el
+codigo para que nadie vuelva a «arreglar» eso.
+
+### Lo que queda abierto
+
+ · Truncamiento en `biomarker_extractor.py:7549` (46 casos). Trampa medida: relajar el
+   terminador a secas **empeora** el caso, porque hoy `
+(?=[A-Z]{2,})` es lo unico que
+   hace encajar el patron.
+ · Grafias sueltas: `CYCLINAD1`, `B-CATENINA`, `ACE`->CEA.
+ · Frases sin cubrir: «presentan inmunorreactividad para», «la marcacion es homogenea
+   ... para».
+ · La lista blanca del carril prefijado tiene 2 entradas de las 112 posibles. Ampliarla
+   exige volver a medir: el carril no es de fiar en general.
+
 ## [6.9.94] - 2026-08-25 — Patrones de biomarcador: 3 valores recuperados, 0 regresiones
 
 Los 199 casos del reproceso salieron con 3 casos incompletos. Ninguno era un biomarcador sin dar de alta: los tres estaban registrados y FUNC-03 los rechazaba con `ERROR_YA_EXISTE`. Lo que fallaba eran los patrones de lectura, y cada uno por un motivo distinto.

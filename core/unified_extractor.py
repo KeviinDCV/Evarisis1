@@ -182,6 +182,18 @@ except ImportError:                      # el extractor sigue funcionando sin é
         return next((v for v in vals if v), "")
 
 
+# V6.9.95 — lista blanca del CARRIL PREFIJADO (ver el bloque de PRIORIDAD 1).
+# narrative_biomarkers devuelve claves mezcladas: unas con prefijo IHQ_ y otras
+# peladas. El enrutado normal solo entiende las peladas, así que un valor bien
+# calculado se tiraba al final si su columna no tenía autoentrada en
+# biomarker_mapping — y 112 de 135 no la tienen.
+# Solo estas claves pueden colarse por ese carril. Se empieza a propósito por las
+# DOS grafías de miogenina, que es donde está medido (IHQ250414 emite
+# IHQ_MIOGENINA; IHQ250390 emite IHQ_MYOGENIN).
+# 🛑 Ampliarla exige volver a medir sobre el banco de 995 casos: abrir el carril
+# a cualquier clave IHQ_ da 30 cambios con 15 POLARIDADES INVERTIDAS.
+_CARRIL_PREFIJADO = frozenset({'IHQ_MIOGENINA', 'IHQ_MYOGENIN'})
+
 # V6.9.79: columnas IHQ_ que NO son biomarcadores y por tanto no se juzgan con
 # la guarda de veracidad (mismo criterio que core/modelo_relacional.py).
 _NO_BIOMARCADOR = {"IHQ_ORGANO", "IHQ_ESTUDIOS_SOLICITADOS"}
@@ -1898,7 +1910,43 @@ def extract_ihq_data(text: str) -> Dict[str, Any]:
 
                     combined_data[ihq_field] = result
                     logger.info(f"🧬 Avanzado: {biomarker_upper} -> {ihq_field} = {result}")
-            
+
+                # ═══════════════════════════════════════════════════════════════
+                # V6.9.95 — EL CARRIL PREFIJADO, con cinco candados.
+                #
+                # narrative_biomarkers trae claves MEZCLADAS: los patrones que
+                # trocean listas emiten la clave ya con 'IHQ_' delante, y el resto
+                # el nombre pelado. El `if` de arriba solo enruta las peladas, así
+                # que un valor bien calculado se tira al final por no tener
+                # autoentrada en biomarker_mapping (112 de 135 columnas no la tienen).
+                #
+                # 🛑 NO convertir esto en un elif genérico "si empieza por IHQ_,
+                # escríbela". Medido sobre 56 casos: 30 cambios y 15 POLARIDADES
+                # INVERTIDAS. Tampoco vale añadir 'IHQ_MIOGENINA':'IHQ_MIOGENINA' al
+                # dict: esa vía no admite abstención ni guarda, escriben las dos
+                # claves y gana la última según el orden de inserción (IHQ250926
+                # invertía NEGATIVO->POSITIVO).
+                #
+                # Los cinco candados, todos medidos:
+                #  1. lista blanca explícita (no "cualquier IHQ_")
+                #  2. destino por _col_canonica (colapsa la columna muerta a la viva)
+                #  3. SOLO RELLENA: nunca pisa un valor que ya exista
+                #  4. se ABSTIENE si la variante pelada también llegó (sin esto se
+                #     invierten 2 polaridades: IHQ250926, IHQ260130)
+                #  5. solo escribe NEGATIVOs: el carril prefijado produce POSITIVOs
+                #     contaminados porque el patrón genérico no corta en "sin
+                #     marcación para" (IHQ250927: 4 marcadores invertidos). Un
+                #     miogenina+ falso apunta a rabdomiosarcoma; el coste de un
+                #     falso positivo aquí no es simétrico.
+                # ═══════════════════════════════════════════════════════════════
+                elif (biomarker_upper in _CARRIL_PREFIJADO
+                        and biomarker_upper[4:] not in narrative_biomarkers
+                        and 'NEGATIV' in str(result).upper()):
+                    _destino = _col_canonica(biomarker_upper)
+                    if not (combined_data.get(_destino) or '').strip():
+                        combined_data[_destino] = result
+                        logger.info(f"🧬 Avanzado [carril IHQ_]: {biomarker_upper} -> {_destino} = {result}")
+
             # PRIORIDAD 2: Sistema refactorizado (biomarker_data) - SOLO SI NO EXISTE O ES MÁS DESCRIPTIVO
             for new_name, ihq_field in biomarker_mapping.items():
                 if new_name in biomarker_data and biomarker_data[new_name]:
