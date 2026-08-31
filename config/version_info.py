@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.103",
-    "version_name": "Organo: 148 valores de texto libre reducidos a 12; el KPI pasa de 195 a 60 categorias",
+    "version": "6.9.104",
+    "version_name": "El matiz se conserva en vez de descartarse: 16 valores recuperados y 11 enriquecidos",
     "build_date": "25/08/2026",
     "build_number": "202608270730",
     "release_type": "Stable",
-    "codename": "Sixty Organs",
+    "codename": "Keep The Nuance",
 }
 
 # Información del equipo de desarrollo

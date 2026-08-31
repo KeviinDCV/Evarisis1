@@ -1,5 +1,75 @@
 # Changelog
 
+## [6.9.104] - 2026-08-31 — El matiz se conserva en vez de descartarse
+
+```
+FAM3B -> MATIZ104B     16 ganados   1 perdido   11 cambiados
+```
+El «perdido» era un valor ERRÓNEO (ver abajo). De los 11 cambiados, 5 enriquecen el
+matiz, 4 corrigen la polaridad y 2 son formato.
+
+### Cómo se encontró, y una hipótesis mía que era falsa
+
+Auditando el KPI «CON BIOMARCADORES: 1993» del panel: dejaba 83 casos sin ningún
+biomarcador. Contrastados contra sus PDFs, 24 son correctos (el informe solo trae la lista
+de lo que se pidió) y el resto parecía fallo nuestro.
+
+**Culpé a la guarda de intensidad de V6.9.99 sin comprobarlo, y no era.** El patrón exigía
+`expresión (positiva)? para`, así que "expresión DIFUSA para" no casaba siquiera: la guarda
+nunca llegaba a ejecutarse.
+
+**Y el caso que puse de ejemplo estaba mal leído.** En IHQ250008 dije que se perdían 16
+marcadores. La frase entera dice: *"Los marcadores CKAE1E3, PAX-5, CD3… **no son valorables
+por severos defectos de fase preanalítica**"*. Esos 16 NO deben extraerse. Se perdían dos,
+CD45 y CD20.
+
+### El hueco real: 32 apariciones con calificativo
+
+```
+expresión NUCLEAR para 12 · NUCLEAR INTACTA 9 · HETEROGENEA 8 · ABERRANTE 8
+FOCAL 5 · DIFUSA 4 · MEMBRANOSA 4 · NEGATIVA 3
+```
+
+Ninguna casaba. `expresión NEGATIVA para` además perdía la polaridad entera.
+
+### La solución: conservar, no descartar
+
+El patrón admite hasta 2 palabras entre "expresión" y "para", y las CAPTURA:
+
+- si el matiz es una **polaridad** ("expresión negativa para X") manda sobre el signo;
+- si es un **calificativo** ("expresión difusa para X") viaja con el valor:
+  `POSITIVO (difusa)`.
+
+Al no quedar nada que degradar, **la guarda de intensidad sobra y se retira**. Saltar la
+frase era proteger un matiz destruyendo el dato entero. Solo se conserva el salto en
+`nuclear`, que es vocabulario del panel MMR y tiene su etiqueta canónica.
+
+El calificativo también se busca DELANTE de "expresión" (IHQ260574: *"muestran FUERTE
+expresión para receptores de Estrógeno y Progesterona"*); sin eso se escribía un POSITIVO
+pelado y se perdía el «fuerte», que en receptores hormonales es dato clínico.
+
+### Lo que enseñó revisar los cambios uno a uno
+
+Tres cambios que parecían inversiones de polaridad eran CORRECCIONES, y el valor viejo el
+equivocado:
+
+```
+IHQ250507  "CD38+ y SIN expresión aberrante para CD56"     CD56 POSITIVO -> NEGATIVO ✓
+IHQ260425  "NO HAY expresión aberrante para CD10, CD117…"  CD10 POSITIVO -> NEGATIVO ✓
+IHQ250267  "positividad FOCAL en bloque para P16 y con una expresión SALVAJE para p53"
+           el «focal» era de p16: p53 'POSITIVO (focal)' -> 'POSITIVO (salvaje)' ✓
+```
+
+Y el único «perdido», IHQ260571 CKAE1AE3, también tenía guardado un valor falso: el
+informe dice *"pero CON expresión para CKAE1/AE3"* y la BD decía NEGATIVO. Ahora no escribe
+nada, que es peor que acertar pero mejor que mentir. Queda anotado.
+
+### Aplicado a la BD
+
+26 valores en 20 casos: 16 huecos rellenados y 10 enriquecidos o corregidos.
+
+---
+
 ## [6.9.103] - 2026-08-31 — «195 categorías anatómicas» eran 60: tabla de reserva de órgano
 
 ```

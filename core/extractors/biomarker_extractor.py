@@ -8612,6 +8612,16 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
         # Conservarlo es lo que permite quitar la guarda que antes saltaba la frase
         # entera: ya no hay nada que degradar, porque el matiz viaja con el dato.
         _mat9999 = re.sub(r'\s+', ' ', (_m9999.group('matiz') or '')).strip().lower()
+        # V6.9.104b: el calificativo también puede ir DELANTE de "expresión", no solo
+        # entre ella y "para". Medido en IHQ260574: "muestran FUERTE expresión para
+        # receptores de Estrógeno y Progesterona" -> sin esto se escribía un 'POSITIVO'
+        # pelado y se perdía el 'fuerte', que en receptores hormonales es dato clínico.
+        if not _mat9999:
+            _pre9999 = re.search(r'(?i)\b(fuerte|d[eé]bil|tenue|intensa|focal|difusa|'
+                                 r'moderada|parcheada|heterog[eé]nea)\s*$',
+                                 _m9999.group('antes') or '')
+            if _pre9999:
+                _mat9999 = _pre9999.group(1).lower()
         _suf9999 = ''
         if _mat9999:
             if re.match(r'(?i)negativ', _mat9999):
