@@ -8536,7 +8536,17 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     # retira CD3/BCL2 si vinieran de linfocitos acompañantes.
     _V9999_LISTA = (r'(?P<lista>(?:(?!positiv|negativ|\bsin\b|ausencia|p[eé]rdida|perdida'
                     r'|carecen?|\bd[eé]bil|\btenue)[^.]){0,200})')
-    _V9999_RX = re.compile(r'(?i)(?P<antes>[^.]{0,110})\bexpresi[oó]n\s+(?:positiva\s+)?'
+    # V6.9.104: el patrón solo admitía "expresión para" y "expresión POSITIVA para".
+    # Medido en el corpus, entre "expresión" y "para" caben otras 32 apariciones:
+    #   expresión NUCLEAR para 12 · NUCLEAR INTACTA 9 · HETEROGENEA 8 · ABERRANTE 8
+    #   FOCAL 5 · DIFUSA 4 · MEMBRANOSA 4 · NEGATIVA 3
+    # Ninguna casaba, así que se perdían enteras — incluida "expresión NEGATIVA para",
+    # que además invierte la polaridad. Se admiten hasta 2 palabras y se CAPTURAN:
+    # el matiz no se tira, se guarda con el valor ('POSITIVO (difusa)').
+    # `nuclear` se rechaza a propósito: es el vocabulario del panel MMR, que tiene su
+    # etiqueta canónica y sus exclusiones (ver _V9999_EXCLUIDOS).
+    _V9999_RX = re.compile(r'(?i)(?P<antes>[^.]{0,110})\bexpresi[oó]n\s+'
+                           r'(?P<matiz>(?:(?!\bnuclear\b)\w+\s+){0,2})'
                            r'para[:\s]+' + _V9999_LISTA)
     # 🛑 'pérdida' A SECAS NO VALE COMO NEGACIÓN. Medido en IHQ260329: el informe dice
     # "ganglio linfático con PÉRDIDA PARCIAL DE LA ARQUITECTURA por una proliferación
@@ -8584,13 +8594,32 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
     _V9999_NUCLEAR = re.compile(r'(?i)nuclear')
     for _m9999 in _V9999_RX.finditer(text):
         _frase9999 = _sin_acentos(_m9999.group(0)).lower()
-        if _V9999_NUCLEAR.search(_frase9999) or _V9999_INTENSIDAD.search(_frase9999):
+        # V6.9.104: la guarda de INTENSIDAD ya no salta la frase. Saltarla era proteger
+        # un matiz destruyendo el dato entero: en IHQ250008 ("Se observa expresión difusa
+        # para CD45 Y CD20") se perdían los dos marcadores para no arriesgar un
+        # 'POSITIVO (difusa)'. Ahora el matiz se CONSERVA en el valor, así que no hay
+        # nada que proteger. Solo sigue saltando 'nuclear', que es territorio MMR.
+        if _V9999_NUCLEAR.search(_frase9999):
             continue
         if _V9999_NO_TUMOR.search(_frase9999) and not _V9999_ES_TUMOR.search(_frase9999):
             logging.info("⚠️ [V6.9.99] frase descartada: la marcación no es del tumor")
             continue
         _negado9999 = bool(_V9999_NEG.search(_sin_acentos(_m9999.group('antes')).lower()))
         _pol9999 = 'NEGATIVO' if _negado9999 else 'POSITIVO'
+        # El matiz capturado hace dos cosas distintas según lo que sea:
+        #   · si es una POLARIDAD ("expresión NEGATIVA para X"), manda sobre el signo
+        #   · si es un CALIFICATIVO ("expresión DIFUSA para X"), se conserva en el valor
+        # Conservarlo es lo que permite quitar la guarda que antes saltaba la frase
+        # entera: ya no hay nada que degradar, porque el matiz viaja con el dato.
+        _mat9999 = re.sub(r'\s+', ' ', (_m9999.group('matiz') or '')).strip().lower()
+        _suf9999 = ''
+        if _mat9999:
+            if re.match(r'(?i)negativ', _mat9999):
+                _pol9999 = 'NEGATIVO'
+            elif re.match(r'(?i)positiv', _mat9999):
+                _pol9999 = 'NEGATIVO' if _negado9999 else 'POSITIVO'
+            else:
+                _suf9999 = ' (%s)' % _mat9999
         for _bio9999 in re.split(r'[,;]\s*|\s+y\s+|\s+e\s+|\s+ni\s+', _m9999.group('lista')):
             _bio9999 = _bio9999.strip(' .:;()[]-')
             if not _bio9999 or _V9999_PARADA.match(_bio9999):
@@ -8609,8 +8638,8 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             # en los MMR (MSH2/MSH6/PMS2), donde el matiz es justo el resultado clínico.
             if _nn9999 in results or ('IHQ_%s' % _nn9999) in results:
                 continue
-            results[_nn9999] = _pol9999
-            logging.info(f"🆕 [V6.9.99 expresión para] {_nn9999} = {_pol9999} "
+            results[_nn9999] = _pol9999 + _suf9999
+            logging.info(f"🆕 [V6.9.99 expresión para] {_nn9999} = {_pol9999}{_suf9999} "
                          f"(rellenado, negación={_negado9999})")
 
     # V6.9.101 — enunciados de lista donde solo llegaba el PRIMER elemento
