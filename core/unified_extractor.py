@@ -543,6 +543,46 @@ _DET_PROC_SKIP = re.compile(
 _DET_PROC_SKIP_TC = re.compile(
     r'(?:Estudios?\s+de\s+[Ii]nmunohistoqu[ií]mica|Inmunohistoqu[ií]mica)'
     r'\s+(?=[A-ZÁÉÍÓÚÑ]{3,})')
+
+# ── V6.9.100 · piezas del arreglo multi-espécimen ─────────────────────────────
+# Rótulo de espécimen: letra sola, punto o paréntesis, y algo que empieza en mayúscula
+# ("A. Hígado…", "C. Próstata…"). Se exige la letra AISLADA para no confundirla con una
+# inicial cualquiera dentro del texto.
+_DET_ROTULO_ESP = re.compile(r'(?m)(?:^|\n|\.\s)\s*([A-H])\s*[.\)]\s+(?=[A-ZÁÉÍÓÚÑ])')
+# Vocabulario ESTRICTO de malignidad. Deliberadamente NO incluye TUMOR, LESIÓN, MASA ni
+# NÓDULO: esas palabras viven DENTRO de los rótulos ("A. Mama derecha. Tumor. Biopsia.")
+# y fueron la causa de las 92 regresiones de V6.9.63.
+# Se casa por SUFIJO, no por palabra suelta: los nombres compuestos son la norma en
+# oncología y exigir \b delante deja fuera justo los más graves. Medido en IHQ250254:
+# con \bSARCOMA\b, "CARCINOSARCOMA DEL OVARIO" NO casaba —no hay frontera de palabra ahí
+# dentro— y el diagnóstico se lo llevaba el espécimen B. Igual pasaría con LIPOSARCOMA,
+# RABDOMIOSARCOMA, GLIOBLASTOMA o ADENOCARCINOMA.
+# Los sufijos benignos frecuentes (ADENOMA, FIBROMA, LIPOMA, PAPILOMA) NO están en la
+# lista a propósito.
+# 🛑 `\w*BLASTOMA` ERA DEMASIADO ANCHO. Detectado auditando el informe estadístico:
+# HEMANGIOBLASTOMA (WHO 1) y CONDROBLASTOMA son BENIGNOS y casaban. Con un bloque
+# benigno marcado como maligno, esta rama le daría el diagnóstico al espécimen
+# equivocado —justo lo que viene a evitar—. Los -BLASTOMA malignos se enumeran uno a
+# uno en vez de aceptar el sufijo suelto.
+_DET_MALIGNO_ESTRICTO = re.compile(
+    r'(?i)\w*(?:CARCINOMA|SARCOMA|LINFOMA|MELANOMA|MIELOMA|SEMINOMA|'
+    r'GERMINOMA|MESOTELIOMA|PLASMOCITOMA)\b|'
+    r'\b(?:GLIO|NEURO|RETINO|MEDULO|NEFRO|HEPATO|PANCREATO|PLEURO|RABDO)BLASTOMA\b|'
+    r'\bLEUCEMIA\b|\bMETAST[AÁ]SIC\w*|\bGLEASON\b|\bNEOPLASIA\s+MALIGNA\b|'
+    r'\bTUMOR\s+MALIGNO\b')
+# La malignidad puede estar NEGADA en el propio bloque ("NEGATIVO PARA CARCINOMA",
+# "SIN EVIDENCIA DE COMPROMISO POR ADENOCARCINOMA"): entonces ese espécimen NO es el
+# maligno y no debe secuestrar el diagnóstico.
+# Un espécimen es METÁSTASIS (y por tanto NO el primario) si lo dice su diagnóstico o si
+# el rótulo es un ganglio. Sirve para preferir el primario cuando hay VARIOS especímenes
+# malignos: en IHQ260387 el bloque A es el ganglio centinela y el B es el melanoma con
+# toda la estadificación (Breslow, Clark), que es el que vale para el registro.
+_DET_ES_METASTASIS = re.compile(
+    r'(?i)\bMETAST[AÁ]SIC\w*|\bMET[AÁ]STASIS\b|\bGANGLIO\s+LINF[AÁ]TICO\b|'
+    r'\bGANGLIO\s+CENTINELA\b|\bCOMPROMISO\s+GANGLIONAR\b')
+_DET_NIEGA_MALIGNO = re.compile(
+    r'(?i)\b(?:NEGATIV[OA]|SIN|NO\s+(?:HAY|SE\s+\w+|EVIDENC\w*)|AUSENCIA|LIBRE)\b'
+    r'[^.]{0,45}$')
 # V6.9.72: marca de RÓTULO de espécimen. Un diagnóstico jamás nombra el procedimiento
 # ni la técnica con que se obtuvo la muestra; un rótulo sí, siempre.
 _DET_ES_ROTULO = re.compile(
@@ -635,6 +675,67 @@ def _det_seccion_diagnostico(full_text):
             if cand and not _DET_ES_ROTULO.search(cand):
                 zona = cuerpo[m.end():]
                 break
+
+    # ── V6.9.100 · BUG MULTI-ESPÉCIMEN: se perdía el CÁNCER ────────────────────
+    # Síntoma medido:
+    #   IHQ250151  "A. Hígado … ADENOCARCINOMA METASTÁSICO / D. Omento … NEGATIVO
+    #              PARA NEOPLASIA"  ->  zona = "- NEGATIVO PARA NEOPLASIA."
+    #              (ims[-1] salta al rótulo del ÚLTIMO espécimen y se deja atrás el A)
+    #   IHQ250178  "C. … NEGATIVO PARA MALIGNIDAD / F. … ADENOCARCINOMA ACINAR 3+3"
+    #              -> la zona sí trae los dos, pero se elige el PRIMER enunciado.
+    #
+    # 🛑 POR QUÉ ESTA VEZ NO SE REPITEN LAS 92 REGRESIONES DE V6.9.63:
+    #   · aquel intento usaba _DET_FUERTE, que matchea "Tumor" DENTRO del propio rótulo
+    #     ("A. Mama derecha. Tumor. Biopsia…") y devolvía el rótulo como diagnóstico.
+    #     Aquí el vocabulario es ESTRICTO: CARCINOMA, SARCOMA, LINFOMA, GLEASON,
+    #     METASTÁSICO… términos que NO pueden aparecer en un rótulo de espécimen.
+    #   · aquel intento cambiaba la elección SIEMPRE. Esta rama solo se activa si el
+    #     cuerpo tiene ≥2 rótulos de espécimen (102 de 2.077 informes = 4,9%) Y alguno
+    #     es inequívocamente maligno. Los mono-espécimen no se tocan.
+    #
+    # ⚠️ TRAMPA CONOCIDA, y por eso se exige que la malignidad esté DENTRO de la sección
+    # DIAGNÓSTICO: "quédate con el maligno" es FALSO si el cáncer se nombra como
+    # ANTECEDENTE. Si el estudio es de ganglios y dice "sin evidencia de tumor", ESE es
+    # el diagnóstico. Aquí solo se miran los bloques de espécimen de esta sección, nunca
+    # la historia clínica, que ya quedó fuera en _det_quitar_historia().
+    _esp = list(_DET_ROTULO_ESP.finditer(cuerpo))
+    if len({m.group(1).upper() for m in _esp}) >= 2:
+        _malignos = []
+        for i, m in enumerate(_esp):
+            fin = _esp[i + 1].start() if i + 1 < len(_esp) else len(cuerpo)
+            bloque = cuerpo[m.end():fin]
+            texto = _DET_PIE.split(bloque)[0]
+            mm = _DET_MALIGNO_ESTRICTO.search(texto)
+            if not mm:
+                continue
+            # que la malignidad no venga negada ("NEGATIVO PARA CARCINOMA")
+            antes = texto[max(0, mm.start() - 45):mm.start()]
+            if _DET_NIEGA_MALIGNO.search(antes):
+                continue
+            _malignos.append((bool(_DET_ES_METASTASIS.search(texto)), bloque))
+        if not _malignos:
+            _esp = []
+        else:
+            # Entre varios especímenes malignos manda el PRIMARIO, no la metástasis.
+            # Medido en IHQ260387: "A. Ganglio linfático centinela … MELANOMA METASTASICO
+            # (2/2)" y "B. Piel de planta de pie … MELANOMA INVASIVO. BRESLOW 7.4MM.
+            # CLARK V. …". Quedarse con el primer bloque maligno devolvía el ganglio y
+            # tiraba toda la estadificación del primario, que es lo que importa en el
+            # registro oncológico. Si TODOS son metastásicos se conserva el primero
+            # (IHQ250151: el único maligno es "ADENOCARCINOMA METASTÁSICO" del hígado).
+            _malignos.sort(key=lambda x: x[0])
+            bloque = _malignos[0][1]
+            # El bloque empieza JUSTO tras la letra ("A."), así que todavía arrastra el
+            # resto del rótulo: "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:".
+            # Sin quitarlo, el diagnóstico salía con el rótulo pegado delante
+            # ("TUMOR . RESECCIÓN. ESTUDIO DE INMUNOHISTOQUÍMICA: CARCINOMA…", medido en
+            # IHQ250146/250222/250254/250373/250585). Se reutiliza la misma maquinaria de
+            # arriba DENTRO del bloque, en vez de inventar otro recorte.
+            _ib = sorted(list(_DET_PROC_SKIP.finditer(bloque))
+                         + list(_DET_PROC_SKIP_TC.finditer(bloque)),
+                         key=lambda x: x.end())
+            zona = bloque[_ib[-1].end():] if _ib else bloque
+
     return _DET_PIE.split(zona)[0].strip(), _DET_PIE.split(coment)[0].strip()
 
 

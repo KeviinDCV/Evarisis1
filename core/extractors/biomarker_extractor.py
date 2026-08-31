@@ -2062,16 +2062,36 @@ BIOMARKER_DEFINITIONS = {
     },
 
     'E_CADHERINA': {
-        'nombres_alternativos': ['E-CADHERINA', 'E CADHERINA', 'ECADHERINA', 'E-CAD', 'CADHERINA E'],
+        # V6.9.102: las erratas del informe se recogen aquí. Medido en el corpus:
+        #   E-CADHERINA 128 · ECADHERINA 32 · E CADHERINA 11
+        #   ECADHEREINA  4  · E-CADHHERINA 1     <- estas dos NO casaban
+        # El patrón tolerante `E[\s-]?CADH{1,2}ERE?INA` cubre las cinco: la H doblada y
+        # la E de más entre "CADHER" e "INA".
+        'nombres_alternativos': ['E-CADHERINA', 'E CADHERINA', 'ECADHERINA', 'E-CAD',
+                                 'CADHERINA E', 'ECADHEREINA', 'E-CADHEREINA',
+                                 'E CADHEREINA', 'E-CADHHERINA', 'ECADHHERINA'],
         'descripcion': 'E-Cadherina - Molécula de adhesión celular (diferencial lobulillar vs ductal)',
         'patrones': [
+            # V6.9.102: se sustituye `E[\s-]?CADHERINA` por `E[\s\-]?CADH{1,2}ERE?INA`
+            # en TODOS los patrones. Es una ampliación (casa lo mismo y además las dos
+            # erratas), no un recorte: no puede dejar de encontrar nada que encontrara.
             # V6.0.2: MEJORADO - Patrones más robustos para E-Cadherina (IHQ250981)
-            r'(?i)E[\s-]?CADHERINA\s*:\s*(POSITIV[OA]S?|NEGATIV[OA]S?)',
-            r'(?i)marcaci[óo]n\s+(positiva|negativa)\s+para[:\s-]+E[\s-]?CADHERINA',
-            r'(?i)E[\s-]?CADHERINA\s+con\s+marcaci[óo]n\s+\w+\s+(positiva|negativa)',  # "E-CADHERINA con marcación membranosa positiva"
-            r'(?i)E[\s-]?CADHERINA\s*\+',  # "E-Cadherina +"
-            r'(?i)E[\s-]?CADHERINA\s*-(?!\s*\d)',  # "E-Cadherina -" (negative lookahead para evitar "E-Cadherina-2")
-            r'(?i)E[\s-]?CADHERINA\s*:\s*(.+?)(?:\s*\n|\.)',  # Patrón genérico (fallback)
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s*:\s*(POSITIV[OA]S?|NEGATIV[OA]S?)',
+            r'(?i)marcaci[óo]n\s+(positiva|negativa)\s+para[:\s-]+E[\s\-]?CADH{1,2}ERE?INA',
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s+con\s+marcaci[óo]n\s+\w+\s+(positiva|negativa)',  # "E-CADHERINA con marcación membranosa positiva"
+            # V6.9.102 (familia "sin marcación membranosa"): el gemelo NEGATIVO de la
+            # línea de arriba no existía. Medido en todo el corpus: 1 sola aparición,
+            # IHQ251376 "E-CADHERINA sin marcación membranosa" -> NEGATIVO. La nota de
+            # memoria hablaba de un radio de 153 casos: eso era el RIESGO de tocar el
+            # patrón genérico, no los casos afectados. Escrito así, específico del
+            # marcador, el radio es exactamente 1.
+            # El grupo tiene que CAPTURAR un token que exista en 'normalizacion': sin él,
+            # el extractor guardaba el match entero ("E-CADHERINA SIN MARCACIÓN
+            # MEMBRANOSA") en vez de NEGATIVO. Medido en IHQ251376.
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s+(sin|ausencia\s+de)\s+marcaci[óo]n(?:\s+\w+)?\b',
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s*\+',  # "E-Cadherina +"
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s*-(?!\s*\d)',  # "E-Cadherina -" (negative lookahead para evitar "E-Cadherina-2")
+            r'(?i)E[\s\-]?CADH{1,2}ERE?INA\s*:\s*(.+?)(?:\s*\n|\.)',  # Patrón genérico (fallback)
         ],
         'valores_posibles': ['POSITIVO', 'NEGATIVO'],
         'usa_prioridad_seccion': True,
@@ -2086,6 +2106,9 @@ BIOMARKER_DEFINITIONS = {
             '-': 'NEGATIVO',
             'pos': 'POSITIVO',
             'neg': 'NEGATIVO',
+            # V6.9.102: los tokens que captura el patrón "sin marcación membranosa".
+            'sin': 'NEGATIVO',
+            'ausencia de': 'NEGATIVO',
         }
     },
 
@@ -8590,6 +8613,81 @@ def extract_narrative_biomarkers(text: str, debug_mode: bool = False) -> Dict[st
             logging.info(f"🆕 [V6.9.99 expresión para] {_nn9999} = {_pol9999} "
                          f"(rellenado, negación={_negado9999})")
 
+    # V6.9.101 — enunciados de lista donde solo llegaba el PRIMER elemento
+    #
+    # Medido sobre el corpus: 98 marcadores que el informe enumera con polaridad
+    # inequívoca no llegaban a la extracción. No era el truncamiento de UN patrón, que es
+    # lo que se sospechaba: son cabeceras de lista que nadie expande.
+    #   IHQ250040  "positividad para EMA, CKAE1/AE3, Beta catenina"
+    #              -> EMA sí, CKAE1AE3 y BETACATENINA se perdían
+    #   IHQ250045  "positividad para Sinaptofisina, Cromogranina, CDX2 y TTF1 focal"
+    #   IHQ250179  "son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117…"
+    # El reparto por posición lo confirma: 35 de las pérdidas están en el ÚLTIMO lugar de
+    # la lista y solo 14 en el primero.
+    #
+    # Aquí la POLARIDAD LA DA LA CABECERA ("negatividad para…" es negativo por sí mismo),
+    # a diferencia de V6.9.99, donde "expresión para" es neutra y la decide la negación
+    # que la preceda. Aun así se comprueba la negación delante, porque "SIN positividad
+    # para X" invierte el signo.
+    #
+    # Se reutilizan TAL CUAL las guardas de V6.9.99 —lista acotada en el cambio de signo,
+    # población no tumoral, exclusión de MMR/HER2 y de frases con intensidad propia, y
+    # relleno que mira LAS DOS FORMAS de la clave—. Son las que costaron seis versiones.
+    # Matices que otra capa sabe conservar y este bloque perdería. No basta con
+    # _V9999_INTENSIDAD, que exige la palabra "expresión" detrás: aquí las formas son
+    # "positividad FOCAL para…", "marcación DIFUSA…", "POSITIVO HETEROGÉNEO".
+    _V99101_MATIZ = re.compile(
+        r'(?i)\bfocal\w*|\bdifus\w*|\bd[eé]bil\w*|\btenue\w*|\bheterog[eé]ne\w*|'
+        r'\bparchead\w*|\bmosaico\b|\bintens\w*|\bmoderad\w*|\baberrant\w*|'
+        r'\bp[eé]rdida\b|\bconservad\w*')
+    _V99101_CABECERAS = (
+        (r'(?i)\bpositividad\s+para[:\s]+', 'POSITIVO'),
+        (r'(?i)\bnegatividad\s+para[:\s]+', 'NEGATIVO'),
+        (r'(?i)\bson\s+positiv[ao]s?\s+para[:\s]+', 'POSITIVO'),
+        (r'(?i)\bson\s+negativ[ao]s?\s+para[:\s]+', 'NEGATIVO'),
+        (r'(?i)\bmarcaci[oó]n\s+positiva\s+para[:\s]+', 'POSITIVO'),
+        (r'(?i)\bmarcaci[oó]n\s+negativa\s+para[:\s]+', 'NEGATIVO'),
+    )
+    for _cab9901, _pol9901 in _V99101_CABECERAS:
+        for _m9901 in re.finditer(_cab9901 + _V9999_LISTA, text):
+            # 🛑 LA VENTANA MIRA HACIA ATRÁS, no solo al texto que casa. Medido en
+            # IHQ251228: "se observan CÉLULAS BASALES con positividad para CK34betaE12
+            # y p63" — en próstata las basales positivas significan glándula BENIGNA y el
+            # tumor es NEGATIVO. La guarda de población no tumoral cubre "celulas
+            # basales", pero esas palabras van ANTES de la cabecera y quedaban fuera del
+            # match, así que no la veía y escribía POSITIVO.
+            _ctx9901 = _sin_acentos(
+                text[max(0, _m9901.start() - 140):_m9901.end() + 40]).lower()
+            _frase9901 = _sin_acentos(_m9901.group(0)).lower()
+            if _V9999_NUCLEAR.search(_ctx9901):
+                continue
+            # Si por ahí anda un matiz de intensidad, el valor lo escribe MEJOR otra capa
+            # y este bloque solo conseguiría ocupar la clave antes con un valor pelado:
+            # medido, degradaba 'POSITIVO (focal)' y 'POSITIVO (difusa)' a 'POSITIVO' en
+            # 7 casos. Llegar antes es tan destructivo como pisar.
+            if _V9999_INTENSIDAD.search(_ctx9901) or _V99101_MATIZ.search(_ctx9901):
+                continue
+            if (_V9999_NO_TUMOR.search(_ctx9901)
+                    and not _V9999_ES_TUMOR.search(_ctx9901)):
+                continue
+            # "SIN positividad para X" invierte lo que dice la cabecera
+            _antes9901 = _sin_acentos(text[max(0, _m9901.start() - 40):_m9901.start()]).lower()
+            _pol = _pol9901
+            if re.search(r'(?i)(?:\bsin\b|ausencia|no\s+\w+)\s*(?:de\s+)?$', _antes9901):
+                _pol = 'NEGATIVO' if _pol9901 == 'POSITIVO' else 'POSITIVO'
+            for _bio9901 in re.split(r'[,;]\s*|\s+y\s+|\s+e\s+|\s+ni\s+',
+                                     _m9901.group('lista')):
+                _bio9901 = _bio9901.strip(' .:;()[]-')
+                if not _bio9901 or _V9999_PARADA.match(_bio9901):
+                    continue
+                _nn9901 = normalize_biomarker_name(_bio9901)
+                if not _nn9901 or _nn9901 in _V9999_EXCLUIDOS:
+                    continue
+                if _nn9901 in results or ('IHQ_%s' % _nn9901) in results:
+                    continue          # 🛑 RELLENA, NO PISA
+                results[_nn9901] = _pol
+                logging.info(f"🆕 [V6.9.101 lista] {_nn9901} = {_pol}")
+
     # V6.4.89 FIX IHQ250218: POST-PROCESAMIENTO - Eliminar CD3/BCL2 si provienen de "linfocitos T acompañantes"
     # Problema: Linfomas B tienen linfocitos T acompañantes (células normales, NO tumorales)
     # Formato OCR: "Hay linfocitos T acompañantes CD3+, BCL2+" → CD3/BCL2 NO deben reportarse
@@ -8991,6 +9089,13 @@ def normalize_biomarker_name(raw_name: str) -> Optional[str]:
         'SOX 11': 'SOX11',
         # E-Cadherina
         'E-CADHERINA': 'E_CADHERINA',
+        # V6.9.102: las dos erratas del informe. name_mapping compara por IGUALDAD
+        # exacta, así que cada variante tiene que estar escrita; no basta con el patrón.
+        'ECADHEREINA': 'E_CADHERINA',
+        'E-CADHEREINA': 'E_CADHERINA',
+        'E CADHEREINA': 'E_CADHERINA',
+        'E-CADHHERINA': 'E_CADHERINA',
+        'ECADHHERINA': 'E_CADHERINA',
         'E CADHERINA': 'E_CADHERINA',
         'ECADHERINA': 'E_CADHERINA',
         # V6.4.3 FIX IHQ250120: Melan-A / MART-1 / MATR-1

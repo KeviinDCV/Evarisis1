@@ -1,5 +1,224 @@
 # Changelog
 
+## [6.9.103] - 2026-08-31 — «195 categorías anatómicas» eran 60: tabla de reserva de órgano
+
+```
+texto libre sin categorizar : 148 valores / 193 casos  ->  12 valores / 15 casos
+categorías canónicas usadas :  47  ->  48
+KPI del informe             : 195  ->  60
+```
+
+### Qué era ese 195
+
+`normalizar_organo` devuelve el texto limpio cuando ninguna keyword canónica coincide —está
+escrito así a propósito—, así que cada localización redactada a mano contaba como una
+«categoría anatómica» propia. De las 195, **126 aparecían una sola vez** y no eran órganos:
+
+```
+REGION INTRADURAL (CAUDA EQUINA)      LECHO UNGUEAL DE HALLUX
+CUELLO, LADO ESTACION 4 Y 5           MASA PERIAREOLAR SUPERIOR Y PROFUNDA
+```
+
+Además ensuciaba la cola del gráfico de distribución y fragmentaba: 37 variantes que
+empiezan por «REGION», 16 por «MUCOSA», y duplicados por ortografía («GLANDULA LACRIMAL» /
+«GLANDULA LAGRIMAL Y ORBITA»).
+
+### La solución: segunda pasada, no más keywords en la tabla principal
+
+`CATEGORIAS_ORGANO_RESERVA` se aplica **solo si el bucle principal no encontró nada**, así
+que es estructuralmente incapaz de cambiar una categorización que hoy funciona. Añadir
+esas palabras a `CATEGORIAS_ORGANO` sí habría podido: ahí manda `ORDEN_EVALUACION` y una
+keyword nueva puede robarle un caso a otra categoría.
+
+Cada entrada sale de un valor REAL medido en el corpus, no de inventar sinónimos. Y se
+mapea solo lo inequívoco: **HOMBRO, RODILLA, CODO y MIEMBRO INFERIOR quedan fuera a
+propósito**, porque ahí la biopsia puede ser de hueso o de tejido blando y adivinar sería
+peor que dejarlo sin categorizar. Son 12 valores en 15 casos, y así se quedan.
+
+Los restos de extracción que no son un órgano —`")"`, `"A"`, `"B-D"`, `"LOS HALLAZGOS
+MORFOLOGICOS Y"`— pasan a SIN DATO en vez de contar como categoría.
+
+### Trampa que costó dos corridas
+
+`_kw_re` compila **sin `re.IGNORECASE`** y las keywords existentes están en MAYÚSCULAS,
+igual que el texto que devuelve `normalizar_texto_basico`. La tabla de reserva escrita en
+minúsculas no casaba NADA: 148 -> 139 en vez de 148 -> 12.
+
+### Efecto secundario, y es bueno
+
+`categorizar_diagnostico_con_organo` infiere el subtipo POR ÓRGANO, así que dar órgano a
+178 casos que no lo tenían mejora también su categoría de diagnóstico. Cambian 10, y las
+10 a mejor:
+
+```
+REGION PREAURICULAR -> PIEL     CARCINOMA ESCAMOCELULAR (OTRAS) -> DE PIEL
+MUCOSA PREPILORICA  -> ESTOMAGO ADENOCARCINOMA (OTRAS)          -> GASTRICO
+APENDICE CECAL      -> COLON    ADENOCARCINOMA (OTRAS)          -> COLORRECTAL
+CUADRANTE SUP. EXT. -> MAMA     CARCINOMA (OTRAS)               -> DE MAMA
+```
+
+### Alcance
+
+No toca la BD. `normalizar_organo` solo se usa en capas de presentación (informe
+estadístico, dashboard, visor); el `normalizar_organo` que usa el extractor al escribir es
+OTRA función, en `medical_extractor.py:3712`. El informe normaliza al dibujar, así que la
+mejora es inmediata sin reprocesar nada.
+
+---
+
+## [6.9.101 / 6.9.102] - 2026-08-31 — Las tres familias pendientes: 48 valores recuperados, 0 regresiones
+
+```
+FRASE99D -> FAM3B     48 ganados   0 perdidos   6 cambiados
+```
+De los 6 cambiados: 3 son correcciones de polaridad que coinciden con la BD, 2 limpian
+basura verificada contra el informe, y 1 es una discrepancia conocida (ver al final).
+
+### Familia 1 — enunciados de lista donde solo llegaba el PRIMER elemento (V6.9.101)
+
+La nota de memoria apuntaba a `biomarker_extractor.py:7549` y a ~46 casos. Al ir allí, el
+patrón de esa zona ("presentan negatividad para") aparece **2 veces** en todo el corpus y
+no trunca ninguna. Se dejó de perseguir la línea y se midió el SÍNTOMA: marcadores que el
+informe enumera con polaridad clara y que no llegan a la extracción.
+
+```
+195 medidos  ->  98 reales   (los otros 97 eran artefactos: IHQ_PR, IHQ_ER, IHQ_P40
+                              no son columnas de la BD)
+reparto por posición en la lista: 35 en el ÚLTIMO lugar, 14 en el primero
+```
+
+No era el truncamiento de un patrón: son cabeceras de lista que nadie expande.
+
+```
+IHQ250040  "positividad para EMA, CKAE1/AE3, Beta catenina"
+           -> EMA sí; CKAE1AE3 y BETACATENINA se perdían
+IHQ250179  "son negativas para ACTINA DE MUSCULO LISO, DESMINA, CD34, CD117, DOG1, S100"
+```
+
+Se añade un bloque ADITIVO que expande seis cabeceras (`positividad/negatividad para`,
+`son positivas/negativas para`, `marcación positiva/negativa para`) reutilizando TAL CUAL
+las guardas de V6.9.99, que costaron seis versiones. Aquí la polaridad la da la cabecera,
+no la negación previa — pero se comprueba igual, porque "SIN positividad para X" invierte.
+
+**🛑 La guarda tiene que mirar HACIA ATRÁS, no solo al texto que casa.** Medido en
+IHQ251228: "se observan CÉLULAS BASALES con positividad para CK34betaE12 y p63". En
+próstata las basales positivas significan glándula BENIGNA y el tumor es NEGATIVO. La
+guarda de población no tumoral ya cubría "células basales", pero esas palabras van ANTES
+de la cabecera y quedaban fuera del match. Sin este arreglo: 2 polaridades invertidas.
+
+**Y el matiz se pierde por LLEGAR ANTES, no por pisar.** Con el guarda `not in results`
+puesto, este bloque seguía degradando 'POSITIVO (focal)' y 'POSITIVO (difusa)' a
+'POSITIVO' en 7 casos: escribe primero un valor pelado y la capa que sabe conservar el
+matiz se encuentra la clave ocupada. Se resuelve saltando la frase entera cuando hay un
+matiz cerca (`_V99101_MATIZ`). Cuesta 13 de los 61 ganados iniciales, y vale la pena.
+
+### Familia 2 — la errata ECADHEREINA (V6.9.102)
+
+```
+E-CADHERINA 128 · ECADHERINA 32 · E CADHERINA 11
+ECADHEREINA  4  · E-CADHHERINA 1     <- no casaban con E[\s-]?CADHERINA
+```
+Los siete patrones pasan a `E[\s\-]?CADH{1,2}ERE?INA`, que cubre las cinco variantes. Es
+una AMPLIACIÓN: casa todo lo que casaba antes y además las erratas. Las variantes se
+añaden también a `name_mapping`, que compara por igualdad exacta.
+
+### Familia 3 — "sin marcación membranosa" (V6.9.102)
+
+El gemelo NEGATIVO de "E-CADHERINA con marcación membranosa positiva" no existía. Medido:
+**1 sola aparición en todo el corpus**, IHQ251376. La nota hablaba de un radio de 153
+casos: eso era el RIESGO de tocar el patrón genérico, no los casos afectados. Escrito
+específico para el marcador, el radio es exactamente 1.
+
+Detalle que costó una corrida: el grupo del patrón tiene que **capturar un token que
+exista en `normalizacion`**. Sin capturar nada, el extractor guardaba el match entero
+("E-CADHERINA SIN MARCACIÓN MEMBRANOSA") en vez de NEGATIVO.
+
+### Lo aplicado a la BD
+
+50 valores en 29 casos: 48 huecos rellenados (29 POSITIVO / 19 NEGATIVO) y 2 limpiezas
+verificadas leyendo el informe:
+
+```
+IHQ250386 P40_ESTADO  'POSITIVAS PARA: P40'      -> POSITIVO
+IHQ250882 WT1         'Y RECEPTOR DE ESTRÓGENOS' -> POSITIVO
+```
+
+### Discrepancia conocida, sin resolver
+
+IHQ260420 CROMOGRANINA: la BD dice 'NEGATIVO (pérdida de expresión)' y el extractor ahora
+dice POSITIVO. No es un fallo de ninguno de los dos: el informe se contradice consigo
+mismo. El principal (19/05) reporta pérdida de expresión y un **INFORME ADICIONAL**
+posterior (22/05) dice "positividad para cromogranina". La BD no se toca; queda para el
+patólogo.
+
+---
+
+## [6.9.100] - 2026-08-31 — Multi-espécimen: el diagnóstico ya no se lo lleva el espécimen benigno
+
+```
+BASE -> FIX100D    0 ganados   0 perdidos   19 cambiados   (capa determinista, 2.077 casos)
+pipeline COMPLETO  1 caso cambia de valor final
+```
+
+18 de los 19 cambios se verificaron contra el informe como mejora; 1 (IHQ251244) no es
+verificable porque su sección viene cortada por un salto de página.
+
+### El bug
+
+`_det_seccion_diagnostico` tomaba el texto tras la ÚLTIMA mención de procedimiento. En un
+informe con varios especímenes, el rótulo del espécimen B va DESPUÉS del diagnóstico del A,
+así que la zona arrancaba pasado el cáncer:
+
+```
+IHQ250151  "A. Hígado … ADENOCARCINOMA METASTÁSICO / D. Omento … NEGATIVO PARA NEOPLASIA"
+           zona elegida = "- NEGATIVO PARA NEOPLASIA."
+IHQ250178  "C. … NEGATIVO PARA MALIGNIDAD / F. … ADENOCARCINOMA ACINAR 3+3"
+           la zona traía los dos, pero se elegía el PRIMER enunciado (el benigno)
+```
+
+### Por qué esta vez no se repitieron las 92 regresiones de V6.9.63
+
+Aquel intento usaba `_DET_FUERTE`, que matchea **"Tumor" dentro del propio rótulo**
+("A. Mama derecha. Tumor. Biopsia…"), y devolvía el rótulo como diagnóstico. Y cambiaba la
+elección SIEMPRE. Aquí:
+
+- el vocabulario es **estricto** (CARCINOMA, SARCOMA, LINFOMA, GLEASON, METASTÁSICO):
+  términos que no pueden aparecer en un rótulo;
+- la rama **solo se activa** si hay ≥2 rótulos de espécimen (102 de 2.077 = 4,9%) y alguno
+  es inequívocamente maligno. Los mono-espécimen no se tocan.
+
+### Tres cosas que costó aprender, y que están en el código
+
+1. **Casar por sufijo, no por palabra suelta.** Con `\bSARCOMA\b`, "CARCINOSARCOMA DEL
+   OVARIO" NO casaba —no hay frontera de palabra ahí dentro— y en IHQ250254 el diagnóstico
+   se lo llevaba el espécimen B. Igual pasaría con LIPOSARCOMA o GLIOBLASTOMA.
+2. **Hay que quitar el rótulo DENTRO del bloque elegido.** El bloque empieza tras la letra
+   ("A.") y aún arrastra "Hígado. Lesión. Biopsia. Estudio de inmunohistoquímica:". Sin
+   quitarlo salían diagnósticos como "TUMOR . RESECCIÓN. ESTUDIO DE INMUNOHISTOQUÍMICA:
+   CARCINOMA…" (5 casos medidos).
+3. **Entre varios especímenes malignos manda el PRIMARIO, no la metástasis.** En IHQ260387
+   el bloque A es el ganglio centinela ("MELANOMA METASTASICO (2/2)") y el B es el melanoma
+   con toda la estadificación (Breslow 7,4 mm, Clark V). Quedarse con el primer bloque
+   maligno tiraba el primario. Si TODOS son metastásicos se conserva el primero
+   (IHQ251486: los cuatro especímenes son el mismo tumor metastásico).
+
+### Alcance real, que es MENOR de lo que se creía
+
+La nota anterior hablaba de ~49 casos. Medido ahora de punta a punta: la corrección cambia
+el valor FINAL en **1 caso de 2.077**. Los otros 18 ya los resolvían otras capas del
+pipeline —el determinista es un *fallback* y no llegaba a decidir— y la BD ya tenía el valor
+bueno. Lo que se arregla es la RED DE SEGURIDAD: cuando en un PDF futuro la vía principal
+falle, el fallback ya no se quedará con el espécimen benigno.
+
+```
+IHQ260174  BD  : CARCINOMA METASTASICO PROBABLEMENTE ORIGINADO EN LA MAMA
+           dice: "LOS ESTUDIOS DE INMUNOHISTOQUÍMICA FAVORECEN UN CARCINOMA INVASIVO
+                  DE TIPO NO ESPECIAL(DUCTAL)"
+           BD corregida. Malignidad se mantiene MALIGNO.
+```
+
+---
+
 ## [6.9.99] - 2026-08-28 — «expresión para X»: 56 valores recuperados y 7 lecturas corregidas
 
 ```

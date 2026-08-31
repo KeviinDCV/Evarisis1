@@ -250,6 +250,72 @@ _KW_FIN = _KW_INICIO - {'AXILA'}
 _KW_CACHE: dict = {}
 
 
+# ── V6.9.103 · tabla de RESERVA ───────────────────────────────────────────────
+# Se aplica SOLO si CATEGORIAS_ORGANO no encontró nada, así que no puede alterar lo que
+# ya funciona. Cada entrada sale de un valor REAL medido en el corpus, no de imaginar
+# sinónimos. Se mapea únicamente lo inequívoco: "HOMBRO", "RODILLA" o "MIEMBRO INFERIOR"
+# quedan fuera a propósito, porque ahí la biopsia puede ser de hueso o de tejido blando
+# y adivinar sería peor que dejarlo sin categorizar.
+CATEGORIAS_ORGANO_RESERVA = {
+    "SISTEMA NERVIOSO CENTRAL": [
+        "CEREBELO", "TALLO CEREBRAL", "BULBO MEDULAR", "BULBO-MEDULAR", "DURAMADRE",
+        "SILLA TURCA", "TALAMO", "VENTRICULO LATERAL", "TERCER VENTRICULO",
+        "IV VENTRICULO", "INTRAVENTRICULAR", "ANGULO PONTOCEREBELOSO", "REGION PINEAL",
+        "CLIVUS", "PETROCLIVAL", "SUPRA SELAR", "SUPRACELAR", "CAUDA EQUINA",
+        "INTRADURAL", "EPIDURAL", "EXTRADURAL", "EXTRAAXIAL", "FALCOTENTORIAL",
+        "PARASAGITAL", "PARENQUIMA CEREBRAL", "CANAL MEDULAR", "BULBO OLFATORIO",
+        "BOVEDA CRANEAL", "BOVEDA CRANEANA", "TEMPOROINSULAR", "FRONTOPARIETAL",
+        "PARIETOTEMPORAL", "PARIETO OCCIPITAL", "REGION FRONTAL", "REGION PARIETAL",
+        "REGION OCCIPITAL",
+    ],
+    "TIROIDES": ["LOBULO TIROIDEO"],
+    "MEDULA OSEA": ["MUDELA OSEA"],          # errata del informe
+    "ESTOMAGO": ["MUCOSA ANTRAL", "MUCOSA CORPORAL", "PREPILORICA", "CARDIAS",
+                 "UNION GASTROESOFAGICA"],
+    "ESOFAGO": ["MUCOSA ESOFAGICA"],
+    "INTESTINO DELGADO": ["MUCOSA YEYUNAL", "YEYUNO", "DUEDENO", "AMPOLLA DE VATER",
+                          "ILION TERMINAL", "ILEON TERMINAL"],
+    "COLON": ["MUCOSA DE CIEGA", "CIEGO", "APENDICE CECAL", "COLOSTOMIA"],
+    "ANO / CANAL ANAL": ["REGION ANAL", "MUCOSA ANAL", "PERIANAL", "ANO POSTRASPLA"],
+    "CAVIDAD ORAL / OROFARINGE": ["MUCOSA VESTIBULAR ORAL", "MUCOSA PALATINA",
+                                  "MUCOSA BUCAL", "CARRILLO", "REBORDE ALVEOLAR",
+                                  "HIPOFARINGE"],
+    "NASOFARINGE": ["CAVUM FARINGEO"],
+    "VEJIGA / VIA URINARIA": ["CAVIDAD VESICAL", "MUCOSA VESICAL", "CUELLO VESICAL"],
+    "OJO / ANEXOS": ["ORBITA", "ORBITARIA", "PERIORBITARIO", "GLANDULA LACRIMAL",
+                     "GLANDULA LAGRIMAL"],
+    "PERITONEO / EPIPLON": ["IMPLANTES PERITONEALES", "MESENTERIO", "SACO HERNIARIO"],
+    "RETROPERITONEO": ["RETRO PERITONEAL", "RETROPERITONEAL"],
+    "ABDOMEN (INESPECIFICO)": ["CAVIDAD ABDOMINAL", "CAVIDAD INTRABDOMINAL",
+                               "REGION INTRABDOMINAL", "MASA ABDOMINAL", "FOSA ILIACA",
+                               "REGION UMBILICAL"],
+    "FOSA NASAL / SENO PARANASAL": ["CAVIDAD NASAL", "SEPTO NASAL", "TECHO NASAL",
+                                    "LESION NASAL", "REGION SINUSAL", "CORNETE",
+                                    "ETMOIDAL", "ESFENOIDES"],
+    "CUELLO": ["HEMICUELLO", "VACIAMIENTO DE CUELLO", "TUMOR CUELLO", "CUERPO CAROTIDEO",
+               "PERIFARINGEA"],
+    "MAMA": ["PERIAREOLAR", "RETROAREOLAR", "PEZON", "CUADRANTE SUPERIOR EXTERNO"],
+    "CERVIX": ["CUELLO UTERINO", "MUCOSA EXOCERVICAL"],
+    "TROMPA UTERINA": ["TUBA UTERINA"],
+    "PIEL": ["LECHO UNGUEAL", "HALLUX", "PREAURICULAR", "PREARICULAR", "INFRAAURICULAR",
+             "HEMICARA", "REGION MALAR"],
+    "GLANDULA SALIVAL": ["PAROTIDEA"],
+    "OIDO": ["CONDUCTO AUDITIVO"],
+    "LARINGE": ["PLIEGUE VOCAL"],
+    "PULMON": ["MUCOSA BRONQUIAL", "LINGULA"],
+    "PENE": ["GLANDE"],
+    "TEJIDO BLANDO": ["TEJIDO SUBCUTANEO", "TEJIDO FIBROADIPOSO", "TEJIDOS BLANDOS"],
+    "HUESO": ["COLUMNA TORACICA", "ALA SACRA", "REGION SACRA", "ARCO COSTAL",
+              "PARED COSTAL", "REJA COSTAL"],
+}
+
+# Restos de extracción que NO son un órgano. Medidos en el corpus: ")", "A", "B-D",
+# "APEX D", "LOS HALLAZGOS MORFOLOGICOS Y", 'REFERIDO COMO "LESION…'.
+_ORGANO_NO_ES_ORGANO = re.compile(
+    r'(?i)^\W*$|^los\s+hallazgos|^referido\s+como|^[a-z]\s*-?\s*[a-z]?$|'
+    r'^apex\s+[a-z]$|^tercio\s+medio\s+del\s+lobulo$|^canal\s+anterior$')
+
+
 def _kw_re(kw: str):
     r = _KW_CACHE.get(kw)
     if r is None:
@@ -292,6 +358,28 @@ def normalizar_organo(valor: object) -> str:
         for kw in keywords:
             if _kw_re(kw).search(limpio):
                 return categoria
+
+    # ── V6.9.103 · SEGUNDA PASADA (tabla de reserva) ──────────────────────────
+    # Antes de esto, todo lo que el bucle principal no reconocía se devolvía tal cual.
+    # Consecuencia medida en el informe estadístico: 148 valores de texto libre (193
+    # casos) contaban como "categorías anatómicas" propias, inflando ese KPI a 195
+    # cuando los órganos reales son 47. Y ensuciaban la cola del gráfico de distribución
+    # con entradas de un solo caso: "LECHO UNGUEAL DE HALLUX", "CUELLO, LADO ESTACION 4
+    # Y 5", "REGION INTRADURAL (CAUDA EQUINA)".
+    #
+    # 🛑 Va DESPUÉS del bucle principal y solo se ejecuta si aquel no encontró nada, así
+    # que NO PUEDE cambiar ninguna categorización que hoy funcione. La alternativa
+    # —añadir estas palabras a CATEGORIAS_ORGANO— sí podría, porque el orden de
+    # evaluación decide y una keyword nueva puede robarle un caso a otra categoría.
+    for categoria, keywords in CATEGORIAS_ORGANO_RESERVA.items():
+        for kw in keywords:
+            if _kw_re(kw).search(limpio):
+                return categoria
+
+    # Restos de extracción que no son un órgano: paréntesis sueltos, una letra de
+    # rótulo, un trozo de frase. Mejor SIN DATO que una "categoría anatómica" falsa.
+    if _ORGANO_NO_ES_ORGANO.search(limpio) or len(limpio) <= 2:
+        return "SIN DATO"
 
     # Sin coincidencia: devolver el texto limpio (no canónico)
     return limpio
