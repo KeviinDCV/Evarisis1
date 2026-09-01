@@ -2070,82 +2070,123 @@ class EnhancedDatabaseDashboard:
             self.file_info_label.config(text=f"Error cargando base de datos: {e}")
     
     def _add_tooltips_to_tree(self, tree):
-        """Agregar tooltips emergentes a las celdas del Treeview"""
-        tooltip = None
-        tooltip_job = None
-        
-        def show_tooltip(event):
-            nonlocal tooltip, tooltip_job
-            
-            # Cancelar tooltip anterior
-            if tooltip_job:
-                tree.after_cancel(tooltip_job)
-                tooltip_job = None
-            
-            if tooltip:
-                tooltip.destroy()
-                tooltip = None
-            
-            # Identificar celda
+        """Tooltips emergentes en las celdas del Treeview.
+
+        V6.9.105 — el tooltip se quedaba colgado en pantalla, incluso ENCIMA DE OTRAS
+        APLICACIONES. Eran tres fallos que se sumaban:
+
+          1. `tree.after(500, create)` se ejecuta aunque el ratón ya se haya ido. Si
+             sales del Treeview (o de la aplicación) antes de esos 500 ms, `<Leave>` no
+             llega a tiempo —o no llega— y `create()` construye igualmente una ventana
+             `overrideredirect`, sin bordes y siempre encima, que ya nadie destruye.
+          2. No había NINGÚN temporizador de cierre: una vez creada, el tooltip solo
+             moría si volvías a entrar y salir del Treeview.
+          3. Solo se escuchaba `<Leave>` y `<Button-1>` del propio árbol. Perder el foco
+             de la ventana, hacer scroll o cambiar de aplicación no lo cerraban.
+
+        Además, `<Motion>` destruía y recreaba el tooltip en CADA píxel de movimiento,
+        aunque siguieras en la misma celda: parpadeo y trabajo inútil.
+        """
+        est = {'win': None, 'job': None, 'cierre': None, 'celda': None}
+
+        def _cancelar(clave):
+            if est.get(clave):
+                try:
+                    tree.after_cancel(est[clave])
+                except Exception:
+                    pass          # el trabajo ya se disparó; no es un error
+                est[clave] = None
+
+        def ocultar(event=None):
+            _cancelar('job')
+            _cancelar('cierre')
+            est['celda'] = None
+            if est['win'] is not None:
+                try:
+                    est['win'].destroy()
+                except Exception:
+                    pass
+                est['win'] = None
+
+        def _sigue_el_raton_encima():
+            """El puntero sigue sobre ESTE árbol. Se consulta la posición REAL, no la
+            del evento: entre el `after` y su disparo el ratón ha podido irse a otra
+            ventana, y ahí está el tooltip huérfano."""
+            try:
+                x, y = tree.winfo_pointerxy()
+                w = tree.winfo_containing(x, y)
+            except Exception:
+                return False
+            while w is not None:
+                if w is tree:
+                    return True
+                w = getattr(w, 'master', None)
+            return False
+
+        def crear(texto, celda, x_root, y_root):
+            est['job'] = None
+            # la celda pudo cambiar, o el ratón haberse ido, mientras esperábamos
+            if est['celda'] != celda or not _sigue_el_raton_encima():
+                return
+            win = tk.Toplevel(tree)
+            win.wm_overrideredirect(True)
+            win.wm_geometry(f"+{x_root + 15}+{y_root + 10}")
+            frame = tk.Frame(win, bg="#ffffcc", relief="solid", borderwidth=1,
+                             padx=5, pady=5)
+            frame.pack()
+            tk.Label(frame, text=texto, bg="#ffffcc", fg="#000000",
+                     font=("Segoe UI", 9), wraplength=400,
+                     justify=tk.LEFT).pack()
+            # Si el ratón entra en el propio tooltip, `<Leave>` del árbol ya saltó y sin
+            # esto se quedaría fijo hasta el cierre por tiempo.
+            win.bind("<Enter>", ocultar)
+            est['win'] = win
+            # Red de seguridad: pase lo que pase, a los 8 segundos se va.
+            est['cierre'] = tree.after(8000, ocultar)
+
+        def mostrar(event):
             region = tree.identify("region", event.x, event.y)
             if region != "cell":
+                ocultar()
                 return
-            
             column = tree.identify_column(event.x)
             row = tree.identify_row(event.y)
-            
             if not column or not row:
+                ocultar()
                 return
-            
-            # Obtener valor
-            col_index = int(column.replace('#', '')) - 1
-            values = tree.item(row)['values']
-            
-            if col_index >= len(values):
+            celda = (row, column)
+            if celda == est['celda']:
+                return            # misma celda: no rehacer nada (antes parpadeaba)
+            ocultar()
+            est['celda'] = celda
+            try:
+                col_index = int(column.replace('#', '')) - 1
+                values = tree.item(row)['values']
+            except Exception:
                 return
-            
-            cell_value = str(values[col_index])
-            
-            # Solo mostrar si es largo
-            if not cell_value or cell_value in ['', 'N/A', 'nan', 'None'] or len(cell_value) < 20:
+            if col_index < 0 or col_index >= len(values):
                 return
-            
-            # Crear tooltip con delay
-            def create():
-                nonlocal tooltip
-                tooltip = tk.Toplevel(tree)
-                tooltip.wm_overrideredirect(True)
-                tooltip.wm_geometry(f"+{event.x_root + 15}+{event.y_root + 10}")
-                
-                frame = tk.Frame(tooltip, bg="#ffffcc", relief="solid", borderwidth=1, padx=5, pady=5)
-                frame.pack()
-                
-                display_text = cell_value[:500] + "..." if len(cell_value) > 500 else cell_value
-                label = tk.Label(
-                    frame,
-                    text=display_text,
-                    bg="#ffffcc",
-                    fg="#000000",
-                    font=("Segoe UI", 9),
-                    wraplength=400,
-                    justify=tk.LEFT
-                )
-                label.pack()
-            
-            tooltip_job = tree.after(500, create)
-        
-        def hide_tooltip(event):
-            nonlocal tooltip, tooltip_job
-            if tooltip_job:
-                tree.after_cancel(tooltip_job)
-                tooltip_job = None
-            if tooltip:
-                tooltip.destroy()
-                tooltip = None
-        
-        tree.bind("<Motion>", show_tooltip)
-        tree.bind("<Leave>", hide_tooltip)
-        tree.bind("<Button-1>", hide_tooltip)
+            valor = str(values[col_index])
+            if not valor or valor in ('', 'N/A', 'nan', 'None') or len(valor) < 20:
+                return
+            texto = valor[:500] + "..." if len(valor) > 500 else valor
+            est['job'] = tree.after(
+                500, lambda: crear(texto, celda, event.x_root, event.y_root))
+
+        tree.bind("<Motion>", mostrar, add="+")
+        tree.bind("<Leave>", ocultar, add="+")
+        tree.bind("<Button-1>", ocultar, add="+")
+        tree.bind("<MouseWheel>", ocultar, add="+")      # rueda: la celda ya no es esa
+        tree.bind("<Destroy>", ocultar, add="+")
+        # Cambiar de aplicación o de pestaña tiene que cerrarlo: es el caso que dejaba
+        # el tooltip flotando sobre otro programa.
+        try:
+            top = tree.winfo_toplevel()
+            top.bind("<FocusOut>", ocultar, add="+")
+            top.bind("<Unmap>", ocultar, add="+")
+            top.bind("<Configure>", ocultar, add="+")    # mover/redimensionar la ventana
+        except Exception:
+            pass
 
     def refresh_exports_list(self):
         """Actualizar lista de archivos exportados"""

@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.104",
-    "version_name": "El matiz se conserva en vez de descartarse: 16 valores recuperados y 11 enriquecidos",
+    "version": "6.9.105",
+    "version_name": "El tooltip de celda ya no se queda colgado encima de otras aplicaciones",
     "build_date": "25/08/2026",
     "build_number": "202608270730",
     "release_type": "Stable",
-    "codename": "Keep The Nuance",
+    "codename": "Closing Tooltip",
 }
 
 # Información del equipo de desarrollo

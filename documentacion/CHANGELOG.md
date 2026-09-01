@@ -1,5 +1,54 @@
 # Changelog
 
+## [6.9.105] - 2026-08-31 — El tooltip de celda se quedaba colgado encima de otras aplicaciones
+
+Reportado con capturas: el popup que muestra el texto completo de una celda no se cerraba,
+y llegaba a verse **flotando sobre otro programa** ajeno a ONCONOVA.
+
+### Por qué
+
+Tres fallos que se sumaban, presentes en las TRES implementaciones de tooltip del proyecto
+(`ui.py::_instalar_hover_tooltip`, `ui.py::_setup_cell_tooltips` y
+`enhanced_database_dashboard.py::_add_tooltips_to_tree`):
+
+**1. El popup se creaba después de que el ratón se fuera.** El código programa
+`after(450, crear)` y solo lo cancela con `<Leave>`. Si sales de la celda —o de la
+aplicación— antes de ese medio segundo, el `<Leave>` no llega a tiempo y el popup se
+construye igual. En `_setup_cell_tooltips` es peor: hay DOS `after` encadenados (250 ms de
+throttle + 150 de retardo), o sea 400 ms de ventana.
+
+**2. No había ningún cierre por tiempo.** Una vez creado, solo moría si volvías a entrar y
+salir de la celda.
+
+**3. Y lleva `-topmost`:**
+
+```python
+tip.attributes("-topmost", True)   # siempre encima de TODO
+```
+
+Una ventana `overrideredirect` (sin bordes), marcada como siempre visible, y huérfana. De
+ahí que se vea sobre el gestor de dispositivos en la captura.
+
+### Arreglo
+
+- **Se comprueba que el ratón siga sobre la tabla** antes de crear el popup, consultando la
+  posición REAL del puntero (`winfo_pointerxy` + `winfo_containing`), no la que traía el
+  evento de hace 400 ms. Es la causa raíz.
+- **Cierre automático a los 8 segundos**, pase lo que pase. Convierte un popup colgado para
+  siempre en uno molesto durante ocho segundos.
+- **Se cierra también** al hacer scroll, al pulsar, al perder el foco la ventana, al
+  minimizarla o moverla, y si el ratón entra en el propio popup.
+- `ocultar()` cancela los `after` pendientes: antes solo destruía la ventana y el trabajo en
+  vuelo la volvía a crear justo después.
+
+### Detalle que casi se cuela
+
+Al hacer que `ocultar()` limpiara también la celda memorizada, la comprobación de "misma
+celda" dejaba de acertar y el popup se recreaba en CADA píxel de movimiento. El orden
+importa: primero ocultar, después anotar la celda nueva.
+
+---
+
 ## [6.9.104] - 2026-08-31 — El matiz se conserva en vez de descartarse
 
 ```

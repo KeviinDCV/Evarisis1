@@ -6194,6 +6194,21 @@ Disco {i}:
         try:
             sheet.MT.bind("<Motion>", lambda e, s=sheet: self._hover_tip_motion(e, s), add="+")
             sheet.MT.bind("<Leave>", lambda e: self._hover_tip_hide(), add="+")
+            # V6.9.105 — el popup se quedaba colgado en pantalla, incluso ENCIMA DE OTRAS
+            # APLICACIONES (lleva `-topmost`). Solo se escuchaba <Motion> y <Leave> del
+            # MainTable: hacer scroll, pulsar, cambiar de aplicación o mover la ventana no
+            # lo cerraban, y entonces no había forma de quitarlo salvo volver a entrar y
+            # salir de la celda.
+            sheet.MT.bind("<Button>", lambda e: self._hover_tip_hide(), add="+")
+            sheet.MT.bind("<MouseWheel>", lambda e: self._hover_tip_hide(), add="+")
+            sheet.MT.bind("<Destroy>", lambda e: self._hover_tip_hide(), add="+")
+            try:
+                top = sheet.winfo_toplevel()
+                top.bind("<FocusOut>", lambda e: self._hover_tip_hide(), add="+")
+                top.bind("<Unmap>", lambda e: self._hover_tip_hide(), add="+")
+                top.bind("<Configure>", lambda e: self._hover_tip_hide(), add="+")
+            except Exception:
+                pass
             logging.info("Hover-tooltip de celda instalado en un Sheet")
         except Exception as e:
             logging.warning(f"No se pudo instalar hover-tooltip: {e}")
@@ -6212,19 +6227,42 @@ Disco {i}:
         celda = (id(sheet), r, c)
         if getattr(self, "_tip_cell", None) == celda:
             return  # misma celda: no recrear
-        self._tip_cell = celda
+        # OJO al orden: _hover_tip_hide() limpia _tip_cell (y cancela los `after`
+        # pendientes), así que la celda nueva se anota DESPUÉS. Al revés, la
+        # comprobación de "misma celda" de arriba no volvería a acertar nunca y el
+        # popup se recrearía en cada píxel de movimiento.
         self._hover_tip_hide()
-        if getattr(self, "_tip_after", None):
-            try:
-                self.after_cancel(self._tip_after)
-            except Exception:
-                pass
+        self._tip_cell = celda
         xr, yr = event.x_root, event.y_root
         self._tip_after = self.after(
             450, lambda: self._hover_tip_show(sheet, r, c, xr, yr))
 
+    def _raton_sigue_en(self, widget) -> bool:
+        """¿El puntero sigue sobre `widget` (o un hijo suyo)?
+
+        V6.9.105: se consulta la posición REAL del puntero, no la del evento. Entre el
+        `after(450)` y su disparo el ratón ha podido irse a otra ventana o a otra
+        aplicación; sin esta comprobación el popup se creaba igualmente y, al llevar
+        `-topmost`, se quedaba flotando encima de todo sin nadie que lo cerrara."""
+        try:
+            x, y = widget.winfo_pointerxy()
+            w = widget.winfo_containing(x, y)
+        except Exception:
+            return False
+        while w is not None:
+            if w is widget:
+                return True
+            w = getattr(w, 'master', None)
+        return False
+
     def _hover_tip_show(self, sheet, r, c, x_root, y_root):
         """Crea el popup con el valor completo de la celda (r, c)."""
+        self._tip_after = None
+        try:
+            if not self._raton_sigue_en(sheet.MT):
+                return
+        except Exception:
+            return
         try:
             val = sheet.get_cell_data(r, c)
         except Exception:
@@ -6256,11 +6294,28 @@ Disco {i}:
             if y + h > sh:
                 y = max(0, y_root - h - 12)
             tip.geometry(f"+{x}+{y}")
+            # Si el ratón entra en el propio popup, el <Leave> del Sheet ya saltó y sin
+            # esto se quedaría fijo hasta que venciera el cierre por tiempo.
+            tip.bind("<Enter>", lambda e: self._hover_tip_hide())
             self._tip = tip
+            # Red de seguridad: pase lo que pase, a los 8 segundos se va. Es lo que
+            # convierte un popup colgado en un popup molesto durante 8 segundos.
+            self._tip_cierre = self.after(8000, self._hover_tip_hide)
         except Exception as e:
             logging.debug(f"_hover_tip_show error: {e}")
 
     def _hover_tip_hide(self):
+        # V6.9.105: hay que cancelar TAMBIÉN los trabajos pendientes. Antes solo se
+        # destruía la ventana: el `after(450)` que estaba en vuelo seguía vivo y volvía
+        # a crear el popup justo después de haberlo cerrado.
+        for attr in ("_tip_after", "_tip_cierre"):
+            job = getattr(self, attr, None)
+            if job:
+                try:
+                    self.after_cancel(job)
+                except Exception:
+                    pass      # ya se disparó; no es un error
+            setattr(self, attr, None)
         tip = getattr(self, "_tip", None)
         if tip is not None:
             try:
@@ -6268,6 +6323,7 @@ Disco {i}:
             except Exception:
                 pass
         self._tip = None
+        self._tip_cell = None
 
     def _export_full_database(self):
         """Exportar toda la base de datos usando el sistema mejorado"""
@@ -8120,6 +8176,15 @@ Disco {i}:
                 # Crear tooltip después de un pequeño delay
                 def create_tooltip():
                     try:
+                        self.tooltip_job = None
+                        # V6.9.105 — comprobar que el ratón SIGUE sobre la tabla. Entre
+                        # el <Motion> y este punto hay dos `after` encadenados (250 ms de
+                        # throttle + 150 ms de retardo): en esos 400 ms el cursor ha
+                        # podido irse a otra ventana o a otra aplicación. Sin esta
+                        # comprobación el popup se creaba igual y se quedaba flotando sin
+                        # nadie que lo cerrara.
+                        if not self._raton_sigue_en(self.sheet):
+                            return
                         self.tooltip = tk.Toplevel(self.sheet)
                         self.tooltip.wm_overrideredirect(True)
 
@@ -8181,6 +8246,11 @@ Disco {i}:
 
                         # Guardar celda actual
                         self._last_tooltip_cell = (row, col)
+                        # Si el ratón entra en el propio popup, el <Leave> de la tabla
+                        # ya saltó: sin esto se quedaría fijo.
+                        self.tooltip.bind("<Enter>", lambda e: hide_tooltip())
+                        # Red de seguridad: pase lo que pase, a los 8 segundos se va.
+                        self._tooltip_cierre = self.after(8000, hide_tooltip)
 
                     except Exception as e:
                         logging.warning(f"Error creando tooltip: {e}")
@@ -8198,8 +8268,20 @@ Disco {i}:
 
         def hide_tooltip(event=None):
             """Ocultar tooltip"""
+            # V6.9.105: cancelar también el cierre por tiempo, o quedaría un `after`
+            # suelto apuntando a un tooltip ya destruido.
+            _cj = getattr(self, '_tooltip_cierre', None)
+            if _cj:
+                try:
+                    self.after_cancel(_cj)
+                except Exception:
+                    pass
+                self._tooltip_cierre = None
             if self.tooltip_job:
-                self.after_cancel(self.tooltip_job)
+                try:
+                    self.after_cancel(self.tooltip_job)
+                except Exception:
+                    pass
                 self.tooltip_job = None
             # V6.9.49: cancelar también el cómputo diferido pendiente por <Motion>
             _mj = getattr(self, '_tooltip_motion_job', None)
@@ -8230,6 +8312,17 @@ Disco {i}:
         self.sheet.bind("<Motion>", _on_motion_throttled, add="+")
         self.sheet.bind("<Leave>", hide_tooltip, add="+")
         self.sheet.bind("<Button-1>", hide_tooltip, add="+")  # Ocultar al hacer clic
+        # V6.9.105: faltaban las salidas que de verdad dejaban el popup colgado —
+        # scrollear, cambiar de aplicación, mover la ventana o minimizarla.
+        self.sheet.bind("<MouseWheel>", hide_tooltip, add="+")
+        self.sheet.bind("<Destroy>", hide_tooltip, add="+")
+        try:
+            _top = self.sheet.winfo_toplevel()
+            _top.bind("<FocusOut>", hide_tooltip, add="+")
+            _top.bind("<Unmap>", hide_tooltip, add="+")
+            _top.bind("<Configure>", hide_tooltip, add="+")
+        except Exception:
+            pass
 
     def _delayed_refresh_after_processing(self):
         """Refresh retardado después del procesamiento para asegurar actualización"""
