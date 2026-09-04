@@ -11998,6 +11998,101 @@ Informes con malignidad: {malignant_count}"""
         except Exception as e:
             logging.warning(f"No se pudo configurar estilos (Treeview/Notebook): {e}")
 
+def _comprobar_actualizacion(app):
+    """V6.9.106 — avisa si hay una versión más nueva publicada en el servidor.
+
+    El canal es el propio MySQL al que ya se conectan todos los equipos: no hace falta
+    servidor web, servicio ni carpetas compartidas. Ver `core/actualizador.py`.
+
+    🛑 NUNCA instala por su cuenta. Se descarga un ejecutable y se lanza, así que el
+    usuario ve qué versión es, qué cambia, y decide. Además el .exe no está firmado:
+    un programa que descarga y ejecuta otro .exe en silencio es justo el patrón que
+    bloquean los antivirus.
+
+    Si algo falla —servidor caído, base de actualizaciones inexistente, sin permisos—
+    se calla y no molesta: una actualización jamás debe impedir trabajar.
+    """
+    try:
+        from config.version_info import VERSION_INFO
+        from core.db_adapter import _load_config
+        from core import actualizador
+    except Exception as e:
+        logging.info("Actualizador no disponible: %s", e)
+        return
+    try:
+        info = actualizador.consultar_ultima(_load_config(), VERSION_INFO['version'])
+    except Exception as e:
+        logging.info("Actualizador: comprobación fallida (%s)", e)
+        return
+    if not info:
+        return
+
+    notas = (info.get('notas') or '').strip()
+    if len(notas) > 700:
+        notas = notas[:700] + '…'
+    mensaje = ("Hay una versión nueva de ONCONOVA disponible.\n\n"
+               "   Tienes  : %s\n   Nueva   : %s\n   Tamaño  : %.0f MB\n\n%s\n\n"
+               "Se descargará del servidor y se abrirá el instalador. "
+               "La aplicación se cerrará para poder actualizarse.\n\n"
+               "¿Instalar ahora?"
+               % (VERSION_INFO['version'], info['version'],
+                  (info.get('bytes') or 0) / 1048576.0,
+                  notas or '(sin notas de versión)'))
+    try:
+        if not messagebox.askyesno("Actualización disponible", mensaje, parent=app):
+            return
+    except Exception:
+        return
+
+    # Ventana de progreso: son ~116 MB y sin señal alguna parecería que se ha colgado.
+    prog = None
+    barra = None
+    etiqueta = None
+    try:
+        prog = tk.Toplevel(app)
+        prog.title("Descargando actualización")
+        prog.resizable(False, False)
+        prog.transient(app)
+        etiqueta = tk.Label(prog, text="Descargando…", padx=20, pady=10)
+        etiqueta.pack()
+        barra = ttk.Progressbar(prog, length=380, mode="determinate")
+        barra.pack(padx=20, pady=(0, 14))
+        prog.update()
+    except Exception:
+        prog = None
+
+    def _progreso(hechos, total):
+        if barra is None or not total:
+            return
+        try:
+            barra['value'] = 100.0 * hechos / total
+            etiqueta.config(text="Descargando…  %.0f de %.0f MB"
+                                 % (hechos / 1048576.0, total / 1048576.0))
+            prog.update()
+        except Exception:
+            pass
+
+    ruta = actualizador.descargar(_load_config(), info, progreso=_progreso)
+    try:
+        if prog is not None:
+            prog.destroy()
+    except Exception:
+        pass
+
+    if not ruta:
+        messagebox.showerror(
+            "Actualización",
+            "No se pudo descargar la actualización, o el archivo llegó dañado "
+            "(la firma SHA-256 no coincidía).\n\nSe seguirá usando la versión actual.",
+            parent=app)
+        return
+    if actualizador.lanzar_instalador(ruta):
+        try:
+            app.destroy()      # el instalador no puede sustituir un .exe en ejecución
+        except Exception:
+            pass
+
+
 def main():
     """
     Función principal que configura el entorno y lanza la aplicación.
@@ -12045,6 +12140,13 @@ def main():
     
     # Crear y ejecutar la aplicación
     app = App(info_usuario=info_usuario_recibida, tema=tema_ttk)
+    # V6.9.106: aviso de versión nueva. Se programa con retardo para no frenar el
+    # arranque, y SOLO aquí: comprobar a media ejecución podría lanzar un instalador
+    # encima de alguien que lleva horas procesando un lote.
+    try:
+        app.after(2500, lambda: _comprobar_actualizacion(app))
+    except Exception:
+        pass
     app.mainloop()
 
     logging.info("Aplicacion cerrada. Hasta luego!")

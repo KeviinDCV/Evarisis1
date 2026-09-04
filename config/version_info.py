@@ -17,12 +17,12 @@ import shutil
 
 # Información de versión principal
 VERSION_INFO = {
-    "version": "6.9.105",
-    "version_name": "El tooltip de celda ya no se queda colgado encima de otras aplicaciones",
+    "version": "6.9.106",
+    "version_name": "Actualizacion por la red: los equipos detectan y aplican las versiones nuevas",
     "build_date": "25/08/2026",
     "build_number": "202608270730",
     "release_type": "Stable",
-    "codename": "Closing Tooltip",
+    "codename": "Self Update",
 }
 
 # Información del equipo de desarrollo

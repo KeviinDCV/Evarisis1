@@ -1,5 +1,72 @@
 # Changelog
 
+## [6.9.106] - 2026-09-04 — Actualización por la red: los equipos se enteran solos
+
+Los PCs de la red detectan al arrancar si hay una versión nueva, avisan con las notas de
+la versión y ofrecen instalarla. Antes había que ir equipo por equipo con un USB.
+
+### El canal es el propio MySQL
+
+Todos los equipos ya se conectan al mismo servidor, así que sirve de tablón de anuncios:
+ni servidor web, ni servicio, ni carpetas compartidas con sus permisos.
+
+**🛑 En una base APARTE, `onconova_updates`.** La base clínica ocupa ~100 MB y el
+instalador ~116: metido dentro, cada `mysqldump` pasaría de 81 MB a más de 200 por algo
+que no son datos de pacientes. Con la base separada el respaldo de siempre sigue igual de
+ligero y nunca la toca. Se conservan solo las **2 últimas versiones**: sin poda, diez
+publicaciones dejan 1,1 GB de binarios muertos en el servidor.
+
+El binario va troceado en pedazos de 8 MB. Cabría de una pieza (`max_allowed_packet` son
+512 MB aquí), pero así hay barra de progreso, sobrevive a un `net_read_timeout` de 30 s en
+un enlace lento y no obliga a reservar 116 MB de golpe en las dos puntas.
+
+### Lo que NO hace, y por qué
+
+- **No instala solo.** Se descarga un ejecutable y se lanza: el usuario ve qué versión es,
+  qué cambia, y decide. Además el .exe no está firmado, y un programa que descarga y
+  ejecuta otro .exe en silencio es justo el patrón que bloquean los antivirus.
+- **No comprueba a media ejecución**, solo al arrancar. Si alguien lleva dos horas de lote,
+  un instalador saltando encima le destruye el trabajo.
+- **No molesta si algo falla.** Servidor caído, base inexistente o sin permisos: se calla y
+  la aplicación arranca con normalidad. Una actualización jamás debe impedir trabajar.
+
+Se **verifica el SHA-256 antes de ejecutar nada**; si no cuadra, el archivo se borra.
+
+### Dos fallos que solo destapó la prueba de punta a punta
+
+Los dos habrían pasado desapercibidos precisamente porque el módulo falla en silencio.
+
+**1. Claves de configuración en el idioma equivocado.** `db_adapter._load_config()` las
+devuelve en español (`usuario`, `puerto`, `base_datos`) y el código usaba las inglesas: el
+usuario salía vacío y pymysql caía al usuario de Windows
+(`Access denied for user 'kechavarro'`). Ahora se aceptan ambos nombres.
+
+**2. El GRANT iba a la cuenta equivocada.** Hay TRES cuentas `huv_consulta` —`@'%'`,
+`@'localhost'` y `@'192.168.2.%'`— y MySQL resuelve por la coincidencia MÁS ESPECÍFICA: un
+equipo de la red entra por `192.168.2.%`. El script daba el permiso a dos patrones fijos
+adivinados, y esa —la única que de verdad importa— se quedaba fuera. Ahora los descubre de
+`mysql.user` en vez de suponerlos.
+
+### Uso
+
+```
+venv0\Scripts\python.exe build_tools\publicar_actualizacion.py            # publica el último
+venv0\Scripts\python.exe build_tools\publicar_actualizacion.py --listar   # qué hay publicado
+```
+
+### Arranque
+
+El 6.9.105 y anteriores NO llevan el comprobador: esos equipos hay que actualizarlos a mano
+una última vez. A partir del 6.9.106 ya se encadenan solos.
+
+### Pendiente, y no es menor
+
+Las cuentas `huv_consulta@'%'` y `@'localhost'` tienen una contraseña DISTINTA a la del
+`despliegue.ini`. No se han tocado —cambiar una contraseña puede dejar clientes fuera— pero
+son cuentas que no sirven para nada y pueden confundir en el próximo diagnóstico.
+
+---
+
 ## [6.9.105] - 2026-08-31 — El tooltip de celda se quedaba colgado encima de otras aplicaciones
 
 Reportado con capturas: el popup que muestra el texto completo de una celda no se cerraba,
